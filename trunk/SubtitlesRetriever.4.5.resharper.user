@@ -1,0 +1,36 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="851E199C-0E56-4AF0-9577-DA47FD234A41/f:SubtitlesComparer.cs" caret="0" fromTop="0" />
+      <File id="851E199C-0E56-4AF0-9577-DA47FD234A41/d:language/d:SubtitlesRetriever/f:strings_en.xml" caret="0" fromTop="0" />
+      <File id="851E199C-0E56-4AF0-9577-DA47FD234A41/d:language/d:SubtitlesRetriever/f:strings_da.xml" caret="0" fromTop="0" />
+      <File id="851E199C-0E56-4AF0-9577-DA47FD234A41/f:LocalizeStrings.cs" caret="1516" fromTop="0" />
+      <File id="851E199C-0E56-4AF0-9577-DA47FD234A41/f:SubtitlesRetriever.cs" caret="0" fromTop="0" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="851E199C-0E56-4AF0-9577-DA47FD234A41/f:SubtitlesRetriever.cs" caret="14755" fromTop="7" />
+      <File id="851E199C-0E56-4AF0-9577-DA47FD234A41/f:SubtitlesRetriever.cs" caret="15641" fromTop="26" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="targetSubtitleFile" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Replace" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
