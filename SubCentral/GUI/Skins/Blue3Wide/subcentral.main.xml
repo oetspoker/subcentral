@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <!-- 
+    This skin file is meant for all controls that should be visible for the user
+    when in the main view of the plugin. All controls should be tagged at a minimum
+    with "<visible>Control.IsVisible(100)</visible>". 
+    -->
+
+    <control>
+      <description>header text</description>
+      <type>label</type>
+      <posX>12</posX>
+      <posY>12</posY>
+      <width>900</width>
+      <font>font11</font>
+      <label>SubCentral - About</label>
+      <textcolor>ffa9d0f7</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>Control.IsVisible(100)</visible>
+    </control>
+    
+  </controls>
+</window>
