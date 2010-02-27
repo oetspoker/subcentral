@@ -54,9 +54,9 @@
   <ItemGroup>
     <ProjectReference Include="..\SubCentral\SubCentral.csproj">
       <Project>{7532711D-827C-4CFE-A499-EE68DBB31F41}</Project>
-      <Name>SubCentral %28SubCentral\SubCentral%29</Name>
+      <Name>SubCentral</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\MediaPortal\Core\Core.csproj">
+    <ProjectReference Include="..\MediaPortal\Core\Core.csproj">
       <Project>{02FFFC1F-2555-4B99-8B01-3432D0673855}</Project>
       <Name>Core</Name>
     </ProjectReference>
