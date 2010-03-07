@@ -8,6 +8,7 @@ using MediaPortal.Plugins.MovingPictures.MainUI;
 using MediaPortal.Plugins.MovingPictures.Database;
 using NLog;
 using System.Reflection;
+using SubCentral.GUI;
 
 namespace SubCentral.PluginHandlers {
     internal class MovingPicturesHandler : PluginHandler {
@@ -22,26 +23,27 @@ namespace SubCentral.PluginHandlers {
             get { return "Moving Pictures"; }
         }
 
-        // The video file we want to grab subtitles for.
-        public override FileInfo File {
-            get { return _file; }
+        // The video file details we want to grab subtitles for.
+        public override BasicMediaDetail MediaDetail {
+            get { return _mediaDetail; }
         }
-        private FileInfo _file = null;
-
-        // The name of the movie we are pulling subtitles for.
-        public override string Description {
-            get { return _description; }
-        }
-        private string _description = "";
+        private BasicMediaDetail _mediaDetail;
 
         // retrieves info from Moving Pictures
         protected override bool GrabFileDetails() {
+            
             try {
                 browser = MovingPicturesCore.Browser; 
                 DBMovieInfo selectedMovie = browser.SelectedMovie;
                 List<DBLocalMedia> localMedia = selectedMovie.LocalMedia;
-                _description = string.Format("{0} ({1})", selectedMovie.Title, selectedMovie.Year);
-                _file = new FileInfo(localMedia[0].FullPath);
+
+                _mediaDetail = new BasicMediaDetail();
+
+                _mediaDetail.Title = selectedMovie.Title;
+                _mediaDetail.Year = selectedMovie.Year;
+                _mediaDetail.ImdbID = selectedMovie.ImdbID.Replace("tt", "");
+                _mediaDetail.File = new FileInfo(localMedia[0].FullPath);
+
                 return true;
             }
             catch (Exception) {
