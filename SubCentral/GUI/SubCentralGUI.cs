@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MediaPortal.GUI.Library;
 using MediaPortal.Dialogs;
+using MediaPortal.GUI.Library;
 using NLog;
 using SubCentral.PluginHandlers;
 
@@ -129,6 +127,7 @@ namespace SubCentral.GUI {
             
             switch (controlId) {
                 case 200: // searchButton
+                    PerformSearch();
                     break;
 
                 case 201: // cancel button
@@ -178,11 +177,28 @@ namespace SubCentral.GUI {
             return success;
         }
 
+        private void PerformSearch()
+        {
+            BasicMediaDetail details = currentHandler.MediaDetail;
+            
+            try
+            {
+                Retriever retriever = new Retriever(true, new List<string>() { "eng" },
+                    SubtitleDownloader.Core.SubtitleDownloaderFactory.GetSubtitleDownloaderNames());
+
+                retriever.DownloadSubtitles(new List<BasicMediaDetail>() { details });
+            }
+            catch (Exception e)
+            {
+                logger.Error("Error retrieving subtitles", e);
+            }
+        }
+
         private void PublishSearchProperties() {
             if (currentHandler != null) {
-                SetProperty("#subcentral.search.file.name", currentHandler.File.Name);
-                SetProperty("#subcentral.search.file.path", currentHandler.File.FullName);
-                SetProperty("#subcentral.search.file.description", currentHandler.Description);
+                SetProperty("#subcentral.search.file.name", currentHandler.MediaDetail.File.Name);
+                SetProperty("#subcentral.search.file.path", currentHandler.MediaDetail.File.FullName);
+                //SetProperty("#subcentral.search.file.description", currentHandler.Description);
                 SetProperty("#subcentral.search.file.source.name", currentHandler.PluginName);
                 SetProperty("#subcentral.search.file.source.id", currentHandler.ID.ToString());
             }

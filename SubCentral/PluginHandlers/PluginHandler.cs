@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using NLog;
 using System.Reflection;
+using SubCentral.GUI;
 
 namespace SubCentral.PluginHandlers {
     internal abstract class PluginHandler {
@@ -32,14 +33,8 @@ namespace SubCentral.PluginHandlers {
             }
         }
 
-        // Should return the file for which we want subtitles.
-        public abstract FileInfo File {
-            get;
-        }
-
-        // Should return a description of the file. This generall should be the movie Title, 
-        // Series and Episode name, etc.
-        public abstract string Description {
+        // Should return the media details for which we want subtitles.
+        public abstract BasicMediaDetail MediaDetail {
             get;
         }
 
