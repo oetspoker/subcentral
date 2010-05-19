@@ -8,6 +8,7 @@ using SubCentral.Localizations;
 using SubCentral.Utils;
 using SubCentral.Enums;
 using SubCentral.Structs;
+using SubCentral.HelperClass;
 //using SubtitleDownloader.Core;
 using NLog;
 

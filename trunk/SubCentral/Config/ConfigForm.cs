@@ -50,7 +50,7 @@ namespace SubCentral.ConfigForm {
         
         private void ConfigForm_Load(object sender, EventArgs e) {
             if (!core.SubtitleDownloaderInitialized) {
-                MessageBox.Show(String.Concat("Unable to load SubtitleDownloader library!", "\n", "Is SubtitleDownloader.dll avaialble?"), "Error loading SubCentral configuration");
+                MessageBox.Show(String.Concat("Unable to load SubtitleDownloader library!", "\n", "Is SubtitleDownloader.dll available?"), "Error loading SubCentral configuration");
                 this.DialogResult = DialogResult.Cancel;
                 return;
             }

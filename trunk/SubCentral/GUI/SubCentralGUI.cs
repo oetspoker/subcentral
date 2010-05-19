@@ -10,6 +10,7 @@ using SubCentral.PluginHandlers;
 using SubCentral.Utils;
 using SubCentral.Enums;
 using SubCentral.Structs;
+using SubCentral.HelperClass;
 using SubCentral.Settings;
 using SubCentral.Settings.Data;
 using WindowPlugins.GUITVSeries;
@@ -233,7 +234,7 @@ namespace SubCentral.GUI {
             if (!core.SubtitleDownloaderInitialized) {
                 GUIUtils.ShowOKDialog(Localization.Error, string.Concat(Localization.UnableToLoadSubtitleDownloader, "\n", Localization.SubtitleDownloaderUnavailable));
                 GUIWindowManager.ShowPreviousWindow();
-                logger.Error("SubtitleDownloader: error getting providers");
+                logger.Error("SubtitleDownloader: not available");
                 return;
             }
 
