@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,6 +45,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -58,14 +59,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicMediaDetail.cs" />
+    <Compile Include="Enums\FolderErrorInfo.cs" />
+    <Compile Include="Enums\ListViewItemType.cs" />
+    <Compile Include="Enums\OnDownload.cs" />
+    <Compile Include="Enums\OnDownloadFileName.cs" />
+    <Compile Include="Enums\PluginHandlerType.cs" />
+    <Compile Include="Enums\SubtitlesSearchType.cs" />
+    <Compile Include="Structs\SubtitlesSortDetails.cs" />
+    <Compile Include="Enums\SubtitlesSortMethod.cs" />
+    <Compile Include="GUI\GUIListItemSubtitleComparer.cs" />
+    <Compile Include="PluginHandlers\ManualSearchHandler.cs" />
+    <Compile Include="PluginHandlers\TemporaryCustomPluginHandler.cs" />
+    <Compile Include="Structs\BasicMediaDetail.cs" />
     <Compile Include="Config\ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Config\ConfigForm.Designer.cs">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enums\GUIControls.cs" />
+    <Compile Include="Enums\ListControlViewState.cs" />
+    <Compile Include="Enums\MoveItem.cs" />
+    <Compile Include="Enums\StringEnum.cs" />
+    <Compile Include="Enums\OnPluginLoadWithSearchData.cs" />
+    <Compile Include="Enums\ViewMode.cs" />
+    <Compile Include="GUI\GUIDialogMultiSelect.cs" />
     <Compile Include="GUI\Retriever.cs" />
+    <Compile Include="Localizations\Localization.cs" />
     <Compile Include="PluginHandlers\PluginHandler.cs" />
     <Compile Include="PluginHandlers\MovingPicturesHandler.cs" />
     <Compile Include="PluginHandlers\PluginHandlerManager.cs" />
@@ -83,8 +103,18 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Settings\Data\SubCentralSettings.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="Structs\CustomSubtitleDownloader.cs" />
+    <Compile Include="Structs\FolderSelectionItem.cs" />
+    <Compile Include="Structs\MultiSelectionitem.cs" />
+    <Compile Include="Structs\SubtitleDownloadStatus.cs" />
+    <Compile Include="Structs\SubtitleItem.cs" />
     <Compile Include="SubCentralCore.cs" />
+    <Compile Include="Utils\GUIUtils.cs" />
+    <Compile Include="Utils\SubCentralUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MediaPortal\Core\Core.csproj">
@@ -109,9 +139,27 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GUI\Skins\Blue3Wide\subcentral.search.xml" />
-    <Content Include="GUI\Skins\Blue3Wide\subcentral.xml" />
-    <Content Include="GUI\Skins\Blue3Wide\subcentral.main.xml" />
+    <EmbeddedResource Include="Config\Images\SubCentral_Icon_Disabled.png" />
+    <EmbeddedResource Include="Config\Images\SubCentral_Icon_Enabled.png" />
+    <Content Include="GUI\Skins\Blue3wide\SubCentral.Search.xml" />
+    <Content Include="GUI\Skins\Blue3wide\SubCentral.xml" />
+    <Content Include="GUI\Skins\Blue3wide\SubCentral.Main.xml" />
+    <None Include="Resources\SubCentralIconOld.ico" />
+    <None Include="Resources\SubCentralIcon.ico" />
+    <None Include="Resources\SubCentralLogo.jpg" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\OK.png" />
+    <None Include="Resources\Languages.png" />
+    <None Include="Resources\Information.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\Folders.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\CogAdd.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\ArrowUp.png" />
+    <None Include="Resources\ArrowDown.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\SubCentralImg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

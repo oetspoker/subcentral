@@ -10,13 +10,14 @@ using MediaPortal.Configuration;
 using MediaPortal.Services;
 using System.Reflection;
 using SubCentral.PluginHandlers;
+using SubCentral.Localizations;
+using SubCentral.Settings;
+using SubCentral.Utils;
 
 
 namespace SubCentral {
     public class SubCentralCore {
         private static Logger logger = LogManager.GetCurrentClassLogger();
-        private const string logFileName = "subcentral.log";
-        private const string oldLogFileName = "subcentral.old.log";
 
         // Returns instance to this class as we only want to have one 
         // in existance at a time.
@@ -44,6 +45,8 @@ namespace SubCentral {
             }
         }
 
+        public bool SubtitleDownloaderInitialized { get; set; }
+
         // Constructor. Private because we are a singleton.
         private SubCentralCore() { }
 
@@ -52,16 +55,17 @@ namespace SubCentral {
         public void Initialize() {
             InitLogger();
             LogStartupBanner();
-
-            _pluginHandlers = new PluginHandlerManager(); 
+            InitLocalization();
+            InitSettings();
+            InitSubtitleDownloader();
+            InitPluginHandlers();
         }
 
         // Initializes the logging system.
         private void InitLogger() {
-            string fullLogFilePath = Config.GetFile(Config.Dir.Log, logFileName);
-            string fullOldLogFilePath = Config.GetFile(Config.Dir.Log, oldLogFileName);
+            string fullLogFilePath = Config.GetFile(Config.Dir.Log, SubCentralUtils.LogFileName);
+            string fullOldLogFilePath = Config.GetFile(Config.Dir.Log, SubCentralUtils.OldLogFileName);
             
-
             // backup the old log file if it exists
             try {
                 if (File.Exists(fullLogFilePath)) File.Copy(fullLogFilePath, fullOldLogFilePath, true);
@@ -71,7 +75,7 @@ namespace SubCentral {
 
             // build logging rules for our logger
             FileTarget fileTarget = new FileTarget();
-            fileTarget.FileName = Config.GetFile(Config.Dir.Log, logFileName);
+            fileTarget.FileName = Config.GetFile(Config.Dir.Log, SubCentralUtils.LogFileName);
             fileTarget.Layout = "${date:format=dd-MMM-yyyy HH\\:mm\\:ss} " +
                                 "${level:fixedLength=true:padding=5} " +
                                 "[${logger:fixedLength=true:padding=20:shortName=true}]: ${message} " +
@@ -116,5 +120,73 @@ namespace SubCentral {
             logger.Info("SubCentral (" + ver.Major + "." + ver.Minor + "." + ver.Build + "." + ver.Revision + ")");
             logger.Info("Plugin Launched");
         }
+
+        private void InitLocalization() {
+            Localization.Init();
+            Localization.TranslateSkin();
+        }
+
+        private void InitSettings() {
+            logger.Info("Loading settings from SubCentral.xml...");
+            try {
+                SettingsManager.Load(Config.GetFile(Config.Dir.Config, SubCentralUtils.SettingsFileName));
+                logger.Info("Loading settings from SubCentral.xml successful.");
+            }
+            catch (Exception ex) {
+                logger.Error("Loading settings from SubCentral.xml unsuccessful:");
+                logger.Error(ex.Message);
+            }
+        }
+
+        private void InitSubtitleDownloader() {
+            bool result = true;
+
+            try {
+                if (SubCentralUtils.SubsDownloaderNames == null)
+                    SubCentralUtils.SubsDownloaderNames = SubtitleDownloader.Core.SubtitleDownloaderFactory.GetSubtitleDownloaderNames();
+            }
+            catch (Exception e) {
+                #if DEBUG
+                SubCentralUtils.SubsDownloaderNames = new List<string> { "Subscene", "Podnapisi", "TvSubtitles", "OpenSubtitles", "Bierdopje", "S4U.se", "Sublight", "MovieSubtitles", "SubtitleSource" };
+                logger.Error("SubtitleDownloader: error getting providers, using default ones");
+                result = true;
+                #else
+                SubCentralUtils.SubsDownloaderNames = new List<string>();
+                logger.Error("SubtitleDownloader: error getting providers: {0}:{1}", e.GetType(), e.Message);
+                result = false;
+                #endif
+            }
+
+            List<string> languageNames = new List<string>();
+            try {
+                if (SubCentralUtils.SubsLanguages == null)
+                    SubCentralUtils.SubsLanguages = new Dictionary<string, string>();
+                else
+                    SubCentralUtils.SubsLanguages.Clear();
+
+                languageNames = SubtitleDownloader.Core.Languages.GetLanguageNames();
+                languageNames.Sort();
+                foreach (string languageName in languageNames) {
+                    SubCentralUtils.SubsLanguages.Add(SubtitleDownloader.Core.Languages.GetLanguageCode(languageName), languageName);
+                }
+            }
+            catch (Exception e) {
+                #if DEBUG
+                SubCentralUtils.SubsLanguages = new Dictionary<string, string> { { "English", "eng" } };
+                logger.Error("SubtitleDownloader: error getting languages, using default ones");
+                result = true;
+                #else
+                logger.Error("SubtitleDownloader: error getting languages: {0}:{1}", e.GetType(), e.Message);
+                result = false;
+                #endif
+            }
+
+            SubtitleDownloaderInitialized = result;
+        }
+
+        private void InitPluginHandlers() {
+            _pluginHandlers = new PluginHandlerManager();
+        }
+
     }
 }
