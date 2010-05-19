@@ -253,7 +253,7 @@ namespace SubCentral.Localizations {
 
         // S
         public static string Search = "Search";
-        public static string SubtitleDownloaderUnavailable = "Is SubtitleDownloader.dll avaialble?";
+        public static string SubtitleDownloaderUnavailable = "Is SubtitleDownloader.dll available?";
         public static string SubtitleSearch = "Subtitle search";
         public static string SearchingSubtitles = "Searching subtitles...";
         public static string SelectLanguages = "Select languages";

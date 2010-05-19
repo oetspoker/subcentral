@@ -58,6 +58,8 @@ namespace SubCentral {
             InitLocalization();
             InitSettings();
             InitSubtitleDownloader();
+            if (SubtitleDownloaderInitialized)
+                LoadSubtitleDownloaderData();
             InitPluginHandlers();
         }
 
@@ -139,6 +141,15 @@ namespace SubCentral {
         }
 
         private void InitSubtitleDownloader() {
+            if (!SubCentralUtils.IsAssemblyAvailable("SubtitleDownloader", new Version(1, 0))) {
+                logger.Error("SubtitleDownloader: assembly not loaded (not available?)");
+                SubtitleDownloaderInitialized = false;
+                return;
+            }
+            SubtitleDownloaderInitialized = true;
+        }
+
+        private void LoadSubtitleDownloaderData() {
             bool result = true;
 
             try {

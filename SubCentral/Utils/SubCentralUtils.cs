@@ -5,6 +5,7 @@ using System.IO;
 using System.Web;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
@@ -885,6 +886,15 @@ namespace SubCentral.Utils {
             }
 
             return true;
+        }
+
+        public static bool IsAssemblyAvailable(string name, Version ver) {
+            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            foreach (Assembly a in assemblies)
+                if (a.GetName().Name == name && a.GetName().Version >= ver)
+                    return true;
+
+            return false;
         }
 
     }
