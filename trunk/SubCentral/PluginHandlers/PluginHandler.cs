@@ -3,22 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using NLog;
 using System.Reflection;
 using SubCentral.GUI;
+using SubCentral.Structs;
+using SubCentral.Enums;
+using NLog;
 
 namespace SubCentral.PluginHandlers {
     internal abstract class PluginHandler {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+        public PluginHandlerType Type {
+            get {
+                return GetPluginHandlerType();
+            }
+        }
+
         // The plugin ID for the plugin this handler implements support for.
         public abstract int ID {
             get;
+            set;
         }
 
         // Should return the name of the source Plugin providing the data.
         public abstract string PluginName {
             get;
+            set;
+        }
+
+        // Should return the media details for which we want subtitles.
+        public abstract BasicMediaDetail MediaDetail {
+            get;
+            set;
+        }
+
+        public abstract bool Modified {
+            get;
+            set;
         }
 
         // Should return true if all required components for this plugin are present.
@@ -31,11 +52,6 @@ namespace SubCentral.PluginHandlers {
                 catch (Exception) { }
                 return false;
             }
-        }
-
-        // Should return the media details for which we want subtitles.
-        public abstract BasicMediaDetail MediaDetail {
-            get;
         }
 
         // Updates the above properties with current information from the associated plugin.
@@ -55,6 +71,13 @@ namespace SubCentral.PluginHandlers {
 
         // Should return true if all required components for this plugin are present.
         protected abstract bool IsAvailable();
+
+        protected virtual PluginHandlerType GetPluginHandlerType() {
+            return PluginHandlerType.BASIC;
+        }
+
+        public virtual void Clear() {
+        }
 
         // returns true if an assembly with the specified name is loaded
         protected bool IsAssemblyAvailable(string name, Version ver) {

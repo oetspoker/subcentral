@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Reflection;
 using MediaPortal.Plugins.MovingPictures;
 using MediaPortal.Plugins.MovingPictures.MainUI;
 using MediaPortal.Plugins.MovingPictures.Database;
-using NLog;
-using System.Reflection;
 using SubCentral.GUI;
+using SubCentral.Structs;
+using NLog;
 
 namespace SubCentral.PluginHandlers {
     internal class MovingPicturesHandler : PluginHandler {
@@ -17,21 +18,28 @@ namespace SubCentral.PluginHandlers {
 
         public override int ID {
             get { return 96742; }
+            set { }
         }
 
         public override string PluginName {
             get { return "Moving Pictures"; }
+            set { }
         }
 
         // The video file details we want to grab subtitles for.
         public override BasicMediaDetail MediaDetail {
             get { return _mediaDetail; }
+            set { }
         }
         private BasicMediaDetail _mediaDetail;
 
+        public override bool Modified {
+            get { return false; }
+            set { }
+        }
+
         // retrieves info from Moving Pictures
         protected override bool GrabFileDetails() {
-            
             try {
                 browser = MovingPicturesCore.Browser; 
                 DBMovieInfo selectedMovie = browser.SelectedMovie;
@@ -41,9 +49,16 @@ namespace SubCentral.PluginHandlers {
 
                 _mediaDetail.Title = selectedMovie.Title;
                 _mediaDetail.Year = selectedMovie.Year;
-                _mediaDetail.ImdbID = selectedMovie.ImdbID.Replace("tt", "");
-                _mediaDetail.File = new FileInfo(localMedia[0].FullPath);
+                _mediaDetail.ImdbID = selectedMovie.ImdbID;
 
+                _mediaDetail.Thumb = selectedMovie.CoverThumbFullPath;
+                _mediaDetail.FanArt = selectedMovie.BackdropFullPath;
+
+                _mediaDetail.Files = new List<FileInfo>();
+                foreach (DBLocalMedia localMediaItem in localMedia) {
+                    _mediaDetail.Files.Add(new FileInfo(localMediaItem.FullPath));
+                }
+                
                 return true;
             }
             catch (Exception) {
