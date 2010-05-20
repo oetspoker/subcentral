@@ -65,6 +65,7 @@
     <Compile Include="Enums\OnDownloadFileName.cs" />
     <Compile Include="Enums\PluginHandlerType.cs" />
     <Compile Include="Enums\SubtitlesSearchType.cs" />
+    <Compile Include="GUI\TemporaryCustomHandlerUpdater.cs" />
     <Compile Include="Structs\SubtitlesSortDetails.cs" />
     <Compile Include="Enums\SubtitlesSortMethod.cs" />
     <Compile Include="GUI\GUIListItemSubtitleComparer.cs" />
@@ -107,11 +108,11 @@
     </Compile>
     <Compile Include="Settings\Data\SubCentralSettings.cs" />
     <Compile Include="Settings\SettingsManager.cs" />
-    <Compile Include="Structs\CustomSubtitleDownloader.cs" />
+    <Compile Include="HelperClass\CustomSubtitleDownloader.cs" />
     <Compile Include="Structs\FolderSelectionItem.cs" />
     <Compile Include="Structs\MultiSelectionitem.cs" />
     <Compile Include="Structs\SubtitleDownloadStatus.cs" />
-    <Compile Include="Structs\SubtitleItem.cs" />
+    <Compile Include="HelperClass\SubtitleItem.cs" />
     <Compile Include="SubCentralCore.cs" />
     <Compile Include="Utils\GUIUtils.cs" />
     <Compile Include="Utils\SubCentralUtils.cs" />
