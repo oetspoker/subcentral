@@ -13,6 +13,7 @@ using SubCentral.PluginHandlers;
 using SubCentral.Localizations;
 using SubCentral.Settings;
 using SubCentral.Utils;
+using SubCentral.GUI;
 
 
 namespace SubCentral {
@@ -61,6 +62,7 @@ namespace SubCentral {
             if (SubtitleDownloaderInitialized)
                 LoadSubtitleDownloaderData();
             InitPluginHandlers();
+            InitTemporaryCustomHandlerUpdater();
         }
 
         // Initializes the logging system.
@@ -197,6 +199,10 @@ namespace SubCentral {
 
         private void InitPluginHandlers() {
             _pluginHandlers = new PluginHandlerManager();
+        }
+
+        private void InitTemporaryCustomHandlerUpdater() {
+            TemporaryCustomHandlerUpdater.SetupUpdater();
         }
 
     }
