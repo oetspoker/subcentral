@@ -126,6 +126,7 @@ namespace SubCentral {
         }
 
         private void InitLocalization() {
+            logger.Info("Initializing localization");
             Localization.Init();
             Localization.TranslateSkin();
         }
@@ -143,8 +144,18 @@ namespace SubCentral {
         }
 
         private void InitSubtitleDownloader() {
+            logger.Info("Initializing SubtitleDownloader");
             if (!SubCentralUtils.IsAssemblyAvailable("SubtitleDownloader", new Version(1, 0))) {
-                logger.Error("SubtitleDownloader: assembly not loaded (not available?)");
+                logger.Debug("SubtitleDownloader: assembly not loaded (not available?), trying to load it manually");
+                try {
+                    AppDomain.CurrentDomain.Load(new AssemblyName("SubtitleDownloader"));
+                    logger.Debug("SubtitleDownloader: loaded successfully");
+                    SubtitleDownloaderInitialized = true;
+                    return;
+                }
+                catch (Exception e) {
+                    logger.Error("SubtitleDownloader: error loading: {0}:{1}", e.GetType(), e.Message);
+                }
                 SubtitleDownloaderInitialized = false;
                 return;
             }
@@ -198,10 +209,12 @@ namespace SubCentral {
         }
 
         private void InitPluginHandlers() {
+            logger.Info("Initializing plugin handlers");
             _pluginHandlers = new PluginHandlerManager();
         }
 
         private void InitTemporaryCustomHandlerUpdater() {
+            logger.Info("Initializing custom message receiver");
             TemporaryCustomHandlerUpdater.SetupUpdater();
         }
 
