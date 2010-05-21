@@ -15,7 +15,6 @@ namespace SubCentral.GUI {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public static void SetupUpdater() {
-            logger.Debug("Initializing custom message receiver");
             GUIWindowManager.Receivers += new SendMessageHandler(GUIWindowManager_Receivers);
         }
 
