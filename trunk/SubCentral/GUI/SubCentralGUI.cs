@@ -276,7 +276,8 @@ namespace SubCentral.GUI {
                         GUIWindowManager.ShowPreviousWindow();
                         return;
                     }
-                    View = ViewMode.MAIN;
+                    //View = ViewMode.MAIN;
+                    OnModifySearch();
                 }
 
                 // we loaded details successfully, we are now in file view.
@@ -568,7 +569,7 @@ namespace SubCentral.GUI {
             while (readOnly || !create) {
                 selectedFolderIndex = -1;
 
-                if (!skipDefaults && Settings.SettingsManager.Properties.FolderSettings.OnDownload == OnDownload.DefaultFolders) {
+                if (!selectedFromDefault && !skipDefaults && Settings.SettingsManager.Properties.FolderSettings.OnDownload == OnDownload.DefaultFolders) {
                     for (int i = 0; i < items.Count; i++) {
                         FolderSelectionItem folderSelectionItem = items[i];
                         if ((searchType == SubtitlesSearchType.IMDb || searchType == SubtitlesSearchType.MOVIE) && folderSelectionItem.DefaultForMovies) {

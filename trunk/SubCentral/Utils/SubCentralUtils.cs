@@ -540,7 +540,9 @@ namespace SubCentral.Utils {
                         //Writable = pathIsWritable(folder),
                         FolderErrorInfo = getFolderErrorInfo(folder),
                         OriginalFolderName = settingsFolder.Folder,
-                        WasRelative = !Path.IsPathRooted(settingsFolder.Folder)
+                        WasRelative = !Path.IsPathRooted(settingsFolder.Folder),
+                        DefaultForMovies = settingsFolder.DefaultForMovies,
+                        DefaultForTVShows = settingsFolder.DefaultForTVShows
                     };
 
                     if (!includeReadOnly) {
