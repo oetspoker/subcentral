@@ -13,7 +13,6 @@ using SubCentral.Structs;
 using SubCentral.HelperClass;
 using SubCentral.Settings;
 using SubCentral.Settings.Data;
-using WindowPlugins.GUITVSeries;
 
 
 namespace SubCentral.GUI {
