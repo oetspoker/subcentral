@@ -293,7 +293,8 @@ namespace SubCentral.Utils {
 
                 switch (folderSelectionItem.FolderErrorInfo) {
                     case FolderErrorInfo.NonExistant:
-                        listItem.IsPlayed = true;
+                        listItem.IsRemote = true;
+                        listItem.IsDownloading = true;
                         break;
                     case FolderErrorInfo.ReadOnly:
                         listItem.IsRemote = true;
