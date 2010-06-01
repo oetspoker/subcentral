@@ -1104,6 +1104,13 @@ namespace SubCentral.GUI {
             if (_modifySearchMediaDetail.Files != null)
                 _modifySearchMediaDetail.Files.Clear();
 
+            _modifySearchMediaDetail.FanArt = string.Empty;
+            _modifySearchMediaDetail.Thumb = string.Empty;
+
+            // these will be set temporary, on cancel or revert they will be restored, on ok cleared again
+            GUIUtils.SetProperty("#SubCentral.Search.Media.FanArt", string.Empty);
+            GUIUtils.SetProperty("#SubCentral.Search.Media.Thumb", string.Empty);
+
             modifySearchClearFilesButton.Visible = false;
             //modifySearchSelectFolderButton.Visible = true;
             //GUIControl.FocusControl(GetID, (int)GUIControls.MODIFYSEARCHSELECTFOLDERBUTTON);
