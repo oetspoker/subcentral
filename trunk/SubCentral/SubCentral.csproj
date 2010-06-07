@@ -115,6 +115,7 @@
     <Compile Include="HelperClass\SubtitleItem.cs" />
     <Compile Include="SubCentralCore.cs" />
     <Compile Include="Utils\GUIUtils.cs" />
+    <Compile Include="Utils\MediaInfoWrapper.cs" />
     <Compile Include="Utils\SubCentralUtils.cs" />
   </ItemGroup>
   <ItemGroup>
