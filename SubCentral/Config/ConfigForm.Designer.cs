@@ -456,7 +456,7 @@
             this.groupBoxGeneralOther.Size = new System.Drawing.Size(603, 66);
             this.groupBoxGeneralOther.TabIndex = 3;
             this.groupBoxGeneralOther.TabStop = false;
-            this.groupBoxGeneralOther.Text = "Other options  ";
+            this.groupBoxGeneralOther.Text = "Options";
             this.groupBoxGeneralOther.UseCompatibleTextRendering = true;
             // 
             // checkBoxSearchDefaultsWhenFromManualSearch
@@ -612,7 +612,7 @@
             this.groupBoxFoldersOther.Size = new System.Drawing.Size(603, 66);
             this.groupBoxFoldersOther.TabIndex = 4;
             this.groupBoxFoldersOther.TabStop = false;
-            this.groupBoxFoldersOther.Text = "Other options";
+            this.groupBoxFoldersOther.Text = "Options";
             // 
             // labelFileName
             // 
@@ -895,9 +895,9 @@
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(12, 364);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(102, 13);
+            this.label36.Size = new System.Drawing.Size(96, 13);
             this.label36.TabIndex = 15;
-            this.label36.Text = "Help ressources:";
+            this.label36.Text = "Help resources:";
             // 
             // groupBox3
             // 
@@ -970,9 +970,9 @@
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(275, 112);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(253, 13);
+            this.label30.Size = new System.Drawing.Size(251, 13);
             this.label30.TabIndex = 8;
-            this.label30.Text = "Conrad John (fforde), gibman, Seco, SilentException";
+            this.label30.Text = "Conrad John (fforde), gibman, seco, SilentException";
             // 
             // label28
             // 
