@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Globalization;
-using Cornerstone.Extensions.IO;
 using MediaPortal.GUI.Library;
 using MediaPortal.Player;
 using System.IO;
 using NLog;
+using SubCentral.HelperClass;
+using SubCentral.Structs;
+using SubCentral.Enums;
 using System.Text.RegularExpressions;
 using System.Linq;
 
@@ -20,11 +22,13 @@ namespace SubCentral.Utils {
         private int _numSubtitles = 0;
 
         private bool _hasSubtitles = false;
+        private bool _hasExternalSubtitles = false;
+
         private static List<string> _subTitleExtensions = new List<string>();
         #endregion
 
         #region Constructor
-        public MediaInfoWrapper(string strFile) {
+        public MediaInfoWrapper(string strFile, bool useMediaInfo, int cachedMISubtitleCount, bool useLocalOnly) {
             bool isTV = MediaPortal.Util.Utils.IsLiveTv(strFile);
             bool isRadio = MediaPortal.Util.Utils.IsLiveRadio(strFile);
             bool isDVD = MediaPortal.Util.Utils.IsDVD(strFile);
@@ -35,17 +39,29 @@ namespace SubCentral.Utils {
                 return;
             }
 
-            logger.Debug("MediaInfoWrapper: inspecting media : {0}", strFile);
+            logger.Debug("MediaInfoWrapper: Inspecting media : {0}", strFile);
+
+            if (cachedMISubtitleCount > -1) {
+                _numSubtitles = cachedMISubtitleCount;
+                useMediaInfo = false;
+            }
+
+            if (useLocalOnly) {
+                _numSubtitles = 0;
+                useMediaInfo = false;
+            }
+
+            _hasExternalSubtitles = checkHasExternalSubtitles(strFile, useLocalOnly);
+
             try {
-                _mI = new MediaInfo();
-                _mI.Open(strFile);
+                if (useMediaInfo) {
+                    _mI = new MediaInfo();
+                    _mI.Open(strFile);
 
-                FileInfo fileInfo = strFile.PathToFileInfo();
-                DriveInfo driveInfo = fileInfo.GetDriveInfo();
+                    int.TryParse(_mI.Get(StreamKind.General, 0, "TextCount"), out _numSubtitles);
+                }
 
-                int.TryParse(_mI.Get(StreamKind.General, 0, "TextCount"), out _numSubtitles);
-
-                if (checkHasExternalSubtitles(strFile)) {
+                if (_hasExternalSubtitles) {
                     _hasSubtitles = true;
                 }
                 else if (_numSubtitles > 0) {
@@ -54,6 +70,8 @@ namespace SubCentral.Utils {
                 else {
                     _hasSubtitles = false;
                 }
+
+                logger.Debug("MediaInfoWrapper: HasExternalSubtitles : {0}", _hasExternalSubtitles);
                 logger.Debug("MediaInfoWrapper: HasSubtitles : {0}", _hasSubtitles);
                 logger.Debug("MediaInfoWrapper: NumSubtitles : {0}", _numSubtitles);
             }
@@ -69,7 +87,7 @@ namespace SubCentral.Utils {
         #endregion
 
         #region private methods
-        private bool checkHasExternalSubtitles(string strFile) {
+        private bool checkHasExternalSubtitles(string strFile, bool useLocalOnly) {
             if (_subTitleExtensions.Count == 0) {
                 // load them in first time
                 _subTitleExtensions.Add(".aqt");
@@ -105,14 +123,39 @@ namespace SubCentral.Utils {
             }
 
             string filenameNoExt = System.IO.Path.GetFileNameWithoutExtension(strFile);
+
             try {
-                foreach (string file in System.IO.Directory.GetFiles(System.IO.Path.GetDirectoryName(strFile), filenameNoExt + "*")) {
-                    System.IO.FileInfo fi = new System.IO.FileInfo(file);
-                    if (_subTitleExtensions.Contains(fi.Extension.ToLower())) return true;
+                List<FolderSelectionItem> folders = new List<FolderSelectionItem>();
+                if (useLocalOnly) {
+                    folders.Add(new FolderSelectionItem {
+                        FolderName = System.IO.Path.GetDirectoryName(strFile),
+                        FolderErrorInfo = FolderErrorInfo.OK
+                    });
+                }
+                else {
+                    folders = SubCentralUtils.getEnabledAndValidFoldersForMedia(new FileInfo(strFile), true, true);
+                    logger.Debug("MediaInfoWrapper: Got {0} folders for media {1}", folders.Count, strFile);
+                }
+
+                foreach (FolderSelectionItem folder in folders) {
+                    //if (folder.FolderErrorInfo == SubCentral.Enums.FolderErrorInfo.NonExistant) continue;
+
+                    //if (!SubCentralUtils.pathExists(folder.FolderName)) continue;
+
+                    if (string.IsNullOrEmpty(folder.FolderName) || !SubCentralUtils.uncHostIsAlive(folder.FolderName)) continue;
+
+                    try {
+                        foreach (string file in System.IO.Directory.GetFiles(folder.FolderName, filenameNoExt + "*")) {
+                            System.IO.FileInfo fi = new System.IO.FileInfo(file);
+                            if (_subTitleExtensions.Contains(fi.Extension.ToLower())) return true;
+                        }
+                    }
+                    catch (Exception) {
+                        // Most likely path not available
+                    }
                 }
             }
             catch (Exception) {
-                // most likley path not available
             }
 
             return false;
@@ -122,6 +165,10 @@ namespace SubCentral.Utils {
         #region Public Subtitle Properties
         public bool HasSubtitles {
             get { return _hasSubtitles; }
+        }
+
+        public bool HasExternalSubtitles {
+            get { return _hasExternalSubtitles; }
         }
 
         public int NumSubtitles {

@@ -80,7 +80,7 @@ namespace SubCentral {
             // build logging rules for our logger
             FileTarget fileTarget = new FileTarget();
             fileTarget.FileName = Config.GetFile(Config.Dir.Log, SubCentralUtils.LogFileName);
-            fileTarget.Layout = "${date:format=dd-MMM-yyyy HH\\:mm\\:ss} " +
+            fileTarget.Layout = "${date:format=dd-MMM-yyyy HH\\:mm\\:ss.fff} " +
                                 "${level:fixedLength=true:padding=5} " +
                                 "[${logger:fixedLength=true:padding=20:shortName=true}]: ${message} " +
                                 "${exception:format=tostring}";
@@ -148,7 +148,8 @@ namespace SubCentral {
             if (!SubCentralUtils.IsAssemblyAvailable("SubtitleDownloader", new Version(1, 0))) {
                 logger.Debug("SubtitleDownloader: assembly not loaded (not available?), trying to load it manually");
                 try {
-                    AppDomain.CurrentDomain.Load(new AssemblyName("SubtitleDownloader"));
+                    //AppDomain.CurrentDomain.Load(new AssemblyName("SubtitleDownloader"));
+                    Assembly.ReflectionOnlyLoad("SubtitleDownloader");
                     logger.Debug("SubtitleDownloader: loaded successfully");
                     SubtitleDownloaderInitialized = true;
                     return;

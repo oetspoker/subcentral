@@ -6,6 +6,8 @@ using System.Web;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
+using System.Runtime.InteropServices;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
@@ -24,6 +26,8 @@ namespace SubCentral.Utils {
         public static readonly string SettingsFileName = "SubCentral.xml";
         public static string LogFileName = "SubCentral.log";
         public static string OldLogFileName = "SubCentral.log.bak";
+        private static readonly object syncRoot = new object();
+        private static Dictionary<string, DriveInfo> driveInfoPool;
 
         public static Dictionary<string, string> SubsLanguages {
             get {
@@ -507,6 +511,10 @@ namespace SubCentral.Utils {
         }
 
         public static List<FolderSelectionItem> getEnabledAndValidFoldersForMedia(FileInfo fileInfo, bool includeReadOnly) {
+            return getEnabledAndValidFoldersForMedia(fileInfo, includeReadOnly, false);
+        }
+
+        public static List<FolderSelectionItem> getEnabledAndValidFoldersForMedia(FileInfo fileInfo, bool includeReadOnly, bool skipErrorInfo) {
             List<FolderSelectionItem> result = new List<FolderSelectionItem>();
             List<SettingsFolder> allFolders = AllFolders;
             List<SettingsFolder> toRemove = new List<SettingsFolder>();
@@ -521,9 +529,6 @@ namespace SubCentral.Utils {
                         toRemove.Add(settingsFolder);
                     }
                 }
-                //if (!settingsFolder.Enabled || !pathExists(settingsFolder.Folder) || !pathIsWritable(settingsFolder.Folder)) {
-                //    toRemove.Add(settingsFolder);
-                //}
             }
 
             foreach (SettingsFolder settingsFolder in allFolders) {
@@ -531,19 +536,20 @@ namespace SubCentral.Utils {
                 string folder = settingsFolder.Folder;
                 if (fileInfo != null && !Path.IsPathRooted(settingsFolder.Folder)) {
                     folder = ResolveRelativePath(settingsFolder.Folder, Path.GetDirectoryName(fileInfo.FullName));
-                    //folder = ResolveRelativePathEx(settingsFolder.Folder, Path.GetDirectoryName(fileInfo.FullName));
                 }
                 if (folder != null) {
                     FolderSelectionItem newFolderSelectionItem = new FolderSelectionItem() {
                         FolderName = folder,
-                        //Existing = pathExists(folder),
-                        //Writable = pathIsWritable(folder),
-                        FolderErrorInfo = getFolderErrorInfo(folder),
+                        //FolderErrorInfo = getFolderErrorInfo(folder),
                         OriginalFolderName = settingsFolder.Folder,
                         WasRelative = !Path.IsPathRooted(settingsFolder.Folder),
                         DefaultForMovies = settingsFolder.DefaultForMovies,
                         DefaultForTVShows = settingsFolder.DefaultForTVShows
                     };
+                    if (skipErrorInfo)
+                        newFolderSelectionItem.FolderErrorInfo = FolderErrorInfo.OK;
+                    else
+                        newFolderSelectionItem.FolderErrorInfo = getFolderErrorInfo(folder);
 
                     if (!includeReadOnly) {
                         if (newFolderSelectionItem.FolderErrorInfo == FolderErrorInfo.ReadOnly)
@@ -560,36 +566,64 @@ namespace SubCentral.Utils {
         public static FolderErrorInfo getFolderErrorInfo(string path) {
             FolderErrorInfo result = FolderErrorInfo.OK;
 
-            if (!pathExists(path))
+            bool hostAlive;
+            bool pathDriveReady;
+
+            if (!pathExists(path, out hostAlive, out pathDriveReady))
                 result = FolderErrorInfo.NonExistant;
             else if (!pathIsWritable(path))
                 result = FolderErrorInfo.ReadOnly;
 
             int iUncPathDepth = uncPathDepth(path);
-            if (result == FolderErrorInfo.NonExistant && (!pathDriveIsReady(path) || !uncHostIsAlive(path) || (iUncPathDepth > 0 && iUncPathDepth < 3)))
+            if (result == FolderErrorInfo.NonExistant && (pathDriveIsDVD(path) || !pathDriveReady /*!pathDriveIsReady(path)*/ || !hostAlive /*!uncHostIsAlive(path)*/ || (iUncPathDepth > 0 && iUncPathDepth < 3)))
                 result = FolderErrorInfo.ReadOnly;
 
             return result;
         }
 
         public static bool uncHostIsAlive(string path) {
-            if (string.IsNullOrEmpty(path) || !new Uri(path).IsUnc) return true;
+            if (string.IsNullOrEmpty(path)) return true;
+
+            if (!new Uri(path).IsUnc) {
+                DriveInfo di = GetDriveInfoFromPath(path);
+                if (di != null && di.DriveType == DriveType.Network) {
+                    path = MPR.GetUniversalName(path);
+                }
+                else
+                    return true;
+            }
 
             Uri uri = new Uri(path);
             string hostName = uri.Host;
-            bool isAlive = isMachineReachable(hostName);
-            if (!isAlive) return false;
-            
-            return true;
+            bool alive = isMachineReachable(hostName);
+
+            return alive;
         }
 
         public static bool pathExists(string path) {
+            bool hostAlive;
+            bool pathDriveReady;
+            return pathExists(path, out hostAlive, out pathDriveReady);
+        }
+
+        public static bool pathExists(string path, out bool hostAlive, out bool pathDriveReady) {
+            hostAlive = true;
+            pathDriveReady = true;
+
             if (string.IsNullOrEmpty(path)) return false;
 
             if (!Path.IsPathRooted(path)) return true;
 
-            if (!uncHostIsAlive(path)) return false;
-          
+            if (!uncHostIsAlive(path)) {
+                hostAlive = false;
+                return false;
+            }
+
+            if (!pathDriveIsReady(path)) {
+                pathDriveReady = false;
+                return false;
+            }
+
             return Directory.Exists(path);
         }
 
@@ -621,11 +655,24 @@ namespace SubCentral.Utils {
             return true;
         }
 
+        private static bool pathDriveIsDVD(string path) {
+            if (string.IsNullOrEmpty(path) || new Uri(path).IsUnc) return false;
+
+            DriveInfo di = GetDriveInfoFromPath(path);
+
+            if (di != null && di.DriveType == DriveType.CDRom) return true;
+
+            return false;
+        }
+
         public static bool pathDriveIsReady(string path) {
             if (string.IsNullOrEmpty(path) || new Uri(path).IsUnc) return true;
 
-            DriveInfo di = new DriveInfo(path[0].ToString());
-            if (!di.IsReady) return false;
+            DriveInfo di = GetDriveInfoFromPath(path);
+
+            if (di != null && di.DriveType == DriveType.Network) return true;
+
+            if (di == null || !di.IsReady) return false;
 
             return true;
         }
@@ -646,6 +693,56 @@ namespace SubCentral.Utils {
 
             string[] check = path.Substring(2).Split(new char[] { Path.DirectorySeparatorChar });
             return check.Length;
+        }
+
+        public static DriveInfo GetDriveInfoFromFileInfo(FileInfo fileInfo) {
+            string driveletter = FileInfoToDriveLetter(fileInfo);
+            return GetDriveInfo(driveletter);
+        }
+
+        public static DriveInfo GetDriveInfoFromPath(string path) {
+            string driveletter = PathToDriveLetter(path);
+            return GetDriveInfo(driveletter);
+        }
+
+        public static string FileInfoToDriveLetter(FileInfo fileInfo) {
+            return PathToDriveLetter(fileInfo.FullName);
+        }
+
+        public static string PathToDriveLetter(string path) {
+            Uri uri = new Uri(path);
+
+            // if the path is UNC return null
+            if (uri.IsUnc)
+                return null;
+
+            // return the first 2 characters
+            if (path.Length > 1)
+                return path.Substring(0, 2).ToUpper();
+            else // or if only a letter was given add colon
+                return path.ToUpper() + ":";
+        }
+
+        public static DriveInfo GetDriveInfo(string drive) {
+            if (drive == null)
+                return null;
+
+            lock (syncRoot) {
+                // if this is the first request create the driveinfo collection cache
+                if (driveInfoPool == null)
+                    driveInfoPool = new Dictionary<string, DriveInfo>();
+
+                if (!driveInfoPool.ContainsKey(drive)) {
+                    try {
+                        driveInfoPool.Add(drive, new DriveInfo(drive));
+                    }
+                    catch (Exception e) {
+                        logger.Error("Error retrieving DriveInfo object for '{0}': {1}", drive, e.Message);
+                        return null;
+                    }
+                }
+            }
+            return driveInfoPool[drive];
         }
 
         private static bool foldersHaveDefaultForMovies(List<SettingsFolder> settingsFolders) {
@@ -781,21 +878,31 @@ namespace SubCentral.Utils {
         }
 
         public static bool isMachineReachable(string hostName) {
-            System.Net.IPHostEntry host = System.Net.Dns.GetHostEntry(hostName);
+            try {
+                System.Net.IPHostEntry host = System.Net.Dns.GetHostEntry(hostName);
+                //System.Net.IPHostEntry host = System.Net.Dns.Resolve(hostName);
+                //System.Net.IPHostEntry host = System.Net.Dns.GetHostByName(hostName);
+                //System.Net.IPHostEntry host = null;
 
-            string wqlTemplate = "SELECT StatusCode FROM Win32_PingStatus WHERE Address = '{0}'";
+                //return true; 
 
-            System.Management.ManagementObjectSearcher query = new System.Management.ManagementObjectSearcher();
+                string wqlTemplate = "SELECT StatusCode FROM Win32_PingStatus WHERE Address = '{0}'";
 
-            query.Query = new System.Management.ObjectQuery(String.Format(wqlTemplate, host.AddressList[0]));
+                System.Management.ManagementObjectSearcher query = new System.Management.ManagementObjectSearcher();
 
-            query.Scope = new System.Management.ManagementScope("//localhost/root/cimv2");
+                query.Query = new System.Management.ObjectQuery(String.Format(wqlTemplate, host.AddressList[0]));
 
-            System.Management.ManagementObjectCollection pings = query.Get();
+                query.Scope = new System.Management.ManagementScope("//localhost/root/cimv2");
 
-            foreach (System.Management.ManagementObject ping in pings) {
-                if (Convert.ToInt32(ping.GetPropertyValue("StatusCode")) == 0)
-                    return true;
+                System.Management.ManagementObjectCollection pings = query.Get();
+
+                foreach (System.Management.ManagementObject ping in pings) {
+                    if (Convert.ToInt32(ping.GetPropertyValue("StatusCode")) == 0)
+                        return true;
+                }
+            }
+            catch (Exception e) {
+                logger.Error("Error in isMachineReachable({0}): {1}:{2}", hostName, e.GetType(), e.Message);
             }
 
             return false;
@@ -899,5 +1006,125 @@ namespace SubCentral.Utils {
             return false;
         }
 
+        /// <summary>
+        /// Checks the media files for subtitles
+        /// </summary>
+        /// <param name="fiFiles">list of files to examine</param>
+        /// <returns>true  : ALL of the input files have subtitles
+        ///          false : some or all of the input files don't have subtitles</returns>
+        public static bool MediaHasSubtitles(List<FileInfo> fiFiles) {
+            return MediaHasSubtitles(fiFiles, true, -1, false);
+        }
+
+        /// <summary>
+        /// Checks the media files for subtitles
+        /// </summary>
+        /// <param name="fiFiles">list of files to examine</param>
+        /// <param name="useMediaInfo">use media info?</param>
+        /// <returns>true  : ALL of the input files have subtitles
+        ///          false : some or all of the input files don't have subtitles</returns>
+        public static bool MediaHasSubtitles(List<FileInfo> fiFiles, bool useMediaInfo) {
+            return MediaHasSubtitles(fiFiles, useMediaInfo, -1, false);
+        }
+
+        /// <summary>
+        /// Checks the media files for subtitles
+        /// </summary>
+        /// <param name="fiFiles">list of files to examine</param>
+        /// <param name="useMediaInfo">use media info?</param>
+        /// <param name="cachedMISubtitleCount">cached media info text count, -1 for default, if set mediainfo won't be used</param>
+        /// <returns>true  : ALL of the input files have subtitles
+        ///          false : some or all of the input files don't have subtitles</returns>
+        public static bool MediaHasSubtitles(List<FileInfo> fiFiles, bool useMediaInfo, int cachedMISubtitleCount) {
+            return MediaHasSubtitles(fiFiles, useMediaInfo, cachedMISubtitleCount, false);
+        }
+
+        /// <summary>
+        /// Checks the media files for subtitles
+        /// </summary>
+        /// <param name="fiFiles">list of files to examine</param>
+        /// <param name="useMediaInfo">use media info?</param>
+        /// <param name="cachedMISubtitleCount">cached media info text count, -1 for default, if set mediainfo won't be used</param>
+        /// <param name="useLocalOnly">only media folder will be looked for subtitles, if set mediainfo won't be used</param>
+        /// <returns>true  : ALL of the input files have subtitles
+        ///          false : some or all of the input files don't have subtitles</returns>
+        public static bool MediaHasSubtitles(List<FileInfo> fiFiles, bool useMediaInfo, int cachedMISubtitleCount, bool useLocalOnly) {
+            bool result = true;
+
+            foreach (FileInfo fiFile in fiFiles) {
+                MediaInfoWrapper miWrapper = new MediaInfoWrapper(fiFile.FullName, useMediaInfo, cachedMISubtitleCount, useLocalOnly);
+                result = result && miWrapper.HasSubtitles;
+            }
+
+            return result;
+        }
+
+    }
+
+    class MPR {
+        const int UNIVERSAL_NAME_INFO_LEVEL = 0x00000001;
+        const int REMOTE_NAME_INFO_LEVEL = 0x00000002;
+
+        const int ERROR_MORE_DATA = 234;
+        const int NOERROR = 0;
+
+        [DllImport("mpr.dll")]
+        [return: MarshalAs(UnmanagedType.U4)]
+        static extern int WNetGetUniversalName(
+            string lpLocalPath,
+            [MarshalAs(UnmanagedType.U4)] int dwInfoLevel,
+            IntPtr lpBuffer,
+            [MarshalAs(UnmanagedType.U4)] ref int lpBufferSize);
+
+        public static string GetUniversalName(string localPath) {
+            // The return value.
+            string retVal = null;
+
+            // The pointer in memory to the structure.
+            IntPtr buffer = IntPtr.Zero;
+
+            // Wrap in a try/catch block for cleanup.
+            try {
+                // First, call WNetGetUniversalName to get the size.
+                int size = 0;
+
+                // Make the call.
+                // Pass IntPtr.Size because the API doesn't like null, even though
+                // size is zero.  We know that IntPtr.Size will be
+                // aligned correctly.
+                int apiRetVal = WNetGetUniversalName(localPath, UNIVERSAL_NAME_INFO_LEVEL, (IntPtr)IntPtr.Size, ref size);
+
+                // If the return value is not ERROR_MORE_DATA, then
+                // raise an exception.
+                if (apiRetVal != ERROR_MORE_DATA)
+                    // Throw an exception.
+                    throw new Win32Exception(apiRetVal);
+
+                // Allocate the memory.
+                buffer = Marshal.AllocCoTaskMem(size);
+
+                // Now make the call.
+                apiRetVal = WNetGetUniversalName(localPath, UNIVERSAL_NAME_INFO_LEVEL, buffer, ref size);
+
+                // If it didn't succeed, then throw.
+                if (apiRetVal != NOERROR)
+                    // Throw an exception.
+                    throw new Win32Exception(apiRetVal);
+
+                // Now get the string.  It's all in the same buffer, but
+                // the pointer is first, so offset the pointer by IntPtr.Size
+                // and pass to PtrToStringAuto.
+                retVal = Marshal.PtrToStringAnsi(new IntPtr(buffer.ToInt64() + IntPtr.Size));
+            }
+            finally {
+                // Release the buffer.
+                Marshal.FreeCoTaskMem(buffer);
+            }
+
+            // First, allocate the memory for the structure.
+
+            // That's all folks.
+            return retVal;
+        }
     }
 }
