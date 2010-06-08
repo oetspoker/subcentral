@@ -1045,6 +1045,7 @@
             this.btnAdvancedConfig.Text = "A&dvanced Config";
             this.btnAdvancedConfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdvancedConfig.UseVisualStyleBackColor = true;
+            this.btnAdvancedConfig.Visible = false;
             this.btnAdvancedConfig.Click += new System.EventHandler(this.btnAdvancedConfig_Click);
             // 
             // btnSave

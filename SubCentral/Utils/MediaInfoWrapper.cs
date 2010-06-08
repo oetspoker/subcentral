@@ -141,12 +141,12 @@ namespace SubCentral.Utils {
                     }
                     catch (Exception e) {
                         // Most likely path not available
-                        logger.Warn("Error checking external subtitles for folder " + folder, e);
+                        logger.Warn("Error checking external subtitles for folder {0}: {1}:{2}", folder, e.GetType(), e.Message);
                     }
                 }
             }
             catch (Exception e) {
-                logger.Warn("Error checking external subtitles for file " + strFile, e);
+                logger.Warn("Error checking external subtitles for file {0}: {1}:{2}", strFile, e.GetType(), e.Message);
             }
 
             return false;
