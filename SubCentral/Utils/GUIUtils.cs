@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using NLog;
-using SubCentral.Enums;
-using SubCentral.GUI.Items;
 
 namespace SubCentral.Utils {
     public static class GUIUtils {
@@ -12,7 +10,6 @@ namespace SubCentral.Utils {
 
         private delegate bool ShowCustomYesNoDialogDelegate(string heading, string lines, string yesLabel, string noLabel, bool defaultYes);
         private delegate void ShowOKDialogDelegate(string heading, string lines);
-        private delegate List<MultiSelectionItem> ShowMultiSelectionDialogDelegate(string heading, List<MultiSelectionItem> items);
         private delegate void ShowNotifyDialogDelegate(string heading, string text, string image);
         private delegate int ShowMenuDialogDelegate(string heading, List<GUIListItem> items);
 
@@ -171,63 +168,6 @@ namespace SubCentral.Utils {
         }
 
         /// <summary>
-        /// Displays a multi selection dialog.
-        /// </summary>
-        /// <returns>List of items</returns>
-        public static List<MultiSelectionItem> ShowMultiSelectionDialog(string heading, List<MultiSelectionItem> items) {
-            List<MultiSelectionItem> result = new List<MultiSelectionItem>();
-
-            if (items == null) return result;
-
-            if (GUIGraphicsContext.form.InvokeRequired) {
-                ShowMultiSelectionDialogDelegate d = ShowMultiSelectionDialog;
-                return (List<MultiSelectionItem>)GUIGraphicsContext.form.Invoke(d, heading, items);
-            }
-
-            GUIDialogMultiSelect dlgMultiSelect = (GUIDialogMultiSelect)GUIWindowManager.GetWindow(2100);
-            //if (dlgMultiSelect == null) return;
-
-            dlgMultiSelect.Reset();
-
-            dlgMultiSelect.SetHeading(heading);
-
-            foreach (MultiSelectionItem multiSelectionItem in items) {
-                GUIListItem item = new GUIListItem();
-                item.Label = multiSelectionItem.ItemTitle;
-                item.Label2 = multiSelectionItem.ItemTitle2;
-                item.MusicTag = multiSelectionItem.Tag;
-                item.Selected = multiSelectionItem.Selected;
-
-                dlgMultiSelect.Add(item);
-            }
-
-            dlgMultiSelect.DoModal(GUIWindowManager.ActiveWindow);
-
-            if (dlgMultiSelect.DialogModalResult == ModalResult.OK) {
-                for (int i = 0; i < items.Count; i++) {
-                    MultiSelectionItem item = items[i];
-                    MultiSelectionItem newMultiSelectionItem = new MultiSelectionItem();
-                    newMultiSelectionItem.ItemTitle = item.ItemTitle;
-                    newMultiSelectionItem.ItemTitle2 = item.ItemTitle2;
-                    newMultiSelectionItem.ItemID = item.ItemID;
-                    newMultiSelectionItem.Tag = item.Tag;
-                    try {
-                        newMultiSelectionItem.Selected = dlgMultiSelect.ListItems[i].Selected;
-                    }
-                    catch {
-                        newMultiSelectionItem.Selected = item.Selected;
-                    }
-                    
-                    result.Add(newMultiSelectionItem);
-                }
-            }
-            else
-                return null;
-
-            return result;
-        }
-
-        /// <summary>
         /// Displays a menu dialog from list of items
         /// </summary>
         /// <returns>Selected item index, -1 if exited</returns>
@@ -271,53 +211,6 @@ namespace SubCentral.Utils {
             }
 
             return dlgMenu.SelectedLabel;
-        }
-
-        /// <summary>
-        /// Displays a menu dialog from FolderSelectionItem items
-        /// </summary>
-        /// <returns>Selected item index, -1 if exited</returns>
-        public static int ShowFolderMenuDialog(string heading, List<FolderSelectionItem> items, int selectedItemIndex) {
-            List<GUIListItem> listItems = new List<GUIListItem>();
-
-            bool selectedItemSet = false;
-            int index = 0;
-            foreach (FolderSelectionItem folderSelectionItem in items) {
-                GUIListItem listItem = new GUIListItem();
-                listItem.Label = folderSelectionItem.FolderName;
-                if (folderSelectionItem.WasRelative) {
-                    listItem.Label2 = "(" + folderSelectionItem.OriginalFolderName + ")";
-                }
-
-                switch (folderSelectionItem.FolderErrorInfo) {
-                    case FolderErrorInfo.NonExistant:
-                        listItem.IsRemote = true;
-                        listItem.IsDownloading = true;
-                        break;
-                    case FolderErrorInfo.ReadOnly:
-                        listItem.IsRemote = true;
-                        break;
-                    case FolderErrorInfo.OK:
-                        if (!selectedItemSet && selectedItemIndex < 0) {
-                            selectedItemIndex = index;
-                            selectedItemSet = true;
-                        }
-                        break;
-                }
-
-                listItem.MusicTag = folderSelectionItem;
-
-                if (!selectedItemSet && selectedItemIndex >= 0 && index == selectedItemIndex) {
-                    selectedItemIndex = index;
-                    selectedItemSet = true;
-
-                }
-
-                listItems.Add(listItem);
-                index++;
-            }
-
-            return ShowMenuDialog(heading, listItems, selectedItemIndex);
         }
 
         /// <summary>

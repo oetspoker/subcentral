@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using MediaPortal.Configuration;
+using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using NLog;
 using SubCentral.Enums;
@@ -20,6 +21,8 @@ namespace SubCentral.Utils {
     public static class SubCentralUtils {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
+        private delegate List<MultiSelectionItem> ShowMultiSelectionDialogDelegate(string heading, List<MultiSelectionItem> items);
+        
         public static readonly string SettingsFileName = "SubCentral.xml";
         public static string LogFileName = "SubCentral.log";
         public static string OldLogFileName = "SubCentral.log.bak";
@@ -1056,6 +1059,123 @@ namespace SubCentral.Utils {
             return result;
         }
 
+        /// <summary>
+        /// Displays a menu dialog from FolderSelectionItem items
+        /// </summary>
+        /// <returns>Selected item index, -1 if exited</returns>
+        public static int ShowFolderMenuDialog(string heading, List<FolderSelectionItem> items, int selectedItemIndex)
+        {
+            List<GUIListItem> listItems = new List<GUIListItem>();
+
+            bool selectedItemSet = false;
+            int index = 0;
+            foreach (FolderSelectionItem folderSelectionItem in items)
+            {
+                GUIListItem listItem = new GUIListItem();
+                listItem.Label = folderSelectionItem.FolderName;
+                if (folderSelectionItem.WasRelative)
+                {
+                    listItem.Label2 = "(" + folderSelectionItem.OriginalFolderName + ")";
+                }
+
+                switch (folderSelectionItem.FolderErrorInfo)
+                {
+                    case FolderErrorInfo.NonExistant:
+                        listItem.IsRemote = true;
+                        listItem.IsDownloading = true;
+                        break;
+                    case FolderErrorInfo.ReadOnly:
+                        listItem.IsRemote = true;
+                        break;
+                    case FolderErrorInfo.OK:
+                        if (!selectedItemSet && selectedItemIndex < 0)
+                        {
+                            selectedItemIndex = index;
+                            selectedItemSet = true;
+                        }
+                        break;
+                }
+
+                listItem.MusicTag = folderSelectionItem;
+
+                if (!selectedItemSet && selectedItemIndex >= 0 && index == selectedItemIndex)
+                {
+                    selectedItemIndex = index;
+                    selectedItemSet = true;
+
+                }
+
+                listItems.Add(listItem);
+                index++;
+            }
+
+            return GUIUtils.ShowMenuDialog(heading, listItems, selectedItemIndex);
+        }
+
+
+        /// <summary>
+        /// Displays a multi selection dialog.
+        /// </summary>
+        /// <returns>List of items</returns>
+        public static List<MultiSelectionItem> ShowMultiSelectionDialog(string heading, List<MultiSelectionItem> items)
+        {
+            List<MultiSelectionItem> result = new List<MultiSelectionItem>();
+
+            if (items == null) return result;
+
+            if (GUIGraphicsContext.form.InvokeRequired)
+            {
+                ShowMultiSelectionDialogDelegate d = ShowMultiSelectionDialog;
+                return (List<MultiSelectionItem>)GUIGraphicsContext.form.Invoke(d, heading, items);
+            }
+
+            GUIDialogMultiSelect dlgMultiSelect = (GUIDialogMultiSelect)GUIWindowManager.GetWindow(2100);
+            //if (dlgMultiSelect == null) return;
+
+            dlgMultiSelect.Reset();
+
+            dlgMultiSelect.SetHeading(heading);
+
+            foreach (MultiSelectionItem multiSelectionItem in items)
+            {
+                GUIListItem item = new GUIListItem();
+                item.Label = multiSelectionItem.ItemTitle;
+                item.Label2 = multiSelectionItem.ItemTitle2;
+                item.MusicTag = multiSelectionItem.Tag;
+                item.Selected = multiSelectionItem.Selected;
+
+                dlgMultiSelect.Add(item);
+            }
+
+            dlgMultiSelect.DoModal(GUIWindowManager.ActiveWindow);
+
+            if (dlgMultiSelect.DialogModalResult == ModalResult.OK)
+            {
+                for (int i = 0; i < items.Count; i++)
+                {
+                    MultiSelectionItem item = items[i];
+                    MultiSelectionItem newMultiSelectionItem = new MultiSelectionItem();
+                    newMultiSelectionItem.ItemTitle = item.ItemTitle;
+                    newMultiSelectionItem.ItemTitle2 = item.ItemTitle2;
+                    newMultiSelectionItem.ItemID = item.ItemID;
+                    newMultiSelectionItem.Tag = item.Tag;
+                    try
+                    {
+                        newMultiSelectionItem.Selected = dlgMultiSelect.ListItems[i].Selected;
+                    }
+                    catch
+                    {
+                        newMultiSelectionItem.Selected = item.Selected;
+                    }
+
+                    result.Add(newMultiSelectionItem);
+                }
+            }
+            else
+                return null;
+
+            return result;
+        }
     }
 
     class MPR {

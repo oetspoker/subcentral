@@ -584,7 +584,7 @@ namespace SubCentral.GUI {
                     if (!skipDefaults && Settings.SettingsManager.Properties.FolderSettings.OnDownload == OnDownload.DefaultFolders) {
                         logger.Info("Default folder for media type {0} could not be found, manually input folder for download", searchType.ToString());
                     }
-                    selectedFolderIndex = GUIUtils.ShowFolderMenuDialog(Localization.SelectDownloadFolder, items, selectedFolderIndex);
+                    selectedFolderIndex = SubCentralUtils.ShowFolderMenuDialog(Localization.SelectDownloadFolder, items, selectedFolderIndex);
                 }
 
                 if (selectedFolderIndex >= 0) {
@@ -718,14 +718,14 @@ namespace SubCentral.GUI {
         private void OnLanguageSelection() {
             List<MultiSelectionItem> selectedLanguages = null;
 
-            selectedLanguages = GUIUtils.ShowMultiSelectionDialog(Localization.SelectLanguages, SubCentralUtils.getLanguageNamesForMultiSelection());
+            selectedLanguages = SubCentralUtils.ShowMultiSelectionDialog(Localization.SelectLanguages, SubCentralUtils.getLanguageNamesForMultiSelection());
 
             if (selectedLanguages == null) return;
 
             while (SubCentralUtils.getSelectedLanguagesCountFromMultiSelection(selectedLanguages) < 1) {
                 GUIUtils.ShowOKDialog(Localization.Error, Localization.PleaseSelectLanguages);
 
-                selectedLanguages = GUIUtils.ShowMultiSelectionDialog(Localization.SelectLanguages, selectedLanguages);
+                selectedLanguages = SubCentralUtils.ShowMultiSelectionDialog(Localization.SelectLanguages, selectedLanguages);
 
                 if (selectedLanguages == null) return;
             }
