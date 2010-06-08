@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using MediaPortal.Player;
 using NLog;
-using SubCentral.GUI;
-using SubCentral.GUI.Items;
 
 namespace SubCentral.Utils {
     public class MediaInfoWrapper {
@@ -119,37 +117,36 @@ namespace SubCentral.Utils {
             string filenameNoExt = System.IO.Path.GetFileNameWithoutExtension(strFile);
 
             try {
-                List<FolderSelectionItem> folders = new List<FolderSelectionItem>();
+                List<string> folders = new List<string>();
                 if (useLocalOnly) {
-                    folders.Add(new FolderSelectionItem {
-                        FolderName = System.IO.Path.GetDirectoryName(strFile),
-                        FolderErrorInfo = FolderErrorInfo.OK
-                    });
+                    folders.Add(System.IO.Path.GetDirectoryName(strFile));
                 }
                 else {
-                    folders = SubCentralUtils.getEnabledAndValidFoldersForMedia(new FileInfo(strFile), true, true);
+                    folders = SubCentralUtils.getEnabledAndValidFolderNamesForMedia(new FileInfo(strFile), true, true);
                     logger.Debug("MediaInfoWrapper: Got {0} folders for media {1}", folders.Count, strFile);
                 }
 
-                foreach (FolderSelectionItem folder in folders) {
+                foreach (string folder in folders) {
                     //if (folder.FolderErrorInfo == SubCentral.Enums.FolderErrorInfo.NonExistant) continue;
 
                     //if (!SubCentralUtils.pathExists(folder.FolderName)) continue;
 
-                    if (string.IsNullOrEmpty(folder.FolderName) || !NetUtils.uncHostIsAlive(folder.FolderName)) continue;
+                    if (string.IsNullOrEmpty(folder) || !NetUtils.uncHostIsAlive(folder)) continue;
 
                     try {
-                        foreach (string file in System.IO.Directory.GetFiles(folder.FolderName, filenameNoExt + "*")) {
+                        foreach (string file in System.IO.Directory.GetFiles(folder, filenameNoExt + "*")) {
                             System.IO.FileInfo fi = new System.IO.FileInfo(file);
                             if (_subTitleExtensions.Contains(fi.Extension.ToLower())) return true;
                         }
                     }
-                    catch (Exception) {
+                    catch (Exception e) {
                         // Most likely path not available
+                        logger.Warn("Error checking external subtitles for folder " + folder, e);
                     }
                 }
             }
-            catch (Exception) {
+            catch (Exception e) {
+                logger.Warn("Error checking external subtitles for file " + strFile, e);
             }
 
             return false;

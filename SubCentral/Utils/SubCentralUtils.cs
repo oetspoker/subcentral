@@ -15,7 +15,7 @@ using SubCentral.GUI.Items;
 using SubCentral.Localizations;
 using SubCentral.PluginHandlers;
 using SubCentral.Settings.Data;
-
+using System.Linq;
 
 namespace SubCentral.Utils {
     public static class SubCentralUtils {
@@ -560,6 +560,13 @@ namespace SubCentral.Utils {
             }
 
             return result;
+        }
+
+        public static List<string> getEnabledAndValidFolderNamesForMedia(FileInfo fileInfo, bool includeReadOnly, bool skipErrorInfo)
+        {
+            List<FolderSelectionItem> result = getEnabledAndValidFoldersForMedia(fileInfo, includeReadOnly, skipErrorInfo);
+
+            return result.Select(r => r.FolderName).ToList();
         }
 
         public static FolderErrorInfo getFolderErrorInfo(string path)
