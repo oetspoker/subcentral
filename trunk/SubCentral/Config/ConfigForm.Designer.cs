@@ -41,29 +41,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigForm));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.pgGeneral = new System.Windows.Forms.TabPage();
-            this.groupBoxGeneralOther = new System.Windows.Forms.GroupBox();
-            this.checkBoxSearchDefaultsWhenFromManualSearch = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseLanguageCode = new System.Windows.Forms.CheckBox();
-            this.labelPluginLoadWithSearchData = new System.Windows.Forms.Label();
-            this.comboBoxPluginLoadWithSearchData = new System.Windows.Forms.ComboBox();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gbFeedConf = new System.Windows.Forms.GroupBox();
+            this.btnGroupsAndProvidersRemoveGroup = new System.Windows.Forms.Button();
             this.btnGroupsAndProvidersEditGroup = new System.Windows.Forms.Button();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.listViewGroupsAndProviders = new System.Windows.Forms.ListView();
             this.columnHeaderGroupsAndProvidersName = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderGroupsAndProvidersDetails = new System.Windows.Forms.ColumnHeader();
-            this.btnGroupsAndProvidersDown = new System.Windows.Forms.Button();
             this.btnGroupsAndProvidersUp = new System.Windows.Forms.Button();
-            this.btnGroupsAndProvidersRemoveGroup = new System.Windows.Forms.Button();
-            this.btnGroupsAndProvidersAddGroup = new System.Windows.Forms.Button();
+            this.btnGroupsAndProvidersDown = new System.Windows.Forms.Button();
             this.groupBoxEditGroup = new System.Windows.Forms.GroupBox();
             this.checkBoxEditGroupDefaultTVShows = new System.Windows.Forms.CheckBox();
             this.checkBoxEditGroupDefaultMovies = new System.Windows.Forms.CheckBox();
             this.listViewEditGroup = new System.Windows.Forms.ListView();
             this.btnEditGroupDown = new System.Windows.Forms.Button();
             this.btnEditGroupUp = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnGroupsAndProvidersAddGroup = new System.Windows.Forms.Button();
+            this.groupBoxGeneralOther = new System.Windows.Forms.GroupBox();
+            this.checkBoxSearchDefaultsWhenFromManualSearch = new System.Windows.Forms.CheckBox();
+            this.checkBoxUseLanguageCode = new System.Windows.Forms.CheckBox();
+            this.labelPluginLoadWithSearchData = new System.Windows.Forms.Label();
+            this.comboBoxPluginLoadWithSearchData = new System.Windows.Forms.ComboBox();
             this.pgLanguages = new System.Windows.Forms.TabPage();
             this.groupBoxLanguages = new System.Windows.Forms.GroupBox();
             this.btnLanguagesDown = new System.Windows.Forms.Button();
@@ -112,12 +112,12 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.pgGeneral.SuspendLayout();
-            this.groupBoxGeneralOther.SuspendLayout();
+            this.gbFeedConf.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.gbFeedConf.SuspendLayout();
             this.groupBoxEditGroup.SuspendLayout();
+            this.groupBoxGeneralOther.SuspendLayout();
             this.pgLanguages.SuspendLayout();
             this.groupBoxLanguages.SuspendLayout();
             this.pgFolders.SuspendLayout();
@@ -147,8 +147,8 @@
             // 
             // pgGeneral
             // 
+            this.pgGeneral.Controls.Add(this.gbFeedConf);
             this.pgGeneral.Controls.Add(this.groupBoxGeneralOther);
-            this.pgGeneral.Controls.Add(this.splitContainer1);
             this.pgGeneral.ImageIndex = 2;
             this.pgGeneral.Location = new System.Drawing.Point(4, 23);
             this.pgGeneral.Name = "pgGeneral";
@@ -158,117 +158,46 @@
             this.pgGeneral.Text = "General";
             this.pgGeneral.UseVisualStyleBackColor = true;
             // 
-            // groupBoxGeneralOther
-            // 
-            this.groupBoxGeneralOther.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxGeneralOther.Controls.Add(this.checkBoxSearchDefaultsWhenFromManualSearch);
-            this.groupBoxGeneralOther.Controls.Add(this.checkBoxUseLanguageCode);
-            this.groupBoxGeneralOther.Controls.Add(this.labelPluginLoadWithSearchData);
-            this.groupBoxGeneralOther.Controls.Add(this.comboBoxPluginLoadWithSearchData);
-            this.groupBoxGeneralOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBoxGeneralOther.Location = new System.Drawing.Point(6, 546);
-            this.groupBoxGeneralOther.Name = "groupBoxGeneralOther";
-            this.groupBoxGeneralOther.Size = new System.Drawing.Size(601, 66);
-            this.groupBoxGeneralOther.TabIndex = 3;
-            this.groupBoxGeneralOther.TabStop = false;
-            this.groupBoxGeneralOther.Text = "Other options  ";
-            this.groupBoxGeneralOther.UseCompatibleTextRendering = true;
-            // 
-            // checkBoxSearchDefaultsWhenFromManualSearch
-            // 
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxSearchDefaultsWhenFromManualSearch.AutoSize = true;
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Location = new System.Drawing.Point(342, 38);
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Name = "checkBoxSearchDefaultsWhenFromManualSearch";
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Size = new System.Drawing.Size(252, 17);
-            this.checkBoxSearchDefaultsWhenFromManualSearch.TabIndex = 3;
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Text = "Search defaults when confirming manual search";
-            this.checkBoxSearchDefaultsWhenFromManualSearch.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxUseLanguageCode
-            // 
-            this.checkBoxUseLanguageCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxUseLanguageCode.AutoSize = true;
-            this.checkBoxUseLanguageCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(427, 19);
-            this.checkBoxUseLanguageCode.Name = "checkBoxUseLanguageCode";
-            this.checkBoxUseLanguageCode.Size = new System.Drawing.Size(167, 17);
-            this.checkBoxUseLanguageCode.TabIndex = 2;
-            this.checkBoxUseLanguageCode.Text = "Use language code on results";
-            this.checkBoxUseLanguageCode.UseVisualStyleBackColor = true;
-            // 
-            // labelPluginLoadWithSearchData
-            // 
-            this.labelPluginLoadWithSearchData.AutoSize = true;
-            this.labelPluginLoadWithSearchData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelPluginLoadWithSearchData.Location = new System.Drawing.Point(6, 19);
-            this.labelPluginLoadWithSearchData.Margin = new System.Windows.Forms.Padding(3);
-            this.labelPluginLoadWithSearchData.Name = "labelPluginLoadWithSearchData";
-            this.labelPluginLoadWithSearchData.Size = new System.Drawing.Size(229, 13);
-            this.labelPluginLoadWithSearchData.TabIndex = 0;
-            this.labelPluginLoadWithSearchData.Text = "When plugin is loaded and search data is filled:";
-            // 
-            // comboBoxPluginLoadWithSearchData
-            // 
-            this.comboBoxPluginLoadWithSearchData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.comboBoxPluginLoadWithSearchData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPluginLoadWithSearchData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBoxPluginLoadWithSearchData.Items.AddRange(new object[] {
-            "Do nothing",
-            "Search default providers"});
-            this.comboBoxPluginLoadWithSearchData.Location = new System.Drawing.Point(8, 38);
-            this.comboBoxPluginLoadWithSearchData.Name = "comboBoxPluginLoadWithSearchData";
-            this.comboBoxPluginLoadWithSearchData.Size = new System.Drawing.Size(188, 21);
-            this.comboBoxPluginLoadWithSearchData.TabIndex = 1;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Location = new System.Drawing.Point(6, 6);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitContainer1.Size = new System.Drawing.Size(601, 534);
-            this.splitContainer1.SplitterDistance = 370;
-            this.splitContainer1.TabIndex = 1;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.gbFeedConf);
-            this.splitContainer1.Panel1MinSize = 250;
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBoxEditGroup);
-            this.splitContainer1.Panel2MinSize = 160;
-            // 
             // gbFeedConf
             // 
             this.gbFeedConf.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbFeedConf.Controls.Add(this.btnGroupsAndProvidersRemoveGroup);
             this.gbFeedConf.Controls.Add(this.btnGroupsAndProvidersEditGroup);
             this.gbFeedConf.Controls.Add(this.linkLabel2);
+            this.gbFeedConf.Controls.Add(this.splitContainer1);
             this.gbFeedConf.Controls.Add(this.linkLabel1);
-            this.gbFeedConf.Controls.Add(this.listViewGroupsAndProviders);
-            this.gbFeedConf.Controls.Add(this.btnGroupsAndProvidersDown);
-            this.gbFeedConf.Controls.Add(this.btnGroupsAndProvidersUp);
-            this.gbFeedConf.Controls.Add(this.btnGroupsAndProvidersRemoveGroup);
             this.gbFeedConf.Controls.Add(this.btnGroupsAndProvidersAddGroup);
             this.gbFeedConf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFeedConf.Location = new System.Drawing.Point(0, 0);
+            this.gbFeedConf.Location = new System.Drawing.Point(6, 6);
             this.gbFeedConf.Name = "gbFeedConf";
-            this.gbFeedConf.Size = new System.Drawing.Size(601, 370);
+            this.gbFeedConf.Size = new System.Drawing.Size(603, 534);
             this.gbFeedConf.TabIndex = 1;
             this.gbFeedConf.TabStop = false;
             this.gbFeedConf.Text = "Groups and providers  ";
+            // 
+            // btnGroupsAndProvidersRemoveGroup
+            // 
+            this.btnGroupsAndProvidersRemoveGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupsAndProvidersRemoveGroup.Enabled = false;
+            this.btnGroupsAndProvidersRemoveGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGroupsAndProvidersRemoveGroup.Image = global::SubCentral.Properties.Resources.Delete;
+            this.btnGroupsAndProvidersRemoveGroup.Location = new System.Drawing.Point(455, 505);
+            this.btnGroupsAndProvidersRemoveGroup.Name = "btnGroupsAndProvidersRemoveGroup";
+            this.btnGroupsAndProvidersRemoveGroup.Size = new System.Drawing.Size(108, 23);
+            this.btnGroupsAndProvidersRemoveGroup.TabIndex = 3;
+            this.btnGroupsAndProvidersRemoveGroup.Text = "&Remove group";
+            this.btnGroupsAndProvidersRemoveGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGroupsAndProvidersRemoveGroup.UseVisualStyleBackColor = true;
+            this.btnGroupsAndProvidersRemoveGroup.Click += new System.EventHandler(this.btnGroupsAndProvidersRemoveGroup_Click);
             // 
             // btnGroupsAndProvidersEditGroup
             // 
             this.btnGroupsAndProvidersEditGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGroupsAndProvidersEditGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupsAndProvidersEditGroup.Image = global::SubCentral.Properties.Resources.Edit;
-            this.btnGroupsAndProvidersEditGroup.Location = new System.Drawing.Point(120, 341);
+            this.btnGroupsAndProvidersEditGroup.Location = new System.Drawing.Point(122, 505);
             this.btnGroupsAndProvidersEditGroup.Name = "btnGroupsAndProvidersEditGroup";
             this.btnGroupsAndProvidersEditGroup.Size = new System.Drawing.Size(108, 23);
             this.btnGroupsAndProvidersEditGroup.TabIndex = 2;
@@ -283,7 +212,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkArea = new System.Windows.Forms.LinkArea(0, 20);
             this.linkLabel2.LinkColor = System.Drawing.Color.Navy;
-            this.linkLabel2.Location = new System.Drawing.Point(457, 351);
+            this.linkLabel2.Location = new System.Drawing.Point(453, 515);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(104, 17);
             this.linkLabel2.TabIndex = 12;
@@ -291,23 +220,29 @@
             this.linkLabel2.Text = "Select all providers";
             this.linkLabel2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabel2.UseCompatibleTextRendering = true;
+            this.linkLabel2.Visible = false;
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // linkLabel1
+            // splitContainer1
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 17);
-            this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
-            this.linkLabel1.Location = new System.Drawing.Point(470, 338);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(91, 17);
-            this.linkLabel1.TabIndex = 11;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Select all groups";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.linkLabel1.UseCompatibleTextRendering = true;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.splitContainer1.Location = new System.Drawing.Point(6, 19);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.listViewGroupsAndProviders);
+            this.splitContainer1.Panel1.Controls.Add(this.btnGroupsAndProvidersUp);
+            this.splitContainer1.Panel1.Controls.Add(this.btnGroupsAndProvidersDown);
+            this.splitContainer1.Panel1MinSize = 0;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupBoxEditGroup);
+            this.splitContainer1.Panel2MinSize = 0;
+            this.splitContainer1.Size = new System.Drawing.Size(591, 480);
+            this.splitContainer1.SplitterDistance = 316;
+            this.splitContainer1.TabIndex = 1;
             // 
             // listViewGroupsAndProviders
             // 
@@ -331,10 +266,10 @@
             this.listViewGroupsAndProviders.HideSelection = false;
             this.listViewGroupsAndProviders.LabelEdit = true;
             this.listViewGroupsAndProviders.LabelWrap = false;
-            this.listViewGroupsAndProviders.Location = new System.Drawing.Point(6, 19);
+            this.listViewGroupsAndProviders.Location = new System.Drawing.Point(0, 0);
             this.listViewGroupsAndProviders.MultiSelect = false;
             this.listViewGroupsAndProviders.Name = "listViewGroupsAndProviders";
-            this.listViewGroupsAndProviders.Size = new System.Drawing.Size(555, 316);
+            this.listViewGroupsAndProviders.Size = new System.Drawing.Size(557, 316);
             this.listViewGroupsAndProviders.TabIndex = 0;
             this.listViewGroupsAndProviders.UseCompatibleStateImageBehavior = false;
             this.listViewGroupsAndProviders.View = System.Windows.Forms.View.Details;
@@ -351,20 +286,7 @@
             // columnHeaderGroupsAndProvidersDetails
             // 
             this.columnHeaderGroupsAndProvidersDetails.Text = "Details";
-            this.columnHeaderGroupsAndProvidersDetails.Width = 235;
-            // 
-            // btnGroupsAndProvidersDown
-            // 
-            this.btnGroupsAndProvidersDown.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnGroupsAndProvidersDown.Enabled = false;
-            this.btnGroupsAndProvidersDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGroupsAndProvidersDown.Image = global::SubCentral.Properties.Resources.ArrowDown;
-            this.btnGroupsAndProvidersDown.Location = new System.Drawing.Point(567, 180);
-            this.btnGroupsAndProvidersDown.Name = "btnGroupsAndProvidersDown";
-            this.btnGroupsAndProvidersDown.Size = new System.Drawing.Size(28, 23);
-            this.btnGroupsAndProvidersDown.TabIndex = 6;
-            this.btnGroupsAndProvidersDown.UseVisualStyleBackColor = true;
-            this.btnGroupsAndProvidersDown.Click += new System.EventHandler(this.btnDown_Click);
+            this.columnHeaderGroupsAndProvidersDetails.Width = 230;
             // 
             // btnGroupsAndProvidersUp
             // 
@@ -372,41 +294,25 @@
             this.btnGroupsAndProvidersUp.Enabled = false;
             this.btnGroupsAndProvidersUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupsAndProvidersUp.Image = global::SubCentral.Properties.Resources.ArrowUp;
-            this.btnGroupsAndProvidersUp.Location = new System.Drawing.Point(567, 151);
+            this.btnGroupsAndProvidersUp.Location = new System.Drawing.Point(563, 132);
             this.btnGroupsAndProvidersUp.Name = "btnGroupsAndProvidersUp";
             this.btnGroupsAndProvidersUp.Size = new System.Drawing.Size(28, 23);
             this.btnGroupsAndProvidersUp.TabIndex = 5;
             this.btnGroupsAndProvidersUp.UseVisualStyleBackColor = true;
             this.btnGroupsAndProvidersUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
-            // btnGroupsAndProvidersRemoveGroup
+            // btnGroupsAndProvidersDown
             // 
-            this.btnGroupsAndProvidersRemoveGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupsAndProvidersRemoveGroup.Enabled = false;
-            this.btnGroupsAndProvidersRemoveGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGroupsAndProvidersRemoveGroup.Image = global::SubCentral.Properties.Resources.Delete;
-            this.btnGroupsAndProvidersRemoveGroup.Location = new System.Drawing.Point(343, 341);
-            this.btnGroupsAndProvidersRemoveGroup.Name = "btnGroupsAndProvidersRemoveGroup";
-            this.btnGroupsAndProvidersRemoveGroup.Size = new System.Drawing.Size(108, 23);
-            this.btnGroupsAndProvidersRemoveGroup.TabIndex = 3;
-            this.btnGroupsAndProvidersRemoveGroup.Text = "&Remove group";
-            this.btnGroupsAndProvidersRemoveGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGroupsAndProvidersRemoveGroup.UseVisualStyleBackColor = true;
-            this.btnGroupsAndProvidersRemoveGroup.Click += new System.EventHandler(this.btnGroupsAndProvidersRemoveGroup_Click);
-            // 
-            // btnGroupsAndProvidersAddGroup
-            // 
-            this.btnGroupsAndProvidersAddGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGroupsAndProvidersAddGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGroupsAndProvidersAddGroup.Image = global::SubCentral.Properties.Resources.Add;
-            this.btnGroupsAndProvidersAddGroup.Location = new System.Drawing.Point(6, 341);
-            this.btnGroupsAndProvidersAddGroup.Name = "btnGroupsAndProvidersAddGroup";
-            this.btnGroupsAndProvidersAddGroup.Size = new System.Drawing.Size(108, 23);
-            this.btnGroupsAndProvidersAddGroup.TabIndex = 1;
-            this.btnGroupsAndProvidersAddGroup.Text = "&Add group";
-            this.btnGroupsAndProvidersAddGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGroupsAndProvidersAddGroup.UseVisualStyleBackColor = true;
-            this.btnGroupsAndProvidersAddGroup.Click += new System.EventHandler(this.btnGroupsAndProvidersAddGroup_Click);
+            this.btnGroupsAndProvidersDown.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnGroupsAndProvidersDown.Enabled = false;
+            this.btnGroupsAndProvidersDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGroupsAndProvidersDown.Image = global::SubCentral.Properties.Resources.ArrowDown;
+            this.btnGroupsAndProvidersDown.Location = new System.Drawing.Point(563, 161);
+            this.btnGroupsAndProvidersDown.Name = "btnGroupsAndProvidersDown";
+            this.btnGroupsAndProvidersDown.Size = new System.Drawing.Size(28, 23);
+            this.btnGroupsAndProvidersDown.TabIndex = 6;
+            this.btnGroupsAndProvidersDown.UseVisualStyleBackColor = true;
+            this.btnGroupsAndProvidersDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // groupBoxEditGroup
             // 
@@ -422,7 +328,7 @@
             this.groupBoxEditGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxEditGroup.Location = new System.Drawing.Point(0, 0);
             this.groupBoxEditGroup.Name = "groupBoxEditGroup";
-            this.groupBoxEditGroup.Size = new System.Drawing.Size(601, 160);
+            this.groupBoxEditGroup.Size = new System.Drawing.Size(591, 160);
             this.groupBoxEditGroup.TabIndex = 2;
             this.groupBoxEditGroup.TabStop = false;
             this.groupBoxEditGroup.Text = "Edit group  ";
@@ -432,7 +338,7 @@
             this.checkBoxEditGroupDefaultTVShows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxEditGroupDefaultTVShows.AutoSize = true;
             this.checkBoxEditGroupDefaultTVShows.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxEditGroupDefaultTVShows.Location = new System.Drawing.Point(183, 131);
+            this.checkBoxEditGroupDefaultTVShows.Location = new System.Drawing.Point(175, 137);
             this.checkBoxEditGroupDefaultTVShows.Name = "checkBoxEditGroupDefaultTVShows";
             this.checkBoxEditGroupDefaultTVShows.Size = new System.Drawing.Size(125, 17);
             this.checkBoxEditGroupDefaultTVShows.TabIndex = 2;
@@ -445,7 +351,7 @@
             this.checkBoxEditGroupDefaultMovies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxEditGroupDefaultMovies.AutoSize = true;
             this.checkBoxEditGroupDefaultMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxEditGroupDefaultMovies.Location = new System.Drawing.Point(6, 131);
+            this.checkBoxEditGroupDefaultMovies.Location = new System.Drawing.Point(6, 137);
             this.checkBoxEditGroupDefaultMovies.Name = "checkBoxEditGroupDefaultMovies";
             this.checkBoxEditGroupDefaultMovies.Size = new System.Drawing.Size(112, 17);
             this.checkBoxEditGroupDefaultMovies.TabIndex = 1;
@@ -471,7 +377,7 @@
             this.listViewEditGroup.Location = new System.Drawing.Point(6, 19);
             this.listViewEditGroup.MultiSelect = false;
             this.listViewEditGroup.Name = "listViewEditGroup";
-            this.listViewEditGroup.Size = new System.Drawing.Size(555, 106);
+            this.listViewEditGroup.Size = new System.Drawing.Size(545, 112);
             this.listViewEditGroup.TabIndex = 0;
             this.listViewEditGroup.UseCompatibleStateImageBehavior = false;
             this.listViewEditGroup.View = System.Windows.Forms.View.List;
@@ -485,7 +391,7 @@
             this.btnEditGroupDown.Enabled = false;
             this.btnEditGroupDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditGroupDown.Image = global::SubCentral.Properties.Resources.ArrowDown;
-            this.btnEditGroupDown.Location = new System.Drawing.Point(567, 75);
+            this.btnEditGroupDown.Location = new System.Drawing.Point(557, 78);
             this.btnEditGroupDown.Name = "btnEditGroupDown";
             this.btnEditGroupDown.Size = new System.Drawing.Size(28, 23);
             this.btnEditGroupDown.TabIndex = 4;
@@ -498,12 +404,108 @@
             this.btnEditGroupUp.Enabled = false;
             this.btnEditGroupUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditGroupUp.Image = global::SubCentral.Properties.Resources.ArrowUp;
-            this.btnEditGroupUp.Location = new System.Drawing.Point(567, 46);
+            this.btnEditGroupUp.Location = new System.Drawing.Point(557, 49);
             this.btnEditGroupUp.Name = "btnEditGroupUp";
             this.btnEditGroupUp.Size = new System.Drawing.Size(28, 23);
             this.btnEditGroupUp.TabIndex = 3;
             this.btnEditGroupUp.UseVisualStyleBackColor = true;
             this.btnEditGroupUp.Click += new System.EventHandler(this.btnEditGroupUpDown_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 17);
+            this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
+            this.linkLabel1.Location = new System.Drawing.Point(466, 502);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(91, 17);
+            this.linkLabel1.TabIndex = 11;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Select all groups";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.linkLabel1.UseCompatibleTextRendering = true;
+            this.linkLabel1.Visible = false;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // btnGroupsAndProvidersAddGroup
+            // 
+            this.btnGroupsAndProvidersAddGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGroupsAndProvidersAddGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGroupsAndProvidersAddGroup.Image = global::SubCentral.Properties.Resources.Add;
+            this.btnGroupsAndProvidersAddGroup.Location = new System.Drawing.Point(6, 505);
+            this.btnGroupsAndProvidersAddGroup.Name = "btnGroupsAndProvidersAddGroup";
+            this.btnGroupsAndProvidersAddGroup.Size = new System.Drawing.Size(108, 23);
+            this.btnGroupsAndProvidersAddGroup.TabIndex = 1;
+            this.btnGroupsAndProvidersAddGroup.Text = "&Add group";
+            this.btnGroupsAndProvidersAddGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGroupsAndProvidersAddGroup.UseVisualStyleBackColor = true;
+            this.btnGroupsAndProvidersAddGroup.Click += new System.EventHandler(this.btnGroupsAndProvidersAddGroup_Click);
+            // 
+            // groupBoxGeneralOther
+            // 
+            this.groupBoxGeneralOther.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxGeneralOther.Controls.Add(this.checkBoxSearchDefaultsWhenFromManualSearch);
+            this.groupBoxGeneralOther.Controls.Add(this.checkBoxUseLanguageCode);
+            this.groupBoxGeneralOther.Controls.Add(this.labelPluginLoadWithSearchData);
+            this.groupBoxGeneralOther.Controls.Add(this.comboBoxPluginLoadWithSearchData);
+            this.groupBoxGeneralOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBoxGeneralOther.Location = new System.Drawing.Point(6, 546);
+            this.groupBoxGeneralOther.Name = "groupBoxGeneralOther";
+            this.groupBoxGeneralOther.Size = new System.Drawing.Size(603, 66);
+            this.groupBoxGeneralOther.TabIndex = 3;
+            this.groupBoxGeneralOther.TabStop = false;
+            this.groupBoxGeneralOther.Text = "Other options  ";
+            this.groupBoxGeneralOther.UseCompatibleTextRendering = true;
+            // 
+            // checkBoxSearchDefaultsWhenFromManualSearch
+            // 
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxSearchDefaultsWhenFromManualSearch.AutoSize = true;
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Location = new System.Drawing.Point(344, 38);
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Name = "checkBoxSearchDefaultsWhenFromManualSearch";
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Size = new System.Drawing.Size(252, 17);
+            this.checkBoxSearchDefaultsWhenFromManualSearch.TabIndex = 3;
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Text = "Search defaults when confirming manual search";
+            this.checkBoxSearchDefaultsWhenFromManualSearch.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxUseLanguageCode
+            // 
+            this.checkBoxUseLanguageCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxUseLanguageCode.AutoSize = true;
+            this.checkBoxUseLanguageCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(429, 19);
+            this.checkBoxUseLanguageCode.Name = "checkBoxUseLanguageCode";
+            this.checkBoxUseLanguageCode.Size = new System.Drawing.Size(167, 17);
+            this.checkBoxUseLanguageCode.TabIndex = 2;
+            this.checkBoxUseLanguageCode.Text = "Use language code on results";
+            this.checkBoxUseLanguageCode.UseVisualStyleBackColor = true;
+            // 
+            // labelPluginLoadWithSearchData
+            // 
+            this.labelPluginLoadWithSearchData.AutoSize = true;
+            this.labelPluginLoadWithSearchData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPluginLoadWithSearchData.Location = new System.Drawing.Point(6, 19);
+            this.labelPluginLoadWithSearchData.Margin = new System.Windows.Forms.Padding(3);
+            this.labelPluginLoadWithSearchData.Name = "labelPluginLoadWithSearchData";
+            this.labelPluginLoadWithSearchData.Size = new System.Drawing.Size(229, 13);
+            this.labelPluginLoadWithSearchData.TabIndex = 0;
+            this.labelPluginLoadWithSearchData.Text = "When plugin is loaded and search data is filled:";
+            // 
+            // comboBoxPluginLoadWithSearchData
+            // 
+            this.comboBoxPluginLoadWithSearchData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.comboBoxPluginLoadWithSearchData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPluginLoadWithSearchData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxPluginLoadWithSearchData.Items.AddRange(new object[] {
+            "Do nothing",
+            "Search default providers"});
+            this.comboBoxPluginLoadWithSearchData.Location = new System.Drawing.Point(9, 38);
+            this.comboBoxPluginLoadWithSearchData.Name = "comboBoxPluginLoadWithSearchData";
+            this.comboBoxPluginLoadWithSearchData.Size = new System.Drawing.Size(188, 21);
+            this.comboBoxPluginLoadWithSearchData.TabIndex = 1;
             // 
             // pgLanguages
             // 
@@ -528,7 +530,7 @@
             this.groupBoxLanguages.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxLanguages.Location = new System.Drawing.Point(6, 6);
             this.groupBoxLanguages.Name = "groupBoxLanguages";
-            this.groupBoxLanguages.Size = new System.Drawing.Size(601, 606);
+            this.groupBoxLanguages.Size = new System.Drawing.Size(603, 606);
             this.groupBoxLanguages.TabIndex = 2;
             this.groupBoxLanguages.TabStop = false;
             this.groupBoxLanguages.Text = "Languages  ";
@@ -539,7 +541,7 @@
             this.btnLanguagesDown.Enabled = false;
             this.btnLanguagesDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLanguagesDown.Image = global::SubCentral.Properties.Resources.ArrowDown;
-            this.btnLanguagesDown.Location = new System.Drawing.Point(567, 312);
+            this.btnLanguagesDown.Location = new System.Drawing.Point(569, 312);
             this.btnLanguagesDown.Name = "btnLanguagesDown";
             this.btnLanguagesDown.Size = new System.Drawing.Size(28, 74);
             this.btnLanguagesDown.TabIndex = 10;
@@ -552,7 +554,7 @@
             this.btnLanguagesUp.Enabled = false;
             this.btnLanguagesUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLanguagesUp.Image = global::SubCentral.Properties.Resources.ArrowUp;
-            this.btnLanguagesUp.Location = new System.Drawing.Point(567, 232);
+            this.btnLanguagesUp.Location = new System.Drawing.Point(569, 232);
             this.btnLanguagesUp.Name = "btnLanguagesUp";
             this.btnLanguagesUp.Size = new System.Drawing.Size(28, 74);
             this.btnLanguagesUp.TabIndex = 9;
@@ -576,7 +578,7 @@
             this.listViewLanguages.Location = new System.Drawing.Point(6, 19);
             this.listViewLanguages.MultiSelect = false;
             this.listViewLanguages.Name = "listViewLanguages";
-            this.listViewLanguages.Size = new System.Drawing.Size(555, 581);
+            this.listViewLanguages.Size = new System.Drawing.Size(557, 581);
             this.listViewLanguages.TabIndex = 8;
             this.listViewLanguages.UseCompatibleStateImageBehavior = false;
             this.listViewLanguages.View = System.Windows.Forms.View.List;
@@ -607,7 +609,7 @@
             this.groupBoxFoldersOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBoxFoldersOther.Location = new System.Drawing.Point(6, 546);
             this.groupBoxFoldersOther.Name = "groupBoxFoldersOther";
-            this.groupBoxFoldersOther.Size = new System.Drawing.Size(601, 66);
+            this.groupBoxFoldersOther.Size = new System.Drawing.Size(603, 66);
             this.groupBoxFoldersOther.TabIndex = 4;
             this.groupBoxFoldersOther.TabStop = false;
             this.groupBoxFoldersOther.Text = "Other options";
@@ -632,7 +634,7 @@
             this.comboBoxFileName.Items.AddRange(new object[] {
             "Use default folders",
             "Always ask"});
-            this.comboBoxFileName.Location = new System.Drawing.Point(202, 38);
+            this.comboBoxFileName.Location = new System.Drawing.Point(203, 38);
             this.comboBoxFileName.Name = "comboBoxFileName";
             this.comboBoxFileName.Size = new System.Drawing.Size(188, 21);
             this.comboBoxFileName.TabIndex = 2;
@@ -656,7 +658,7 @@
             this.comboBoxWhenDownloading.Items.AddRange(new object[] {
             "Use default folders",
             "Always ask"});
-            this.comboBoxWhenDownloading.Location = new System.Drawing.Point(8, 38);
+            this.comboBoxWhenDownloading.Location = new System.Drawing.Point(9, 38);
             this.comboBoxWhenDownloading.Name = "comboBoxWhenDownloading";
             this.comboBoxWhenDownloading.Size = new System.Drawing.Size(188, 21);
             this.comboBoxWhenDownloading.TabIndex = 0;
@@ -671,7 +673,7 @@
             this.groupBoxFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxFolders.Location = new System.Drawing.Point(6, 6);
             this.groupBoxFolders.Name = "groupBoxFolders";
-            this.groupBoxFolders.Size = new System.Drawing.Size(601, 534);
+            this.groupBoxFolders.Size = new System.Drawing.Size(603, 534);
             this.groupBoxFolders.TabIndex = 3;
             this.groupBoxFolders.TabStop = false;
             this.groupBoxFolders.Text = "Folders  ";
@@ -719,7 +721,7 @@
             this.listViewFolders.MultiSelect = false;
             this.listViewFolders.Name = "listViewFolders";
             this.listViewFolders.ShowGroups = false;
-            this.listViewFolders.Size = new System.Drawing.Size(589, 480);
+            this.listViewFolders.Size = new System.Drawing.Size(591, 480);
             this.listViewFolders.TabIndex = 0;
             this.listViewFolders.UseCompatibleStateImageBehavior = false;
             this.listViewFolders.View = System.Windows.Forms.View.Details;
@@ -784,7 +786,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 130);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(601, 456);
+            this.groupBox1.Size = new System.Drawing.Size(603, 456);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "About  ";
@@ -1091,15 +1093,15 @@
             this.Load += new System.EventHandler(this.ConfigForm_Load);
             this.tabControl.ResumeLayout(false);
             this.pgGeneral.ResumeLayout(false);
-            this.groupBoxGeneralOther.ResumeLayout(false);
-            this.groupBoxGeneralOther.PerformLayout();
+            this.gbFeedConf.ResumeLayout(false);
+            this.gbFeedConf.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
-            this.gbFeedConf.ResumeLayout(false);
-            this.gbFeedConf.PerformLayout();
             this.groupBoxEditGroup.ResumeLayout(false);
             this.groupBoxEditGroup.PerformLayout();
+            this.groupBoxGeneralOther.ResumeLayout(false);
+            this.groupBoxGeneralOther.PerformLayout();
             this.pgLanguages.ResumeLayout(false);
             this.groupBoxLanguages.ResumeLayout(false);
             this.pgFolders.ResumeLayout(false);

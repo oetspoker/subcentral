@@ -23,11 +23,16 @@ namespace SubCentral.ConfigForm {
 
         public ConfigForm() {
             InitializeComponent();
+            splitContainer1.Panel1MinSize = 250;
+            splitContainer1.Panel2MinSize = 160;
         }
 
         #region Load / Save / Cancel
         private void initConfigForm() {
             //loaded = false;
+
+            splitContainer1.Panel2Collapsed = true;
+            SetEditGroupButtonText();
 
             listViewGroupsAndProviders.Items.Clear();
             listViewGroupsAndProviders.Groups[0].Items.Clear();
@@ -273,8 +278,6 @@ namespace SubCentral.ConfigForm {
         #region ListView Events
         private void listViewGroupsAndProviders_SelectedIndexChanged(object sender, EventArgs e) {
             //if (!loaded) return;
-            splitContainer1.Panel2Collapsed = true;
-            SetEditGroupButtonText();
 
             if (listViewGroupsAndProviders.SelectedIndices.Count > 0) {
                 int itemindex = listViewGroupsAndProviders.SelectedIndices[0];
@@ -285,6 +288,9 @@ namespace SubCentral.ConfigForm {
 
                 switch (itemType(item)) {
                     case ListViewItemType.Provider:
+                        splitContainer1.Panel2Collapsed = true;
+                        SetEditGroupButtonText();
+
                         btnGroupsAndProvidersRemoveGroup.Enabled = false;
                         btnGroupsAndProvidersEditGroup.Enabled = false;
 
@@ -301,6 +307,8 @@ namespace SubCentral.ConfigForm {
 
                         btnGroupsAndProvidersUp.Enabled = itemindexInGroup > 2;
                         btnGroupsAndProvidersDown.Enabled = itemindexInGroup > 1 && itemindexInGroup != listViewGroupsAndProviders.Groups[0].Items.Count - 1;
+
+                        SetGroupBoxEditGroupText();
 
                         groupBoxEditGroup.Enabled = true;
                         listViewEditGroup.Enabled = (itemindex != 0 && itemindex != 1);
@@ -557,6 +565,8 @@ namespace SubCentral.ConfigForm {
                 //item.EnsureVisible();
             }
             listViewGroupsAndProviders.Focus();
+
+            EditGroup(true);
 
             listViewGroupsAndProviders.FocusedItem.BeginEdit();
         }
@@ -1054,7 +1064,15 @@ namespace SubCentral.ConfigForm {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            splitContainer1.Panel2Collapsed = !splitContainer1.Panel2Collapsed;
+            EditGroup();
+        }
+
+        private void EditGroup() {
+            EditGroup(false);
+        }
+
+        private void EditGroup(bool persistOpen) {
+            splitContainer1.Panel2Collapsed = !persistOpen && !splitContainer1.Panel2Collapsed;
             SetEditGroupButtonText();
             SetGroupBoxEditGroupText();
         }
@@ -1070,7 +1088,7 @@ namespace SubCentral.ConfigForm {
             if (splitContainer1.Panel2Collapsed)
                 btnGroupsAndProvidersEditGroup.Text = "Edit group";
             else
-                btnGroupsAndProvidersEditGroup.Text = "Done";
+                btnGroupsAndProvidersEditGroup.Text = "Hide edit group";
         }
 
     }
