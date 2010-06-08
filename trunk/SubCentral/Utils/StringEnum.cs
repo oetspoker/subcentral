@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace SubCentral.Enums
+namespace SubCentral.Utils
 {
     public class StringValue : System.Attribute
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using MediaPortal.Player;
 using NLog;
-using SubCentral.Enums;
+using SubCentral.GUI;
 using SubCentral.GUI.Items;
 
 namespace SubCentral.Utils {

@@ -1,5 +1,6 @@
 ﻿
-namespace SubCentral.Enums {
+namespace SubCentral.GUI
+{
     public enum SubtitlesSearchType {
         NONE,
         IMDb,
