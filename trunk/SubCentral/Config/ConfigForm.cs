@@ -273,6 +273,8 @@ namespace SubCentral.ConfigForm {
         #region ListView Events
         private void listViewGroupsAndProviders_SelectedIndexChanged(object sender, EventArgs e) {
             //if (!loaded) return;
+            splitContainer1.Panel2Collapsed = true;
+            SetEditGroupButtonText();
 
             if (listViewGroupsAndProviders.SelectedIndices.Count > 0) {
                 int itemindex = listViewGroupsAndProviders.SelectedIndices[0];
@@ -284,6 +286,7 @@ namespace SubCentral.ConfigForm {
                 switch (itemType(item)) {
                     case ListViewItemType.Provider:
                         btnGroupsAndProvidersRemoveGroup.Enabled = false;
+                        btnGroupsAndProvidersEditGroup.Enabled = false;
 
                         btnGroupsAndProvidersUp.Enabled = itemindexInGroup > 0;
                         btnGroupsAndProvidersDown.Enabled = itemindexInGroup != listViewGroupsAndProviders.Groups[1].Items.Count - 1;
@@ -294,6 +297,7 @@ namespace SubCentral.ConfigForm {
                         break;
                     case ListViewItemType.Group:
                         btnGroupsAndProvidersRemoveGroup.Enabled = (itemindex != 0 && itemindex != 1);
+                        btnGroupsAndProvidersEditGroup.Enabled = true;
 
                         btnGroupsAndProvidersUp.Enabled = itemindexInGroup > 2;
                         btnGroupsAndProvidersDown.Enabled = itemindexInGroup > 1 && itemindexInGroup != listViewGroupsAndProviders.Groups[0].Items.Count - 1;
@@ -322,6 +326,7 @@ namespace SubCentral.ConfigForm {
             }
             else {
                 btnGroupsAndProvidersRemoveGroup.Enabled = false;
+                btnGroupsAndProvidersEditGroup.Enabled = false;
                 btnGroupsAndProvidersUp.Enabled = false;
                 btnGroupsAndProvidersDown.Enabled = false;
             }
@@ -1046,6 +1051,26 @@ namespace SubCentral.ConfigForm {
 
         private void btnAdvancedConfig_Click(object sender, EventArgs e) {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            splitContainer1.Panel2Collapsed = !splitContainer1.Panel2Collapsed;
+            SetEditGroupButtonText();
+            SetGroupBoxEditGroupText();
+        }
+
+        private void SetGroupBoxEditGroupText() {
+            if (!splitContainer1.Panel2Collapsed && listViewGroupsAndProviders.SelectedItems.Count > 0)
+                groupBoxEditGroup.Text = string.Format("Edit group: {0}  ", listViewGroupsAndProviders.SelectedItems[0].Text);
+            else
+                groupBoxEditGroup.Text = "Edit group ";
+        }
+
+        private void SetEditGroupButtonText() {
+            if (splitContainer1.Panel2Collapsed)
+                btnGroupsAndProvidersEditGroup.Text = "Edit group";
+            else
+                btnGroupsAndProvidersEditGroup.Text = "Done";
         }
 
     }

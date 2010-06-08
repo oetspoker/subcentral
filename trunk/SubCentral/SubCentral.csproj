@@ -146,6 +146,7 @@
     <Content Include="GUI\Skins\Blue3wide\SubCentral.Search.xml" />
     <Content Include="GUI\Skins\Blue3wide\SubCentral.xml" />
     <Content Include="GUI\Skins\Blue3wide\SubCentral.Main.xml" />
+    <None Include="Resources\Edit.png" />
     <None Include="Resources\SubCentralIconOld.ico" />
     <None Include="Resources\SubCentralIcon.ico" />
     <None Include="Resources\SubCentralLogo.jpg" />
