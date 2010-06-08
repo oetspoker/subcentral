@@ -3,7 +3,8 @@ using System.IO;
 using System.Collections.Generic;
 using SubCentral.Utils;
 
-namespace SubCentral.Structs {
+namespace SubCentral.PluginHandlers
+{
     public struct BasicMediaDetail {
         public int? MediaId { get; set; }
 

@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Globalization;
-using MediaPortal.GUI.Library;
-using MediaPortal.Player;
 using System.IO;
+using MediaPortal.Player;
 using NLog;
-using SubCentral.HelperClass;
-using SubCentral.Structs;
 using SubCentral.Enums;
-using System.Text.RegularExpressions;
-using System.Linq;
+using SubCentral.GUI.Items;
 
 namespace SubCentral.Utils {
     public class MediaInfoWrapper {

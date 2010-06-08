@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
-using MediaPortal.GUI.Library;
-using SubCentral.Enums;
 
 namespace SubCentral.Settings.Data
 {

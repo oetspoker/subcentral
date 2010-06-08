@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
+using SubCentral.Enums;
 
-namespace SubCentral.Enums {
+namespace SubCentral.Settings.Data
+{
     public enum OnDownloadFileName {
         [StringValue("Use default")]
         UseDefault = 0,

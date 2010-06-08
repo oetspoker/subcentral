@@ -1,5 +1,6 @@
 ﻿
-namespace SubCentral.HelperClass {
+namespace SubCentral.GUI.Items
+{
     public class SubtitleItem {
         public SubtitleDownloader.Core.Subtitle Subtitle { get; set; }
         public SubtitleDownloader.Core.ISubtitleDownloader Downloader { get; set; }

@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using MediaPortal.Configuration;
 using NLog;
 using SubCentral.Localizations;
 using SubCentral.Settings;
@@ -10,8 +11,6 @@ using SubCentral.Settings.Data;
 using SubCentral.Enums;
 using SubCentral.Utils;
 using MediaPortal.GUI.Library;
-using MediaPortal.Configuration;
-
 
 namespace SubCentral.ConfigForm {
     [PluginIcons("SubCentral.Config.Images.SubCentral_Icon_Enabled.png", "SubCentral.Config.Images.SubCentral_Icon_Disabled.png")]

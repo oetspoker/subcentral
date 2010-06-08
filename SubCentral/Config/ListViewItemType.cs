@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SubCentral.Enums {
+﻿
+namespace SubCentral.ConfigForm
+{
     public enum ListViewItemType {
         Unknown,
         Group,

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
-using SubCentral.Enums;
-using SubCentral.Structs;
 using NLog;
+using SubCentral.Enums;
+using SubCentral.GUI.Items;
 
 namespace SubCentral.Utils {
     public static class GUIUtils {

@@ -5,12 +5,11 @@ using System.Windows.Forms;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using NLog;
+using SubCentral.GUI.Items;
 using SubCentral.Localizations;
 using SubCentral.PluginHandlers;
 using SubCentral.Utils;
 using SubCentral.Enums;
-using SubCentral.Structs;
-using SubCentral.HelperClass;
 using SubCentral.Settings;
 using SubCentral.Settings.Data;
 
@@ -1348,6 +1347,19 @@ namespace SubCentral.GUI {
             return result;
         }
         #endregion
+    }
 
+    public enum ViewMode
+    {
+        NONE,
+        MAIN,
+        SEARCH,
+        MODIFYSEARCH
+    }
+
+    public enum ListControlViewState
+    {
+        GROUPSANDPROVIDERS,
+        SEARCHRESULTS
     }
 }

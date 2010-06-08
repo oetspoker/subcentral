@@ -4,12 +4,12 @@ using System.IO;
 using System.Threading;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
+using SubCentral.GUI.Items;
 using SubCentral.Localizations;
+using SubCentral.PluginHandlers;
+using SubCentral.Settings.Data;
 using SubCentral.Utils;
 using SubCentral.Enums;
-using SubCentral.Structs;
-using SubCentral.HelperClass;
-//using SubtitleDownloader.Core;
 using NLog;
 
 namespace SubCentral.GUI {
@@ -521,5 +521,10 @@ namespace SubCentral.GUI {
         }
         #endregion
 
+        private class CustomSubtitleDownloader
+        {
+            public SubtitleDownloader.Core.ISubtitleDownloader downloader { get; set; }
+            public string downloaderTitle { get; set; }
+        }
     }
 }
