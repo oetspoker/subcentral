@@ -59,12 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\FolderErrorInfo.cs" />
+    <Compile Include="GUI\FolderErrorInfo.cs" />
     <Compile Include="Config\ListViewItemType.cs" />
     <Compile Include="Settings\Data\OnDownload.cs" />
     <Compile Include="Settings\Data\OnDownloadFileName.cs" />
     <Compile Include="PluginHandlers\PluginHandlerType.cs" />
-    <Compile Include="Enums\SubtitlesSearchType.cs" />
+    <Compile Include="GUI\SubtitlesSearchType.cs" />
     <Compile Include="GUI\TemporaryCustomHandlerUpdater.cs" />
     <Compile Include="GUI\SubtitlesSortDetails.cs" />
     <Compile Include="Settings\Data\SubtitlesSortMethod.cs" />
@@ -80,7 +80,7 @@
     </Compile>
     <Compile Include="GUI\GUIControls.cs" />
     <Compile Include="Config\MoveItem.cs" />
-    <Compile Include="Enums\StringEnum.cs" />
+    <Compile Include="Utils\StringEnum.cs" />
     <Compile Include="Settings\Data\OnPluginLoadWithSearchData.cs" />
     <Compile Include="GUI\GUIDialogMultiSelect.cs" />
     <Compile Include="GUI\Retriever.cs" />

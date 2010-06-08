@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Windows.Forms;
 using MediaPortal.Configuration;
 using NLog;
+using SubCentral.GUI;
 using SubCentral.Localizations;
 using SubCentral.Settings;
 using SubCentral.Settings.Data;
-using SubCentral.Enums;
 using SubCentral.Utils;
 using MediaPortal.GUI.Library;
 

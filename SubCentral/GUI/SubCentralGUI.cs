@@ -4,7 +4,6 @@ using System.IO;
 using System.Windows.Forms;
 using MediaPortal.GUI.Library;
 using NLog;
-using SubCentral.Enums;
 using SubCentral.GUI.Items;
 using SubCentral.Localizations;
 using SubCentral.PluginHandlers;

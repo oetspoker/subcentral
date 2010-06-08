@@ -2,7 +2,6 @@
 using System.IO;
 using MediaPortal.GUI.Library;
 using NLog;
-using SubCentral.Enums;
 using SubCentral.PluginHandlers;
 using SubCentral.Utils;
 

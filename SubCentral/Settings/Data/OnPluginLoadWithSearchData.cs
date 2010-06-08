@@ -1,5 +1,4 @@
-﻿
-using SubCentral.Enums;
+﻿using SubCentral.Utils;
 
 namespace SubCentral.Settings.Data
 {

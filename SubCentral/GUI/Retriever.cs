@@ -9,7 +9,6 @@ using SubCentral.Localizations;
 using SubCentral.PluginHandlers;
 using SubCentral.Settings.Data;
 using SubCentral.Utils;
-using SubCentral.Enums;
 using NLog;
 
 namespace SubCentral.GUI {
