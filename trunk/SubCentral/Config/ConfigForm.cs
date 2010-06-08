@@ -332,6 +332,9 @@ namespace SubCentral.ConfigForm {
                 }
             }
             else {
+                splitContainer1.Panel2Collapsed = true;
+                SetEditGroupButtonText();
+
                 btnGroupsAndProvidersRemoveGroup.Enabled = false;
                 btnGroupsAndProvidersEditGroup.Enabled = false;
                 btnGroupsAndProvidersUp.Enabled = false;

@@ -92,9 +92,9 @@ namespace SubCentral.Localizations {
                     try {
                         TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
                     }
-                    catch (Exception ex) {
-                        logger.Error("Error in Translation Engine");
-                        logger.Error(ex);
+                    catch (Exception e) {
+                        logger.Error("Error in Translation Engine:");
+                        logger.Error(e);
                     }
             }
 
