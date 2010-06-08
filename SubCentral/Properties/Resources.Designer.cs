@@ -102,6 +102,13 @@ namespace SubCentral.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Edit {
+            get {
+                object obj = ResourceManager.GetObject("Edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Folders {
             get {
                 object obj = ResourceManager.GetObject("Folders", resourceCulture);

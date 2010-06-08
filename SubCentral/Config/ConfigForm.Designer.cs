@@ -24,14 +24,14 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Groups", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Providers", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Provider 1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Provider 2"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Provider 3"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Groups", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Providers", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Language 1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
@@ -46,13 +46,9 @@
             this.checkBoxUseLanguageCode = new System.Windows.Forms.CheckBox();
             this.labelPluginLoadWithSearchData = new System.Windows.Forms.Label();
             this.comboBoxPluginLoadWithSearchData = new System.Windows.Forms.ComboBox();
-            this.groupBoxEditGroup = new System.Windows.Forms.GroupBox();
-            this.checkBoxEditGroupDefaultTVShows = new System.Windows.Forms.CheckBox();
-            this.checkBoxEditGroupDefaultMovies = new System.Windows.Forms.CheckBox();
-            this.listViewEditGroup = new System.Windows.Forms.ListView();
-            this.btnEditGroupDown = new System.Windows.Forms.Button();
-            this.btnEditGroupUp = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gbFeedConf = new System.Windows.Forms.GroupBox();
+            this.btnGroupsAndProvidersEditGroup = new System.Windows.Forms.Button();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.listViewGroupsAndProviders = new System.Windows.Forms.ListView();
@@ -62,6 +58,12 @@
             this.btnGroupsAndProvidersUp = new System.Windows.Forms.Button();
             this.btnGroupsAndProvidersRemoveGroup = new System.Windows.Forms.Button();
             this.btnGroupsAndProvidersAddGroup = new System.Windows.Forms.Button();
+            this.groupBoxEditGroup = new System.Windows.Forms.GroupBox();
+            this.checkBoxEditGroupDefaultTVShows = new System.Windows.Forms.CheckBox();
+            this.checkBoxEditGroupDefaultMovies = new System.Windows.Forms.CheckBox();
+            this.listViewEditGroup = new System.Windows.Forms.ListView();
+            this.btnEditGroupDown = new System.Windows.Forms.Button();
+            this.btnEditGroupUp = new System.Windows.Forms.Button();
             this.pgLanguages = new System.Windows.Forms.TabPage();
             this.groupBoxLanguages = new System.Windows.Forms.GroupBox();
             this.btnLanguagesDown = new System.Windows.Forms.Button();
@@ -111,8 +113,11 @@
             this.tabControl.SuspendLayout();
             this.pgGeneral.SuspendLayout();
             this.groupBoxGeneralOther.SuspendLayout();
-            this.groupBoxEditGroup.SuspendLayout();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.gbFeedConf.SuspendLayout();
+            this.groupBoxEditGroup.SuspendLayout();
             this.pgLanguages.SuspendLayout();
             this.groupBoxLanguages.SuspendLayout();
             this.pgFolders.SuspendLayout();
@@ -143,8 +148,7 @@
             // pgGeneral
             // 
             this.pgGeneral.Controls.Add(this.groupBoxGeneralOther);
-            this.pgGeneral.Controls.Add(this.groupBoxEditGroup);
-            this.pgGeneral.Controls.Add(this.gbFeedConf);
+            this.pgGeneral.Controls.Add(this.splitContainer1);
             this.pgGeneral.ImageIndex = 2;
             this.pgGeneral.Location = new System.Drawing.Point(4, 23);
             this.pgGeneral.Name = "pgGeneral";
@@ -165,17 +169,18 @@
             this.groupBoxGeneralOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBoxGeneralOther.Location = new System.Drawing.Point(6, 546);
             this.groupBoxGeneralOther.Name = "groupBoxGeneralOther";
-            this.groupBoxGeneralOther.Size = new System.Drawing.Size(603, 66);
+            this.groupBoxGeneralOther.Size = new System.Drawing.Size(601, 66);
             this.groupBoxGeneralOther.TabIndex = 3;
             this.groupBoxGeneralOther.TabStop = false;
-            this.groupBoxGeneralOther.Text = "Other options";
+            this.groupBoxGeneralOther.Text = "Other options  ";
+            this.groupBoxGeneralOther.UseCompatibleTextRendering = true;
             // 
             // checkBoxSearchDefaultsWhenFromManualSearch
             // 
             this.checkBoxSearchDefaultsWhenFromManualSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxSearchDefaultsWhenFromManualSearch.AutoSize = true;
             this.checkBoxSearchDefaultsWhenFromManualSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Location = new System.Drawing.Point(344, 38);
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Location = new System.Drawing.Point(342, 38);
             this.checkBoxSearchDefaultsWhenFromManualSearch.Name = "checkBoxSearchDefaultsWhenFromManualSearch";
             this.checkBoxSearchDefaultsWhenFromManualSearch.Size = new System.Drawing.Size(252, 17);
             this.checkBoxSearchDefaultsWhenFromManualSearch.TabIndex = 3;
@@ -187,7 +192,7 @@
             this.checkBoxUseLanguageCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxUseLanguageCode.AutoSize = true;
             this.checkBoxUseLanguageCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(429, 19);
+            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(427, 19);
             this.checkBoxUseLanguageCode.Name = "checkBoxUseLanguageCode";
             this.checkBoxUseLanguageCode.Size = new System.Drawing.Size(167, 17);
             this.checkBoxUseLanguageCode.TabIndex = 2;
@@ -202,7 +207,7 @@
             this.labelPluginLoadWithSearchData.Margin = new System.Windows.Forms.Padding(3);
             this.labelPluginLoadWithSearchData.Name = "labelPluginLoadWithSearchData";
             this.labelPluginLoadWithSearchData.Size = new System.Drawing.Size(229, 13);
-            this.labelPluginLoadWithSearchData.TabIndex = 1;
+            this.labelPluginLoadWithSearchData.TabIndex = 0;
             this.labelPluginLoadWithSearchData.Text = "When plugin is loaded and search data is filled:";
             // 
             // comboBoxPluginLoadWithSearchData
@@ -213,112 +218,36 @@
             this.comboBoxPluginLoadWithSearchData.Items.AddRange(new object[] {
             "Do nothing",
             "Search default providers"});
-            this.comboBoxPluginLoadWithSearchData.Location = new System.Drawing.Point(9, 38);
+            this.comboBoxPluginLoadWithSearchData.Location = new System.Drawing.Point(8, 38);
             this.comboBoxPluginLoadWithSearchData.Name = "comboBoxPluginLoadWithSearchData";
             this.comboBoxPluginLoadWithSearchData.Size = new System.Drawing.Size(188, 21);
-            this.comboBoxPluginLoadWithSearchData.TabIndex = 0;
+            this.comboBoxPluginLoadWithSearchData.TabIndex = 1;
             // 
-            // groupBoxEditGroup
+            // splitContainer1
             // 
-            this.groupBoxEditGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxEditGroup.Controls.Add(this.checkBoxEditGroupDefaultTVShows);
-            this.groupBoxEditGroup.Controls.Add(this.checkBoxEditGroupDefaultMovies);
-            this.groupBoxEditGroup.Controls.Add(this.listViewEditGroup);
-            this.groupBoxEditGroup.Controls.Add(this.btnEditGroupDown);
-            this.groupBoxEditGroup.Controls.Add(this.btnEditGroupUp);
-            this.groupBoxEditGroup.Enabled = false;
-            this.groupBoxEditGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxEditGroup.Location = new System.Drawing.Point(6, 302);
-            this.groupBoxEditGroup.Name = "groupBoxEditGroup";
-            this.groupBoxEditGroup.Size = new System.Drawing.Size(603, 238);
-            this.groupBoxEditGroup.TabIndex = 2;
-            this.groupBoxEditGroup.TabStop = false;
-            this.groupBoxEditGroup.Text = "Edit group";
+            this.splitContainer1.Location = new System.Drawing.Point(6, 6);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer1.Size = new System.Drawing.Size(601, 534);
+            this.splitContainer1.SplitterDistance = 370;
+            this.splitContainer1.TabIndex = 1;
             // 
-            // checkBoxEditGroupDefaultTVShows
+            // splitContainer1.Panel1
             // 
-            this.checkBoxEditGroupDefaultTVShows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBoxEditGroupDefaultTVShows.AutoSize = true;
-            this.checkBoxEditGroupDefaultTVShows.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxEditGroupDefaultTVShows.Location = new System.Drawing.Point(183, 209);
-            this.checkBoxEditGroupDefaultTVShows.Name = "checkBoxEditGroupDefaultTVShows";
-            this.checkBoxEditGroupDefaultTVShows.Size = new System.Drawing.Size(125, 17);
-            this.checkBoxEditGroupDefaultTVShows.TabIndex = 2;
-            this.checkBoxEditGroupDefaultTVShows.Text = "Default for &TV shows";
-            this.checkBoxEditGroupDefaultTVShows.UseVisualStyleBackColor = true;
-            this.checkBoxEditGroupDefaultTVShows.Click += new System.EventHandler(this.checkBoxEditGroupDefault_Click);
+            this.splitContainer1.Panel1.Controls.Add(this.gbFeedConf);
+            this.splitContainer1.Panel1MinSize = 250;
             // 
-            // checkBoxEditGroupDefaultMovies
+            // splitContainer1.Panel2
             // 
-            this.checkBoxEditGroupDefaultMovies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBoxEditGroupDefaultMovies.AutoSize = true;
-            this.checkBoxEditGroupDefaultMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxEditGroupDefaultMovies.Location = new System.Drawing.Point(6, 209);
-            this.checkBoxEditGroupDefaultMovies.Name = "checkBoxEditGroupDefaultMovies";
-            this.checkBoxEditGroupDefaultMovies.Size = new System.Drawing.Size(112, 17);
-            this.checkBoxEditGroupDefaultMovies.TabIndex = 1;
-            this.checkBoxEditGroupDefaultMovies.Text = "Default for &Movies";
-            this.checkBoxEditGroupDefaultMovies.UseVisualStyleBackColor = true;
-            this.checkBoxEditGroupDefaultMovies.Click += new System.EventHandler(this.checkBoxEditGroupDefault_Click);
-            // 
-            // listViewEditGroup
-            // 
-            this.listViewEditGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewEditGroup.CheckBoxes = true;
-            this.listViewEditGroup.HideSelection = false;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
-            this.listViewEditGroup.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
-            this.listViewEditGroup.LabelEdit = true;
-            this.listViewEditGroup.Location = new System.Drawing.Point(6, 19);
-            this.listViewEditGroup.MultiSelect = false;
-            this.listViewEditGroup.Name = "listViewEditGroup";
-            this.listViewEditGroup.Size = new System.Drawing.Size(557, 184);
-            this.listViewEditGroup.TabIndex = 0;
-            this.listViewEditGroup.UseCompatibleStateImageBehavior = false;
-            this.listViewEditGroup.View = System.Windows.Forms.View.List;
-            this.listViewEditGroup.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView_AfterLabelEdit);
-            this.listViewEditGroup.SelectedIndexChanged += new System.EventHandler(this.listViewEditGroup_SelectedIndexChanged);
-            this.listViewEditGroup.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listView_ItemCheck);
-            // 
-            // btnEditGroupDown
-            // 
-            this.btnEditGroupDown.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnEditGroupDown.Enabled = false;
-            this.btnEditGroupDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditGroupDown.Image = global::SubCentral.Properties.Resources.ArrowDown;
-            this.btnEditGroupDown.Location = new System.Drawing.Point(569, 114);
-            this.btnEditGroupDown.Name = "btnEditGroupDown";
-            this.btnEditGroupDown.Size = new System.Drawing.Size(28, 23);
-            this.btnEditGroupDown.TabIndex = 4;
-            this.btnEditGroupDown.UseVisualStyleBackColor = true;
-            this.btnEditGroupDown.Click += new System.EventHandler(this.btnEditGroupUpDown_Click);
-            // 
-            // btnEditGroupUp
-            // 
-            this.btnEditGroupUp.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnEditGroupUp.Enabled = false;
-            this.btnEditGroupUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditGroupUp.Image = global::SubCentral.Properties.Resources.ArrowUp;
-            this.btnEditGroupUp.Location = new System.Drawing.Point(569, 85);
-            this.btnEditGroupUp.Name = "btnEditGroupUp";
-            this.btnEditGroupUp.Size = new System.Drawing.Size(28, 23);
-            this.btnEditGroupUp.TabIndex = 3;
-            this.btnEditGroupUp.UseVisualStyleBackColor = true;
-            this.btnEditGroupUp.Click += new System.EventHandler(this.btnEditGroupUpDown_Click);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBoxEditGroup);
+            this.splitContainer1.Panel2MinSize = 160;
             // 
             // gbFeedConf
             // 
             this.gbFeedConf.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbFeedConf.Controls.Add(this.btnGroupsAndProvidersEditGroup);
             this.gbFeedConf.Controls.Add(this.linkLabel2);
             this.gbFeedConf.Controls.Add(this.linkLabel1);
             this.gbFeedConf.Controls.Add(this.listViewGroupsAndProviders);
@@ -327,12 +256,26 @@
             this.gbFeedConf.Controls.Add(this.btnGroupsAndProvidersRemoveGroup);
             this.gbFeedConf.Controls.Add(this.btnGroupsAndProvidersAddGroup);
             this.gbFeedConf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFeedConf.Location = new System.Drawing.Point(6, 6);
+            this.gbFeedConf.Location = new System.Drawing.Point(0, 0);
             this.gbFeedConf.Name = "gbFeedConf";
-            this.gbFeedConf.Size = new System.Drawing.Size(603, 290);
+            this.gbFeedConf.Size = new System.Drawing.Size(601, 370);
             this.gbFeedConf.TabIndex = 1;
             this.gbFeedConf.TabStop = false;
-            this.gbFeedConf.Text = "Groups and providers";
+            this.gbFeedConf.Text = "Groups and providers  ";
+            // 
+            // btnGroupsAndProvidersEditGroup
+            // 
+            this.btnGroupsAndProvidersEditGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupsAndProvidersEditGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGroupsAndProvidersEditGroup.Image = global::SubCentral.Properties.Resources.Edit;
+            this.btnGroupsAndProvidersEditGroup.Location = new System.Drawing.Point(120, 341);
+            this.btnGroupsAndProvidersEditGroup.Name = "btnGroupsAndProvidersEditGroup";
+            this.btnGroupsAndProvidersEditGroup.Size = new System.Drawing.Size(108, 23);
+            this.btnGroupsAndProvidersEditGroup.TabIndex = 2;
+            this.btnGroupsAndProvidersEditGroup.Text = "&Edit group";
+            this.btnGroupsAndProvidersEditGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGroupsAndProvidersEditGroup.UseVisualStyleBackColor = true;
+            this.btnGroupsAndProvidersEditGroup.Click += new System.EventHandler(this.button1_Click);
             // 
             // linkLabel2
             // 
@@ -340,7 +283,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkArea = new System.Windows.Forms.LinkArea(0, 20);
             this.linkLabel2.LinkColor = System.Drawing.Color.Navy;
-            this.linkLabel2.Location = new System.Drawing.Point(459, 270);
+            this.linkLabel2.Location = new System.Drawing.Point(457, 351);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(104, 17);
             this.linkLabel2.TabIndex = 12;
@@ -356,7 +299,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 17);
             this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
-            this.linkLabel1.Location = new System.Drawing.Point(472, 257);
+            this.linkLabel1.Location = new System.Drawing.Point(470, 338);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(91, 17);
             this.linkLabel1.TabIndex = 11;
@@ -391,7 +334,7 @@
             this.listViewGroupsAndProviders.Location = new System.Drawing.Point(6, 19);
             this.listViewGroupsAndProviders.MultiSelect = false;
             this.listViewGroupsAndProviders.Name = "listViewGroupsAndProviders";
-            this.listViewGroupsAndProviders.Size = new System.Drawing.Size(557, 236);
+            this.listViewGroupsAndProviders.Size = new System.Drawing.Size(555, 316);
             this.listViewGroupsAndProviders.TabIndex = 0;
             this.listViewGroupsAndProviders.UseCompatibleStateImageBehavior = false;
             this.listViewGroupsAndProviders.View = System.Windows.Forms.View.Details;
@@ -416,7 +359,7 @@
             this.btnGroupsAndProvidersDown.Enabled = false;
             this.btnGroupsAndProvidersDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupsAndProvidersDown.Image = global::SubCentral.Properties.Resources.ArrowDown;
-            this.btnGroupsAndProvidersDown.Location = new System.Drawing.Point(569, 140);
+            this.btnGroupsAndProvidersDown.Location = new System.Drawing.Point(567, 180);
             this.btnGroupsAndProvidersDown.Name = "btnGroupsAndProvidersDown";
             this.btnGroupsAndProvidersDown.Size = new System.Drawing.Size(28, 23);
             this.btnGroupsAndProvidersDown.TabIndex = 6;
@@ -429,7 +372,7 @@
             this.btnGroupsAndProvidersUp.Enabled = false;
             this.btnGroupsAndProvidersUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupsAndProvidersUp.Image = global::SubCentral.Properties.Resources.ArrowUp;
-            this.btnGroupsAndProvidersUp.Location = new System.Drawing.Point(569, 111);
+            this.btnGroupsAndProvidersUp.Location = new System.Drawing.Point(567, 151);
             this.btnGroupsAndProvidersUp.Name = "btnGroupsAndProvidersUp";
             this.btnGroupsAndProvidersUp.Size = new System.Drawing.Size(28, 23);
             this.btnGroupsAndProvidersUp.TabIndex = 5;
@@ -442,11 +385,11 @@
             this.btnGroupsAndProvidersRemoveGroup.Enabled = false;
             this.btnGroupsAndProvidersRemoveGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupsAndProvidersRemoveGroup.Image = global::SubCentral.Properties.Resources.Delete;
-            this.btnGroupsAndProvidersRemoveGroup.Location = new System.Drawing.Point(120, 261);
+            this.btnGroupsAndProvidersRemoveGroup.Location = new System.Drawing.Point(343, 341);
             this.btnGroupsAndProvidersRemoveGroup.Name = "btnGroupsAndProvidersRemoveGroup";
             this.btnGroupsAndProvidersRemoveGroup.Size = new System.Drawing.Size(108, 23);
             this.btnGroupsAndProvidersRemoveGroup.TabIndex = 3;
-            this.btnGroupsAndProvidersRemoveGroup.Text = "&Remove group..";
+            this.btnGroupsAndProvidersRemoveGroup.Text = "&Remove group";
             this.btnGroupsAndProvidersRemoveGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGroupsAndProvidersRemoveGroup.UseVisualStyleBackColor = true;
             this.btnGroupsAndProvidersRemoveGroup.Click += new System.EventHandler(this.btnGroupsAndProvidersRemoveGroup_Click);
@@ -456,14 +399,111 @@
             this.btnGroupsAndProvidersAddGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGroupsAndProvidersAddGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroupsAndProvidersAddGroup.Image = global::SubCentral.Properties.Resources.Add;
-            this.btnGroupsAndProvidersAddGroup.Location = new System.Drawing.Point(6, 261);
+            this.btnGroupsAndProvidersAddGroup.Location = new System.Drawing.Point(6, 341);
             this.btnGroupsAndProvidersAddGroup.Name = "btnGroupsAndProvidersAddGroup";
             this.btnGroupsAndProvidersAddGroup.Size = new System.Drawing.Size(108, 23);
             this.btnGroupsAndProvidersAddGroup.TabIndex = 1;
-            this.btnGroupsAndProvidersAddGroup.Text = "&Add group..";
+            this.btnGroupsAndProvidersAddGroup.Text = "&Add group";
             this.btnGroupsAndProvidersAddGroup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGroupsAndProvidersAddGroup.UseVisualStyleBackColor = true;
             this.btnGroupsAndProvidersAddGroup.Click += new System.EventHandler(this.btnGroupsAndProvidersAddGroup_Click);
+            // 
+            // groupBoxEditGroup
+            // 
+            this.groupBoxEditGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxEditGroup.Controls.Add(this.checkBoxEditGroupDefaultTVShows);
+            this.groupBoxEditGroup.Controls.Add(this.checkBoxEditGroupDefaultMovies);
+            this.groupBoxEditGroup.Controls.Add(this.listViewEditGroup);
+            this.groupBoxEditGroup.Controls.Add(this.btnEditGroupDown);
+            this.groupBoxEditGroup.Controls.Add(this.btnEditGroupUp);
+            this.groupBoxEditGroup.Enabled = false;
+            this.groupBoxEditGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxEditGroup.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxEditGroup.Name = "groupBoxEditGroup";
+            this.groupBoxEditGroup.Size = new System.Drawing.Size(601, 160);
+            this.groupBoxEditGroup.TabIndex = 2;
+            this.groupBoxEditGroup.TabStop = false;
+            this.groupBoxEditGroup.Text = "Edit group  ";
+            // 
+            // checkBoxEditGroupDefaultTVShows
+            // 
+            this.checkBoxEditGroupDefaultTVShows.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxEditGroupDefaultTVShows.AutoSize = true;
+            this.checkBoxEditGroupDefaultTVShows.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxEditGroupDefaultTVShows.Location = new System.Drawing.Point(183, 131);
+            this.checkBoxEditGroupDefaultTVShows.Name = "checkBoxEditGroupDefaultTVShows";
+            this.checkBoxEditGroupDefaultTVShows.Size = new System.Drawing.Size(125, 17);
+            this.checkBoxEditGroupDefaultTVShows.TabIndex = 2;
+            this.checkBoxEditGroupDefaultTVShows.Text = "Default for &TV shows";
+            this.checkBoxEditGroupDefaultTVShows.UseVisualStyleBackColor = true;
+            this.checkBoxEditGroupDefaultTVShows.Click += new System.EventHandler(this.checkBoxEditGroupDefault_Click);
+            // 
+            // checkBoxEditGroupDefaultMovies
+            // 
+            this.checkBoxEditGroupDefaultMovies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.checkBoxEditGroupDefaultMovies.AutoSize = true;
+            this.checkBoxEditGroupDefaultMovies.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxEditGroupDefaultMovies.Location = new System.Drawing.Point(6, 131);
+            this.checkBoxEditGroupDefaultMovies.Name = "checkBoxEditGroupDefaultMovies";
+            this.checkBoxEditGroupDefaultMovies.Size = new System.Drawing.Size(112, 17);
+            this.checkBoxEditGroupDefaultMovies.TabIndex = 1;
+            this.checkBoxEditGroupDefaultMovies.Text = "Default for &Movies";
+            this.checkBoxEditGroupDefaultMovies.UseVisualStyleBackColor = true;
+            this.checkBoxEditGroupDefaultMovies.Click += new System.EventHandler(this.checkBoxEditGroupDefault_Click);
+            // 
+            // listViewEditGroup
+            // 
+            this.listViewEditGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewEditGroup.CheckBoxes = true;
+            this.listViewEditGroup.HideSelection = false;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
+            this.listViewEditGroup.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
+            this.listViewEditGroup.LabelEdit = true;
+            this.listViewEditGroup.Location = new System.Drawing.Point(6, 19);
+            this.listViewEditGroup.MultiSelect = false;
+            this.listViewEditGroup.Name = "listViewEditGroup";
+            this.listViewEditGroup.Size = new System.Drawing.Size(555, 106);
+            this.listViewEditGroup.TabIndex = 0;
+            this.listViewEditGroup.UseCompatibleStateImageBehavior = false;
+            this.listViewEditGroup.View = System.Windows.Forms.View.List;
+            this.listViewEditGroup.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView_AfterLabelEdit);
+            this.listViewEditGroup.SelectedIndexChanged += new System.EventHandler(this.listViewEditGroup_SelectedIndexChanged);
+            this.listViewEditGroup.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listView_ItemCheck);
+            // 
+            // btnEditGroupDown
+            // 
+            this.btnEditGroupDown.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnEditGroupDown.Enabled = false;
+            this.btnEditGroupDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditGroupDown.Image = global::SubCentral.Properties.Resources.ArrowDown;
+            this.btnEditGroupDown.Location = new System.Drawing.Point(567, 75);
+            this.btnEditGroupDown.Name = "btnEditGroupDown";
+            this.btnEditGroupDown.Size = new System.Drawing.Size(28, 23);
+            this.btnEditGroupDown.TabIndex = 4;
+            this.btnEditGroupDown.UseVisualStyleBackColor = true;
+            this.btnEditGroupDown.Click += new System.EventHandler(this.btnEditGroupUpDown_Click);
+            // 
+            // btnEditGroupUp
+            // 
+            this.btnEditGroupUp.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnEditGroupUp.Enabled = false;
+            this.btnEditGroupUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditGroupUp.Image = global::SubCentral.Properties.Resources.ArrowUp;
+            this.btnEditGroupUp.Location = new System.Drawing.Point(567, 46);
+            this.btnEditGroupUp.Name = "btnEditGroupUp";
+            this.btnEditGroupUp.Size = new System.Drawing.Size(28, 23);
+            this.btnEditGroupUp.TabIndex = 3;
+            this.btnEditGroupUp.UseVisualStyleBackColor = true;
+            this.btnEditGroupUp.Click += new System.EventHandler(this.btnEditGroupUpDown_Click);
             // 
             // pgLanguages
             // 
@@ -488,10 +528,10 @@
             this.groupBoxLanguages.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxLanguages.Location = new System.Drawing.Point(6, 6);
             this.groupBoxLanguages.Name = "groupBoxLanguages";
-            this.groupBoxLanguages.Size = new System.Drawing.Size(603, 606);
+            this.groupBoxLanguages.Size = new System.Drawing.Size(601, 606);
             this.groupBoxLanguages.TabIndex = 2;
             this.groupBoxLanguages.TabStop = false;
-            this.groupBoxLanguages.Text = "Languages";
+            this.groupBoxLanguages.Text = "Languages  ";
             // 
             // btnLanguagesDown
             // 
@@ -499,7 +539,7 @@
             this.btnLanguagesDown.Enabled = false;
             this.btnLanguagesDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLanguagesDown.Image = global::SubCentral.Properties.Resources.ArrowDown;
-            this.btnLanguagesDown.Location = new System.Drawing.Point(569, 312);
+            this.btnLanguagesDown.Location = new System.Drawing.Point(567, 312);
             this.btnLanguagesDown.Name = "btnLanguagesDown";
             this.btnLanguagesDown.Size = new System.Drawing.Size(28, 74);
             this.btnLanguagesDown.TabIndex = 10;
@@ -512,7 +552,7 @@
             this.btnLanguagesUp.Enabled = false;
             this.btnLanguagesUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLanguagesUp.Image = global::SubCentral.Properties.Resources.ArrowUp;
-            this.btnLanguagesUp.Location = new System.Drawing.Point(569, 232);
+            this.btnLanguagesUp.Location = new System.Drawing.Point(567, 232);
             this.btnLanguagesUp.Name = "btnLanguagesUp";
             this.btnLanguagesUp.Size = new System.Drawing.Size(28, 74);
             this.btnLanguagesUp.TabIndex = 9;
@@ -536,7 +576,7 @@
             this.listViewLanguages.Location = new System.Drawing.Point(6, 19);
             this.listViewLanguages.MultiSelect = false;
             this.listViewLanguages.Name = "listViewLanguages";
-            this.listViewLanguages.Size = new System.Drawing.Size(557, 581);
+            this.listViewLanguages.Size = new System.Drawing.Size(555, 581);
             this.listViewLanguages.TabIndex = 8;
             this.listViewLanguages.UseCompatibleStateImageBehavior = false;
             this.listViewLanguages.View = System.Windows.Forms.View.List;
@@ -567,7 +607,7 @@
             this.groupBoxFoldersOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBoxFoldersOther.Location = new System.Drawing.Point(6, 546);
             this.groupBoxFoldersOther.Name = "groupBoxFoldersOther";
-            this.groupBoxFoldersOther.Size = new System.Drawing.Size(603, 66);
+            this.groupBoxFoldersOther.Size = new System.Drawing.Size(601, 66);
             this.groupBoxFoldersOther.TabIndex = 4;
             this.groupBoxFoldersOther.TabStop = false;
             this.groupBoxFoldersOther.Text = "Other options";
@@ -592,7 +632,7 @@
             this.comboBoxFileName.Items.AddRange(new object[] {
             "Use default folders",
             "Always ask"});
-            this.comboBoxFileName.Location = new System.Drawing.Point(203, 38);
+            this.comboBoxFileName.Location = new System.Drawing.Point(202, 38);
             this.comboBoxFileName.Name = "comboBoxFileName";
             this.comboBoxFileName.Size = new System.Drawing.Size(188, 21);
             this.comboBoxFileName.TabIndex = 2;
@@ -616,7 +656,7 @@
             this.comboBoxWhenDownloading.Items.AddRange(new object[] {
             "Use default folders",
             "Always ask"});
-            this.comboBoxWhenDownloading.Location = new System.Drawing.Point(9, 38);
+            this.comboBoxWhenDownloading.Location = new System.Drawing.Point(8, 38);
             this.comboBoxWhenDownloading.Name = "comboBoxWhenDownloading";
             this.comboBoxWhenDownloading.Size = new System.Drawing.Size(188, 21);
             this.comboBoxWhenDownloading.TabIndex = 0;
@@ -631,10 +671,10 @@
             this.groupBoxFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxFolders.Location = new System.Drawing.Point(6, 6);
             this.groupBoxFolders.Name = "groupBoxFolders";
-            this.groupBoxFolders.Size = new System.Drawing.Size(603, 534);
+            this.groupBoxFolders.Size = new System.Drawing.Size(601, 534);
             this.groupBoxFolders.TabIndex = 3;
             this.groupBoxFolders.TabStop = false;
-            this.groupBoxFolders.Text = "Folders";
+            this.groupBoxFolders.Text = "Folders  ";
             // 
             // checkBoxFoldersDefaultTVShows
             // 
@@ -679,7 +719,7 @@
             this.listViewFolders.MultiSelect = false;
             this.listViewFolders.Name = "listViewFolders";
             this.listViewFolders.ShowGroups = false;
-            this.listViewFolders.Size = new System.Drawing.Size(591, 480);
+            this.listViewFolders.Size = new System.Drawing.Size(589, 480);
             this.listViewFolders.TabIndex = 0;
             this.listViewFolders.UseCompatibleStateImageBehavior = false;
             this.listViewFolders.View = System.Windows.Forms.View.Details;
@@ -744,10 +784,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 130);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(603, 456);
+            this.groupBox1.Size = new System.Drawing.Size(601, 456);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "About";
+            this.groupBox1.Text = "About  ";
             // 
             // label39
             // 
@@ -1053,10 +1093,13 @@
             this.pgGeneral.ResumeLayout(false);
             this.groupBoxGeneralOther.ResumeLayout(false);
             this.groupBoxGeneralOther.PerformLayout();
-            this.groupBoxEditGroup.ResumeLayout(false);
-            this.groupBoxEditGroup.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             this.gbFeedConf.ResumeLayout(false);
             this.gbFeedConf.PerformLayout();
+            this.groupBoxEditGroup.ResumeLayout(false);
+            this.groupBoxEditGroup.PerformLayout();
             this.pgLanguages.ResumeLayout(false);
             this.groupBoxLanguages.ResumeLayout(false);
             this.pgFolders.ResumeLayout(false);
@@ -1144,6 +1187,8 @@
         private System.Windows.Forms.ComboBox comboBoxFileName;
         private System.Windows.Forms.CheckBox checkBoxUseLanguageCode;
         private System.Windows.Forms.CheckBox checkBoxSearchDefaultsWhenFromManualSearch;
+        private System.Windows.Forms.Button btnGroupsAndProvidersEditGroup;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
 
