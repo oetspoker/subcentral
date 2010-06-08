@@ -254,9 +254,6 @@ namespace SubCentral.GUI {
             // get last active module  
             int lastActiveWindow = GUIWindowManager.GetPreviousActiveWindow();
 
-            // MS TEST
-            //AddTemporaryCustomPluginHandler(9811, new List<string> { "TVSeries", "", "CSI", "", "8", "9", "", "", @"d:\!dl\za_kopirat\CSI.S10.HDTV.XviD\CSI.S10E20.Take.My.Life.Please!.HDTV.XviD-LOL.avi" });
-            
             // just entering from the home or basic home or plugins screen, show the main screen
             if (MainWindowIDs.Contains(lastActiveWindow)) {
                 logger.Debug("Entered plugin from Home or Basic Home or Plugins screen");
