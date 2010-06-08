@@ -111,8 +111,10 @@
     <Compile Include="GUI\SubtitleDownloadStatus.cs" />
     <Compile Include="GUI\Items\SubtitleItem.cs" />
     <Compile Include="SubCentralCore.cs" />
+    <Compile Include="Utils\FileUtils.cs" />
     <Compile Include="Utils\GUIUtils.cs" />
     <Compile Include="Utils\MediaInfoWrapper.cs" />
+    <Compile Include="Utils\NetUtils.cs" />
     <Compile Include="Utils\SubCentralUtils.cs" />
   </ItemGroup>
   <ItemGroup>

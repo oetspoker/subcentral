@@ -136,7 +136,7 @@ namespace SubCentral.Utils {
 
                     //if (!SubCentralUtils.pathExists(folder.FolderName)) continue;
 
-                    if (string.IsNullOrEmpty(folder.FolderName) || !SubCentralUtils.uncHostIsAlive(folder.FolderName)) continue;
+                    if (string.IsNullOrEmpty(folder.FolderName) || !NetUtils.uncHostIsAlive(folder.FolderName)) continue;
 
                     try {
                         foreach (string file in System.IO.Directory.GetFiles(folder.FolderName, filenameNoExt + "*")) {

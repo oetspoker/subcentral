@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using NLog;
+using SubCentral.Enums;
 using SubCentral.GUI.Items;
 using SubCentral.Localizations;
 using SubCentral.PluginHandlers;
-using SubCentral.Utils;
-using SubCentral.Enums;
 using SubCentral.Settings;
 using SubCentral.Settings.Data;
+using SubCentral.Utils;
 
 
 namespace SubCentral.GUI {
