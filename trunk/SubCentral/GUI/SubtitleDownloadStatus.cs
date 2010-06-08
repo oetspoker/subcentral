@@ -1,7 +1,6 @@
-﻿using System.IO;
-using System.Collections.Generic;
-
-namespace SubCentral.Structs {
+﻿
+namespace SubCentral.GUI
+{
     public struct SubtitleDownloadStatus {
         public bool Succesful { get; set; }
         public bool Canceled { get; set; }

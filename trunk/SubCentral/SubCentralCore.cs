@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NLog.Config;
-using NLog.Targets;
-using NLog;
 using System.IO;
+using System.Reflection;
 using MediaPortal.Configuration;
 using MediaPortal.Services;
-using System.Reflection;
-using SubCentral.PluginHandlers;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
+using SubCentral.GUI;
 using SubCentral.Localizations;
+using SubCentral.PluginHandlers;
 using SubCentral.Settings;
 using SubCentral.Utils;
-using SubCentral.GUI;
 
 
 namespace SubCentral {
@@ -170,7 +168,7 @@ namespace SubCentral {
                 if (SubCentralUtils.SubsDownloaderNames == null)
                     SubCentralUtils.SubsDownloaderNames = SubtitleDownloader.Core.SubtitleDownloaderFactory.GetSubtitleDownloaderNames();
             }
-            catch (Exception e) {
+            catch (Exception) {
                 #if DEBUG
                 SubCentralUtils.SubsDownloaderNames = new List<string> { "Subscene", "Podnapisi", "TvSubtitles", "OpenSubtitles", "Bierdopje", "S4U.se", "Sublight", "MovieSubtitles", "SubtitleSource" };
                 logger.Error("SubtitleDownloader: error getting providers, using default ones");
@@ -195,7 +193,7 @@ namespace SubCentral {
                     SubCentralUtils.SubsLanguages.Add(SubtitleDownloader.Core.Languages.GetLanguageCode(languageName), languageName);
                 }
             }
-            catch (Exception e) {
+            catch (Exception) {
                 #if DEBUG
                 SubCentralUtils.SubsLanguages = new Dictionary<string, string> { { "English", "eng" } };
                 logger.Error("SubtitleDownloader: error getting languages, using default ones");

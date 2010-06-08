@@ -1,5 +1,6 @@
 ﻿
-namespace SubCentral.Structs {
+namespace SubCentral.GUI
+{
     public struct SubtitlesSortDetails {
         public int LanguagePriority { get; set; }
         public int ListPosition { get; set; }

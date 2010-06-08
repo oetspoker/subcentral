@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.IO;
 using MediaPortal.GUI.Library;
-using SubCentral.PluginHandlers;
-using SubCentral.Enums;
-using SubCentral.Structs;
-using SubCentral.Utils;
 using NLog;
+using SubCentral.Enums;
+using SubCentral.PluginHandlers;
+using SubCentral.Utils;
 
 namespace SubCentral.GUI {
     public static class TemporaryCustomHandlerUpdater {

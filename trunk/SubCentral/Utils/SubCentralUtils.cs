@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.IO;
-using System.Web;
-using System.Net;
-using System.Net.Sockets;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.ComponentModel;
 using System.Text.RegularExpressions;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
-using SubCentral.Localizations;
-using SubCentral.Enums;
-using SubCentral.Structs;
-using SubCentral.Settings;
-using SubCentral.Settings.Data;
 using NLog;
+using SubCentral.Enums;
+using SubCentral.GUI.Items;
+using SubCentral.Localizations;
+using SubCentral.PluginHandlers;
+using SubCentral.Settings.Data;
 
 
 namespace SubCentral.Utils {

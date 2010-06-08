@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Reflection;
-using MediaPortal.Plugins.MovingPictures;
-using MediaPortal.Plugins.MovingPictures.MainUI;
-using MediaPortal.Plugins.MovingPictures.Database;
-using SubCentral.GUI;
-using SubCentral.Structs;
-using SubCentral.Enums;
+﻿using NLog;
 using SubCentral.Localizations;
-using NLog;
 
 namespace SubCentral.PluginHandlers {
     internal class ManualSearchHandler : PluginHandler {

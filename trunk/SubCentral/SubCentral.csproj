@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -60,30 +60,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\FolderErrorInfo.cs" />
-    <Compile Include="Enums\ListViewItemType.cs" />
-    <Compile Include="Enums\OnDownload.cs" />
-    <Compile Include="Enums\OnDownloadFileName.cs" />
-    <Compile Include="Enums\PluginHandlerType.cs" />
+    <Compile Include="Config\ListViewItemType.cs" />
+    <Compile Include="Settings\Data\OnDownload.cs" />
+    <Compile Include="Settings\Data\OnDownloadFileName.cs" />
+    <Compile Include="PluginHandlers\PluginHandlerType.cs" />
     <Compile Include="Enums\SubtitlesSearchType.cs" />
     <Compile Include="GUI\TemporaryCustomHandlerUpdater.cs" />
-    <Compile Include="Structs\SubtitlesSortDetails.cs" />
-    <Compile Include="Enums\SubtitlesSortMethod.cs" />
+    <Compile Include="GUI\SubtitlesSortDetails.cs" />
+    <Compile Include="Settings\Data\SubtitlesSortMethod.cs" />
     <Compile Include="GUI\GUIListItemSubtitleComparer.cs" />
     <Compile Include="PluginHandlers\ManualSearchHandler.cs" />
     <Compile Include="PluginHandlers\TemporaryCustomPluginHandler.cs" />
-    <Compile Include="Structs\BasicMediaDetail.cs" />
+    <Compile Include="PluginHandlers\BasicMediaDetail.cs" />
     <Compile Include="Config\ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Config\ConfigForm.Designer.cs">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Enums\GUIControls.cs" />
-    <Compile Include="Enums\ListControlViewState.cs" />
-    <Compile Include="Enums\MoveItem.cs" />
+    <Compile Include="GUI\GUIControls.cs" />
+    <Compile Include="Config\MoveItem.cs" />
     <Compile Include="Enums\StringEnum.cs" />
-    <Compile Include="Enums\OnPluginLoadWithSearchData.cs" />
-    <Compile Include="Enums\ViewMode.cs" />
+    <Compile Include="Settings\Data\OnPluginLoadWithSearchData.cs" />
     <Compile Include="GUI\GUIDialogMultiSelect.cs" />
     <Compile Include="GUI\Retriever.cs" />
     <Compile Include="Localizations\Localization.cs" />
@@ -108,11 +106,10 @@
     </Compile>
     <Compile Include="Settings\Data\SubCentralSettings.cs" />
     <Compile Include="Settings\SettingsManager.cs" />
-    <Compile Include="HelperClass\CustomSubtitleDownloader.cs" />
-    <Compile Include="Structs\FolderSelectionItem.cs" />
-    <Compile Include="Structs\MultiSelectionitem.cs" />
-    <Compile Include="Structs\SubtitleDownloadStatus.cs" />
-    <Compile Include="HelperClass\SubtitleItem.cs" />
+    <Compile Include="GUI\Items\FolderSelectionItem.cs" />
+    <Compile Include="GUI\Items\MultiSelectionitem.cs" />
+    <Compile Include="GUI\SubtitleDownloadStatus.cs" />
+    <Compile Include="GUI\Items\SubtitleItem.cs" />
     <Compile Include="SubCentralCore.cs" />
     <Compile Include="Utils\GUIUtils.cs" />
     <Compile Include="Utils\MediaInfoWrapper.cs" />

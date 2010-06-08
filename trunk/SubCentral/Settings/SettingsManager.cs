@@ -1,10 +1,8 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 using MediaPortal.Configuration;
-using SubCentral.Utils;
 using SubCentral.Settings.Data;
-using SubCentral.Enums;
-using System.Runtime.Serialization;
+using SubCentral.Utils;
 
 namespace SubCentral.Settings {
     [XmlRoot("Settings")]

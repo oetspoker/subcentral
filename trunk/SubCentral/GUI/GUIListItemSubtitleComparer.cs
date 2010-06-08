@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using MediaPortal.GUI.Library;
-using SubCentral.Enums;
-using SubCentral.Structs;
+using SubCentral.Settings.Data;
 
 namespace SubCentral.GUI {
     public class GUIListItemSubtitleComparer : IComparer<GUIListItem> {
