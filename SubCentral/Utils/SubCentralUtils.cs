@@ -27,7 +27,6 @@ namespace SubCentral.Utils {
         public static string LogFileName = "SubCentral.log";
         public static string OldLogFileName = "SubCentral.log.bak";
         private static readonly object syncRoot = new object();
-        private static Dictionary<string, DriveInfo> driveInfoPool;
 
         public static Dictionary<string, string> SubsLanguages {
             get {
@@ -460,8 +459,8 @@ namespace SubCentral.Utils {
             string subtitlesPathsSetting = mpSettings.GetValueAsString("subtitles", "paths", @".\");
             foreach (string subtitlesPath in subtitlesPathsSetting.Split(new string[] { "," }, StringSplitOptions.None)) {
                 string subtitlesPathToAdd = subtitlesPath.Trim();
-                if (pathNameIsValid(subtitlesPathToAdd))
-                    subtitlesPathsMP.Add(ensureBackSlash(subtitlesPathToAdd));
+                if (FileUtils.pathNameIsValid(subtitlesPathToAdd))
+                    subtitlesPathsMP.Add(FileUtils.ensureBackSlash(subtitlesPathToAdd));
             }
 
             foreach (string subtitlesPath in subtitlesPathsMP) {
@@ -535,7 +534,7 @@ namespace SubCentral.Utils {
                 if (toRemove.Contains(settingsFolder)) continue;
                 string folder = settingsFolder.Folder;
                 if (fileInfo != null && !Path.IsPathRooted(settingsFolder.Folder)) {
-                    folder = ResolveRelativePath(settingsFolder.Folder, Path.GetDirectoryName(fileInfo.FullName));
+                    folder = FileUtils.ResolveRelativePath(settingsFolder.Folder, Path.GetDirectoryName(fileInfo.FullName));
                 }
                 if (folder != null) {
                     FolderSelectionItem newFolderSelectionItem = new FolderSelectionItem() {
@@ -563,186 +562,25 @@ namespace SubCentral.Utils {
             return result;
         }
 
-        public static FolderErrorInfo getFolderErrorInfo(string path) {
+        public static FolderErrorInfo getFolderErrorInfo(string path)
+        {
             FolderErrorInfo result = FolderErrorInfo.OK;
 
             bool hostAlive;
             bool pathDriveReady;
 
-            if (!pathExists(path, out hostAlive, out pathDriveReady))
+            if (!FileUtils.pathExists(path, out hostAlive, out pathDriveReady))
                 result = FolderErrorInfo.NonExistant;
-            else if (!pathIsWritable(path))
+            else if (!FileUtils.pathIsWritable(path))
                 result = FolderErrorInfo.ReadOnly;
 
-            int iUncPathDepth = uncPathDepth(path);
-            if (result == FolderErrorInfo.NonExistant && (pathDriveIsDVD(path) || !pathDriveReady /*!pathDriveIsReady(path)*/ || !hostAlive /*!uncHostIsAlive(path)*/ || (iUncPathDepth > 0 && iUncPathDepth < 3)))
+            int iUncPathDepth = FileUtils.uncPathDepth(path);
+            if (result == FolderErrorInfo.NonExistant &&
+                (FileUtils.pathDriveIsDVD(path) || !pathDriveReady /*!pathDriveIsReady(path)*/|| !hostAlive
+                 /*!uncHostIsAlive(path)*/|| (iUncPathDepth > 0 && iUncPathDepth < 3)))
                 result = FolderErrorInfo.ReadOnly;
 
             return result;
-        }
-
-        public static bool uncHostIsAlive(string path) {
-            if (string.IsNullOrEmpty(path)) return true;
-
-            if (!new Uri(path).IsUnc) {
-                DriveInfo di = GetDriveInfoFromPath(path);
-                if (di != null && di.DriveType == DriveType.Network) {
-                    path = MPR.GetUniversalName(path);
-                }
-                else
-                    return true;
-            }
-
-            Uri uri = new Uri(path);
-            string hostName = uri.Host;
-            bool alive = isMachineReachable(hostName);
-
-            return alive;
-        }
-
-        public static bool pathExists(string path) {
-            bool hostAlive;
-            bool pathDriveReady;
-            return pathExists(path, out hostAlive, out pathDriveReady);
-        }
-
-        public static bool pathExists(string path, out bool hostAlive, out bool pathDriveReady) {
-            hostAlive = true;
-            pathDriveReady = true;
-
-            if (string.IsNullOrEmpty(path)) return false;
-
-            if (!Path.IsPathRooted(path)) return true;
-
-            if (!uncHostIsAlive(path)) {
-                hostAlive = false;
-                return false;
-            }
-
-            if (!pathDriveIsReady(path)) {
-                pathDriveReady = false;
-                return false;
-            }
-
-            return Directory.Exists(path);
-        }
-
-        public static bool pathIsWritable(string path) {
-            if (string.IsNullOrEmpty(path)) return false;
-
-            if (!Path.IsPathRooted(path)) return true;
-
-            string fileName = String.Concat(path, Path.DirectorySeparatorChar, Path.GetRandomFileName());
-            FileInfo fileInfo = new FileInfo(fileName);
-
-            FileStream stream = null;
-            try {
-                stream = fileInfo.Open(FileMode.Create, FileAccess.ReadWrite, FileShare.None);
-            }
-            catch {
-                return false;
-            }
-            finally {
-                if (stream != null) {
-                    try {
-                        stream.Close();
-                        fileInfo.Delete();
-                    }
-                    catch {
-                    }
-                }
-            }
-            return true;
-        }
-
-        private static bool pathDriveIsDVD(string path) {
-            if (string.IsNullOrEmpty(path) || new Uri(path).IsUnc) return false;
-
-            DriveInfo di = GetDriveInfoFromPath(path);
-
-            if (di != null && di.DriveType == DriveType.CDRom) return true;
-
-            return false;
-        }
-
-        public static bool pathDriveIsReady(string path) {
-            if (string.IsNullOrEmpty(path) || new Uri(path).IsUnc) return true;
-
-            DriveInfo di = GetDriveInfoFromPath(path);
-
-            if (di != null && di.DriveType == DriveType.Network) return true;
-
-            if (di == null || !di.IsReady) return false;
-
-            return true;
-        }
-
-        public static bool pathIsDrive(string path) {
-            if (string.IsNullOrEmpty(path)) return false;
-
-            path = ensureBackSlash(path);
-            if (path.Length == 3 && path.EndsWith(@":\")) return true;
-            return false;
-        }
-
-        public static int uncPathDepth(string path) {
-            if (string.IsNullOrEmpty(path) || !new Uri(path).IsUnc) return 0;
-
-            path = ensureBackSlash(path);
-            path = path.Substring(0, path.Length - 1);
-
-            string[] check = path.Substring(2).Split(new char[] { Path.DirectorySeparatorChar });
-            return check.Length;
-        }
-
-        public static DriveInfo GetDriveInfoFromFileInfo(FileInfo fileInfo) {
-            string driveletter = FileInfoToDriveLetter(fileInfo);
-            return GetDriveInfo(driveletter);
-        }
-
-        public static DriveInfo GetDriveInfoFromPath(string path) {
-            string driveletter = PathToDriveLetter(path);
-            return GetDriveInfo(driveletter);
-        }
-
-        public static string FileInfoToDriveLetter(FileInfo fileInfo) {
-            return PathToDriveLetter(fileInfo.FullName);
-        }
-
-        public static string PathToDriveLetter(string path) {
-            Uri uri = new Uri(path);
-
-            // if the path is UNC return null
-            if (uri.IsUnc)
-                return null;
-
-            // return the first 2 characters
-            if (path.Length > 1)
-                return path.Substring(0, 2).ToUpper();
-            else // or if only a letter was given add colon
-                return path.ToUpper() + ":";
-        }
-
-        public static DriveInfo GetDriveInfo(string drive) {
-            if (drive == null)
-                return null;
-
-            lock (syncRoot) {
-                // if this is the first request create the driveinfo collection cache
-                if (driveInfoPool == null)
-                    driveInfoPool = new Dictionary<string, DriveInfo>();
-
-                if (!driveInfoPool.ContainsKey(drive)) {
-                    try {
-                        driveInfoPool.Add(drive, new DriveInfo(drive));
-                    }
-                    catch (Exception e) {
-                        logger.Error("Error retrieving DriveInfo object for '{0}': {1}", drive, e.Message);
-                        return null;
-                    }
-                }
-            }
-            return driveInfoPool[drive];
         }
 
         private static bool foldersHaveDefaultForMovies(List<SettingsFolder> settingsFolders) {
@@ -781,128 +619,6 @@ namespace SubCentral.Utils {
                     return true;
                 }
                 tempIndex++;
-            }
-
-            return false;
-        }
-
-        public static bool fileNameIsValid(string fileName) {
-            if (string.IsNullOrEmpty(fileName)) return false;
-
-            foreach (char lDisallowed in System.IO.Path.GetInvalidFileNameChars()) {
-                if (fileName.Contains(lDisallowed.ToString()))
-                    return false;
-            }
-            foreach (char lDisallowed in System.IO.Path.GetInvalidPathChars()) {
-                if (fileName.Contains(lDisallowed.ToString()))
-                    return false;
-            }
-            return true;
-        }
-
-        public static bool pathNameIsValid(string path) {
-            if (string.IsNullOrEmpty(path)) return false;
-
-            foreach (char lDisallowed in System.IO.Path.GetInvalidPathChars()) {
-                if (path.Contains(lDisallowed.ToString()))
-                    return false;
-            }
-            return true;
-        }
-
-        public static string ensureBackSlash(string path) {
-            if (string.IsNullOrEmpty(path)) return null;
-
-            if (path.EndsWith(Path.DirectorySeparatorChar.ToString()))
-                return path;
-            else
-                return path + Path.DirectorySeparatorChar.ToString();
-        }
-
-        public static string ResolveRelativePath(string relativePath, string referencePath) {
-            if (string.IsNullOrEmpty(referencePath)) {
-                throw new ArgumentNullException("basePath");
-            }
-
-            if (string.IsNullOrEmpty(relativePath)) {
-                throw new ArgumentNullException("relativePath");
-            }
-
-            var result = referencePath;
-
-            if (Path.IsPathRooted(relativePath)) {
-                return relativePath;
-            }
-
-            if (relativePath.EndsWith(Path.DirectorySeparatorChar.ToString())) {
-                relativePath = relativePath.Substring(0, relativePath.Length - 1);
-            }
-
-            if (relativePath == ".") {
-                return referencePath;
-            }
-
-            if (relativePath.StartsWith(@".\")) {
-                relativePath = relativePath.Substring(2);
-            }
-
-            relativePath = relativePath.Replace(@"\.\", @"\");
-            if (!relativePath.EndsWith(Path.DirectorySeparatorChar.ToString())) {
-                relativePath = relativePath + Path.DirectorySeparatorChar.ToString();
-            }
-
-            while (!string.IsNullOrEmpty(relativePath)) {
-                int lengthOfOperation = relativePath.IndexOf(Path.DirectorySeparatorChar.ToString()) + 1;
-                var operation = relativePath.Substring(0, lengthOfOperation - 1);
-                relativePath = relativePath.Remove(0, lengthOfOperation);
-
-                if (operation == @"..") {
-                    Uri uri = new Uri(Path.Combine(result, operation));
-                    if (uri.IsUnc && Path.GetDirectoryName(result) == null) {
-                        result = uri.LocalPath;
-                    }
-                    else {
-                        result = Path.GetDirectoryName(result);
-                    }
-                }
-                else {
-                    result = Path.Combine(result, operation);
-                }
-
-                if (result == null) return result;
-            }
-
-            if (uncPathDepth(result) == 1)
-                return null;
-            return result;
-        }
-
-        public static bool isMachineReachable(string hostName) {
-            try {
-                System.Net.IPHostEntry host = System.Net.Dns.GetHostEntry(hostName);
-                //System.Net.IPHostEntry host = System.Net.Dns.Resolve(hostName);
-                //System.Net.IPHostEntry host = System.Net.Dns.GetHostByName(hostName);
-                //System.Net.IPHostEntry host = null;
-
-                //return true; 
-
-                string wqlTemplate = "SELECT StatusCode FROM Win32_PingStatus WHERE Address = '{0}'";
-
-                System.Management.ManagementObjectSearcher query = new System.Management.ManagementObjectSearcher();
-
-                query.Query = new System.Management.ObjectQuery(String.Format(wqlTemplate, host.AddressList[0]));
-
-                query.Scope = new System.Management.ManagementScope("//localhost/root/cimv2");
-
-                System.Management.ManagementObjectCollection pings = query.Get();
-
-                foreach (System.Management.ManagementObject ping in pings) {
-                    if (Convert.ToInt32(ping.GetPropertyValue("StatusCode")) == 0)
-                        return true;
-                }
-            }
-            catch (Exception e) {
-                logger.Error("Error in isMachineReachable({0}): {1}:{2}", hostName, e.GetType(), e.Message);
             }
 
             return false;
