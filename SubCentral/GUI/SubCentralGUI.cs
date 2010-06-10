@@ -114,7 +114,10 @@ namespace SubCentral.GUI {
                         modifySearchClearFilesButton.Visible = _modifySearchMediaDetail.Files != null && _modifySearchMediaDetail.Files.Count > 0;
                         //modifySearchSelectFolderButton.Visible = CurrentHandler.MediaDetail.Files == null || _modifySearchMediaDetail.Files.Count == 0;
                         PublishSearchProperties(true);
-                        GUIUtils.SetProperty("#SubCentral.Header.Label", "SubCentral - " + Localization.ModifySearch);
+                        if (_backupHandler == null)
+                            GUIUtils.SetProperty("#SubCentral.Header.Label", "SubCentral - " + Localization.ManualSearch);
+                        else
+                            GUIUtils.SetProperty("#SubCentral.Header.Label", "SubCentral - " + Localization.ModifySearch);
                         //GUIControl.FocusControl(GetID, (int)GUIControls.MODIFYSEARCHOKBUTTON);
                         GUIControl.FocusControl(GetID, (int)GUIControls.MODIFYSEARCHTITLEBUTTON);
                         break;
