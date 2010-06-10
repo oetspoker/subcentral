@@ -1,7 +1,6 @@
 ﻿using SubCentral.Utils;
 
-namespace SubCentral.Settings.Data
-{
+namespace SubCentral.Settings.Data {
     public enum OnDownload {
         [StringValue("Always ask")]
         AlwaysAsk = 0,

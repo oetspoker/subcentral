@@ -3,8 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using SubCentral.Utils;
 
-namespace SubCentral.PluginHandlers
-{
+namespace SubCentral.PluginHandlers {
     public struct BasicMediaDetail {
         public int? MediaId { get; set; }
 
@@ -13,7 +12,7 @@ namespace SubCentral.PluginHandlers
                 return "tt" + ImdbID;
             }
         }
-        public string ImdbID { 
+        public string ImdbID {
             get {
                 return _imdbID;
             }
@@ -62,11 +61,11 @@ namespace SubCentral.PluginHandlers
             }
         }
         public int Episode { get; set; }
-        
+
         public string Thumb { get; set; }
-        
+
         public string FanArt { get; set; }
-        
+
         public List<FileInfo> Files { get; set; }
     }
 }

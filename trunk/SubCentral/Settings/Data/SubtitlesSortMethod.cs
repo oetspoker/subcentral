@@ -1,6 +1,5 @@
 ﻿
-namespace SubCentral.Settings.Data
-{
+namespace SubCentral.Settings.Data {
     public enum SubtitlesSortMethod {
         DefaultNoSort,
         SubtitleLanguage,

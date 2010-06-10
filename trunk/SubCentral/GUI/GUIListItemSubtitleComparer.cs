@@ -66,7 +66,7 @@ namespace SubCentral.GUI {
                         }
                     }
                     return 0;
-                    
+
                 case SubtitlesSortMethod.SubtitleName:
                     if (_sortAsc) {
                         if (subtitlesSortDetails1.Name == subtitlesSortDetails2.Name) {
@@ -90,7 +90,6 @@ namespace SubCentral.GUI {
             }
             return 0;
         }
-
     }
 }
 

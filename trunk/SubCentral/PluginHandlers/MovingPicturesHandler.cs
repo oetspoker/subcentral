@@ -36,7 +36,7 @@ namespace SubCentral.PluginHandlers {
         // retrieves info from Moving Pictures
         protected override bool GrabFileDetails() {
             try {
-                browser = MovingPicturesCore.Browser; 
+                browser = MovingPicturesCore.Browser;
                 DBMovieInfo selectedMovie = browser.SelectedMovie;
                 List<DBLocalMedia> localMedia = selectedMovie.LocalMedia;
 
@@ -55,7 +55,7 @@ namespace SubCentral.PluginHandlers {
                 foreach (DBLocalMedia localMediaItem in localMedia) {
                     _mediaDetail.Files.Add(new FileInfo(localMediaItem.FullPath));
                 }
-                
+
                 return true;
             }
             catch (Exception) {
@@ -66,7 +66,7 @@ namespace SubCentral.PluginHandlers {
         }
 
         protected override bool IsAvailable() {
-            if (!IsAssemblyAvailable("MovingPictures", new Version(1,0,3)))
+            if (!IsAssemblyAvailable("MovingPictures", new Version(1, 0, 3)))
                 return false;
 
             return true;

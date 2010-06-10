@@ -1,6 +1,5 @@
 ﻿
-namespace SubCentral.ConfigForm
-{
+namespace SubCentral.ConfigForm {
     public enum ListViewItemType {
         Unknown,
         Group,

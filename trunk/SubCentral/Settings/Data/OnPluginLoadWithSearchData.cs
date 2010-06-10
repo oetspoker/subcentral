@@ -1,7 +1,6 @@
 ﻿using SubCentral.Utils;
 
-namespace SubCentral.Settings.Data
-{
+namespace SubCentral.Settings.Data {
     public enum OnPluginLoadWithSearchData {
         [StringValue("Do nothing")]
         DoNothing = 0,

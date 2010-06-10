@@ -1,28 +1,23 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using NLog;
 
-namespace SubCentral.Utils
-{
-    public sealed class FileUtils
-    {
+namespace SubCentral.Utils {
+    public sealed class FileUtils {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         private static readonly object syncRoot = new object();
 
         private static Dictionary<string, DriveInfo> driveInfoPool;
 
-        public static bool pathExists(string path)
-        {
+        public static bool pathExists(string path) {
             bool hostAlive;
             bool pathDriveReady;
             return pathExists(path, out hostAlive, out pathDriveReady);
         }
 
-        public static bool pathExists(string path, out bool hostAlive, out bool pathDriveReady)
-        {
+        public static bool pathExists(string path, out bool hostAlive, out bool pathDriveReady) {
             hostAlive = true;
             pathDriveReady = true;
 
@@ -30,14 +25,12 @@ namespace SubCentral.Utils
 
             if (!Path.IsPathRooted(path)) return true;
 
-            if (!NetUtils.uncHostIsAlive(path))
-            {
+            if (!NetUtils.uncHostIsAlive(path)) {
                 hostAlive = false;
                 return false;
             }
 
-            if (!pathDriveIsReady(path))
-            {
+            if (!pathDriveIsReady(path)) {
                 pathDriveReady = false;
                 return false;
             }
@@ -45,8 +38,7 @@ namespace SubCentral.Utils
             return Directory.Exists(path);
         }
 
-        public static bool pathIsWritable(string path)
-        {
+        public static bool pathIsWritable(string path) {
             if (string.IsNullOrEmpty(path)) return false;
 
             if (!Path.IsPathRooted(path)) return true;
@@ -55,33 +47,26 @@ namespace SubCentral.Utils
             FileInfo fileInfo = new FileInfo(fileName);
 
             FileStream stream = null;
-            try
-            {
+            try {
                 stream = fileInfo.Open(FileMode.Create, FileAccess.ReadWrite, FileShare.None);
             }
-            catch
-            {
+            catch {
                 return false;
             }
-            finally
-            {
-                if (stream != null)
-                {
-                    try
-                    {
+            finally {
+                if (stream != null) {
+                    try {
                         stream.Close();
                         fileInfo.Delete();
                     }
-                    catch
-                    {
+                    catch {
                     }
                 }
             }
             return true;
         }
 
-        public static bool pathDriveIsDVD(string path)
-        {
+        public static bool pathDriveIsDVD(string path) {
             if (string.IsNullOrEmpty(path) || new Uri(path).IsUnc) return false;
 
             DriveInfo di = GetDriveInfoFromPath(path);
@@ -91,8 +76,7 @@ namespace SubCentral.Utils
             return false;
         }
 
-        public static bool pathDriveIsReady(string path)
-        {
+        public static bool pathDriveIsReady(string path) {
             if (string.IsNullOrEmpty(path) || new Uri(path).IsUnc) return true;
 
             DriveInfo di = GetDriveInfoFromPath(path);
@@ -104,8 +88,7 @@ namespace SubCentral.Utils
             return true;
         }
 
-        public static bool pathIsDrive(string path)
-        {
+        public static bool pathIsDrive(string path) {
             if (string.IsNullOrEmpty(path)) return false;
 
             path = ensureBackSlash(path);
@@ -113,8 +96,7 @@ namespace SubCentral.Utils
             return false;
         }
 
-        public static int uncPathDepth(string path)
-        {
+        public static int uncPathDepth(string path) {
             if (string.IsNullOrEmpty(path) || !new Uri(path).IsUnc) return 0;
 
             path = ensureBackSlash(path);
@@ -124,25 +106,21 @@ namespace SubCentral.Utils
             return check.Length;
         }
 
-        public static DriveInfo GetDriveInfoFromFileInfo(FileInfo fileInfo)
-        {
+        public static DriveInfo GetDriveInfoFromFileInfo(FileInfo fileInfo) {
             string driveletter = FileInfoToDriveLetter(fileInfo);
             return GetDriveInfo(driveletter);
         }
 
-        public static DriveInfo GetDriveInfoFromPath(string path)
-        {
+        public static DriveInfo GetDriveInfoFromPath(string path) {
             string driveletter = PathToDriveLetter(path);
             return GetDriveInfo(driveletter);
         }
 
-        public static string FileInfoToDriveLetter(FileInfo fileInfo)
-        {
+        public static string FileInfoToDriveLetter(FileInfo fileInfo) {
             return PathToDriveLetter(fileInfo.FullName);
         }
 
-        public static string PathToDriveLetter(string path)
-        {
+        public static string PathToDriveLetter(string path) {
             Uri uri = new Uri(path);
 
             // if the path is UNC return null
@@ -156,25 +134,20 @@ namespace SubCentral.Utils
                 return path.ToUpper() + ":";
         }
 
-        public static DriveInfo GetDriveInfo(string drive)
-        {
+        public static DriveInfo GetDriveInfo(string drive) {
             if (drive == null)
                 return null;
 
-            lock (syncRoot)
-            {
+            lock (syncRoot) {
                 // if this is the first request create the driveinfo collection cache
                 if (driveInfoPool == null)
                     driveInfoPool = new Dictionary<string, DriveInfo>();
 
-                if (!driveInfoPool.ContainsKey(drive))
-                {
-                    try
-                    {
+                if (!driveInfoPool.ContainsKey(drive)) {
+                    try {
                         driveInfoPool.Add(drive, new DriveInfo(drive));
                     }
-                    catch (Exception e)
-                    {
+                    catch (Exception e) {
                         logger.Error("Error retrieving DriveInfo object for '{0}': {1}", drive, e.Message);
                         return null;
                     }
@@ -183,37 +156,31 @@ namespace SubCentral.Utils
             return driveInfoPool[drive];
         }
 
-        public static bool fileNameIsValid(string fileName)
-        {
+        public static bool fileNameIsValid(string fileName) {
             if (string.IsNullOrEmpty(fileName)) return false;
 
-            foreach (char lDisallowed in System.IO.Path.GetInvalidFileNameChars())
-            {
+            foreach (char lDisallowed in System.IO.Path.GetInvalidFileNameChars()) {
                 if (fileName.Contains(lDisallowed.ToString()))
                     return false;
             }
-            foreach (char lDisallowed in System.IO.Path.GetInvalidPathChars())
-            {
+            foreach (char lDisallowed in System.IO.Path.GetInvalidPathChars()) {
                 if (fileName.Contains(lDisallowed.ToString()))
                     return false;
             }
             return true;
         }
 
-        public static bool pathNameIsValid(string path)
-        {
+        public static bool pathNameIsValid(string path) {
             if (string.IsNullOrEmpty(path)) return false;
 
-            foreach (char lDisallowed in System.IO.Path.GetInvalidPathChars())
-            {
+            foreach (char lDisallowed in System.IO.Path.GetInvalidPathChars()) {
                 if (path.Contains(lDisallowed.ToString()))
                     return false;
             }
             return true;
         }
 
-        public static string ensureBackSlash(string path)
-        {
+        public static string ensureBackSlash(string path) {
             if (string.IsNullOrEmpty(path)) return null;
 
             if (path.EndsWith(Path.DirectorySeparatorChar.ToString()))
@@ -222,66 +189,53 @@ namespace SubCentral.Utils
                 return path + Path.DirectorySeparatorChar.ToString();
         }
 
-        public static string ResolveRelativePath(string relativePath, string referencePath)
-        {
-            if (string.IsNullOrEmpty(referencePath))
-            {
+        public static string ResolveRelativePath(string relativePath, string referencePath) {
+            if (string.IsNullOrEmpty(referencePath)) {
                 throw new ArgumentNullException("basePath");
             }
 
-            if (string.IsNullOrEmpty(relativePath))
-            {
+            if (string.IsNullOrEmpty(relativePath)) {
                 throw new ArgumentNullException("relativePath");
             }
 
             var result = referencePath;
 
-            if (Path.IsPathRooted(relativePath))
-            {
+            if (Path.IsPathRooted(relativePath)) {
                 return relativePath;
             }
 
-            if (relativePath.EndsWith(Path.DirectorySeparatorChar.ToString()))
-            {
+            if (relativePath.EndsWith(Path.DirectorySeparatorChar.ToString())) {
                 relativePath = relativePath.Substring(0, relativePath.Length - 1);
             }
 
-            if (relativePath == ".")
-            {
+            if (relativePath == ".") {
                 return referencePath;
             }
 
-            if (relativePath.StartsWith(@".\"))
-            {
+            if (relativePath.StartsWith(@".\")) {
                 relativePath = relativePath.Substring(2);
             }
 
             relativePath = relativePath.Replace(@"\.\", @"\");
-            if (!relativePath.EndsWith(Path.DirectorySeparatorChar.ToString()))
-            {
+            if (!relativePath.EndsWith(Path.DirectorySeparatorChar.ToString())) {
                 relativePath = relativePath + Path.DirectorySeparatorChar.ToString();
             }
 
-            while (!string.IsNullOrEmpty(relativePath))
-            {
+            while (!string.IsNullOrEmpty(relativePath)) {
                 int lengthOfOperation = relativePath.IndexOf(Path.DirectorySeparatorChar.ToString()) + 1;
                 var operation = relativePath.Substring(0, lengthOfOperation - 1);
                 relativePath = relativePath.Remove(0, lengthOfOperation);
 
-                if (operation == @"..")
-                {
+                if (operation == @"..") {
                     Uri uri = new Uri(Path.Combine(result, operation));
-                    if (uri.IsUnc && Path.GetDirectoryName(result) == null)
-                    {
+                    if (uri.IsUnc && Path.GetDirectoryName(result) == null) {
                         result = uri.LocalPath;
                     }
-                    else
-                    {
+                    else {
                         result = Path.GetDirectoryName(result);
                     }
                 }
-                else
-                {
+                else {
                     result = Path.Combine(result, operation);
                 }
 

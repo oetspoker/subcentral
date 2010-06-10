@@ -1,5 +1,5 @@
-﻿namespace SubCentral.GUI.Items
-{
+﻿
+namespace SubCentral.GUI.Items {
     public struct FolderSelectionItem {
         public string ItemID { get; set; }
         public string FolderName { get; set; }
