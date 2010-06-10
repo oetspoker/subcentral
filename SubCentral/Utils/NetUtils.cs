@@ -2,21 +2,16 @@
 using System.IO;
 using NLog;
 
-namespace SubCentral.Utils
-{
-    public sealed class NetUtils
-    {
+namespace SubCentral.Utils {
+    public sealed class NetUtils {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        public static bool uncHostIsAlive(string path)
-        {
+        public static bool uncHostIsAlive(string path) {
             if (string.IsNullOrEmpty(path)) return true;
 
-            if (!new Uri(path).IsUnc)
-            {
+            if (!new Uri(path).IsUnc) {
                 DriveInfo di = FileUtils.GetDriveInfoFromPath(path);
-                if (di != null && di.DriveType == DriveType.Network)
-                {
+                if (di != null && di.DriveType == DriveType.Network) {
                     path = MPR.GetUniversalName(path);
                 }
                 else
@@ -30,10 +25,8 @@ namespace SubCentral.Utils
             return alive;
         }
 
-        public static bool isMachineReachable(string hostName)
-        {
-            try
-            {
+        public static bool isMachineReachable(string hostName) {
+            try {
                 System.Net.IPHostEntry host = System.Net.Dns.GetHostEntry(hostName);
                 //System.Net.IPHostEntry host = System.Net.Dns.Resolve(hostName);
                 //System.Net.IPHostEntry host = System.Net.Dns.GetHostByName(hostName);
@@ -51,14 +44,12 @@ namespace SubCentral.Utils
 
                 System.Management.ManagementObjectCollection pings = query.Get();
 
-                foreach (System.Management.ManagementObject ping in pings)
-                {
+                foreach (System.Management.ManagementObject ping in pings) {
                     if (Convert.ToInt32(ping.GetPropertyValue("StatusCode")) == 0)
                         return true;
                 }
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 logger.Error("Error in isMachineReachable({0}): {1}:{2}", hostName, e.GetType(), e.Message);
             }
 

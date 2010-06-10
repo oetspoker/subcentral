@@ -1,6 +1,5 @@
 ﻿
-namespace SubCentral.GUI
-{
+namespace SubCentral.GUI {
     public enum GUIControls {
         SEARCHBUTTON = 201,
         CANCELBUTTON = 202,

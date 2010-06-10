@@ -1,5 +1,5 @@
-﻿namespace SubCentral.GUI.Items
-{
+﻿
+namespace SubCentral.GUI.Items {
     public struct MultiSelectionItem {
         public string ItemID { get; set; }
         public string ItemTitle { get; set; }

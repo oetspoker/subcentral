@@ -1,7 +1,6 @@
 ﻿using SubCentral.Utils;
 
-namespace SubCentral.Settings.Data
-{
+namespace SubCentral.Settings.Data {
     public enum OnDownloadFileName {
         [StringValue("Use default")]
         UseDefault = 0,

@@ -1,6 +1,5 @@
 ﻿
-namespace SubCentral.PluginHandlers
-{
+namespace SubCentral.PluginHandlers {
     public enum PluginHandlerType {
         UNDEFINED, // all
         BASIC,

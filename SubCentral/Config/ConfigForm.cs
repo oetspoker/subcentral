@@ -51,7 +51,7 @@ namespace SubCentral.ConfigForm {
 
             lblProductVersion.Text = "v" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
         }
-        
+
         private void ConfigForm_Load(object sender, EventArgs e) {
             if (!core.SubtitleDownloaderInitialized) {
                 MessageBox.Show(String.Concat("Unable to load SubtitleDownloader library!", "\n", "Is SubtitleDownloader.dll available?"), "Error loading SubCentral configuration");
@@ -156,7 +156,7 @@ namespace SubCentral.ConfigForm {
                 SettingsManager.Properties.GeneralSettings.PluginLoadWithSearchData = (OnPluginLoadWithSearchData)comboBoxPluginLoadWithSearchData.SelectedIndex;
                 SettingsManager.Properties.GeneralSettings.UseLanguageCodeOnResults = checkBoxUseLanguageCode.Checked;
                 SettingsManager.Properties.GeneralSettings.SearchDefaultsWhenFromManualSearch = checkBoxSearchDefaultsWhenFromManualSearch.Checked;
-                
+
                 SettingsManager.Properties.FolderSettings.OnDownload = (OnDownload)comboBoxWhenDownloading.SelectedIndex;
                 SettingsManager.Properties.FolderSettings.OnDownloadFileName = (OnDownloadFileName)comboBoxFileName.SelectedIndex;
 
@@ -685,7 +685,7 @@ namespace SubCentral.ConfigForm {
             listViewGroupsAndProviders.BeginUpdate();
             try {
                 List<SettingsGroup> groups = SubCentralUtils.getAllProviderGroups();
-                    //Settings.SettingsManager.Properties.GeneralSettings.Groups;
+                //Settings.SettingsManager.Properties.GeneralSettings.Groups;
 
                 if (groups == null || groups.Count == 0) return;
 

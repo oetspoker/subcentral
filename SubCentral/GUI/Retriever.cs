@@ -76,7 +76,7 @@ namespace SubCentral.GUI {
         public void SearchForSubtitles(BasicMediaDetail mediaDetail) {
             if (_subtitlesDownloaderThread != null && _subtitlesDownloaderThread.IsAlive)
                 return;
-            
+
             _isCanceled = false;
 
             _subtitlesDownloaderThread = new Thread(SearchSubtitlesAsynch);
@@ -223,9 +223,9 @@ namespace SubCentral.GUI {
                 List<SubtitleDownloader.Core.Subtitle> resultsFromDownloader = null;
                 int percent = (100 / downloaders.Count) * providerCount;
 
-                OnProgress(Localization.QueryingProviders + " (" + Convert.ToString(providerCount) + "/" + Convert.ToString(downloaders.Count) + "):", 
+                OnProgress(Localization.QueryingProviders + " (" + Convert.ToString(providerCount) + "/" + Convert.ToString(downloaders.Count) + "):",
                            providerName,
-                           Localization.FoundSubtitles + ": " + Convert.ToString(allResults.Count), 
+                           Localization.FoundSubtitles + ": " + Convert.ToString(allResults.Count),
                            percent);
 
                 try {
@@ -379,7 +379,7 @@ namespace SubCentral.GUI {
             int subtitleNr = 0;
             if (subtitleFiles != null && subtitleFiles.Count > 0) {
                 logger.Info("{0} subtitle(s) downloaded to temporary folder.", subtitleFiles.Count);
-                
+
                 if (mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
                     logger.Info("Video files:");
                     foreach (FileInfo fileInfo in mediaDetail.Files) {
@@ -520,8 +520,7 @@ namespace SubCentral.GUI {
         }
         #endregion
 
-        private class CustomSubtitleDownloader
-        {
+        private class CustomSubtitleDownloader {
             public SubtitleDownloader.Core.ISubtitleDownloader downloader { get; set; }
             public string downloaderTitle { get; set; }
         }

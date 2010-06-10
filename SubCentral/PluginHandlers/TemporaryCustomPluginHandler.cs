@@ -12,7 +12,7 @@ namespace SubCentral.PluginHandlers {
 
         public override string PluginName {
             get { return _pluginName; }
-            set { _pluginName = value; } 
+            set { _pluginName = value; }
         }
         private string _pluginName = "";
 

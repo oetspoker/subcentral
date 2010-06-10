@@ -1,15 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace SubCentral.Settings.Data
-{
+namespace SubCentral.Settings.Data {
     #region GroupsAndProviders
-    public struct SettingsGroupsAndProviders
-    {
+    public struct SettingsGroupsAndProviders {
         public OnPluginLoadWithSearchData PluginLoadWithSearchData { get; set; }
         public bool UseLanguageCodeOnResults { get; set; }
         public bool SearchDefaultsWhenFromManualSearch { get; set; }
-        
+
         public bool AllProvidersEnabled { get; set; }
         public bool AllProvidersForMovies { get; set; }
         public bool AllProvidersForTVShows { get; set; }
@@ -34,11 +32,9 @@ namespace SubCentral.Settings.Data
         private List<SettingsProvider> _providers;
 
         [XmlElement("Provider")]
-        public List<SettingsProvider> Providers
-        {
+        public List<SettingsProvider> Providers {
             get { return _providers ?? (_providers = new List<SettingsProvider>()); }
-            set
-            {
+            set {
                 if (_providers == null) _providers = new List<SettingsProvider>();
                 _providers = value;
             }
@@ -47,7 +43,7 @@ namespace SubCentral.Settings.Data
 
     public class SettingsGroup {
         public string Title { get; set; }
-        public bool Enabled { get ; set; }
+        public bool Enabled { get; set; }
         public bool DefaultForMovies { get; set; }
         public bool DefaultForTVShows { get; set; }
 
@@ -64,8 +60,7 @@ namespace SubCentral.Settings.Data
         }
     }
 
-    public class SettingsProvider
-    {
+    public class SettingsProvider {
         [XmlAttribute("ID")]
         public string ID { get; set; }
         public string Title { get; set; }
