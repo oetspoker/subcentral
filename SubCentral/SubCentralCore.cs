@@ -13,7 +13,6 @@ using SubCentral.PluginHandlers;
 using SubCentral.Settings;
 using SubCentral.Utils;
 
-
 namespace SubCentral {
     public class SubCentralCore {
         private static Logger logger = LogManager.GetCurrentClassLogger();

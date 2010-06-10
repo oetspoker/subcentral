@@ -22,7 +22,7 @@ namespace SubCentral.Utils {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         private delegate List<MultiSelectionItem> ShowMultiSelectionDialogDelegate(string heading, List<MultiSelectionItem> items);
-        
+
         public static readonly string SettingsFileName = "SubCentral.xml";
         public static string LogFileName = "SubCentral.log";
         public static string OldLogFileName = "SubCentral.log.bak";
@@ -50,7 +50,7 @@ namespace SubCentral.Utils {
 
         public static List<SettingsFolder> AllFolders {
             get {
-                if (_allFolders == null) 
+                if (_allFolders == null)
                     _allFolders = getAllFolders();
                 return _allFolders;
             }
@@ -128,7 +128,7 @@ namespace SubCentral.Utils {
             foreach (SettingsProvider settingsProvider in toRemove) {
                 result.Remove(settingsProvider);
             }
-            
+
             return result;
         }
 
@@ -154,7 +154,7 @@ namespace SubCentral.Utils {
             }
             return result;
         }
-        
+
         private static bool groupsHaveDefaultForMovies(List<SettingsGroup> settingsGroups) {
             if (settingsGroups == null || settingsGroups.Count == 0) return false;
 
@@ -260,7 +260,7 @@ namespace SubCentral.Utils {
             foreach (SettingsProvider settingsProvider in settingsProviders) {
                 result.Add(settingsProvider.ID);
             }
-            
+
             return result;
         }
 
@@ -319,7 +319,7 @@ namespace SubCentral.Utils {
         }
 
         public static bool hasEnabledLanguage(List<SettingsLanguage> languages) {
-            if (languages == null || languages.Count == 0 ) return false;
+            if (languages == null || languages.Count == 0) return false;
 
             foreach (SettingsLanguage settingsLanguage in languages) {
                 if (settingsLanguage.Enabled)
@@ -359,7 +359,7 @@ namespace SubCentral.Utils {
 
             if (!SubsLanguages.ContainsValue(result) || string.IsNullOrEmpty(result))
                 return "English";
-            
+
             return result;
         }
 
@@ -383,7 +383,7 @@ namespace SubCentral.Utils {
                 if (settingsLanguage.Enabled)
                     result.Add(settingsLanguage.LanguageCode);
             }
-            
+
             return result;
         }
 
@@ -400,7 +400,7 @@ namespace SubCentral.Utils {
                     return i + 1;
             }
             return result;
-        } 
+        }
 
         public static List<MultiSelectionItem> getLanguageNamesForMultiSelection() {
             List<MultiSelectionItem> result = new List<MultiSelectionItem>();
@@ -445,7 +445,7 @@ namespace SubCentral.Utils {
                     result++;
                 }
             }
-            
+
             return result;
         }
 
@@ -562,15 +562,13 @@ namespace SubCentral.Utils {
             return result;
         }
 
-        public static List<string> getEnabledAndValidFolderNamesForMedia(FileInfo fileInfo, bool includeReadOnly, bool skipErrorInfo)
-        {
+        public static List<string> getEnabledAndValidFolderNamesForMedia(FileInfo fileInfo, bool includeReadOnly, bool skipErrorInfo) {
             List<FolderSelectionItem> result = getEnabledAndValidFoldersForMedia(fileInfo, includeReadOnly, skipErrorInfo);
 
             return result.Select(r => r.FolderName).ToList();
         }
 
-        public static FolderErrorInfo getFolderErrorInfo(string path)
-        {
+        public static FolderErrorInfo getFolderErrorInfo(string path) {
             FolderErrorInfo result = FolderErrorInfo.OK;
 
             bool hostAlive;
@@ -584,7 +582,7 @@ namespace SubCentral.Utils {
             int iUncPathDepth = FileUtils.uncPathDepth(path);
             if (result == FolderErrorInfo.NonExistant &&
                 (FileUtils.pathDriveIsDVD(path) || !pathDriveReady /*!pathDriveIsReady(path)*/|| !hostAlive
-                 /*!uncHostIsAlive(path)*/|| (iUncPathDepth > 0 && iUncPathDepth < 3)))
+                /*!uncHostIsAlive(path)*/|| (iUncPathDepth > 0 && iUncPathDepth < 3)))
                 result = FolderErrorInfo.ReadOnly;
 
             return result;
@@ -642,7 +640,7 @@ namespace SubCentral.Utils {
             if (useEpisodeQuery) {
                 result = SubtitlesSearchType.TVSHOW;
             }
-            if (useImdbMovieQuery){
+            if (useImdbMovieQuery) {
                 result = SubtitlesSearchType.IMDb;
             }
             else if (useMovieQuery) {
@@ -786,23 +784,19 @@ namespace SubCentral.Utils {
         /// Displays a menu dialog from FolderSelectionItem items
         /// </summary>
         /// <returns>Selected item index, -1 if exited</returns>
-        public static int ShowFolderMenuDialog(string heading, List<FolderSelectionItem> items, int selectedItemIndex)
-        {
+        public static int ShowFolderMenuDialog(string heading, List<FolderSelectionItem> items, int selectedItemIndex) {
             List<GUIListItem> listItems = new List<GUIListItem>();
 
             bool selectedItemSet = false;
             int index = 0;
-            foreach (FolderSelectionItem folderSelectionItem in items)
-            {
+            foreach (FolderSelectionItem folderSelectionItem in items) {
                 GUIListItem listItem = new GUIListItem();
                 listItem.Label = folderSelectionItem.FolderName;
-                if (folderSelectionItem.WasRelative)
-                {
+                if (folderSelectionItem.WasRelative) {
                     listItem.Label2 = "(" + folderSelectionItem.OriginalFolderName + ")";
                 }
 
-                switch (folderSelectionItem.FolderErrorInfo)
-                {
+                switch (folderSelectionItem.FolderErrorInfo) {
                     case FolderErrorInfo.NonExistant:
                         listItem.IsRemote = true;
                         listItem.IsDownloading = true;
@@ -811,8 +805,7 @@ namespace SubCentral.Utils {
                         listItem.IsRemote = true;
                         break;
                     case FolderErrorInfo.OK:
-                        if (!selectedItemSet && selectedItemIndex < 0)
-                        {
+                        if (!selectedItemSet && selectedItemIndex < 0) {
                             selectedItemIndex = index;
                             selectedItemSet = true;
                         }
@@ -821,8 +814,7 @@ namespace SubCentral.Utils {
 
                 listItem.MusicTag = folderSelectionItem;
 
-                if (!selectedItemSet && selectedItemIndex >= 0 && index == selectedItemIndex)
-                {
+                if (!selectedItemSet && selectedItemIndex >= 0 && index == selectedItemIndex) {
                     selectedItemIndex = index;
                     selectedItemSet = true;
 
@@ -835,69 +827,71 @@ namespace SubCentral.Utils {
             return GUIUtils.ShowMenuDialog(heading, listItems, selectedItemIndex);
         }
 
-
         /// <summary>
         /// Displays a multi selection dialog.
         /// </summary>
         /// <returns>List of items</returns>
-        public static List<MultiSelectionItem> ShowMultiSelectionDialog(string heading, List<MultiSelectionItem> items)
-        {
+        public static List<MultiSelectionItem> ShowMultiSelectionDialog(string heading, List<MultiSelectionItem> items) {
             List<MultiSelectionItem> result = new List<MultiSelectionItem>();
 
             if (items == null) return result;
 
-            if (GUIGraphicsContext.form.InvokeRequired)
-            {
+            if (GUIGraphicsContext.form.InvokeRequired) {
                 ShowMultiSelectionDialogDelegate d = ShowMultiSelectionDialog;
                 return (List<MultiSelectionItem>)GUIGraphicsContext.form.Invoke(d, heading, items);
             }
 
-            GUIDialogMultiSelect dlgMultiSelect = (GUIDialogMultiSelect)GUIWindowManager.GetWindow(2100);
-            //if (dlgMultiSelect == null) return;
+            GUIWindow dlgMultiSelectOld = (GUIWindow)GUIWindowManager.GetWindow(2100);
+            GUIDialogMultiSelect dlgMultiSelect = new GUIDialogMultiSelect();
+            dlgMultiSelect.Init();
+            GUIWindowManager.Replace(2100, dlgMultiSelect);
 
-            dlgMultiSelect.Reset();
+            try {
+                //GUIDialogMultiSelect dlgMultiSelect = (GUIDialogMultiSelect)GUIWindowManager.GetWindow(2100);
+                //if (dlgMultiSelect == null) return;
 
-            dlgMultiSelect.SetHeading(heading);
+                dlgMultiSelect.Reset();
 
-            foreach (MultiSelectionItem multiSelectionItem in items)
-            {
-                GUIListItem item = new GUIListItem();
-                item.Label = multiSelectionItem.ItemTitle;
-                item.Label2 = multiSelectionItem.ItemTitle2;
-                item.MusicTag = multiSelectionItem.Tag;
-                item.Selected = multiSelectionItem.Selected;
+                dlgMultiSelect.SetHeading(heading);
 
-                dlgMultiSelect.Add(item);
-            }
+                foreach (MultiSelectionItem multiSelectionItem in items) {
+                    GUIListItem item = new GUIListItem();
+                    item.Label = multiSelectionItem.ItemTitle;
+                    item.Label2 = multiSelectionItem.ItemTitle2;
+                    item.MusicTag = multiSelectionItem.Tag;
+                    item.Selected = multiSelectionItem.Selected;
 
-            dlgMultiSelect.DoModal(GUIWindowManager.ActiveWindow);
-
-            if (dlgMultiSelect.DialogModalResult == ModalResult.OK)
-            {
-                for (int i = 0; i < items.Count; i++)
-                {
-                    MultiSelectionItem item = items[i];
-                    MultiSelectionItem newMultiSelectionItem = new MultiSelectionItem();
-                    newMultiSelectionItem.ItemTitle = item.ItemTitle;
-                    newMultiSelectionItem.ItemTitle2 = item.ItemTitle2;
-                    newMultiSelectionItem.ItemID = item.ItemID;
-                    newMultiSelectionItem.Tag = item.Tag;
-                    try
-                    {
-                        newMultiSelectionItem.Selected = dlgMultiSelect.ListItems[i].Selected;
-                    }
-                    catch
-                    {
-                        newMultiSelectionItem.Selected = item.Selected;
-                    }
-
-                    result.Add(newMultiSelectionItem);
+                    dlgMultiSelect.Add(item);
                 }
-            }
-            else
-                return null;
 
-            return result;
+                dlgMultiSelect.DoModal(GUIWindowManager.ActiveWindow);
+
+                if (dlgMultiSelect.DialogModalResult == ModalResult.OK) {
+                    for (int i = 0; i < items.Count; i++) {
+                        MultiSelectionItem item = items[i];
+                        MultiSelectionItem newMultiSelectionItem = new MultiSelectionItem();
+                        newMultiSelectionItem.ItemTitle = item.ItemTitle;
+                        newMultiSelectionItem.ItemTitle2 = item.ItemTitle2;
+                        newMultiSelectionItem.ItemID = item.ItemID;
+                        newMultiSelectionItem.Tag = item.Tag;
+                        try {
+                            newMultiSelectionItem.Selected = dlgMultiSelect.ListItems[i].Selected;
+                        }
+                        catch {
+                            newMultiSelectionItem.Selected = item.Selected;
+                        }
+
+                        result.Add(newMultiSelectionItem);
+                    }
+                }
+                else
+                    return null;
+
+                return result;
+            }
+            finally {
+                GUIWindowManager.Replace(2100, dlgMultiSelectOld);
+            }
         }
     }
 
