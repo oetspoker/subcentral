@@ -6,7 +6,7 @@ namespace SubCentral.PluginHandlers {
     internal class PluginHandlerManager {
         private static Logger logger = LogManager.GetCurrentClassLogger();
         private Dictionary<int, PluginHandler> handlers;
-        
+
         public PluginHandlerManager() {
             BuildHandlerList();
         }
@@ -58,12 +58,12 @@ namespace SubCentral.PluginHandlers {
 
             // log all the active plugin handlers
             foreach (PluginHandler h in handlers.Values) {
-                if (h.Type==PluginHandlerType.BASIC && h.Available) logger.Info("Enabled Plugin: {0}", h.PluginName);
+                if (h.Type == PluginHandlerType.BASIC && h.Available) logger.Info("Enabled Plugin: {0}", h.PluginName);
             }
 
             // log all the inactive plugin handlers
-            foreach (PluginHandler h in handlers.Values) 
-                if (h.Type==PluginHandlerType.BASIC && !h.Available) logger.Info("Unavailable or Outdated Plugin: {0}", h.PluginName);
+            foreach (PluginHandler h in handlers.Values)
+                if (h.Type == PluginHandlerType.BASIC && !h.Available) logger.Info("Unavailable or Outdated Plugin: {0}", h.PluginName);
         }
     }
 }

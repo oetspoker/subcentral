@@ -172,6 +172,7 @@ namespace SubCentral.Localizations {
         public static string About = "About";
         public static string AllSubtitlesDownloaded = "All ({0}) subtitles downloaded!";
         public static string AllSubtitlesCanceledDownload = "All ({0}) subtitles canceled download!";
+        public static string AboutText = ""; // will be defined in XML file
 
         // B
         public static string Back = "Back";

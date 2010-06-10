@@ -11,7 +11,6 @@ using SubCentral.Settings;
 using SubCentral.Settings.Data;
 using SubCentral.Utils;
 
-
 namespace SubCentral.GUI {
     public class SubCentralGUI : GUIWindow {
         private static Logger logger = LogManager.GetCurrentClassLogger();
@@ -192,6 +191,8 @@ namespace SubCentral.GUI {
             retriever.OnSubtitleDownloadedToTempEvent += new Retriever.OnSubtitleDownloadedToTempDelegate(retriever_OnSubtitleDownloadedToTempEvent);
             retriever.OnSubtitleDownloadedEvent += new Retriever.OnSubtitleDownloadedDelegate(retriever_OnSubtitleDownloadedEvent);
 
+            GUIUtils.SetProperty("#SubCentral.About", Localization.AboutText);
+
             // check if we can load the skin
             bool success = Load(GUIGraphicsContext.Skin + @"\SubCentral.xml");
 
@@ -257,7 +258,7 @@ namespace SubCentral.GUI {
                 View = ViewMode.MAIN;
                 CurrentHandler = null;
             }
-            
+
             // entering from a plugin
             else {
                 //try to load data from it and if we fail return back to the calling plugin.
@@ -348,14 +349,14 @@ namespace SubCentral.GUI {
                 case (int)GUIControls.MODIFYSEARCHREVERTBUTTON:
                     RevertModifySearch(true);
                     break;
-                    
+
                 case (int)GUIControls.MODIFYSEARCHCLEARFILESBUTTON:
                     ClearFiles();
                     break;
 
                 case (int)GUIControls.MODIFYSEARCHMOVIEBUTTON:
                     if (_oldModifySearchSearchType == SubtitlesSearchType.NONE)
-                        _oldModifySearchSearchType = ModifySearchSearchType; 
+                        _oldModifySearchSearchType = ModifySearchSearchType;
                     ModifySearchSearchType = SubtitlesSearchType.MOVIE;
                     break;
 
@@ -446,8 +447,7 @@ namespace SubCentral.GUI {
             return success;
         }
 
-        private void PerformSearch(object tag)
-        {
+        private void PerformSearch(object tag) {
             if (tag == null) return;
 
             if (CurrentHandler == null) return;
@@ -463,7 +463,7 @@ namespace SubCentral.GUI {
 
                     BasicMediaDetail details = CurrentHandler.MediaDetail;
 
-                    retriever.FillData(true, 
+                    retriever.FillData(true,
                                        SubCentralUtils.getSelectedLanguageCodes(),
                                        SubCentralUtils.getProviderIDsAndTitles(SubCentralUtils.getEnabledProvidersFromGroup(settingsGroup)),
                                        getRealCurrentSearchSearchType(details)
@@ -542,7 +542,7 @@ namespace SubCentral.GUI {
         private void PerformDownload(SubtitleItem subtitleItem, bool skipDefaults) {
             if (CurrentHandler == null) return;
 
-            FileInfo fileInfo = null; 
+            FileInfo fileInfo = null;
             if (CurrentHandler.MediaDetail.Files != null && CurrentHandler.MediaDetail.Files.Count > 0)
                 fileInfo = CurrentHandler.MediaDetail.Files[0];
 
@@ -590,7 +590,7 @@ namespace SubCentral.GUI {
                     create = true;
 
                     string folderName = items[selectedFolderIndex].FolderName;
-                    
+
                     if (items[selectedFolderIndex].FolderErrorInfo == FolderErrorInfo.ReadOnly) {
                         readOnly = true;
                         if (selectedFromDefault) {
@@ -946,7 +946,7 @@ namespace SubCentral.GUI {
                 else
                     searchType = SubtitlesSearchType.NONE;
             }
-            
+
             return searchType;
         }
 
@@ -955,7 +955,7 @@ namespace SubCentral.GUI {
                 providerList != null &&
                 modifySearchOKButton != null && modifySearchCancelButton != null && modifySearchRevertButton != null && //modifySearchSelectFolderButton != null
                 modifySearchMovieButton != null && modifySearchTVShowButton != null &&
-                modifySearchIMDbIDButton != null && 
+                modifySearchIMDbIDButton != null &&
                 modifySearchTitleButton != null && modifySearchYearButton != null &&
                 modifySearchSeasonButton != null && modifySearchEpisodeButton != null
                 )
@@ -969,7 +969,7 @@ namespace SubCentral.GUI {
                 modifySearchRevertButton.Label = Localization.Revert;
                 modifySearchClearFilesButton.Label = Localization.ClearMedia;
                 //modifySearchSelectFolderButton.Label = Localization.SelectDownloadFolder;
-                
+
                 return true;
             }
             else
@@ -1013,7 +1013,7 @@ namespace SubCentral.GUI {
                     }
                     providerListItem.MusicTag = subtitleItem;
                     providerListItem.AlbumInfoTag = searchDetails;
-                    
+
                     providerListItem.IconImage = "defaultSubtitles.png";
 
 
@@ -1024,7 +1024,7 @@ namespace SubCentral.GUI {
 
                 providerList.SelectedListItemIndex = _lastSelectedSubtitlesItemIndex;
 
-                GUIUtils.SetProperty("#itemcount", String.Concat((providerList.ListItems.Count-1).ToString(), " ", Localization.SubtitleS));
+                GUIUtils.SetProperty("#itemcount", String.Concat((providerList.ListItems.Count - 1).ToString(), " ", Localization.SubtitleS));
 
                 OnSort();
             }
@@ -1046,7 +1046,7 @@ namespace SubCentral.GUI {
                     groupListItem.Label = settingsGroup.Title;
                     groupListItem.MusicTag = settingsGroup;
                     groupListItem.IsRemote = !defaultEnabled;
-                    
+
                     MediaPortal.Util.Utils.SetDefaultIcons(groupListItem);
 
                     providerList.Add(groupListItem);
@@ -1170,7 +1170,7 @@ namespace SubCentral.GUI {
         }
 
         private void KeyboardModifySearch(int controlId) {
-            string fillWith = string.Empty; 
+            string fillWith = string.Empty;
             switch (controlId) {
                 case (int)GUIControls.MODIFYSEARCHIMDBIDBUTTON:
                     fillWith = _modifySearchMediaDetail.ImdbIDStr ?? string.Empty;
@@ -1347,16 +1347,14 @@ namespace SubCentral.GUI {
         #endregion
     }
 
-    public enum ViewMode
-    {
+    public enum ViewMode {
         NONE,
         MAIN,
         SEARCH,
         MODIFYSEARCH
     }
 
-    public enum ListControlViewState
-    {
+    public enum ListControlViewState {
         GROUPSANDPROVIDERS,
         SEARCHRESULTS
     }
