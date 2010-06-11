@@ -809,9 +809,9 @@
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(275, 288);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(64, 13);
+            this.label21.Size = new System.Drawing.Size(89, 13);
             this.label21.TabIndex = 23;
-            this.label21.Text = "Danish: ???";
+            this.label21.Text = "Danish: steffansp";
             this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label21.Visible = false;
             // 
