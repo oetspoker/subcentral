@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="GUI\FolderErrorInfo.cs" />
     <Compile Include="Config\ListViewItemType.cs" />
+    <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="Settings\Data\OnDownload.cs" />
     <Compile Include="Settings\Data\OnDownloadFileName.cs" />
     <Compile Include="PluginHandlers\PluginHandlerType.cs" />
@@ -151,6 +152,7 @@
     <Content Include="GUI\Skins\Blue3\SubCentral.ModifySearch.xml" />
     <Content Include="GUI\Skins\Blue3\SubCentral.Search.xml" />
     <Content Include="GUI\Skins\Blue3\SubCentral.xml" />
+    <None Include="Properties\VersionInfo.cs.tmpl" />
     <None Include="Resources\Edit.png" />
     <None Include="Resources\SubCentralIconOld.ico" />
     <None Include="Resources\SubCentralIcon.ico" />
@@ -182,5 +184,6 @@
 copy "$(ProjectDir)..\External\merge.bat" "$(TargetDir)" /Y
 copy "$(ProjectDir)..\External\ilmerge.exe" "$(TargetDir)" /Y
 REM call merge.bat</PostBuildEvent>
+    <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
