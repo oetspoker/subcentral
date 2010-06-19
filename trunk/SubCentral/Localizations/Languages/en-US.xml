@@ -120,6 +120,8 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="SelectFileForSubtitle">Select media file for '{0}'</string>
 	<string Field="SearchType">Search type: {0}</string>
 	<string Field="SiteDoesNotSupportIMDbIDSearch">Site does not support IMDb ID search!</string>
+	<string Field="SiteDoesNotSupportMovieSearch">Site does not support movie search!</string>
+	<string Field="SiteDoesNotSupportTVShowSearch">Site does not support TV show search!</string>
 	<string Field="Sorting">Sorting</string>
 	<string Field="Sort">Sort</string>
 	<string Field="SortBy">Sort by: {0}</string>

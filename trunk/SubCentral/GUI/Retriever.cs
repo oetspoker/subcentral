@@ -44,7 +44,7 @@ namespace SubCentral.GUI {
         #endregion
 
         #region Public Events
-        public delegate void OnProviderSearchErrorDelegate(BasicMediaDetail mediaDetail, Exception e);
+        public delegate void OnProviderSearchErrorDelegate(BasicMediaDetail mediaDetail, SubtitlesSearchType subtitlesSearchType, Exception e);
         public delegate void OnSubtitlesSearchErrorDelegate(Exception e);
         public delegate void OnSubtitleSearchCompletedDelegate(List<SubtitleItem> subtitleItems, bool canceled);
         public delegate void OnSubtitleDownloadedToTempDelegate(BasicMediaDetail mediaDetail, List<FileInfo> subtitleFiles);
@@ -238,6 +238,7 @@ namespace SubCentral.GUI {
                                     List<SubtitleDownloader.Core.Subtitle> resultsFromDownloaderForMovieQuery = subsDownloader.SearchSubtitles(movieQuery);
                                     if (resultsFromDownloaderForMovieQuery.Count > 0) {
                                         // means that the site does not support imdb queries, should throw later
+                                        logger.Debug("Site {0} does not support IMDb ID search, got the results using regular movie search", providerName);
                                         resultsFromDownloader.AddRange(resultsFromDownloaderForMovieQuery);
                                         shouldThrowNotSupportedException = true;
                                     }
@@ -250,14 +251,22 @@ namespace SubCentral.GUI {
                                         try {
                                             resultsFromDownloader = subsDownloader.SearchSubtitles(movieQuery);
                                         }
-                                        catch { // if the error happens now, we're probably searching some sites that support only tv shows? 
-                                                // so instead of returning not supported, we're gonna return no results
-                                                // perhaps in the future, new exception type should be thrown to indicade that site does not support movie search
+                                        catch (Exception e1) { 
+                                            // if the error happens now, we're probably searching some sites that support only tv shows? 
+                                            // so instead of returning not supported, we're gonna return no results
+                                            // perhaps in the future, new exception type should be thrown to indicade that site does not support movie search
+                                            // 19.06.2010, SE: it's the future! :)
+                                            if (e1 is NotImplementedException || e1 is NotSupportedException) {
+                                                subtitlesSearchType = SubtitlesSearchType.MOVIE;
+                                                throw new NotSupportedException(string.Format("Site {0} does not support movie search!", providerName));
+                                            }
+                                            else {
+                                                throw e1;
+                                            }
                                         }
                                     }
                                     else {
-                                        logger.Debug("Site {0} does not support IMDb ID search", providerName);
-                                        //throw e;
+                                        //logger.Debug("Site {0} does not support IMDb ID search", providerName);
                                         throw new NotSupportedException(string.Format("Site {0} does not support IMDb ID search!", providerName));
                                     }
                                 }
@@ -267,7 +276,7 @@ namespace SubCentral.GUI {
                                 }
                             }
                             if (shouldThrowNotSupportedException) {
-                                // meh, do not throw, since we already have results
+                                // meh, do not throw, since we already have results and it's logged
                                 //throw new NotSupportedException("Site {0} does not support IMDb ID search");
                             }
                             break;
@@ -282,7 +291,7 @@ namespace SubCentral.GUI {
                 catch (Exception e) {
                     logger.Error("Error while querying site {0}: {1}:{2}", providerName, e.GetType(), e.Message);
                     if (OnProviderSearchErrorEvent != null) {
-                        OnProviderSearchErrorEvent(mediaDetail, e);
+                        OnProviderSearchErrorEvent(mediaDetail, subtitlesSearchType, e);
                     }
                 }
 
