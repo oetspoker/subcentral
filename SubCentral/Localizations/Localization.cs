@@ -270,6 +270,8 @@ namespace SubCentral.Localizations {
         public static string SelectFileForSubtitle = "Select media file for '{0}'";
         public static string SearchType = "Search type: {0}";
         public static string SiteDoesNotSupportIMDbIDSearch = "Site does not support IMDb ID search!";
+        public static string SiteDoesNotSupportMovieSearch = "Site does not support movie search!";
+        public static string SiteDoesNotSupportTVShowSearch = "Site does not support TV show search!";
         public static string Sorting = "Sorting";
         public static string Sort = "Sort";
         public static string SortBy = "Sort by: {0}";

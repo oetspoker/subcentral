@@ -27,7 +27,7 @@ namespace SubCentral.GUI {
         private bool _GUIInitialized = false;
         private BasicMediaDetail _modifySearchMediaDetail = new BasicMediaDetail();
         private bool _backupHandlerSet = false;
-        private bool _imdbNotSupported = false;
+        private bool _notificationDone = false;
         private SubtitlesSortMethod _subtitlesSortMethod = SubtitlesSortMethod.DefaultNoSort;
         private bool _subtitlesSortAsc = true;
         #endregion
@@ -457,7 +457,7 @@ namespace SubCentral.GUI {
 
             if (RetrieverRunning()) return;
 
-            _imdbNotSupported = false;
+            _notificationDone = false;
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
 
             try {
@@ -500,13 +500,29 @@ namespace SubCentral.GUI {
             }
         }
 
-        void retriever_OnProviderSearchErrorEvent(BasicMediaDetail mediaDetail, Exception e) {
+        void retriever_OnProviderSearchErrorEvent(BasicMediaDetail mediaDetail, SubtitlesSearchType subtitlesSearchType, Exception e) {
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
-            if (e is NotSupportedException) {
-                HideWaitCursor();
-                GUIUtils.ShowNotifyDialog(Localization.Error, Localization.SiteDoesNotSupportIMDbIDSearch, GUIUtils.NoSubtitlesLogoThumbPath);
-                _imdbNotSupported = true;
+            HideWaitCursor();
+            if (e is NotImplementedException || e is NotSupportedException) {
+                switch (subtitlesSearchType) {
+                    case SubtitlesSearchType.IMDb:
+                        GUIUtils.ShowNotifyDialog(Localization.Error, Localization.SiteDoesNotSupportIMDbIDSearch, GUIUtils.NoSubtitlesLogoThumbPath);
+                        break;
+                    case SubtitlesSearchType.MOVIE:
+                        GUIUtils.ShowNotifyDialog(Localization.Error, Localization.SiteDoesNotSupportMovieSearch, GUIUtils.NoSubtitlesLogoThumbPath);
+                        break;
+                    case SubtitlesSearchType.TVSHOW:
+                        GUIUtils.ShowNotifyDialog(Localization.Error, Localization.SiteDoesNotSupportTVShowSearch, GUIUtils.NoSubtitlesLogoThumbPath);
+                        break;
+                    default:
+                        GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
+                        break;
+                }
             }
+            else {
+                GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
+            }
+            _notificationDone = true;
         }
 
         void retriever_OnSubtitlesSearchErrorEvent(Exception e) {
@@ -514,7 +530,7 @@ namespace SubCentral.GUI {
             HideWaitCursor();
             logger.Error("Error while retrieving subtitles: {0}:{1}", e.GetType(), e.Message);
             GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
-            _imdbNotSupported = false;
+            _notificationDone = false;
         }
 
         private bool RetrieverRunning() {
@@ -532,10 +548,10 @@ namespace SubCentral.GUI {
         void retriever_OnSubtitleSearchCompletedEvent(List<SubtitleItem> subtitleItems, bool isCanceled) {
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
             HideWaitCursor();
-            if (!isCanceled && !_imdbNotSupported) {
+            if (!isCanceled && !_notificationDone) {
                 FillSubtitleSearchResults(subtitleItems);
             }
-            _imdbNotSupported = false;
+            _notificationDone = false;
         }
 
         private void PerformDownload(SubtitleItem subtitleItem) {
