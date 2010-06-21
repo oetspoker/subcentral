@@ -120,6 +120,8 @@ For mere information besøg os på Google Code SubCentral projekt siden!
 	<string Field="SelectFileForSubtitle">Vælg medie file for '{0}'</string>
 	<string Field="SearchType">Søgning type: {0}</string>
 	<string Field="SiteDoesNotSupportIMDbIDSearch">Siden understøtter ikke IMDb ID søgning!</string>
+	<string Field="SiteDoesNotSupportMovieSearch">Siden understøtter ikke film søgning!</string>
+	<string Field="SiteDoesNotSupportTVShowSearch">Siden understøtter ikke tv-afsnit søgning!</string>
 	<string Field="Sorting">Sortering</string>
 	<string Field="Sort">Sortér</string>
 	<string Field="SortBy">Sortér efter: {0}</string>
