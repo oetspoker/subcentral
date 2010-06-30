@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SubCentral translation file -->
+<!-- German (de) -->
+<!-- Note: English is the fallback for any strings not found in other languages -->
+<strings>
+	<!-- # -->
+
+	<!-- A -->
+	<string Field="AllProviders">Alle Anbieter</string>
+	<string Field="AllEnabledProviders">Alle aktiven Anbieter</string>
+	<string Field="About">Info</string>
+	<string Field="AllSubtitlesDownloaded">Alle ({0}) Untertitel geladen!</string>
+	<string Field="AllSubtitlesCanceledDownload">Für alle ({0}) Untertitel Download abgebrochen!</string>
+	<string Field="AboutText">SubCentral ist ein eigenständiges Untertitel-Plugin für die MediaPortal HTPC Software. Sinn und Zweck des Plugins ist dem Benutzer die Möglichkeit zu bieten, Untertitel für Filme und TV-Serien zu suchen und herunterzuladen. Dies soll von den populären Plugins Moving Pictures und MP-TVSeries aus möglich sein.	Außerdem bietet es ein Interface für die leichte Einbindung jedes anderen Plugins.
+
+Am leichtesten lässt sich das Plugin nutzen, indem man Moving Pictures oder MP-TVSeries öffnet, zu einem Eintrag darin navigiert und "Untertitel holen" wählt. In Moving Pictures (unterstützt wird 1.0.3 oder höher) findet man die Funktion üblicherweise im Menü oder als eigenen Button in der Detailansicht (das hängt vom Skin ab). In TVSeries (unterstützt wird 2.6.0 oder höher) musst du das Kontextmenü für die Folge öffen und "Download" wählen. Dann auf "Untertitel laden" klicken. Wenn du willst, kannst du die Möglichkeit nutzen, die Daten die SubCentral laden soll, anzupassen.
+
+Wenn du das Plugin vom Home-Screen aus öffnest - wie im Moment üblich - dann ist die manuelle Suche möglich. Hier kannst du deine eigenen Suchanfragen für Filme und Serien anlegen.
+
+Um Sprachen für die Suche zu definieren, solltest du den entsprechenden Menüeintrag wählen. Für eine detaillierte Einstellung des Plugins solltest du die Konfiguration in den Plugins der MediaPortal-Konfiguration öffnen. Hier lassen sich die Untertiel-Anbieter auswählen, sortieren und unbenennen. Dies geht auch für Anbieter-Gruppen. Zudem kannst du die Sprachen auswählen und sortieren und die Downloadordner wählen.
+
+Wenn die Suche beendet ist, kannst die Ergebnisse über das Menü sortieren und natürlich runterladen.
+
+Besuche uns für weitere Infos auf der Google Code Subcentral Projekt-Seite!
+</string>
+
+	<!-- B -->
+	<string Field="Back">Zurück</string>
+
+	<!-- C -->
+	<string Field="CannotLoadSkin">Konnte das Skin\nfile für SubCentral nicht laden!</string>
+	<string Field="Cancel">Abbrechen</string>
+	<string Field="Confirm">Bestätigen</string>
+	<string Field="ClearFiles">Dateien bereinigen</string>
+	<string Field="ClearMedia">Medien bereinigen</string>
+	<string Field="CanceledDownload">Download abgebrochen!</string>
+	<string Field="ContextMenu">Kontextmenü</string>
+	<string Field="CannotUseManualSearch">Kann die Suche nicht starten\nweil kein Downloadordner definiert ist.\nBitte in der Konfiguration hinzufügen.</string>
+	<string Field="CannotClearMedia">Kann die Medien nicht bereinigen\nweil kein Downloadordner definiert ist.\nBitte in der Konfiguration hinzufügen.</string>
+
+	<!-- D -->
+	<string Field="DefaultFor">Standard für: {0}</string>
+	<string Field="DownloadFoderDoesNotExistCreate">Download-Ordner besteht nicht.\nErstellen?</string>
+	<string Field="Download">Herunterladen</string>
+	<string Field="DownloadTo">Herunterladen nach...</string>
+	<string Field="DefaultFolderNotWritable">Standardordner {0} ist nicht beschreibbar! Bitte einen anderen wählen.</string>
+	<string Field="DefaultDownloadFoderDoesNotExistCreate">Standard Downloadordner:\n{0}\nbesteht nicht.\nErstellen?</string>
+	<string Field="Default">Default</string>
+
+	<!-- E -->
+	<string Field="Error">Fehler</string>
+	<string Field="ExternalPlugin">Externes Plugin</string>
+	<string Field="ErrorWhileDownloadingSubtitles">Beim Download sind Fehler aufgetreten!</string>
+	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Fehler beim Download des Untertitels: {0}</string>
+	<string Field="ErrorWhileRetrievingSubtitles">Fehler beim Holen des/der Untertitel(s)!</string>
+	<string Field="ErrorWhileCreatingDirectory">Fehler beim Erstellen des Ordners!</string>
+
+	<!-- F -->
+	<string Field="FoundSubtitles">Untertitel gefunden</string>
+	<string Field="From">Von: {0}</string>
+
+	<!-- G -->
+	<string Field="GroupS">Gruppe(n)</string>
+	<string Field="GroupProviderDefault">Standard Gruppe/Anbieter</string>
+
+	<!-- H -->
+
+	<!-- I -->
+	<string Field="Initializing">Einrichtung</string>
+	<string Field="IMDbID">IMDb ID: {0}</string>
+
+	<!-- L -->
+	<string Field="Languages">Sprachen</string>
+	<string Field="Language">Sprache</string>
+
+	<!-- M -->
+	<string Field="Movies">Filme</string>
+	<string Field="ManualSearch">Manuelle Suche</string>
+	<string Field="ModifySearch">Suche anpassen</string>
+	<string Field="MediaFilesDifferFromSubtitleFiles">Anzahl der Mediendateien unterscheidet sich von Anzahl der gefundenen Untertitel. Falsche Untertitel?</string>
+	<string Field="MovieIMDb">Film (IMDb)</string>
+	<string Field="Movie">Film</string>
+
+	<!-- N -->
+	<string Field="NewGroup">Neue Gruppe</string>
+	<string Field="NoResultsFound">Keine Ergebnisse gefunden</string>
+	<string Field="NoSubtitlesFound">Keine Untertitel gefunden</string>
+	<string Field="NoDownloadFolders">Keinen gültigen Downloadordner für diese Medien gefunden.</string>
+	<string Field="NotEnoughDataForSearch">Die Daten reichen für eine Suche nicht aus</string>
+	<string Field="Name">Name</string>
+	<string Field="NoSorting">Keine Sortierung</string>
+
+	<!-- O -->
+	<string Field="OKSearch">OK/Suche</string>
+
+	<!-- P -->
+	<string Field="ProviderS">Anbieter</string>
+
+	<!-- Q -->
+	<string Field="QueryingProviders">Anbieter werden abgefragt</string>
+
+	<!-- R -->
+	<string Field="Revert">Zurück</string>
+
+	<!-- S -->
+	<string Field="Search">Suche</string>
+	<string Field="SubtitleDownloaderUnavailable">Ist die SubtitleDownloader.dll vorhanden?</string>
+	<string Field="SubtitleSearch">Untertitel Suche</string>
+	<string Field="SearchingSubtitles">Suche nach Untertiteln...</string>
+	<string Field="SelectLanguages">Wähle die Sprache(n) aus</string>
+	<string Field="SubtitlesExist">Die Untertiteldatei besteht bereits.\nSoll sie überschrieben werden?</string>
+	<string Field="SubtitlesDownloaded">Untertitel heruntengeladen!</string>
+	<string Field="SelectDownloadFolder">Wähle Downloadordner aus</string>
+	<string Field="SubtitleS">Untertitel</string>
+	<string Field="Subtitle">Untertitel</string>
+	<string Field="Subtitles">Untertitel</string>
+	<string Field="SubtitlesDownloadedCount">{0} Untertitel heruntergeladen</string>
+	<string Field="SubtitlesDownloadErrorCount">{0} Untertitel konnten nicht heruntergeladen werden.</string>
+	<string Field="SubtitlesDownloadCanceledCount">Herunterladen von{0} Untertitel wurde abgebrochen</string>
+	<string Field="SelectFileForSubtitle">Wähle die Mediendatei für '{0}'</string>
+	<string Field="SearchType">Suchart: {0}</string>
+	<string Field="SiteDoesNotSupportIMDbIDSearch">Die Seite unterstützt keine Suche über IMDb ID!</string>
+	<string Field="SiteDoesNotSupportMovieSearch">Die Seite unterstützt keine Film-Suche!</string>
+	<string Field="SiteDoesNotSupportTVShowSearch">Die Seite unterstützt keine TV-Serien-Suche!</string>
+	<string Field="Sorting">Sortiere</string>
+	<string Field="Sort">Sortiere</string>
+	<string Field="SortBy">Sortiere nach: {0}</string>
+	<string Field="SortByLanguage">Sortiere nach Untertitel-Sprache</string>
+	<string Field="SortByName">Sortiere nach Untertitel-Name</string>
+
+	<string Field="SkinTranslationFrom">Von</string>
+	<string Field="SkinTranslationSearchType">Suchart</string>
+	<string Field="SkinTranslationMediaFiles">Mediendateien</string>
+	<string Field="SkinTranslationDownloadFolder">Downloadordner</string>
+	<string Field="SkinTranslationSearchData">Suchdaten</string>
+	<string Field="SkinTranslationIMDbID">IMDb ID</string>
+	<string Field="SkinTranslationTitle">Titel</string>
+	<string Field="SkinTranslationYear">Jahr</string>
+	<string Field="SkinTranslationSeason">Staffel</string>
+	<string Field="SkinTranslationEpisode">Folge</string>
+	<string Field="SkinTranslationMovie">Film</string>
+	<string Field="SkinTranslationTVShow">TV-Sendung</string>
+
+	<!-- T -->
+	<string Field="TVShows">TV-Sendungen</string>
+	<string Field="TVShow">TV-Sendung</string>
+
+	<!-- U -->
+	<string Field="UnableToImportDataFrom">Kann von {0}\nnicht importieren</string>
+	<string Field="UnableToLoadSubtitleDownloader">Kann die SubtitleDownloader library nicht laden!</string>
+
+	<!-- V -->
+
+	<!-- W -->
+	<string Field="Warning">Warnung</string>
+	<string Field="WrongFormatIMDbID">Falsches format für IMDb ID (ttNNNNNNN)!</string>
+	<string Field="WrongFormatYear">Falsches format für das Jahr (1900 - {0})!</string>
+	<string Field="WrongFormatSeasonEpisode">{0} muss nummerisch und größer als 0 sein!</string>
+
+	<!-- Y -->
+	<string Field="PleaseSelectLanguages">Du musst mindestens\n eine Sprache wählen!</string>
+
+</strings>
