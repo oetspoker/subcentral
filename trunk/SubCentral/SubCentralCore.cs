@@ -119,7 +119,7 @@ namespace SubCentral {
             #endif
 
             // add the previously defined rules and targets to the logging configuration
-            LoggingRule rule = new LoggingRule("*", logLevel, fileTarget);
+            LoggingRule rule = new LoggingRule("SubCentral*", logLevel, fileTarget);
             config.LoggingRules.Add(rule);
             
             LogManager.Configuration = config;
