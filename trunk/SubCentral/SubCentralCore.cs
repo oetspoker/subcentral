@@ -15,6 +15,9 @@ using SubCentral.Utils;
 
 namespace SubCentral {
     public class SubCentralCore {
+
+        public static readonly Version SubtitleDownloaderVersion = new Version(1,0);
+
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         // Returns instance to this class as we only want to have one 
@@ -82,7 +85,13 @@ namespace SubCentral {
                                 "[${logger:fixedLength=true:padding=20:shortName=true}]: ${message} " +
                                 "${exception:format=tostring}";
 
-            LoggingConfiguration config = new LoggingConfiguration();
+            LoggingConfiguration config;
+
+            if (LogManager.Configuration == null)
+                config = new LoggingConfiguration();
+            else
+                config = LogManager.Configuration;
+
             config.AddTarget("file", fileTarget);
 
             // Get current Log Level from MediaPortal 
@@ -112,6 +121,7 @@ namespace SubCentral {
             // add the previously defined rules and targets to the logging configuration
             LoggingRule rule = new LoggingRule("*", logLevel, fileTarget);
             config.LoggingRules.Add(rule);
+            
             LogManager.Configuration = config;
         }
 
@@ -142,7 +152,7 @@ namespace SubCentral {
 
         private void InitSubtitleDownloader() {
             logger.Info("Initializing SubtitleDownloader");
-            if (!SubCentralUtils.IsAssemblyAvailable("SubtitleDownloader", new Version(1, 0))) {
+            if (!SubCentralUtils.IsAssemblyAvailable("SubtitleDownloader", SubtitleDownloaderVersion)) {
                 logger.Debug("SubtitleDownloader: assembly not loaded (not available?), trying to load it manually");
                 try {
                     //AppDomain.CurrentDomain.Load(new AssemblyName("SubtitleDownloader"));
