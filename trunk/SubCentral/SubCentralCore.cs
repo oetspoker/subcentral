@@ -77,6 +77,8 @@ namespace SubCentral {
             }
             catch (Exception) { }
 
+            LoggingConfiguration config = LogManager.Configuration ?? new LoggingConfiguration();
+
             // build logging rules for our logger
             FileTarget fileTarget = new FileTarget();
             fileTarget.FileName = Config.GetFile(Config.Dir.Log, SubCentralUtils.LogFileName);
@@ -84,17 +86,24 @@ namespace SubCentral {
                                 "${level:fixedLength=true:padding=5} " +
                                 "[${logger:fixedLength=true:padding=20:shortName=true}]: ${message} " +
                                 "${exception:format=tostring}";
-
-            LoggingConfiguration config;
-
-            if (LogManager.Configuration == null)
-                config = new LoggingConfiguration();
-            else
-                config = LogManager.Configuration;
-
             config.AddTarget("file", fileTarget);
 
-            // Get current Log Level from MediaPortal 
+            LogLevel logLevel = GetMediaportalLogLevel();
+
+            // if the plugin was compiled in DEBUG mode, always default to debug logging
+            #if DEBUG
+            logLevel = LogLevel.Debug;
+            #endif
+
+            // add the previously defined rules and targets to the logging configuration
+            LoggingRule rule = new LoggingRule("SubCentral*", logLevel, fileTarget);
+            config.LoggingRules.Add(rule);
+            
+            LogManager.Configuration = config;
+        }
+
+        private LogLevel GetMediaportalLogLevel()
+        {
             LogLevel logLevel;
             MediaPortal.Profile.Settings xmlreader = MediaPortalSettings;
             switch ((Level)xmlreader.GetValueAsInt("general", "loglevel", 0)) {
@@ -112,17 +121,7 @@ namespace SubCentral {
                     logLevel = LogLevel.Debug;
                     break;
             }
-
-            // if the plugin was compiled in DEBUG mode, always default to debug logging
-            #if DEBUG
-            logLevel = LogLevel.Debug;
-            #endif
-
-            // add the previously defined rules and targets to the logging configuration
-            LoggingRule rule = new LoggingRule("SubCentral*", logLevel, fileTarget);
-            config.LoggingRules.Add(rule);
-            
-            LogManager.Configuration = config;
+            return logLevel;
         }
 
         // Logs a startup message to the log files.
