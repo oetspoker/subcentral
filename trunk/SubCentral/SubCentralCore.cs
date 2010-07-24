@@ -75,7 +75,10 @@ namespace SubCentral {
                 if (File.Exists(fullLogFilePath)) File.Copy(fullLogFilePath, fullOldLogFilePath, true);
                 File.Delete(fullLogFilePath);
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+                logger.ErrorException("Error setting up logging paths", e);
+            }
 
             LoggingConfiguration config = LogManager.Configuration ?? new LoggingConfiguration();
 
@@ -144,8 +147,7 @@ namespace SubCentral {
                 logger.Info("Loading settings from SubCentral.xml successful.");
             }
             catch (Exception ex) {
-                logger.Error("Loading settings from SubCentral.xml unsuccessful:");
-                logger.Error(ex.Message);
+                logger.ErrorException("Loading settings from SubCentral.xml unsuccessful", ex);
             }
         }
 
@@ -161,7 +163,7 @@ namespace SubCentral {
                     return;
                 }
                 catch (Exception e) {
-                    logger.Error("SubtitleDownloader: error loading: {0}:{1}", e.GetType(), e.Message);
+                    logger.ErrorException("SubtitleDownloader: error loading", e);
                 }
                 SubtitleDownloaderInitialized = false;
                 return;
@@ -183,7 +185,7 @@ namespace SubCentral {
                 result = true;
                 #else
                 SubCentralUtils.SubsDownloaderNames = new List<string>();
-                logger.Error("SubtitleDownloader: error getting providers: {0}:{1}", e.GetType(), e.Message);
+                logger.ErrorException("SubtitleDownloader: error getting providers", e);
                 result = false;
                 #endif
             }
@@ -207,7 +209,7 @@ namespace SubCentral {
                 logger.Error("SubtitleDownloader: error getting languages, using default ones");
                 result = true;
                 #else
-                logger.Error("SubtitleDownloader: error getting languages: {0}:{1}", e.GetType(), e.Message);
+                logger.ErrorException("SubtitleDownloader: error getting languages:", e);
                 result = false;
                 #endif
             }
