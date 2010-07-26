@@ -72,6 +72,17 @@ namespace SubCentral.PluginHandlers {
         public virtual void Clear() {
         }
 
+        public virtual int GetEmbeddedSubtitles() {
+            return -1;
+        }
+
+        public virtual bool GetHasSubtitles() {
+            return false;
+        }
+
+        public virtual void SetHasSubtitles(string fileName, bool value) {
+        }
+
         // returns true if an assembly with the specified name is loaded
         protected bool IsAssemblyAvailable(string name, Version ver) {
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();

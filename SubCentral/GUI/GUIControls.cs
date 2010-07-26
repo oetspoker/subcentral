@@ -6,6 +6,7 @@ namespace SubCentral.GUI {
         LANGUAGESBUTTON = 203,
         MODIFYSEARCHBUTTON = 204,
         SORTBUTTON = 205,
+        DELETEBUTTON = 206,
 
         PROVIDERSLIST = 50,
 

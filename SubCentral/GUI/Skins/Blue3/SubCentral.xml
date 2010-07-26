@@ -2,7 +2,7 @@
 <window>
 	<id>84623</id>
 	<defaultcontrol>912</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+	<allowoverlay>player.hasmedia+!control.isvisible(103)</allowoverlay>
 	<define>#header.label:#SubCentral.Header.Label</define>
 	<define>#header.background.custom:bg.jpg</define>
 	<animation effect="fade" time="250">WindowOpen</animation>
@@ -164,8 +164,18 @@
 					<id>204</id>
 					<label>Modify search</label>
 					<onup>203</onup>
-					<ondown>205</ondown>
+					<ondown>206</ondown>
 					<onleft>204</onleft>
+					<onright>912</onright>
+				</control>
+				<control>
+					<description>Delete Subtitles Button</description>
+					<type>button</type>
+					<id>206</id>
+					<label>Delete subtitles</label>
+					<onup>204</onup>
+					<ondown>205</ondown>
+					<onleft>206</onleft>
 					<onright>912</onright>
 				</control>
 				<control>
@@ -173,7 +183,7 @@
 					<type>sortbutton</type>
 					<id>205</id>
 					<label>Sort</label>
-					<onup>204</onup>
+					<onup>206</onup>
 					<ondown>202</ondown>
 					<onleft>205</onleft>
 					<onright>912</onright>

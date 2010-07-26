@@ -11,6 +11,45 @@ namespace SubCentral.Utils {
 
         private static Dictionary<string, DriveInfo> driveInfoPool;
 
+        public static bool IsUncPath(FileSystemInfo fsi) {
+            if (fsi == null || string.IsNullOrEmpty(fsi.FullName)) return false;
+            Uri uri = new Uri(fsi.FullName);
+            return uri.IsUnc;
+        }
+
+        public static bool IsReparsePoint(FileSystemInfo fsi) {
+            if (IsUncPath(fsi))
+                return false;
+
+            try {
+                if ((fsi.Attributes & FileAttributes.ReparsePoint) == FileAttributes.ReparsePoint)
+                    return true;
+            }
+            // ignore the exceptions that can occur
+            catch (ArgumentException) { }
+            catch (System.Security.SecurityException) { }
+            catch (IOException) { }
+
+            return false;
+        }     
+
+        public static bool IsAccessible(DirectoryInfo di) {
+            if (di.Exists) {
+
+                if (!IsReparsePoint(di))
+                    return true;
+
+                try {
+                    di.GetDirectories();
+                    // directory access successful, directory is available
+                    return true;
+                }
+                // ignore the exception, failure means it is not available 
+                catch (DirectoryNotFoundException) { }
+            }
+            return false;
+        }
+
         public static bool pathExists(string path) {
             bool hostAlive;
             bool pathDriveReady;

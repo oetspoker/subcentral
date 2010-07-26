@@ -75,7 +75,7 @@ namespace SubCentral {
                 if (File.Exists(fullLogFilePath)) File.Copy(fullLogFilePath, fullOldLogFilePath, true);
                 File.Delete(fullLogFilePath);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 logger.ErrorException("Error setting up logging paths", e);
             }

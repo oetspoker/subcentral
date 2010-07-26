@@ -196,6 +196,7 @@ namespace SubCentral.Localizations {
         public static string DefaultFolderNotWritable = "Default folder {0} is not writable! Please select another one.";
         public static string DefaultDownloadFoderDoesNotExistCreate = "Default download folder:\n{0}\ndoes not exist.\nCreate it?";
         public static string Default = "Default";
+        public static string DeleteSubtitles = "Delete subtitles";
 
         // E
         public static string Error = "Error";
@@ -230,6 +231,10 @@ namespace SubCentral.Localizations {
         public static string MediaFilesDifferFromSubtitleFiles = "Media files count differs from subtitle files count. Wrong subtitles?";
         public static string MovieIMDb = "Movie (IMDb)";
         public static string Movie = "Movie";
+        public static string MediaNoSubtitles = "Media from {0} doesn not have any subtitles!";
+        public static string MediaOnlyInternalSubtitles = "Media from {0} only has embedded (internal) subtitles!";
+        public static string MediaWrongMark = "Media from {0} is marked as having subtitles available,\nbut I couldn't find any subtitles.\nWould you like to correct that and\nset subtitles unavailable?";
+        public static string MediaHasSubtitles = "Media from {0} already has subtitles. If you'd like to delete them use the menu button.";
 
         // N
         public static string NewGroup = "New group";
@@ -277,6 +282,7 @@ namespace SubCentral.Localizations {
         public static string SortBy = "Sort by: {0}";
         public static string SortByLanguage = "Sort by subtitle language";
         public static string SortByName = "Sort by subtitle name";
+        public static string SubtitleFilesToDelete = "Subtitle files to delete";
 
         public static string SkinTranslationFrom = "From";
         public static string SkinTranslationSearchType = "Search type";
@@ -298,6 +304,8 @@ namespace SubCentral.Localizations {
         // U
         public static string UnableToImportDataFrom = "Unable to import data\nfrom {0}.";
         public static string UnableToLoadSubtitleDownloader = "Unable to load SubtitleDownloader library!";
+        public static string UnableToDeleteSubtitleFile = "Unable to delete subtitle file!";
+        public static string UnableToDeleteSubtitleFiles = "Unable to delete subtitle files:";
 
         // V
 

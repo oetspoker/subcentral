@@ -10,6 +10,7 @@ namespace SubCentral.PluginHandlers {
     internal class MovingPicturesHandler : PluginHandler {
         private static Logger logger = LogManager.GetCurrentClassLogger();
         private MovieBrowser browser;
+        private DBMovieInfo selectedMovie;
 
         public override int ID {
             get { return 96742; }
@@ -37,7 +38,7 @@ namespace SubCentral.PluginHandlers {
         protected override bool GrabFileDetails() {
             try {
                 browser = MovingPicturesCore.Browser;
-                DBMovieInfo selectedMovie = browser.SelectedMovie;
+                selectedMovie = browser.SelectedMovie;
                 List<DBLocalMedia> localMedia = selectedMovie.LocalMedia;
 
                 _mediaDetail = new BasicMediaDetail();
@@ -62,7 +63,23 @@ namespace SubCentral.PluginHandlers {
                 logger.Error("Unexpected error when pulling data from Moving Pictures.");
                 return false;
             }
+        }
 
+        public override bool GetHasSubtitles() {
+            foreach (DBLocalMedia localMediaItem in selectedMovie.LocalMedia)
+                if (localMediaItem.HasSubtitles) return true;
+            return false;
+        }
+
+        public override void SetHasSubtitles(string fileName, bool value) {
+            if (_mediaDetail.Files == null || _mediaDetail.Files.Count == 0) return;
+
+            foreach (DBLocalMedia localMediaItem in selectedMovie.LocalMedia) {
+                if (localMediaItem.FullPath == fileName) {
+                    localMediaItem.HasSubtitles = value;
+                    localMediaItem.Commit();
+                }
+            }
         }
 
         protected override bool IsAvailable() {

@@ -121,6 +121,7 @@ namespace SubCentral.Settings.Data {
     public struct SettingsGUI {
         public SubtitlesSortMethod SortMethod { get; set; }
         public bool SortAscending { get; set; }
+        public bool CheckMediaForSubtitlesOnOpen { get; set; }
     }
     #endregion
 
