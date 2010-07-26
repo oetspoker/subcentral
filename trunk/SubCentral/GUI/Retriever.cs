@@ -422,8 +422,7 @@ namespace SubCentral.GUI {
 
                 foreach (FileInfo subtitleFile in subtitleFiles) {
                     SubtitleDownloadStatus newSubtitleDownloadStatus = new SubtitleDownloadStatus() {
-                        Succesful = false,
-                        Canceled = false,
+                        Index = subtitleNr,
                         Error = string.Empty
                     };
                     try {
@@ -435,7 +434,7 @@ namespace SubCentral.GUI {
 
                         if (mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
                             if (subtitleNr < 0) {
-                                newSubtitleDownloadStatus.Canceled = true;
+                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Canceled;
                                 continue;
                             }
                             videoFileName = Path.GetFileName(mediaDetail.Files[subtitleNr].FullName);
@@ -467,7 +466,7 @@ namespace SubCentral.GUI {
                                     subtitleFileNameFull = subtitleFileName + subtitleFileExt;
                                 }
                                 else {
-                                    newSubtitleDownloadStatus.Canceled = true;
+                                    newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Canceled;
                                     continue;
                                 }
                             }
@@ -481,7 +480,7 @@ namespace SubCentral.GUI {
                                 subtitleFileNameFull = subtitleFileName + subtitleFileExt;
                             }
                             else {
-                                newSubtitleDownloadStatus.Canceled = true;
+                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Canceled;
                                 continue;
                             }
                         }
@@ -495,24 +494,26 @@ namespace SubCentral.GUI {
                                 try {
                                     File.Delete(targetSubtitleFile);
                                     File.Move(subtitleFile.FullName, targetSubtitleFile);
-                                    newSubtitleDownloadStatus.Succesful = true;
+                                    newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Succesful;
                                 }
                                 catch (Exception e) {
                                     logger.Error("Error while downloading subtitles: {0}:{1}", e.GetType(), e.Message);
+                                    newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
                                     newSubtitleDownloadStatus.Error = e.Message;
                                 }
                             }
                             else {
-                                newSubtitleDownloadStatus.Canceled = true;
+                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.AlreadyExists;
                             }
                         }
                         else {
                             try {
                                 File.Move(subtitleFile.FullName, targetSubtitleFile);
-                                newSubtitleDownloadStatus.Succesful = true;
+                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Succesful;
                             }
                             catch (Exception e) {
                                 logger.Error("Error while downloading subtitles: {0}:{1}", e.GetType(), e.Message);
+                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
                                 newSubtitleDownloadStatus.Error = e.Message;
                             }
                         }

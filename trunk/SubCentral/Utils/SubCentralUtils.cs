@@ -731,7 +731,7 @@ namespace SubCentral.Utils {
         /// Checks the media files for subtitles
         /// </summary>
         /// <param name="fiFiles">list of files to examine</param>
-        /// <returns>true  : ALL of the input files have subtitles
+        /// <returns>true  : ANY of the input files have subtitles
         ///          false : some or all of the input files don't have subtitles</returns>
         public static bool MediaHasSubtitles(List<FileInfo> fiFiles) {
             return MediaHasSubtitles(fiFiles, true, -1, false);
@@ -742,7 +742,7 @@ namespace SubCentral.Utils {
         /// </summary>
         /// <param name="fiFiles">list of files to examine</param>
         /// <param name="useMediaInfo">use media info?</param>
-        /// <returns>true  : ALL of the input files have subtitles
+        /// <returns>true  : ANY of the input files have subtitles
         ///          false : some or all of the input files don't have subtitles</returns>
         public static bool MediaHasSubtitles(List<FileInfo> fiFiles, bool useMediaInfo) {
             return MediaHasSubtitles(fiFiles, useMediaInfo, -1, false);
@@ -754,7 +754,7 @@ namespace SubCentral.Utils {
         /// <param name="fiFiles">list of files to examine</param>
         /// <param name="useMediaInfo">use media info?</param>
         /// <param name="cachedMISubtitleCount">cached media info text count, -1 for default, if set mediainfo won't be used</param>
-        /// <returns>true  : ALL of the input files have subtitles
+        /// <returns>true  : ANY of the input files have subtitles
         ///          false : some or all of the input files don't have subtitles</returns>
         public static bool MediaHasSubtitles(List<FileInfo> fiFiles, bool useMediaInfo, int cachedMISubtitleCount) {
             return MediaHasSubtitles(fiFiles, useMediaInfo, cachedMISubtitleCount, false);
@@ -767,15 +767,25 @@ namespace SubCentral.Utils {
         /// <param name="useMediaInfo">use media info?</param>
         /// <param name="cachedMISubtitleCount">cached media info text count, -1 for default, if set mediainfo won't be used</param>
         /// <param name="useLocalOnly">only media folder will be looked for subtitles, if set mediainfo won't be used</param>
-        /// <returns>true  : ALL of the input files have subtitles
+        /// <returns>true  : ANY of the input files have subtitles
         ///          false : some or all of the input files don't have subtitles</returns>
         public static bool MediaHasSubtitles(List<FileInfo> fiFiles, bool useMediaInfo, int cachedMISubtitleCount, bool useLocalOnly) {
-            bool result = true;
+            List<FileInfo> subtitleFiles = null;
+            return MediaHasSubtitles(fiFiles, useMediaInfo, cachedMISubtitleCount, useLocalOnly, ref subtitleFiles);
+        }
+
+        public static bool MediaHasSubtitles(List<FileInfo> fiFiles, bool useMediaInfo, int cachedMISubtitleCount, bool useLocalOnly, ref List<FileInfo> subtitleFiles) {
+            bool result = false;
+
+            if (fiFiles == null || fiFiles.Count == 0) return result;
 
             foreach (FileInfo fiFile in fiFiles) {
-                MediaInfoWrapper miWrapper = new MediaInfoWrapper(fiFile.FullName, useMediaInfo, cachedMISubtitleCount, useLocalOnly);
-                result = result && miWrapper.HasSubtitles;
+                MediaInfoWrapper miWrapper = new MediaInfoWrapper(fiFile.FullName, useMediaInfo, cachedMISubtitleCount, useLocalOnly, subtitleFiles != null);
+                result = result || miWrapper.HasSubtitles;
+                if (result && subtitleFiles != null)
+                    subtitleFiles.AddRange(miWrapper.SubtitleFiles);
             }
+
 
             return result;
         }

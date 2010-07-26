@@ -12,6 +12,7 @@ namespace SubCentral.Utils {
         private delegate void ShowOKDialogDelegate(string heading, string lines);
         private delegate void ShowNotifyDialogDelegate(string heading, string text, string image);
         private delegate int ShowMenuDialogDelegate(string heading, List<GUIListItem> items);
+        private delegate void ShowTextDialogDelegate(string heading, string text);
 
         public static readonly string SubtitlesLogoThumbPath = GUIGraphicsContext.Skin + "\\Media\\Logos\\subtitles.png";
         public static readonly string NoSubtitlesLogoThumbPath = GUIGraphicsContext.Skin + "\\Media\\Logos\\nosubtitles.png";
@@ -211,6 +212,36 @@ namespace SubCentral.Utils {
             }
 
             return dlgMenu.SelectedLabel;
+        }
+
+        /// <summary>
+        /// Displays a text dialog.
+        /// </summary>
+        public static void ShowTextDialog(string heading, List<string> text) {
+            if (text == null || text.Count < 1) return;
+            ShowTextDialog(heading, string.Join("\n", text.ToArray()));
+        }
+
+        /// <summary>
+        /// Displays a text dialog.
+        /// </summary>
+        public static void ShowTextDialog(string heading, string text) {
+            if (GUIGraphicsContext.form.InvokeRequired) {
+                ShowTextDialogDelegate d = ShowTextDialog;
+                GUIGraphicsContext.form.Invoke(d, heading, text);
+                return;
+            }
+
+            GUIDialogText dlgText = (GUIDialogText)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_TEXT);
+            //if (dlgText == null) return;
+
+            dlgText.Reset();
+
+            dlgText.SetHeading(heading);
+
+            dlgText.SetText(text);
+
+            dlgText.DoModal(GUIWindowManager.ActiveWindow);
         }
 
         /// <summary>

@@ -16,11 +16,13 @@ namespace SubCentral.Utils {
         private bool _hasSubtitles = false;
         private bool _hasExternalSubtitles = false;
 
+        private List<FileInfo> _subtitleFiles = new List<FileInfo>();
+
         private static List<string> _subTitleExtensions = new List<string>();
         #endregion
 
         #region Constructor
-        public MediaInfoWrapper(string strFile, bool useMediaInfo, int cachedMISubtitleCount, bool useLocalOnly) {
+        public MediaInfoWrapper(string strFile, bool useMediaInfo, int cachedMISubtitleCount, bool useLocalOnly, bool checkAll) {
             bool isTV = MediaPortal.Util.Utils.IsLiveTv(strFile);
             bool isRadio = MediaPortal.Util.Utils.IsLiveRadio(strFile);
             bool isDVD = MediaPortal.Util.Utils.IsDVD(strFile);
@@ -43,10 +45,11 @@ namespace SubCentral.Utils {
                 useMediaInfo = false;
             }
 
-            _hasExternalSubtitles = checkHasExternalSubtitles(strFile, useLocalOnly);
+            _hasExternalSubtitles = checkHasExternalSubtitles(strFile, useLocalOnly, checkAll);
 
             try {
                 if (useMediaInfo) {
+                    logger.Debug("MediaInfoWrapper: Trying to use MediaInfo");
                     _mI = new MediaInfo();
                     _mI.Open(strFile);
 
@@ -79,7 +82,7 @@ namespace SubCentral.Utils {
         #endregion
 
         #region private methods
-        private bool checkHasExternalSubtitles(string strFile, bool useLocalOnly) {
+        private bool checkHasExternalSubtitles(string strFile, bool useLocalOnly, bool checkAll) {
             if (_subTitleExtensions.Count == 0) {
                 // load them in first time
                 _subTitleExtensions.Add(".aqt");
@@ -114,6 +117,8 @@ namespace SubCentral.Utils {
                 _subTitleExtensions.Add(".zeg");
             }
 
+            bool rtn = false;
+
             string filenameNoExt = System.IO.Path.GetFileNameWithoutExtension(strFile);
 
             try {
@@ -126,17 +131,26 @@ namespace SubCentral.Utils {
                     logger.Debug("MediaInfoWrapper: Got {0} folders for media {1}", folders.Count, strFile);
                 }
 
+                
                 foreach (string folder in folders) {
                     //if (folder.FolderErrorInfo == SubCentral.Enums.FolderErrorInfo.NonExistant) continue;
 
                     //if (!SubCentralUtils.pathExists(folder.FolderName)) continue;
 
-                    if (string.IsNullOrEmpty(folder) || !NetUtils.uncHostIsAlive(folder)) continue;
+                    if (string.IsNullOrEmpty(folder) /*|| !NetUtils.uncHostIsAlive(folder)*/) continue;
 
                     try {
                         foreach (string file in System.IO.Directory.GetFiles(folder, filenameNoExt + "*")) {
                             System.IO.FileInfo fi = new System.IO.FileInfo(file);
-                            if (_subTitleExtensions.Contains(fi.Extension.ToLower())) return true;
+                            if (_subTitleExtensions.Contains(fi.Extension.ToLower())) {
+                                if (checkAll) {
+                                    rtn = rtn || true;
+                                    _subtitleFiles.Add(fi);
+                                }
+                                else {
+                                    return true;
+                                }
+                            }
                         }
                     }
                     catch (Exception e) {
@@ -149,7 +163,7 @@ namespace SubCentral.Utils {
                 logger.Warn("Error checking external subtitles for file {0}: {1}:{2}", strFile, e.GetType(), e.Message);
             }
 
-            return false;
+            return rtn;
         }
         #endregion
 
@@ -164,6 +178,10 @@ namespace SubCentral.Utils {
 
         public int NumSubtitles {
             get { return _numSubtitles; }
+        }
+
+        public List<FileInfo> SubtitleFiles {
+            get { return _subtitleFiles; }
         }
         #endregion
     }
