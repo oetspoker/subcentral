@@ -30,6 +30,7 @@ namespace SubCentral.Utils {
         private static readonly object syncRoot = new object();
 
         public static string PluginName() {
+            if (SettingsManager.Properties == null || SettingsManager.Properties.GUISettings == null) return "SubCentral";
             return string.IsNullOrEmpty(SettingsManager.Properties.GUISettings.PluginName) ? "SubCentral" : SettingsManager.Properties.GUISettings.PluginName;
         }
 

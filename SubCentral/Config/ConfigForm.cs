@@ -227,7 +227,10 @@ namespace SubCentral.ConfigForm {
             strButtonImage = String.Empty;
             strButtonImageFocus = String.Empty;
             strPictureImage = "hover_subcentral.png";
-            return !SettingsManager.Properties.GUISettings.HidePlugin;
+            if (SettingsManager.Properties != null && SettingsManager.Properties.GUISettings != null)
+                return !SettingsManager.Properties.GUISettings.HidePlugin;
+            else
+                return true;
         }
         #endregion
 
