@@ -33,6 +33,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Core, Version=1.0.8.28791, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.1 RC\Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cornerstone, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\Moving Pictures v1.0.6\Cornerstone.dll</HintPath>
+    </Reference>
+    <Reference Include="Dialogs, Version=1.0.8.28797, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.1 RC\Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="MovingPictures, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\Moving Pictures v1.0.6\MovingPictures.dll</HintPath>
+    </Reference>
+    <Reference Include="MP-TVSeries, Version=2.6.0.1157, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MP-TVSeries v2.6.0\MP-TVSeries.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\NLog.dll</HintPath>
@@ -57,6 +78,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Utils, Version=2.2.7.28786, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.1 RC\Utils.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GUI\FolderErrorInfo.cs" />
@@ -121,28 +146,6 @@
     <Compile Include="Utils\SubCentralUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MediaPortal\Core\Core.csproj">
-      <Project>{02FFFC1F-2555-4B99-8B01-3432D0673855}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MediaPortal\Dialogs\Dialogs.csproj">
-      <Project>{396C5208-5D46-4A11-92C1-FD0F2F42D7DD}</Project>
-      <Name>Dialogs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MediaPortal\Utils\Utils.csproj">
-      <Project>{6DA0E4DF-6230-4642-98B5-E690BB6942BB}</Project>
-      <Name>Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Moving Pictures\Cornerstone\Cornerstone.csproj">
-      <Project>{14201B8D-31C3-4FB5-9356-9485676C147B}</Project>
-      <Name>Cornerstone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Moving Pictures\MovingPictures\MovingPictures.csproj">
-      <Project>{443F8F2C-44D2-47FB-B552-636664C8EC53}</Project>
-      <Name>MovingPictures</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Config\Images\SubCentral_Icon_Disabled.png" />
     <EmbeddedResource Include="Config\Images\SubCentral_Icon_Enabled.png" />
     <Content Include="GUI\Skins\Blue3wide\Media\defaultSubtitles.png" />
@@ -183,8 +186,12 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>cd $(TargetDir)
-copy "$(ProjectDir)..\External\merge.bat" "$(TargetDir)" /Y
-copy "$(ProjectDir)..\External\ilmerge.exe" "$(TargetDir)" /Y
+copy "$(ProjectDir)..\External\7z.dll" "$(TargetDir)" /Y
+copy "$(ProjectDir)..\External\ICSharpCode.SharpZipLib.dll" "$(TargetDir)" /Y
+copy "$(ProjectDir)..\External\MediaInfo.dll" "$(TargetDir)" /Y
+
+REM copy "$(ProjectDir)..\External\merge.bat" "$(TargetDir)" /Y
+REM copy "$(ProjectDir)..\External\ilmerge.exe" "$(TargetDir)" /Y
 REM call merge.bat</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
