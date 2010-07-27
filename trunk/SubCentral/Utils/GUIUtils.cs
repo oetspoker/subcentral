@@ -218,7 +218,7 @@ namespace SubCentral.Utils {
         /// Displays a text dialog.
         /// </summary>
         public static void ShowTextDialog(string heading, List<string> text) {
-            if (text == null || text.Count < 1) return;
+            if (text == null || text.Count == 0) return;
             ShowTextDialog(heading, string.Join("\n", text.ToArray()));
         }
 

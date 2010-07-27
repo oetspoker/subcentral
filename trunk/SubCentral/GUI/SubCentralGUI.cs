@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Linq;
 using MediaPortal.GUI.Library;
 using NLog;
 using SubCentral.GUI.Items;
@@ -106,14 +107,14 @@ namespace SubCentral.GUI {
 
                 switch (_viewMode) {
                     case ViewMode.NONE:
-                        GUIUtils.SetProperty("#SubCentral.Header.Label", "SubCentral");
+                        GUIUtils.SetProperty("#SubCentral.Header.Label", SubCentralUtils.PluginName());
                         break;
                     case ViewMode.MAIN:
-                        GUIUtils.SetProperty("#SubCentral.Header.Label", "SubCentral - " + Localization.About);
+                        GUIUtils.SetProperty("#SubCentral.Header.Label", string.Format("{0} - {1}", SubCentralUtils.PluginName(), Localization.About));
                         GUIControl.FocusControl(GetID, _defaultControlId);
                         break;
                     case ViewMode.SEARCH:
-                        GUIUtils.SetProperty("#SubCentral.Header.Label", "SubCentral - " + Localization.SubtitleSearch);
+                        GUIUtils.SetProperty("#SubCentral.Header.Label", string.Format("{0} - {1}", SubCentralUtils.PluginName(), Localization.SubtitleSearch));
                         GUIControl.FocusControl(GetID, (int)GUIControls.PROVIDERSLIST);
                         break;
                     case ViewMode.MODIFYSEARCH:
@@ -122,9 +123,9 @@ namespace SubCentral.GUI {
                         //modifySearchSelectFolderButton.Visible = CurrentHandler.MediaDetail.Files == null || _modifySearchMediaDetail.Files.Count == 0;
                         PublishSearchProperties(true);
                         if (_backupHandler == null)
-                            GUIUtils.SetProperty("#SubCentral.Header.Label", "SubCentral - " + Localization.ManualSearch);
+                            GUIUtils.SetProperty("#SubCentral.Header.Label", string.Format("{0} - {1}", SubCentralUtils.PluginName(), Localization.ManualSearch));
                         else
-                            GUIUtils.SetProperty("#SubCentral.Header.Label", "SubCentral - " + Localization.ModifySearch);
+                            GUIUtils.SetProperty("#SubCentral.Header.Label", string.Format("{0} - {1}", SubCentralUtils.PluginName(), Localization.ModifySearch));
                         //GUIControl.FocusControl(GetID, (int)GUIControls.MODIFYSEARCHOKBUTTON);
                         GUIControl.FocusControl(GetID, (int)GUIControls.MODIFYSEARCHTITLEBUTTON);
                         break;
@@ -232,7 +233,7 @@ namespace SubCentral.GUI {
             _subtitlesSortMethod = Settings.SettingsManager.Properties.GUISettings.SortMethod;
             _subtitlesSortAsc = Settings.SettingsManager.Properties.GUISettings.SortAscending;
 
-            GUIUtils.SetProperty("#currentmodule", "SubCentral");
+            GUIUtils.SetProperty("#currentmodule", SubCentralUtils.PluginName());
 
             //if (searchButton == null) {
             if (!CheckAndTranslateSkin()) {
@@ -302,13 +303,9 @@ namespace SubCentral.GUI {
 
                         _shouldDeleteButtonVisible = true;
                         deleteButton.IsEnabled = true;
+
                         if (Settings.SettingsManager.Properties.GUISettings.CheckMediaForSubtitlesOnOpen) {
-                            _subtitlesExistForCurrentMedia = SubCentralUtils.MediaHasSubtitles(CurrentHandler.MediaDetail.Files, true, CurrentHandler.GetEmbeddedSubtitles(), false, ref _subtitleFilesForCurrentMedia);
-                            _mediaAvailable = CheckMediaAvailable(CurrentHandler.MediaDetail.Files);
-                            _checkMediaForSubtitlesOnOpenDone = true;
-                            if (_subtitlesExistForCurrentMedia) {
-                                GUIUtils.ShowNotifyDialog(Localization.Warning, string.Format(Localization.MediaHasSubtitles, CurrentHandler == null ? Localization.ExternalPlugin : CurrentHandler.PluginName));
-                            }
+                            CheckMediaForSubtitlesOnOpen(CurrentHandler);
                         }
 
                         if (Settings.SettingsManager.Properties.GeneralSettings.PluginLoadWithSearchData == OnPluginLoadWithSearchData.SearchDefaults) {
@@ -756,6 +753,7 @@ namespace SubCentral.GUI {
                       (sds.Status == SubtitleDownloadStatusStatus.Succesful || sds.Status == SubtitleDownloadStatusStatus.AlreadyExists)
                    ) {
                     properHandler.SetHasSubtitles(mediaDetail.Files[sds.Index].FullName, true);
+                    _checkMediaForSubtitlesOnOpenDone = false;
                 }
             }
         }
@@ -1415,21 +1413,48 @@ namespace SubCentral.GUI {
             return result;
         }
 
+        private void AskAndFalseHasSubtitles(PluginHandler properHandler, string baseText) {
+            string question = baseText;
+            if (!_mediaAvailable && properHandler.GetEmbeddedSubtitles() < 0)
+                question += "\n" + Localization.MediaMaybeInternalSubtitles;
+            if (GUIUtils.ShowYesNoDialog(Localization.Warning, string.Format(question, properHandler == null ? Localization.ExternalPlugin : properHandler.PluginName))) {
+                foreach (FileInfo fi in properHandler.MediaDetail.Files) {
+                    properHandler.SetHasSubtitles(fi.FullName, false);
+                }
+                _subtitlesExistForCurrentMedia = false;
+            }
+        }
+
+        private void AskAndTrueHasSubtitles(PluginHandler properHandler, string baseText) {
+            string question = baseText;
+            if (GUIUtils.ShowYesNoDialog(Localization.Warning, string.Format(question, properHandler == null ? Localization.ExternalPlugin : properHandler.PluginName))) {
+                foreach (FileInfo fi in properHandler.MediaDetail.Files) {
+                    properHandler.SetHasSubtitles(fi.FullName, true);
+                }
+                _subtitlesExistForCurrentMedia = true;
+            }
+        }
+
         private bool CheckMediaForSubtitlesOnOpen(PluginHandler properHandler) {
             bool resultContinue = true;
 
+            if (properHandler == null) return resultContinue;
+
             if (!_checkMediaForSubtitlesOnOpenDone) {
                 _subtitlesExistForCurrentMedia = SubCentralUtils.MediaHasSubtitles(properHandler.MediaDetail.Files, true, properHandler.GetEmbeddedSubtitles(), false, ref _subtitleFilesForCurrentMedia);
-                _mediaAvailable = CheckMediaAvailable(properHandler.MediaDetail.Files);
+                _mediaAvailable = FileUtils.mediaIsAvailable(properHandler.MediaDetail.Files);
                 _checkMediaForSubtitlesOnOpenDone = true;
             }
 
-            if (properHandler.GetHasSubtitles() && !_subtitlesExistForCurrentMedia) {
-                if (GUIUtils.ShowYesNoDialog(Localization.Warning, string.Format(Localization.MediaWrongMark, properHandler == null ? Localization.ExternalPlugin : properHandler.PluginName))) {
-                    foreach (FileInfo fi in properHandler.MediaDetail.Files) {
-                        properHandler.SetHasSubtitles(fi.FullName, false);
-                    }
-                }
+            if (_subtitlesExistForCurrentMedia && properHandler.GetHasSubtitles() && properHandler.Type == PluginHandlerType.BASIC) {
+                AskAndTrueHasSubtitles(properHandler, Localization.MediaWrongMarkNoSubtitles);
+            }
+            else if (_subtitlesExistForCurrentMedia) {
+                //GUIUtils.ShowNotifyDialog(Localization.Warning, string.Format(Localization.MediaHasSubtitles, CurrentHandler == null ? Localization.ExternalPlugin : CurrentHandler.PluginName));
+                GUIUtils.ShowNotifyDialog(Localization.Warning, Localization.MediaHasSubtitles);
+            }
+            else if (!_subtitlesExistForCurrentMedia && properHandler.GetHasSubtitles()) {
+                AskAndFalseHasSubtitles(properHandler, Localization.MediaWrongMarkHasSubtitles);
                 resultContinue = false;
             }
             
@@ -1455,14 +1480,14 @@ namespace SubCentral.GUI {
 
                 // first get local folders
                 List<string> localFolders = new List<string>();
-                foreach (FileInfo fiSubtitle in properHandler.MediaDetail.Files)
-                    localFolders.Add(fiSubtitle.DirectoryName);
+                foreach (FileInfo mediaFile in properHandler.MediaDetail.Files)
+                    localFolders.Add(mediaFile.DirectoryName);
 
                 int subtitleToDeleteIndex = int.MaxValue;
                 while (subtitleToDeleteIndex > 1) { // repeat only if user didn't select cancel (-1), all (0) or local (1)
                     List<GUIListItem> menuItems = new List<GUIListItem>();
-                    menuItems.Add(new GUIListItem("All"));
-                    menuItems.Add(new GUIListItem("Local (in media folder)"));
+                    menuItems.Add(new GUIListItem(Localization.All));
+                    menuItems.Add(new GUIListItem(Localization.Local));
                     foreach (FileInfo fiSubtitle in _subtitleFilesForCurrentMedia) {
                         GUIListItem item = new GUIListItem(fiSubtitle.FullName);
                         item.MusicTag = fiSubtitle;
@@ -1474,27 +1499,47 @@ namespace SubCentral.GUI {
                     if (subtitleToDeleteIndex > -1) {
                         if (subtitleToDeleteIndex == 0) {
                             // delete all
-                            List<string> successful = DeleteSubtitles(_subtitleFilesForCurrentMedia, localFolders, false);
-                            GUIUtils.ShowTextDialog(Localization.UnableToDeleteSubtitleFiles, successful);
+                            List<SubtitleDeleteStatus> statusList = DeleteSubtitles(_subtitleFilesForCurrentMedia, localFolders, false);
+                            List<string> errorList = (from status in statusList where status.Status == SubtitleDeleteStatusStatus.Error select status.FullFileName).ToList();
+                            if (errorList.Count > 0) {
+                                GUIUtils.ShowTextDialog(Localization.UnableToDeleteSubtitleFiles, errorList);
+                                subtitleToDeleteIndex = int.MaxValue;
+                            }
+                            else if (statusList.Count < 1) {
+                                GUIUtils.ShowNotifyDialog(Localization.Error, Localization.NoSubtitlesDelete);
+                            }
+                            else {
+                                GUIUtils.ShowNotifyDialog(Localization.Completed, Localization.AllSubtitlesDeleted, GUIUtils.NoSubtitlesLogoThumbPath);
+                            }
                         }
                         else if (subtitleToDeleteIndex == 1) {
                             // delete local
-                            List<string> successful = DeleteSubtitles(_subtitleFilesForCurrentMedia, localFolders, true);
-                            GUIUtils.ShowTextDialog(Localization.UnableToDeleteSubtitleFiles, successful);
+                            List<SubtitleDeleteStatus> statusList = DeleteSubtitles(_subtitleFilesForCurrentMedia, localFolders, true);
+                            List<string> errorList = (from status in statusList where status.Status == SubtitleDeleteStatusStatus.Error select status.FullFileName).ToList();
+                            if (errorList.Count > 0) {
+                                GUIUtils.ShowTextDialog(Localization.UnableToDeleteSubtitleFiles, errorList);
+                                subtitleToDeleteIndex = int.MaxValue;
+                            }
+                            else if (statusList.Count < 1) {
+                                GUIUtils.ShowNotifyDialog(Localization.Error, Localization.NoSubtitlesDelete);
+                            }
+                            else {
+                                GUIUtils.ShowNotifyDialog(Localization.Completed, Localization.AllSubtitlesDeleted, GUIUtils.NoSubtitlesLogoThumbPath);
+                            }
                         }
                         else if (_subtitleFilesForCurrentMedia[subtitleToDeleteIndex - 2].Exists) {
                             try {
                                 _subtitleFilesForCurrentMedia[subtitleToDeleteIndex - 2].Delete();
                                 _subtitleFilesForCurrentMedia.RemoveAt(subtitleToDeleteIndex - 2);
                             }
-                            catch {
-                                logger.Warn("Unable to delete subtitle file {0}", _subtitleFilesForCurrentMedia[subtitleToDeleteIndex - 2].FullName);
+                            catch (Exception e) {
+                                logger.WarnException(string.Format("Unable to delete subtitle file {0}", _subtitleFilesForCurrentMedia[subtitleToDeleteIndex - 2].FullName), e);
                                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.UnableToDeleteSubtitleFile);
                             }
                         }
 
-                        if (_subtitleFilesForCurrentMedia.Count < 1) {
-                            _subtitlesExistForCurrentMedia = false;
+                        if (_subtitleFilesForCurrentMedia.Count < 1 && properHandler.GetHasSubtitles()) {
+                            AskAndFalseHasSubtitles(properHandler, Localization.MediaNoMoreSubtitles);
                             subtitleToDeleteIndex = -1;
                         }
                     }
@@ -1502,34 +1547,28 @@ namespace SubCentral.GUI {
             }
         }
 
-        private bool CheckMediaAvailable(List<FileInfo> files) {
-            if (files == null || files.Count == 0) return false;
-
-            foreach (FileInfo fi in files) {
-                if (fi.Exists) return true;
-            }
-
-            return false;
-        }
-
-        private List<string> DeleteSubtitles(List<FileInfo> subtitleFilesForCurrentMedia, List<string> localFolders,  bool useLocalOnly) {
-            List<string> result = new List<string>();
+        private List<SubtitleDeleteStatus> DeleteSubtitles(List<FileInfo> subtitleFilesForCurrentMedia, List<string> localFolders, bool useLocalOnly) {
+            List<SubtitleDeleteStatus> result = new List<SubtitleDeleteStatus>();
 
             if (subtitleFilesForCurrentMedia == null || subtitleFilesForCurrentMedia.Count < 1) return result;
 
             for (int i = 0; i < subtitleFilesForCurrentMedia.Count; i++) {
                 FileInfo fiSubtitle = subtitleFilesForCurrentMedia[i];
+                SubtitleDeleteStatus status = new SubtitleDeleteStatus() { FullFileName = fiSubtitle.FullName };
 
                 try {
                     if (!useLocalOnly || (useLocalOnly && localFolders != null && localFolders.Contains(fiSubtitle.DirectoryName))) {
-                        fiSubtitle.Delete();
+                        if (fiSubtitle.Exists)
+                            fiSubtitle.Delete();
+                        status.Status = SubtitleDeleteStatusStatus.Succesful;
                         subtitleFilesForCurrentMedia.RemoveAt(i);
                         i--;
                     }
                 }
-                catch {
-                    logger.Warn("Unable to delete subtitle file {0}", fiSubtitle.FullName);
-                    result.Add(fiSubtitle.FullName);
+                catch (Exception e) {
+                    logger.WarnException(string.Format("Unable to delete subtitle file {0}", fiSubtitle.FullName), e);
+                    status.Status = SubtitleDeleteStatusStatus.Error;
+                    result.Add(status);
                 }
             }
 

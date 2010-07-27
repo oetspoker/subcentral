@@ -34,6 +34,7 @@ namespace SubCentral.Settings {
 
         public static bool Load(string path) {
             try {
+                /*
                 if (!System.IO.File.Exists(path)) {
                     Properties.GeneralSettings.AllProvidersEnabled = true;
                     Properties.GeneralSettings.AllProvidersForMovies = true;
@@ -43,6 +44,7 @@ namespace SubCentral.Settings {
                     Properties.GUISettings.SortMethod = SubtitlesSortMethod.SubtitleLanguage;
                     Properties.GUISettings.SortAscending = true;
                 }
+                */
                 using (FileStream fs = new FileStream(path, FileMode.Open)) {
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(SettingsManager));
 

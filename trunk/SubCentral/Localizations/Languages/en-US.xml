@@ -11,6 +11,8 @@
 	<string Field="About">About</string>
 	<string Field="AllSubtitlesDownloaded">All ({0}) subtitles downloaded!</string>
 	<string Field="AllSubtitlesCanceledDownload">All ({0}) subtitles canceled download!</string>
+	<string Field="All">All</string>
+	<string Field="AllSubtitlesDeleted">All ({0}) subtitles deleted!</string>
 	<string Field="AboutText">SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-in. It also has the interfaces to allow easy implementation and interaction for any other plug-in.
 
 Best way to use the plug-in is by opening Moving Pictures or MP-TVSeries plug-in, browsing to movie/TV show and selecting 'Get subtitles' item. For Moving Pictures (supported version is 1.0.3 or higher), that item is usually in the menu or it's a separate button on details screen (depending on the skin). For TVSeries (supported version is 2.6.0 or higher), you should open context menu for the episode, select 'Download...' and then 'Retrieve subtitle'. If you wish, there is a possibility to modify search data SubCentral grabs from the plug-ins for more customized search.
@@ -37,6 +39,7 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="ContextMenu">Context menu</string>
 	<string Field="CannotUseManualSearch">Cannot start manual search because no\nabsolute download folders are defined.\nPlease use configuration to add some.</string>
 	<string Field="CannotClearMedia">Cannot clear media files because no\nabsolute download folders are defined.\nPlease use configuration to add some.</string>
+	<string Field="Completed">Completed</string>
 
 	<!-- D -->
 	<string Field="DefaultFor">Default for: {0}</string>
@@ -46,6 +49,7 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="DefaultFolderNotWritable">Default folder {0} is not writable! Please select another one.</string>
 	<string Field="DefaultDownloadFoderDoesNotExistCreate">Default download folder:\n{0}\ndoes not exist.\nCreate it?</string>
 	<string Field="Default">Default</string>
+	<string Field="DeleteSubtitles">Delete subtitles</string>
 
 	<!-- E -->
 	<string Field="Error">Error</string>
@@ -72,6 +76,7 @@ For more information, visit us on our Google Code SubCentral project page!
 	<!-- L -->
 	<string Field="Languages">Languages</string>
 	<string Field="Language">Language</string>
+	<string Field="Local">Local (in media folders)</string>
 
 	<!-- M -->
 	<string Field="Movies">Movies</string>
@@ -80,6 +85,13 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="MediaFilesDifferFromSubtitleFiles">Media files count differs from subtitle files count. Wrong subtitles?</string>
 	<string Field="MovieIMDb">Movie (IMDb)</string>
 	<string Field="Movie">Movie</string>
+	<string Field="MediaNoSubtitles">Unable to find any subtitles for media!</string>
+	<string Field="MediaOnlyInternalSubtitles">Only embedded (internal) subtitles found for media!</string>
+	<string Field="MediaWrongMarkHasSubtitles">Media from {0} is marked with subtitles available\nbut I was unable to find any. Would you like to\ncorrect that and set subtitles unavailable?</string>
+	<string Field="MediaMaybeInternalSubtitles">(could still have embedded (internal) subtitles)</string>
+	<string Field="MediaHasSubtitles">Media already has subtitles. If you'd like to delete them use the menu button.</string>
+	<string Field="MediaNoMoreSubtitles">Unable to find any more subtitles for media.\nWould you like to set subtitles unavailable\nin the provider ({0})?</string>
+	<string Field="MediaWrongMarkNoSubtitles">Media from {0} is marked with subtitles unavailable\nbut I was able to find them. Would you like to\ncorrect that and set subtitles available?</string>
 
 	<!-- N -->
 	<string Field="NewGroup">New group</string>
@@ -89,6 +101,7 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="NotEnoughDataForSearch">Not enough data for subtitle search</string>
 	<string Field="Name">Name</string>
 	<string Field="NoSorting">No sorting</string>
+	<string Field="NoSubtitlesDelete">No subtitle files found to delete.</string>
 
 	<!-- O -->
 	<string Field="OKSearch">OK/Search</string>
@@ -126,7 +139,8 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="Sort">Sort</string>
 	<string Field="SortBy">Sort by: {0}</string>
 	<string Field="SortByLanguage">Sort by subtitle language</string>
-	<string Field="SortByName">Sort by subtitle name</string>
+		<string Field="SortByName">Sort by subtitle name</string>
+	<string Field="SubtitleFilesToDelete">Subtitle files to delete</string>
 
 	<string Field="SkinTranslationFrom">From</string>
 	<string Field="SkinTranslationSearchType">Search type</string>
@@ -148,6 +162,8 @@ For more information, visit us on our Google Code SubCentral project page!
 	<!-- U -->
 	<string Field="UnableToImportDataFrom">Unable to import data\nfrom {0}.</string>
 	<string Field="UnableToLoadSubtitleDownloader">Unable to load SubtitleDownloader library!</string>
+	<string Field="UnableToDeleteSubtitleFile">Unable to delete subtitle file!</string>
+	<string Field="UnableToDeleteSubtitleFiles">Unable to delete subtitle files:</string>
 
 	<!-- V -->
 
