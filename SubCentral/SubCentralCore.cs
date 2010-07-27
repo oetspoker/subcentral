@@ -77,7 +77,7 @@ namespace SubCentral {
             }
             catch (Exception e)
             {
-                logger.ErrorException("Error setting up logging paths", e);
+                logger.ErrorException("Error setting up logging paths\n", e);
             }
 
             LoggingConfiguration config = LogManager.Configuration ?? new LoggingConfiguration();
@@ -146,8 +146,8 @@ namespace SubCentral {
                 SettingsManager.Load(Config.GetFile(Config.Dir.Config, SubCentralUtils.SettingsFileName));
                 logger.Info("Loading settings from SubCentral.xml successful.");
             }
-            catch (Exception ex) {
-                logger.ErrorException("Loading settings from SubCentral.xml unsuccessful", ex);
+            catch (Exception e) {
+                logger.ErrorException("Loading settings from SubCentral.xml unsuccessful\n", e);
             }
         }
 
@@ -163,7 +163,7 @@ namespace SubCentral {
                     return;
                 }
                 catch (Exception e) {
-                    logger.ErrorException("SubtitleDownloader: error loading", e);
+                    logger.ErrorException("SubtitleDownloader: error loading\n", e);
                 }
                 SubtitleDownloaderInitialized = false;
                 return;
@@ -181,12 +181,12 @@ namespace SubCentral {
             catch (Exception e) {
                 #if DEBUG
                 SubCentralUtils.SubsDownloaderNames = new List<string> { "Subscene", "Podnapisi", "TvSubtitles", "OpenSubtitles", "Bierdopje", "S4U.se", "Sublight", "MovieSubtitles", "SubtitleSource" };
-                logger.ErrorException("SubtitleDownloader: error getting providers", e);
+                logger.ErrorException("SubtitleDownloader: error getting providers\n", e);
                 logger.Error("SubtitleDownloader: using default providers");
                 result = true;
                 #else
                 SubCentralUtils.SubsDownloaderNames = new List<string>();
-                logger.ErrorException("SubtitleDownloader: error getting providers", e);
+                logger.ErrorException("SubtitleDownloader: error getting providers\n", e);
                 result = false;
                 #endif
             }
@@ -207,11 +207,11 @@ namespace SubCentral {
             catch (Exception e) {
                 #if DEBUG
                 SubCentralUtils.SubsLanguages = new Dictionary<string, string> { { "English", "eng" } };
-                logger.ErrorException("SubtitleDownloader: error getting languages:", e);
+                logger.ErrorException("SubtitleDownloader: error getting languages\n", e);
                 logger.Error("SubtitleDownloader: using default languages");
                 result = true;
                 #else
-                logger.ErrorException("SubtitleDownloader: error getting languages:", e);
+                logger.ErrorException("SubtitleDownloader: error getting languages\n", e);
                 result = false;
                 #endif
             }

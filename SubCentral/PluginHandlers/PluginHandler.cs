@@ -54,7 +54,7 @@ namespace SubCentral.PluginHandlers {
                 return GrabFileDetails();
             }
             catch (Exception e) {
-                logger.ErrorException("Failed updating.", e);
+                logger.ErrorException("Failed updating\n", e);
             }
             return false;
         }

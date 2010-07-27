@@ -47,37 +47,37 @@ namespace SubCentral.Utils {
 
             _hasExternalSubtitles = checkHasExternalSubtitles(strFile, useLocalOnly, checkAll);
 
-            try {
-                if (useMediaInfo) {
+            if (useMediaInfo) {
+                try {
                     logger.Debug("MediaInfoWrapper: Trying to use MediaInfo");
                     _mI = new MediaInfo();
                     _mI.Open(strFile);
 
                     int.TryParse(_mI.Get(StreamKind.General, 0, "TextCount"), out _numSubtitles);
                 }
+                catch (Exception e) {
+                    logger.ErrorException("MediaInfoWrapper: MediaInfo processing failed ('MediaInfo.dll' may be missing)\n", e);
+                }
+                finally {
+                    if (_mI != null) {
+                        _mI.Close();
+                    }
+                }
+            }
 
-                if (_hasExternalSubtitles) {
-                    _hasSubtitles = true;
-                }
-                else if (_numSubtitles > 0) {
-                    _hasSubtitles = true;
-                }
-                else {
-                    _hasSubtitles = false;
-                }
+            if (_hasExternalSubtitles) {
+                _hasSubtitles = true;
+            }
+            else if (_numSubtitles > 0) {
+                _hasSubtitles = true;
+            }
+            else {
+                _hasSubtitles = false;
+            }
 
-                logger.Debug("MediaInfoWrapper: HasExternalSubtitles : {0}", _hasExternalSubtitles);
-                logger.Debug("MediaInfoWrapper: HasSubtitles : {0}", _hasSubtitles);
-                logger.Debug("MediaInfoWrapper: NumSubtitles : {0}", _numSubtitles);
-            }
-            catch (Exception ex) {
-                logger.Error("MediaInfoWrapper: MediaInfo processing failed ('MediaInfo.dll' may be missing): {0}", ex.Message);
-            }
-            finally {
-                if (_mI != null) {
-                    _mI.Close();
-                }
-            }
+            logger.Debug("MediaInfoWrapper: HasExternalSubtitles : {0}", _hasExternalSubtitles);
+            logger.Debug("MediaInfoWrapper: HasSubtitles : {0}", _hasSubtitles);
+            logger.Debug("MediaInfoWrapper: NumSubtitles : {0}", _numSubtitles);
         }
         #endregion
 
@@ -117,7 +117,7 @@ namespace SubCentral.Utils {
                 _subTitleExtensions.Add(".zeg");
             }
 
-            bool rtn = false;
+            bool result = false;
 
             string filenameNoExt = System.IO.Path.GetFileNameWithoutExtension(strFile);
 
@@ -130,7 +130,6 @@ namespace SubCentral.Utils {
                     folders = SubCentralUtils.getEnabledAndValidFolderNamesForMedia(new FileInfo(strFile), true, true);
                     logger.Debug("MediaInfoWrapper: Got {0} folders for media {1}", folders.Count, strFile);
                 }
-
                 
                 foreach (string folder in folders) {
                     //if (folder.FolderErrorInfo == SubCentral.Enums.FolderErrorInfo.NonExistant) continue;
@@ -144,7 +143,7 @@ namespace SubCentral.Utils {
                             System.IO.FileInfo fi = new System.IO.FileInfo(file);
                             if (_subTitleExtensions.Contains(fi.Extension.ToLower())) {
                                 if (checkAll) {
-                                    rtn = rtn || true;
+                                    result = result || true;
                                     _subtitleFiles.Add(fi);
                                 }
                                 else {
@@ -155,15 +154,15 @@ namespace SubCentral.Utils {
                     }
                     catch (Exception e) {
                         // Most likely path not available
-                        logger.WarnException(string.Format("Error checking external subtitles for folder {0}", folder), e);
+                        logger.WarnException(string.Format("Error checking external subtitles for folder {0}\n", folder), e);
                     }
                 }
             }
             catch (Exception e) {
-                logger.WarnException(string.Format("Error checking external subtitles for file {0}", strFile), e);
+                logger.WarnException(string.Format("Error checking external subtitles for file {0}\n", strFile), e);
             }
 
-            return rtn;
+            return result;
         }
         #endregion
 
