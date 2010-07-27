@@ -231,8 +231,8 @@ namespace SubCentral.Localizations {
         public static string MediaFilesDifferFromSubtitleFiles = "Media files count differs from subtitle files count. Wrong subtitles?";
         public static string MovieIMDb = "Movie (IMDb)";
         public static string Movie = "Movie";
-        public static string MediaNoSubtitles = "Media from {0} doesn not have any subtitles!";
-        public static string MediaOnlyInternalSubtitles = "Media from {0} only has embedded (internal) subtitles!";
+        public static string MediaNoSubtitles = "Cannot find any subtitles for media!";
+        public static string MediaOnlyInternalSubtitles = "Only embedded (internal) subtitles found for media!";
         public static string MediaWrongMark = "Media from {0} is marked as having subtitles available,\nbut I couldn't find any subtitles.\nWould you like to correct that and\nset subtitles unavailable?";
         public static string MediaHasSubtitles = "Media from {0} already has subtitles. If you'd like to delete them use the menu button.";
 

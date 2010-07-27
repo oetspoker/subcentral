@@ -1415,10 +1415,8 @@ namespace SubCentral.GUI {
             return result;
         }
 
-        private void OnDeleteSubtitles() {
-            PluginHandler properHandler = _backupHandler != null ? _backupHandler : CurrentHandler;
-            if (properHandler == null) return;
-            if (properHandler.MediaDetail.Files == null || properHandler.MediaDetail.Files.Count == 0) return;
+        private bool CheckMediaForSubtitlesOnOpen(PluginHandler properHandler) {
+            bool resultContinue = true;
 
             if (!_checkMediaForSubtitlesOnOpenDone) {
                 _subtitlesExistForCurrentMedia = SubCentralUtils.MediaHasSubtitles(properHandler.MediaDetail.Files, true, properHandler.GetEmbeddedSubtitles(), false, ref _subtitleFilesForCurrentMedia);
@@ -1432,15 +1430,25 @@ namespace SubCentral.GUI {
                         properHandler.SetHasSubtitles(fi.FullName, false);
                     }
                 }
-                return;
+                resultContinue = false;
             }
+            
+            return resultContinue;
+        }
+
+        private void OnDeleteSubtitles() {
+            PluginHandler properHandler = _backupHandler != null ? _backupHandler : CurrentHandler;
+            if (properHandler == null) return;
+            if (properHandler.MediaDetail.Files == null || properHandler.MediaDetail.Files.Count == 0) return;
+
+            if (!CheckMediaForSubtitlesOnOpen(properHandler)) return;
 
             if (!_subtitlesExistForCurrentMedia)
                 // nothing
-                GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.MediaNoSubtitles, properHandler == null ? Localization.ExternalPlugin : properHandler.PluginName));
+                GUIUtils.ShowNotifyDialog(Localization.Error, Localization.MediaNoSubtitles);
             else if (_subtitlesExistForCurrentMedia && _subtitleFilesForCurrentMedia.Count < 1) {
                 // only embedded
-                GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.MediaOnlyInternalSubtitles, properHandler == null ? Localization.ExternalPlugin : properHandler.PluginName));
+                GUIUtils.ShowNotifyDialog(Localization.Error, Localization.MediaOnlyInternalSubtitles);
             }
             else {
                 // finally some work to do
