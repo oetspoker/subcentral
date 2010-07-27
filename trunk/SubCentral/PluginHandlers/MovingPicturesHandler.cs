@@ -59,8 +59,8 @@ namespace SubCentral.PluginHandlers {
 
                 return true;
             }
-            catch (Exception) {
-                logger.Error("Unexpected error when pulling data from Moving Pictures.");
+            catch (Exception e) {
+                logger.ErrorException("Unexpected error when pulling data from Moving Pictures\n", e);
                 return false;
             }
         }

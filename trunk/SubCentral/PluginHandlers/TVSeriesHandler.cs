@@ -70,8 +70,8 @@ namespace SubCentral.PluginHandlers {
 
                 return true;
             }
-            catch (Exception) {
-                logger.Error("Unexpected error when pulling data from TVSeries.");
+            catch (Exception e) {
+                logger.ErrorException("Unexpected error when pulling data from TVSeries\n", e);
                 return false;
             }
 
