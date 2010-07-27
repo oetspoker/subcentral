@@ -181,7 +181,8 @@ namespace SubCentral {
             catch (Exception e) {
                 #if DEBUG
                 SubCentralUtils.SubsDownloaderNames = new List<string> { "Subscene", "Podnapisi", "TvSubtitles", "OpenSubtitles", "Bierdopje", "S4U.se", "Sublight", "MovieSubtitles", "SubtitleSource" };
-                logger.Error("SubtitleDownloader: error getting providers, using default ones");
+                logger.ErrorException("SubtitleDownloader: error getting providers", e);
+                logger.Error("SubtitleDownloader: using default providers");
                 result = true;
                 #else
                 SubCentralUtils.SubsDownloaderNames = new List<string>();
@@ -206,7 +207,8 @@ namespace SubCentral {
             catch (Exception e) {
                 #if DEBUG
                 SubCentralUtils.SubsLanguages = new Dictionary<string, string> { { "English", "eng" } };
-                logger.Error("SubtitleDownloader: error getting languages, using default ones");
+                logger.ErrorException("SubtitleDownloader: error getting languages:", e);
+                logger.Error("SubtitleDownloader: using default languages");
                 result = true;
                 #else
                 logger.ErrorException("SubtitleDownloader: error getting languages:", e);

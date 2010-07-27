@@ -526,7 +526,7 @@ namespace SubCentral.GUI {
             }
             catch (Exception e) {
                 HideWaitCursor();
-                logger.Error("Error while retrieving subtitles: {0}:{1}", e.GetType(), e.Message);
+                logger.ErrorException("Error while retrieving subtitles", e);
                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             }
         }
@@ -559,7 +559,7 @@ namespace SubCentral.GUI {
         void retriever_OnSubtitlesSearchErrorEvent(Exception e) {
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
             HideWaitCursor();
-            logger.Error("Error while retrieving subtitles: {0}:{1}", e.GetType(), e.Message);
+            logger.ErrorException("Error while retrieving subtitles", e);
             GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             _notificationDone = false;
         }
