@@ -50,7 +50,7 @@ namespace SubCentral.Utils {
                 }
             }
             catch (Exception e) {
-                logger.Error("Error in isMachineReachable({0}): {1}:{2}", hostName, e.GetType(), e.Message);
+                logger.ErrorException(string.Format("Error in isMachineReachable({0})", hostName), e);
             }
 
             return false;

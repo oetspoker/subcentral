@@ -289,7 +289,7 @@ namespace SubCentral.GUI {
                     }
                 }
                 catch (Exception e) {
-                    logger.Error("Error while querying site {0}: {1}:{2}", providerName, e.GetType(), e.Message);
+                    logger.ErrorException(string.Format("Error while querying site {0}", providerName), e);
                     if (OnProviderSearchErrorEvent != null) {
                         OnProviderSearchErrorEvent(mediaDetail, subtitlesSearchType, e);
                     }
@@ -497,7 +497,7 @@ namespace SubCentral.GUI {
                                     newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Succesful;
                                 }
                                 catch (Exception e) {
-                                    logger.Error("Error while downloading subtitles: {0}:{1}", e.GetType(), e.Message);
+                                    logger.ErrorException("Error while downloading subtitles", e);
                                     newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
                                     newSubtitleDownloadStatus.Error = e.Message;
                                 }
@@ -512,7 +512,7 @@ namespace SubCentral.GUI {
                                 newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Succesful;
                             }
                             catch (Exception e) {
-                                logger.Error("Error while downloading subtitles: {0}:{1}", e.GetType(), e.Message);
+                                logger.ErrorException("Error while downloading subtitles", e);
                                 newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
                                 newSubtitleDownloadStatus.Error = e.Message;
                             }
