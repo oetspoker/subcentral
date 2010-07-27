@@ -31,7 +31,7 @@ namespace SubCentral.Utils {
             catch (IOException) { }
 
             return false;
-        }     
+        }
 
         public static bool IsAccessible(DirectoryInfo di) {
             if (di.Exists) {
@@ -47,6 +47,16 @@ namespace SubCentral.Utils {
                 // ignore the exception, failure means it is not available 
                 catch (DirectoryNotFoundException) { }
             }
+            return false;
+        }
+
+        public static bool mediaIsAvailable(List<FileInfo> files) {
+            if (files == null || files.Count == 0) return false;
+
+            foreach (FileInfo fi in files) {
+                if (fi.Exists) return true;
+            }
+
             return false;
         }
 

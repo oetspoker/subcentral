@@ -83,6 +83,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\AdvancedConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\AdvancedConfigForm.designer.cs">
+      <DependentUpon>AdvancedConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SubtitleDeleteStatusStatus.cs" />
+    <Compile Include="GUI\SubtitleDeleteStatus.cs" />
     <Compile Include="GUI\FolderErrorInfo.cs" />
     <Compile Include="Config\ListViewItemType.cs" />
     <Compile Include="GUI\SubtitleDownloadStatusStatus.cs" />
@@ -145,6 +153,10 @@
     <Compile Include="Utils\SubCentralUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Config\AdvancedConfigForm.resx">
+      <DependentUpon>AdvancedConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Config\Images\SubCentral_Icon_Disabled.png" />
     <EmbeddedResource Include="Config\Images\SubCentral_Icon_Enabled.png" />
     <Content Include="GUI\Skins\Blue3wide\Media\defaultSubtitles.png" />
@@ -156,6 +168,11 @@
     <Content Include="GUI\Skins\Blue3\SubCentral.ModifySearch.xml" />
     <Content Include="GUI\Skins\Blue3\SubCentral.Search.xml" />
     <Content Include="GUI\Skins\Blue3\SubCentral.xml" />
+    <Content Include="Localizations\Languages\da.xml" />
+    <Content Include="Localizations\Languages\de.xml" />
+    <Content Include="Localizations\Languages\en-US.xml" />
+    <None Include="Resources\FolderPageWhite.png" />
+    <None Include="Resources\PageWhiteText.png" />
     <None Include="Properties\VersionInfo.cs.tmpl" />
     <None Include="Resources\Edit.png" />
     <None Include="Resources\SubCentralIconOld.ico" />

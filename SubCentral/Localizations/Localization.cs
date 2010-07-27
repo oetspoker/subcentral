@@ -173,6 +173,8 @@ namespace SubCentral.Localizations {
         public static string AllSubtitlesDownloaded = "All ({0}) subtitles downloaded!";
         public static string AllSubtitlesCanceledDownload = "All ({0}) subtitles canceled download!";
         public static string AboutText = ""; // will be defined in XML file
+        public static string All = "All";
+        public static string AllSubtitlesDeleted = "All ({0}) subtitles deleted!";
 
         // B
         public static string Back = "Back";
@@ -187,6 +189,7 @@ namespace SubCentral.Localizations {
         public static string ContextMenu = "Context menu";
         public static string CannotUseManualSearch = "Cannot start manual search because no\nabsolute download folders are defined.\nPlease use configuration to add some.";
         public static string CannotClearMedia = "Cannot clear media files because no\nabsolute download folders are defined.\nPlease use configuration to add some.";
+        public static string Completed = "Completed";
 
         // D
         public static string DefaultFor = "Default for: {0}";
@@ -223,6 +226,7 @@ namespace SubCentral.Localizations {
         // L
         public static string Languages = "Languages";
         public static string Language = "Language";
+        public static string Local = "Local (in media folders)";
 
         // M
         public static string Movies = "Movies";
@@ -231,10 +235,13 @@ namespace SubCentral.Localizations {
         public static string MediaFilesDifferFromSubtitleFiles = "Media files count differs from subtitle files count. Wrong subtitles?";
         public static string MovieIMDb = "Movie (IMDb)";
         public static string Movie = "Movie";
-        public static string MediaNoSubtitles = "Cannot find any subtitles for media!";
+        public static string MediaNoSubtitles = "Unable to find any subtitles for media!";
         public static string MediaOnlyInternalSubtitles = "Only embedded (internal) subtitles found for media!";
-        public static string MediaWrongMark = "Media from {0} is marked as having subtitles available,\nbut I couldn't find any subtitles.\nWould you like to correct that and\nset subtitles unavailable?";
-        public static string MediaHasSubtitles = "Media from {0} already has subtitles. If you'd like to delete them use the menu button.";
+        public static string MediaWrongMarkHasSubtitles = "Media from {0} is marked with subtitles available\nbut I was unable to find any. Would you like to\ncorrect that and set subtitles unavailable?";
+        public static string MediaMaybeInternalSubtitles = "(could still have embedded (internal) subtitles)";
+        public static string MediaHasSubtitles = "Media already has subtitles. If you'd like to delete them use the menu button.";
+        public static string MediaNoMoreSubtitles = "Unable to find any more subtitles for media.\nWould you like to set subtitles unavailable\nin the provider ({0})?";
+        public static string MediaWrongMarkNoSubtitles = "Media from {0} is marked with subtitles unavailable\nbut I was able to find them. Would you like to\ncorrect that and set subtitles available?";
 
         // N
         public static string NewGroup = "New group";
@@ -244,6 +251,7 @@ namespace SubCentral.Localizations {
         public static string NotEnoughDataForSearch = "Not enough data for subtitle search";
         public static string Name = "Name";
         public static string NoSorting = "No sorting";
+        public static string NoSubtitlesDelete = "No subtitle files found to delete.";
 
         // O
         public static string OKSearch = "OK/Search";

@@ -180,7 +180,7 @@ namespace SubCentral.ConfigForm {
         #region ISetupForm Members
         // Returns the name of the plugin which is shown in the plugin menu 
         public string PluginName() {
-            return "SubCentral";
+            return SubCentralUtils.PluginName();
         }
 
         // Returns the description of the plugin is shown in the plugin menu     
@@ -223,11 +223,11 @@ namespace SubCentral.ConfigForm {
         }
 
         public bool GetHome(out string strButtonText, out string strButtonImage, out string strButtonImageFocus, out string strPictureImage) {
-            strButtonText = "SubCentral";
+            strButtonText = SubCentralUtils.PluginName();
             strButtonImage = String.Empty;
             strButtonImageFocus = String.Empty;
             strPictureImage = "hover_subcentral.png";
-            return true;
+            return !SettingsManager.Properties.GUISettings.HidePlugin;
         }
         #endregion
 
@@ -1061,7 +1061,8 @@ namespace SubCentral.ConfigForm {
         #endregion
 
         private void btnAdvancedConfig_Click(object sender, EventArgs e) {
-
+            AdvancedConfigForm acf = new AdvancedConfigForm();
+            acf.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e) {

@@ -109,6 +109,13 @@ namespace SubCentral.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap FolderPageWhite {
+            get {
+                object obj = ResourceManager.GetObject("FolderPageWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Folders {
             get {
                 object obj = ResourceManager.GetObject("Folders", resourceCulture);
@@ -140,6 +147,13 @@ namespace SubCentral.Properties {
         internal static System.Drawing.Bitmap OK {
             get {
                 object obj = ResourceManager.GetObject("OK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap PageWhiteText {
+            get {
+                object obj = ResourceManager.GetObject("PageWhiteText", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

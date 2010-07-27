@@ -3,7 +3,14 @@ using System.Xml.Serialization;
 
 namespace SubCentral.Settings.Data {
     #region GroupsAndProviders
-    public struct SettingsGroupsAndProviders {
+    public class SettingsGroupsAndProviders {
+        public SettingsGroupsAndProviders() {
+            AllProvidersEnabled = true;
+            AllProvidersForMovies = true;
+            AllProvidersForTVShows = true;
+            EnabledProvidersEnabled = true;
+        }
+        
         public OnPluginLoadWithSearchData PluginLoadWithSearchData { get; set; }
         public bool UseLanguageCodeOnResults { get; set; }
         public bool SearchDefaultsWhenFromManualSearch { get; set; }
@@ -69,7 +76,7 @@ namespace SubCentral.Settings.Data {
     #endregion
 
     #region Languages
-    public struct SettingsLanguages {
+    public class SettingsLanguages {
         [XmlIgnore]
         private List<SettingsLanguage> _languages;
 
@@ -92,7 +99,11 @@ namespace SubCentral.Settings.Data {
     #endregion
 
     #region Folders
-    public struct SettingsFolders {
+    public class SettingsFolders {
+        public SettingsFolders() {
+            OnDownloadFileName = OnDownloadFileName.AskIfManual;
+        }
+
         public OnDownload OnDownload { get; set; }
         public OnDownloadFileName OnDownloadFileName { get; set; }
 
@@ -118,11 +129,20 @@ namespace SubCentral.Settings.Data {
     #endregion
 
     #region GUI
-    public struct SettingsGUI {
+    public class SettingsGUI {
+        public SettingsGUI() {
+            SortMethod = SubtitlesSortMethod.SubtitleLanguage;
+            SortAscending = true;
+            CheckMediaForSubtitlesOnOpen = true;
+            PluginName = "SubCentral";
+            HidePlugin = false;
+        }
+
         public SubtitlesSortMethod SortMethod { get; set; }
         public bool SortAscending { get; set; }
         public bool CheckMediaForSubtitlesOnOpen { get; set; }
+        public string PluginName { get; set; }
+        public bool HidePlugin { get; set; }
     }
     #endregion
-
 }

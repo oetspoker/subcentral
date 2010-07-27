@@ -14,6 +14,7 @@ using SubCentral.GUI;
 using SubCentral.GUI.Items;
 using SubCentral.Localizations;
 using SubCentral.PluginHandlers;
+using SubCentral.Settings;
 using SubCentral.Settings.Data;
 using System.Linq;
 
@@ -27,6 +28,10 @@ namespace SubCentral.Utils {
         public static string LogFileName = "SubCentral.log";
         public static string OldLogFileName = "SubCentral.log.bak";
         private static readonly object syncRoot = new object();
+
+        public static string PluginName() {
+            return string.IsNullOrEmpty(SettingsManager.Properties.GUISettings.PluginName) ? "SubCentral" : SettingsManager.Properties.GUISettings.PluginName;
+        }
 
         public static Dictionary<string, string> SubsLanguages {
             get {
