@@ -52,7 +52,6 @@
     <Reference Include="MP-TVSeries, Version=2.6.0.1157, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MP-TVSeries v2.6.0\MP-TVSeries.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
