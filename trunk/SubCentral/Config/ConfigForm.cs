@@ -104,7 +104,7 @@ namespace SubCentral.ConfigForm {
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e) {
+        private void btnSave_Click(object sender, EventArgs ea) {
             Cursor.Current = Cursors.WaitCursor;
             try {
                 bool selectionOK = false;
@@ -167,12 +167,11 @@ namespace SubCentral.ConfigForm {
                 Cursor.Current = Cursors.Default;
                 Close();
             }
-            catch (Exception ex) {
+            catch (Exception e) {
                 Cursor.Current = Cursors.Default;
-                logger.Error("Configuration failed to save settings to {0}:", SubCentralUtils.SettingsFileName);
-                logger.Error(ex.Message);
+                logger.ErrorException(string.Format("Configuration failed to save settings to {0}\n", SubCentralUtils.SettingsFileName), e);
                 MessageBox.Show("There was an error when saving the settings file to " +
-                    Config.GetFile(Config.Dir.Config, SubCentralUtils.SettingsFileName) + ".\n\n" + ex.Message,
+                    Config.GetFile(Config.Dir.Config, SubCentralUtils.SettingsFileName) + ".\n\n" + e.Message,
                     "Error saving settings", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
