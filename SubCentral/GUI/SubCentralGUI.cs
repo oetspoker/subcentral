@@ -713,7 +713,7 @@ namespace SubCentral.GUI {
                 if (succesful == 1)
                     GUIUtils.ShowNotifyDialog(heading, Localization.SubtitlesDownloaded, GUIUtils.SubtitlesLogoThumbPath);
                 else
-                    GUIUtils.ShowNotifyDialog(heading, String.Format(Localization.AllSubtitlesDownloaded, succesful), GUIUtils.SubtitlesLogoThumbPath);
+                    GUIUtils.ShowNotifyDialog(heading, string.Format(Localization.AllSubtitlesDownloaded, succesful), GUIUtils.SubtitlesLogoThumbPath);
             }
             else if (errors == mediaCount) { // all errors
                 GUIUtils.ShowNotifyDialog(heading, Localization.ErrorWhileDownloadingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
@@ -722,7 +722,7 @@ namespace SubCentral.GUI {
                 if (canceled == 1)
                     GUIUtils.ShowNotifyDialog(heading, Localization.CanceledDownload, GUIUtils.NoSubtitlesLogoThumbPath);
                 else
-                    GUIUtils.ShowNotifyDialog(heading, String.Format(Localization.AllSubtitlesCanceledDownload, succesful), GUIUtils.NoSubtitlesLogoThumbPath);
+                    GUIUtils.ShowNotifyDialog(heading, string.Format(Localization.AllSubtitlesCanceledDownload, succesful), GUIUtils.NoSubtitlesLogoThumbPath);
             }
             else { // some are ok, some not
                 List<string> notifyList = new List<string>();
@@ -1087,7 +1087,7 @@ namespace SubCentral.GUI {
 
                 providerList.SelectedListItemIndex = _lastSelectedSubtitlesItemIndex;
 
-                GUIUtils.SetProperty("#itemcount", String.Concat((providerList.ListItems.Count - 1).ToString(), " ", Localization.SubtitleS));
+                GUIUtils.SetProperty("#itemcount", string.Concat((providerList.ListItems.Count - 1).ToString(), " ", Localization.SubtitleS));
 
                 OnSort();
             }
@@ -1136,13 +1136,13 @@ namespace SubCentral.GUI {
             _lastSelectedSubtitlesItemIndex = 1;
 
             if (groupCounter > 0 && providerCounter > 0) {
-                GUIUtils.SetProperty("#itemcount", String.Concat(String.Concat(groupCounter.ToString(), " ", Localization.GroupS), ", ", String.Concat(providerCounter.ToString(), " ", Localization.ProviderS)));
+                GUIUtils.SetProperty("#itemcount", string.Concat(string.Concat(groupCounter.ToString(), " ", Localization.GroupS), ", ", string.Concat(providerCounter.ToString(), " ", Localization.ProviderS)));
             }
             else if (groupCounter > 0) {
-                GUIUtils.SetProperty("#itemcount", String.Concat(groupCounter.ToString(), " ", Localization.GroupS));
+                GUIUtils.SetProperty("#itemcount", string.Concat(groupCounter.ToString(), " ", Localization.GroupS));
             }
             else if (providerCounter > 0) {
-                GUIUtils.SetProperty("#itemcount", String.Concat(providerCounter.ToString(), " ", Localization.ProviderS));
+                GUIUtils.SetProperty("#itemcount", string.Concat(providerCounter.ToString(), " ", Localization.ProviderS));
             }
         }
 

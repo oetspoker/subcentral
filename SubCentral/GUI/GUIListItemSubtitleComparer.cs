@@ -74,7 +74,7 @@ namespace SubCentral.GUI {
                             if (subtitlesSortDetails1.ListPosition < subtitlesSortDetails2.ListPosition) return -1;
                         }
                         else {
-                            return String.Compare(subtitlesSortDetails1.Name, subtitlesSortDetails2.Name, true);
+                            return string.Compare(subtitlesSortDetails1.Name, subtitlesSortDetails2.Name, true);
                         }
                     }
                     else {
@@ -83,7 +83,7 @@ namespace SubCentral.GUI {
                             if (subtitlesSortDetails1.ListPosition < subtitlesSortDetails2.ListPosition) return -1;
                         }
                         else {
-                            return String.Compare(subtitlesSortDetails2.Name, subtitlesSortDetails1.Name, true);
+                            return string.Compare(subtitlesSortDetails2.Name, subtitlesSortDetails1.Name, true);
                         }
                     }
                     return 0;

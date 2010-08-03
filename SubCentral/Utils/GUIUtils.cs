@@ -87,9 +87,9 @@ namespace SubCentral.Utils {
                 foreach (System.Windows.UIElement item in dlgYesNo.Children) {
                     if (item is GUIButtonControl) {
                         GUIButtonControl btn = (GUIButtonControl)item;
-                        if (btn.GetID == 11 && !String.IsNullOrEmpty(yesLabel)) // Yes button
+                        if (btn.GetID == 11 && !string.IsNullOrEmpty(yesLabel)) // Yes button
                             btn.Label = yesLabel;
-                        else if (btn.GetID == 10 && !String.IsNullOrEmpty(noLabel)) // No button
+                        else if (btn.GetID == 10 && !string.IsNullOrEmpty(noLabel)) // No button
                             btn.Label = noLabel;
                     }
                 }

@@ -1,12 +1,15 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 using MediaPortal.Configuration;
+using NLog;
 using SubCentral.Settings.Data;
 using SubCentral.Utils;
 
 namespace SubCentral.Settings {
     [XmlRoot("Settings")]
     public class SettingsManager {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         private SettingsManager() {
         }
 
@@ -34,17 +37,17 @@ namespace SubCentral.Settings {
 
         public static bool Load(string path) {
             try {
-                /*
                 if (!System.IO.File.Exists(path)) {
-                    Properties.GeneralSettings.AllProvidersEnabled = true;
-                    Properties.GeneralSettings.AllProvidersForMovies = true;
-                    Properties.GeneralSettings.AllProvidersForTVShows = true;
-                    Properties.GeneralSettings.EnabledProvidersEnabled = true;
-                    Properties.FolderSettings.OnDownloadFileName = OnDownloadFileName.AskIfManual;
-                    Properties.GUISettings.SortMethod = SubtitlesSortMethod.SubtitleLanguage;
-                    Properties.GUISettings.SortAscending = true;
+                    //Properties.GeneralSettings.AllProvidersEnabled = true;
+                    //Properties.GeneralSettings.AllProvidersForMovies = true;
+                    //Properties.GeneralSettings.AllProvidersForTVShows = true;
+                    //Properties.GeneralSettings.EnabledProvidersEnabled = true;
+                    //Properties.FolderSettings.OnDownloadFileName = OnDownloadFileName.AskIfManual;
+                    //Properties.GUISettings.SortMethod = SubtitlesSortMethod.SubtitleLanguage;
+                    //Properties.GUISettings.SortAscending = true;
+                    logger.Info("SubCentral is used the first time. Default settings will be used");
+                    Save(path);
                 }
-                */
                 using (FileStream fs = new FileStream(path, FileMode.Open)) {
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(SettingsManager));
 
@@ -78,9 +81,9 @@ namespace SubCentral.Settings {
             }
         }
 
-        public SettingsGroupsAndProviders GeneralSettings;
-        public SettingsLanguages LanguageSettings;
-        public SettingsFolders FolderSettings;
-        public SettingsGUI GUISettings;
+        public SettingsGroupsAndProviders GeneralSettings = new SettingsGroupsAndProviders();
+        public SettingsLanguages LanguageSettings = new SettingsLanguages();
+        public SettingsFolders FolderSettings = new SettingsFolders();
+        public SettingsGUI GUISettings = new SettingsGUI();
     }
 }

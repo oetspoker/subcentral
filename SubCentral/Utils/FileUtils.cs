@@ -92,7 +92,7 @@ namespace SubCentral.Utils {
 
             if (!Path.IsPathRooted(path)) return true;
 
-            string fileName = String.Concat(path, Path.DirectorySeparatorChar, Path.GetRandomFileName());
+            string fileName = string.Concat(path, Path.DirectorySeparatorChar, Path.GetRandomFileName());
             FileInfo fileInfo = new FileInfo(fileName);
 
             FileStream stream = null;
