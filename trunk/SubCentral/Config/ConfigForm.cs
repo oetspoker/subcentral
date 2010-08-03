@@ -54,7 +54,7 @@ namespace SubCentral.ConfigForm {
 
         private void ConfigForm_Load(object sender, EventArgs e) {
             if (!core.SubtitleDownloaderInitialized) {
-                MessageBox.Show(String.Concat("Unable to load SubtitleDownloader library!", "\n", "Is SubtitleDownloader.dll available?"), "Error loading SubCentral configuration");
+                MessageBox.Show(string.Concat("Unable to load SubtitleDownloader library!", "\n", "Is SubtitleDownloader.dll available?"), "Error loading SubCentral configuration");
                 this.DialogResult = DialogResult.Cancel;
                 return;
             }
@@ -224,8 +224,8 @@ namespace SubCentral.ConfigForm {
 
         public bool GetHome(out string strButtonText, out string strButtonImage, out string strButtonImageFocus, out string strPictureImage) {
             strButtonText = SubCentralUtils.PluginName();
-            strButtonImage = String.Empty;
-            strButtonImageFocus = String.Empty;
+            strButtonImage = string.Empty;
+            strButtonImageFocus = string.Empty;
             strPictureImage = "hover_subcentral.png";
             if (SettingsManager.Properties != null && SettingsManager.Properties.GUISettings != null)
                 return !SettingsManager.Properties.GUISettings.HidePlugin;

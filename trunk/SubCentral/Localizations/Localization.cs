@@ -122,7 +122,7 @@ namespace SubCentral.Localizations {
         }
 
         public static string GetByName(string name, params object[] args) {
-            return String.Format(GetByName(name), args);
+            return string.Format(GetByName(name), args);
         }
 
         /// <summary>

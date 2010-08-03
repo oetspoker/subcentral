@@ -45,7 +45,7 @@ namespace SubCentral.PluginHandlers {
         public string SeasonStr {
             get {
                 if (SubCentralUtils.isSeasonOrEpisodeCorrect(Season.ToString())) {
-                    return String.Format("{0:00}", Season);
+                    return string.Format("{0:00}", Season);
                 }
                 return string.Empty;
             }
@@ -55,7 +55,7 @@ namespace SubCentral.PluginHandlers {
         public string EpisodeStr {
             get {
                 if (SubCentralUtils.isSeasonOrEpisodeCorrect(Episode.ToString())) {
-                    return String.Format("{0:00}", Episode);
+                    return string.Format("{0:00}", Episode);
                 }
                 return string.Empty;
             }
