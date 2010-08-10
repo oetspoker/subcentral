@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using NLog;
 using SubCentral.Utils;
 
 namespace SubCentral.Utils {
     public class TagRank {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         private const string regexpTags = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\s\.])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:bd|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg|dsr|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii]P|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|TELE(?:CINE|SYNC)|L[Ii]NE|OAR|AVC|[\[\(\{\s\.]T[CS][\]\)\}\s\.])(?:[\]\)\}]|\b)()?)";
         private const string regexpTagsGroup = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\s\.])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:bd|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg|dsr|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii]P|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|TELE(?:CINE|SYNC)|L[Ii]NE|OAR|AVC|[\[\(\{\s\.]T[CS][\]\)\}\s\.])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
 
@@ -320,6 +323,8 @@ namespace SubCentral.Utils {
         public double GetSubtitleFileRank(string subtitleFile) {
             double result = 0.0;
 
+            logger.Debug(string.Format("Calculating media tag rank for subtitle file {0} ...", subtitleFile));
+
             SubCentralUtils.EnsureExtensionForSubtitleFile(ref subtitleFile); // default extension to maintain compatibility with MediaTags class
 
             if (string.IsNullOrEmpty(subtitleFile)) return result;
@@ -327,6 +332,8 @@ namespace SubCentral.Utils {
             MediaTags mediaTagsSubtitleFile = GetTagsForFile(new FileInfo(subtitleFile));
 
             result = GetRank(mediaTagsFile, mediaTagsSubtitleFile);
+
+            logger.Debug(string.Format("... has media tag rank of {0}", result));
 
             return result;
         }
