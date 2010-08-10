@@ -1,4 +1,4 @@
-#summary Subcentral manual - sections
+#summary SubCentral manual - sections
 
 = Sections =
 
