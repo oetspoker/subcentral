@@ -44,6 +44,43 @@ namespace SubCentral.GUI {
                     }
                     return 0;
 
+                case SubtitlesSortMethod.MediaTags:
+                    if (_sortAsc) {
+                        if (subtitlesSortDetails1.TagRank == subtitlesSortDetails2.TagRank) {
+                            if (subtitlesSortDetails1.LanguagePriority == subtitlesSortDetails2.LanguagePriority) {
+                                if (subtitlesSortDetails1.ListPosition > subtitlesSortDetails2.ListPosition) return 1;
+                                if (subtitlesSortDetails1.ListPosition < subtitlesSortDetails2.ListPosition) return -1;
+                            }
+                            else {
+                                if (subtitlesSortDetails1.LanguagePriority > subtitlesSortDetails2.LanguagePriority) return 1;
+                                if (subtitlesSortDetails1.LanguagePriority < subtitlesSortDetails2.LanguagePriority) return -1;
+                            }
+                        }
+                        else {
+                            // different than others since higher rank means higher priority - lower index
+                            if (subtitlesSortDetails1.TagRank > subtitlesSortDetails2.TagRank) return -1; 
+                            if (subtitlesSortDetails1.TagRank < subtitlesSortDetails2.TagRank) return 1;
+                        }
+                    }
+                    else {
+                        if (subtitlesSortDetails1.TagRank == subtitlesSortDetails2.TagRank) {
+                            if (subtitlesSortDetails1.LanguagePriority == subtitlesSortDetails2.LanguagePriority) {
+                                if (subtitlesSortDetails1.ListPosition > subtitlesSortDetails2.ListPosition) return -1;
+                                if (subtitlesSortDetails1.ListPosition < subtitlesSortDetails2.ListPosition) return 1;
+                            }
+                            else {
+                                if (subtitlesSortDetails1.LanguagePriority > subtitlesSortDetails2.LanguagePriority) return -1;
+                                if (subtitlesSortDetails1.LanguagePriority < subtitlesSortDetails2.LanguagePriority) return 1;
+                            }
+                        }
+                        else {
+                            // different than others since higher rank means higher priority - lower index
+                            if (subtitlesSortDetails1.TagRank > subtitlesSortDetails2.TagRank) return 1;
+                            if (subtitlesSortDetails1.TagRank < subtitlesSortDetails2.TagRank) return -1;
+                        }
+                    }
+                    return 0;
+
                 case SubtitlesSortMethod.SubtitleLanguage:
                     if (_sortAsc) {
                         if (subtitlesSortDetails1.LanguagePriority == subtitlesSortDetails2.LanguagePriority) {
@@ -57,8 +94,8 @@ namespace SubCentral.GUI {
                     }
                     else {
                         if (subtitlesSortDetails1.LanguagePriority == subtitlesSortDetails2.LanguagePriority) {
-                            if (subtitlesSortDetails1.ListPosition > subtitlesSortDetails2.ListPosition) return 1;
-                            if (subtitlesSortDetails1.ListPosition < subtitlesSortDetails2.ListPosition) return -1;
+                            if (subtitlesSortDetails1.ListPosition > subtitlesSortDetails2.ListPosition) return -1;
+                            if (subtitlesSortDetails1.ListPosition < subtitlesSortDetails2.ListPosition) return 1;
                         }
                         else {
                             if (subtitlesSortDetails1.LanguagePriority > subtitlesSortDetails2.LanguagePriority) return -1;
@@ -79,8 +116,8 @@ namespace SubCentral.GUI {
                     }
                     else {
                         if (subtitlesSortDetails1.Name == subtitlesSortDetails2.Name) {
-                            if (subtitlesSortDetails1.ListPosition > subtitlesSortDetails2.ListPosition) return 1;
-                            if (subtitlesSortDetails1.ListPosition < subtitlesSortDetails2.ListPosition) return -1;
+                            if (subtitlesSortDetails1.ListPosition > subtitlesSortDetails2.ListPosition) return -1;
+                            if (subtitlesSortDetails1.ListPosition < subtitlesSortDetails2.ListPosition) return 1;
                         }
                         else {
                             return string.Compare(subtitlesSortDetails2.Name, subtitlesSortDetails1.Name, true);

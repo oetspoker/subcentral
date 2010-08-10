@@ -115,6 +115,8 @@
     </Compile>
     <Compile Include="GUI\GUIControls.cs" />
     <Compile Include="Config\MoveItem.cs" />
+    <Compile Include="Utils\Extensions.cs" />
+    <Compile Include="Utils\MediaTags.cs" />
     <Compile Include="Utils\StringEnum.cs" />
     <Compile Include="Settings\Data\OnPluginLoadWithSearchData.cs" />
     <Compile Include="GUI\GUIDialogMultiSelect.cs" />
@@ -151,6 +153,7 @@
     <Compile Include="Utils\MediaInfoWrapper.cs" />
     <Compile Include="Utils\NetUtils.cs" />
     <Compile Include="Utils\SubCentralUtils.cs" />
+    <Compile Include="Utils\TagRank.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Config\AdvancedConfigForm.resx">

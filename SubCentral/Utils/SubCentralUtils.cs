@@ -29,6 +29,13 @@ namespace SubCentral.Utils {
         public static string OldLogFileName = "SubCentral.log.bak";
         private static readonly object syncRoot = new object();
 
+        public static List<string> SubtitleExtensions = new List<string> { ".aqt", ".asc", ".ass", ".dat", ".dks", ".js", ".jss", 
+                                                                           ".lrc", ".mpl", ".ovr", ".pan", ".pjs", ".psb", ".rt", 
+                                                                           ".rtf", ".s2k", ".sbt", ".scr", ".smi", ".son", ".srt", 
+                                                                           ".ssa", ".sst", ".ssts", ".stl", ".sub", ".txt", ".vkt", 
+                                                                           ".vsf", ".zeg" };
+        public static List<string> AdditionalExtensions = new List<string> { ".rar", ".zip" };
+
         public static string PluginName() {
             if (SettingsManager.Properties == null || SettingsManager.Properties.GUISettings == null) return "SubCentral";
             return string.IsNullOrEmpty(SettingsManager.Properties.GUISettings.PluginName) ? "SubCentral" : SettingsManager.Properties.GUISettings.PluginName;
@@ -908,6 +915,24 @@ namespace SubCentral.Utils {
             finally {
                 GUIWindowManager.Replace(2100, dlgMultiSelectOld);
             }
+        }
+
+        public static void EnsureExtensionForSubtitleFile(ref string subtitleFile) {
+            if (string.IsNullOrEmpty(subtitleFile)) return;
+
+            List<string> extensions = new List<string>();
+            extensions.AddRange(AdditionalExtensions);
+            extensions.AddRange(SubtitleExtensions);
+
+            foreach(string extension in extensions) {
+                if (subtitleFile.ToLower().EndsWith(extension)) {
+                    subtitleFile.Substring(0, subtitleFile.Length - extension.Length);
+                }
+            }
+
+            if (string.IsNullOrEmpty(subtitleFile)) return;
+
+            subtitleFile += ".srt"; 
         }
     }
 

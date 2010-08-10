@@ -139,8 +139,9 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="Sort">Sort</string>
 	<string Field="SortBy">Sort by: {0}</string>
 	<string Field="SortByLanguage">Sort by subtitle language</string>
-		<string Field="SortByName">Sort by subtitle name</string>
+	<string Field="SortByName">Sort by subtitle name</string>
 	<string Field="SubtitleFilesToDelete">Subtitle files to delete</string>
+	<string Field="SortByMediaTags">Sort by media tags (if possible)</string>
 
 	<string Field="SkinTranslationFrom">From</string>
 	<string Field="SkinTranslationSearchType">Search type</string>
@@ -154,6 +155,7 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="SkinTranslationEpisode">Episode</string>
 	<string Field="SkinTranslationMovie">Movie</string>
 	<string Field="SkinTranslationTVShow">TV show</string>
+	<string Field="SkinTranslationMediaTags">Media tags</string>
 
 	<!-- T -->
 	<string Field="TVShows">TV shows</string>

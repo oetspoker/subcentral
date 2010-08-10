@@ -17,8 +17,6 @@ namespace SubCentral.Utils {
         private bool _hasExternalSubtitles = false;
 
         private List<FileInfo> _subtitleFiles = new List<FileInfo>();
-
-        private static List<string> _subTitleExtensions = new List<string>();
         #endregion
 
         #region Constructor
@@ -83,40 +81,6 @@ namespace SubCentral.Utils {
 
         #region private methods
         private bool checkHasExternalSubtitles(string strFile, bool useLocalOnly, bool checkAll) {
-            if (_subTitleExtensions.Count == 0) {
-                // load them in first time
-                _subTitleExtensions.Add(".aqt");
-                _subTitleExtensions.Add(".asc");
-                _subTitleExtensions.Add(".ass");
-                _subTitleExtensions.Add(".dat");
-                _subTitleExtensions.Add(".dks");
-                _subTitleExtensions.Add(".js");
-                _subTitleExtensions.Add(".jss");
-                _subTitleExtensions.Add(".lrc");
-                _subTitleExtensions.Add(".mpl");
-                _subTitleExtensions.Add(".ovr");
-                _subTitleExtensions.Add(".pan");
-                _subTitleExtensions.Add(".pjs");
-                _subTitleExtensions.Add(".psb");
-                _subTitleExtensions.Add(".rt");
-                _subTitleExtensions.Add(".rtf");
-                _subTitleExtensions.Add(".s2k");
-                _subTitleExtensions.Add(".sbt");
-                _subTitleExtensions.Add(".scr");
-                _subTitleExtensions.Add(".smi");
-                _subTitleExtensions.Add(".son");
-                _subTitleExtensions.Add(".srt");
-                _subTitleExtensions.Add(".ssa");
-                _subTitleExtensions.Add(".sst");
-                _subTitleExtensions.Add(".ssts");
-                _subTitleExtensions.Add(".stl");
-                _subTitleExtensions.Add(".sub");
-                _subTitleExtensions.Add(".txt");
-                _subTitleExtensions.Add(".vkt");
-                _subTitleExtensions.Add(".vsf");
-                _subTitleExtensions.Add(".zeg");
-            }
-
             bool result = false;
 
             string filenameNoExt = System.IO.Path.GetFileNameWithoutExtension(strFile);
@@ -141,7 +105,7 @@ namespace SubCentral.Utils {
                     try {
                         foreach (string file in System.IO.Directory.GetFiles(folder, filenameNoExt + "*")) {
                             System.IO.FileInfo fi = new System.IO.FileInfo(file);
-                            if (_subTitleExtensions.Contains(fi.Extension.ToLower())) {
+                            if (SubCentralUtils.SubtitleExtensions.Contains(fi.Extension.ToLower())) {
                                 if (checkAll) {
                                     result = result || true;
                                     _subtitleFiles.Add(fi);
@@ -152,9 +116,15 @@ namespace SubCentral.Utils {
                             }
                         }
                     }
-                    catch (Exception e) {
+                    catch (Exception) {
                         // Most likely path not available
-                        logger.WarnException(string.Format("Error checking external subtitles for folder {0}\n", folder), e);
+                        // There is absolutely no need to print this error
+                        // - It's annoying
+                        // - Confuses user
+                        // - Fills up log file quickly
+                        // - Makes log file hard to read
+                        // - Does not provide any useful information
+                        //logger.WarnException(string.Format("Error checking external subtitles for folder {0}\n", folder), e);
                     }
                 }
             }

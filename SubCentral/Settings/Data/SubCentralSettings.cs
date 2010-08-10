@@ -131,7 +131,7 @@ namespace SubCentral.Settings.Data {
     #region GUI
     public class SettingsGUI {
         public SettingsGUI() {
-            SortMethod = SubtitlesSortMethod.SubtitleLanguage;
+            SortMethod = SubtitlesSortMethod.MediaTags;
             SortAscending = true;
             CheckMediaForSubtitlesOnOpen = true;
             PluginName = "SubCentral";
