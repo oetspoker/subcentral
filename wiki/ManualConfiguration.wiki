@@ -1,4 +1,4 @@
-#summary Using SubCentral - Configuration
+#summary SubCentral manual - Configuration
 
 = Introduction =
 
