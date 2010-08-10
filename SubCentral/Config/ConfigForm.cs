@@ -1,16 +1,17 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using MediaPortal.Configuration;
+using MediaPortal.GUI.Library;
 using NLog;
 using SubCentral.GUI;
 using SubCentral.Localizations;
 using SubCentral.Settings;
 using SubCentral.Settings.Data;
 using SubCentral.Utils;
-using MediaPortal.GUI.Library;
 
 namespace SubCentral.ConfigForm {
     [PluginIcons("SubCentral.Config.Images.SubCentral_Icon_Enabled.png", "SubCentral.Config.Images.SubCentral_Icon_Disabled.png")]
@@ -190,7 +191,7 @@ namespace SubCentral.ConfigForm {
 
         // Returns the author of the plugin which is shown in the plugin menu     
         public string Author() {
-            return "";
+            return "SilentException, seco";
         }
 
         // show the setup dialog    
@@ -1094,6 +1095,22 @@ namespace SubCentral.ConfigForm {
                 btnGroupsAndProvidersEditGroup.Text = "Edit group";
             else
                 btnGroupsAndProvidersEditGroup.Text = "Hide edit group";
+        }
+
+        private void labelIcons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Process.Start(@"http://www.famfamfam.com/");
+        }
+
+        private void labelGoogleCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Process.Start(@"http://code.google.com/p/subcentral/");
+        }
+
+        private void labelManual_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Process.Start(@"http://code.google.com/p/subcentral/wiki/Manual");
+        }
+
+        private void labelForum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Process.Start(@"http://forum.team-mediaportal.com/mediaportal-plugins-47/subcentral-85545/");
         }
 
     }
