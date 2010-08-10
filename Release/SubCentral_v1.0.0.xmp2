@@ -329,12 +329,12 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>0</Revision>
         </MinVersion>
         <MaxVersion>
-          <Major>0</Major>
-          <Minor>0</Minor>
-          <Build>0</Build>
-          <Revision>0</Revision>
+          <Major>9</Major>
+          <Minor>9</Minor>
+          <Build>9</Build>
+          <Revision>9</Revision>
         </MaxVersion>
-        <WarnOnly>true</WarnOnly>
+        <WarnOnly>false</WarnOnly>
         <Message>Need version of MediaPortal with version betwen 0.0.0.0 - 0.0.0.0</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
@@ -517,7 +517,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{bead639b-adc8-49e5-b676-bd8db42dc2f8}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{a0f1a996-41fd-4be8-9417-c59a9fedf947}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
