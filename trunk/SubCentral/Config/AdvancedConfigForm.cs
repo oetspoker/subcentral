@@ -53,8 +53,7 @@ namespace SubCentral.ConfigForm {
         }
 
         private void AdvancedConfigForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e) {
-            // TODO MS
-            //Process.Start(@"http://code.google.com/p/subcentral/wiki/Configuration#Advanced");
+            Process.Start(@"http://code.google.com/p/subcentral/wiki/ManualConfiguration#Advanced");
         }
     }
 }

@@ -318,28 +318,48 @@ Click Next to continue or Cancel to exit Setup.</Value>
     </Items>
   </Sections>
   <Dependencies>
-    <Items />
+    <Items>
+      <DependencyItem>
+        <Type>MediaPortal</Type>
+        <Id />
+        <MinVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>0</Build>
+          <Revision>0</Revision>
+        </MinVersion>
+        <MaxVersion>
+          <Major>0</Major>
+          <Minor>0</Minor>
+          <Build>0</Build>
+          <Revision>0</Revision>
+        </MaxVersion>
+        <WarnOnly>true</WarnOnly>
+        <Message>Need version of MediaPortal with version betwen 0.0.0.0 - 0.0.0.0</Message>
+        <Name>MediaPortal</Name>
+      </DependencyItem>
+    </Items>
   </Dependencies>
   <GeneralInfo>
     <Name>SubCentral</Name>
     <Id>f8f30e5e-cc8a-44a0-91a9-1175fe55732f</Id>
-    <Author />
+    <Author>SilentException, seco</Author>
     <HomePage>http://code.google.com/p/subcentral/</HomePage>
-    <ForumPage />
+    <ForumPage>http://forum.team-mediaportal.com/mediaportal-plugins-47/subcentral-85545/</ForumPage>
     <UpdateUrl>http://subcentral.googlecode.com/svn/trunk/Release/update.xml</UpdateUrl>
     <Version>
-      <Major>0</Major>
-      <Minor>9</Minor>
-      <Build>1</Build>
+      <Major>1</Major>
+      <Minor>0</Minor>
+      <Build>0</Build>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-in. It also has the interfaces to allow easy implementation and interaction for any other plug-in.</ExtensionDescription>
     <VersionDescription>Initial release</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://subcentral.googlecode.com/svn/trunk/Release/SubCentral_v0.9.1.mpe1</OnlineLocation>
-    <ReleaseDate>2010-07-01T18:45:37</ReleaseDate>
-    <Tags>subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
-    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v0.9.1.mpe1</Location>
+    <ReleaseDate>2010-08-13T00:00:00</ReleaseDate>
+    <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
+    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.0.0.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -360,7 +380,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
  If have .dll extension used like MP plugin configuration</Description>
         </SectionParam>
         <SectionParam Name="Online Screenshots">
-          <Value />
+          <Value>http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/About%20(1).jpg;http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/Manual%20search%20-%20Movie%20(1).jpg;http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/Moving%20Pictures%20(2).jpg;http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/Moving%20Pictures%20(3).jpg;http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/Moving%20Pictures%20(7).jpg</Value>
           <ValueType>String</ValueType>
           <Description>Online stored screenshot urls separated by ; </Description>
         </SectionParam>
@@ -497,14 +517,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{a23281b7-29aa-4a22-876c-4c3081cb83a8}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{bead639b-adc8-49e5-b676-bd8db42dc2f8}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
   </UniqueFileList>
   <ProjectSettings>
     <FolderGroups />
-    <ProjectFilename>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.0.1.xmp2</ProjectFilename>
+    <ProjectFilename>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.0.0.xmp2</ProjectFilename>
     <UpdatePath1>D:\developing\#maintained\SubCentral\Release\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />

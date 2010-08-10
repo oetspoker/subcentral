@@ -24,19 +24,19 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Groups", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Providers", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Groups", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Providers", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "Provider 1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "Provider 2"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             "Provider 3"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             "Language 1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             "Language 2"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
             "Language 3"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigForm));
             this.tabControl = new System.Windows.Forms.TabControl();
@@ -84,15 +84,17 @@
             this.pgAbout = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.llblFamFamFam = new System.Windows.Forms.LinkLabel();
+            this.labelIcons = new System.Windows.Forms.LinkLabel();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.llblAboutForum = new System.Windows.Forms.LinkLabel();
-            this.llblAboutManual = new System.Windows.Forms.LinkLabel();
-            this.llblAboutCodeplex = new System.Windows.Forms.LinkLabel();
+            this.labelForum = new System.Windows.Forms.LinkLabel();
+            this.labelManual = new System.Windows.Forms.LinkLabel();
+            this.labelGoogleCode = new System.Windows.Forms.LinkLabel();
             this.label36 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -255,13 +257,13 @@
             this.columnHeaderGroupsAndProvidersDetails});
             this.listViewGroupsAndProviders.FullRowSelect = true;
             this.listViewGroupsAndProviders.GridLines = true;
-            listViewGroup1.Header = "Groups";
-            listViewGroup1.Name = "listViewGroupGroups";
-            listViewGroup2.Header = "Providers";
-            listViewGroup2.Name = "listViewGroupProviders";
+            listViewGroup3.Header = "Groups";
+            listViewGroup3.Name = "listViewGroupGroups";
+            listViewGroup4.Header = "Providers";
+            listViewGroup4.Name = "listViewGroupProviders";
             this.listViewGroupsAndProviders.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
+            listViewGroup3,
+            listViewGroup4});
             this.listViewGroupsAndProviders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listViewGroupsAndProviders.HideSelection = false;
             this.listViewGroupsAndProviders.LabelEdit = true;
@@ -366,13 +368,13 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewEditGroup.CheckBoxes = true;
             this.listViewEditGroup.HideSelection = false;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
             this.listViewEditGroup.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem7,
+            listViewItem8,
+            listViewItem9});
             this.listViewEditGroup.LabelEdit = true;
             this.listViewEditGroup.Location = new System.Drawing.Point(6, 19);
             this.listViewEditGroup.MultiSelect = false;
@@ -568,13 +570,13 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewLanguages.CheckBoxes = true;
             this.listViewLanguages.HideSelection = false;
-            listViewItem4.StateImageIndex = 0;
-            listViewItem5.StateImageIndex = 0;
-            listViewItem6.StateImageIndex = 0;
+            listViewItem10.StateImageIndex = 0;
+            listViewItem11.StateImageIndex = 0;
+            listViewItem12.StateImageIndex = 0;
             this.listViewLanguages.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
+            listViewItem10,
+            listViewItem11,
+            listViewItem12});
             this.listViewLanguages.Location = new System.Drawing.Point(6, 19);
             this.listViewLanguages.MultiSelect = false;
             this.listViewLanguages.Name = "listViewLanguages";
@@ -763,15 +765,17 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label39);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.llblFamFamFam);
+            this.groupBox1.Controls.Add(this.labelIcons);
             this.groupBox1.Controls.Add(this.label38);
             this.groupBox1.Controls.Add(this.label37);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.llblAboutForum);
-            this.groupBox1.Controls.Add(this.llblAboutManual);
-            this.groupBox1.Controls.Add(this.llblAboutCodeplex);
+            this.groupBox1.Controls.Add(this.labelForum);
+            this.groupBox1.Controls.Add(this.labelManual);
+            this.groupBox1.Controls.Add(this.labelGoogleCode);
             this.groupBox1.Controls.Add(this.label36);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label35);
@@ -791,6 +795,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "About  ";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(275, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "SilentException, seco";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(226, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Project coordination and development:";
+            // 
             // label39
             // 
             this.label39.AutoSize = true;
@@ -807,26 +830,26 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(275, 288);
+            this.label21.Location = new System.Drawing.Point(275, 231);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(89, 13);
+            this.label21.Size = new System.Drawing.Size(91, 13);
             this.label21.TabIndex = 23;
-            this.label21.Text = "Danish: steffansp";
+            this.label21.Text = "Danish: Steffansp";
             this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label21.Visible = false;
             // 
-            // llblFamFamFam
+            // labelIcons
             // 
-            this.llblFamFamFam.AutoSize = true;
-            this.llblFamFamFam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblFamFamFam.LinkArea = new System.Windows.Forms.LinkArea(0, 9);
-            this.llblFamFamFam.Location = new System.Drawing.Point(275, 166);
-            this.llblFamFamFam.Name = "llblFamFamFam";
-            this.llblFamFamFam.Size = new System.Drawing.Size(157, 17);
-            this.llblFamFamFam.TabIndex = 15;
-            this.llblFamFamFam.TabStop = true;
-            this.llblFamFamFam.Text = "FamFamFam, SilentException";
-            this.llblFamFamFam.UseCompatibleTextRendering = true;
+            this.labelIcons.AutoSize = true;
+            this.labelIcons.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIcons.LinkArea = new System.Windows.Forms.LinkArea(0, 9);
+            this.labelIcons.Location = new System.Drawing.Point(275, 166);
+            this.labelIcons.Name = "labelIcons";
+            this.labelIcons.Size = new System.Drawing.Size(157, 17);
+            this.labelIcons.TabIndex = 15;
+            this.labelIcons.TabStop = true;
+            this.labelIcons.Text = "FamFamFam, SilentException";
+            this.labelIcons.UseCompatibleTextRendering = true;
+            this.labelIcons.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIcons_LinkClicked);
             // 
             // label38
             // 
@@ -857,38 +880,41 @@
             this.label17.TabIndex = 19;
             this.label17.Text = "Images:";
             // 
-            // llblAboutForum
+            // labelForum
             // 
-            this.llblAboutForum.AutoSize = true;
-            this.llblAboutForum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblAboutForum.Location = new System.Drawing.Point(12, 433);
-            this.llblAboutForum.Name = "llblAboutForum";
-            this.llblAboutForum.Size = new System.Drawing.Size(180, 13);
-            this.llblAboutForum.TabIndex = 18;
-            this.llblAboutForum.TabStop = true;
-            this.llblAboutForum.Text = "SubCentral MediaPortal forum thread";
+            this.labelForum.AutoSize = true;
+            this.labelForum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelForum.Location = new System.Drawing.Point(12, 433);
+            this.labelForum.Name = "labelForum";
+            this.labelForum.Size = new System.Drawing.Size(180, 13);
+            this.labelForum.TabIndex = 18;
+            this.labelForum.TabStop = true;
+            this.labelForum.Text = "SubCentral MediaPortal forum thread";
+            this.labelForum.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelForum_LinkClicked);
             // 
-            // llblAboutManual
+            // labelManual
             // 
-            this.llblAboutManual.AutoSize = true;
-            this.llblAboutManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblAboutManual.Location = new System.Drawing.Point(12, 409);
-            this.llblAboutManual.Name = "llblAboutManual";
-            this.llblAboutManual.Size = new System.Drawing.Size(247, 13);
-            this.llblAboutManual.TabIndex = 17;
-            this.llblAboutManual.TabStop = true;
-            this.llblAboutManual.Text = "SubCentral User/Developer/Skin Designer Manual";
+            this.labelManual.AutoSize = true;
+            this.labelManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelManual.Location = new System.Drawing.Point(12, 409);
+            this.labelManual.Name = "labelManual";
+            this.labelManual.Size = new System.Drawing.Size(244, 13);
+            this.labelManual.TabIndex = 17;
+            this.labelManual.TabStop = true;
+            this.labelManual.Text = "SubCentral User/Developer/Skin designer manual";
+            this.labelManual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelManual_LinkClicked);
             // 
-            // llblAboutCodeplex
+            // labelGoogleCode
             // 
-            this.llblAboutCodeplex.AutoSize = true;
-            this.llblAboutCodeplex.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblAboutCodeplex.Location = new System.Drawing.Point(12, 387);
-            this.llblAboutCodeplex.Name = "llblAboutCodeplex";
-            this.llblAboutCodeplex.Size = new System.Drawing.Size(159, 13);
-            this.llblAboutCodeplex.TabIndex = 16;
-            this.llblAboutCodeplex.TabStop = true;
-            this.llblAboutCodeplex.Text = "SubCentral Google Code project";
+            this.labelGoogleCode.AutoSize = true;
+            this.labelGoogleCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGoogleCode.Location = new System.Drawing.Point(12, 387);
+            this.labelGoogleCode.Name = "labelGoogleCode";
+            this.labelGoogleCode.Size = new System.Drawing.Size(159, 13);
+            this.labelGoogleCode.TabIndex = 16;
+            this.labelGoogleCode.TabStop = true;
+            this.labelGoogleCode.Text = "SubCentral Google Code project";
+            this.labelGoogleCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelGoogleCode_LinkClicked);
             // 
             // label36
             // 
@@ -923,7 +949,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(275, 231);
+            this.label34.Location = new System.Drawing.Point(275, 288);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(60, 13);
             this.label34.TabIndex = 12;
@@ -959,10 +985,9 @@
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(275, 212);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(68, 13);
+            this.label31.Size = new System.Drawing.Size(126, 13);
             this.label31.TabIndex = 9;
-            this.label31.Text = "German: ???";
-            this.label31.Visible = false;
+            this.label31.Text = "German: Michael Schuler";
             // 
             // label30
             // 
@@ -970,9 +995,9 @@
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(275, 112);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(251, 13);
+            this.label30.Size = new System.Drawing.Size(103, 13);
             this.label30.TabIndex = 8;
-            this.label30.Text = "Conrad John (fforde), gibman, seco, SilentException";
+            this.label30.Text = "Conrad John (fforde)";
             // 
             // label28
             // 
@@ -1134,13 +1159,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.LinkLabel llblFamFamFam;
+        private System.Windows.Forms.LinkLabel labelIcons;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.LinkLabel llblAboutForum;
-        private System.Windows.Forms.LinkLabel llblAboutManual;
-        private System.Windows.Forms.LinkLabel llblAboutCodeplex;
+        private System.Windows.Forms.LinkLabel labelForum;
+        private System.Windows.Forms.LinkLabel labelManual;
+        private System.Windows.Forms.LinkLabel labelGoogleCode;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label35;
@@ -1191,6 +1216,8 @@
         private System.Windows.Forms.CheckBox checkBoxSearchDefaultsWhenFromManualSearch;
         private System.Windows.Forms.Button btnGroupsAndProvidersEditGroup;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
