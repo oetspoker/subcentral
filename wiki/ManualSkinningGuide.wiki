@@ -1,4 +1,4 @@
-#summary SubCentral - skining guide
+#summary SubCentral manual - skining guide
 
 = Introduction =
 
