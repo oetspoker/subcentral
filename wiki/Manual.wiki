@@ -1,4 +1,4 @@
-#summary User/Developer/Skin designer manual
+#summary Subcentral manual - sections
 
 = Sections =
 
