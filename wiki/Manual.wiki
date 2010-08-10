@@ -1,4 +1,5 @@
 #summary SubCentral manual - sections
+#labels Featured
 
 = Sections =
 
