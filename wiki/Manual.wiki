@@ -2,7 +2,7 @@
 
 = Sections =
 
- * Using SubCentral - Configuration
- * Using SubCentral - GUI
- * Skining guide
- * Developers guide
+ * [ManualConfiguration Using SubCentral - Configuration]
+ * [ManualGUI Using SubCentral - GUI]
+ * [ManualSkinningGuide Skining guide]
+ * [ManualDevelopersGuide Developers guide]
