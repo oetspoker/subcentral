@@ -1,0 +1,8 @@
+#summary User/Developer/Skin designer manual
+
+= Sections =
+
+* Using SubCentral - Configuration
+* Using SubCentral - GUI
+* Skining guide
+* Developers guide
