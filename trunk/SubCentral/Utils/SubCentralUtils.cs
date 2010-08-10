@@ -932,7 +932,10 @@ namespace SubCentral.Utils {
 
             if (string.IsNullOrEmpty(subtitleFile)) return;
 
-            subtitleFile += ".srt"; 
+            if (subtitleFile.Length < 189)
+                subtitleFile += ".srt";
+            else
+                subtitleFile = subtitleFile.Substring(0, 188) + ".srt"; // file name length limit is 212, won't go that far..
         }
     }
 
