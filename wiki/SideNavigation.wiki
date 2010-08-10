@@ -1,0 +1,9 @@
+#summary SubCentral manual - side navigation
+#labels Deprecated
+
+  * [Manual Manual]
+    * [ManualConfiguration Using SubCentral - Configuration]
+    * [ManualGUI Using SubCentral - GUI]
+    * [ManualSkinningGuide Skining guide]
+    * [ManualDevelopersGuide Developers guide]
+  * [Screenshots Screenshots]
