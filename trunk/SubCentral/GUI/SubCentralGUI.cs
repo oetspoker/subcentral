@@ -886,6 +886,7 @@ namespace SubCentral.GUI {
             GUIUtils.SetProperty("#SubCentral.Search.Source.Text", string.Empty);
             GUIUtils.SetProperty("#SubCentral.Search.Source.Name", string.Empty);
             GUIUtils.SetProperty("#SubCentral.Search.Source.ID", string.Empty);
+            GUIUtils.SetProperty("#SubCentral.Search.Files.Tags", string.Empty);
 
             List<string> sections = new List<string> { "Search", "ManualSearch" };
 
@@ -928,6 +929,19 @@ namespace SubCentral.GUI {
                 GUIUtils.SetProperty("#SubCentral.Search.Source.Text", CurrentHandler.Type != PluginHandlerType.MANUAL ? string.Format(Localization.From, CurrentHandler.PluginName) : CurrentHandler.PluginName);
                 GUIUtils.SetProperty("#SubCentral.Search.Source.Name", CurrentHandler.PluginName);
                 GUIUtils.SetProperty("#SubCentral.Search.Source.ID", CurrentHandler.ID.ToString());
+                
+                if (CurrentHandler.TagRanking != null && CurrentHandler.TagRanking.MediaTags != null && CurrentHandler.TagRanking.MediaTags.AllTagsCombined != null) {
+                    string tags = string.Empty;
+                    foreach (string tag in CurrentHandler.TagRanking.MediaTags.AllTagsCombined) {
+                        if (string.IsNullOrEmpty(tag)) continue;
+
+                        if (string.IsNullOrEmpty(tags))
+                            tags += tag;
+                        else
+                            tags += ", " + tag;
+                    }
+                    GUIUtils.SetProperty("#SubCentral.Search.Files.Tags", tags);
+                }
             }
             else {
                 InitSearchProperties();
@@ -1039,6 +1053,23 @@ namespace SubCentral.GUI {
                 return false;
         }
 
+        private bool SubtitleFileNameMatchesMedia(string subtitleFile) {
+            bool result = false;
+
+            SubCentralUtils.EnsureExtensionForSubtitleFile(ref subtitleFile);
+
+            if (string.IsNullOrEmpty(subtitleFile) || CurrentHandler == null || CurrentHandler.MediaDetail.Files == null || CurrentHandler.MediaDetail.Files.Count < 1) return result;
+
+            foreach (FileInfo fi in CurrentHandler.MediaDetail.Files) {
+                if (Path.GetFileNameWithoutExtension(subtitleFile) == Path.GetFileNameWithoutExtension(fi.Name)) {
+                    result = true;
+                    break;
+                }
+            }
+            
+            return result;
+        }
+
         private void FillSubtitleSearchResults(List<SubtitleItem> subtitleItems) {
             if (subtitleItems != null && subtitleItems.Count > 0) {
                 providerList.Clear();
@@ -1050,10 +1081,18 @@ namespace SubCentral.GUI {
                 item.MusicTag = null;
                 providerList.Add(item);
 
-
                 foreach (SubtitleItem subtitleItem in subtitleItems) {
                     SubtitlesSortDetails searchDetails = new SubtitlesSortDetails();
                     searchDetails.ListPosition = providerList.Count;
+                    searchDetails.TagRank = 0.0;
+                    bool subtitleFileNameMatchesMedia = false;
+                    if (SubtitleFileNameMatchesMedia(subtitleItem.Subtitle.FileName)) {
+                        searchDetails.TagRank = 200.0;
+                        subtitleFileNameMatchesMedia = true;
+                    }
+                    else if (CurrentHandler != null && CurrentHandler.TagRanking != null) {
+                        searchDetails.TagRank = CurrentHandler.TagRanking.GetSubtitleFileRank(subtitleItem.Subtitle.FileName);
+                    }
                     searchDetails.LanguagePriority = SubCentralUtils.getLanguagePriorityByCode(subtitleItem.Subtitle.LanguageCode);
                     searchDetails.Name = subtitleItem.Subtitle.FileName;
                     searchDetails.Provider = subtitleItem.ProviderTitle;
@@ -1063,6 +1102,10 @@ namespace SubCentral.GUI {
                     else {
                         searchDetails.Language = subtitleItem.LanguageName;
                     }
+
+                    //logger.Debug(string.Format("Subtitle {0} has list position of {1}", subtitleItem.Subtitle.FileName, searchDetails.ListPosition));
+                    //logger.Debug(string.Format("Subtitle {0} has media tag rank of {1}", subtitleItem.Subtitle.FileName, searchDetails.TagRank));
+                    //logger.Debug(string.Format("Subtitle {0} has language priority of {1}", subtitleItem.Subtitle.FileName, searchDetails.LanguagePriority));
 
                     GUIListItem providerListItem = new GUIListItem();
                     providerListItem.IsFolder = false;
@@ -1079,6 +1122,8 @@ namespace SubCentral.GUI {
 
                     providerListItem.IconImage = "defaultSubtitles.png";
 
+                    if (subtitleFileNameMatchesMedia)
+                        providerListItem.IsPlayed = true;
 
                     providerList.Add(providerListItem);
                 }
@@ -1158,8 +1203,12 @@ namespace SubCentral.GUI {
                 return;
             }
 
-            if (_modifySearchMediaDetail.Files != null)
+            if (_modifySearchMediaDetail.Files != null) {
                 _modifySearchMediaDetail.Files.Clear();
+                GUIUtils.SetProperty("#SubCentral.Search.Files.Tags", string.Empty);
+                if (CurrentHandler != null)
+                    CurrentHandler.UpdateTags();
+            }
 
             _modifySearchMediaDetail.FanArt = string.Empty;
             _modifySearchMediaDetail.Thumb = string.Empty;
@@ -1179,6 +1228,7 @@ namespace SubCentral.GUI {
         }
 
         private void ModifySearchWithUserData() {
+            //CurrentHandler.MediaDetail = CopyMediaDetail(_modifySearchMediaDetail);
             CurrentHandler.MediaDetail = _modifySearchMediaDetail;
             _lastSelectedGroupsAndProvidersItemIndex = 0;
             //if (SubCentralUtils.getSubtitlesSearchTypeFromMediaDetail(CurrentHandler.MediaDetail) != SubtitlesSearchType.NONE)
@@ -1327,6 +1377,7 @@ namespace SubCentral.GUI {
         private void OnShowDialogSortOptions() {
             List<GUIListItem> items = new List<GUIListItem>();
             items.Add(new GUIListItem(Localization.GroupProviderDefault));
+            items.Add(new GUIListItem(Localization.SortByMediaTags));
             items.Add(new GUIListItem(Localization.SortByLanguage));
             items.Add(new GUIListItem(Localization.SortByName));
 
@@ -1339,9 +1390,12 @@ namespace SubCentral.GUI {
                     _subtitlesSortMethod = SubtitlesSortMethod.DefaultNoSort;
                     break;
                 case 1:
-                    _subtitlesSortMethod = SubtitlesSortMethod.SubtitleLanguage;
+                    _subtitlesSortMethod = SubtitlesSortMethod.MediaTags;
                     break;
                 case 2:
+                    _subtitlesSortMethod = SubtitlesSortMethod.SubtitleLanguage;
+                    break;
+                case 3:
                     _subtitlesSortMethod = SubtitlesSortMethod.SubtitleName;
                     break;
             }
@@ -1363,6 +1417,9 @@ namespace SubCentral.GUI {
                 switch (_subtitlesSortMethod) {
                     case SubtitlesSortMethod.DefaultNoSort:
                         labelSort = string.Format(Localization.SortBy, Localization.Default);
+                        break;
+                    case SubtitlesSortMethod.MediaTags:
+                        labelSort = string.Format(Localization.SortBy, Localization.SkinTranslationMediaTags);
                         break;
                     case SubtitlesSortMethod.SubtitleLanguage:
                         labelSort = string.Format(Localization.SortBy, Localization.Language);

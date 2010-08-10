@@ -66,6 +66,19 @@
 		<import>common.window.xml</import>
 		<import>common.time.xml</import>
 
+		<control>
+			<description>Media tags</description>
+			<type>fadelabel</type>
+			<id>0</id>
+			<posX>30</posX>
+			<posY>56</posY>
+			<font>font11</font>
+			<width>750</width>
+			<label>#SubCentral.Translation.MediaTags.Label: #SubCentral.Search.Files.Tags</label>
+			<wrapString> : : : </wrapString>
+			<visible>!string.contains(#SubCentral.Search.Files.Tags,SubCentral.Search.Files.Tags)+!string.equals(#SubCentral.Search.Files.Tags,)+!string.equals(#SubCentral.Search.Files.Tags, )+!string.equals(#SubCentral.Search.Files.Tags,  )</visible>
+		</control>
+
 		<!-- Imports for various views of the GUI -->
 		<import>SubCentral.Main.xml</import>
 		<import>SubCentral.Search.xml</import>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using NLog;
+using SubCentral.Utils;
 
 namespace SubCentral.PluginHandlers {
     internal abstract class PluginHandler {
@@ -35,6 +36,16 @@ namespace SubCentral.PluginHandlers {
             set;
         }
 
+        private TagRank tagRanking = null;
+        public TagRank TagRanking {
+            get {
+                if (tagRanking == null) {
+                    tagRanking = new TagRank(MediaDetail.Files);
+                }
+                return tagRanking;
+            }
+        }
+
         // Should return true if all required components for this plugin are present.
         // See IsActive() abstract method below.
         public bool Available {
@@ -51,12 +62,18 @@ namespace SubCentral.PluginHandlers {
         // See abstract GrabFileDetails() method below.
         public bool Update() {
             try {
-                return GrabFileDetails();
+                bool result = GrabFileDetails();
+                tagRanking = new TagRank(MediaDetail.Files);
+                return result;
             }
             catch (Exception e) {
                 logger.ErrorException("Failed updating\n", e);
             }
             return false;
+        }
+
+        public void UpdateTags() {
+            tagRanking = null; // will update on next get
         }
 
         // Updates the above properties with current information from the associated plugin.

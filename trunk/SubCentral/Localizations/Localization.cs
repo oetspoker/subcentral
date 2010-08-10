@@ -291,6 +291,7 @@ namespace SubCentral.Localizations {
         public static string SortByLanguage = "Sort by subtitle language";
         public static string SortByName = "Sort by subtitle name";
         public static string SubtitleFilesToDelete = "Subtitle files to delete";
+        public static string SortByMediaTags = "Sort by media tags (if possible)";
 
         public static string SkinTranslationFrom = "From";
         public static string SkinTranslationSearchType = "Search type";
@@ -304,6 +305,7 @@ namespace SubCentral.Localizations {
         public static string SkinTranslationEpisode = "Episode";
         public static string SkinTranslationMovie = "Movie";
         public static string SkinTranslationTVShow = "TV show";
+        public static string SkinTranslationMediaTags = "Media tags";
 
         // T
         public static string TVShows = "TV shows";
