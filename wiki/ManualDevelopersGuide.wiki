@@ -1,6 +1,5 @@
 #summary SubCentral manual - developers guide
 
-
 = Introduction =
 
 WiP
