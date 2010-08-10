@@ -323,7 +323,7 @@ namespace SubCentral.Utils {
         public double GetSubtitleFileRank(string subtitleFile) {
             double result = 0.0;
 
-            logger.Debug(string.Format("Calculating media tag rank for subtitle file {0} ...", subtitleFile));
+            //logger.Debug(string.Format("Calculating media tag rank for subtitle file {0} ...", subtitleFile));
 
             SubCentralUtils.EnsureExtensionForSubtitleFile(ref subtitleFile); // default extension to maintain compatibility with MediaTags class
 
@@ -333,7 +333,7 @@ namespace SubCentral.Utils {
 
             result = GetRank(mediaTagsFile, mediaTagsSubtitleFile);
 
-            logger.Debug(string.Format("... has media tag rank of {0}", result));
+            //logger.Debug(string.Format("... has media tag rank of {0}", result));
 
             return result;
         }
