@@ -1,3 +1,4 @@
+#labels Deprecated
 =Project Goal=
 This page describes the proposed design and implementation of a stand alone subtitles plugin that interacts with Moving Pictures. The purpose of this stand alone plugin is to download subtitles for a movie via a UI in the !MediaPortal GUI.
 
