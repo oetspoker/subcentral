@@ -325,7 +325,7 @@ namespace SubCentral.Utils {
 
             //logger.Debug(string.Format("Calculating media tag rank for subtitle file {0} ...", subtitleFile));
 
-            SubCentralUtils.EnsureExtensionForSubtitleFile(ref subtitleFile); // default extension to maintain compatibility with MediaTags class
+            SubCentralUtils.EnsureProperSubtitleFile(ref subtitleFile); // default extension to maintain compatibility with MediaTags class
 
             if (string.IsNullOrEmpty(subtitleFile)) return result;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using System.Linq;
+using System.Text.RegularExpressions;
 using MediaPortal.GUI.Library;
 using NLog;
 using SubCentral.GUI.Items;
@@ -1056,12 +1057,17 @@ namespace SubCentral.GUI {
         private bool SubtitleFileNameMatchesMedia(string subtitleFile) {
             bool result = false;
 
-            SubCentralUtils.EnsureExtensionForSubtitleFile(ref subtitleFile);
+            SubCentralUtils.EnsureProperSubtitleFile(ref subtitleFile);
 
             if (string.IsNullOrEmpty(subtitleFile) || CurrentHandler == null || CurrentHandler.MediaDetail.Files == null || CurrentHandler.MediaDetail.Files.Count < 1) return result;
 
             foreach (FileInfo fi in CurrentHandler.MediaDetail.Files) {
-                if (Path.GetFileNameWithoutExtension(subtitleFile) == Path.GetFileNameWithoutExtension(fi.Name)) {
+                string subtitleFileProper = Path.GetFileNameWithoutExtension(subtitleFile).ToLowerInvariant();
+                subtitleFileProper = Regex.Replace(subtitleFileProper, @"[-_]", " ");
+                string fileNameProper = Path.GetFileNameWithoutExtension(fi.Name).ToLowerInvariant();
+                fileNameProper = Regex.Replace(fileNameProper, @"[-_]", " ");
+                 
+                if (subtitleFileProper == fileNameProper || subtitleFileProper.Contains(fileNameProper)) {
                     result = true;
                     break;
                 }

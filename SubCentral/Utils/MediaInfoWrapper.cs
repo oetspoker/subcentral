@@ -105,7 +105,7 @@ namespace SubCentral.Utils {
                     try {
                         foreach (string file in System.IO.Directory.GetFiles(folder, filenameNoExt + "*")) {
                             System.IO.FileInfo fi = new System.IO.FileInfo(file);
-                            if (SubCentralUtils.SubtitleExtensions.Contains(fi.Extension.ToLower())) {
+                            if (SubCentralUtils.SubtitleExtensions.Contains(fi.Extension.ToLowerInvariant())) {
                                 if (checkAll) {
                                     result = result || true;
                                     _subtitleFiles.Add(fi);
