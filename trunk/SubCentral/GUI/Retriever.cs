@@ -451,7 +451,7 @@ namespace SubCentral.GUI {
                             targetSubtitleFile = Path.Combine(folderSelectionItem.FolderName, subtitleFile.Name);
 
                             subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
-                            if (!string.IsNullOrEmpty(SubCentralUtils.SubsLanguages[subtitle.LanguageCode]))
+                            if (!string.IsNullOrEmpty(SubCentralUtils.SubsLanguages[subtitle.LanguageCode]) && !subtitleFileName.Contains("." + SubCentralUtils.SubsLanguages[subtitle.LanguageCode]))
                                 subtitleFileName = subtitleFileName + "." + SubCentralUtils.SubsLanguages[subtitle.LanguageCode];
                             subtitleFileExt = Path.GetExtension(targetSubtitleFile);
                             subtitleFileNameFull = subtitleFileName + subtitleFileExt;
