@@ -923,25 +923,30 @@ namespace SubCentral.Utils {
             }
         }
 
-        public static void EnsureExtensionForSubtitleFile(ref string subtitleFile) {
+        public static void EnsureProperSubtitleFile(ref string subtitleFile) {
             if (string.IsNullOrEmpty(subtitleFile)) return;
+
+            subtitleFile = FileUtils.fixInvalidFileName(subtitleFile);
+            subtitleFile = subtitleFile.Trim();
 
             List<string> extensions = new List<string>();
             extensions.AddRange(AdditionalExtensions);
             extensions.AddRange(SubtitleExtensions);
 
             foreach(string extension in extensions) {
-                if (subtitleFile.ToLower().EndsWith(extension)) {
-                    subtitleFile.Substring(0, subtitleFile.Length - extension.Length);
+                if (subtitleFile.ToLowerInvariant().EndsWith(extension)) {
+                    subtitleFile = subtitleFile.Substring(0, subtitleFile.Length - extension.Length);
                 }
             }
 
             if (string.IsNullOrEmpty(subtitleFile)) return;
 
-            if (subtitleFile.Length < 189)
+            subtitleFile = @"c:\" + subtitleFile; // add drive (directory) to avoid default executing directory
+
+            if (subtitleFile.Length < 256)
                 subtitleFile += ".srt";
             else
-                subtitleFile = subtitleFile.Substring(0, 188) + ".srt"; // file name length limit is 212, won't go that far..
+                subtitleFile = subtitleFile.Substring(0, 255) + ".srt"; // file name length limit is 260
         }
     }
 

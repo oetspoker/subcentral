@@ -212,10 +212,12 @@ namespace SubCentral.Utils {
                 if (fileName.Contains(lDisallowed.ToString()))
                     return false;
             }
+
             foreach (char lDisallowed in System.IO.Path.GetInvalidPathChars()) {
                 if (fileName.Contains(lDisallowed.ToString()))
                     return false;
             }
+
             return true;
         }
 
@@ -226,7 +228,39 @@ namespace SubCentral.Utils {
                 if (path.Contains(lDisallowed.ToString()))
                     return false;
             }
+
             return true;
+        }
+
+        public static string fixInvalidFileName(string fileName) {
+            string result = fileName;
+
+            if (string.IsNullOrEmpty(fileName)) return result;
+
+            foreach (char lDisallowed in System.IO.Path.GetInvalidFileNameChars()) {
+                if (fileName.Contains(lDisallowed.ToString()))
+                    result = result.Replace(lDisallowed, '_');
+            }
+            
+            foreach (char lDisallowed in System.IO.Path.GetInvalidPathChars()) {
+                if (fileName.Contains(lDisallowed.ToString()))
+                    result = result.Replace(lDisallowed, '_');
+            }
+
+            return result;
+        }
+
+        public static string fixInvalidPathName(string path) {
+            string result = path;
+
+            if (string.IsNullOrEmpty(path)) return result;
+
+            foreach (char lDisallowed in System.IO.Path.GetInvalidPathChars()) {
+                if (path.Contains(lDisallowed.ToString()))
+                    result = result.Replace(lDisallowed, '_');
+            }
+            
+            return result;
         }
 
         public static string ensureBackSlash(string path) {
