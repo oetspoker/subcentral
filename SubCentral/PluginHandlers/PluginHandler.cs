@@ -102,12 +102,7 @@ namespace SubCentral.PluginHandlers {
 
         // returns true if an assembly with the specified name is loaded
         protected bool IsAssemblyAvailable(string name, Version ver) {
-            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            foreach (Assembly a in assemblies)
-                if (a.GetName().Name == name && a.GetName().Version >= ver)
-                    return true;
-
-            return false;
+            return SubCentralUtils.IsAssemblyAvailable(name, ver);
         }
 
     }
