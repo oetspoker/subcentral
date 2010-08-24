@@ -105,6 +105,7 @@ For more information, visit us on our Google Code SubCentral project page!
 
 	<!-- O -->
 	<string Field="OKSearch">OK/Search</string>
+	<string Field="OK">OK</string>
 
 	<!-- P -->
 	<string Field="ProviderS">Provider(s)</string>
