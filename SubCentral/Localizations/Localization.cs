@@ -255,6 +255,7 @@ namespace SubCentral.Localizations {
 
         // O
         public static string OKSearch = "OK/Search";
+        public static string OK = "OK";
 
         // P
         public static string ProviderS = "Provider(s)";
