@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using NLog;
+using SubCentral.Localizations;
 
 namespace SubCentral.Utils {
     public static class GUIUtils {
@@ -10,7 +11,7 @@ namespace SubCentral.Utils {
 
         private delegate bool ShowCustomYesNoDialogDelegate(string heading, string lines, string yesLabel, string noLabel, bool defaultYes);
         private delegate void ShowOKDialogDelegate(string heading, string lines);
-        private delegate void ShowNotifyDialogDelegate(string heading, string text, string image);
+        private delegate void ShowNotifyDialogDelegate(string heading, string text, string image, string buttonText);
         private delegate int ShowMenuDialogDelegate(string heading, List<GUIListItem> items);
         private delegate void ShowTextDialogDelegate(string heading, string text);
 
@@ -143,29 +144,53 @@ namespace SubCentral.Utils {
         /// Displays a notification dialog.
         /// </summary>
         public static void ShowNotifyDialog(string heading, string text) {
-            ShowNotifyDialog(heading, text, string.Empty);
+            ShowNotifyDialog(heading, text, string.Empty, Localization.OK);
         }
 
         /// <summary>
         /// Displays a notification dialog.
         /// </summary>
         public static void ShowNotifyDialog(string heading, string text, string image) {
+            ShowNotifyDialog(heading, text, image, Localization.OK);
+        }
+
+        /// <summary>
+        /// Displays a notification dialog.
+        /// </summary>
+        public static void ShowNotifyDialog(string heading, string text, string image, string buttonText) {
             if (GUIGraphicsContext.form.InvokeRequired) {
                 ShowNotifyDialogDelegate d = ShowNotifyDialog;
-                GUIGraphicsContext.form.Invoke(d, heading, text, image);
+                GUIGraphicsContext.form.Invoke(d, heading, text, image, buttonText);
                 return;
             }
 
             GUIDialogNotify pDlgNotify = (GUIDialogNotify)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_NOTIFY);
-            //if (pDlgNotify == null) return;
+            if (pDlgNotify == null) return;
 
-            pDlgNotify.SetHeading(heading);
+            try {
+                pDlgNotify.Reset();
 
-            pDlgNotify.SetImage(image);
+                pDlgNotify.SetHeading(heading);
 
-            pDlgNotify.SetText(text);
+                pDlgNotify.SetImage(image);
 
-            pDlgNotify.DoModal(GUIWindowManager.ActiveWindow);
+                pDlgNotify.SetText(text);
+
+                foreach (System.Windows.UIElement item in pDlgNotify.Children) {
+                    if (item is GUIButtonControl) {
+                        GUIButtonControl btn = (GUIButtonControl)item;
+                        if (btn.GetID == 4 && !string.IsNullOrEmpty(buttonText) && !string.IsNullOrEmpty(btn.Label)) 
+                            // Only if ID is 4 and we have our custom text and if button already has label (in case the skin "hides" the button by emtying the label)
+                            btn.Label = buttonText;
+                    }
+                }
+
+                pDlgNotify.DoModal(GUIWindowManager.ActiveWindow);
+            }
+            finally {
+                if (pDlgNotify != null)
+                    pDlgNotify.ClearAll();
+            }
         }
 
         /// <summary>

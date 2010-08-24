@@ -130,8 +130,8 @@ namespace SubCentral {
         // Logs a startup message to the log files.
         private void LogStartupBanner() {
             Version ver = Assembly.GetExecutingAssembly().GetName().Version;
-            logger.Info("SubCentral (" + ver.Major + "." + ver.Minor + "." + ver.Build + "." + ver.Revision + ")");
-            logger.Info("Plugin Launched");
+            logger.Info(string.Format("SubCentral ({0}.{1}.{2}.{3})", ver.Major, ver.Minor, ver.Build, ver.Revision));
+            logger.Info("Plugin launched");
         }
 
         private void InitLocalization() {
