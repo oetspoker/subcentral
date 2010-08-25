@@ -40,7 +40,7 @@ namespace SubCentral.PluginHandlers {
         public TagRank TagRanking {
             get {
                 if (tagRanking == null) {
-                    tagRanking = new TagRank(MediaDetail.Files);
+                    tagRanking = new TagRank(MediaDetail);
                 }
                 return tagRanking;
             }
@@ -63,7 +63,7 @@ namespace SubCentral.PluginHandlers {
         public bool Update() {
             try {
                 bool result = GrabFileDetails();
-                tagRanking = new TagRank(MediaDetail.Files);
+                tagRanking = new TagRank(MediaDetail);
                 return result;
             }
             catch (Exception e) {

@@ -16,6 +16,7 @@ namespace SubCentral.Utils {
                 // - if settings return full, else just name (no extension)
                 //Path.Combine(Path.GetDirectoryName(mediaFile), Path.GetFileNameWithoutExtension(file));
                 result = Path.GetFileNameWithoutExtension(mediaFile.Name);
+                result.Replace("_", "."); // workaround for regexp issue when parsing media tags
                 return result;
             }
         }
