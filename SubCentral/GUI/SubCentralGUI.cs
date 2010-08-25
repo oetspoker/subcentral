@@ -1054,28 +1054,6 @@ namespace SubCentral.GUI {
                 return false;
         }
 
-        private bool SubtitleFileNameMatchesMedia(string subtitleFile) {
-            bool result = false;
-
-            SubCentralUtils.EnsureProperSubtitleFile(ref subtitleFile);
-
-            if (string.IsNullOrEmpty(subtitleFile) || CurrentHandler == null || CurrentHandler.MediaDetail.Files == null || CurrentHandler.MediaDetail.Files.Count < 1) return result;
-
-            foreach (FileInfo fi in CurrentHandler.MediaDetail.Files) {
-                string subtitleFileProper = Path.GetFileNameWithoutExtension(subtitleFile).ToLowerInvariant();
-                subtitleFileProper = Regex.Replace(subtitleFileProper, @"[-_]", " ");
-                string fileNameProper = Path.GetFileNameWithoutExtension(fi.Name).ToLowerInvariant();
-                fileNameProper = Regex.Replace(fileNameProper, @"[-_]", " ");
-                 
-                if (subtitleFileProper == fileNameProper || subtitleFileProper.Contains(fileNameProper)) {
-                    result = true;
-                    break;
-                }
-            }
-            
-            return result;
-        }
-
         private void FillSubtitleSearchResults(List<SubtitleItem> subtitleItems) {
             if (subtitleItems != null && subtitleItems.Count > 0) {
                 providerList.Clear();
@@ -1092,11 +1070,8 @@ namespace SubCentral.GUI {
                     searchDetails.ListPosition = providerList.Count;
                     searchDetails.TagRank = 0.0;
                     bool subtitleFileNameMatchesMedia = false;
-                    if (SubtitleFileNameMatchesMedia(subtitleItem.Subtitle.FileName)) {
-                        searchDetails.TagRank = 200.0;
-                        subtitleFileNameMatchesMedia = true;
-                    }
-                    else if (CurrentHandler != null && CurrentHandler.TagRanking != null) {
+                    if (CurrentHandler != null && CurrentHandler.TagRanking != null) {
+                        subtitleFileNameMatchesMedia = CurrentHandler.TagRanking.SubtitleFileNameMatchesMedia(subtitleItem.Subtitle.FileName);
                         searchDetails.TagRank = CurrentHandler.TagRanking.GetSubtitleFileRank(subtitleItem.Subtitle.FileName);
                     }
                     searchDetails.LanguagePriority = SubCentralUtils.getLanguagePriorityByCode(subtitleItem.Subtitle.LanguageCode);

@@ -948,6 +948,31 @@ namespace SubCentral.Utils {
             else
                 subtitleFile = subtitleFile.Substring(0, 255) + ".srt"; // file name length limit is 260
         }
+
+        public static bool IsValidAlphaNumeric(string inputStr) {
+            if (string.IsNullOrEmpty(inputStr))
+                return false;
+
+            for (int i = 0; i < inputStr.Length; i++) {
+                if (!(char.IsLetter(inputStr[i])) && (!(char.IsNumber(inputStr[i]))))
+                    return false;
+            }
+            return true;
+        }
+
+        public static string TrimNonAlphaNumeric(string inputStr) {
+            string result = string.Empty;
+
+            if (string.IsNullOrEmpty(inputStr))
+                return result;
+
+            for (int i = 0; i < inputStr.Length; i++) {
+                if (char.IsLetter(inputStr[i]) || char.IsNumber(inputStr[i]))
+                    result += inputStr[i];
+            }
+            return result;
+        }
+
     }
 
     class MPR {
