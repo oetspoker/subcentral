@@ -74,6 +74,8 @@ namespace SubCentral.GUI {
         }
 
         public void SearchForSubtitles(BasicMediaDetail mediaDetail) {
+            if (IsCanceled())
+                Kill();
             if (_subtitlesDownloaderThread != null && _subtitlesDownloaderThread.IsAlive)
                 return;
 
@@ -85,9 +87,25 @@ namespace SubCentral.GUI {
             _subtitlesDownloaderThread.Start(mediaDetail);
         }
 
+        public bool IsCanceled() {
+            if (!_progressReportingEnabled) return false;
+
+            if (GUIGraphicsContext.form.InvokeRequired) {
+                IsCanceledDelegate d = IsCanceled;
+                return (bool)GUIGraphicsContext.form.Invoke(d);
+            }
+
+            GUIDialogProgress pDlgProgress = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
+
+            _isCanceled = pDlgProgress.IsCanceled;
+
+            return (_isCanceled);
+        }
+
         public bool IsRunning() {
-            if (_subtitlesDownloaderThread != null && _subtitlesDownloaderThread.IsAlive)
+            if (_subtitlesDownloaderThread != null && _subtitlesDownloaderThread.IsAlive) {
                 return true;
+            }
             return false;
         }
 
@@ -251,7 +269,7 @@ namespace SubCentral.GUI {
                                         try {
                                             resultsFromDownloader = subsDownloader.SearchSubtitles(movieQuery);
                                         }
-                                        catch (Exception e1) { 
+                                        catch (Exception e1) {
                                             // if the error happens now, we're probably searching some sites that support only tv shows? 
                                             // so instead of returning not supported, we're gonna return no results
                                             // perhaps in the future, new exception type should be thrown to indicade that site does not support movie search
@@ -288,6 +306,9 @@ namespace SubCentral.GUI {
                             break;
                     }
                 }
+                catch (ThreadAbortException e) {
+                    throw e;
+                }
                 catch (Exception e) {
                     logger.ErrorException(string.Format("Error while querying site {0}\n", providerName), e);
                     if (OnProviderSearchErrorEvent != null) {
@@ -310,21 +331,6 @@ namespace SubCentral.GUI {
                 providerCount++;
             }
             return allResults;
-        }
-
-        private bool IsCanceled() {
-            if (!_progressReportingEnabled) return false;
-
-            if (GUIGraphicsContext.form.InvokeRequired) {
-                IsCanceledDelegate d = IsCanceled;
-                return (bool)GUIGraphicsContext.form.Invoke(d);
-            }
-
-            GUIDialogProgress pDlgProgress = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
-
-            _isCanceled = pDlgProgress.IsCanceled;
-
-            return (_isCanceled);
         }
 
         private void OnProgress(string line1, string line2, string line3, int percent) {

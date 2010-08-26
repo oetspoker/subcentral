@@ -484,7 +484,12 @@ namespace SubCentral.GUI {
 
             if (CurrentHandler == null) return;
 
-            if (RetrieverRunning()) return;
+            if (RetrieverRunning()) {
+                if (RetrieverCanceled())
+                    RetrieverAbort();
+                else
+                    return;
+            }
 
             _notificationDone = false;
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
@@ -565,6 +570,11 @@ namespace SubCentral.GUI {
         private bool RetrieverRunning() {
             if (retriever == null) return false;
             else return retriever.IsRunning();
+        }
+
+        private bool RetrieverCanceled() {
+            if (retriever == null) return false;
+            else return retriever.IsCanceled();
         }
 
         private void RetrieverAbort() {
