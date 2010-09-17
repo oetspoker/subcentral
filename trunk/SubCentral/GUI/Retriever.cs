@@ -159,8 +159,8 @@ namespace SubCentral.GUI {
             if (!_progressReportingEnabled) return true;
 
             if (GUIGraphicsContext.form.InvokeRequired) {
-                //OnQueryStartingDelegate d = OnQueryStarting;
-                //return (bool)GUIGraphicsContext.form.Invoke(d);
+                OnQueryStartingDelegate d = OnQueryStarting;
+                return (bool)GUIGraphicsContext.form.Invoke(d);
             }
 
             GUIDialogProgress pDlgProgress = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
@@ -337,9 +337,9 @@ namespace SubCentral.GUI {
             if (!_progressReportingEnabled) return;
 
             if (GUIGraphicsContext.form.InvokeRequired) {
-                //OnProgressDelegate d = new OnProgressDelegate(OnProgress);
-                //GUIGraphicsContext.form.Invoke(d, line1, line2, line3, percent);
-                //return;
+                OnProgressDelegate d = OnProgress;
+                GUIGraphicsContext.form.Invoke(d, line1, line2, line3, percent);
+                return;
             }
 
             GUIDialogProgress pDlgProgress = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
