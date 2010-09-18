@@ -14,15 +14,10 @@
 	<string Field="All">All</string>
 	<string Field="AllSubtitlesDeleted">All ({0}) subtitles deleted!</string>
 	<string Field="AboutText">SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-in. It also has the interfaces to allow easy implementation and interaction for any other plug-in.
-
 Best way to use the plug-in is by opening Moving Pictures or MP-TVSeries plug-in, browsing to movie/TV show and selecting 'Get subtitles' item. For Moving Pictures (supported version is 1.0.3 or higher), that item is usually in the menu or it's a separate button on details screen (depending on the skin). For TVSeries (supported version is 2.6.0 or higher), you should open context menu for the episode, select 'Download...' and then 'Retrieve subtitle'. If you wish, there is a possibility to modify search data SubCentral grabs from the plug-ins for more customized search.
-
 If plug-in is opened from home screen (like currently), manual search is possible, where you can create your own search queries (for movies or TV shows).
-
 To choose languages for subtitle search, use the menu item. Please use the MediaPortal configuration to setup the plug-in more thoroughly (selecting, reordering and renaming groups/providers, selecting and ordering languages and managing of the download folders).
-
 After the search is done, you can sort the results using the menu item and of course, download the subtitles.
-
 For more information, visit us on our Google Code SubCentral project page!
 </string>
 

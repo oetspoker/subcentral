@@ -14,15 +14,10 @@
 	<string Field="All">Alle</string>
 	<string Field="AllSubtitlesDeleted">Alle ({0}) Untertitel gelöscht!</string>
 	<string Field="AboutText">SubCentral ist ein eigenständiges Untertitel-Plugin für die MediaPortal HTPC Software. Sinn und Zweck des Plugins ist dem Benutzer die Möglichkeit zu bieten, Untertitel für Filme und TV-Serien zu suchen und herunterzuladen. Dies soll von den populären Plugins Moving Pictures und MP-TVSeries aus möglich sein.	Außerdem bietet es ein Interface für die leichte Einbindung jedes anderen Plugins.
-
 Am leichtesten lässt sich das Plugin nutzen, indem man Moving Pictures oder MP-TVSeries öffnet, zu einem Eintrag darin navigiert und "Untertitel holen" wählt. In Moving Pictures (unterstützt wird 1.0.3 oder höher) findet man die Funktion üblicherweise im Menü oder als eigenen Button in der Detailansicht (das hängt vom Skin ab). In TVSeries (unterstützt wird 2.6.0 oder höher) musst du das Kontextmenü für die Folge öffen und "Download" wählen. Dann auf "Untertitel laden" klicken. Wenn du willst, kannst du die Möglichkeit nutzen, die Daten die SubCentral laden soll, anzupassen.
-
 Wenn du das Plugin vom Home-Screen aus öffnest - wie im Moment üblich - dann ist die manuelle Suche möglich. Hier kannst du deine eigenen Suchanfragen für Filme und Serien anlegen.
-
 Um Sprachen für die Suche zu definieren, solltest du den entsprechenden Menüeintrag wählen. Für eine detaillierte Einstellung des Plugins solltest du die Konfiguration in den Plugins der MediaPortal-Konfiguration öffnen. Hier lassen sich die Untertiel-Anbieter auswählen, sortieren und unbenennen. Dies geht auch für Anbieter-Gruppen. Zudem kannst du die Sprachen auswählen und sortieren und die Downloadordner wählen.
-
 Wenn die Suche beendet ist, kannst die Ergebnisse über das Menü sortieren und natürlich runterladen.
-
 Besuche uns für weitere Infos auf der Google Code Subcentral Projekt-Seite!
 </string>
 
