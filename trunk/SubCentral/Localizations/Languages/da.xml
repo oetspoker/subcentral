@@ -1,40 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
+ï»¿<?xml version="1.0" encoding="utf-8"?>
 <!-- SubCentral translation file -->
 <!-- Danish (da) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
-<!-- Updated 10. august 2010 -->
+<!-- Updated 18. september 2010 -->
 <strings>
 	<!-- # -->
 
 	<!-- A -->
 	<string Field="All">Alle</string>
-	<string Field="AllProviders">Alle leverandrer</string>
-	<string Field="AllEnabledProviders">Alle aktive leverandï¿½rer</string>
+	<string Field="AllProviders">Alle leverandører</string>
+	<string Field="AllEnabledProviders">Alle aktive leverandører</string>
 	<string Field="AllSubtitlesDeleted">Alle ({0}) undertekster er slettet!</string>
 	<string Field="About">Om</string>
 	<string Field="AllSubtitlesDownloaded">Alle ({0}) undertekster er hentet!</string>
 	<string Field="AllSubtitlesCanceledDownload">Hentningen af alle ({0}) undertekster er annulleret!</string>
-	<string Field="AboutText">SubCentral er en uafhï¿½ngig tilfï¿½jelse til Mediaportal. Dens formï¿½l er at give brugeren adgang til at sï¿½ge og hente undertekster for film og TV afsnit hï¿½ndteret af de populï¿½re tilfï¿½jelse som Moving Pictures og MP-TVseries. Den har et simpelt interface som tillader en simpel implementering og samtal med hvilken som helst tilfï¿½jelse.
-Den nemmeste mï¿½de er ved at ï¿½bne Moving Picture eller MP-TVseries tilfï¿½jelsen og sï¿½ sï¿½ge film/afsnit og sï¿½ vï¿½lge "Hent undertekst" knappen. Moving Pictures er understï¿½ttet i 1.0.3 eller stï¿½rre. Knappen findes typisk i menuen eller en knap pï¿½ den udvidede information. I MPTV-serie, understï¿½ttet i 2.6.0 eller stï¿½rre, skal du ï¿½bne menuen for afsnittet og vï¿½lge "Hent" og sï¿½ "Hent undertekst". Eller hvis det ï¿½nskes at lave en valgfri sï¿½gning af informationerne SubCentral henter i tilfï¿½jelserne.
-Hvis tilfï¿½jelsen ï¿½bnes fra 'Basic home' , som nu, er en manuel sï¿½gning mulig, hvor der kan laves en hel valgfri sï¿½gning efter film eller TV afsnit.
-For at vï¿½lge undertekstsprog brug menuen. Brug venligst Mediaportal konfigurationen til at lave en mere valgfri opsï¿½tning(herunder udvï¿½lge, omorganisere og omdï¿½be grupper/leverandï¿½rer, vï¿½lge sprog og download mapper).
-Efter en fuldendt sï¿½gning kan resultaterne sortes ved brug af menuen og naturligvis ogsï¿½ hentes.
-For mere information besï¿½g os pï¿½ Google Code SubCentral projekt siden!
+	<string Field="AboutText">SubCentral er en tilføjelse til Mediaportal. Dens formål er at give brugeren mulighed til at søge og hente undertekster til film og TV-afsnit håndteret af de populære tilføjelser Moving Pictures og MP-TVseries. Den har et simpelt interface, som tillader en simpel implementering og kommunikation med hvilken som helst tilføjelse.
+Den nemmeste måde er at åbne Moving Picture eller MP-TVseries, da informationerne så hentes fra tilføjelserne. Så man skal søge film/afsnit og vælge "Hent undertekst". Moving Pictures er understøttet fra v. 1.0.3 eller senere. Knappen findes typisk i menuen eller en knap med udvidet information. I MPTV-serie, understøttet fra 2.6.0 eller senere, skal du åbne menuen for afsnittet, F9, og vælge "Hent" og så "Hent undertekst". Naturligvis kan en valgfri søgning også udføres i Subcentral.
+Denne valgfrie søgning er mulig, når tilføjelsen åbnes fra 'Basic Home' som nu.
+Brug menuen for at vælge undertekstsprog. Brug venligst Mediaportal konfigurationen til at indstille tilføjelsen(herunder udvælge, omorganisere og omdøbe grupper/leverandører, vælge sprog og downloadmappe).
+Efter en fuldendt søgning kan resultaterne sortes ved brug af menuen og naturligvis kan underteksten også hentes.
+For mere information besøg os på Google Code SubCentral projekt siden!
 </string>
 
 	<!-- B -->
 	<string Field="Back">Tilbage</string>
 
 	<!-- C -->
-	<string Field="CannotLoadSkin">Kunne ikke ï¿½bne skinfilen for\nSubCentral!</string>
+	<string Field="CannotLoadSkin">Kunne ikke åbne skinfilen for\nSubCentral!</string>
 	<string Field="Cancel">Annuller</string>
-	<string Field="Completed">Fï¿½rdig</string>
-	<string Field="Confirm">Bekrï¿½ft</string>
+	<string Field="Completed">Færdig</string>
+	<string Field="Confirm">Bekræft</string>
 	<string Field="ClearFiles">Ryd filer</string>
 	<string Field="ClearMedia">Ryd medie</string>
 	<string Field="CanceledDownload">Download annulleret!</string>
 	<string Field="ContextMenu">Kontekst menu</string>
-	<string Field="CannotUseManualSearch">Manuel sï¿½gning kan ikke startes, da\ningen fast download mappe er valgt.\nIndstil venligst dette i\nkonfigurationen.</string>
+	<string Field="CannotUseManualSearch">Manuel søgning kan ikke startes, da\ningen fast download mappe er valgt.\nIndstil venligst dette i\nkonfigurationen.</string>
 	<string Field="CannotClearMedia">Kan ikke rydde mediefiler, da ingen\n fast download mappe er valgt.\nIndstil venligst dette i\nkonfigurationen.</string>
 
 	<!-- D -->
@@ -43,14 +43,14 @@ For mere information besï¿½g os pï¿½ Google Code SubCentral projekt siden!
 	<string Field="DownloadFoderDoesNotExistCreate">Downloadmappe findes ikke.\nOpret den?</string>
 	<string Field="Download">Download</string>
 	<string Field="DownloadTo">Download til...</string>
-	<string Field="DefaultFolderNotWritable">Standart mappe {0} er skrivebeskyttet! Vï¿½lg venligst en anden.</string>
+	<string Field="DefaultFolderNotWritable">Standart mappe {0} er skrivebeskyttet! Vælg venligst en anden.</string>
 	<string Field="DefaultDownloadFoderDoesNotExistCreate">Standart downloadmappe findes ikke.\nOpret den?</string>
 	<string Field="Default">Standartindstilling</string>
 
 	<!-- E -->
 	<string Field="Error">Fejl</string>
-	<string Field="ExternalPlugin">eksterne tilfï¿½jelse</string>
-	<string Field="ErrorWhileDownloadingSubtitles">Fejl i overfï¿½rslen af underteksterne!</string>
+	<string Field="ExternalPlugin">eksterne tilføjelse</string>
+	<string Field="ErrorWhileDownloadingSubtitles">Fejl i overførslen af underteksterne!</string>
 	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Fejl ved hentning af undertekster: {0}</string>
 	<string Field="ErrorWhileRetrievingSubtitles">Fejl i hentningen af underteksterne!</string>
 	<string Field="ErrorWhileCreatingDirectory">Fejl i oprettelse af mappe!</string>
@@ -61,7 +61,7 @@ For mere information besï¿½g os pï¿½ Google Code SubCentral projekt siden!
 
 	<!-- G -->
 	<string Field="GroupS">Gruppe(r)</string>
-	<string Field="GroupProviderDefault">Gruppe/leverandï¿½r standart</string>
+	<string Field="GroupProviderDefault">Gruppe/leverandør standart</string>
 
 	<!-- H -->
 
@@ -76,15 +76,15 @@ For mere information besï¿½g os pï¿½ Google Code SubCentral projekt siden!
 	
 	<!-- M -->
 	<string Field="Movies">Film</string>
-	<string Field="ManualSearch">Manuel sï¿½gning</string>
+	<string Field="ManualSearch">Manuel søgning</string>
 	<string Field="MediaNoSubtitles">Kunne ikke finde nogen undertekst til mediet!</string>
 	<string Field="MediaOnlyInternalSubtitles">Kun indbyggede undertekster blev fundet for mediet!</string>
-	<string Field="MediaWrongMarkHasSubtitles">Mediet  fra {0} burde have en undertekst ifl. infoen\nmen ingen tekst kunne findes. ï¿½nsker du \nat ï¿½ndre info sï¿½ledes at der stï¿½r at den ikke har tilgï¿½ngelige undertekster??</string>
+	<string Field="MediaWrongMarkHasSubtitles">Mediet  fra {0} burde have en undertekst ifl. infoen\nmen ingen tekst kunne findes. Ønsker du \nat ændre info således at der står at den ikke har tilgængelige undertekster??</string>
 	<string Field="MediaMaybeInternalSubtitles">(og dog kan den godt have indbygget undertekster)</string>
-	<string Field="MediaHasSubtitles">Mediet har allerede undertekster. Hvis du ï¿½nsker at slette dem brug menu knappen.</string>
-	<string Field="MediaNoMoreSubtitles">Kunne ikke finde flere undertekster til mediet.\nï¿½nsker du at sï¿½tte undertekster til utilgï¿½ngelig\ni leverandï¿½ren ({0})?</string>
-	<string Field="MediaWrongMarkNoSubtitles">Mediet  fra {0} har ikke en undertekst ifl. infoen\nmen tekster er fundet. ï¿½nsker du \nat ï¿½ndre info sï¿½ledes at der stï¿½r at der tilgï¿½ngelige undertekster??</string>
-	<string Field="ModifySearch">ï¿½ndre sï¿½gning</string>
+	<string Field="MediaHasSubtitles">Mediet har allerede undertekster. Hvis du ønsker at slette dem brug menu knappen.</string>
+	<string Field="MediaNoMoreSubtitles">Kunne ikke finde flere undertekster til mediet.\nØnsker du at sætte undertekster til utilgængelig\ni leverandøren ({0})?</string>
+	<string Field="MediaWrongMarkNoSubtitles">Mediet  fra {0} har ikke en undertekst ifl. infoen\nmen tekster er fundet. Ønsker du \nat ændre info således at der står at der tilgængelige undertekster??</string>
+	<string Field="ModifySearch">Ændre søgning</string>
 	<string Field="MediaFilesDifferFromSubtitleFiles">Mediefile antal afviger fra antallet af undertekster. Forkerte undertekster?</string>
 	<string Field="MovieIMDb">Film (IMDb)</string>
 	<string Field="Movie">Film</string>
@@ -95,61 +95,61 @@ For mere information besï¿½g os pï¿½ Google Code SubCentral projekt siden!
 	<string Field="NoSubtitlesFound">Ingen undertekster fundet</string>
 	<string Field="NoSubtitlesDelete">Ingen undertekster kunne slettes idet det ikke blev fundet.</string>
 	<string Field="NoDownloadFolders">Ingen gyldig download mappe fundet for dette medie.</string>
-	<string Field="NotEnoughDataForSearch">Ikke nok informationer til undertekstsï¿½gning</string>
+	<string Field="NotEnoughDataForSearch">Ikke nok informationer til undertekstsøgning</string>
 	<string Field="Name">Navn</string>
 	<string Field="NoSorting">Ingen sortering</string>
 
 	<!-- O -->
-	<string Field="OKSearch">OK/Sï¿½g</string>
+	<string Field="OKSearch">OK/Søg</string>
 	<string Field="OK">OK</string>
 
 	<!-- P -->
-	<string Field="ProviderS">Leverandï¿½r(er)</string>
+	<string Field="ProviderS">Leverandør(er)</string>
 
 	<!-- Q -->
-	<string Field="QueryingProviders">Sï¿½tter leverandï¿½rer i kï¿½</string>
+	<string Field="QueryingProviders">Sætter leverandører i kø</string>
 
 	<!-- R -->
 	<string Field="Revert">Fortryd</string>
 
 	<!-- S -->
-	<string Field="Search">Sï¿½g</string>
-	<string Field="SubtitleDownloaderUnavailable">Er SubtitleDownloader.dll tilgï¿½ngelig?</string>
-	<string Field="SubtitleSearch">Undertekst sï¿½gning</string>
-	<string Field="SearchingSubtitles">Sï¿½ger undertekster...</string>
-	<string Field="SelectLanguages">Vï¿½lg sprog</string>
+	<string Field="Search">Søg</string>
+	<string Field="SubtitleDownloaderUnavailable">Er SubtitleDownloader.dll tilgængelig?</string>
+	<string Field="SubtitleSearch">Undertekst søgning</string>
+	<string Field="SearchingSubtitles">Søger undertekster...</string>
+	<string Field="SelectLanguages">Vælg sprog</string>
 	<string Field="SortByMediaTags">Sorter efter medie tags (hvis muligt)</string>
 	<string Field="SkinTranslationMediaTags">Medie tags</string>
 	<string Field="SubtitlesExist">Undertekst findes allerede.\nOverskriv eksisterende?</string>
 	<string Field="SubtitlesDownloaded">Undertekst downloaded!</string>
-	<string Field="SelectDownloadFolder">Vï¿½lg download mappe</string>
+	<string Field="SelectDownloadFolder">Vælg download mappe</string>
 	<string Field="SubtitleS">Undertekst(er)</string>
 	<string Field="Subtitle">Undertekst</string>
 	<string Field="Subtitles">Undertekster</string>
 	<string Field="SubtitlesDownloadedCount">{0} undertekster hentet</string>
 	<string Field="SubtitlesDownloadErrorCount">{0} underteksthentning mislykkedes</string>
 	<string Field="SubtitlesDownloadCanceledCount">{0} undertekst download annulleret</string>
-	<string Field="SelectFileForSubtitle">Vï¿½lg medie file for '{0}'</string>
+	<string Field="SelectFileForSubtitle">Vælg medie file for '{0}'</string>
 	<string Field="SubtitleFilesToDelete">Undertektser som slettes</string>
-	<string Field="SearchType">Sï¿½gning type: {0}</string>
-	<string Field="SiteDoesNotSupportIMDbIDSearch">Siden understï¿½tter ikke IMDb ID sï¿½gning!</string>
-	<string Field="SiteDoesNotSupportMovieSearch">Siden understï¿½tter ikke film sï¿½gning!</string>
-	<string Field="SiteDoesNotSupportTVShowSearch">Siden understï¿½tter ikke tv-afsnit sï¿½gning!</string>
+	<string Field="SearchType">Søgning type: {0}</string>
+	<string Field="SiteDoesNotSupportIMDbIDSearch">Siden understøtter ikke IMDb ID søgning!</string>
+	<string Field="SiteDoesNotSupportMovieSearch">Siden understøtter ikke film søgning!</string>
+	<string Field="SiteDoesNotSupportTVShowSearch">Siden understøtter ikke tv-afsnit søgning!</string>
 	<string Field="Sorting">Sortering</string>
-	<string Field="Sort">Sortï¿½r</string>
-	<string Field="SortBy">Sortï¿½r efter: {0}</string>
-	<string Field="SortByLanguage">Sortï¿½r efter undertekst sprog</string>
-	<string Field="SortByName">Sortï¿½r efter undertekst navn</string>
+	<string Field="Sort">Sortér</string>
+	<string Field="SortBy">Sortér efter: {0}</string>
+	<string Field="SortByLanguage">Sortér efter undertekst sprog</string>
+	<string Field="SortByName">Sortér efter undertekst navn</string>
 
 	<string Field="SkinTranslationFrom">Fra</string>
-	<string Field="SkinTranslationSearchType">Sï¿½gning type</string>
+	<string Field="SkinTranslationSearchType">Søgning type</string>
 	<string Field="SkinTranslationMediaFiles">Medie filer</string>
 	<string Field="SkinTranslationDownloadFolder">Download mappe</string>
-	<string Field="SkinTranslationSearchData">Sï¿½g data</string>
+	<string Field="SkinTranslationSearchData">Søg data</string>
 	<string Field="SkinTranslationIMDbID">IMDb ID</string>
 	<string Field="SkinTranslationTitle">Title</string>
-	<string Field="SkinTranslationYear">ï¿½r</string>
-	<string Field="SkinTranslationSeason">Sï¿½son</string>
+	<string Field="SkinTranslationYear">År</string>
+	<string Field="SkinTranslationSeason">Sæson</string>
 	<string Field="SkinTranslationEpisode">Afsnit</string>
 	<string Field="SkinTranslationMovie">Film</string>
 	<string Field="SkinTranslationTVShow">TV serier</string>
@@ -161,7 +161,7 @@ For mere information besï¿½g os pï¿½ Google Code SubCentral projekt siden!
 	<!-- U -->
 	<string Field="UnableToImportDataFrom">Ude af stand til at importere data\nfra {0}.</string>
 	<string Field="UnableToDeleteSubtitleFile">Ude af stand til at slette undertekst!</string>
-	<string Field="UnableToDeleteSubtitleFiles">Ude af stand til at slette fï¿½lgende undertekster:</string>
+	<string Field="UnableToDeleteSubtitleFiles">Ude af stand til at slette følgende undertekster:</string>
 	<string Field="UnableToLoadSubtitleDownloader">Ude af stand til at loade SubtitleDownloader biblioteket!</string>
 
 	<!-- V -->
@@ -169,10 +169,10 @@ For mere information besï¿½g os pï¿½ Google Code SubCentral projekt siden!
 	<!-- W -->
 	<string Field="Warning">Advarsel</string>
 	<string Field="WrongFormatIMDbID">Forkert format for ID (ttNNNNNNN)!</string>
-	<string Field="WrongFormatYear">Forkert format for ï¿½r (1900 - {0})!</string>
-	<string Field="WrongFormatSeasonEpisode">{0} skal vï¿½re tal og stï¿½rre end 0!</string>
+	<string Field="WrongFormatYear">Forkert format for år (1900 - {0})!</string>
+	<string Field="WrongFormatSeasonEpisode">{0} skal være tal og større end 0!</string>
 
 	<!-- Y -->
-	<string Field="PleaseSelectLanguages">Der skal vï¿½lges mindst et sprog!</string>
+	<string Field="PleaseSelectLanguages">Der skal vælges mindst ét sprog!</string>
 
 </strings>
