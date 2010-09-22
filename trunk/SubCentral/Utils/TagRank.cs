@@ -10,17 +10,24 @@ namespace SubCentral.Utils {
     public class TagRank {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        private const string regexpTags = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\s\.])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:bd|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg|dsr|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii]P|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|TELE(?:CINE|SYNC)|L[Ii]NE|OAR|AVC|[\[\(\{\s\.]T[CS][\]\)\}\s\.])(?:[\]\)\}]|\b)()?)";
-        private const string regexpTagsGroup = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\s\.])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:bd|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg|dsr|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii]P|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|TELE(?:CINE|SYNC)|L[Ii]NE|OAR|AVC|[\[\(\{\s\.]T[CS][\]\)\}\s\.])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
+        //newest noise filter in moving pictures
+        //@"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\W])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|DOCU(?:MENTARY)?|TELE(?:CINE|SYNC)|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|HDTV|L[Ii]NE|OAR|AVC|T[CS])(?:[\]\)\}]|\b)(?:-[^\s]+$)?)";
+        
+        //subcentral version (last part changed - group)
+        private const string regexpTags = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\W])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|DOCU(?:MENTARY)?|TELE(?:CINE|SYNC)|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|HDTV|L[Ii]NE|OAR|AVC|T[CS])(?:[\]\)\}]|\b)()?)";
+        private const string regexpTagsGroup = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\W])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|DOCU(?:MENTARY)?|TELE(?:CINE|SYNC)|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|HDTV|L[Ii]NE|OAR|AVC|T[CS])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
 
-        private const string regexpTagsHigh = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:bd|sat|dvb)[-]?(?:rip|scr(?:eener)?)|dsr|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|hd[-]?dvd|[WF]S|PROPER|REPACK|RER[Ii]P|REAL|UNRATED|[Ii]NTERNAL|SCREENER|TELE(?:CINE|SYNC)|[\[\(\{\s\.]T[CS][\]\)\}\s\.])(?:[\]\)\}]|\b)()?)";
-        private const string regexpTagsHighGroup = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:bd|sat|dvb)[-]?(?:rip|scr(?:eener)?)|dsr|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|hd[-]?dvd|[WF]S|PROPER|REPACK|RER[Ii]P|REAL|UNRATED|[Ii]NTERNAL|SCREENER|TELE(?:CINE|SYNC)|[\[\(\{\s\.]T[CS][\]\)\}\s\.])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
+        // subcentral version (broken by parts - high importance)
+        private const string regexpTagsHigh = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|hd[-]?dvd|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|UNRATED|[Ii]NTERNAL|SCREENER|TELE(?:CINE|SYNC)|HDTV|T[CS])(?:[\]\)\}]|\b)()?)";
+        private const string regexpTagsHighGroup = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|hd[-]?dvd|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|UNRATED|[Ii]NTERNAL|SCREENER|TELE(?:CINE|SYNC)|HDTV|T[CS])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
 
-        private const string regexpTagsLow = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\s\.])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|L[Ii]NE|OAR|AVC|)(?:[\]\)\}]|\b)()?)";
-        private const string regexpTagsLowGroup = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\s\.])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|L[Ii]NE|OAR|AVC|)(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
+        // subcentral version (broken by parts - low importance)
+        private const string regexpTagsLow = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\W])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|DOCU(?:MENTARY)?|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|L[Ii]NE|OAR|AVC|)(?:[\]\)\}]|\b)()?)";
+        private const string regexpTagsLowGroup = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\W])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|DOCU(?:MENTARY)?|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|L[Ii]NE|OAR|AVC|)(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
 
         //current in mp-tvseries
         //@"^.*?\\?(?<series>[^\\$]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:[ _.+-]+(?:[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ _.+-]*[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<title>(?![^\\]*?(?<!the)[ .(-]sample[ .)-]).*?)\.(?<ext>[^.]*)$"
+
         //subcentral version (last part changed)
         private const string regexpSeries = @"^.*?\\?(?<series>[^\\$]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:[ _.+-]+(?:[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ _.+-]*[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<other>[^$]*?)$";
 
@@ -32,9 +39,6 @@ namespace SubCentral.Utils {
         private int firstPercentage = 70;
         private int secondPercentage = 20;
         private int thirdPercentage = 10;
-
-        // TODO MS
-        // - Check for most recent regular expression
 
         public BasicMediaDetail MediaDetail {
             get {
