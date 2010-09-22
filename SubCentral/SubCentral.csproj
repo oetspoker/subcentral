@@ -162,10 +162,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Config\Images\SubCentral_Icon_Disabled.png" />
     <EmbeddedResource Include="Config\Images\SubCentral_Icon_Enabled.png" />
+    <Content Include="GUI\Skins\Blue3wide\DialogMultiSelect.xml" />
     <Content Include="GUI\Skins\Blue3wide\Media\defaultSubtitles.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Background.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Long_Focused.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png" />
     <Content Include="GUI\Skins\Blue3wide\SubCentral.Search.xml" />
     <Content Include="GUI\Skins\Blue3wide\SubCentral.xml" />
     <Content Include="GUI\Skins\Blue3wide\SubCentral.Main.xml" />
+    <Content Include="GUI\Skins\Blue3\DialogMultiSelect.xml" />
     <Content Include="GUI\Skins\Blue3\Media\defaultSubtitles.png" />
     <Content Include="GUI\Skins\Blue3\SubCentral.Main.xml" />
     <Content Include="GUI\Skins\Blue3\SubCentral.ModifySearch.xml" />

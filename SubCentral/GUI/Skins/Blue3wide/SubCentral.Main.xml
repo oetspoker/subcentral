@@ -8,90 +8,28 @@
 		-->
 
 		<control>
-			<description>LISTVIEW LEFT Backdrop Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>-730</posX>
-			<posY>377</posY>
-			<width>1372</width>
-			<height>500</height>
-			<texture>bg_tvguide.png</texture>
-			<visible>no</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<description>LISTVIEW RIGHT Backdrop Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>614</posX>
-			<posY>270</posY>
-			<width>1372</width>
-			<height>500</height>
-			<texture>bg_tvguide.png</texture>
-			<visible>Control.IsVisible(101)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<type>image</type>
-			<id>0</id>
-			<posX>640</posX>
-			<posY>330</posY>
-			<width>640</width>
-			<height>35</height>
-			<texture>bg_facade_line_nofocus.png</texture>
-			<colordiffuse>77ffffff</colordiffuse>
-			<visible>Control.IsVisible(101)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-
-		<control>
-			<type>fadelabel</type>
-			<id>0</id>
-			<posX>660</posX>
-			<posY>314</posY>
-			<width>595</width>
-			<label>#header.label</label>
-			<wrapString> : : : </wrapString>
-			<font>font22</font>
-			<visible>Control.IsVisible(101)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-
-		<control>
-			<type>image</type>
-			<id>0</id>
-			<posX>640</posX>
-			<posY>643</posY>
-			<width>640</width>
-			<height>35</height>
-			<texture>bg_facade_line_nofocus.png</texture>
-			<colordiffuse>77ffffff</colordiffuse>
-			<visible>Control.IsVisible(101)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-
-		<control>
 			<type>textbox</type>
 			<id>912</id>
-			<posX>660</posX>
-			<posY>374</posY>
-			<width>590</width>
-			<height>335</height>
+			<posX>760</posX>
+			<posY>305</posY>
+			<width>510</width>
+			<height>380</height>
 			<label>#SubCentral.About</label>
-			<font>font12</font>
-			<textcolor>90ffffff</textcolor>
+			<font>font11</font>
+			<!--<textcolor>90ffffff</textcolor>-->
 			<onup>912</onup>
 			<ondown>912</ondown>
 			<onleft>202</onleft>
 			<onright>50</onright>
 			<spinWidth>30</spinWidth>
 			<spinHeight>30</spinHeight>
-			<spinPosX>1175</spinPosX>
-			<spinPosY>685</spinPosY>
-			<spinAlign>right</spinAlign>
+			<spinPosX>1165</spinPosX>
+			<spinPosY>645</spinPosY>
+			<spinAlign>left</spinAlign>
 			<spinCanFocus>yes</spinCanFocus>
 			<visible>Control.IsVisible(101)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 
 		<control>
