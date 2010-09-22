@@ -445,8 +445,9 @@ namespace SubCentral.Utils {
             else if (SubtitleFileNameMatchesTVShowMedia(subtitleFile))
                 result = 500.0;
 
-            // TODO MS remove logging before final
+            #if DEBUG
             logger.Debug(string.Format("Calculating media tag rank for subtitle file {0} ...", subtitleFile));
+            #endif
 
             SubCentralUtils.EnsureProperSubtitleFile(ref subtitleFile); // default extension to maintain compatibility with MediaTags class
 
@@ -456,8 +457,10 @@ namespace SubCentral.Utils {
 
             result += GetRank(mediaTagsFile, mediaTagsSubtitleFile);
 
-            // TODO MS remove logging before final
+            #if DEBUG
             logger.Debug(string.Format("... has media tag rank of {0}", result));
+            #endif
+
 
             return result;
         }
