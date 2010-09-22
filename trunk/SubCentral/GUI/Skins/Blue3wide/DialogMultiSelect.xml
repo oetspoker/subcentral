@@ -1,4 +1,4 @@
-﻿<window>
+<window>
   <id>2100</id>
   <defaultcontrol>3</defaultcontrol>
   <allowoverlay>no</allowoverlay>
@@ -73,8 +73,9 @@
       <posY>187</posY>
       <width>800</width>
       <height>325</height>
+      <onup>2</onup>
       <onleft>10</onleft>
-      <onright>2</onright>
+      <onright>10</onright>
       <spinPosX>977</spinPosX>
       <spinPosY>462</spinPosY>
       <textXOff>88</textXOff>
@@ -86,6 +87,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <keepaspectratio>yes</keepaspectratio>
+      <spinCanFocus>no</spinCanFocus>
       <itemHeight>34</itemHeight>
       <itemWidth>53</itemWidth>
       <IconXOff>17</IconXOff>

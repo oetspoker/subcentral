@@ -922,6 +922,7 @@ namespace SubCentral.GUI {
                 GUIUtils.SetProperty("#SubCentral." + section + ".Media.FanArt", string.Empty);
 
                 GUIUtils.SetProperty("#SubCentral." + section + ".SearchType.Text", string.Empty);
+                GUIUtils.SetProperty("#SubCentral." + section + ".SearchType.NiceType", string.Empty);
                 GUIUtils.SetProperty("#SubCentral." + section + ".SearchType.Type", string.Empty);
             }
         }
@@ -1005,15 +1006,19 @@ namespace SubCentral.GUI {
                 switch (searchType) {
                     case SubtitlesSearchType.NONE:
                         GUIUtils.SetProperty("#SubCentral.Search.SearchType.Text", Localization.NotEnoughDataForSearch);
+                        GUIUtils.SetProperty("#SubCentral.Search.SearchType.NiceType", searchType.ToString());
                         break;
                     case SubtitlesSearchType.TVSHOW:
                         GUIUtils.SetProperty("#SubCentral.Search.SearchType.Text", string.Format(Localization.SearchType, Localization.TVShow));
+                        GUIUtils.SetProperty("#SubCentral.Search.SearchType.NiceType", Localization.TVShow);
                         break;
                     case SubtitlesSearchType.IMDb:
                         GUIUtils.SetProperty("#SubCentral.Search.SearchType.Text", string.Format(Localization.SearchType, Localization.MovieIMDb));
+                        GUIUtils.SetProperty("#SubCentral.Search.SearchType.NiceType", Localization.MovieIMDb);
                         break;
                     case SubtitlesSearchType.MOVIE:
                         GUIUtils.SetProperty("#SubCentral.Search.SearchType.Text", string.Format(Localization.SearchType, Localization.Movie));
+                        GUIUtils.SetProperty("#SubCentral.Search.SearchType.NiceType", Localization.Movie);
                         break;
                 }
                 GUIUtils.SetProperty("#SubCentral.Search.SearchType.Type", searchType.ToString());
