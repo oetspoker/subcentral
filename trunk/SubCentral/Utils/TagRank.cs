@@ -19,16 +19,10 @@ namespace SubCentral.Utils {
         private const string regexpTagsLow = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\s\.])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|L[Ii]NE|OAR|AVC|)(?:[\]\)\}]|\b)()?)";
         private const string regexpTagsLowGroup = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\s\.])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|L[Ii]NE|OAR|AVC|)(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
 
-        // TODO MS: commented is improved RegEx for MP-TVSeries
-        //private const string regexpSeries = 
-        //original
-        //@"^.*?\\?(?<series>[^\\$]+?)[ .-]+(?:[s]?(?<season>\d+)[ .-]?[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:(?:[ .-]+[s]?\k<season>[ .-]?[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ .-]?[ex+-]+(?<episode2>\d+)))*[ .-]*(?<title>(?![^\\]*?sample[ .-])[^$]*?)\.(?<ext>[^.]*)$";
-        //original subcentral
-        //@"^.*?\\?(?<series>[^\\$]+?)[ .-]+(?:[s]?(?<season>\d+)[ .-]?[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:(?:[ .-]+[s]?\k<season>[ .-]?[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ .-]?[ex+-]+(?<episode2>\d+)))*[ .-]*(?<other>[^$]*?)$";
-        //improved new original
-        //@"^.*?\\?(?<series>[^\\$]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:(?:[ .-]+[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ .-]?[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<title>(?![^\\]*?(?<!the)[ .(-]sample[ .)-]).*?)\.(?<ext>[^.]*)$"
-        //improved new original subcentral
-        private const string regexpSeries = @"^.*?\\?(?<series>[^\\$]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:(?:[ .-]+[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ .-]?[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<other>[^$]*?)$";
+        //current in mp-tvseries
+        //@"^.*?\\?(?<series>[^\\$]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:[ _.+-]+(?:[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ _.+-]*[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<title>(?![^\\]*?(?<!the)[ .(-]sample[ .)-]).*?)\.(?<ext>[^.]*)$"
+        //subcentral version (last part changed)
+        private const string regexpSeries = @"^.*?\\?(?<series>[^\\$]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:[ _.+-]+(?:[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ _.+-]*[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<other>[^$]*?)$";
 
         private BasicMediaDetail mediaDetail;
         private List<FileInfo> mediaFiles = new List<FileInfo>();
