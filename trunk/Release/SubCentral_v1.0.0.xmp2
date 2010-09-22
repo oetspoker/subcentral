@@ -62,6 +62,13 @@
               <ZipFileName>Installer{CopyFile}\{c4b2e2ab-3952-413d-80d8-26b87d1e6a71}-defaultSubtitles.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitles.png</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\DialogMultiSelect.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{41e70d97-5946-4621-a997-e673cc703504}-DialogMultiSelect.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\DialogMultiSelect.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -107,6 +114,13 @@
               <ZipFileName>Installer{CopyFile}\{046661fa-2d9a-4b6b-aba5-edfc9cdf269f}-defaultSubtitles.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3wide\Media\defaultSubtitles.png</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\DialogMultiSelect.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6780a365-6493-4135-91fb-768036f60667}-DialogMultiSelect.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\DialogMultiSelect.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -124,6 +138,20 @@
               <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
               <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\de.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e11754cb-57db-4dd9-833b-9ef933a3305c}-de.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\de.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\da.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b7882ef9-2601-4142-b56d-3ab18fed53e9}-da.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\da.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -134,13 +162,6 @@
         <Description>Utilities</Description>
         <Files>
           <Items>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>..\External\MediaInfo.dll</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{bd228adf-307a-4a1d-bd41-85168cdd9123}-MediaInfo.dll</ZipFileName>
-              <DestinationFilename>%Base%\MediaInfo.dll</DestinationFilename>
-            </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
@@ -348,9 +369,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <ForumPage>http://forum.team-mediaportal.com/mediaportal-plugins-47/subcentral-85545/</ForumPage>
     <UpdateUrl>http://subcentral.googlecode.com/svn/trunk/Release/update.xml</UpdateUrl>
     <Version>
-      <Major>1</Major>
-      <Minor>0</Minor>
-      <Build>0</Build>
+      <Major>0</Major>
+      <Minor>9</Minor>
+      <Build>1</Build>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-in. It also has the interfaces to allow easy implementation and interaction for any other plug-in.</ExtensionDescription>
@@ -439,6 +460,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\DialogMultiSelect.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{41e70d97-5946-4621-a997-e673cc703504}-DialogMultiSelect.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\DialogMultiSelect.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\SubCentral.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{507a3075-011a-43f5-b240-9fb19b1f8344}-SubCentral.xml</ZipFileName>
         <DestinationFilename>%Skin%\Blue3wide\SubCentral.xml</DestinationFilename>
@@ -474,16 +502,30 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\DialogMultiSelect.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{6780a365-6493-4135-91fb-768036f60667}-DialogMultiSelect.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\DialogMultiSelect.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\Localizations\Languages\en-US.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
         <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\MediaInfo.dll</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{bd228adf-307a-4a1d-bd41-85168cdd9123}-MediaInfo.dll</ZipFileName>
-        <DestinationFilename>%Base%\MediaInfo.dll</DestinationFilename>
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\de.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e11754cb-57db-4dd9-833b-9ef933a3305c}-de.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\de.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\da.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b7882ef9-2601-4142-b56d-3ab18fed53e9}-da.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\da.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -517,7 +559,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{a0f1a996-41fd-4be8-9417-c59a9fedf947}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{c75dcf49-d478-4a76-bf38-f1e2c7780f44}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
