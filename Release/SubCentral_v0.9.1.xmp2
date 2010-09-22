@@ -380,7 +380,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <OnlineLocation>http://subcentral.googlecode.com/svn/trunk/Release/SubCentral_v0.9.1.mpe1</OnlineLocation>
     <ReleaseDate>2010-08-13T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
-    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.0.0.mpe1</Location>
+    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v0.9.1.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -559,14 +559,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c75dcf49-d478-4a76-bf38-f1e2c7780f44}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{983a3677-9070-4772-9fde-f32202ad880d}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
   </UniqueFileList>
   <ProjectSettings>
     <FolderGroups />
-    <ProjectFilename>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.0.0.xmp2</ProjectFilename>
+    <ProjectFilename>D:\developing\#maintained\SubCentral\Release\SubCentral_v0.9.1.xmp2</ProjectFilename>
     <UpdatePath1>D:\developing\#maintained\SubCentral\Release\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
