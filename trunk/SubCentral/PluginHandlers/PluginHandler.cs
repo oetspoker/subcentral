@@ -87,6 +87,7 @@ namespace SubCentral.PluginHandlers {
         }
 
         public virtual void Clear() {
+            UpdateTags();
         }
 
         public virtual int GetEmbeddedSubtitles() {

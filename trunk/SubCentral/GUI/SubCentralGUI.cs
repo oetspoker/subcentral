@@ -818,11 +818,13 @@ namespace SubCentral.GUI {
             if (CurrentHandler != manualSearchHandler && CurrentHandler != null) {
                 manualSearchHandler.MediaDetail = CopyMediaDetail(CurrentHandler.MediaDetail);
                 manualSearchHandler.Modified = false;
+                manualSearchHandler.UpdateTags();
                 ModifySearchSearchType = SubCentralUtils.getSubtitlesSearchTypeFromMediaDetail(manualSearchHandler.MediaDetail);
                 if (ModifySearchSearchType == SubtitlesSearchType.NONE)
                     ModifySearchSearchType = SubtitlesSearchType.MOVIE;
             }
             else if (CurrentHandler != manualSearchHandler) {
+                manualSearchHandler.UpdateTags();
                 ModifySearchSearchType = SubtitlesSearchType.MOVIE;
             }
 
@@ -941,7 +943,7 @@ namespace SubCentral.GUI {
                 GUIUtils.SetProperty("#SubCentral.Search.Source.Text", CurrentHandler.Type != PluginHandlerType.MANUAL ? string.Format(Localization.From, CurrentHandler.PluginName) : CurrentHandler.PluginName);
                 GUIUtils.SetProperty("#SubCentral.Search.Source.Name", CurrentHandler.PluginName);
                 GUIUtils.SetProperty("#SubCentral.Search.Source.ID", CurrentHandler.ID.ToString());
-                
+
                 if (CurrentHandler.TagRanking != null && CurrentHandler.TagRanking.MediaTags != null && CurrentHandler.TagRanking.MediaTags.AllTagsCombined != null) {
                     string tags = string.Empty;
                     foreach (string tag in CurrentHandler.TagRanking.MediaTags.AllTagsCombined) {
@@ -1249,8 +1251,6 @@ namespace SubCentral.GUI {
         }
 
         private void CancelModifySearch() {
-            deleteButton.IsEnabled = _shouldDeleteButtonVisible;
-
             if (CurrentHandler.Modified) {
                 ModifySearchSearchType = _oldModifySearchSearchType;
                 View = ViewMode.SEARCH;
@@ -1266,6 +1266,7 @@ namespace SubCentral.GUI {
             _oldModifySearchSearchType = SubtitlesSearchType.NONE;
             CurrentHandler = _backupHandler;
             _lastSelectedGroupsAndProvidersItemIndex = 0;
+            deleteButton.IsEnabled = _shouldDeleteButtonVisible;
 
             if (CurrentHandler == null) {
                 View = ViewMode.MAIN;
