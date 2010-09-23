@@ -32,6 +32,7 @@ namespace SubCentral.GUI {
         private bool _notificationDone = false;
         private SubtitlesSortMethod _subtitlesSortMethod = SubtitlesSortMethod.DefaultNoSort;
         private bool _subtitlesSortAsc = true;
+        private bool _clearedMedia = false;
         private bool _shouldDeleteButtonVisible = false;
         private List<FileInfo> _subtitleFilesForCurrentMedia = new List<FileInfo>();
         private bool _subtitlesExistForCurrentMedia = false;
@@ -109,24 +110,32 @@ namespace SubCentral.GUI {
                 switch (_viewMode) {
                     case ViewMode.NONE:
                         GUIUtils.SetProperty("#SubCentral.Header.Label", SubCentralUtils.PluginName());
+                        GUIUtils.SetProperty("#SubCentral.Header.ShortLabel", string.Empty);
                         break;
                     case ViewMode.MAIN:
                         GUIUtils.SetProperty("#SubCentral.Header.Label", string.Format("{0} - {1}", SubCentralUtils.PluginName(), Localization.About));
+                        GUIUtils.SetProperty("#SubCentral.Header.ShortLabel", Localization.About);
                         GUIControl.FocusControl(GetID, _defaultControlId);
                         break;
                     case ViewMode.SEARCH:
                         GUIUtils.SetProperty("#SubCentral.Header.Label", string.Format("{0} - {1}", SubCentralUtils.PluginName(), Localization.SubtitleSearch));
+                        GUIUtils.SetProperty("#SubCentral.Header.ShortLabel", Localization.SubtitleSearch);
                         GUIControl.FocusControl(GetID, (int)GUIControls.PROVIDERSLIST);
                         break;
                     case ViewMode.MODIFYSEARCH:
                         _modifySearchMediaDetail = CopyMediaDetail(CurrentHandler.MediaDetail);
                         modifySearchClearFilesButton.Visible = _modifySearchMediaDetail.Files != null && _modifySearchMediaDetail.Files.Count > 0;
+                        _clearedMedia = false;
                         //modifySearchSelectFolderButton.Visible = CurrentHandler.MediaDetail.Files == null || _modifySearchMediaDetail.Files.Count == 0;
                         PublishSearchProperties(true);
-                        if (_backupHandler == null)
+                        if (_backupHandler == null) {
                             GUIUtils.SetProperty("#SubCentral.Header.Label", string.Format("{0} - {1}", SubCentralUtils.PluginName(), Localization.ManualSearch));
-                        else
+                            GUIUtils.SetProperty("#SubCentral.Header.ShortLabel", Localization.ManualSearch);
+                        }
+                        else {
                             GUIUtils.SetProperty("#SubCentral.Header.Label", string.Format("{0} - {1}", SubCentralUtils.PluginName(), Localization.ModifySearch));
+                            GUIUtils.SetProperty("#SubCentral.Header.ShortLabel", Localization.ModifySearch);
+                        }
                         //GUIControl.FocusControl(GetID, (int)GUIControls.MODIFYSEARCHOKBUTTON);
                         GUIControl.FocusControl(GetID, (int)GUIControls.MODIFYSEARCHTITLEBUTTON);
                         break;
@@ -222,6 +231,7 @@ namespace SubCentral.GUI {
             _backupHandler = null;
             _backupHandlerSet = false;
             _shouldDeleteButtonVisible = false;
+            _clearedMedia = false;
             _subtitleFilesForCurrentMedia.Clear();
             _subtitlesExistForCurrentMedia = false;
             _mediaAvailable = false;
@@ -1078,8 +1088,8 @@ namespace SubCentral.GUI {
                 GUIListItem item = new GUIListItem();
                 item.Label = "..";
                 item.IsFolder = true;
-                item.IconImage = "defaultFolderBack.png";
                 item.MusicTag = null;
+                item.IconImage = "defaultSubtitlesFolderBack.png";
                 providerList.Add(item);
 
                 foreach (SubtitleItem subtitleItem in subtitleItems) {
@@ -1153,7 +1163,8 @@ namespace SubCentral.GUI {
                     groupListItem.MusicTag = settingsGroup;
                     groupListItem.IsRemote = !defaultEnabled;
 
-                    MediaPortal.Util.Utils.SetDefaultIcons(groupListItem);
+                    groupListItem.IconImage = "defaultSubtitlesFolder.png";
+                    //MediaPortal.Util.Utils.SetDefaultIcons(groupListItem);
 
                     providerList.Add(groupListItem);
                     groupCounter++;
@@ -1200,6 +1211,8 @@ namespace SubCentral.GUI {
                 GUIUtils.ShowOKDialog(Localization.Warning, Localization.CannotClearMedia);
                 return;
             }
+
+            _clearedMedia = true;
 
             if (_modifySearchMediaDetail.Files != null) {
                 _modifySearchMediaDetail.Files.Clear();
@@ -1252,6 +1265,8 @@ namespace SubCentral.GUI {
 
         private void CancelModifySearch() {
             if (CurrentHandler.Modified) {
+                if (_clearedMedia)
+                    deleteButton.IsEnabled = _shouldDeleteButtonVisible;
                 ModifySearchSearchType = _oldModifySearchSearchType;
                 View = ViewMode.SEARCH;
             }

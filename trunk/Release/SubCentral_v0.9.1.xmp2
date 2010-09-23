@@ -30,44 +30,79 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\SubCentral_MainOverlay.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitles.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cfe712bf-5de7-4c3b-a6cc-d86f14af5796}-defaultSubtitles.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitles.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitlesFolder.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cf3af5c9-0eee-4da1-974b-ff4c0bf66d1e}-defaultSubtitlesFolder.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitlesFolder.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitlesFolderBack.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0eacc060-ae83-42d3-b291-65affe0f1227}-defaultSubtitlesFolderBack.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitlesFolderBack.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Background.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0bb9f4ca-d009-4ca5-97d9-2bbe830c75d3}-SubCentral_Background.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Background.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Button_Long_Focused.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{efdce712-3f7b-458d-b5d8-e9c176e6f75e}-SubCentral_Button_Long_Focused.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Button_Long_Focused.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{112a6bc3-669c-4e35-9141-7e4463346f01}-SubCentral.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{4dc47b90-94ef-4ffe-b12c-8edd65e1155a}-SubCentral.xml</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\SubCentral.xml</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\DialogMultiSelect.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a47e33fc-f402-42ae-9302-568e3d52bda6}-DialogMultiSelect.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\DialogMultiSelect.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.Main.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{13c97e28-1f32-4f33-9ab5-9de7e541721f}-SubCentral.Main.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{6be096ca-a01a-4a79-9d37-d5285d368d33}-SubCentral.Main.xml</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\SubCentral.Main.xml</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.ModifySearch.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{5bb77c9a-35b5-44eb-a58d-7137494eeb8b}-SubCentral.ModifySearch.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{e59792f2-e3a4-4e32-befe-e9d0460fffeb}-SubCentral.ModifySearch.xml</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\SubCentral.ModifySearch.xml</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.Search.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{3c1284c2-c6ec-4da9-a0e6-1d76ba3a7520}-SubCentral.Search.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{17494041-26c3-40ac-8878-dd4969600ff4}-SubCentral.Search.xml</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\SubCentral.Search.xml</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitles.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c4b2e2ab-3952-413d-80d8-26b87d1e6a71}-defaultSubtitles.png</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitles.png</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\DialogMultiSelect.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{41e70d97-5946-4621-a997-e673cc703504}-DialogMultiSelect.xml</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3\DialogMultiSelect.xml</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -82,44 +117,79 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\SubCentral.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{507a3075-011a-43f5-b240-9fb19b1f8344}-SubCentral.xml</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3wide\SubCentral.xml</DestinationFilename>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4ea40440-397b-49fc-85e7-183719cc8973}-SubCentral_MainOverlay.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_MainOverlay.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\SubCentral.Main.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{76e0fe25-3a40-43f8-bcdb-e1572b0d8f4e}-SubCentral.Main.xml</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3wide\SubCentral.Main.xml</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\SubCentral.ModifySearch.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b4d96469-19dc-4081-86e6-73a421bf4ac9}-SubCentral.ModifySearch.xml</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3wide\SubCentral.ModifySearch.xml</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\SubCentral.Search.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{895414ab-84f7-4ae3-bd29-f648d8c89d74}-SubCentral.Search.xml</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3wide\SubCentral.Search.xml</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\Media\defaultSubtitles.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{046661fa-2d9a-4b6b-aba5-edfc9cdf269f}-defaultSubtitles.png</ZipFileName>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\defaultSubtitles.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{59b99f1f-8246-419b-b2ad-06949e86619c}-defaultSubtitles.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3wide\Media\defaultSubtitles.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\defaultSubtitlesFolder.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{88436202-d29a-46a3-80f8-e94ff021f790}-defaultSubtitlesFolder.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\Media\defaultSubtitlesFolder.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\defaultSubtitlesFolderBack.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d8cad511-f129-452c-a96d-630e28af944e}-defaultSubtitlesFolderBack.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\Media\defaultSubtitlesFolderBack.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Background.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0c730ade-6bb7-4d42-adf3-38a8f736ea00}-SubCentral_Background.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Background.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Button_Long_Focused.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0b325aaa-62e5-4862-b04f-a0664840361b}-SubCentral_Button_Long_Focused.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Button_Long_Focused.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b7ed1ed1-5bf7-4b2c-b12a-dc3360113e0c}-SubCentral.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\SubCentral.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\DialogMultiSelect.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{6780a365-6493-4135-91fb-768036f60667}-DialogMultiSelect.xml</ZipFileName>
+              <ZipFileName>Installer{CopyFile}\{955ecf81-489f-463e-868a-e54598f20fd8}-DialogMultiSelect.xml</ZipFileName>
               <DestinationFilename>%Skin%\Blue3wide\DialogMultiSelect.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.Main.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6f86fe12-eca0-479d-ae54-a0c28e343cbb}-SubCentral.Main.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\SubCentral.Main.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.ModifySearch.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e8b1779a-2182-4d80-bbe0-0cccd6fe241c}-SubCentral.ModifySearch.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\SubCentral.ModifySearch.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.Search.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c947882e-883d-4c03-9833-1118bf3e4bb6}-SubCentral.Search.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\SubCentral.Search.xml</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -378,7 +448,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <VersionDescription>Initial release</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://subcentral.googlecode.com/svn/trunk/Release/SubCentral_v0.9.1.mpe1</OnlineLocation>
-    <ReleaseDate>2010-08-13T00:00:00</ReleaseDate>
+    <ReleaseDate>2010-09-29T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
     <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v0.9.1.mpe1</Location>
     <Params>
@@ -425,86 +495,156 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\SubCentral_MainOverlay.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitles.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{cfe712bf-5de7-4c3b-a6cc-d86f14af5796}-defaultSubtitles.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitles.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitlesFolder.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{cf3af5c9-0eee-4da1-974b-ff4c0bf66d1e}-defaultSubtitlesFolder.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitlesFolder.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitlesFolderBack.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0eacc060-ae83-42d3-b291-65affe0f1227}-defaultSubtitlesFolderBack.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitlesFolderBack.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Background.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0bb9f4ca-d009-4ca5-97d9-2bbe830c75d3}-SubCentral_Background.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Background.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Button_Long_Focused.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{efdce712-3f7b-458d-b5d8-e9c176e6f75e}-SubCentral_Button_Long_Focused.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Button_Long_Focused.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{112a6bc3-669c-4e35-9141-7e4463346f01}-SubCentral.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{4dc47b90-94ef-4ffe-b12c-8edd65e1155a}-SubCentral.xml</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\SubCentral.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\DialogMultiSelect.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a47e33fc-f402-42ae-9302-568e3d52bda6}-DialogMultiSelect.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\DialogMultiSelect.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.Main.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{13c97e28-1f32-4f33-9ab5-9de7e541721f}-SubCentral.Main.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{6be096ca-a01a-4a79-9d37-d5285d368d33}-SubCentral.Main.xml</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\SubCentral.Main.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.ModifySearch.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{5bb77c9a-35b5-44eb-a58d-7137494eeb8b}-SubCentral.ModifySearch.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{e59792f2-e3a4-4e32-befe-e9d0460fffeb}-SubCentral.ModifySearch.xml</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\SubCentral.ModifySearch.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.Search.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{3c1284c2-c6ec-4da9-a0e6-1d76ba3a7520}-SubCentral.Search.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{17494041-26c3-40ac-8878-dd4969600ff4}-SubCentral.Search.xml</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\SubCentral.Search.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitles.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c4b2e2ab-3952-413d-80d8-26b87d1e6a71}-defaultSubtitles.png</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitles.png</DestinationFilename>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{4ea40440-397b-49fc-85e7-183719cc8973}-SubCentral_MainOverlay.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_MainOverlay.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\DialogMultiSelect.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{41e70d97-5946-4621-a997-e673cc703504}-DialogMultiSelect.xml</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3\DialogMultiSelect.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\SubCentral.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{507a3075-011a-43f5-b240-9fb19b1f8344}-SubCentral.xml</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3wide\SubCentral.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\SubCentral.Main.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{76e0fe25-3a40-43f8-bcdb-e1572b0d8f4e}-SubCentral.Main.xml</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3wide\SubCentral.Main.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\SubCentral.ModifySearch.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{b4d96469-19dc-4081-86e6-73a421bf4ac9}-SubCentral.ModifySearch.xml</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3wide\SubCentral.ModifySearch.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\SubCentral.Search.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{895414ab-84f7-4ae3-bd29-f648d8c89d74}-SubCentral.Search.xml</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3wide\SubCentral.Search.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\Media\defaultSubtitles.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{046661fa-2d9a-4b6b-aba5-edfc9cdf269f}-defaultSubtitles.png</ZipFileName>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\defaultSubtitles.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{59b99f1f-8246-419b-b2ad-06949e86619c}-defaultSubtitles.png</ZipFileName>
         <DestinationFilename>%Skin%\Blue3wide\Media\defaultSubtitles.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\defaultSubtitlesFolder.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{88436202-d29a-46a3-80f8-e94ff021f790}-defaultSubtitlesFolder.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\defaultSubtitlesFolder.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\defaultSubtitlesFolderBack.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d8cad511-f129-452c-a96d-630e28af944e}-defaultSubtitlesFolderBack.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\defaultSubtitlesFolderBack.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Background.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0c730ade-6bb7-4d42-adf3-38a8f736ea00}-SubCentral_Background.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Background.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Button_Long_Focused.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0b325aaa-62e5-4862-b04f-a0664840361b}-SubCentral_Button_Long_Focused.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Button_Long_Focused.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b7ed1ed1-5bf7-4b2c-b12a-dc3360113e0c}-SubCentral.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\SubCentral.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\DialogMultiSelect.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{6780a365-6493-4135-91fb-768036f60667}-DialogMultiSelect.xml</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{955ecf81-489f-463e-868a-e54598f20fd8}-DialogMultiSelect.xml</ZipFileName>
         <DestinationFilename>%Skin%\Blue3wide\DialogMultiSelect.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.Main.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{6f86fe12-eca0-479d-ae54-a0c28e343cbb}-SubCentral.Main.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\SubCentral.Main.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.ModifySearch.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e8b1779a-2182-4d80-bbe0-0cccd6fe241c}-SubCentral.ModifySearch.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\SubCentral.ModifySearch.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.Search.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c947882e-883d-4c03-9833-1118bf3e4bb6}-SubCentral.Search.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\SubCentral.Search.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -559,7 +699,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{983a3677-9070-4772-9fde-f32202ad880d}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{f4efffed-f3e0-4feb-b1eb-cc50fe3c8479}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
