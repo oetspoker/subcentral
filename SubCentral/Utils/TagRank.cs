@@ -11,19 +11,19 @@ namespace SubCentral.Utils {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         //newest noise filter in moving pictures
-        //@"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\W])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|DOCU(?:MENTARY)?|TELE(?:CINE|SYNC)|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|HDTV|L[Ii]NE|OAR|AVC|T[CS])(?:[\]\)\}]|\b)(?:-[^\s]+$)?)";
+        //@"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\W])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|DOCU(?:MENTARY)?|TELE(?:CINE|SYNC)|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|HDTV|L[Ii]NE|OAR|AVC|T[CS]|P[Rr][Ee]A[Ii][Rr])(?:[\]\)\}]|\b)(?:-[^\s]+$)?)";
         
         //subcentral version (last part changed - group)
-        private const string regexpTags = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\W])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|DOCU(?:MENTARY)?|TELE(?:CINE|SYNC)|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|HDTV|L[Ii]NE|OAR|AVC|T[CS])(?:[\]\)\}]|\b)()?)";
-        private const string regexpTagsGroup = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\W])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|DOCU(?:MENTARY)?|TELE(?:CINE|SYNC)|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|HDTV|L[Ii]NE|OAR|AVC|T[CS])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
+        private const string regexpTags = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\W])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|DOCU(?:MENTARY)?|TELE(?:CINE|SYNC)|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|HDTV|L[Ii]NE|OAR|AVC|T[CS]|P[Rr][Ee]A[Ii][Rr])(?:[\]\)\}]|\b)()?)";
+        private const string regexpTagsGroup = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dir(?:ector[']?s[\W])?cut|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|RETA[Ii]L|EXTENDED|REMASTERED|UNRATED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[Ii]NTERNAL|[DS]UBBED|SCREENER|DOCU(?:MENTARY)?|TELE(?:CINE|SYNC)|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|HDTV|L[Ii]NE|OAR|AVC|T[CS]|P[Rr][Ee]A[Ii][Rr])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
 
         // subcentral version (broken by parts - high importance)
         private const string regexpTagsHigh = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|hd[-]?dvd|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|UNRATED|[Ii]NTERNAL|SCREENER|TELE(?:CINE|SYNC)|HDTV|T[CS])(?:[\]\)\}]|\b)()?)";
         private const string regexpTagsHighGroup = @"(?:(?:[\(\{\[]|\b)(?:(?:576|720|1080)[pi](?:\d{2})?|dvd[-]?(?:[r59]|rip|scr(?:eener)?)|(?:b[dr]|sat|dvb)[-]?(?:rip|scr(?:eener)?)|dsr(?:ip)?|r[1-5]|bd[59]|dts|ac3|blu[-]?ray|[hp]dtv|hd[-]?dvd|[WF]S|PROPER|REPACK|RER[Ii][Pp]|REAL|UNRATED|[Ii]NTERNAL|SCREENER|TELE(?:CINE|SYNC)|HDTV|T[CS])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
 
         // subcentral version (broken by parts - low importance)
-        private const string regexpTagsLow = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\W])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|DOCU(?:MENTARY)?|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|L[Ii]NE|OAR|AVC|)(?:[\]\)\}]|\b)()?)";
-        private const string regexpTagsLowGroup = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\W])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|DOCU(?:MENTARY)?|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|L[Ii]NE|OAR|AVC|)(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
+        private const string regexpTagsLow = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\W])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|DOCU(?:MENTARY)?|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|L[Ii]NE|OAR|AVC|P[Rr][Ee]A[Ii][Rr])(?:[\]\)\}]|\b)()?)";
+        private const string regexpTagsLowGroup = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\W])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|DOCU(?:MENTARY)?|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|L[Ii]NE|OAR|AVC|P[Rr][Ee]A[Ii][Rr])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
 
         //current in mp-tvseries
         //@"^.*?\\?(?<series>[^\\$]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:[ _.+-]+(?:[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ _.+-]*[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<title>(?![^\\]*?(?<!the)[ .(-]sample[ .)-]).*?)\.(?<ext>[^.]*)$"
@@ -280,7 +280,7 @@ namespace SubCentral.Utils {
 
             foreach (string listString in list1) {
                 foreach (string list2String in list2) {
-                    if (string.Compare(listString, list2String, StringComparison.CurrentCultureIgnoreCase) == 0) {
+                    if (string.Compare(listString, list2String, StringComparison.InvariantCultureIgnoreCase) == 0) {
                         same++;
                         break;
                     }
@@ -290,7 +290,7 @@ namespace SubCentral.Utils {
             foreach (string listString in list2) {
                 bool found = false;
                 foreach (string list1String in list1) {
-                    if (string.Compare(listString, list1String, StringComparison.CurrentCultureIgnoreCase) == 0) {
+                    if (string.Compare(listString, list1String, StringComparison.InvariantCultureIgnoreCase) == 0) {
                         found = true;
                         break;
                     }
@@ -318,7 +318,7 @@ namespace SubCentral.Utils {
             double lowPoints = ((double)sameLow / (double)fileTags.tagsLow.Count) * (double)secondPercentage;
             double groupPoints = 0.0;
             if (string.IsNullOrEmpty(subtitleTags.group) && fileTags.group.Length > 2 && subtitleTags.File != null)
-                groupPoints = (subtitleTags.File.Contains(fileTags.group, StringComparison.CurrentCultureIgnoreCase) ? 1 : 0) * (double)thirdPercentage;
+                groupPoints = (subtitleTags.File.Contains(fileTags.group, StringComparison.InvariantCultureIgnoreCase) ? 1 : 0) * (double)thirdPercentage;
             else
                 groupPoints = ((fileTags.group == subtitleTags.group) ? 1 : 0) * (double)thirdPercentage;
             highPoints = highPoints.CorrectNaN();
@@ -458,6 +458,18 @@ namespace SubCentral.Utils {
             if (string.IsNullOrEmpty(subtitleFile)) return result;
 
             MediaTags mediaTagsSubtitleFile = GetTagsForFile(new FileInfo(subtitleFile));
+
+            #if DEBUG
+            string tags = string.Empty;
+            foreach (string tag in mediaTagsSubtitleFile.AllTagsCombined) {
+                if (string.IsNullOrEmpty(tag)) continue;
+                if (tags != string.Empty)
+                    tags += ", " + tag;
+                else
+                    tags += tag;
+            }
+            logger.Debug(string.Format("... has tags: '{0}' ", tags));
+            #endif
 
             result += GetRank(mediaTagsFile, mediaTagsSubtitleFile);
 
