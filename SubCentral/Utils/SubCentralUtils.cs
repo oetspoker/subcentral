@@ -732,14 +732,26 @@ namespace SubCentral.Utils {
         }
 
         public static bool IsAssemblyAvailable(string name, Version ver) {
-            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            foreach (Assembly a in assemblies) {
-                try {
-                    if (a.GetName().Name == name && a.GetName().Version >= ver)
-                        return true;
-                }
-                catch (Exception e) {
-                    logger.ErrorException(string.Format("Assembly.GetName() call failed for '{0}'!\n", a.Location), e);
+            return IsAssemblyAvailable(name, ver, false);
+        }
+
+        public static bool IsAssemblyAvailable(string name, Version ver, bool reflectionOnly) {
+            Assembly[] assemblies = null;
+
+            if (!reflectionOnly) 
+                assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            else
+                assemblies = AppDomain.CurrentDomain.ReflectionOnlyGetAssemblies();
+
+            if (assemblies != null) {
+                foreach (Assembly a in assemblies) {
+                    try {
+                        if (a.GetName().Name == name && a.GetName().Version >= ver)
+                            return true;
+                    }
+                    catch (Exception e) {
+                        logger.ErrorException(string.Format("Assembly.GetName() call failed for '{0}'!\n", a.Location), e);
+                    }
                 }
             }
 

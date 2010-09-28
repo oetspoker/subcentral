@@ -153,6 +153,25 @@ namespace SubCentral {
 
         private void InitSubtitleDownloader() {
             logger.Info("Initializing SubtitleDownloader");
+            try {
+                Assembly.ReflectionOnlyLoad("SubtitleDownloader");
+                if (SubCentralUtils.IsAssemblyAvailable("SubtitleDownloader", SubtitleDownloaderVersion, true)) {
+                    logger.Debug("SubtitleDownloader: assembly loaded");
+                    SubtitleDownloaderInitialized = true;
+                }
+                else {
+                    logger.Debug("SubtitleDownloader: assembly not loaded (not available, wrong version?)");
+                    SubtitleDownloaderInitialized = false;
+                }
+            }
+            catch (Exception e) {
+                logger.ErrorException("SubtitleDownloader: error loading assembly\n", e);
+                SubtitleDownloaderInitialized = false;
+            }
+            return;
+
+            // old code - not needed 
+            /*
             if (!SubCentralUtils.IsAssemblyAvailable("SubtitleDownloader", SubtitleDownloaderVersion)) {
                 logger.Debug("SubtitleDownloader: assembly not loaded (not available?), trying to load it manually");
                 try {
@@ -169,6 +188,7 @@ namespace SubCentral {
                 return;
             }
             SubtitleDownloaderInitialized = true;
+            */
         }
 
         private void LoadSubtitleDownloaderData() {
