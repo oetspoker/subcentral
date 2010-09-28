@@ -16,7 +16,7 @@ using SubCentral.Utils;
 namespace SubCentral {
     public class SubCentralCore {
 
-        public static readonly Version SubtitleDownloaderVersion = new Version(1,0);
+        public static readonly Version SubtitleDownloaderVersion = new Version(2,2);
 
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
