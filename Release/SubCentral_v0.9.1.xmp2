@@ -30,13 +30,6 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3\Media\SubCentral_MainOverlay.png</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitles.png</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{cfe712bf-5de7-4c3b-a6cc-d86f14af5796}-defaultSubtitles.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitles.png</DestinationFilename>
@@ -58,6 +51,13 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\hover_subcentral.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{2059de99-34a5-4ebf-9c89-d874f6919a71}-hover_subcentral.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\hover_subcentral.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Background.png</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{0bb9f4ca-d009-4ca5-97d9-2bbe830c75d3}-SubCentral_Background.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Background.png</DestinationFilename>
@@ -72,9 +72,9 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{4dc47b90-94ef-4ffe-b12c-8edd65e1155a}-SubCentral.xml</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3\SubCentral.xml</DestinationFilename>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\SubCentral_MainOverlay.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
@@ -104,6 +104,13 @@
               <ZipFileName>Installer{CopyFile}\{17494041-26c3-40ac-8878-dd4969600ff4}-SubCentral.Search.xml</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\SubCentral.Search.xml</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4dc47b90-94ef-4ffe-b12c-8edd65e1155a}-SubCentral.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\SubCentral.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -114,13 +121,6 @@
         <Description>Blue3wide skin files</Description>
         <Files>
           <Items>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{4ea40440-397b-49fc-85e7-183719cc8973}-SubCentral_MainOverlay.png</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_MainOverlay.png</DestinationFilename>
-            </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
@@ -145,6 +145,13 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\hover_subcentral.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{50dae385-9277-4889-a951-fb51a7e77b7f}-hover_subcentral.png</ZipFileName>
+              <DestinationFilename>%Base%\hover_subcentral.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Background.png</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{0c730ade-6bb7-4d42-adf3-38a8f736ea00}-SubCentral_Background.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Background.png</DestinationFilename>
@@ -159,9 +166,9 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b7ed1ed1-5bf7-4b2c-b12a-dc3360113e0c}-SubCentral.xml</ZipFileName>
-              <DestinationFilename>%Skin%\Blue3wide\SubCentral.xml</DestinationFilename>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4ea40440-397b-49fc-85e7-183719cc8973}-SubCentral_MainOverlay.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_MainOverlay.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
@@ -191,6 +198,20 @@
               <ZipFileName>Installer{CopyFile}\{c947882e-883d-4c03-9833-1118bf3e4bb6}-SubCentral.Search.xml</ZipFileName>
               <DestinationFilename>%Skin%\Blue3wide\SubCentral.Search.xml</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\hover_subcentral.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{3a64c93f-7940-487b-a1a1-3d465a2b69f2}-hover_subcentral.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\Media\hover_subcentral.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b7ed1ed1-5bf7-4b2c-b12a-dc3360113e0c}-SubCentral.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\SubCentral.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -204,9 +225,9 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\Localizations\Languages\en-US.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
-              <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
+              <LocalFileName>..\SubCentral\Localizations\Languages\da.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b7882ef9-2601-4142-b56d-3ab18fed53e9}-da.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\da.xml</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
@@ -218,9 +239,9 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\Localizations\Languages\da.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{b7882ef9-2601-4142-b56d-3ab18fed53e9}-da.xml</ZipFileName>
-              <DestinationFilename>%Language%\SubCentral\da.xml</DestinationFilename>
+              <LocalFileName>..\SubCentral\Localizations\Languages\en-US.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -235,20 +256,6 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>..\External\NLog.dll</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c0c1a13f-2a46-47fa-bdd0-af68d3be0b38}-NLog.dll</ZipFileName>
-              <DestinationFilename>%Base%\NLog.dll</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>..\External\SubtitleDownloader.dll</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{08803f83-a5c7-4d25-bb0f-af84d8d01f3a}-SubtitleDownloader.dll</ZipFileName>
-              <DestinationFilename>%Base%\SubtitleDownloader.dll</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\External\7z.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{89cf0d9a-326f-4c47-bcdf-c97d57892ed1}-7z.dll</ZipFileName>
               <DestinationFilename>%Base%\7z.dll</DestinationFilename>
@@ -259,6 +266,20 @@
               <LocalFileName>..\External\ICSharpCode.SharpZipLib.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{2248cde4-b0ef-4b5c-8ddf-3a32fb705fdf}-ICSharpCode.SharpZipLib.dll</ZipFileName>
               <DestinationFilename>%Base%\ICSharpCode.SharpZipLib.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\External\NLog.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c0c1a13f-2a46-47fa-bdd0-af68d3be0b38}-NLog.dll</ZipFileName>
+              <DestinationFilename>%Base%\NLog.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloader.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{08803f83-a5c7-4d25-bb0f-af84d8d01f3a}-SubtitleDownloader.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloader.dll</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -495,13 +516,6 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3\Media\SubCentral_MainOverlay.png</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\defaultSubtitles.png</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{cfe712bf-5de7-4c3b-a6cc-d86f14af5796}-defaultSubtitles.png</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\Media\defaultSubtitles.png</DestinationFilename>
@@ -523,6 +537,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\hover_subcentral.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{2059de99-34a5-4ebf-9c89-d874f6919a71}-hover_subcentral.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\hover_subcentral.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Background.png</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{0bb9f4ca-d009-4ca5-97d9-2bbe830c75d3}-SubCentral_Background.png</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Background.png</DestinationFilename>
@@ -537,9 +558,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{4dc47b90-94ef-4ffe-b12c-8edd65e1155a}-SubCentral.xml</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3\SubCentral.xml</DestinationFilename>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\SubCentral_MainOverlay.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -572,9 +593,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{4ea40440-397b-49fc-85e7-183719cc8973}-SubCentral_MainOverlay.png</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_MainOverlay.png</DestinationFilename>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\SubCentral.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{4dc47b90-94ef-4ffe-b12c-8edd65e1155a}-SubCentral.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\SubCentral.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -614,9 +635,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{b7ed1ed1-5bf7-4b2c-b12a-dc3360113e0c}-SubCentral.xml</ZipFileName>
-        <DestinationFilename>%Skin%\Blue3wide\SubCentral.xml</DestinationFilename>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{4ea40440-397b-49fc-85e7-183719cc8973}-SubCentral_MainOverlay.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_MainOverlay.png</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -649,9 +670,23 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\Localizations\Languages\en-US.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
-        <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\hover_subcentral.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{3a64c93f-7940-487b-a1a1-3d465a2b69f2}-hover_subcentral.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\hover_subcentral.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\SubCentral.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b7ed1ed1-5bf7-4b2c-b12a-dc3360113e0c}-SubCentral.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\SubCentral.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\da.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b7882ef9-2601-4142-b56d-3ab18fed53e9}-da.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\da.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -663,23 +698,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\Localizations\Languages\da.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{b7882ef9-2601-4142-b56d-3ab18fed53e9}-da.xml</ZipFileName>
-        <DestinationFilename>%Language%\SubCentral\da.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\NLog.dll</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c0c1a13f-2a46-47fa-bdd0-af68d3be0b38}-NLog.dll</ZipFileName>
-        <DestinationFilename>%Base%\NLog.dll</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\SubtitleDownloader.dll</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{08803f83-a5c7-4d25-bb0f-af84d8d01f3a}-SubtitleDownloader.dll</ZipFileName>
-        <DestinationFilename>%Base%\SubtitleDownloader.dll</DestinationFilename>
+        <LocalFileName>..\SubCentral\Localizations\Languages\en-US.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -695,11 +716,25 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <ZipFileName>Installer{CopyFile}\{2248cde4-b0ef-4b5c-8ddf-3a32fb705fdf}-ICSharpCode.SharpZipLib.dll</ZipFileName>
         <DestinationFilename>%Base%\ICSharpCode.SharpZipLib.dll</DestinationFilename>
       </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\External\NLog.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c0c1a13f-2a46-47fa-bdd0-af68d3be0b38}-NLog.dll</ZipFileName>
+        <DestinationFilename>%Base%\NLog.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloader.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{08803f83-a5c7-4d25-bb0f-af84d8d01f3a}-SubtitleDownloader.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloader.dll</DestinationFilename>
+      </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f4efffed-f3e0-4feb-b1eb-cc50fe3c8479}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{f60065e6-fc97-4bcc-bbb2-fbaf5d9dbcf2}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
