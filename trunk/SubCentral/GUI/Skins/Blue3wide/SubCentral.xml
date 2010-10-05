@@ -80,7 +80,7 @@
 		<control>
 			<type>image</type>
 			<id>0</id>
-			<posX>10</posX>
+			<posX>5</posX>
             <posY>-3</posY>
 			<width>56</width>
 			<height>56</height>

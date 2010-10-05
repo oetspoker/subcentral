@@ -8,53 +8,18 @@
 		-->
 
 		<control>
-			<description>LISTVIEW LEFT Backdrop Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>-730</posX>
-			<posY>377</posY>
-			<width>1372</width>
-			<height>500</height>
-			<texture>bg_tvguide.png</texture>
-			<visible>Control.IsVisible(102)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<description>LISTVIEW RIGHT Backdrop Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>614</posX>
-			<posY>270</posY>
-			<width>1372</width>
-			<height>500</height>
-			<texture>bg_tvguide.png</texture>
-			<visible>Control.IsVisible(102)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<type>image</type>
-			<id>0</id>
-			<posX>640</posX>
-			<posY>288</posY>
-			<width>640</width>
-			<height>35</height>
-			<texture>bg_facade_line_nofocus.png</texture>
-			<colordiffuse>77ffffff</colordiffuse>
-			<visible>Control.IsVisible(102)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control> 
-		<control>
 			<type>label</type>
 			<description>Number of Files Label</description>
 			<id>0</id>
-			<posX>650</posX>
-			<posY>688</posY>
+			<posX>710</posX>
+			<posY>28</posY>
 			<label>#itemcount</label>
 			<font>font12</font>
-			<align>left</align>
-			<textcolor>60ffffff</textcolor>
+			<align>right</align>
+			<textcolor>ffffffff</textcolor>
 			<visible>Control.IsVisible(102)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 
 		<control>
@@ -67,212 +32,290 @@
 				<onleft>202</onleft>
 				<onright>202</onright>
 				<scrollOffset>2</scrollOffset>
-				<posX>640</posX>
-				<width>640</width>
-				<posY>323</posY>
-				<height>407</height>
-				<textureHeight>49</textureHeight>
-				<itemWidth>40</itemWidth>
+				<posX>300</posX>
+				<posY>193</posY>
+				<width>410</width>
+				<height>395</height>
+				<textureHeight>40</textureHeight>
+				<itemWidth>30</itemWidth>
 				<itemHeight>30</itemHeight>
 				<IconXOff>10</IconXOff>
-				<IconYOff>8</IconYOff>
+				<IconYOff>6</IconYOff>
 				<textXOff>10</textXOff>
-				<textXOff2>630</textXOff2>
-				<textYOff2>26</textYOff2>
-				<textXOff3>60</textXOff3>
-				<textYOff3>26</textYOff3>
-				<font>font14</font>	
+				<textXOff2>405</textXOff2>
+				<textYOff2>22</textYOff2>
+				<textXOff3>50</textXOff3>
+				<textYOff3>22</textYOff3>
+				<font>font12</font>	
 				<font2>font10</font2>	
 				<font3>font10</font3>	
 				<textYOff>2</textYOff>
-				<spinWidth>30</spinWidth>
-				<spinHeight>30</spinHeight>
-				<spinPosX>1210</spinPosX>
-				<spinPosY>685</spinPosY>
+				<spinCanFocus>no</spinCanFocus>
+				<spinWidth>20</spinWidth>
+				<spinHeight>20</spinHeight>
+				<spinPosX>665</spinPosX>
+				<spinPosY>545</spinPosY>
 				<PinIconXOff>627</PinIconXOff> 
 				<PinIconYOff>4</PinIconYOff>
 				<playedColor>ff77ccff</playedColor>
+				<textcolor2>ffffffff</textcolor2>
+				<textcolor3>ffffffff</textcolor3>
 				<visible>Control.IsVisible(102)</visible>
 				<animation effect="fade" time="250">visiblechange</animation>
+				<animation effect="fade" time="250">WindowClose</animation>
 			</control>
 		</control>
 
-		<control>
-			<description>Cover Art</description>
-			<type>image</type>
-			<id>911</id>
-			<keepaspectratio>no</keepaspectratio>
-			<posX>50</posX>
-			<posY>504</posY>
-			<width>142</width>
-			<height>202</height>
-			<texture flipY="true" diffuse="Thumb_Mask.png">#SubCentral.Search.Media.Thumb</texture>
+        <control>
+            <description>Season Poster</description>
+            <type>image</type>
+            <id>911</id>
+            <posX>15</posX>
+            <posY>220</posY>
+            <width>192</width>
+            <height>285</height>
+            <texture>#SubCentral.Search.Media.Thumb</texture>
 			<visible>Control.IsVisible(102)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
+			<animation effect="fade" time="250">WindowClose</animation>
+        </control>
+
 		<control>
 			<description>Cover Art Default</description>
 			<type>image</type>
 			<id>0</id>
 			<keepaspectratio>no</keepaspectratio>
-			<posX>-5</posX> 
-			<posY>470</posY> 
-			<width>252</width> 
-			<height>269</height> 
-			<texture flipY="true" diffuse="Thumb_Mask.png">defaultVideoBig.png</texture>
+            <posX>-20</posX>
+            <posY>220</posY>
+            <width>230</width>
+            <height>225</height>
+			<texture>defaultVideoBig.png</texture>
 			<visible>Control.IsVisible(102)+!Control.HasThumb(911)<!--[String.Equals(#SubCentral.Search.Media.Thumb,)|String.Equals(#SubCentral.Search.Media.Thumb, )]--></visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
-		<control>
-			<description>Cover Art Glass Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>30</posX>
-			<posY>500</posY>
-			<width>166</width>
-			<height>210</height>
-			<texture flipY="true" diffuse="Thumb_Mask.png">DVDCase.png</texture>
+
+        <control>
+            <description>Cover Art Glass Overlay</description>
+            <type>image</type>
+            <id>0</id>
+            <posX>15</posX>
+            <posY>220</posY>
+            <width>171</width>
+            <height>133</height>
+            <texture>glassoverlay2.png</texture>
 			<visible>Control.IsVisible(102)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
+			<animation effect="fade" time="250">WindowClose</animation>
+        </control>
 
 		<control>
 			<type>fadelabel</type>
 			<id>0</id>
-			<posX>30</posX>
-			<posY>418</posY>
-			<width>560</width>
-			<label>#SubCentral.Search.Source.Text</label>
-			<wrapString> : : : </wrapString>
+			<posX>307</posX>
+			<posY>167</posY>
+			<width>400</width>
+			<label>#SubCentral.Search.Source.Text, #SubCentral.Search.SearchType.Text</label>
+			<font>font12</font>
+			<textcolor>ff222222</textcolor>
 			<visible>Control.IsVisible(102)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
-		<control>
-			<type>image</type>
-			<posX>0</posX>
-			<posY>420</posY>
-			<width>609</width>
-			<height>35</height>
-			<texture>bg_facade_line_nofocus.png</texture>
-			<colordiffuse>77ffffff</colordiffuse>
-			<visible>Control.IsVisible(102)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-
 		<control>
 			<type>fadelabel</type>
 			<id>0</id>
-			<posX>30</posX>
-			<posY>462</posY>
-			<width>560</width>
-			<label>#SubCentral.Search.SearchType.Text</label>
-			<font>font14</font>
-			<wrapString> : : : </wrapString>
+			<posX>305</posX>
+			<posY>165</posY>
+			<width>400</width>
+			<label>#SubCentral.Search.Source.Text, #SubCentral.Search.SearchType.Text</label>
+			<font>font12</font>
 			<visible>Control.IsVisible(102)+!String.Equals(#SubCentral.Search.SearchType.Type,NONE)</visible>
-			<textcolor>90ffffff</textcolor>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 		<control>
 			<type>fadelabel</type>
 			<id>0</id>
-			<posX>30</posX>
-			<posY>462</posY>
-			<width>560</width>
-			<label>#SubCentral.Search.SearchType.Text</label>
-			<font>font14</font>
-			<wrapString> : : : </wrapString>
+			<posX>305</posX>
+			<posY>165</posY>
+			<width>400</width>
+			<label>#SubCentral.Search.Source.Text, #SubCentral.Search.SearchType.Text</label>
+			<font>font12</font>
 			<visible>Control.IsVisible(102)+String.Equals(#SubCentral.Search.SearchType.Type,NONE)</visible>
-			<textcolor>90F87B72</textcolor>
+			<textcolor>ffFFA075</textcolor>
 			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<type>image</type>
-			<posX>0</posX>
-			<posY>460</posY>
-			<width>609</width>
-			<height>35</height>
-			<texture>bg_facade_line_nofocus.png</texture>
-			<colordiffuse>77ffffff</colordiffuse>
-			<visible>Control.IsVisible(102)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 
 		<control>
 			<type>fadelabel</type>
 			<id>0</id>
-			<posX>215</posX>
-			<posY>502</posY>
-			<width>375</width>
+			<posX>17</posX>
+			<posY>167</posY>
+			<width>280</width>
 			<label>#SubCentral.Search.Media.Title</label>
 			<font>font14</font>
-			<wrapString> : : : </wrapString>
+			<textcolor>ff222222</textcolor>
 			<visible>Control.IsVisible(102)+String.Equals(#SubCentral.Search.SearchType.Type,NONE)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 		<control>
 			<type>fadelabel</type>
 			<id>0</id>
-			<posX>215</posX>
-			<posY>502</posY>
-			<width>375</width>
+			<posX>15</posX>
+			<posY>165</posY>
+			<width>280</width>
+			<label>#SubCentral.Search.Media.Title</label>
+			<font>font14</font>
+			<visible>Control.IsVisible(102)+String.Equals(#SubCentral.Search.SearchType.Type,NONE)</visible>
+			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<control>
+			<type>fadelabel</type>
+			<id>0</id>
+			<posX>17</posX>
+			<posY>167</posY>
+			<width>280</width>
 			<label>#SubCentral.Search.Media.TitleWithYear</label>
 			<font>font14</font>
-			<wrapString> : : : </wrapString>
+			<textcolor>ff222222</textcolor>
 			<visible>Control.IsVisible(102)+[String.Equals(#SubCentral.Search.SearchType.Type,MOVIE)|String.Equals(#SubCentral.Search.SearchType.Type,IMDb)]</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 		<control>
 			<type>fadelabel</type>
 			<id>0</id>
-			<posX>215</posX>
-			<posY>502</posY>
-			<width>375</width>
+			<posX>15</posX>
+			<posY>165</posY>
+			<width>280</width>
+			<label>#SubCentral.Search.Media.TitleWithYear</label>
+			<font>font14</font>
+			<visible>Control.IsVisible(102)+[String.Equals(#SubCentral.Search.SearchType.Type,MOVIE)|String.Equals(#SubCentral.Search.SearchType.Type,IMDb)]</visible>
+			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<control>
+			<type>fadelabel</type>
+			<id>0</id>
+			<posX>17</posX>
+			<posY>167</posY>
+			<width>280</width>
 			<label>#SubCentral.Search.Media.TitleWithSE</label>
 			<font>font14</font>
-			<wrapString> : : : </wrapString>
+			<textcolor>ff222222</textcolor>
 			<visible>Control.IsVisible(102)+String.Equals(#SubCentral.Search.SearchType.Type,TVSHOW)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>		<control>
+			<type>fadelabel</type>
+			<id>0</id>
+			<posX>15</posX>
+			<posY>165</posY>
+			<width>280</width>
+			<label>#SubCentral.Search.Media.TitleWithSE</label>
+			<font>font14</font>
+			<visible>Control.IsVisible(102)+String.Equals(#SubCentral.Search.SearchType.Type,TVSHOW)</visible>
+			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<control>
+			<type>fadelabel</type>
+			<id>0</id>
+			<posX>17</posX>
+			<posY>192</posY>
+			<width>280</width>
+			<label>#SubCentral.Search.Media.IMDb.ID.Text</label>
+			<font>font14</font>
+			<textcolor>ff222222</textcolor>
+			<visible>Control.IsVisible(102)+String.Equals(#SubCentral.Search.SearchType.Type,IMDb)</visible>
+			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 		<control>
 			<type>fadelabel</type>
 			<id>0</id>
-			<posX>215</posX>
-			<posY>532</posY>
-			<width>375</width>
+			<posX>15</posX>
+			<posY>190</posY>
+			<width>280</width>
 			<label>#SubCentral.Search.Media.IMDb.ID.Text</label>
 			<font>font14</font>
-			<wrapString> : : : </wrapString>
 			<visible>Control.IsVisible(102)+String.Equals(#SubCentral.Search.SearchType.Type,IMDb)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 
 		<control>
-			<type>image</type>
-			<posX>197</posX>
-			<posY>530</posY>
-			<width>412</width>
-			<height>35</height>
-			<texture>bg_facade_line_nofocus.png</texture>
-			<colordiffuse>77ffffff</colordiffuse>
-			<visible>Control.IsVisible(102)</visible>
+			<description>Media files shadow</description>
+			<type>textboxscrollup</type>
+			<id>0</id>
+			<posX>15</posX>
+			<posY>517</posY>
+			<width>280</width>
+			<height>55</height>
+			<colordiffuse>ffffffff</colordiffuse>
+			<font>font11</font>
+			<label>#SubCentral.Translation.MediaFiles.Label:
+#SubCentral.Search.Files.AllNames</label>
+			<seperator>----------------------------------------------------------------------------------------------------</seperator>
+			<textcolor>ff222222</textcolor>
+			<visible>!string.contains(#SubCentral.Search.Files.AllNames,SubCentral.Search.Files.AllNames)+!string.equals(#SubCentral.Search.Files.AllNames,)+!string.equals(#SubCentral.Search.Files.AllNames, )+!string.equals(#SubCentral.Search.Files.AllNames,  )+Control.IsVisible(102)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
-
 		<control>
 			<description>Media Files</description>
 			<type>textboxscrollup</type>
 			<id>0</id>
-			<posX>215</posX>
-			<posY>573</posY>
-			<width>375</width>
-			<height>134</height>
+			<posX>15</posX>
+			<posY>515</posY>
+			<width>280</width>
+			<height>55</height>
 			<colordiffuse>ffffffff</colordiffuse>
 			<font>font11</font>
-			<label>#SubCentral.Search.Files.AllNames</label>
-			<seperator>: : :</seperator>
+			<label>#SubCentral.Translation.MediaFiles.Label:
+#SubCentral.Search.Files.AllNames</label>
+			<seperator>----------------------------------------------------------------------------------------------------</seperator>
 			<textcolor>90ffffff</textcolor>
-			<visible>Control.IsVisible(102)</visible>
+			<visible>!string.contains(#SubCentral.Search.Files.AllNames,SubCentral.Search.Files.AllNames)+!string.equals(#SubCentral.Search.Files.AllNames,)+!string.equals(#SubCentral.Search.Files.AllNames, )+!string.equals(#SubCentral.Search.Files.AllNames,  )+Control.IsVisible(102)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
+
+		<control>
+			<description>Media tags shadow</description>
+			<type>fadelabel</type>
+			<id>0</id>
+			<posX>307</posX>
+			<posY>547</posY>
+			<font>font11</font>
+			<width>300</width>
+			<textcolor>ff222222</textcolor>
+			<label>#SubCentral.Translation.MediaTags.Label: #SubCentral.Search.Files.Tags</label>
+			<visible>!string.contains(#SubCentral.Search.Files.Tags,SubCentral.Search.Files.Tags)+!string.equals(#SubCentral.Search.Files.Tags,)+!string.equals(#SubCentral.Search.Files.Tags, )+!string.equals(#SubCentral.Search.Files.Tags,  )+Control.IsVisible(102)</visible>
+			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Media tags</description>
+			<type>fadelabel</type>
+			<id>0</id>
+			<posX>305</posX>
+			<posY>545</posY>
+			<font>font11</font>
+			<width>300</width>
+			<textcolor>90ffffff</textcolor>
+			<label>#SubCentral.Translation.MediaTags.Label: #SubCentral.Search.Files.Tags</label>
+			<visible>!string.contains(#SubCentral.Search.Files.Tags,SubCentral.Search.Files.Tags)+!string.equals(#SubCentral.Search.Files.Tags,)+!string.equals(#SubCentral.Search.Files.Tags, )+!string.equals(#SubCentral.Search.Files.Tags,  )+Control.IsVisible(102)</visible>
+			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
 	</controls>
 </window>

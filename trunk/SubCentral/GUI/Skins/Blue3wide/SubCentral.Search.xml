@@ -38,14 +38,14 @@
                 <width>510</width>
 				<height>390</height>
 				<textureHeight>49</textureHeight>
-				<itemWidth>40</itemWidth>
+				<itemWidth>30</itemWidth>
 				<itemHeight>30</itemHeight>
 				<IconXOff>10</IconXOff>
 				<IconYOff>8</IconYOff>
 				<textXOff>10</textXOff>
 				<textXOff2>505</textXOff2>
 				<textYOff2>26</textYOff2>
-				<textXOff3>60</textXOff3>
+				<textXOff3>50</textXOff3>
 				<textYOff3>26</textYOff3>
 				<font>font12</font>	
 				<font2>font9</font2>	
