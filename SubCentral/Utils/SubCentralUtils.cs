@@ -36,6 +36,18 @@ namespace SubCentral.Utils {
                                                                            ".vsf", ".zeg" };
         public static List<string> AdditionalExtensions = new List<string> { ".rar", ".zip" };
 
+        private static List<string> extensions = new List<string>();
+        public static List<string> Extensions {
+            get {
+                if (extensions == null || extensions.Count < 1) {
+                    if (extensions == null)
+                        extensions = new List<string>();
+                    extensions.AddRange(SubtitleExtensions);
+                    extensions.AddRange(AdditionalExtensions);
+                }
+                return extensions;
+            }
+        }
         public static string PluginName() {
             if (SettingsManager.Properties == null || SettingsManager.Properties.GUISettings == null) return "SubCentral";
             return string.IsNullOrEmpty(SettingsManager.Properties.GUISettings.PluginName) ? "SubCentral" : SettingsManager.Properties.GUISettings.PluginName;
@@ -935,17 +947,25 @@ namespace SubCentral.Utils {
             }
         }
 
+        public static string CleanSubtitleFile(string subtitleFile) {
+            string result = string.Empty;
+
+            if (!string.IsNullOrEmpty(subtitleFile)) {
+                result = Regex.Replace(subtitleFile, @"[-_\.]", " ");
+                result = result.ToLowerInvariant();
+            }
+
+
+            return result;
+        }
+
         public static void EnsureProperSubtitleFile(ref string subtitleFile) {
             if (string.IsNullOrEmpty(subtitleFile)) return;
 
             subtitleFile = FileUtils.fixInvalidFileName(subtitleFile);
             subtitleFile = subtitleFile.Trim();
 
-            List<string> extensions = new List<string>();
-            extensions.AddRange(AdditionalExtensions);
-            extensions.AddRange(SubtitleExtensions);
-
-            foreach(string extension in extensions) {
+            foreach (string extension in Extensions) {
                 if (subtitleFile.ToLowerInvariant().EndsWith(extension)) {
                     subtitleFile = subtitleFile.Substring(0, subtitleFile.Length - extension.Length);
                 }

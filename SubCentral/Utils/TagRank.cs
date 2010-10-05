@@ -419,6 +419,23 @@ namespace SubCentral.Utils {
             return result;
         }
 
+        private bool SubtitleFileNameMatchesMediaTitle(string subtitleFile) {
+            bool result = false;
+
+            SubCentralUtils.EnsureProperSubtitleFile(ref subtitleFile);
+
+            if (string.IsNullOrEmpty(subtitleFile) || string.IsNullOrEmpty(MediaDetail.SeasonStr) || string.IsNullOrEmpty(MediaDetail.EpisodeStr)) return result;
+
+            string subtitleFileProper = SubCentralUtils.CleanSubtitleFile(subtitleFile);
+            string mediaTitleProper = SubCentralUtils.CleanSubtitleFile(MediaDetail.Title);
+
+            if (mediaTitleProper.Length > 2)
+                result = subtitleFileProper.Contains(mediaTitleProper, StringComparison.InvariantCultureIgnoreCase);
+
+            return result;
+        }
+
+
         public bool SubtitleFileNameMatchesMedia(string subtitleFile) {
             bool result = false;
 
@@ -427,10 +444,8 @@ namespace SubCentral.Utils {
             if (string.IsNullOrEmpty(subtitleFile) || MediaFiles == null || MediaFiles.Count < 1) return result;
 
             foreach (FileInfo fi in MediaFiles) {
-                string subtitleFileProper = Path.GetFileNameWithoutExtension(subtitleFile).ToLowerInvariant();
-                subtitleFileProper = Regex.Replace(subtitleFileProper, @"[-_\.]", " ");
-                string fileNameProper = Path.GetFileNameWithoutExtension(fi.Name).ToLowerInvariant();
-                fileNameProper = Regex.Replace(fileNameProper, @"[-_\.]", " ");
+                string subtitleFileProper = SubCentralUtils.CleanSubtitleFile(Path.GetFileNameWithoutExtension(subtitleFile));
+                string fileNameProper = SubCentralUtils.CleanSubtitleFile(Path.GetFileNameWithoutExtension(fi.Name));
 
                 if (subtitleFileProper == fileNameProper || subtitleFileProper.Contains(fileNameProper)) {
                     result = true;
@@ -444,10 +459,17 @@ namespace SubCentral.Utils {
         public double GetSubtitleFileRank(string subtitleFile) {
             double result = 0.0;
 
-            if (SubtitleFileNameMatchesMedia(subtitleFile))
+            bool completeMatch = SubtitleFileNameMatchesMedia(subtitleFile);
+            bool seasonEpisodeMatch = SubtitleFileNameMatchesTVShowMedia(subtitleFile);
+            bool titleMatch = SubtitleFileNameMatchesMediaTitle(subtitleFile);
+            bool almostCompleteMatch = titleMatch && seasonEpisodeMatch;
+
+            if (completeMatch)
                 result = 1000.0;
-            else if (SubtitleFileNameMatchesTVShowMedia(subtitleFile))
+            else if (almostCompleteMatch)
                 result = 500.0;
+            else if (seasonEpisodeMatch || titleMatch)
+                result = 300.0;
 
             #if DEBUG
             logger.Debug(string.Format("Calculating media tag rank for subtitle file {0} ...", subtitleFile));
