@@ -469,7 +469,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <VersionDescription>Initial release</VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://subcentral.googlecode.com/svn/trunk/Release/SubCentral_v0.9.1.mpe1</OnlineLocation>
-    <ReleaseDate>2010-09-29T00:00:00</ReleaseDate>
+    <ReleaseDate>2010-10-06T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
     <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v0.9.1.mpe1</Location>
     <Params>
@@ -734,7 +734,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f60065e6-fc97-4bcc-bbb2-fbaf5d9dbcf2}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{c15a16fa-bd95-4b0d-b18f-d76103d8c232}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
