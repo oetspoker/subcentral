@@ -13,18 +13,10 @@
               <Items />
             </Files>
           </GroupItem>
-          <GroupItem Name="Blue3 skin files">
-            <DisplayName>Blue3 skin files</DisplayName>
+          <GroupItem Name="Utilities">
+            <DisplayName>Utilities</DisplayName>
             <DefaulChecked>true</DefaulChecked>
-            <Description>Blue3 skin files</Description>
-            <Files>
-              <Items />
-            </Files>
-          </GroupItem>
-          <GroupItem Name="Blue3wide skin files">
-            <DisplayName>Blue3wide skin files</DisplayName>
-            <DefaulChecked>true</DefaulChecked>
-            <Description>Blue3wide skin files</Description>
+            <Description>Utilities</Description>
             <Files>
               <Items />
             </Files>
@@ -37,10 +29,18 @@
               <Items />
             </Files>
           </GroupItem>
-          <GroupItem Name="Utilities">
-            <DisplayName>Utilities</DisplayName>
+          <GroupItem Name="Blue3 skin files">
+            <DisplayName>Blue3 skin files</DisplayName>
             <DefaulChecked>true</DefaulChecked>
-            <Description>Utilities</Description>
+            <Description>Blue3 skin files</Description>
+            <Files>
+              <Items />
+            </Files>
+          </GroupItem>
+          <GroupItem Name="Blue3wide skin files">
+            <DisplayName>Blue3wide skin files</DisplayName>
+            <DefaulChecked>true</DefaulChecked>
+            <Description>Blue3wide skin files</Description>
             <Files>
               <Items />
             </Files>
