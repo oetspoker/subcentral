@@ -101,7 +101,7 @@
               <Description>The icon file of the package (jpg,png,bmp)</Description>
             </SectionParam>
             <SectionParam Name="Online Icon">
-              <Value />
+              <Value>http://subcentral.googlecode.com/svn/trunk/Release/Icon.png</Value>
               <ValueType>String</ValueType>
               <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
             </SectionParam>
