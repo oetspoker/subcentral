@@ -439,7 +439,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>9</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
-        <Message>Need version of MediaPortal with version betwen 0.0.0.0 - 0.0.0.0</Message>
+        <Message>SubCentral needs MediaPortal version 1.1.0.0 or higher!</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
@@ -719,7 +719,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{8f3aa6c9-4959-4214-9402-8a287e2fd82a}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{ed7cbbac-d8f8-4a1e-a92e-3401066aaa35}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
