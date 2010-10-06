@@ -68,7 +68,7 @@
               <Revision>9</Revision>
             </MaxVersion>
             <WarnOnly>false</WarnOnly>
-            <Message>Need version of MediaPortal with version betwen 0.0.0.0 - 0.0.0.0</Message>
+            <Message>SubCentral needs MediaPortal version 1.1.0.0 or higher!</Message>
             <Name>MediaPortal</Name>
           </DependencyItem>
         </Items>
