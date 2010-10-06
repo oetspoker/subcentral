@@ -719,7 +719,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{98c6f802-e69c-432d-bee9-8e675de8893b}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{8a656a11-3acb-4b3c-83b4-c76c373e6175}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
