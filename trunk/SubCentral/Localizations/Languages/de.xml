@@ -15,7 +15,7 @@
 	<string Field="All">Alle</string>
 	<string Field="AllSubtitlesDeleted">Alle ({0}) Untertitel gelöscht!</string>
 	<string Field="AboutText">SubCentral ist ein eigenständiges Untertitel-Plugin für die MediaPortal HTPC Software. Sinn und Zweck des Plugins ist dem Benutzer die Möglichkeit zu bieten, Untertitel für Filme und TV-Serien zu suchen und herunterzuladen. Dies soll von den populären Plugins Moving Pictures und MP-TVSeries aus möglich sein.	Außerdem bietet es ein Interface für die leichte Einbindung und Integration in jedes andere Plugin.
-Am leichtesten lässt sich das Plugin nutzen, indem man Moving Pictures oder MP-TVSeries öffnet, zu einem Eintrag darin navigiert und "Untertitel holen" wählt. In Moving Pictures (unterstützt wird 1.0.3 oder höher) findet man die Funktion üblicherweise im Menü oder als eigenen Button in der Detailansicht (das hängt vom Skin ab). In TVSeries (unterstützt wird 2.6.0 oder höher) musst du das Kontextmenü für die Folge öffen und "Download" wählen. Dann auf "Untertitel laden" klicken. Wenn du willst, kannst du die Möglichkeit nutzen, die Daten die SubCentral laden soll, anzupassen.
+Am leichtesten lässt sich das Plugin nutzen, indem man Moving Pictures oder MP-TVSeries öffnet, zu einem Eintrag darin navigiert und "Untertitel holen" wählt. In Moving Pictures (unterstützt wird 1.0.3 oder höher) findet man die Funktion üblicherweise im Menü oder als eigenen Button in der Detailansicht (das hängt vom Skin ab). In TVSeries (unterstützt wird 2.6.0 oder höher) musst du das Kontextmenü für die Folge öffnen und "Download" wählen. Dann auf "Untertitel laden" klicken. Wenn du willst, kannst du die Möglichkeit nutzen, die Daten die SubCentral laden soll, anzupassen.
 Wenn du das Plugin vom Home-Screen aus öffnest - wie im Moment üblich - dann ist die manuelle Suche möglich. Hier kannst du deine eigenen Suchanfragen für Filme und Serien anlegen.
 Um Sprachen für die Suche zu definieren, solltest du den entsprechenden Menüeintrag wählen. Für eine detaillierte Einstellung des Plugins solltest du die Konfiguration in den Plugins der MediaPortal-Konfiguration öffnen. Hier lassen sich die Untertiel-Anbieter auswählen, sortieren und unbenennen. Dies geht auch für Anbieter-Gruppen. Zudem kannst du die Sprachen auswählen und sortieren und die Downloadordner wählen.
 Wenn die Suche beendet ist, kannst die Ergebnisse über das Menü sortieren und natürlich runterladen.
@@ -87,7 +87,7 @@ Besuche uns für weitere Infos auf der Google Code Subcentral Projekt-Seite!
 	<string Field="MediaMaybeInternalSubtitles">(es könnten eingebettete (interne) Untertitel vorhanden sein)</string>
 	<string Field="MediaHasSubtitles">Für die Datei sind schon Untertitel vorhanden. Wenn du sie löschen willst, benutze den Menü-Button.</string>
 	<string Field="MediaNoMoreSubtitles">Konnte keine weiteren Untertitel finden.\nWillst du "Untertitel nicht vorhanden" für \nden Anbieter ({0}) setzen?</string>
-	<string Field="MediaWrongMarkNoSubtitles">Die Datei ist bei {0} als\n"Keine Untertitel vorhanden" markiert.\n Es sind aber welche vorhanden.\nWillst du das korrigieren und\n"Untertitel vorhanden" setzen?</string>
+	<string Field="MediaWrongMarkNoSubtitles">Die Datei ist in {0} als "Keine\n Untertitel vorhanden" markiert.\nEs sind aber welche da. Willst du das korrigieren?</string>
 
 	<!-- N -->
 	<string Field="NewGroup">Neue Gruppe</string>
@@ -100,7 +100,7 @@ Besuche uns für weitere Infos auf der Google Code Subcentral Projekt-Seite!
 	<string Field="NoSubtitlesDelete">Keine Untertitel zum löschen gefunden.</string>
 
 	<!-- O -->
-	<string Field="OKSearch">OK/Suche</string>
+	<string Field="OKSearch">OK / Suche</string>
 	<string Field="OK">OK</string>
 
 	<!-- P -->
