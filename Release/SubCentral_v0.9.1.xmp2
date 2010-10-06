@@ -472,7 +472,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Description>The icon file of the package (jpg,png,bmp)</Description>
         </SectionParam>
         <SectionParam Name="Online Icon">
-          <Value />
+          <Value>http://subcentral.googlecode.com/svn/trunk/Release/Icon.png</Value>
           <ValueType>String</ValueType>
           <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
         </SectionParam>
@@ -719,7 +719,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{50affba4-8e91-4eb4-8d90-4bd0801b628d}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{8f3aa6c9-4959-4214-9402-8a287e2fd82a}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
