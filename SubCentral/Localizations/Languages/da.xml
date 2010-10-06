@@ -2,177 +2,178 @@
 <!-- SubCentral translation file -->
 <!-- Danish (da) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
-<!-- Updated 18. september 2010 -->
+<!-- Updated 6. oktober 2010 -->
 <strings>
-	<!-- # -->
+  <!-- # -->
 
-	<!-- A -->
-	<string Field="All">Alle</string>
-	<string Field="AllProviders">Alle leverandører</string>
-	<string Field="AllEnabledProviders">Alle aktive leverandører</string>
-	<string Field="AllSubtitlesDeleted">Alle ({0}) undertekster er slettet!</string>
-	<string Field="About">Om</string>
-	<string Field="AllSubtitlesDownloaded">Alle ({0}) undertekster er hentet!</string>
-	<string Field="AllSubtitlesCanceledDownload">Hentningen af alle ({0}) undertekster er annulleret!</string>
-	<string Field="AboutText">SubCentral er en tilføjelse til Mediaportal. Dens formål er at give brugeren mulighed til at søge og hente undertekster til film og TV-afsnit håndteret af de populære tilføjelser Moving Pictures og MP-TVseries. Den har et simpelt interface, som tillader en simpel implementering og kommunikation med hvilken som helst tilføjelse.
-Den nemmeste måde er at åbne Moving Picture eller MP-TVseries, da informationerne så hentes fra tilføjelserne. Så man skal søge film/afsnit og vælge "Hent undertekst". Moving Pictures er understøttet fra v. 1.0.3 eller senere. Knappen findes typisk i menuen eller en knap med udvidet information. I MPTV-serie, understøttet fra 2.6.0 eller senere, skal du åbne menuen for afsnittet, F9, og vælge "Hent" og så "Hent undertekst". Naturligvis kan en valgfri søgning også udføres i Subcentral.
-Denne valgfrie søgning er mulig, når tilføjelsen åbnes fra 'Basic Home' som nu.
-Brug menuen for at vælge undertekstsprog. Brug venligst Mediaportal konfigurationen til at indstille tilføjelsen(herunder udvælge, omorganisere og omdøbe grupper/leverandører, vælge sprog og downloadmappe).
-Efter en fuldendt søgning kan resultaterne sortes ved brug af menuen og naturligvis kan underteksten også hentes.
-For mere information besøg os på Google Code SubCentral projekt siden!
-</string>
+  <!-- A -->
+  <string Field="All">Alle</string>
+  <string Field="AllProviders">Alle leverandÃ¸rer</string>
+  <string Field="AllEnabledProviders">Alle aktive leverandÃ¸rer</string>
+  <string Field="AllSubtitlesDeleted">Alle ({0}) undertekster er slettet!</string>
+  <string Field="About">Om</string>
+  <string Field="AllSubtitlesDownloaded">Alle ({0}) undertekster er hentet!</string>
+  <string Field="AllSubtitlesCanceledDownload">Hentningen af alle ({0}) undertekster er annulleret!</string>
+  <string Field="AboutText">
+    SubCentral er en tilfÃ¸jelse til Mediaportal. Dens formÃ¥l er at give brugeren mulighed til at sÃ¸ge og hente undertekster til film og TV-afsnit hÃ¥ndteret af de populÃ¦re tilfÃ¸jelser Moving Pictures og MP-TVseries. Den har et simpelt interface, som tillader en simpel implementering og kommunikation med hvilken som helst tilfÃ¸jelse.
+    Den nemmeste mÃ¥de er at Ã¥bne Moving Picture eller MP-TVseries, da informationerne sÃ¥ hentes fra tilfÃ¸jelserne. SÃ¥ man skal sÃ¸ge film/afsnit og vÃ¦lge "Hent undertekst". Moving Pictures er understÃ¸ttet fra v. 1.0.3 eller senere. Knappen findes typisk i menuen eller en knap med udvidet information. I MPTV-serie, understÃ¸ttet fra 2.6.0 eller senere, skal du Ã¥bne menuen for afsnittet, F9, og vÃ¦lge "Hent" og sÃ¥ "Hent undertekst". Naturligvis kan en valgfri sÃ¸gning ogsÃ¥ udfÃ¸res i Subcentral.
+    Denne valgfrie sÃ¸gning er mulig, nÃ¥r tilfÃ¸jelsen Ã¥bnes fra 'Basic Home' som nu.
+    Brug menuen for at vÃ¦lge undertekstsprog. Brug venligst Mediaportal konfigurationen til at indstille tilfÃ¸jelsen(herunder udvÃ¦lge, omorganisere og omdÃ¸be grupper/leverandÃ¸rer, vÃ¦lge sprog og downloadmappe).
+    Efter en fuldendt sÃ¸gning kan resultaterne sortes ved brug af menuen og naturligvis kan underteksten ogsÃ¥ hentes.
+    For mere information besÃ¸g os pÃ¥ Google Code SubCentral projekt siden!
+  </string>
 
-	<!-- B -->
-	<string Field="Back">Tilbage</string>
+  <!-- B -->
+  <string Field="Back">Tilbage</string>
 
-	<!-- C -->
-	<string Field="CannotLoadSkin">Kunne ikke åbne skinfilen for\nSubCentral!</string>
-	<string Field="Cancel">Annuller</string>
-	<string Field="Completed">Færdig</string>
-	<string Field="Confirm">Bekræft</string>
-	<string Field="ClearFiles">Ryd filer</string>
-	<string Field="ClearMedia">Ryd medie</string>
-	<string Field="CanceledDownload">Download annulleret!</string>
-	<string Field="ContextMenu">Kontekst menu</string>
-	<string Field="CannotUseManualSearch">Manuel søgning kan ikke startes, da\ningen fast download mappe er valgt.\nIndstil venligst dette i\nkonfigurationen.</string>
-	<string Field="CannotClearMedia">Kan ikke rydde mediefiler, da ingen\n fast download mappe er valgt.\nIndstil venligst dette i\nkonfigurationen.</string>
+  <!-- C -->
+  <string Field="CannotLoadSkin">Kunne ikke Ã¥bne skinfilen for\nSubCentral!</string>
+  <string Field="Cancel">Annuller</string>
+  <string Field="Completed">FÃ¦rdig</string>
+  <string Field="Confirm">BekrÃ¦ft</string>
+  <string Field="ClearFiles">Ryd filer</string>
+  <string Field="ClearMedia">Ryd medie</string>
+  <string Field="CanceledDownload">Download annulleret!</string>
+  <string Field="ContextMenu">Kontekst menu</string>
+  <string Field="CannotUseManualSearch">Manuel sÃ¸gning kan ikke startes, da\ningen fast download mappe er valgt.\nIndstil venligst dette i\nkonfigurationen.</string>
+  <string Field="CannotClearMedia">Kan ikke rydde mediefiler, da ingen\n fast download mappe er valgt.\nIndstil venligst dette i\nkonfigurationen.</string>
 
-	<!-- D -->
-	<string Field="DefaultFor">Standart for: {0}</string>
-	<string Field="DeleteSubtitles">Slet undertekster</string>
-	<string Field="DownloadFoderDoesNotExistCreate">Downloadmappe findes ikke.\nOpret den?</string>
-	<string Field="Download">Download</string>
-	<string Field="DownloadTo">Download til...</string>
-	<string Field="DefaultFolderNotWritable">Standart mappe {0} er skrivebeskyttet! Vælg venligst en anden.</string>
-	<string Field="DefaultDownloadFoderDoesNotExistCreate">Standart downloadmappe findes ikke.\nOpret den?</string>
-	<string Field="Default">Standartindstilling</string>
+  <!-- D -->
+  <string Field="DefaultFor">Standart for: {0}</string>
+  <string Field="DeleteSubtitles">Slet undertekster</string>
+  <string Field="DownloadFoderDoesNotExistCreate">Downloadmappe findes ikke.\nOpret den?</string>
+  <string Field="Download">Download</string>
+  <string Field="DownloadTo">Download til...</string>
+  <string Field="DefaultFolderNotWritable">Standart mappe {0} er skrivebeskyttet! VÃ¦lg venligst en anden.</string>
+  <string Field="DefaultDownloadFoderDoesNotExistCreate">Standart downloadmappe findes ikke.\nOpret den?</string>
+  <string Field="Default">Standartindstilling</string>
 
-	<!-- E -->
-	<string Field="Error">Fejl</string>
-	<string Field="ExternalPlugin">eksterne tilføjelse</string>
-	<string Field="ErrorWhileDownloadingSubtitles">Fejl i overførslen af underteksterne!</string>
-	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Fejl ved hentning af undertekster: {0}</string>
-	<string Field="ErrorWhileRetrievingSubtitles">Fejl i hentningen af underteksterne!</string>
-	<string Field="ErrorWhileCreatingDirectory">Fejl i oprettelse af mappe!</string>
+  <!-- E -->
+  <string Field="Error">Fejl</string>
+  <string Field="ExternalPlugin">eksterne tilfÃ¸jelse</string>
+  <string Field="ErrorWhileDownloadingSubtitles">Fejl i overfÃ¸rslen af underteksterne!</string>
+  <string Field="ErrorWhileDownloadingSubtitlesWithReason">Fejl ved hentning af undertekster: {0}</string>
+  <string Field="ErrorWhileRetrievingSubtitles">Fejl i hentningen af underteksterne!</string>
+  <string Field="ErrorWhileCreatingDirectory">Fejl i oprettelse af mappe!</string>
 
-	<!-- F -->
-	<string Field="FoundSubtitles">Undertekster fundet</string>
-	<string Field="From">Fra: {0}</string>
+  <!-- F -->
+  <string Field="FoundSubtitles">Undertekster fundet</string>
+  <string Field="From">Fra: {0}</string>
 
-	<!-- G -->
-	<string Field="GroupS">Gruppe(r)</string>
-	<string Field="GroupProviderDefault">Gruppe/leverandør standart</string>
+  <!-- G -->
+  <string Field="GroupS">Gruppe(r)</string>
+  <string Field="GroupProviderDefault">Gruppe/leverandÃ¸r standart</string>
 
-	<!-- H -->
+  <!-- H -->
 
-	<!-- I -->
-	<string Field="Initializing">Initialiserer</string>
-	<string Field="IMDbID">IMDb ID: {0}</string>
+  <!-- I -->
+  <string Field="Initializing">Initialiserer</string>
+  <string Field="IMDbID">IMDb ID: {0}</string>
 
-	<!-- L -->
-	<string Field="Languages">Sprog</string>
-	<string Field="Language">Sprog</string>
-	<string Field="Local">Lokalt (i medie mapperne)</string>
-	
-	<!-- M -->
-	<string Field="Movies">Film</string>
-	<string Field="ManualSearch">Manuel søgning</string>
-	<string Field="MediaNoSubtitles">Kunne ikke finde nogen undertekst til mediet!</string>
-	<string Field="MediaOnlyInternalSubtitles">Kun indbyggede undertekster blev fundet for mediet!</string>
-	<string Field="MediaWrongMarkHasSubtitles">Mediet  fra {0} burde have en undertekst ifl. infoen\nmen ingen tekst kunne findes. Ønsker du \nat ændre info således at der står at den ikke har tilgængelige undertekster??</string>
-	<string Field="MediaMaybeInternalSubtitles">(og dog kan den godt have indbygget undertekster)</string>
-	<string Field="MediaHasSubtitles">Mediet har allerede undertekster. Hvis du ønsker at slette dem brug menu knappen.</string>
-	<string Field="MediaNoMoreSubtitles">Kunne ikke finde flere undertekster til mediet.\nØnsker du at sætte undertekster til utilgængelig\ni leverandøren ({0})?</string>
-	<string Field="MediaWrongMarkNoSubtitles">Mediet  fra {0} har ikke en undertekst ifl. infoen\nmen tekster er fundet. Ønsker du \nat ændre info således at der står at der tilgængelige undertekster??</string>
-	<string Field="ModifySearch">Ændre søgning</string>
-	<string Field="MediaFilesDifferFromSubtitleFiles">Mediefile antal afviger fra antallet af undertekster. Forkerte undertekster?</string>
-	<string Field="MovieIMDb">Film (IMDb)</string>
-	<string Field="Movie">Film</string>
+  <!-- L -->
+  <string Field="Languages">Sprog</string>
+  <string Field="Language">Sprog</string>
+  <string Field="Local">Lokalt (i medie mapperne)</string>
 
-	<!-- N -->
-	<string Field="NewGroup">Ny gruppe</string>
-	<string Field="NoResultsFound">Ingen resultater fundet</string>
-	<string Field="NoSubtitlesFound">Ingen undertekster fundet</string>
-	<string Field="NoSubtitlesDelete">Ingen undertekster kunne slettes idet det ikke blev fundet.</string>
-	<string Field="NoDownloadFolders">Ingen gyldig download mappe fundet for dette medie.</string>
-	<string Field="NotEnoughDataForSearch">Ikke nok informationer til undertekstsøgning</string>
-	<string Field="Name">Navn</string>
-	<string Field="NoSorting">Ingen sortering</string>
+  <!-- M -->
+  <string Field="Movies">Film</string>
+  <string Field="ManualSearch">Manuel sÃ¸gning</string>
+  <string Field="MediaNoSubtitles">Kunne ikke finde nogen undertekst til mediet!</string>
+  <string Field="MediaOnlyInternalSubtitles">Kun indbyggede undertekster blev fundet for mediet!</string>
+  <string Field="MediaWrongMarkHasSubtitles">Mediet fra {0} stÃ¥r til at have undertekster\n, men ingen kunne findes. Ã˜nsker du at Ã¦ndre sÃ¦tte\nundertekster til utilgÃ¦ngelig?</string>
+  <string Field="MediaMaybeInternalSubtitles">(og dog kan der godt vÃ¦re indbygget undertekster)</string>
+  <string Field="MediaHasSubtitles">Mediet har allerede undertekster. Brug "Slet" hvis du Ã¸nsker at slette dem.</string>
+  <string Field="MediaNoMoreSubtitles">Kunne ikke finde flere undertekster til mediet.\nÃ˜nsker du at sÃ¦tte undertekster til utilgÃ¦ngelig\ni leverandÃ¸ren ({0})?</string>
+  <string Field="MediaWrongMarkNoSubtitles">Mediet  fra {0} har ingen undertekster,\nmen tekster er fundet. Ã˜nsker du\nat Ã¦ndre dette sÃ¥ledes, at der stÃ¥r der tilgÃ¦ngelige undertekster?</string>
+  <string Field="ModifySearch">Ã†ndre sÃ¸gning</string>
+  <string Field="MediaFilesDifferFromSubtitleFiles">Mediefile antallet afviger fra antallet af undertekster. Forkerte undertekster?</string>
+  <string Field="MovieIMDb">Film (IMDb)</string>
+  <string Field="Movie">Film</string>
 
-	<!-- O -->
-	<string Field="OKSearch">OK/Søg</string>
-	<string Field="OK">OK</string>
+  <!-- N -->
+  <string Field="NewGroup">Ny gruppe</string>
+  <string Field="NoResultsFound">Ingen resultater fundet</string>
+  <string Field="NoSubtitlesFound">Ingen undertekster fundet</string>
+  <string Field="NoSubtitlesDelete">Ingen undertekster kunne slettes idet det ikke blev fundet.</string>
+  <string Field="NoDownloadFolders">Ingen gyldig download mappe fundet for dette medie.</string>
+  <string Field="NotEnoughDataForSearch">Ikke nok informationer til undertekstsÃ¸gning</string>
+  <string Field="Name">Navn</string>
+  <string Field="NoSorting">Ingen sortering</string>
 
-	<!-- P -->
-	<string Field="ProviderS">Leverandør(er)</string>
+  <!-- O -->
+  <string Field="OKSearch">OK/SÃ¸g</string>
+  <string Field="OK">OK</string>
 
-	<!-- Q -->
-	<string Field="QueryingProviders">Sætter leverandører i kø</string>
+  <!-- P -->
+  <string Field="ProviderS">LeverandÃ¸r(er)</string>
 
-	<!-- R -->
-	<string Field="Revert">Fortryd</string>
+  <!-- Q -->
+  <string Field="QueryingProviders">SÃ¦tter leverandÃ¸rer i kÃ¸</string>
 
-	<!-- S -->
-	<string Field="Search">Søg</string>
-	<string Field="SubtitleDownloaderUnavailable">Er SubtitleDownloader.dll tilgængelig?</string>
-	<string Field="SubtitleSearch">Undertekst søgning</string>
-	<string Field="SearchingSubtitles">Søger undertekster...</string>
-	<string Field="SelectLanguages">Vælg sprog</string>
-	<string Field="SortByMediaTags">Sorter efter medie tags (hvis muligt)</string>
-	<string Field="SkinTranslationMediaTags">Medie tags</string>
-	<string Field="SubtitlesExist">Undertekst findes allerede.\nOverskriv eksisterende?</string>
-	<string Field="SubtitlesDownloaded">Undertekst downloaded!</string>
-	<string Field="SelectDownloadFolder">Vælg download mappe</string>
-	<string Field="SubtitleS">Undertekst(er)</string>
-	<string Field="Subtitle">Undertekst</string>
-	<string Field="Subtitles">Undertekster</string>
-	<string Field="SubtitlesDownloadedCount">{0} undertekster hentet</string>
-	<string Field="SubtitlesDownloadErrorCount">{0} underteksthentning mislykkedes</string>
-	<string Field="SubtitlesDownloadCanceledCount">{0} undertekst download annulleret</string>
-	<string Field="SelectFileForSubtitle">Vælg medie file for '{0}'</string>
-	<string Field="SubtitleFilesToDelete">Undertektser som slettes</string>
-	<string Field="SearchType">Søgning type: {0}</string>
-	<string Field="SiteDoesNotSupportIMDbIDSearch">Siden understøtter ikke IMDb ID søgning!</string>
-	<string Field="SiteDoesNotSupportMovieSearch">Siden understøtter ikke film søgning!</string>
-	<string Field="SiteDoesNotSupportTVShowSearch">Siden understøtter ikke tv-afsnit søgning!</string>
-	<string Field="Sorting">Sortering</string>
-	<string Field="Sort">Sortér</string>
-	<string Field="SortBy">Sortér efter: {0}</string>
-	<string Field="SortByLanguage">Sortér efter undertekst sprog</string>
-	<string Field="SortByName">Sortér efter undertekst navn</string>
+  <!-- R -->
+  <string Field="Revert">Fortryd</string>
 
-	<string Field="SkinTranslationFrom">Fra</string>
-	<string Field="SkinTranslationSearchType">Søgning type</string>
-	<string Field="SkinTranslationMediaFiles">Medie filer</string>
-	<string Field="SkinTranslationDownloadFolder">Download mappe</string>
-	<string Field="SkinTranslationSearchData">Søg data</string>
-	<string Field="SkinTranslationIMDbID">IMDb ID</string>
-	<string Field="SkinTranslationTitle">Title</string>
-	<string Field="SkinTranslationYear">År</string>
-	<string Field="SkinTranslationSeason">Sæson</string>
-	<string Field="SkinTranslationEpisode">Afsnit</string>
-	<string Field="SkinTranslationMovie">Film</string>
-	<string Field="SkinTranslationTVShow">TV serier</string>
+  <!-- S -->
+  <string Field="Search">SÃ¸g</string>
+  <string Field="SubtitleDownloaderUnavailable">Er SubtitleDownloader.dll tilgÃ¦ngelig?</string>
+  <string Field="SubtitleSearch">Undertekst sÃ¸gning</string>
+  <string Field="SearchingSubtitles">SÃ¸ger undertekster...</string>
+  <string Field="SelectLanguages">VÃ¦lg sprog</string>
+  <string Field="SortByMediaTags">Sorter efter medie tags (hvis muligt)</string>
+  <string Field="SkinTranslationMediaTags">Medie tags</string>
+  <string Field="SubtitlesExist">Undertekst findes allerede.\nOverskriv eksisterende?</string>
+  <string Field="SubtitlesDownloaded">Undertekst downloaded!</string>
+  <string Field="SelectDownloadFolder">VÃ¦lg download mappe</string>
+  <string Field="SubtitleS">Undertekst(er)</string>
+  <string Field="Subtitle">Undertekst</string>
+  <string Field="Subtitles">Undertekster</string>
+  <string Field="SubtitlesDownloadedCount">{0} undertekster hentet</string>
+  <string Field="SubtitlesDownloadErrorCount">{0} underteksthentning mislykkedes</string>
+  <string Field="SubtitlesDownloadCanceledCount">{0} undertekst download annulleret</string>
+  <string Field="SelectFileForSubtitle">VÃ¦lg medie file for '{0}'</string>
+  <string Field="SubtitleFilesToDelete">Undertektser som slettes</string>
+  <string Field="SearchType">SÃ¸gning type: {0}</string>
+  <string Field="SiteDoesNotSupportIMDbIDSearch">Siden understÃ¸tter ikke IMDb ID sÃ¸gning!</string>
+  <string Field="SiteDoesNotSupportMovieSearch">Siden understÃ¸tter ikke film sÃ¸gning!</string>
+  <string Field="SiteDoesNotSupportTVShowSearch">Siden understÃ¸tter ikke tv-afsnit sÃ¸gning!</string>
+  <string Field="Sorting">Sortering</string>
+  <string Field="Sort">SortÃ©r</string>
+  <string Field="SortBy">SortÃ©r efter: {0}</string>
+  <string Field="SortByLanguage">SortÃ©r efter undertekst sprog</string>
+  <string Field="SortByName">SortÃ©r efter undertekst navn</string>
 
-	<!-- T -->
-	<string Field="TVShows">TV serier</string>
-	<string Field="TVShow">TV serie</string>
+  <string Field="SkinTranslationFrom">Fra</string>
+  <string Field="SkinTranslationSearchType">SÃ¸gning type</string>
+  <string Field="SkinTranslationMediaFiles">Medie filer</string>
+  <string Field="SkinTranslationDownloadFolder">Download mappe</string>
+  <string Field="SkinTranslationSearchData">SÃ¸g data</string>
+  <string Field="SkinTranslationIMDbID">IMDb ID</string>
+  <string Field="SkinTranslationTitle">Title</string>
+  <string Field="SkinTranslationYear">Ã…r</string>
+  <string Field="SkinTranslationSeason">SÃ¦son</string>
+  <string Field="SkinTranslationEpisode">Afsnit</string>
+  <string Field="SkinTranslationMovie">Film</string>
+  <string Field="SkinTranslationTVShow">TV serier</string>
 
-	<!-- U -->
-	<string Field="UnableToImportDataFrom">Ude af stand til at importere data\nfra {0}.</string>
-	<string Field="UnableToDeleteSubtitleFile">Ude af stand til at slette undertekst!</string>
-	<string Field="UnableToDeleteSubtitleFiles">Ude af stand til at slette følgende undertekster:</string>
-	<string Field="UnableToLoadSubtitleDownloader">Ude af stand til at loade SubtitleDownloader biblioteket!</string>
+  <!-- T -->
+  <string Field="TVShows">TV serier</string>
+  <string Field="TVShow">TV serie</string>
 
-	<!-- V -->
+  <!-- U -->
+  <string Field="UnableToImportDataFrom">Ude af stand til at importere data\nfra {0}.</string>
+  <string Field="UnableToDeleteSubtitleFile">Ude af stand til at slette undertekst!</string>
+  <string Field="UnableToDeleteSubtitleFiles">Ude af stand til at slette fÃ¸lgende undertekster:</string>
+  <string Field="UnableToLoadSubtitleDownloader">Ude af stand til at loade SubtitleDownloader biblioteket!</string>
 
-	<!-- W -->
-	<string Field="Warning">Advarsel</string>
-	<string Field="WrongFormatIMDbID">Forkert format for ID (ttNNNNNNN)!</string>
-	<string Field="WrongFormatYear">Forkert format for år (1900 - {0})!</string>
-	<string Field="WrongFormatSeasonEpisode">{0} skal være tal og større end 0!</string>
+  <!-- V -->
 
-	<!-- Y -->
-	<string Field="PleaseSelectLanguages">Der skal vælges mindst ét sprog!</string>
+  <!-- W -->
+  <string Field="Warning">Advarsel</string>
+  <string Field="WrongFormatIMDbID">Forkert format for ID (ttNNNNNNN)!</string>
+  <string Field="WrongFormatYear">Forkert format for Ã¥r (1900 - {0})!</string>
+  <string Field="WrongFormatSeasonEpisode">{0} skal vÃ¦re tal og stÃ¸rre end 0!</string>
+
+  <!-- Y -->
+  <string Field="PleaseSelectLanguages">Der skal vÃ¦lges mindst Ã©t sprog!</string>
 
 </strings>
