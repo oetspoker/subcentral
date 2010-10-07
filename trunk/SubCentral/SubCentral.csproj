@@ -188,6 +188,7 @@
     <Content Include="Localizations\Languages\da.xml" />
     <Content Include="Localizations\Languages\de.xml" />
     <Content Include="Localizations\Languages\en-US.xml" />
+    <Content Include="Localizations\Languages\nl.xml" />
     <None Include="Resources\FolderPageWhite.png" />
     <None Include="Resources\PageWhiteText.png" />
     <None Include="Properties\VersionInfo.cs.tmpl" />
