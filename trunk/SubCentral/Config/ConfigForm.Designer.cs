@@ -112,6 +112,7 @@
             this.btnAdvancedConfig = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.pgGeneral.SuspendLayout();
             this.gbFeedConf.SuspendLayout();
@@ -765,6 +766,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label39);
@@ -818,7 +820,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(275, 307);
+            this.label39.Location = new System.Drawing.Point(275, 326);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(64, 13);
             this.label39.TabIndex = 24;
@@ -937,7 +939,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(275, 288);
+            this.label35.Location = new System.Drawing.Point(275, 307);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(69, 13);
             this.label35.TabIndex = 13;
@@ -963,9 +965,9 @@
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(275, 269);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(59, 13);
+            this.label33.Size = new System.Drawing.Size(79, 13);
             this.label33.TabIndex = 11;
-            this.label33.Text = "Italian: ???";
+            this.label33.Text = "Greek: ScRePt";
             this.label33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label33.Visible = false;
             // 
@@ -1098,6 +1100,18 @@
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(275, 288);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Italian: ???";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.Visible = false;
+            // 
             // ConfigForm
             // 
             this.AcceptButton = this.btnSave;
@@ -1218,6 +1232,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
