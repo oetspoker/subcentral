@@ -61,7 +61,6 @@
             this.btnGroupsAndProvidersAddGroup = new System.Windows.Forms.Button();
             this.groupBoxGeneralOther = new System.Windows.Forms.GroupBox();
             this.checkBoxSearchDefaultsWhenFromManualSearch = new System.Windows.Forms.CheckBox();
-            this.checkBoxUseLanguageCode = new System.Windows.Forms.CheckBox();
             this.labelPluginLoadWithSearchData = new System.Windows.Forms.Label();
             this.comboBoxPluginLoadWithSearchData = new System.Windows.Forms.ComboBox();
             this.pgLanguages = new System.Windows.Forms.TabPage();
@@ -76,6 +75,7 @@
             this.labelWhenDownloading = new System.Windows.Forms.Label();
             this.comboBoxWhenDownloading = new System.Windows.Forms.ComboBox();
             this.groupBoxFolders = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.checkBoxFoldersDefaultTVShows = new System.Windows.Forms.CheckBox();
             this.checkBoxFoldersDefaultMovies = new System.Windows.Forms.CheckBox();
             this.listViewFolders = new System.Windows.Forms.ListView();
@@ -113,7 +113,7 @@
             this.btnAdvancedConfig = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelIssues = new System.Windows.Forms.LinkLabel();
             this.tabControl.SuspendLayout();
             this.pgGeneral.SuspendLayout();
             this.gbFeedConf.SuspendLayout();
@@ -451,7 +451,6 @@
             this.groupBoxGeneralOther.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxGeneralOther.Controls.Add(this.checkBoxSearchDefaultsWhenFromManualSearch);
-            this.groupBoxGeneralOther.Controls.Add(this.checkBoxUseLanguageCode);
             this.groupBoxGeneralOther.Controls.Add(this.labelPluginLoadWithSearchData);
             this.groupBoxGeneralOther.Controls.Add(this.comboBoxPluginLoadWithSearchData);
             this.groupBoxGeneralOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -465,27 +464,14 @@
             // 
             // checkBoxSearchDefaultsWhenFromManualSearch
             // 
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxSearchDefaultsWhenFromManualSearch.AutoSize = true;
             this.checkBoxSearchDefaultsWhenFromManualSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Location = new System.Drawing.Point(344, 38);
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Location = new System.Drawing.Point(203, 40);
             this.checkBoxSearchDefaultsWhenFromManualSearch.Name = "checkBoxSearchDefaultsWhenFromManualSearch";
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Size = new System.Drawing.Size(252, 17);
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Size = new System.Drawing.Size(231, 17);
             this.checkBoxSearchDefaultsWhenFromManualSearch.TabIndex = 3;
-            this.checkBoxSearchDefaultsWhenFromManualSearch.Text = "Search defaults when confirming manual search";
+            this.checkBoxSearchDefaultsWhenFromManualSearch.Text = "do the same after confirming manual search";
             this.checkBoxSearchDefaultsWhenFromManualSearch.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxUseLanguageCode
-            // 
-            this.checkBoxUseLanguageCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxUseLanguageCode.AutoSize = true;
-            this.checkBoxUseLanguageCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(429, 19);
-            this.checkBoxUseLanguageCode.Name = "checkBoxUseLanguageCode";
-            this.checkBoxUseLanguageCode.Size = new System.Drawing.Size(167, 17);
-            this.checkBoxUseLanguageCode.TabIndex = 2;
-            this.checkBoxUseLanguageCode.Text = "Use language code on results";
-            this.checkBoxUseLanguageCode.UseVisualStyleBackColor = true;
             // 
             // labelPluginLoadWithSearchData
             // 
@@ -636,8 +622,9 @@
             this.comboBoxFileName.DropDownWidth = 250;
             this.comboBoxFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxFileName.Items.AddRange(new object[] {
-            "Use default folders",
-            "Always ask"});
+            "Use default",
+            "Always ask",
+            "Ask if no media file info is found (fe. manual search)"});
             this.comboBoxFileName.Location = new System.Drawing.Point(203, 38);
             this.comboBoxFileName.Name = "comboBoxFileName";
             this.comboBoxFileName.Size = new System.Drawing.Size(188, 21);
@@ -682,6 +669,15 @@
             this.groupBoxFolders.TabIndex = 3;
             this.groupBoxFolders.TabStop = false;
             this.groupBoxFolders.Text = "Folders  ";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(6, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(591, 43);
+            this.label4.TabIndex = 3;
+            this.label4.Text = resources.GetString("label4.Text");
             // 
             // checkBoxFoldersDefaultTVShows
             // 
@@ -768,6 +764,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labelIssues);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -900,36 +897,36 @@
             // 
             this.labelForum.AutoSize = true;
             this.labelForum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelForum.Location = new System.Drawing.Point(12, 433);
+            this.labelForum.Location = new System.Drawing.Point(12, 400);
             this.labelForum.Name = "labelForum";
-            this.labelForum.Size = new System.Drawing.Size(180, 13);
+            this.labelForum.Size = new System.Drawing.Size(167, 13);
             this.labelForum.TabIndex = 18;
             this.labelForum.TabStop = true;
-            this.labelForum.Text = "SubCentral MediaPortal forum thread";
+            this.labelForum.Text = "SubCentral on MediaPortal forums";
             this.labelForum.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelForum_LinkClicked);
             // 
             // labelManual
             // 
             this.labelManual.AutoSize = true;
             this.labelManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelManual.Location = new System.Drawing.Point(12, 409);
+            this.labelManual.Location = new System.Drawing.Point(12, 418);
             this.labelManual.Name = "labelManual";
-            this.labelManual.Size = new System.Drawing.Size(244, 13);
+            this.labelManual.Size = new System.Drawing.Size(96, 13);
             this.labelManual.TabIndex = 17;
             this.labelManual.TabStop = true;
-            this.labelManual.Text = "SubCentral User/Developer/Skin designer manual";
+            this.labelManual.Text = "SubCentral manual";
             this.labelManual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelManual_LinkClicked);
             // 
             // labelGoogleCode
             // 
             this.labelGoogleCode.AutoSize = true;
             this.labelGoogleCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGoogleCode.Location = new System.Drawing.Point(12, 387);
+            this.labelGoogleCode.Location = new System.Drawing.Point(12, 382);
             this.labelGoogleCode.Name = "labelGoogleCode";
-            this.labelGoogleCode.Size = new System.Drawing.Size(159, 13);
+            this.labelGoogleCode.Size = new System.Drawing.Size(143, 13);
             this.labelGoogleCode.TabIndex = 16;
             this.labelGoogleCode.TabStop = true;
-            this.labelGoogleCode.Text = "SubCentral Google Code project";
+            this.labelGoogleCode.Text = "SubCentral Google Code site";
             this.labelGoogleCode.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelGoogleCode_LinkClicked);
             // 
             // label36
@@ -971,7 +968,6 @@
             this.label34.TabIndex = 12;
             this.label34.Text = "Dutch: Henkie Flits";
             this.label34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label34.Visible = false;
             // 
             // label33
             // 
@@ -983,7 +979,6 @@
             this.label33.TabIndex = 11;
             this.label33.Text = "Greek: ScRePt";
             this.label33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label33.Visible = false;
             // 
             // label32
             // 
@@ -1001,9 +996,9 @@
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(275, 212);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(126, 13);
+            this.label31.Size = new System.Drawing.Size(175, 13);
             this.label31.TabIndex = 9;
-            this.label31.Text = "German: Michael Schuler";
+            this.label31.Text = "German: Michael Schuler / catavolt";
             // 
             // label30
             // 
@@ -1114,14 +1109,17 @@
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // labelIssues
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(6, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(591, 43);
-            this.label4.TabIndex = 3;
-            this.label4.Text = resources.GetString("label4.Text");
+            this.labelIssues.AutoSize = true;
+            this.labelIssues.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIssues.Location = new System.Drawing.Point(12, 436);
+            this.labelIssues.Name = "labelIssues";
+            this.labelIssues.Size = new System.Drawing.Size(122, 13);
+            this.labelIssues.TabIndex = 28;
+            this.labelIssues.TabStop = true;
+            this.labelIssues.Text = "SubCentral issue tracker";
+            this.labelIssues.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.labelIssues_LinkClicked);
             // 
             // ConfigForm
             // 
@@ -1237,7 +1235,6 @@
         private System.Windows.Forms.ComboBox comboBoxWhenDownloading;
         private System.Windows.Forms.Label labelFileName;
         private System.Windows.Forms.ComboBox comboBoxFileName;
-        private System.Windows.Forms.CheckBox checkBoxUseLanguageCode;
         private System.Windows.Forms.CheckBox checkBoxSearchDefaultsWhenFromManualSearch;
         private System.Windows.Forms.Button btnGroupsAndProvidersEditGroup;
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -1245,6 +1242,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.LinkLabel labelIssues;
     }
 }
 

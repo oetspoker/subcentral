@@ -7,6 +7,7 @@ using MediaPortal.GUI.Library;
 using SubCentral.GUI.Items;
 using SubCentral.Localizations;
 using SubCentral.PluginHandlers;
+using SubCentral.Settings;
 using SubCentral.Settings.Data;
 using SubCentral.Utils;
 using NLog;
@@ -237,6 +238,9 @@ namespace SubCentral.GUI {
 
                 SubtitleDownloader.Core.ISubtitleDownloader subsDownloader = kvp.Value.downloader;
                 string providerName = kvp.Value.downloaderTitle;
+
+                //testing SearchTimeout
+                subsDownloader.SearchTimeout = SettingsManager.Properties.GeneralSettings.SearchTimeout;
 
                 List<SubtitleDownloader.Core.Subtitle> resultsFromDownloader = null;
                 int percent = (100 / downloaders.Count) * providerCount;

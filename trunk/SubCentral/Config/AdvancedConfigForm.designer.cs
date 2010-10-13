@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvancedConfigForm));
             this.gbLogging = new System.Windows.Forms.GroupBox();
             this.btnOpenLog = new System.Windows.Forms.Button();
@@ -39,8 +40,16 @@
             this.checkBoxCheckMediaOnOpen = new System.Windows.Forms.CheckBox();
             this.txtPluginName = new System.Windows.Forms.TextBox();
             this.labelPluginName = new System.Windows.Forms.Label();
+            this.gbSearching = new System.Windows.Forms.GroupBox();
+            this.gbDownloading = new System.Windows.Forms.GroupBox();
+            this.numericUpDownSearching1 = new System.Windows.Forms.NumericUpDown();
+            this.laSearching1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBoxUseLanguageCode = new System.Windows.Forms.CheckBox();
             this.gbLogging.SuspendLayout();
             this.gbGeneral.SuspendLayout();
+            this.gbSearching.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSearching1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbLogging
@@ -50,7 +59,7 @@
             this.gbLogging.Controls.Add(this.btnOpenLog);
             this.gbLogging.Controls.Add(this.btnOpenLogFolder);
             this.gbLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbLogging.Location = new System.Drawing.Point(6, 103);
+            this.gbLogging.Location = new System.Drawing.Point(6, 239);
             this.gbLogging.Name = "gbLogging";
             this.gbLogging.Size = new System.Drawing.Size(359, 53);
             this.gbLogging.TabIndex = 1;
@@ -87,7 +96,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSave.Image = global::SubCentral.Properties.Resources.OK;
-            this.btnSave.Location = new System.Drawing.Point(6, 167);
+            this.btnSave.Location = new System.Drawing.Point(6, 304);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;
@@ -100,7 +109,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancel.Image = global::SubCentral.Properties.Resources.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(87, 167);
+            this.btnCancel.Location = new System.Drawing.Point(87, 304);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
@@ -168,11 +177,85 @@
             this.labelPluginName.TabIndex = 0;
             this.labelPluginName.Text = "Plugin name on home-screen:";
             // 
+            // gbSearching
+            // 
+            this.gbSearching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbSearching.Controls.Add(this.laSearching1);
+            this.gbSearching.Controls.Add(this.checkBoxUseLanguageCode);
+            this.gbSearching.Controls.Add(this.numericUpDownSearching1);
+            this.gbSearching.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbSearching.Location = new System.Drawing.Point(6, 103);
+            this.gbSearching.Name = "gbSearching";
+            this.gbSearching.Size = new System.Drawing.Size(359, 71);
+            this.gbSearching.TabIndex = 6;
+            this.gbSearching.TabStop = false;
+            this.gbSearching.Text = "Searching";
+            // 
+            // gbDownloading
+            // 
+            this.gbDownloading.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbDownloading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDownloading.Location = new System.Drawing.Point(6, 180);
+            this.gbDownloading.Name = "gbDownloading";
+            this.gbDownloading.Size = new System.Drawing.Size(359, 53);
+            this.gbDownloading.TabIndex = 7;
+            this.gbDownloading.TabStop = false;
+            this.gbDownloading.Text = "Downloading";
+            // 
+            // numericUpDownSearching1
+            // 
+            this.numericUpDownSearching1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownSearching1.Location = new System.Drawing.Point(167, 19);
+            this.numericUpDownSearching1.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.numericUpDownSearching1.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDownSearching1.Name = "numericUpDownSearching1";
+            this.numericUpDownSearching1.Size = new System.Drawing.Size(66, 20);
+            this.numericUpDownSearching1.TabIndex = 0;
+            this.numericUpDownSearching1.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // laSearching1
+            // 
+            this.laSearching1.AutoSize = true;
+            this.laSearching1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.laSearching1.Location = new System.Drawing.Point(9, 21);
+            this.laSearching1.Name = "laSearching1";
+            this.laSearching1.Size = new System.Drawing.Size(150, 13);
+            this.laSearching1.TabIndex = 1;
+            this.laSearching1.Text = "Provider search time out (sec):";
+            this.toolTip1.SetToolTip(this.laSearching1, resources.GetString("laSearching1.ToolTip"));
+            // 
+            // checkBoxUseLanguageCode
+            // 
+            this.checkBoxUseLanguageCode.AutoSize = true;
+            this.checkBoxUseLanguageCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(12, 45);
+            this.checkBoxUseLanguageCode.Name = "checkBoxUseLanguageCode";
+            this.checkBoxUseLanguageCode.Size = new System.Drawing.Size(175, 17);
+            this.checkBoxUseLanguageCode.TabIndex = 2;
+            this.checkBoxUseLanguageCode.Text = "Show language code on results";
+            this.checkBoxUseLanguageCode.UseVisualStyleBackColor = true;
+            // 
             // AdvancedConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 202);
+            this.ClientSize = new System.Drawing.Size(372, 339);
+            this.Controls.Add(this.gbDownloading);
+            this.Controls.Add(this.gbSearching);
             this.Controls.Add(this.gbGeneral);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -191,6 +274,9 @@
             this.gbLogging.ResumeLayout(false);
             this.gbGeneral.ResumeLayout(false);
             this.gbGeneral.PerformLayout();
+            this.gbSearching.ResumeLayout(false);
+            this.gbSearching.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSearching1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +293,11 @@
         private System.Windows.Forms.Label labelPluginName;
         private System.Windows.Forms.CheckBox checkBoxCheckMediaOnOpen;
         private System.Windows.Forms.CheckBox checkBoxHidePlugin;
+        private System.Windows.Forms.GroupBox gbSearching;
+        private System.Windows.Forms.GroupBox gbDownloading;
+        private System.Windows.Forms.Label laSearching1;
+        private System.Windows.Forms.NumericUpDown numericUpDownSearching1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.CheckBox checkBoxUseLanguageCode;
     }
 }

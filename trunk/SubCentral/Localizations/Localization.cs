@@ -311,6 +311,7 @@ namespace SubCentral.Localizations {
         // T
         public static string TVShows = "TV shows";
         public static string TVShow = "TV show";
+        public static string TimedOutWhileRetrievingSubtitles = "Time out retrieving subtitles!";
 
         // U
         public static string UnableToImportDataFrom = "Unable to import data\nfrom {0}.";

@@ -565,6 +565,9 @@ namespace SubCentral.GUI {
                         break;
                 }
             }
+            else if (e is System.Net.WebException && ((System.Net.WebException)e).Status == System.Net.WebExceptionStatus.Timeout) {
+                GUIUtils.ShowNotifyDialog(Localization.Error, Localization.TimedOutWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
+            }
             else {
                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             }

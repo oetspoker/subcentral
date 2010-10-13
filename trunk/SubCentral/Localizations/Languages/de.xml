@@ -15,7 +15,7 @@
 	<string Field="All">Alle</string>
 	<string Field="AllSubtitlesDeleted">Alle ({0}) Untertitel gelöscht!</string>
 	<string Field="AboutText">SubCentral ist ein eigenständiges Untertitel-Plugin für die MediaPortal HTPC Software. Sinn und Zweck des Plugins ist dem Benutzer die Möglichkeit zu bieten, Untertitel für Filme und TV-Serien zu suchen und herunterzuladen. Dies soll von den populären Plugins Moving Pictures und MP-TVSeries aus möglich sein.	Außerdem bietet es ein Interface für die leichte Einbindung und Integration in jedes andere Plugin.
-Am leichtesten lässt sich das Plugin nutzen, indem man Moving Pictures oder MP-TVSeries öffnet, zu einem Eintrag darin navigiert und "Untertitel holen" wählt. In Moving Pictures (unterstützt wird 1.0.3 oder höher) findet man die Funktion üblicherweise im Menü oder als eigenen Button in der Detailansicht (das hängt vom Skin ab). In TVSeries (unterstützt wird 2.6.0 oder höher) musst du das Kontextmenü für die Folge öffnen und "Download" wählen. Dann auf "Untertitel laden" klicken. Wenn du willst, kannst du die Möglichkeit nutzen, die Daten die SubCentral laden soll, anzupassen.
+Am leichtesten lässt sich das Plugin nutzen, indem man Moving Pictures oder MP-TVSeries öffnet, zu einem Eintrag darin navigiert und "Untertitel holen" wählt. In Moving Pictures (unterstützt wird 1.0.3 oder höher) findet man die Funktion üblicherweise im Menü oder als eigenen Button in der Detailansicht (das hängt vom Skin ab). In TVSeries (unterstützt wird 2.6.0 oder höher) musst du das Kontextmenü für die Folge öffen und "Download" wählen. Dann auf "Untertitel laden" klicken. Wenn du willst, kannst du die Möglichkeit nutzen, die Daten die SubCentral laden soll, anzupassen.
 Wenn du das Plugin vom Home-Screen aus öffnest - wie im Moment üblich - dann ist die manuelle Suche möglich. Hier kannst du deine eigenen Suchanfragen für Filme und Serien anlegen.
 Um Sprachen für die Suche zu definieren, solltest du den entsprechenden Menüeintrag wählen. Für eine detaillierte Einstellung des Plugins solltest du die Konfiguration in den Plugins der MediaPortal-Konfiguration öffnen. Hier lassen sich die Untertiel-Anbieter auswählen, sortieren und unbenennen. Dies geht auch für Anbieter-Gruppen. Zudem kannst du die Sprachen auswählen und sortieren und die Downloadordner wählen.
 Wenn die Suche beendet ist, kannst die Ergebnisse über das Menü sortieren und natürlich runterladen.
@@ -81,13 +81,13 @@ Besuche uns für weitere Infos auf der Google Code Subcentral Projekt-Seite!
 	<string Field="MediaFilesDifferFromSubtitleFiles">Anzahl der Mediendateien unterscheidet sich von Anzahl der gefundenen Untertitel. Falsche Untertitel?</string>
 	<string Field="MovieIMDb">Film (IMDb)</string>
 	<string Field="Movie">Film</string>
-	<string Field="MediaNoSubtitles">Konnte keine Untertitel für diese Dateien finden!</string>
-	<string Field="MediaOnlyInternalSubtitles">Nur eingebettete (interne) Untertitel wurden gefunden!</string>
-	<string Field="MediaWrongMarkHasSubtitles">Die Datei bei {0} ist mit "Untertitel vorhanden" markiert\nes konnten aber keine gefunden werden. Willst du das \nkorrigieren und "Keine Untertitel vorhanden" setzen?</string>
-	<string Field="MediaMaybeInternalSubtitles">(es könnten eingebettete (interne) Untertitel vorhanden sein)</string>
-	<string Field="MediaHasSubtitles">Für die Datei sind schon Untertitel vorhanden. Wenn du sie löschen willst, benutze den Menü-Button.</string>
-	<string Field="MediaNoMoreSubtitles">Konnte keine weiteren Untertitel finden.\nWillst du "Untertitel nicht vorhanden" für \nden Anbieter ({0}) setzen?</string>
-	<string Field="MediaWrongMarkNoSubtitles">Die Datei ist in {0} als "Keine\n Untertitel vorhanden" markiert.\nEs sind aber welche da. Willst du das korrigieren?</string>
+	<string Field="MediaNoSubtitles">Keine Untertitel für diese Dateien gefunden!</string>
+	<string Field="MediaOnlyInternalSubtitles">Nur eingebettete (interne) Untertitel gefunden!</string>
+	<string Field="MediaWrongMarkHasSubtitles">Die Datei {0}\nist mit "Untertitel vorhanden" markiert. Es konnten aber keine Untertitel gefunden werden.\n Korrigieren und "Keine Untertitel vorhanden" setzen?</string>
+	<string Field="MediaMaybeInternalSubtitles">(Es könnten eingebettete (interne) Untertitel vorhanden sein)</string>
+	<string Field="MediaHasSubtitles">Für die Datei sind schon Untertitel vorhanden. Zum Löschen Menü-Button benutzen.</string>
+	<string Field="MediaNoMoreSubtitles">Keine weiteren Untertitel gefunden.\n"Untertitel nicht vorhanden" für den Anbieter ({0}) setzen?</string>
+	<string Field="MediaWrongMarkNoSubtitles">Die Datei {0} \nist mit "Keine Untertitel vorhanden" markiert.\nEs sind aber Untertitel vorhanden.\nKorrigieren und "Untertitel vorhanden" setzen?</string>
 
 	<!-- N -->
 	<string Field="NewGroup">Neue Gruppe</string>
@@ -100,7 +100,7 @@ Besuche uns für weitere Infos auf der Google Code Subcentral Projekt-Seite!
 	<string Field="NoSubtitlesDelete">Keine Untertitel zum löschen gefunden.</string>
 
 	<!-- O -->
-	<string Field="OKSearch">OK / Suche</string>
+	<string Field="OKSearch">OK/Suche</string>
 	<string Field="OK">OK</string>
 
 	<!-- P -->
@@ -159,8 +159,8 @@ Besuche uns für weitere Infos auf der Google Code Subcentral Projekt-Seite!
 	<string Field="TVShow">TV-Sendung</string>
 
 	<!-- U -->
-	<string Field="UnableToImportDataFrom">Kann von {0}\nnicht importieren</string>
-	<string Field="UnableToLoadSubtitleDownloader">Kann die SubtitleDownloader library nicht laden!</string>
+	<string Field="UnableToImportDataFrom">Import von {0}\nnicht möglich</string>
+	<string Field="UnableToLoadSubtitleDownloader">Kann die SubtitleDownloader-Bibliothek nicht laden!</string>
 	<string Field="UnableToDeleteSubtitleFile">Konnte Untertitel-Datei nicht löschen!</string>
 	<string Field="UnableToDeleteSubtitleFiles">Konnte Untertitel-Dateien nicht löschen!:</string>
 
@@ -168,11 +168,11 @@ Besuche uns für weitere Infos auf der Google Code Subcentral Projekt-Seite!
 
 	<!-- W -->
 	<string Field="Warning">Warnung</string>
-	<string Field="WrongFormatIMDbID">Falsches format für IMDb ID (ttNNNNNNN)!</string>
-	<string Field="WrongFormatYear">Falsches format für das Jahr (1900 - {0})!</string>
+	<string Field="WrongFormatIMDbID">Falsches Format für IMDb ID (ttNNNNNNN)!</string>
+	<string Field="WrongFormatYear">Falsches Fformat für das Jahr (1900 - {0})!</string>
 	<string Field="WrongFormatSeasonEpisode">{0} muss nummerisch und größer als 0 sein!</string>
 
 	<!-- Y -->
-	<string Field="PleaseSelectLanguages">Du musst mindestens\n eine Sprache wählen!</string>
+	<string Field="PleaseSelectLanguages">Mindestens eine Sprache wählen!</string>
 
 </strings>

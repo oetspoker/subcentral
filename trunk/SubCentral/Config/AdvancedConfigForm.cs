@@ -19,6 +19,8 @@ namespace SubCentral.ConfigForm {
             SettingsManager.Properties.GUISettings.PluginName = txtPluginName.Text;
             SettingsManager.Properties.GUISettings.HidePlugin = checkBoxHidePlugin.Checked;
             SettingsManager.Properties.GUISettings.CheckMediaForSubtitlesOnOpen = checkBoxCheckMediaOnOpen.Checked;
+            SettingsManager.Properties.GeneralSettings.SearchTimeout = (int)numericUpDownSearching1.Value;
+            SettingsManager.Properties.GeneralSettings.UseLanguageCodeOnResults = checkBoxUseLanguageCode.Checked;
             Close();
         }
 
@@ -26,6 +28,8 @@ namespace SubCentral.ConfigForm {
             txtPluginName.Text = SettingsManager.Properties.GUISettings.PluginName;
             checkBoxHidePlugin.Checked = SettingsManager.Properties.GUISettings.HidePlugin;
             checkBoxCheckMediaOnOpen.Checked = SettingsManager.Properties.GUISettings.CheckMediaForSubtitlesOnOpen;
+            numericUpDownSearching1.Value = SettingsManager.Properties.GeneralSettings.SearchTimeout;
+            checkBoxUseLanguageCode.Checked = SettingsManager.Properties.GeneralSettings.UseLanguageCodeOnResults;
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
