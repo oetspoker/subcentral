@@ -140,8 +140,10 @@ namespace SubCentral.GUI {
                         GUIControl.FocusControl(GetID, (int)GUIControls.MODIFYSEARCHTITLEBUTTON);
                         break;
                 }
-                UpdateButtonStates();
-                PublishSearchProperties();
+                if (_GUIInitialized) {
+                    UpdateButtonStates();
+                    PublishSearchProperties();
+                }
             }
         }
         private ViewMode _viewMode;
