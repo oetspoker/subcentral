@@ -80,7 +80,6 @@ namespace SubCentral.ConfigForm {
                 }
                 comboBoxFileName.SelectedIndex = (int)SettingsManager.Properties.FolderSettings.OnDownloadFileName;
 
-                checkBoxUseLanguageCode.Checked = SettingsManager.Properties.GeneralSettings.UseLanguageCodeOnResults;
                 checkBoxSearchDefaultsWhenFromManualSearch.Checked = SettingsManager.Properties.GeneralSettings.SearchDefaultsWhenFromManualSearch;
 
                 fillProviderGroupsFromSettings();
@@ -155,7 +154,6 @@ namespace SubCentral.ConfigForm {
                 saveProviderGroupsAndProviders();
 
                 SettingsManager.Properties.GeneralSettings.PluginLoadWithSearchData = (OnPluginLoadWithSearchData)comboBoxPluginLoadWithSearchData.SelectedIndex;
-                SettingsManager.Properties.GeneralSettings.UseLanguageCodeOnResults = checkBoxUseLanguageCode.Checked;
                 SettingsManager.Properties.GeneralSettings.SearchDefaultsWhenFromManualSearch = checkBoxSearchDefaultsWhenFromManualSearch.Checked;
 
                 SettingsManager.Properties.FolderSettings.OnDownload = (OnDownload)comboBoxWhenDownloading.SelectedIndex;
@@ -1111,6 +1109,10 @@ namespace SubCentral.ConfigForm {
 
         private void labelForum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             Process.Start(@"http://forum.team-mediaportal.com/mediaportal-plugins-47/subcentral-85545/");
+        }
+
+        private void labelIssues_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Process.Start(@"http://code.google.com/p/subcentral/issues/list");
         }
 
     }

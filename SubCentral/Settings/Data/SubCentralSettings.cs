@@ -9,6 +9,7 @@ namespace SubCentral.Settings.Data {
             AllProvidersForMovies = true;
             AllProvidersForTVShows = true;
             EnabledProvidersEnabled = true;
+            SearchTimeout = 30;
         }
         
         public OnPluginLoadWithSearchData PluginLoadWithSearchData { get; set; }
@@ -44,6 +45,22 @@ namespace SubCentral.Settings.Data {
             set {
                 if (_providers == null) _providers = new List<SettingsProvider>();
                 _providers = value;
+            }
+        }
+
+        [XmlIgnore]
+        private int _searchTimeout;
+
+        public int SearchTimeout {
+            get {
+                if (_searchTimeout < 5)
+                    _searchTimeout = 5;
+                if (_searchTimeout > 120)
+                    _searchTimeout = 120;
+                return _searchTimeout;
+            }
+            set {
+                _searchTimeout = value;
             }
         }
     }
