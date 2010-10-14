@@ -24,6 +24,24 @@ namespace SubCentral.Settings.Data {
         public bool EnabledProvidersForMovies { get; set; }
         public bool EnabledProvidersForTVShows { get; set; }
 
+        public OnAfterDownload AfterDownload { get; set; }
+
+        [XmlIgnore]
+        private int _searchTimeout;
+
+        public int SearchTimeout {
+            get {
+                if (_searchTimeout < 5)
+                    _searchTimeout = 5;
+                if (_searchTimeout > 120)
+                    _searchTimeout = 120;
+                return _searchTimeout;
+            }
+            set {
+                _searchTimeout = value;
+            }
+        }
+
         [XmlIgnore]
         private List<SettingsGroup> _groups;
 
@@ -45,22 +63,6 @@ namespace SubCentral.Settings.Data {
             set {
                 if (_providers == null) _providers = new List<SettingsProvider>();
                 _providers = value;
-            }
-        }
-
-        [XmlIgnore]
-        private int _searchTimeout;
-
-        public int SearchTimeout {
-            get {
-                if (_searchTimeout < 5)
-                    _searchTimeout = 5;
-                if (_searchTimeout > 120)
-                    _searchTimeout = 120;
-                return _searchTimeout;
-            }
-            set {
-                _searchTimeout = value;
             }
         }
     }

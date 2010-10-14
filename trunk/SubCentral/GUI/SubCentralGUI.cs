@@ -782,6 +782,10 @@ namespace SubCentral.GUI {
                     _checkMediaForSubtitlesOnOpenDone = false;
                 }
             }
+
+            if (SettingsManager.Properties.GeneralSettings.AfterDownload == OnAfterDownload.BackToOriginalPlugin && properHandler.GetHasSubtitles(true)) {
+                GUIWindowManager.ShowPreviousWindow();
+            }
         }
 
         private void countDownloads(List<SubtitleDownloadStatus> statusList, out int succesful, out int canceled, out int errors) {
@@ -1520,14 +1524,14 @@ namespace SubCentral.GUI {
                 _checkMediaForSubtitlesOnOpenDone = true;
             }
 
-            if (_subtitlesExistForCurrentMedia && properHandler.GetHasSubtitles() && properHandler.Type == PluginHandlerType.BASIC) {
+            if (_subtitlesExistForCurrentMedia && !properHandler.GetHasSubtitles(false) && properHandler.Type == PluginHandlerType.BASIC) {
                 AskAndTrueHasSubtitles(properHandler, Localization.MediaWrongMarkNoSubtitles);
             }
             else if (_subtitlesExistForCurrentMedia) {
                 //GUIUtils.ShowNotifyDialog(Localization.Warning, string.Format(Localization.MediaHasSubtitles, CurrentHandler == null ? Localization.ExternalPlugin : CurrentHandler.PluginName));
                 GUIUtils.ShowNotifyDialog(Localization.Warning, Localization.MediaHasSubtitles);
             }
-            else if (!_subtitlesExistForCurrentMedia && properHandler.GetHasSubtitles()) {
+            else if (!_subtitlesExistForCurrentMedia && properHandler.GetHasSubtitles(false)) {
                 AskAndFalseHasSubtitles(properHandler, Localization.MediaWrongMarkHasSubtitles);
                 resultContinue = false;
             }
@@ -1612,7 +1616,7 @@ namespace SubCentral.GUI {
                             }
                         }
 
-                        if (_subtitleFilesForCurrentMedia.Count < 1 && properHandler.GetHasSubtitles()) {
+                        if (_subtitleFilesForCurrentMedia.Count < 1 && properHandler.GetHasSubtitles(false)) {
                             AskAndFalseHasSubtitles(properHandler, Localization.MediaNoMoreSubtitles);
                             subtitleToDeleteIndex = -1;
                         }

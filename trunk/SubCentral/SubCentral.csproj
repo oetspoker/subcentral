@@ -96,6 +96,7 @@
     <Compile Include="GUI\SubtitleDownloadStatusStatus.cs" />
     <Compile Include="PluginHandlers\TVSeriesHandler.cs" />
     <Compile Include="Properties\VersionInfo.cs" />
+    <Compile Include="Settings\Data\OnAfterDownload.cs" />
     <Compile Include="Settings\Data\OnDownload.cs" />
     <Compile Include="Settings\Data\OnDownloadFileName.cs" />
     <Compile Include="PluginHandlers\PluginHandlerType.cs" />

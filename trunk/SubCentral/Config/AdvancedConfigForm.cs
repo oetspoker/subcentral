@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Collections.Generic;
 using SubCentral.Utils;
 using SubCentral.Settings;
+using SubCentral.Settings.Data;
 using MediaPortal.Configuration;
 
 namespace SubCentral.ConfigForm {
@@ -21,6 +22,7 @@ namespace SubCentral.ConfigForm {
             SettingsManager.Properties.GUISettings.CheckMediaForSubtitlesOnOpen = checkBoxCheckMediaOnOpen.Checked;
             SettingsManager.Properties.GeneralSettings.SearchTimeout = (int)numericUpDownSearching1.Value;
             SettingsManager.Properties.GeneralSettings.UseLanguageCodeOnResults = checkBoxUseLanguageCode.Checked;
+            SettingsManager.Properties.GeneralSettings.AfterDownload = (OnAfterDownload)comboBoxAfterDownloading.SelectedIndex;
             Close();
         }
 
@@ -30,6 +32,12 @@ namespace SubCentral.ConfigForm {
             checkBoxCheckMediaOnOpen.Checked = SettingsManager.Properties.GUISettings.CheckMediaForSubtitlesOnOpen;
             numericUpDownSearching1.Value = SettingsManager.Properties.GeneralSettings.SearchTimeout;
             checkBoxUseLanguageCode.Checked = SettingsManager.Properties.GeneralSettings.UseLanguageCodeOnResults;
+
+            comboBoxAfterDownloading.Items.Clear();
+            foreach (OnAfterDownload value in Enum.GetValues(typeof(OnAfterDownload))) {
+                comboBoxAfterDownloading.Items.Add(StringEnum.GetStringValue(value) ?? string.Empty);
+            }
+            comboBoxAfterDownloading.SelectedIndex = (int)SettingsManager.Properties.GeneralSettings.AfterDownload;
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {

@@ -84,7 +84,7 @@ namespace SubCentral.PluginHandlers {
             return result;
         }
 
-        public override bool GetHasSubtitles() {
+        public override bool GetHasSubtitles(bool all) {
             return episode[DBEpisode.cAvailableSubtitles];
         }
 
