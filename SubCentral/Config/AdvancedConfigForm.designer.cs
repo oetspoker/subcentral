@@ -41,15 +41,18 @@
             this.txtPluginName = new System.Windows.Forms.TextBox();
             this.labelPluginName = new System.Windows.Forms.Label();
             this.gbSearching = new System.Windows.Forms.GroupBox();
-            this.gbDownloading = new System.Windows.Forms.GroupBox();
-            this.numericUpDownSearching1 = new System.Windows.Forms.NumericUpDown();
             this.laSearching1 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.checkBoxUseLanguageCode = new System.Windows.Forms.CheckBox();
+            this.numericUpDownSearching1 = new System.Windows.Forms.NumericUpDown();
+            this.gbDownloading = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.labelAfterDownloading = new System.Windows.Forms.Label();
+            this.comboBoxAfterDownloading = new System.Windows.Forms.ComboBox();
             this.gbLogging.SuspendLayout();
             this.gbGeneral.SuspendLayout();
             this.gbSearching.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSearching1)).BeginInit();
+            this.gbDownloading.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbLogging
@@ -59,7 +62,7 @@
             this.gbLogging.Controls.Add(this.btnOpenLog);
             this.gbLogging.Controls.Add(this.btnOpenLogFolder);
             this.gbLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbLogging.Location = new System.Drawing.Point(6, 239);
+            this.gbLogging.Location = new System.Drawing.Point(6, 236);
             this.gbLogging.Name = "gbLogging";
             this.gbLogging.Size = new System.Drawing.Size(359, 53);
             this.gbLogging.TabIndex = 1;
@@ -70,7 +73,7 @@
             // 
             this.btnOpenLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenLog.Image = global::SubCentral.Properties.Resources.PageWhiteText;
-            this.btnOpenLog.Location = new System.Drawing.Point(132, 19);
+            this.btnOpenLog.Location = new System.Drawing.Point(132, 20);
             this.btnOpenLog.Name = "btnOpenLog";
             this.btnOpenLog.Size = new System.Drawing.Size(114, 23);
             this.btnOpenLog.TabIndex = 6;
@@ -83,7 +86,7 @@
             // 
             this.btnOpenLogFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenLogFolder.Image = global::SubCentral.Properties.Resources.FolderPageWhite;
-            this.btnOpenLogFolder.Location = new System.Drawing.Point(12, 19);
+            this.btnOpenLogFolder.Location = new System.Drawing.Point(12, 20);
             this.btnOpenLogFolder.Name = "btnOpenLogFolder";
             this.btnOpenLogFolder.Size = new System.Drawing.Size(114, 23);
             this.btnOpenLogFolder.TabIndex = 5;
@@ -96,7 +99,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSave.Image = global::SubCentral.Properties.Resources.OK;
-            this.btnSave.Location = new System.Drawing.Point(6, 304);
+            this.btnSave.Location = new System.Drawing.Point(6, 301);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;
@@ -109,7 +112,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancel.Image = global::SubCentral.Properties.Resources.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(87, 304);
+            this.btnCancel.Location = new System.Drawing.Point(87, 301);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
@@ -129,7 +132,7 @@
             this.gbGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbGeneral.Location = new System.Drawing.Point(6, 3);
             this.gbGeneral.Name = "gbGeneral";
-            this.gbGeneral.Size = new System.Drawing.Size(359, 94);
+            this.gbGeneral.Size = new System.Drawing.Size(359, 92);
             this.gbGeneral.TabIndex = 0;
             this.gbGeneral.TabStop = false;
             this.gbGeneral.Text = "General";
@@ -138,7 +141,7 @@
             // 
             this.checkBoxHidePlugin.AutoSize = true;
             this.checkBoxHidePlugin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxHidePlugin.Location = new System.Drawing.Point(12, 45);
+            this.checkBoxHidePlugin.Location = new System.Drawing.Point(12, 43);
             this.checkBoxHidePlugin.Name = "checkBoxHidePlugin";
             this.checkBoxHidePlugin.Size = new System.Drawing.Size(228, 17);
             this.checkBoxHidePlugin.TabIndex = 5;
@@ -149,7 +152,7 @@
             // 
             this.checkBoxCheckMediaOnOpen.AutoSize = true;
             this.checkBoxCheckMediaOnOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxCheckMediaOnOpen.Location = new System.Drawing.Point(12, 68);
+            this.checkBoxCheckMediaOnOpen.Location = new System.Drawing.Point(12, 66);
             this.checkBoxCheckMediaOnOpen.Name = "checkBoxCheckMediaOnOpen";
             this.checkBoxCheckMediaOnOpen.Size = new System.Drawing.Size(245, 17);
             this.checkBoxCheckMediaOnOpen.TabIndex = 4;
@@ -161,9 +164,9 @@
             this.txtPluginName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPluginName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPluginName.Location = new System.Drawing.Point(167, 19);
+            this.txtPluginName.Location = new System.Drawing.Point(167, 17);
             this.txtPluginName.Name = "txtPluginName";
-            this.txtPluginName.Size = new System.Drawing.Size(177, 20);
+            this.txtPluginName.Size = new System.Drawing.Size(180, 20);
             this.txtPluginName.TabIndex = 1;
             this.txtPluginName.Text = "SubCentral";
             // 
@@ -171,7 +174,7 @@
             // 
             this.labelPluginName.AutoSize = true;
             this.labelPluginName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPluginName.Location = new System.Drawing.Point(9, 22);
+            this.labelPluginName.Location = new System.Drawing.Point(9, 20);
             this.labelPluginName.Name = "labelPluginName";
             this.labelPluginName.Size = new System.Drawing.Size(147, 13);
             this.labelPluginName.TabIndex = 0;
@@ -185,29 +188,39 @@
             this.gbSearching.Controls.Add(this.checkBoxUseLanguageCode);
             this.gbSearching.Controls.Add(this.numericUpDownSearching1);
             this.gbSearching.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSearching.Location = new System.Drawing.Point(6, 103);
+            this.gbSearching.Location = new System.Drawing.Point(6, 101);
             this.gbSearching.Name = "gbSearching";
-            this.gbSearching.Size = new System.Drawing.Size(359, 71);
+            this.gbSearching.Size = new System.Drawing.Size(359, 70);
             this.gbSearching.TabIndex = 6;
             this.gbSearching.TabStop = false;
             this.gbSearching.Text = "Searching";
             // 
-            // gbDownloading
+            // laSearching1
             // 
-            this.gbDownloading.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbDownloading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDownloading.Location = new System.Drawing.Point(6, 180);
-            this.gbDownloading.Name = "gbDownloading";
-            this.gbDownloading.Size = new System.Drawing.Size(359, 53);
-            this.gbDownloading.TabIndex = 7;
-            this.gbDownloading.TabStop = false;
-            this.gbDownloading.Text = "Downloading";
+            this.laSearching1.AutoSize = true;
+            this.laSearching1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.laSearching1.Location = new System.Drawing.Point(9, 20);
+            this.laSearching1.Name = "laSearching1";
+            this.laSearching1.Size = new System.Drawing.Size(150, 13);
+            this.laSearching1.TabIndex = 1;
+            this.laSearching1.Text = "Provider search time out (sec):";
+            this.toolTip1.SetToolTip(this.laSearching1, resources.GetString("laSearching1.ToolTip"));
+            // 
+            // checkBoxUseLanguageCode
+            // 
+            this.checkBoxUseLanguageCode.AutoSize = true;
+            this.checkBoxUseLanguageCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(12, 44);
+            this.checkBoxUseLanguageCode.Name = "checkBoxUseLanguageCode";
+            this.checkBoxUseLanguageCode.Size = new System.Drawing.Size(175, 17);
+            this.checkBoxUseLanguageCode.TabIndex = 2;
+            this.checkBoxUseLanguageCode.Text = "Show language code on results";
+            this.checkBoxUseLanguageCode.UseVisualStyleBackColor = true;
             // 
             // numericUpDownSearching1
             // 
             this.numericUpDownSearching1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDownSearching1.Location = new System.Drawing.Point(167, 19);
+            this.numericUpDownSearching1.Location = new System.Drawing.Point(167, 18);
             this.numericUpDownSearching1.Maximum = new decimal(new int[] {
             120,
             0,
@@ -227,33 +240,48 @@
             0,
             0});
             // 
-            // laSearching1
+            // gbDownloading
             // 
-            this.laSearching1.AutoSize = true;
-            this.laSearching1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.laSearching1.Location = new System.Drawing.Point(9, 21);
-            this.laSearching1.Name = "laSearching1";
-            this.laSearching1.Size = new System.Drawing.Size(150, 13);
-            this.laSearching1.TabIndex = 1;
-            this.laSearching1.Text = "Provider search time out (sec):";
-            this.toolTip1.SetToolTip(this.laSearching1, resources.GetString("laSearching1.ToolTip"));
+            this.gbDownloading.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbDownloading.Controls.Add(this.labelAfterDownloading);
+            this.gbDownloading.Controls.Add(this.comboBoxAfterDownloading);
+            this.gbDownloading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDownloading.Location = new System.Drawing.Point(6, 177);
+            this.gbDownloading.Name = "gbDownloading";
+            this.gbDownloading.Size = new System.Drawing.Size(359, 53);
+            this.gbDownloading.TabIndex = 7;
+            this.gbDownloading.TabStop = false;
+            this.gbDownloading.Text = "Downloading";
             // 
-            // checkBoxUseLanguageCode
+            // labelAfterDownloading
             // 
-            this.checkBoxUseLanguageCode.AutoSize = true;
-            this.checkBoxUseLanguageCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(12, 45);
-            this.checkBoxUseLanguageCode.Name = "checkBoxUseLanguageCode";
-            this.checkBoxUseLanguageCode.Size = new System.Drawing.Size(175, 17);
-            this.checkBoxUseLanguageCode.TabIndex = 2;
-            this.checkBoxUseLanguageCode.Text = "Show language code on results";
-            this.checkBoxUseLanguageCode.UseVisualStyleBackColor = true;
+            this.labelAfterDownloading.AutoSize = true;
+            this.labelAfterDownloading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelAfterDownloading.Location = new System.Drawing.Point(9, 20);
+            this.labelAfterDownloading.Margin = new System.Windows.Forms.Padding(3);
+            this.labelAfterDownloading.Name = "labelAfterDownloading";
+            this.labelAfterDownloading.Size = new System.Drawing.Size(149, 13);
+            this.labelAfterDownloading.TabIndex = 3;
+            this.labelAfterDownloading.Text = "After downloading all subtitles:";
+            // 
+            // comboBoxAfterDownloading
+            // 
+            this.comboBoxAfterDownloading.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAfterDownloading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxAfterDownloading.Items.AddRange(new object[] {
+            "Do nothing",
+            "Go back to originating plugin"});
+            this.comboBoxAfterDownloading.Location = new System.Drawing.Point(167, 17);
+            this.comboBoxAfterDownloading.Name = "comboBoxAfterDownloading";
+            this.comboBoxAfterDownloading.Size = new System.Drawing.Size(180, 21);
+            this.comboBoxAfterDownloading.TabIndex = 2;
             // 
             // AdvancedConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 339);
+            this.ClientSize = new System.Drawing.Size(372, 336);
             this.Controls.Add(this.gbDownloading);
             this.Controls.Add(this.gbSearching);
             this.Controls.Add(this.gbGeneral);
@@ -277,6 +305,8 @@
             this.gbSearching.ResumeLayout(false);
             this.gbSearching.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSearching1)).EndInit();
+            this.gbDownloading.ResumeLayout(false);
+            this.gbDownloading.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -299,5 +329,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownSearching1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.CheckBox checkBoxUseLanguageCode;
+        private System.Windows.Forms.Label labelAfterDownloading;
+        private System.Windows.Forms.ComboBox comboBoxAfterDownloading;
     }
 }

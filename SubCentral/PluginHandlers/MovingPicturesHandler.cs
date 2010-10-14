@@ -65,7 +65,7 @@ namespace SubCentral.PluginHandlers {
             }
         }
 
-        public override bool GetHasSubtitles() {
+        public override bool GetHasSubtitles(bool all) {
             foreach (DBLocalMedia localMediaItem in selectedMovie.LocalMedia)
                 if (localMediaItem.HasSubtitles) return true;
             return false;

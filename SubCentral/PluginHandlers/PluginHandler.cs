@@ -94,7 +94,7 @@ namespace SubCentral.PluginHandlers {
             return -1;
         }
 
-        public virtual bool GetHasSubtitles() {
+        public virtual bool GetHasSubtitles(bool all) {
             return false;
         }
 
