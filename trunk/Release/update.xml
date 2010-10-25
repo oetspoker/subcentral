@@ -62,10 +62,10 @@
               <Revision>0</Revision>
             </MinVersion>
             <MaxVersion>
-              <Major>9</Major>
-              <Minor>9</Minor>
-              <Build>9</Build>
-              <Revision>9</Revision>
+              <Major>999999</Major>
+              <Minor>999999</Minor>
+              <Build>999999</Build>
+              <Revision>999999</Revision>
             </MaxVersion>
             <WarnOnly>false</WarnOnly>
             <Message>SubCentral needs MediaPortal version 1.1.0.0 or higher!</Message>
