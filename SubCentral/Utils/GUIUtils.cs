@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using MediaPortal.Configuration;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using NLog;
+using SubCentral.GUI.Extensions;
 using SubCentral.Localizations;
 
 namespace SubCentral.Utils {
@@ -85,7 +87,7 @@ namespace SubCentral.Utils {
                 if (linesArray.Length > 3) dlgYesNo.SetLine(4, linesArray[3]);
                 dlgYesNo.SetDefaultToYes(defaultYes);
 
-                foreach (System.Windows.UIElement item in dlgYesNo.Children) {
+                foreach (GUIControl item in dlgYesNo.GetControlList()) {
                     if (item is GUIButtonControl) {
                         GUIButtonControl btn = (GUIButtonControl)item;
                         if (btn.GetID == 11 && !string.IsNullOrEmpty(yesLabel)) // Yes button
@@ -144,7 +146,7 @@ namespace SubCentral.Utils {
         /// Displays a notification dialog.
         /// </summary>
         public static void ShowNotifyDialog(string heading, string text) {
-            ShowNotifyDialog(heading, text, string.Empty, Localization.OK);
+            ShowNotifyDialog(heading, text, Config.GetFolder(Config.Dir.Thumbs) + @"SubCentral\SubCentralGUIIconBig.png", Localization.OK);
         }
 
         /// <summary>
@@ -176,7 +178,7 @@ namespace SubCentral.Utils {
 
                 pDlgNotify.SetText(text);
 
-                foreach (System.Windows.UIElement item in pDlgNotify.Children) {
+                foreach (GUIControl item in pDlgNotify.GetControlList()) {
                     if (item is GUIButtonControl) {
                         GUIButtonControl btn = (GUIButtonControl)item;
                         if (btn.GetID == 4 && !string.IsNullOrEmpty(buttonText) && !string.IsNullOrEmpty(btn.Label)) 

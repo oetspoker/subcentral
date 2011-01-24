@@ -163,6 +163,12 @@
   <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SubCentralGUIIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SubCentralGUIIcon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SubCentralGUIIconBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SubCentralGUIIconBig.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SubCentralIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SubCentralIcon.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
