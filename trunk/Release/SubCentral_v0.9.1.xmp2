@@ -89,6 +89,30 @@
           </Items>
         </Files>
       </GroupItem>
+      <GroupItem Name="Thumbs">
+        <ParentGroup />
+        <DisplayName>Thumbs</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Plugin Icons</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Resources\SubCentralGUIIcon.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d2272e22-90fc-495a-b895-f77d44dc909f}-SubCentralGUIIcon.png</ZipFileName>
+              <DestinationFilename>%Thumbs%\SubCentral\SubCentralGUIIcon.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Resources\SubCentralGUIIconBig.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{329beed6-4ae9-431e-a663-ba4fae0751ee}-SubCentralGUIIconBig.png</ZipFileName>
+              <DestinationFilename>%Thumbs%\SubCentral\SubCentralGUIIconBig.png</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
       <GroupItem Name="Blue3 skin files">
         <ParentGroup />
         <DisplayName>Blue3 skin files</DisplayName>
@@ -571,6 +595,20 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Resources\SubCentralGUIIcon.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d2272e22-90fc-495a-b895-f77d44dc909f}-SubCentralGUIIcon.png</ZipFileName>
+        <DestinationFilename>%Thumbs%\SubCentral\SubCentralGUIIcon.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Resources\SubCentralGUIIconBig.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{329beed6-4ae9-431e-a663-ba4fae0751ee}-SubCentralGUIIconBig.png</ZipFileName>
+        <DestinationFilename>%Thumbs%\SubCentral\SubCentralGUIIconBig.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\Logos\nosubtitles.png</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{41cdbef5-e3a5-4d04-a639-b3392d4d632b}-nosubtitles.png</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\Media\Logos\nosubtitles.png</DestinationFilename>
@@ -747,7 +785,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{e735757e-f2ba-431e-ad33-b8be1c375f27}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{d1f44414-427e-41b8-a490-da642a79d3c8}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
