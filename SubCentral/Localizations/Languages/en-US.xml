@@ -139,6 +139,7 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="SortByName">Sort by subtitle name</string>
 	<string Field="SubtitleFilesToDelete">Subtitle files to delete</string>
 	<string Field="SortByMediaTags">Sort by media tags (if possible)</string>
+	<string Field="SelectSubtitleForFile">Select subtitle for '{0}'</string>
 
 	<string Field="SkinTranslationFrom">From</string>
 	<string Field="SkinTranslationSearchType">Search type</string>
