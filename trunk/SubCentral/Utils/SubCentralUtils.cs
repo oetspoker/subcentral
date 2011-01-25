@@ -660,7 +660,11 @@ namespace SubCentral.Utils {
             bool useImdbMovieQuery = !(string.IsNullOrEmpty((basicMediaDetail.ImdbID)));
             bool useTitle = !(string.IsNullOrEmpty((basicMediaDetail.Title)));
             bool useMovieQuery = useTitle && !(string.IsNullOrEmpty((basicMediaDetail.YearStr)));
-            bool useEpisodeQuery = useTitle && !(string.IsNullOrEmpty((basicMediaDetail.SeasonStr))) && !(string.IsNullOrEmpty((basicMediaDetail.EpisodeStr)));
+            bool useEpisodeQuery = useTitle &&
+                                   (
+                                     (basicMediaDetail.AbsoluteNumbering && string.IsNullOrEmpty(basicMediaDetail.SeasonStr) && !string.IsNullOrEmpty(basicMediaDetail.EpisodeStr)) ||
+                                     (!basicMediaDetail.AbsoluteNumbering && !string.IsNullOrEmpty(basicMediaDetail.SeasonStr) && !string.IsNullOrEmpty(basicMediaDetail.EpisodeStr))
+                                   );
 
             if (useEpisodeQuery) {
                 result = SubtitlesSearchType.TVSHOW;
@@ -679,7 +683,11 @@ namespace SubCentral.Utils {
             bool useImdbMovieQuery = !(string.IsNullOrEmpty((basicMediaDetail.ImdbID)));
             bool useTitle = !(string.IsNullOrEmpty((basicMediaDetail.Title)));
             bool useMovieQuery = useTitle && !(string.IsNullOrEmpty((basicMediaDetail.YearStr)));
-            bool useEpisodeQuery = useTitle && !(string.IsNullOrEmpty((basicMediaDetail.SeasonStr))) && !(string.IsNullOrEmpty((basicMediaDetail.EpisodeStr)));
+            bool useEpisodeQuery = useTitle &&
+                                   (
+                                     (basicMediaDetail.AbsoluteNumbering && string.IsNullOrEmpty(basicMediaDetail.SeasonStr) && !string.IsNullOrEmpty(basicMediaDetail.EpisodeStr)) ||
+                                     (!basicMediaDetail.AbsoluteNumbering && !string.IsNullOrEmpty(basicMediaDetail.SeasonStr) && !string.IsNullOrEmpty(basicMediaDetail.EpisodeStr))
+                                   );
 
             switch (subtitlesSearchType) {
                 case SubtitlesSearchType.IMDb:
@@ -724,15 +732,17 @@ namespace SubCentral.Utils {
             return 2050;
         }
 
-        public static bool isSeasonOrEpisodeCorrect(string seasonOrEpisode) {
+        public static bool isSeasonOrEpisodeCorrect(string seasonOrEpisode, bool absolute) {
             if (string.IsNullOrEmpty(seasonOrEpisode)) return false;
 
             //bool result = seasonOrEpisode.Length > 0 && seasonOrEpisode.Length < 4 && Regex.Match(seasonOrEpisode, @"\d{1,3}").Success;
 
             //if (result) {
             int intSeasonOrEpisode = -1;
+            int max = absolute ? 99999 : 999;
+            
             if (int.TryParse(seasonOrEpisode, out intSeasonOrEpisode)) {
-                if (intSeasonOrEpisode < 1 || intSeasonOrEpisode > 999) {
+                if (intSeasonOrEpisode < 1 || intSeasonOrEpisode > max) {
                     return false;
                 }
             }

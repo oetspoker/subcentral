@@ -209,7 +209,7 @@
 			<posX>265</posX>
 			<posY>245</posY>
 			<onleft>216</onleft>
-			<onright>224</onright>
+			<onright>226</onright>
 			<onup>221</onup>
 			<ondown>225</ondown>
 			<textXOff>15</textXOff>
@@ -217,9 +217,9 @@
 			<font>font14</font>
 			<textalign>left</textalign>
 			<height>40</height>
-			<width>445</width>
-			<textureFocus>SubCentral_Button_Long_Focused.png</textureFocus>
-			<textureNoFocus>button_long_bg.png</textureNoFocus>
+			<width>140</width>
+			<textureFocus>SubCentral_Button_Short_Focused.png</textureFocus>
+			<textureNoFocus>SubCentral_Button_Short_Bg.png</textureNoFocus>
 			<!--<scrollWrapString></scrollWrapString>-->
 			<textcolorNoFocus>90ffffff</textcolorNoFocus>
 			<visible>Control.IsVisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
@@ -247,7 +247,7 @@
 			<posX>265</posX>
 			<posY>290</posY>
 			<onleft>221</onleft>
-			<onright>214</onright>
+			<onright>226</onright>
 			<onup>224</onup>
 			<ondown>214</ondown>
 			<textXOff>15</textXOff>
@@ -255,12 +255,29 @@
 			<font>font14</font>
 			<textalign>left</textalign>
 			<height>40</height>
-			<width>445</width>
-			<textureFocus>SubCentral_Button_Long_Focused.png</textureFocus>
-			<textureNoFocus>button_long_bg.png</textureNoFocus>
+			<width>140</width>
+			<textureFocus>SubCentral_Button_Short_Focused.png</textureFocus>
+			<textureNoFocus>SubCentral_Button_Short_Bg.png</textureNoFocus>
 			<!--<scrollWrapString></scrollWrapString>-->
 			<textcolorNoFocus>90ffffff</textcolorNoFocus>
 			<visible>Control.IsVisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
+			<animation effect="fade" time="250">visiblechange</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<control>
+			<description>Absolute Numbering Button</description>
+			<type>checkmark</type>
+			<id>226</id>
+			<label>#SubCentral.Translation.AbsoluteNumbering.Label</label>
+			<font>font14</font>
+			<posX>430</posX>
+			<posY>300</posY>
+			<onup>224</onup>
+			<ondown>214</ondown>
+			<onleft>225</onleft>
+			<onright>214</onright>
+			<visible>Control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
 			<animation effect="fade" time="250">visiblechange</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
@@ -287,7 +304,7 @@
 			<posY>338</posY>
 			<width>160</width>
 			<height>35</height>
-			<onleft>225</onleft>
+			<onleft>226</onleft>
 			<onright>214</onright>
 			<onup>225</onup>
 			<ondown>211</ondown>

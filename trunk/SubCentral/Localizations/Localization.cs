@@ -307,6 +307,7 @@ namespace SubCentral.Localizations {
         public static string SkinTranslationMovie = "Movie";
         public static string SkinTranslationTVShow = "TV show";
         public static string SkinTranslationMediaTags = "Media tags";
+        public static string SkinTranslationAbsoluteNumbering = "Absolute numbering";
 
         // T
         public static string TVShows = "TV shows";

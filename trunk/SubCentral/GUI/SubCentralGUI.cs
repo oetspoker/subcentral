@@ -82,6 +82,8 @@ namespace SubCentral.GUI {
         protected GUIButtonControl modifySearchSeasonButton = null;
         [SkinControl((int)GUIControls.MODIFYSEARCHEPISODEBUTTON)]
         protected GUIButtonControl modifySearchEpisodeButton = null;
+        [SkinControl((int)GUIControls.MODIFYSEARCHABSOLUTENUMBERINGBUTTON)]
+        protected GUICheckMarkControl modifySearchAbsoluteNumberingButton = null;
         #endregion
 
         #region Dummy GUI Controls
@@ -126,6 +128,8 @@ namespace SubCentral.GUI {
                     case ViewMode.MODIFYSEARCH:
                         _modifySearchMediaDetail = CopyMediaDetail(CurrentHandler.MediaDetail);
                         modifySearchClearFilesButton.Visible = _modifySearchMediaDetail.Files != null && _modifySearchMediaDetail.Files.Count > 0;
+                        modifySearchAbsoluteNumberingButton.Selected = _modifySearchMediaDetail.AbsoluteNumbering;
+                        modifySearchSeasonButton.IsEnabled = !_modifySearchMediaDetail.AbsoluteNumbering;
                         _clearedMedia = false;
                         //modifySearchSelectFolderButton.Visible = CurrentHandler.MediaDetail.Files == null || _modifySearchMediaDetail.Files.Count == 0;
                         PublishSearchProperties(true);
@@ -418,6 +422,10 @@ namespace SubCentral.GUI {
                 case (int)GUIControls.MODIFYSEARCHEPISODEBUTTON:
                     KeyboardModifySearch(controlId);
                     PublishSearchProperties(true);
+                    break;
+                
+                case (int)GUIControls.MODIFYSEARCHABSOLUTENUMBERINGBUTTON:
+                    ModifyAbsoluteNumbering();
                     break;
             }
         }
@@ -874,8 +882,10 @@ namespace SubCentral.GUI {
             newMediaDetail.ImdbID = CurrentHandler.MediaDetail.ImdbID;
             newMediaDetail.Title = CurrentHandler.MediaDetail.Title;
             newMediaDetail.Year = CurrentHandler.MediaDetail.Year;
+            newMediaDetail.AbsoluteNumbering = CurrentHandler.MediaDetail.AbsoluteNumbering;
             newMediaDetail.Season = CurrentHandler.MediaDetail.Season;
             newMediaDetail.Episode = CurrentHandler.MediaDetail.Episode;
+            newMediaDetail.EpisodeAbs = CurrentHandler.MediaDetail.EpisodeAbs;
             newMediaDetail.Thumb = CurrentHandler.MediaDetail.Thumb;
             newMediaDetail.FanArt = CurrentHandler.MediaDetail.FanArt;
             newMediaDetail.Files = fileList;
@@ -941,6 +951,7 @@ namespace SubCentral.GUI {
                 GUIUtils.SetProperty("#SubCentral." + section + ".Media.Season", string.Empty);
                 GUIUtils.SetProperty("#SubCentral." + section + ".Media.Episode", string.Empty);
                 GUIUtils.SetProperty("#SubCentral." + section + ".Media.TitleWithSE", string.Empty);
+                GUIUtils.SetProperty("#SubCentral." + section + ".Media.AbsoluteNumbering", string.Empty);
 
                 GUIUtils.SetProperty("#SubCentral." + section + ".Media.Thumb", string.Empty);
                 GUIUtils.SetProperty("#SubCentral." + section + ".Media.FanArt", string.Empty);
@@ -1014,8 +1025,14 @@ namespace SubCentral.GUI {
             GUIUtils.SetProperty("#SubCentral." + section + ".Media.IMDb.ID.Text", string.Format(Localization.IMDbID, mediaDetail.ImdbIDStr));
             GUIUtils.SetProperty("#SubCentral." + section + ".Media.Season", mediaDetail.SeasonStr);
             GUIUtils.SetProperty("#SubCentral." + section + ".Media.Episode", mediaDetail.EpisodeStr);
-            GUIUtils.SetProperty("#SubCentral." + section + ".Media.TitleWithSE", (!string.IsNullOrEmpty(mediaDetail.SeasonStr) && !string.IsNullOrEmpty(mediaDetail.EpisodeStr)) ? string.Format("{0} S{1:00}E{2:00}", mediaDetail.Title, mediaDetail.SeasonStr, mediaDetail.EpisodeStr) : mediaDetail.Title);
-
+            string SE = string.Empty;
+            if (mediaDetail.AbsoluteNumbering && string.IsNullOrEmpty(mediaDetail.SeasonStr) && !string.IsNullOrEmpty(mediaDetail.EpisodeStr))
+                SE = string.Format(" E{0:00}", mediaDetail.EpisodeStr);
+            else if (!mediaDetail.AbsoluteNumbering && !string.IsNullOrEmpty(mediaDetail.SeasonStr) && !string.IsNullOrEmpty(mediaDetail.EpisodeStr))
+                SE = string.Format(" S{0:00}E{1:00}", mediaDetail.SeasonStr, mediaDetail.EpisodeStr);
+            GUIUtils.SetProperty("#SubCentral." + section + ".Media.TitleWithSE", string.Format("{0}{1}", mediaDetail.Title, SE));
+            GUIUtils.SetProperty("#SubCentral." + section + ".Media.AbsoluteNumbering", mediaDetail.AbsoluteNumbering.ToString().ToLowerInvariant());
+            
             GUIUtils.SetProperty("#SubCentral." + section + ".Media.Thumb", mediaDetail.Thumb);
             GUIUtils.SetProperty("#SubCentral." + section + ".Media.FanArt", mediaDetail.FanArt);
 
@@ -1073,7 +1090,8 @@ namespace SubCentral.GUI {
                 modifySearchMovieButton != null && modifySearchTVShowButton != null &&
                 modifySearchIMDbIDButton != null &&
                 modifySearchTitleButton != null && modifySearchYearButton != null &&
-                modifySearchSeasonButton != null && modifySearchEpisodeButton != null
+                modifySearchSeasonButton != null && modifySearchEpisodeButton != null &&
+                modifySearchAbsoluteNumberingButton != null
                 )
             {
                 cancelButton.Label = Localization.Back;
@@ -1085,6 +1103,8 @@ namespace SubCentral.GUI {
                 modifySearchCancelButton.Label = Localization.Cancel;
                 modifySearchRevertButton.Label = Localization.Revert;
                 modifySearchClearFilesButton.Label = Localization.ClearMedia;
+
+                modifySearchAbsoluteNumberingButton.Label = Localization.SkinTranslationAbsoluteNumbering;
                 //modifySearchSelectFolderButton.Label = Localization.SelectDownloadFolder;
 
                 return true;
@@ -1218,6 +1238,14 @@ namespace SubCentral.GUI {
             }
         }
 
+        private void ModifyAbsoluteNumbering() {
+            _modifySearchMediaDetail.AbsoluteNumbering = !_modifySearchMediaDetail.AbsoluteNumbering;
+
+            modifySearchSeasonButton.IsEnabled = !_modifySearchMediaDetail.AbsoluteNumbering;
+
+            PublishSearchProperties(true);
+        }
+
         private void ClearFiles() {
             if (SubCentralUtils.getEnabledAndValidFoldersForMedia(null, false).Count < 1) {
                 GUIUtils.ShowOKDialog(Localization.Warning, Localization.CannotClearMedia);
@@ -1324,10 +1352,10 @@ namespace SubCentral.GUI {
                     fillWith = _modifySearchMediaDetail.Year == 0 ? string.Empty : _modifySearchMediaDetail.Year.ToString();
                     break;
                 case (int)GUIControls.MODIFYSEARCHSEASONBUTTON:
-                    fillWith = _modifySearchMediaDetail.Season == 0 ? string.Empty : _modifySearchMediaDetail.Season.ToString();
+                    fillWith = _modifySearchMediaDetail.SeasonProper == 0 ? string.Empty : _modifySearchMediaDetail.SeasonProper.ToString();
                     break;
                 case (int)GUIControls.MODIFYSEARCHEPISODEBUTTON:
-                    fillWith = _modifySearchMediaDetail.Episode == 0 ? string.Empty : _modifySearchMediaDetail.Episode.ToString();
+                    fillWith = _modifySearchMediaDetail.EpisodeProper == 0 ? string.Empty : _modifySearchMediaDetail.EpisodeProper.ToString();
                     break;
             }
 
@@ -1357,13 +1385,13 @@ namespace SubCentral.GUI {
                         }
                         break;
                     case (int)GUIControls.MODIFYSEARCHSEASONBUTTON:
-                        if (!SubCentralUtils.isSeasonOrEpisodeCorrect(fillWith)) {
+                        if (!SubCentralUtils.isSeasonOrEpisodeCorrect(fillWith, false)) {
                             inputCorrect = false;
                             GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.WrongFormatSeasonEpisode, Localization.SkinTranslationSeason));
                         }
                         break;
                     case (int)GUIControls.MODIFYSEARCHEPISODEBUTTON:
-                        if (!SubCentralUtils.isSeasonOrEpisodeCorrect(fillWith)) {
+                        if (!SubCentralUtils.isSeasonOrEpisodeCorrect(fillWith, _modifySearchMediaDetail.AbsoluteNumbering)) {
                             inputCorrect = false;
                             GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.WrongFormatSeasonEpisode, Localization.SkinTranslationEpisode));
                         }
@@ -1392,7 +1420,7 @@ namespace SubCentral.GUI {
                     case (int)GUIControls.MODIFYSEARCHEPISODEBUTTON:
                         int episode = 0;
                         int.TryParse(fillWith, out episode);
-                        _modifySearchMediaDetail.Episode = episode;
+                        _modifySearchMediaDetail.EpisodeProper = episode;
                         break;
                 }
             }
