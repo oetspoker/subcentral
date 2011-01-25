@@ -274,7 +274,7 @@ namespace SubCentral.GUI {
                     }
                     break;
                 case SubtitlesSearchType.TVSHOW:
-                    episodeQuery = new SubtitleDownloader.Core.EpisodeSearchQuery(mediaDetail.Title, mediaDetail.Season, mediaDetail.Episode);
+                    episodeQuery = new SubtitleDownloader.Core.EpisodeSearchQuery(mediaDetail.Title, mediaDetail.SeasonProper, mediaDetail.EpisodeProper);
                     episodeQuery.LanguageCodes = _languageCodes.ToArray();
                     break;
                 case SubtitlesSearchType.MOVIE:

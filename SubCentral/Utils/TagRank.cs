@@ -352,7 +352,7 @@ namespace SubCentral.Utils {
 
             SubCentralUtils.EnsureProperSubtitleFile(ref subtitleFile);
 
-            if (string.IsNullOrEmpty(subtitleFile) || string.IsNullOrEmpty(MediaDetail.SeasonStr) || string.IsNullOrEmpty(MediaDetail.EpisodeStr)) return result;
+            if (string.IsNullOrEmpty(subtitleFile) || MediaDetail.AbsoluteNumbering ? false : string.IsNullOrEmpty(MediaDetail.SeasonStr) || string.IsNullOrEmpty(MediaDetail.EpisodeStr)) return result;
 
             Regex rExSeries = new Regex(regexpSeries, RegexOptions.IgnoreCase);
 
@@ -368,44 +368,49 @@ namespace SubCentral.Utils {
                 string seasonGroupValue = seasonGroup.Value;
                 string episodeGroupValue = episodeGroup.Value;
                 string episode2GroupValue = episode2Group != null ? episode2Group.Value : string.Empty;
+                if (string.IsNullOrEmpty(seasonGroupValue))
+                    seasonGroupValue = "0";
                 if (string.IsNullOrEmpty(seasonGroupValue) || string.IsNullOrEmpty(episodeGroupValue))
                     return result;
 
                 seasonGroupValue = seasonGroupValue.Trim();
                 episodeGroupValue = episodeGroupValue.Trim();
                 episode2GroupValue = episode2GroupValue.Trim();
+                if (string.IsNullOrEmpty(seasonGroupValue))
+                    seasonGroupValue = "0";
                 if (string.IsNullOrEmpty(seasonGroupValue) || string.IsNullOrEmpty(episodeGroupValue))
                     return result;
 
                 try {
-                    int mediaSeason = int.Parse(MediaDetail.SeasonStr);
-                    int mediaEpisode = int.Parse(MediaDetail.EpisodeStr);
+                    //int mediaSeason = MediaDetail.SeasonProper;
+                    //int mediaEpisode = int.Parse(MediaDetail.EpisodeStr);
 
                     int subtitleSeason = int.Parse(seasonGroupValue);
                     int subtitleEpisode = int.Parse(episodeGroupValue);
                     int subtitleEpisode2 = 0;
                     if (!string.IsNullOrEmpty(episode2GroupValue)) {
                         subtitleEpisode2 = int.Parse(episode2GroupValue);
-                        if (!SubCentralUtils.isSeasonOrEpisodeCorrect(subtitleEpisode2.ToString()))
+                        if (!SubCentralUtils.isSeasonOrEpisodeCorrect(subtitleEpisode2.ToString(), MediaDetail.AbsoluteNumbering))
                             subtitleEpisode2 = 0;
                     }
 
-                    if (!SubCentralUtils.isSeasonOrEpisodeCorrect(subtitleSeason.ToString()))
+                    if (subtitleSeason != 0 && !SubCentralUtils.isSeasonOrEpisodeCorrect(subtitleSeason.ToString(), false))
                         return result;
-                    if (!SubCentralUtils.isSeasonOrEpisodeCorrect(subtitleEpisode.ToString()))
+                    if (!SubCentralUtils.isSeasonOrEpisodeCorrect(subtitleEpisode.ToString(), MediaDetail.AbsoluteNumbering))
                         return result;
 
                     if (subtitleEpisode2 != 0 && subtitleEpisode2 <= subtitleEpisode)
                         subtitleEpisode2 = 0;
 
-                    if (mediaSeason != subtitleSeason)
+                    if (MediaDetail.Season != subtitleSeason && MediaDetail.SeasonProper != subtitleSeason)
                         return result;
                     if (subtitleEpisode2 != 0) {
-                        if (mediaEpisode > subtitleEpisode2 || mediaEpisode < subtitleEpisode)
+                        if ((MediaDetail.Episode > subtitleEpisode2 || MediaDetail.Episode < subtitleEpisode) &&
+                            (MediaDetail.EpisodeProper > subtitleEpisode2 || MediaDetail.EpisodeProper < subtitleEpisode))
                             return result;
                     }
                     else {
-                        if (mediaEpisode != subtitleEpisode)
+                        if (MediaDetail.Episode != subtitleEpisode && MediaDetail.EpisodeProper != subtitleEpisode)
                             return result;
                     }
 
@@ -424,7 +429,7 @@ namespace SubCentral.Utils {
 
             SubCentralUtils.EnsureProperSubtitleFile(ref subtitleFile);
 
-            if (string.IsNullOrEmpty(subtitleFile) || string.IsNullOrEmpty(MediaDetail.SeasonStr) || string.IsNullOrEmpty(MediaDetail.EpisodeStr)) return result;
+            if (string.IsNullOrEmpty(subtitleFile)) return result;
 
             string subtitleFileProper = SubCentralUtils.CleanSubtitleFile(subtitleFile);
             string mediaTitleProper = SubCentralUtils.CleanSubtitleFile(MediaDetail.Title);
@@ -434,7 +439,6 @@ namespace SubCentral.Utils {
 
             return result;
         }
-
 
         public bool SubtitleFileNameMatchesMedia(string subtitleFile) {
             bool result = false;

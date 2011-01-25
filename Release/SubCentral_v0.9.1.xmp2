@@ -172,6 +172,20 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Button_Short_Bg.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{fbc0fc83-4cca-4152-befc-c10228f2f9e1}-SubCentral_Button_Short_Bg.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Button_Short_Bg.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Button_Short_Focused.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{084fcf91-4919-4224-ad18-19116d244b74}-SubCentral_Button_Short_Focused.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Button_Short_Focused.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3\Media\SubCentral_MainOverlay.png</DestinationFilename>
@@ -269,6 +283,20 @@
               <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Button_Long_Focused.png</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{0b325aaa-62e5-4862-b04f-a0664840361b}-SubCentral_Button_Long_Focused.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Button_Long_Focused.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Bg.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a843f611-6614-4db2-85cb-f6bd83df5802}-SubCentral_Button_Short_Bg.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Button_Short_Bg.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Focused.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{73b49b25-cff8-4d99-8523-5eae03740854}-SubCentral_Button_Short_Focused.png</ZipFileName>
+              <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Button_Short_Focused.png</DestinationFilename>
             </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
@@ -658,6 +686,20 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Button_Short_Bg.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{fbc0fc83-4cca-4152-befc-c10228f2f9e1}-SubCentral_Button_Short_Bg.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Button_Short_Bg.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_Button_Short_Focused.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{084fcf91-4919-4224-ad18-19116d244b74}-SubCentral_Button_Short_Focused.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3\Media\SubCentral_Button_Short_Focused.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
         <DestinationFilename>%Skin%\Blue3\Media\SubCentral_MainOverlay.png</DestinationFilename>
@@ -742,6 +784,20 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Bg.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a843f611-6614-4db2-85cb-f6bd83df5802}-SubCentral_Button_Short_Bg.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Button_Short_Bg.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Focused.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{73b49b25-cff8-4d99-8523-5eae03740854}-SubCentral_Button_Short_Focused.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Button_Short_Focused.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{4ea40440-397b-49fc-85e7-183719cc8973}-SubCentral_MainOverlay.png</ZipFileName>
         <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_MainOverlay.png</DestinationFilename>
@@ -785,7 +841,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{d1f44414-427e-41b8-a490-da642a79d3c8}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{58496111-c451-48b9-b995-e7f015b93999}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>

@@ -45,10 +45,20 @@ namespace SubCentral.PluginHandlers {
                 
                 string seasonIdx = episode[DBEpisode.cSeasonIndex];
                 string episodeIdx = episode[DBEpisode.cEpisodeIndex];
+                string episodeIdxAbs = episode[DBOnlineEpisode.cAbsoluteNumber];
+
+                bool absolute = false;
+
+                if (series[DBOnlineSeries.cChosenEpisodeOrder] == "Absolute" && !string.IsNullOrEmpty(episodeIdxAbs)) {
+                    absolute = true;
+                }
+                
                 int seasonIdxInt = -1;
                 int.TryParse(seasonIdx, out seasonIdxInt);
                 int episodeIdxInt = -1;
                 int.TryParse(episodeIdx, out episodeIdxInt);
+                int episodeIdxAbsInt = -1;
+                int.TryParse(episodeIdxAbs, out episodeIdxAbsInt);
 
                 string thumb = ImageAllocator.GetSeriesPosterAsFilename(series);
                 string fanart = Fanart.getFanart(episode[DBEpisode.cSeriesID]).FanartFilename;
@@ -58,8 +68,11 @@ namespace SubCentral.PluginHandlers {
 
                 _mediaDetail.Title = seriesTitle;
 
+                _mediaDetail.AbsoluteNumbering = absolute;
+
                 _mediaDetail.Season = seasonIdxInt;
                 _mediaDetail.Episode = episodeIdxInt;
+                _mediaDetail.EpisodeAbs = episodeIdxAbsInt;
 
                 _mediaDetail.Thumb = thumb;
                 _mediaDetail.FanArt = fanart;

@@ -71,6 +71,10 @@ namespace SubCentral.GUI {
                     }
                 }
 
+                List<string> validBoolValues = new List<string> { "1", "yes", "true" };
+                string absoluteS = pluginData[9].Trim();
+                bool absolute = validBoolValues.Contains(absoluteS.ToLowerInvariant());
+
                 if (string.IsNullOrEmpty(pluginName) || fileList.Count == 0) return;
 
                 BasicMediaDetail mediaDetail = new BasicMediaDetail();
@@ -78,9 +82,15 @@ namespace SubCentral.GUI {
                 mediaDetail.Title = title;
                 if (SubCentralUtils.isYearCorrect(year.ToString()))
                     mediaDetail.Year = year;
-                if (SubCentralUtils.isSeasonOrEpisodeCorrect(season.ToString()))
+                mediaDetail.AbsoluteNumbering = absolute;
+                mediaDetail.Season = 0;
+                if (SubCentralUtils.isSeasonOrEpisodeCorrect(season.ToString(), false))
                     mediaDetail.Season = season;
-                if (SubCentralUtils.isSeasonOrEpisodeCorrect(episode.ToString()))
+                mediaDetail.Episode = 0;
+                mediaDetail.EpisodeAbs = 0;
+                if (absolute && SubCentralUtils.isSeasonOrEpisodeCorrect(episode.ToString(), absolute))
+                    mediaDetail.EpisodeAbs = episode;
+                else if (!absolute && SubCentralUtils.isSeasonOrEpisodeCorrect(episode.ToString(), absolute))
                     mediaDetail.Episode = episode;
                 mediaDetail.Thumb = thumb;
                 mediaDetail.FanArt = fanart;

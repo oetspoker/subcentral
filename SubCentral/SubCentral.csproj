@@ -172,6 +172,8 @@
     <Content Include="GUI\Skins\Blue3wide\Media\Logos\nosubtitles.png" />
     <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Background.png" />
     <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Long_Focused.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Bg.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Focused.png" />
     <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png" />
     <Content Include="GUI\Skins\Blue3wide\SubCentral.Search.xml" />
     <Content Include="GUI\Skins\Blue3wide\SubCentral.xml" />
@@ -184,6 +186,8 @@
     <Content Include="GUI\Skins\Blue3\Media\Logos\nosubtitles.png" />
     <Content Include="GUI\Skins\Blue3\Media\SubCentral_Background.png" />
     <Content Include="GUI\Skins\Blue3\Media\SubCentral_Button_Long_Focused.png" />
+    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Button_Short_Bg.png" />
+    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Button_Short_Focused.png" />
     <Content Include="GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png" />
     <Content Include="GUI\Skins\Blue3\SubCentral.Main.xml" />
     <Content Include="GUI\Skins\Blue3\SubCentral.ModifySearch.xml" />

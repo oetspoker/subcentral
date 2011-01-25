@@ -44,8 +44,8 @@ namespace SubCentral.PluginHandlers {
 
         public string SeasonStr {
             get {
-                if (SubCentralUtils.isSeasonOrEpisodeCorrect(Season.ToString())) {
-                    return string.Format("{0:00}", Season);
+                if (SubCentralUtils.isSeasonOrEpisodeCorrect(SeasonProper.ToString(), false)) {
+                    return string.Format("{0:00}", SeasonProper);
                 }
                 return string.Empty;
             }
@@ -54,13 +54,34 @@ namespace SubCentral.PluginHandlers {
 
         public string EpisodeStr {
             get {
-                if (SubCentralUtils.isSeasonOrEpisodeCorrect(Episode.ToString())) {
-                    return string.Format("{0:00}", Episode);
+                if (SubCentralUtils.isSeasonOrEpisodeCorrect(EpisodeProper.ToString(), AbsoluteNumbering)) {
+                    return string.Format("{0:00}", EpisodeProper);
                 }
                 return string.Empty;
             }
         }
         public int Episode { get; set; }
+        public int EpisodeAbs { get; set; }
+
+        public int SeasonProper {
+            get {
+                if (AbsoluteNumbering) return 0;
+                else return Season;
+            }
+        }
+
+        public int EpisodeProper {
+            get {
+                if (AbsoluteNumbering) return EpisodeAbs;
+                else return Episode;
+            }
+            set {
+                if (AbsoluteNumbering) EpisodeAbs = value;
+                else Episode = value;
+            }
+        }
+
+        public bool AbsoluteNumbering { get; set; }
 
         public string Thumb { get; set; }
 
