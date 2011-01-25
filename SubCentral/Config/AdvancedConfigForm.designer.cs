@@ -45,9 +45,10 @@
             this.checkBoxUseLanguageCode = new System.Windows.Forms.CheckBox();
             this.numericUpDownSearching1 = new System.Windows.Forms.NumericUpDown();
             this.gbDownloading = new System.Windows.Forms.GroupBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.labelAfterDownloading = new System.Windows.Forms.Label();
             this.comboBoxAfterDownloading = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.checkBoxShowResultsAfterProgressCancel = new System.Windows.Forms.CheckBox();
             this.gbLogging.SuspendLayout();
             this.gbGeneral.SuspendLayout();
             this.gbSearching.SuspendLayout();
@@ -62,7 +63,7 @@
             this.gbLogging.Controls.Add(this.btnOpenLog);
             this.gbLogging.Controls.Add(this.btnOpenLogFolder);
             this.gbLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbLogging.Location = new System.Drawing.Point(6, 236);
+            this.gbLogging.Location = new System.Drawing.Point(6, 256);
             this.gbLogging.Name = "gbLogging";
             this.gbLogging.Size = new System.Drawing.Size(359, 53);
             this.gbLogging.TabIndex = 1;
@@ -99,7 +100,7 @@
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSave.Image = global::SubCentral.Properties.Resources.OK;
-            this.btnSave.Location = new System.Drawing.Point(6, 301);
+            this.btnSave.Location = new System.Drawing.Point(6, 321);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;
@@ -112,7 +113,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancel.Image = global::SubCentral.Properties.Resources.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(87, 301);
+            this.btnCancel.Location = new System.Drawing.Point(90, 321);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
@@ -184,13 +185,14 @@
             // 
             this.gbSearching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbSearching.Controls.Add(this.checkBoxShowResultsAfterProgressCancel);
             this.gbSearching.Controls.Add(this.laSearching1);
             this.gbSearching.Controls.Add(this.checkBoxUseLanguageCode);
             this.gbSearching.Controls.Add(this.numericUpDownSearching1);
             this.gbSearching.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSearching.Location = new System.Drawing.Point(6, 101);
             this.gbSearching.Name = "gbSearching";
-            this.gbSearching.Size = new System.Drawing.Size(359, 70);
+            this.gbSearching.Size = new System.Drawing.Size(359, 92);
             this.gbSearching.TabIndex = 6;
             this.gbSearching.TabStop = false;
             this.gbSearching.Text = "Searching";
@@ -210,7 +212,7 @@
             // 
             this.checkBoxUseLanguageCode.AutoSize = true;
             this.checkBoxUseLanguageCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(12, 44);
+            this.checkBoxUseLanguageCode.Location = new System.Drawing.Point(12, 43);
             this.checkBoxUseLanguageCode.Name = "checkBoxUseLanguageCode";
             this.checkBoxUseLanguageCode.Size = new System.Drawing.Size(175, 17);
             this.checkBoxUseLanguageCode.TabIndex = 2;
@@ -242,14 +244,15 @@
             // 
             // gbDownloading
             // 
-            this.gbDownloading.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbDownloading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDownloading.Controls.Add(this.labelAfterDownloading);
             this.gbDownloading.Controls.Add(this.comboBoxAfterDownloading);
             this.gbDownloading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDownloading.Location = new System.Drawing.Point(6, 177);
+            this.gbDownloading.Location = new System.Drawing.Point(6, 199);
             this.gbDownloading.Name = "gbDownloading";
-            this.gbDownloading.Size = new System.Drawing.Size(359, 53);
+            this.gbDownloading.Size = new System.Drawing.Size(359, 49);
             this.gbDownloading.TabIndex = 7;
             this.gbDownloading.TabStop = false;
             this.gbDownloading.Text = "Downloading";
@@ -277,11 +280,22 @@
             this.comboBoxAfterDownloading.Size = new System.Drawing.Size(180, 21);
             this.comboBoxAfterDownloading.TabIndex = 2;
             // 
+            // checkBoxShowResultsAfterProgressCancel
+            // 
+            this.checkBoxShowResultsAfterProgressCancel.AutoSize = true;
+            this.checkBoxShowResultsAfterProgressCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxShowResultsAfterProgressCancel.Location = new System.Drawing.Point(12, 66);
+            this.checkBoxShowResultsAfterProgressCancel.Name = "checkBoxShowResultsAfterProgressCancel";
+            this.checkBoxShowResultsAfterProgressCancel.Size = new System.Drawing.Size(329, 17);
+            this.checkBoxShowResultsAfterProgressCancel.TabIndex = 3;
+            this.checkBoxShowResultsAfterProgressCancel.Text = "Show already found subtitles after canceling search progress dlg";
+            this.checkBoxShowResultsAfterProgressCancel.UseVisualStyleBackColor = true;
+            // 
             // AdvancedConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 336);
+            this.ClientSize = new System.Drawing.Size(372, 356);
             this.Controls.Add(this.gbDownloading);
             this.Controls.Add(this.gbSearching);
             this.Controls.Add(this.gbGeneral);
@@ -331,5 +345,6 @@
         private System.Windows.Forms.CheckBox checkBoxUseLanguageCode;
         private System.Windows.Forms.Label labelAfterDownloading;
         private System.Windows.Forms.ComboBox comboBoxAfterDownloading;
+        private System.Windows.Forms.CheckBox checkBoxShowResultsAfterProgressCancel;
     }
 }

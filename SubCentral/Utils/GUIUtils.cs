@@ -146,7 +146,7 @@ namespace SubCentral.Utils {
         /// Displays a notification dialog.
         /// </summary>
         public static void ShowNotifyDialog(string heading, string text) {
-            ShowNotifyDialog(heading, text, Config.GetFolder(Config.Dir.Thumbs) + @"SubCentral\SubCentralGUIIconBig.png", Localization.OK);
+            ShowNotifyDialog(heading, text, Config.GetFolder(Config.Dir.Thumbs) + @"\SubCentral\SubCentralGUIIconBig.png", Localization.OK);
         }
 
         /// <summary>

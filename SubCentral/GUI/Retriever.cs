@@ -33,8 +33,19 @@ namespace SubCentral.GUI {
         private List<string> _languageCodes = null;
         private Dictionary<string, string> _providerIDsAndtitles = null;
         private Thread _subtitlesDownloaderThread = null;
+        private Thread _subtitlesDownloaderStatusThread = null;
         private bool _isCanceled = false;
+        private ThreadStatus _status = ThreadStatus.StatusEnded;
         SubtitlesSearchType _searchType = SubtitlesSearchType.NONE;
+        #endregion
+
+        #region Enums
+        public enum ThreadStatus {
+            StatusRunning,
+            StatusStartedWithWaitCursor,
+            StatusStartedWithoutWaitCursor,
+            StatusEnded
+        }
         #endregion
 
         #region Delegates
@@ -81,6 +92,7 @@ namespace SubCentral.GUI {
                 return;
 
             _isCanceled = false;
+            _status = ThreadStatus.StatusEnded;
 
             _subtitlesDownloaderThread = new Thread(SearchSubtitlesAsynch);
             _subtitlesDownloaderThread.IsBackground = true;
@@ -90,6 +102,7 @@ namespace SubCentral.GUI {
 
         public bool IsCanceled() {
             if (!_progressReportingEnabled) return false;
+            //if (!_isStarted) return false;
 
             if (GUIGraphicsContext.form.InvokeRequired) {
                 IsCanceledDelegate d = IsCanceled;
@@ -98,7 +111,7 @@ namespace SubCentral.GUI {
 
             GUIDialogProgress pDlgProgress = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
 
-            _isCanceled = pDlgProgress.IsCanceled;
+            _isCanceled = pDlgProgress.IsCanceled || (Status == ThreadStatus.StatusStartedWithWaitCursor && GUIWindowManager.RoutedWindow != (int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
 
             return (_isCanceled);
         }
@@ -115,34 +128,72 @@ namespace SubCentral.GUI {
                 _subtitlesDownloaderThread.Abort();
                 _subtitlesDownloaderThread = null;
             }
+            if (_subtitlesDownloaderStatusThread != null && _subtitlesDownloaderStatusThread.IsAlive) {
+                _subtitlesDownloaderStatusThread.Abort();
+                _subtitlesDownloaderStatusThread = null;
+            }
+        }
+
+        public ThreadStatus Status {
+            get {
+                return _status;
+            }
         }
         #endregion
 
         #region Private Methods
+        private void SubtitleDownloaderSetGUIStatus(object mainThread) {
+            try {
+                //while (true) {
+                while ((mainThread == null) || (mainThread != null && (mainThread as Thread).IsAlive)) {
+                    if (Status == ThreadStatus.StatusStartedWithWaitCursor && !GUIWindowManager.IsRouted)
+                        SubCentralGUI.ShowWaitCursor();
+                    else
+                        SubCentralGUI.HideWaitCursor();
+
+                    if (mainThread != null && IsCanceled())
+                        (mainThread as Thread).Abort();
+
+                    Thread.Sleep(100);
+                }
+                SubCentralGUI.HideWaitCursor();
+            }
+            catch (Exception) {
+                SubCentralGUI.HideWaitCursor();
+                // silently abort
+            }
+        }
+
         private void SearchSubtitlesAsynch(object mediaDetailObj) {
             if (!(mediaDetailObj is BasicMediaDetail))
                 throw new ArgumentException("Parameter must be type of List<BasicMediaDetail>!");
 
+            List<SubtitleItem> allResults = new List<SubtitleItem>();
+
             try {
+                _status = ThreadStatus.StatusRunning;
+
                 OnQueryStarting();
+
+                _status = ThreadStatus.StatusStartedWithWaitCursor;
+
+                _subtitlesDownloaderStatusThread = new Thread(SubtitleDownloaderSetGUIStatus);
+                _subtitlesDownloaderStatusThread.IsBackground = true;
+                _subtitlesDownloaderStatusThread.Name = "Subtitles Downloader Status Thread";
+                _subtitlesDownloaderStatusThread.Start(_subtitlesDownloaderThread);
 
                 Dictionary<string, CustomSubtitleDownloader> downloaders = HarvestDownloaders();
 
-                List<SubtitleItem> allResults = null;
-
-                // foreach {
                 BasicMediaDetail mediaDetail = (BasicMediaDetail)mediaDetailObj;
-                allResults = QueryDownloaders(mediaDetail, downloaders);
-                //}
+                QueryDownloaders(mediaDetail, downloaders, ref allResults);
 
-                if (OnSubtitleSearchCompletedEvent != null) {
-                    OnSubtitleSearchCompletedEvent(allResults, _isCanceled);
-                }
+                OnBeforeCompleted(allResults);
 
                 OnCompleted();
             }
             catch (ThreadAbortException) {
                 _isCanceled = true;
+                OnBeforeCompleted(allResults);
             }
             catch (Exception e) {
                 try {
@@ -151,9 +202,17 @@ namespace SubCentral.GUI {
                 catch {
                 }
                 if (OnSubtitlesSearchErrorEvent != null) {
-                    OnSubtitlesSearchErrorEvent(e);
+                    if (GUIGraphicsContext.form.InvokeRequired) {
+                        OnSubtitlesSearchErrorDelegate d = OnSubtitlesSearchErrorEvent;
+                        GUIGraphicsContext.form.Invoke(d, e);
+                    }
+                    else {
+                        OnSubtitlesSearchErrorEvent(e);
+                    }
                 }
             }
+            _status = ThreadStatus.StatusEnded;
+            _subtitlesDownloaderStatusThread.Abort();
         }
 
         private bool OnQueryStarting() {
@@ -197,9 +256,7 @@ namespace SubCentral.GUI {
             return downloaders;
         }
 
-        private List<SubtitleItem> QueryDownloaders(BasicMediaDetail mediaDetail, Dictionary<string, CustomSubtitleDownloader> downloaders) {
-            List<SubtitleItem> allResults = new List<SubtitleItem>();
-
+        private List<SubtitleItem> QueryDownloaders(BasicMediaDetail mediaDetail, Dictionary<string, CustomSubtitleDownloader> downloaders, ref List<SubtitleItem> allResults) {
             SubtitleDownloader.Core.EpisodeSearchQuery episodeQuery = null;
             SubtitleDownloader.Core.SearchQuery movieQuery = null;
             SubtitleDownloader.Core.ImdbSearchQuery queryIMDB = null;
@@ -232,7 +289,7 @@ namespace SubCentral.GUI {
             int providerCount = 1;
             foreach (KeyValuePair<string, CustomSubtitleDownloader> kvp in downloaders) {
                 if (IsCanceled()) {
-                    allResults.Clear();
+                    //allResults.Clear();
                     break;
                 }
 
@@ -316,7 +373,13 @@ namespace SubCentral.GUI {
                 catch (Exception e) {
                     logger.ErrorException(string.Format("Error while querying site {0}\n", providerName), e);
                     if (OnProviderSearchErrorEvent != null) {
-                        OnProviderSearchErrorEvent(mediaDetail, subtitlesSearchType, e);
+                        if (GUIGraphicsContext.form.InvokeRequired) {
+                            OnProviderSearchErrorDelegate d = OnProviderSearchErrorEvent;
+                            GUIGraphicsContext.form.Invoke(d, mediaDetail, subtitlesSearchType, e);
+                        }
+                        else {
+                            OnProviderSearchErrorEvent(mediaDetail, subtitlesSearchType, e);
+                        }
                     }
                 }
 
@@ -359,6 +422,20 @@ namespace SubCentral.GUI {
             pDlgProgress.Progress();
         }
 
+        private void OnBeforeCompleted(List<SubtitleItem> allResults) {
+            _status = ThreadStatus.StatusStartedWithoutWaitCursor;
+
+            if (OnSubtitleSearchCompletedEvent != null) {
+                if (GUIGraphicsContext.form.InvokeRequired) {
+                    OnSubtitleSearchCompletedDelegate d = OnSubtitleSearchCompletedEvent;
+                    GUIGraphicsContext.form.Invoke(d, allResults, _isCanceled);
+                }
+                else {
+                    OnSubtitleSearchCompletedEvent(allResults, _isCanceled);
+                }
+            }
+        }
+
         private void OnCompleted() {
             if (!_progressReportingEnabled) return;
 
@@ -379,96 +456,120 @@ namespace SubCentral.GUI {
         public void DownloadSubtitle(SubtitleItem subtitleItem, BasicMediaDetail mediaDetail, FolderSelectionItem folderSelectionItem, SubtitlesSearchType searchType, bool skipDefaults) {
             logger.Info("Downloading subtitles...");
 
-            SubtitleDownloader.Core.ISubtitleDownloader subDownloader = subtitleItem.Downloader; ;
-            SubtitleDownloader.Core.Subtitle subtitle = subtitleItem.Subtitle;
+            _status = ThreadStatus.StatusStartedWithWaitCursor;
 
-            List<SubtitleDownloadStatus> statusList = new List<SubtitleDownloadStatus>();
+            _subtitlesDownloaderStatusThread = new Thread(SubtitleDownloaderSetGUIStatus);
+            _subtitlesDownloaderStatusThread.IsBackground = true;
+            _subtitlesDownloaderStatusThread.Name = "Subtitles Downloader Status Thread";
+            _subtitlesDownloaderStatusThread.Start(null);
 
-            List<FileInfo> subtitleFiles = null;
+            GUIWindowManager.Process();
+
             try {
-                subtitleFiles = subDownloader.SaveSubtitle(subtitle);
-            }
-            catch {
-                subtitleFiles = null;
-            }
+                SubtitleDownloader.Core.ISubtitleDownloader subDownloader = subtitleItem.Downloader; ;
+                SubtitleDownloader.Core.Subtitle subtitle = subtitleItem.Subtitle;
 
-            if (OnSubtitleDownloadedToTempEvent != null)
-                OnSubtitleDownloadedToTempEvent(mediaDetail, subtitleFiles);
+                List<SubtitleDownloadStatus> statusList = new List<SubtitleDownloadStatus>();
 
-            int subtitleNr = 0;
-            if (subtitleFiles != null && subtitleFiles.Count > 0) {
-                logger.Info("{0} subtitle(s) downloaded to temporary folder.", subtitleFiles.Count);
-
-                if (mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
-                    logger.Info("Video files:");
-                    foreach (FileInfo fileInfo in mediaDetail.Files) {
-                        logger.Info(" {0}", fileInfo.Name);
-                    }
-
-                    if (mediaDetail.Files.Count != subtitleFiles.Count) {
-                        logger.Warn("Video and subtitle file count mismatch! {0} video files, {1} subtitle files", mediaDetail.Files.Count, subtitleFiles.Count);
-                    }
-
-                    if (mediaDetail.Files.Count < subtitleFiles.Count || (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count > 1)) {
-                        GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileDownloadingSubtitlesWithReason, Localization.MediaFilesDifferFromSubtitleFiles), GUIUtils.NoSubtitlesLogoThumbPath);
-                        return;
-                    }
-                    else if (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count == 1) {
-                        List<GUIListItem> dlgMenuItems = new List<GUIListItem>();
-                        foreach (FileInfo fileInfo in mediaDetail.Files) {
-                            GUIListItem listItem = new GUIListItem();
-                            listItem.Label = fileInfo.Name;
-                            listItem.MusicTag = fileInfo;
-
-                            dlgMenuItems.Add(listItem);
-                        }
-                        subtitleNr = GUIUtils.ShowMenuDialog(string.Format(Localization.SelectFileForSubtitle, subtitleFiles[0].Name), dlgMenuItems);
-                        if (subtitleNr < 0)
-                            logger.Debug("User canceled media selection dialog for subtitle {0}", subtitleFiles[0].Name);
-                        else
-                            logger.Debug("User selected media file {0} for subtitle {1}", mediaDetail.Files[subtitleNr].Name, subtitleFiles[0].Name);
-                    }
+                List<FileInfo> subtitleFiles = null;
+                try {
+                    subtitleFiles = subDownloader.SaveSubtitle(subtitle);
+                }
+                catch {
+                    subtitleFiles = null;
                 }
 
-                foreach (FileInfo subtitleFile in subtitleFiles) {
-                    SubtitleDownloadStatus newSubtitleDownloadStatus = new SubtitleDownloadStatus() {
-                        Index = subtitleNr,
-                        Error = string.Empty
-                    };
-                    try {
-                        string videoFileName = string.Empty;
-                        string targetSubtitleFile = string.Empty;
-                        string subtitleFileNameFull = string.Empty;
-                        string subtitleFileName = string.Empty;
-                        string subtitleFileExt = string.Empty;
+                if (OnSubtitleDownloadedToTempEvent != null)
+                    OnSubtitleDownloadedToTempEvent(mediaDetail, subtitleFiles);
 
-                        if (mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
-                            if (subtitleNr < 0) {
-                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Canceled;
-                                continue;
-                            }
-                            videoFileName = Path.GetFileName(mediaDetail.Files[subtitleNr].FullName);
-                            videoFileName = Path.Combine(folderSelectionItem.FolderName, videoFileName);
-                            targetSubtitleFile = SubtitleDownloader.Util.FileUtils.GetFileNameForSubtitle(subtitleFile.Name,
-                                                                                                          subtitle.LanguageCode,
-                                                                                                          videoFileName);
+                int subtitleNr = 0;
+                if (subtitleFiles != null && subtitleFiles.Count > 0) {
+                    logger.Info("{0} subtitle(s) downloaded to temporary folder.", subtitleFiles.Count);
 
-                            subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
-                            subtitleFileExt = Path.GetExtension(targetSubtitleFile);
-                            subtitleFileNameFull = subtitleFileName + subtitleFileExt;
+                    if (mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
+                        logger.Info("Video files:");
+                        foreach (FileInfo fileInfo in mediaDetail.Files) {
+                            logger.Info(" {0}", fileInfo.Name);
                         }
-                        else {
-                            targetSubtitleFile = Path.Combine(folderSelectionItem.FolderName, subtitleFile.Name);
 
-                            subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
-                            if (!string.IsNullOrEmpty(SubCentralUtils.SubsLanguages[subtitle.LanguageCode]) && !subtitleFileName.Contains("." + SubCentralUtils.SubsLanguages[subtitle.LanguageCode]))
-                                subtitleFileName = subtitleFileName + "." + SubCentralUtils.SubsLanguages[subtitle.LanguageCode];
-                            subtitleFileExt = Path.GetExtension(targetSubtitleFile);
-                            subtitleFileNameFull = subtitleFileName + subtitleFileExt;
+                        if (mediaDetail.Files.Count != subtitleFiles.Count) {
+                            logger.Warn("Video and subtitle file count mismatch! {0} video files, {1} subtitle files", mediaDetail.Files.Count, subtitleFiles.Count);
+                        }
 
-                            targetSubtitleFile = Path.Combine(folderSelectionItem.FolderName, subtitleFileNameFull);
+                        if (mediaDetail.Files.Count < subtitleFiles.Count || (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count > 1)) {
+                            GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileDownloadingSubtitlesWithReason, Localization.MediaFilesDifferFromSubtitleFiles), GUIUtils.NoSubtitlesLogoThumbPath);
+                            return;
+                        }
+                        else if (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count == 1) {
+                            List<GUIListItem> dlgMenuItems = new List<GUIListItem>();
+                            foreach (FileInfo fileInfo in mediaDetail.Files) {
+                                GUIListItem listItem = new GUIListItem();
+                                listItem.Label = fileInfo.Name;
+                                listItem.MusicTag = fileInfo;
 
-                            if (Settings.SettingsManager.Properties.FolderSettings.OnDownloadFileName == OnDownloadFileName.AskIfManual) {
+                                dlgMenuItems.Add(listItem);
+                            }
+                            subtitleNr = GUIUtils.ShowMenuDialog(string.Format(Localization.SelectFileForSubtitle, subtitleFiles[0].Name), dlgMenuItems);
+                            if (subtitleNr < 0)
+                                logger.Debug("User canceled media selection dialog for subtitle {0}", subtitleFiles[0].Name);
+                            else
+                                logger.Debug("User selected media file {0} for subtitle {1}", mediaDetail.Files[subtitleNr].Name, subtitleFiles[0].Name);
+                        }
+                    }
+
+                    foreach (FileInfo subtitleFile in subtitleFiles) {
+                        SubtitleDownloadStatus newSubtitleDownloadStatus = new SubtitleDownloadStatus() {
+                            Index = subtitleNr,
+                            Error = string.Empty
+                        };
+                        try {
+                            string videoFileName = string.Empty;
+                            string targetSubtitleFile = string.Empty;
+                            string subtitleFileNameFull = string.Empty;
+                            string subtitleFileName = string.Empty;
+                            string subtitleFileExt = string.Empty;
+
+                            if (mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
+                                if (subtitleNr < 0) {
+                                    newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Canceled;
+                                    continue;
+                                }
+                                videoFileName = Path.GetFileName(mediaDetail.Files[subtitleNr].FullName);
+                                videoFileName = Path.Combine(folderSelectionItem.FolderName, videoFileName);
+                                targetSubtitleFile = SubtitleDownloader.Util.FileUtils.GetFileNameForSubtitle(subtitleFile.Name,
+                                                                                                              subtitle.LanguageCode,
+                                                                                                              videoFileName);
+
+                                subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
+                                subtitleFileExt = Path.GetExtension(targetSubtitleFile);
+                                subtitleFileNameFull = subtitleFileName + subtitleFileExt;
+                            }
+                            else {
+                                targetSubtitleFile = Path.Combine(folderSelectionItem.FolderName, subtitleFile.Name);
+
+                                subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
+                                if (!string.IsNullOrEmpty(SubCentralUtils.SubsLanguages[subtitle.LanguageCode]) && !subtitleFileName.Contains("." + SubCentralUtils.SubsLanguages[subtitle.LanguageCode]))
+                                    subtitleFileName = subtitleFileName + "." + SubCentralUtils.SubsLanguages[subtitle.LanguageCode];
+                                subtitleFileExt = Path.GetExtension(targetSubtitleFile);
+                                subtitleFileNameFull = subtitleFileName + subtitleFileExt;
+
+                                targetSubtitleFile = Path.Combine(folderSelectionItem.FolderName, subtitleFileNameFull);
+
+                                if (Settings.SettingsManager.Properties.FolderSettings.OnDownloadFileName == OnDownloadFileName.AskIfManual) {
+                                    if (GUIUtils.GetStringFromKeyboard(ref subtitleFileNameFull)) {
+                                        targetSubtitleFile = Path.Combine(Path.GetDirectoryName(targetSubtitleFile), subtitleFileNameFull);
+                                        subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
+                                        subtitleFileExt = Path.GetExtension(targetSubtitleFile);
+                                        subtitleFileNameFull = subtitleFileName + subtitleFileExt;
+                                    }
+                                    else {
+                                        newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Canceled;
+                                        continue;
+                                    }
+                                }
+                            }
+
+                            if (skipDefaults || Settings.SettingsManager.Properties.FolderSettings.OnDownloadFileName == OnDownloadFileName.AlwaysAsk) {
                                 if (GUIUtils.GetStringFromKeyboard(ref subtitleFileNameFull)) {
                                     targetSubtitleFile = Path.Combine(Path.GetDirectoryName(targetSubtitleFile), subtitleFileNameFull);
                                     subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
@@ -480,29 +581,30 @@ namespace SubCentral.GUI {
                                     continue;
                                 }
                             }
-                        }
 
-                        if (skipDefaults || Settings.SettingsManager.Properties.FolderSettings.OnDownloadFileName == OnDownloadFileName.AlwaysAsk) {
-                            if (GUIUtils.GetStringFromKeyboard(ref subtitleFileNameFull)) {
-                                targetSubtitleFile = Path.Combine(Path.GetDirectoryName(targetSubtitleFile), subtitleFileNameFull);
-                                subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
-                                subtitleFileExt = Path.GetExtension(targetSubtitleFile);
-                                subtitleFileNameFull = subtitleFileName + subtitleFileExt;
+                            bool targetFileExists = File.Exists(targetSubtitleFile);
+
+                            if (targetFileExists) {
+                                bool overwriteFile = GUIUtils.ShowYesNoDialog(Localization.Confirm, Localization.SubtitlesExist);
+
+                                if (overwriteFile) {
+                                    try {
+                                        File.Delete(targetSubtitleFile);
+                                        File.Move(subtitleFile.FullName, targetSubtitleFile);
+                                        newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Succesful;
+                                    }
+                                    catch (Exception e) {
+                                        logger.ErrorException("Error while downloading subtitles\n", e);
+                                        newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
+                                        newSubtitleDownloadStatus.Error = e.Message;
+                                    }
+                                }
+                                else {
+                                    newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.AlreadyExists;
+                                }
                             }
                             else {
-                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Canceled;
-                                continue;
-                            }
-                        }
-
-                        bool targetFileExists = File.Exists(targetSubtitleFile);
-
-                        if (targetFileExists) {
-                            bool overwriteFile = GUIUtils.ShowYesNoDialog(Localization.Confirm, Localization.SubtitlesExist);
-
-                            if (overwriteFile) {
                                 try {
-                                    File.Delete(targetSubtitleFile);
                                     File.Move(subtitleFile.FullName, targetSubtitleFile);
                                     newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Succesful;
                                 }
@@ -512,31 +614,21 @@ namespace SubCentral.GUI {
                                     newSubtitleDownloadStatus.Error = e.Message;
                                 }
                             }
-                            else {
-                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.AlreadyExists;
-                            }
+                            subtitleNr++;
                         }
-                        else {
-                            try {
-                                File.Move(subtitleFile.FullName, targetSubtitleFile);
-                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Succesful;
-                            }
-                            catch (Exception e) {
-                                logger.ErrorException("Error while downloading subtitles\n", e);
-                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
-                                newSubtitleDownloadStatus.Error = e.Message;
-                            }
+                        finally {
+                            statusList.Add(newSubtitleDownloadStatus);
                         }
-                        subtitleNr++;
-                    }
-                    finally {
-                        statusList.Add(newSubtitleDownloadStatus);
                     }
                 }
-            }
 
-            if (OnSubtitleDownloadedEvent != null)
-                OnSubtitleDownloadedEvent(mediaDetail, statusList);
+                if (OnSubtitleDownloadedEvent != null)
+                    OnSubtitleDownloadedEvent(mediaDetail, statusList);
+            }
+            finally {
+                _status = ThreadStatus.StatusEnded;
+                _subtitlesDownloaderStatusThread.Abort();
+            }
         }
         #endregion
 

@@ -10,10 +10,12 @@ namespace SubCentral.Settings.Data {
             AllProvidersForTVShows = true;
             EnabledProvidersEnabled = true;
             SearchTimeout = 30;
+            ShowResultsAfterProgressCancel = true;
         }
         
         public OnPluginLoadWithSearchData PluginLoadWithSearchData { get; set; }
         public bool UseLanguageCodeOnResults { get; set; }
+        public bool ShowResultsAfterProgressCancel { get; set; }
         public bool SearchDefaultsWhenFromManualSearch { get; set; }
 
         public bool AllProvidersEnabled { get; set; }
