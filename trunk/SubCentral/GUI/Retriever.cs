@@ -482,9 +482,11 @@ namespace SubCentral.GUI {
                 if (OnSubtitleDownloadedToTempEvent != null)
                     OnSubtitleDownloadedToTempEvent(mediaDetail, subtitleFiles);
 
-                int subtitleNr = 0;
+                //int subtitleNr = 0;
                 if (subtitleFiles != null && subtitleFiles.Count > 0) {
                     logger.Info("{0} subtitle(s) downloaded to temporary folder.", subtitleFiles.Count);
+
+                    List<SubtitleMediaMapping> mapping = new List<SubtitleMediaMapping>();
 
                     if (mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
                         logger.Info("Video files:");
@@ -496,11 +498,11 @@ namespace SubCentral.GUI {
                             logger.Warn("Video and subtitle file count mismatch! {0} video files, {1} subtitle files", mediaDetail.Files.Count, subtitleFiles.Count);
                         }
 
-                        if (mediaDetail.Files.Count < subtitleFiles.Count || (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count > 1)) {
-                            GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileDownloadingSubtitlesWithReason, Localization.MediaFilesDifferFromSubtitleFiles), GUIUtils.NoSubtitlesLogoThumbPath);
-                            return;
-                        }
-                        else if (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count == 1) {
+                        //if (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count > 1) {
+                        //    GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileDownloadingSubtitlesWithReason, Localization.MediaFilesDifferFromSubtitleFiles), GUIUtils.NoSubtitlesLogoThumbPath);
+                        //    return;
+                        //}
+                        if (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count == 1) {
                             List<GUIListItem> dlgMenuItems = new List<GUIListItem>();
                             foreach (FileInfo fileInfo in mediaDetail.Files) {
                                 GUIListItem listItem = new GUIListItem();
@@ -509,19 +511,76 @@ namespace SubCentral.GUI {
 
                                 dlgMenuItems.Add(listItem);
                             }
-                            subtitleNr = GUIUtils.ShowMenuDialog(string.Format(Localization.SelectFileForSubtitle, subtitleFiles[0].Name), dlgMenuItems);
-                            if (subtitleNr < 0)
+                            int mediaNr = GUIUtils.ShowMenuDialog(string.Format(Localization.SelectFileForSubtitle, subtitleFiles[0].Name), dlgMenuItems);
+                            if (mediaNr < 0) {
                                 logger.Debug("User canceled media selection dialog for subtitle {0}", subtitleFiles[0].Name);
-                            else
-                                logger.Debug("User selected media file {0} for subtitle {1}", mediaDetail.Files[subtitleNr].Name, subtitleFiles[0].Name);
+                            }
+                            else {
+                                logger.Debug("User selected media file {0} for subtitle {1}", mediaDetail.Files[mediaNr].Name, subtitleFiles[0].Name);
+                            }
+                            mapping.Add(new SubtitleMediaMapping() { SubtitleIndex = 0, MediaIndex = mediaNr }); // add to mapping
+                        }
+                        else if (mediaDetail.Files.Count != subtitleFiles.Count && subtitleFiles.Count > 1) {
+                            int subtitleNr = 0;
+                            int mediaNr = -1;
+
+                            foreach (FileInfo mediaFileInfo in mediaDetail.Files) {
+                                mediaNr++;
+
+                                if (subtitleNr < 0) {
+                                    mapping.Add(new SubtitleMediaMapping() { SubtitleIndex = -1, MediaIndex = mediaNr }); // add to mapping
+                                    continue;
+                                }
+
+                                List<GUIListItem> dlgMenuItems = new List<GUIListItem>();
+                                for (int i = 0; i < subtitleFiles.Count; i++) {
+                                    FileInfo fileInfo = subtitleFiles[i];
+
+                                    bool subInMapping = false;
+                                    foreach (SubtitleMediaMapping mapSM in mapping) {
+                                        if (mapSM.SubtitleIndex == i) {
+                                            subInMapping = true;
+                                            break;
+                                        }
+                                    }
+                                    if (!subInMapping) {
+                                        GUIListItem listItem = new GUIListItem();
+                                        listItem.Label = fileInfo.Name;
+                                        listItem.MusicTag = fileInfo;
+
+                                        dlgMenuItems.Add(listItem);
+                                    }
+                                }
+                                subtitleNr = GUIUtils.ShowMenuDialog(string.Format(Localization.SelectSubtitleForFile, mediaFileInfo.Name), dlgMenuItems);
+                                if (subtitleNr < 0)
+                                    logger.Debug("User canceled subtitle selection dialog for media {0}", mediaFileInfo.Name);
+                                else {
+                                    logger.Debug("User selected subtitle file {0} for media {1}", subtitleFiles[subtitleNr].Name, mediaFileInfo.Name);
+                                }
+                                mapping.Add(new SubtitleMediaMapping() { SubtitleIndex = subtitleNr, MediaIndex = mediaNr }); // add to mapping
+                            }
+                        }
+                        else { // same count
+                            for (int i = 0; i < mediaDetail.Files.Count; i++) {
+                                mapping.Add(new SubtitleMediaMapping() { SubtitleIndex = i, MediaIndex = i }); // 1:1 mapping
+                            }
+                        }
+                    }
+                    else {
+                        for (int i = 0; i < subtitleFiles.Count; i++) {
+                            mapping.Add(new SubtitleMediaMapping() { SubtitleIndex = i, MediaIndex = -1 }); // 1:1 mapping without media
                         }
                     }
 
-                    foreach (FileInfo subtitleFile in subtitleFiles) {
+                    foreach (SubtitleMediaMapping mapSM in mapping) {
+                        int subtitleNr = mapSM.SubtitleIndex;
+                        int mediaNr = mapSM.MediaIndex;
+
                         SubtitleDownloadStatus newSubtitleDownloadStatus = new SubtitleDownloadStatus() {
-                            Index = subtitleNr,
+                            Index = mediaNr,
                             Error = string.Empty
                         };
+
                         try {
                             string videoFileName = string.Empty;
                             string targetSubtitleFile = string.Empty;
@@ -529,12 +588,19 @@ namespace SubCentral.GUI {
                             string subtitleFileName = string.Empty;
                             string subtitleFileExt = string.Empty;
 
+                            if (subtitleNr < 0) {
+                                newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Canceled;
+                                continue;
+                            }
+
+                            FileInfo subtitleFile = subtitleFiles[subtitleNr];
+
                             if (mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
-                                if (subtitleNr < 0) {
+                                if (mediaNr < 0) {
                                     newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Canceled;
                                     continue;
                                 }
-                                videoFileName = Path.GetFileName(mediaDetail.Files[subtitleNr].FullName);
+                                videoFileName = Path.GetFileName(mediaDetail.Files[mediaNr].FullName);
                                 videoFileName = Path.Combine(folderSelectionItem.FolderName, videoFileName);
                                 targetSubtitleFile = SubtitleDownloader.Util.FileUtils.GetFileNameForSubtitle(subtitleFile.Name,
                                                                                                               subtitle.LanguageCode,
@@ -614,7 +680,6 @@ namespace SubCentral.GUI {
                                     newSubtitleDownloadStatus.Error = e.Message;
                                 }
                             }
-                            subtitleNr++;
                         }
                         finally {
                             statusList.Add(newSubtitleDownloadStatus);
@@ -635,6 +700,11 @@ namespace SubCentral.GUI {
         private class CustomSubtitleDownloader {
             public SubtitleDownloader.Core.ISubtitleDownloader downloader { get; set; }
             public string downloaderTitle { get; set; }
+        }
+
+        private class SubtitleMediaMapping {
+            public int SubtitleIndex { get; set; }
+            public int MediaIndex { get; set; }
         }
     }
 }

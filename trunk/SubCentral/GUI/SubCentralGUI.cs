@@ -793,7 +793,7 @@ namespace SubCentral.GUI {
                     _checkMediaForSubtitlesOnOpenDone = false;
                 }
             }
-
+                
             if (SettingsManager.Properties.GeneralSettings.AfterDownload == OnAfterDownload.BackToOriginalPlugin && properHandler.GetHasSubtitles(true)) {
                 GUIWindowManager.ShowPreviousWindow();
             }

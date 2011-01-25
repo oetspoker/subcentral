@@ -293,6 +293,7 @@ namespace SubCentral.Localizations {
         public static string SortByName = "Sort by subtitle name";
         public static string SubtitleFilesToDelete = "Subtitle files to delete";
         public static string SortByMediaTags = "Sort by media tags (if possible)";
+        public static string SelectSubtitleForFile = "Select subtitle for '{0}'";
 
         public static string SkinTranslationFrom = "From";
         public static string SkinTranslationSearchType = "Search type";
