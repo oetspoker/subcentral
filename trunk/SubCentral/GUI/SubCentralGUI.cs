@@ -19,11 +19,12 @@ namespace SubCentral.GUI {
         private SubCentralCore core = SubCentralCore.Instance;
         private Retriever retriever = Retriever.Instance;
 
+        private static WaitCursor waitCursor;
+
         public const int SubCentralGUIID = 84623;
         public readonly List<int> MainWindowIDs = new List<int> { 0, 34, 35, SubCentralGUIID };
 
         #region Private Variables
-        private WaitCursor waitCursor;
         private int _lastSelectedGroupsAndProvidersItemIndex = 0;
         private int _lastSelectedSubtitlesItemIndex = 1;
         private bool _GUIInitialized = false;
@@ -521,7 +522,7 @@ namespace SubCentral.GUI {
                     retriever.SearchForSubtitles(details);
                 }
                 else if (tag is SettingsProvider) {
-                    ShowWaitCursor();
+                    //ShowWaitCursor();
 
                     SettingsProvider settingsProvider = tag as SettingsProvider;
 
@@ -540,7 +541,7 @@ namespace SubCentral.GUI {
                 }
             }
             catch (Exception e) {
-                HideWaitCursor();
+                //HideWaitCursor();
                 logger.ErrorException("Error while retrieving subtitles\n", e);
                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             }
@@ -548,7 +549,7 @@ namespace SubCentral.GUI {
 
         void retriever_OnProviderSearchErrorEvent(BasicMediaDetail mediaDetail, SubtitlesSearchType subtitlesSearchType, Exception e) {
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
-            HideWaitCursor();
+            //HideWaitCursor();
             if (e is NotImplementedException || e is NotSupportedException) {
                 switch (subtitlesSearchType) {
                     case SubtitlesSearchType.IMDb:
@@ -576,7 +577,7 @@ namespace SubCentral.GUI {
 
         void retriever_OnSubtitlesSearchErrorEvent(Exception e) {
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
-            HideWaitCursor();
+            //HideWaitCursor();
             logger.ErrorException("Error while retrieving subtitles\n", e);
             GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             _notificationDone = false;
@@ -596,13 +597,17 @@ namespace SubCentral.GUI {
             if (RetrieverRunning()) {
                 retriever.Kill();
             }
-            HideWaitCursor();
+            //HideWaitCursor();
         }
 
         void retriever_OnSubtitleSearchCompletedEvent(List<SubtitleItem> subtitleItems, bool isCanceled) {
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
-            HideWaitCursor();
-            if (!isCanceled && !_notificationDone) {
+            //HideWaitCursor();
+            bool bCanceled = isCanceled;
+            if (bCanceled && Settings.SettingsManager.Properties.GeneralSettings.ShowResultsAfterProgressCancel && subtitleItems != null && subtitleItems.Count > 0) {
+                bCanceled = false;
+            }
+            if (!bCanceled && !_notificationDone) {
                 FillSubtitleSearchResults(subtitleItems);
             }
             _notificationDone = false;
@@ -702,18 +707,16 @@ namespace SubCentral.GUI {
             }
 
             if (selectedFolderIndex >= 0) {
-                ShowWaitCursor();
-                GUIWindowManager.Process();
                 retriever.DownloadSubtitle(subtitleItem, CurrentHandler.MediaDetail, items[selectedFolderIndex], searchType, skipDefaults);
             }
         }
 
         void retriever_OnSubtitleDownloadedToTempEvent(BasicMediaDetail mediaDetail, List<FileInfo> subtitleFiles) {
-            HideWaitCursor();
+            //HideWaitCursor();
         }
 
         private void retriever_OnSubtitleDownloadedEvent(BasicMediaDetail mediaDetail, List<SubtitleDownloadStatus> statusList) {
-            HideWaitCursor();
+            //HideWaitCursor();
 
             string heading = string.Empty;
 
@@ -880,11 +883,11 @@ namespace SubCentral.GUI {
             return newMediaDetail;
         }
 
-        private void ShowWaitCursor() {
+        public static void ShowWaitCursor() {
             waitCursor = new WaitCursor();
         }
 
-        private void HideWaitCursor() {
+        public static void HideWaitCursor() {
             if (waitCursor != null) {
                 waitCursor.Dispose();
                 waitCursor = null;
@@ -1499,8 +1502,8 @@ namespace SubCentral.GUI {
                 foreach (FileInfo fi in properHandler.MediaDetail.Files) {
                     properHandler.SetHasSubtitles(fi.FullName, false);
                 }
-                _subtitlesExistForCurrentMedia = false;
             }
+            _subtitlesExistForCurrentMedia = false;
         }
 
         private void AskAndTrueHasSubtitles(PluginHandler properHandler, string baseText) {
@@ -1509,11 +1512,15 @@ namespace SubCentral.GUI {
                 foreach (FileInfo fi in properHandler.MediaDetail.Files) {
                     properHandler.SetHasSubtitles(fi.FullName, true);
                 }
-                _subtitlesExistForCurrentMedia = true;
             }
+            _subtitlesExistForCurrentMedia = true;
         }
 
         private bool CheckMediaForSubtitlesOnOpen(PluginHandler properHandler) {
+            return CheckMediaForSubtitlesOnOpen(properHandler);
+        }
+
+        private bool CheckMediaForSubtitlesOnOpen(PluginHandler properHandler, bool questionsOnly) {
             bool resultContinue = true;
 
             if (properHandler == null) return resultContinue;
@@ -1527,7 +1534,7 @@ namespace SubCentral.GUI {
             if (_subtitlesExistForCurrentMedia && !properHandler.GetHasSubtitles(false) && properHandler.Type == PluginHandlerType.BASIC) {
                 AskAndTrueHasSubtitles(properHandler, Localization.MediaWrongMarkNoSubtitles);
             }
-            else if (_subtitlesExistForCurrentMedia) {
+            else if (!questionsOnly && _subtitlesExistForCurrentMedia) {
                 //GUIUtils.ShowNotifyDialog(Localization.Warning, string.Format(Localization.MediaHasSubtitles, CurrentHandler == null ? Localization.ExternalPlugin : CurrentHandler.PluginName));
                 GUIUtils.ShowNotifyDialog(Localization.Warning, Localization.MediaHasSubtitles);
             }
@@ -1544,7 +1551,7 @@ namespace SubCentral.GUI {
             if (properHandler == null) return;
             if (properHandler.MediaDetail.Files == null || properHandler.MediaDetail.Files.Count == 0) return;
 
-            if (!CheckMediaForSubtitlesOnOpen(properHandler)) return;
+            if (!CheckMediaForSubtitlesOnOpen(properHandler, true)) return;
 
             if (!_subtitlesExistForCurrentMedia)
                 // nothing
@@ -1587,7 +1594,7 @@ namespace SubCentral.GUI {
                                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.NoSubtitlesDelete);
                             }
                             else {
-                                GUIUtils.ShowNotifyDialog(Localization.Completed, Localization.AllSubtitlesDeleted, GUIUtils.NoSubtitlesLogoThumbPath);
+                                GUIUtils.ShowNotifyDialog(Localization.Completed, string.Format(Localization.AllSubtitlesDeleted, statusList.Count), GUIUtils.NoSubtitlesLogoThumbPath);
                             }
                         }
                         else if (subtitleToDeleteIndex == 1) {
@@ -1602,7 +1609,7 @@ namespace SubCentral.GUI {
                                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.NoSubtitlesDelete);
                             }
                             else {
-                                GUIUtils.ShowNotifyDialog(Localization.Completed, Localization.AllSubtitlesDeleted, GUIUtils.NoSubtitlesLogoThumbPath);
+                                GUIUtils.ShowNotifyDialog(Localization.Completed, string.Format(Localization.AllSubtitlesDeleted, statusList.Count), GUIUtils.NoSubtitlesLogoThumbPath);
                             }
                         }
                         else if (_subtitleFilesForCurrentMedia[subtitleToDeleteIndex - 2].Exists) {
@@ -1640,6 +1647,7 @@ namespace SubCentral.GUI {
                             fiSubtitle.Delete();
                         status.Status = SubtitleDeleteStatusStatus.Succesful;
                         subtitleFilesForCurrentMedia.RemoveAt(i);
+                        result.Add(status);
                         i--;
                     }
                 }
