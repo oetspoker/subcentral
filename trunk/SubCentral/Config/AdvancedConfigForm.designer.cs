@@ -41,6 +41,7 @@
             this.txtPluginName = new System.Windows.Forms.TextBox();
             this.labelPluginName = new System.Windows.Forms.Label();
             this.gbSearching = new System.Windows.Forms.GroupBox();
+            this.checkBoxShowResultsAfterProgressCancel = new System.Windows.Forms.CheckBox();
             this.laSearching1 = new System.Windows.Forms.Label();
             this.checkBoxUseLanguageCode = new System.Windows.Forms.CheckBox();
             this.numericUpDownSearching1 = new System.Windows.Forms.NumericUpDown();
@@ -48,7 +49,6 @@
             this.labelAfterDownloading = new System.Windows.Forms.Label();
             this.comboBoxAfterDownloading = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBoxShowResultsAfterProgressCancel = new System.Windows.Forms.CheckBox();
             this.gbLogging.SuspendLayout();
             this.gbGeneral.SuspendLayout();
             this.gbSearching.SuspendLayout();
@@ -65,7 +65,7 @@
             this.gbLogging.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbLogging.Location = new System.Drawing.Point(6, 256);
             this.gbLogging.Name = "gbLogging";
-            this.gbLogging.Size = new System.Drawing.Size(359, 53);
+            this.gbLogging.Size = new System.Drawing.Size(376, 53);
             this.gbLogging.TabIndex = 1;
             this.gbLogging.TabStop = false;
             this.gbLogging.Text = "Logging";
@@ -133,7 +133,7 @@
             this.gbGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbGeneral.Location = new System.Drawing.Point(6, 3);
             this.gbGeneral.Name = "gbGeneral";
-            this.gbGeneral.Size = new System.Drawing.Size(359, 92);
+            this.gbGeneral.Size = new System.Drawing.Size(376, 92);
             this.gbGeneral.TabIndex = 0;
             this.gbGeneral.TabStop = false;
             this.gbGeneral.Text = "General";
@@ -167,7 +167,7 @@
             this.txtPluginName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPluginName.Location = new System.Drawing.Point(167, 17);
             this.txtPluginName.Name = "txtPluginName";
-            this.txtPluginName.Size = new System.Drawing.Size(180, 20);
+            this.txtPluginName.Size = new System.Drawing.Size(197, 20);
             this.txtPluginName.TabIndex = 1;
             this.txtPluginName.Text = "SubCentral";
             // 
@@ -192,10 +192,21 @@
             this.gbSearching.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSearching.Location = new System.Drawing.Point(6, 101);
             this.gbSearching.Name = "gbSearching";
-            this.gbSearching.Size = new System.Drawing.Size(359, 92);
+            this.gbSearching.Size = new System.Drawing.Size(376, 92);
             this.gbSearching.TabIndex = 6;
             this.gbSearching.TabStop = false;
             this.gbSearching.Text = "Searching";
+            // 
+            // checkBoxShowResultsAfterProgressCancel
+            // 
+            this.checkBoxShowResultsAfterProgressCancel.AutoSize = true;
+            this.checkBoxShowResultsAfterProgressCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxShowResultsAfterProgressCancel.Location = new System.Drawing.Point(12, 66);
+            this.checkBoxShowResultsAfterProgressCancel.Name = "checkBoxShowResultsAfterProgressCancel";
+            this.checkBoxShowResultsAfterProgressCancel.Size = new System.Drawing.Size(329, 17);
+            this.checkBoxShowResultsAfterProgressCancel.TabIndex = 3;
+            this.checkBoxShowResultsAfterProgressCancel.Text = "Show already found subtitles after canceling search progress dlg";
+            this.checkBoxShowResultsAfterProgressCancel.UseVisualStyleBackColor = true;
             // 
             // laSearching1
             // 
@@ -252,7 +263,7 @@
             this.gbDownloading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDownloading.Location = new System.Drawing.Point(6, 199);
             this.gbDownloading.Name = "gbDownloading";
-            this.gbDownloading.Size = new System.Drawing.Size(359, 49);
+            this.gbDownloading.Size = new System.Drawing.Size(376, 49);
             this.gbDownloading.TabIndex = 7;
             this.gbDownloading.TabStop = false;
             this.gbDownloading.Text = "Downloading";
@@ -270,6 +281,8 @@
             // 
             // comboBoxAfterDownloading
             // 
+            this.comboBoxAfterDownloading.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxAfterDownloading.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAfterDownloading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxAfterDownloading.Items.AddRange(new object[] {
@@ -277,25 +290,14 @@
             "Go back to originating plugin"});
             this.comboBoxAfterDownloading.Location = new System.Drawing.Point(167, 17);
             this.comboBoxAfterDownloading.Name = "comboBoxAfterDownloading";
-            this.comboBoxAfterDownloading.Size = new System.Drawing.Size(180, 21);
+            this.comboBoxAfterDownloading.Size = new System.Drawing.Size(197, 21);
             this.comboBoxAfterDownloading.TabIndex = 2;
-            // 
-            // checkBoxShowResultsAfterProgressCancel
-            // 
-            this.checkBoxShowResultsAfterProgressCancel.AutoSize = true;
-            this.checkBoxShowResultsAfterProgressCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxShowResultsAfterProgressCancel.Location = new System.Drawing.Point(12, 66);
-            this.checkBoxShowResultsAfterProgressCancel.Name = "checkBoxShowResultsAfterProgressCancel";
-            this.checkBoxShowResultsAfterProgressCancel.Size = new System.Drawing.Size(329, 17);
-            this.checkBoxShowResultsAfterProgressCancel.TabIndex = 3;
-            this.checkBoxShowResultsAfterProgressCancel.Text = "Show already found subtitles after canceling search progress dlg";
-            this.checkBoxShowResultsAfterProgressCancel.UseVisualStyleBackColor = true;
             // 
             // AdvancedConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 356);
+            this.ClientSize = new System.Drawing.Size(389, 356);
             this.Controls.Add(this.gbDownloading);
             this.Controls.Add(this.gbSearching);
             this.Controls.Add(this.gbGeneral);
