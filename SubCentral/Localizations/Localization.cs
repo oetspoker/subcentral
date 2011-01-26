@@ -252,6 +252,9 @@ namespace SubCentral.Localizations {
         public static string Name = "Name";
         public static string NoSorting = "No sorting";
         public static string NoSubtitlesDelete = "No subtitle files found to delete.";
+        public static string NoSubtitlesDownloaded = "No subtitles downloaded!";
+        public static string NoSubtitlesDownloadedWithReason = "No subtitles downloaded: {0}";
+        public static string NoSubtitlesInChosen = "Couldn't find any subtitles in requested item. Server error?";
 
         // O
         public static string OKSearch = "OK/Search";

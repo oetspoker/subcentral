@@ -210,6 +210,10 @@ namespace SubCentral.Utils {
                     result = result.TrimStart(new char[] { '-' });
             }
 
+            int lastDotIndex = result.LastIndexOf(".");
+            if (lastDotIndex >= 2)
+                result = result.Substring(0, lastDotIndex);
+
             return result.ToLowerInvariant();
         }
 

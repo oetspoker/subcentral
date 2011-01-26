@@ -475,14 +475,14 @@ namespace SubCentral.GUI {
                 try {
                     subtitleFiles = subDownloader.SaveSubtitle(subtitle);
                 }
-                catch {
+                catch (Exception e) {
+                    logger.ErrorException("Error on downloading to temporary folder\n", e);
                     subtitleFiles = null;
                 }
 
                 if (OnSubtitleDownloadedToTempEvent != null)
                     OnSubtitleDownloadedToTempEvent(mediaDetail, subtitleFiles);
 
-                //int subtitleNr = 0;
                 if (subtitleFiles != null && subtitleFiles.Count > 0) {
                     logger.Info("{0} subtitle(s) downloaded to temporary folder.", subtitleFiles.Count);
 
@@ -551,7 +551,10 @@ namespace SubCentral.GUI {
                                         dlgMenuItems.Add(listItem);
                                     }
                                 }
-                                subtitleNr = GUIUtils.ShowMenuDialog(string.Format(Localization.SelectSubtitleForFile, mediaFileInfo.Name), dlgMenuItems);
+                                subtitleNr = -1;
+                                if (dlgMenuItems.Count > 0) { // if we "used" all the subtitles, mark other media files as cancelled. not really common
+                                    subtitleNr = GUIUtils.ShowMenuDialog(string.Format(Localization.SelectSubtitleForFile, mediaFileInfo.Name), dlgMenuItems);
+                                }
                                 if (subtitleNr < 0)
                                     logger.Debug("User canceled subtitle selection dialog for media {0}", mediaFileInfo.Name);
                                 else {
