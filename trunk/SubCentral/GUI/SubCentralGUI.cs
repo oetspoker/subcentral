@@ -740,10 +740,12 @@ namespace SubCentral.GUI {
                     break;
             }
 
+            if (statusList == null || statusList.Count < 1) {
+                GUIUtils.ShowNotifyDialog(heading, string.Format(Localization.NoSubtitlesDownloaded, Localization.NoSubtitlesInChosen), GUIUtils.NoSubtitlesLogoThumbPath);
+            }
+
             int mediaCount = statusList.Count;
             int succesful, canceled, errors;
-
-            if (mediaCount == 0) return;
 
             countDownloads(statusList, out succesful, out canceled, out errors);
             if (succesful == mediaCount) { // all succesful

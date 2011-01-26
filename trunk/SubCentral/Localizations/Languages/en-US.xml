@@ -98,6 +98,9 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="Name">Name</string>
 	<string Field="NoSorting">No sorting</string>
 	<string Field="NoSubtitlesDelete">No subtitle files found to delete.</string>
+	<string Field="NoSubtitlesDownloaded">No subtitles downloaded!</string>
+	<string Field="NoSubtitlesDownloadedWithReason">No subtitles downloaded: {0}</string>
+	<string Field="NoSubtitlesInChosen">Couldn't find any subtitles in requested item. Server error?</string>
 
 	<!-- O -->
 	<string Field="OKSearch">OK/Search</string>
