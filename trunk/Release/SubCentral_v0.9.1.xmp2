@@ -58,6 +58,56 @@
           </Items>
         </Files>
       </GroupItem>
+      <GroupItem Name="Additional subtitle providers">
+        <ParentGroup />
+        <DisplayName>Additional subtitle providers</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>User created additional "unofficial" subtitle providers:
+
+ItalianSubs: samo_yea
+SeriesSub: samo_yea
+Subsfactory: samo_yea
+Titlovi.com: SilentException</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\ItalianSubs.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b0ff588c-dec2-43eb-b056-bc4ac162ef19}-ItalianSubs.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\ItalianSubs.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>NeverOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\ItalianSubs.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{53c3885f-030e-4c7f-bed3-a94f375da66b}-ItalianSubs.xml</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\ItalianSubs.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\SeriesSub.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{45847527-9376-43b0-b0df-cd1a4eb2cf74}-SeriesSub.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\SeriesSub.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\Subsfactory.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{f8725616-45a8-45ba-9904-2d2cee601d95}-Subsfactory.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\Subsfactory.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\Titlovi.com.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a2fed73e-15fe-4541-a52b-f4675c6a0f06}-Titlovi.com.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\Titlovi.com.dll</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
       <GroupItem Name="Languages">
         <ParentGroup />
         <DisplayName>Languages</DisplayName>
@@ -412,6 +462,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Items />
         </Actions>
         <IncludedGroups>
+          <string>Additional subtitle providers</string>
           <string>Languages</string>
           <string>Blue3 skin files</string>
           <string>Blue3wide skin files</string>
@@ -598,6 +649,41 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <LocalFileName>..\External\SubtitleDownloader.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{08803f83-a5c7-4d25-bb0f-af84d8d01f3a}-SubtitleDownloader.dll</ZipFileName>
         <DestinationFilename>%Base%\SubtitleDownloader.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\ItalianSubs.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b0ff588c-dec2-43eb-b056-bc4ac162ef19}-ItalianSubs.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\ItalianSubs.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>NeverOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\ItalianSubs.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{53c3885f-030e-4c7f-bed3-a94f375da66b}-ItalianSubs.xml</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\ItalianSubs.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\SeriesSub.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{45847527-9376-43b0-b0df-cd1a4eb2cf74}-SeriesSub.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\SeriesSub.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\Subsfactory.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{f8725616-45a8-45ba-9904-2d2cee601d95}-Subsfactory.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\Subsfactory.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\Titlovi.com.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a2fed73e-15fe-4541-a52b-f4675c6a0f06}-Titlovi.com.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\Titlovi.com.dll</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -841,7 +927,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{58496111-c451-48b9-b995-e7f015b93999}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{4020ed03-5cb5-4297-9ee5-45013cdc07c4}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
