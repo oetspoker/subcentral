@@ -570,8 +570,9 @@ namespace SubCentral.GUI {
                         }
                     }
                     else {
+                        bool download = subtitleFiles.Count < 4 ? true : GUIUtils.ShowYesNoDialog(Localization.TooManySubtitles, string.Format(Localization.TooManySubtitlesQuestion, subtitleFiles.Count));
                         for (int i = 0; i < subtitleFiles.Count; i++) {
-                            mapping.Add(new SubtitleMediaMapping() { SubtitleIndex = i, MediaIndex = -1 }); // 1:1 mapping without media
+                            mapping.Add(new SubtitleMediaMapping() { SubtitleIndex = download ? i : -1, MediaIndex = -1 }); // 1:1 mapping without media
                         }
                     }
 
@@ -625,7 +626,7 @@ namespace SubCentral.GUI {
                                 targetSubtitleFile = Path.Combine(folderSelectionItem.FolderName, subtitleFileNameFull);
 
                                 if (Settings.SettingsManager.Properties.FolderSettings.OnDownloadFileName == OnDownloadFileName.AskIfManual) {
-                                    if (GUIUtils.GetStringFromKeyboard(ref subtitleFileNameFull)) {
+                                    if (GUIUtils.GetStringFromKeyboard(ref subtitleFileNameFull) && !string.IsNullOrEmpty(subtitleFileNameFull)) {
                                         targetSubtitleFile = Path.Combine(Path.GetDirectoryName(targetSubtitleFile), subtitleFileNameFull);
                                         subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
                                         subtitleFileExt = Path.GetExtension(targetSubtitleFile);
@@ -639,7 +640,7 @@ namespace SubCentral.GUI {
                             }
 
                             if (skipDefaults || Settings.SettingsManager.Properties.FolderSettings.OnDownloadFileName == OnDownloadFileName.AlwaysAsk) {
-                                if (GUIUtils.GetStringFromKeyboard(ref subtitleFileNameFull)) {
+                                if (GUIUtils.GetStringFromKeyboard(ref subtitleFileNameFull) && !string.IsNullOrEmpty(subtitleFileNameFull)) {
                                     targetSubtitleFile = Path.Combine(Path.GetDirectoryName(targetSubtitleFile), subtitleFileNameFull);
                                     subtitleFileName = Path.GetFileNameWithoutExtension(targetSubtitleFile);
                                     subtitleFileExt = Path.GetExtension(targetSubtitleFile);

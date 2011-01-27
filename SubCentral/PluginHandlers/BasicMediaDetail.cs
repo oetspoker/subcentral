@@ -17,7 +17,7 @@ namespace SubCentral.PluginHandlers {
                 return _imdbID;
             }
             set {
-                if (!string.IsNullOrEmpty(value)) {
+                if (!string.IsNullOrEmpty(value) && value != "tt") {
                     _imdbID = value.Replace("tt", "").PadLeft(7, '0');
                     if (!SubCentralUtils.isImdbIdCorrect("tt" + _imdbID)) {
                         _imdbID = string.Empty;

@@ -100,7 +100,7 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="NoSubtitlesDelete">No subtitle files found to delete.</string>
 	<string Field="NoSubtitlesDownloaded">No subtitles downloaded!</string>
 	<string Field="NoSubtitlesDownloadedWithReason">No subtitles downloaded: {0}</string>
-	<string Field="NoSubtitlesInChosen">Couldn't find any subtitles in requested item. Server error?</string>
+	<string Field="NoSubtitlesInChosen">Couldn't find any subtitles in requested subtitle item. Server error?</string>
 
 	<!-- O -->
 	<string Field="OKSearch">OK/Search</string>
@@ -163,6 +163,8 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="TVShows">TV shows</string>
 	<string Field="TVShow">TV show</string>
 	<string Field="TimedOutWhileRetrievingSubtitles">Time out retrieving subtitles!</string>
+	<string Field="TooManySubtitles">(Too) many subtitles</string>
+	<string Field="TooManySubtitlesQuestion">Requested subtitle item has {0} subtitles.\nWould you like to download all of them?</string>
 
 	<!-- U -->
 	<string Field="UnableToImportDataFrom">Unable to import data\nfrom {0}.</string>
