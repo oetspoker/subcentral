@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -14,5 +15,15 @@ namespace SubCentral.Utils {
                 possibleNaN = 0;
             return possibleNaN;
         }
+
+        public static string ToTitleCase(this string input) {
+            if (string.IsNullOrEmpty(input)) return string.Empty;
+
+            CultureInfo cultureInfo = System.Globalization.CultureInfo.InvariantCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
+
+            return textInfo.ToTitleCase(input.ToLowerInvariant());
+        }
+
     }
 }

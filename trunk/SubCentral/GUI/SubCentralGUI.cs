@@ -761,7 +761,7 @@ namespace SubCentral.GUI {
                 if (canceled == 1)
                     GUIUtils.ShowNotifyDialog(heading, Localization.CanceledDownload, GUIUtils.NoSubtitlesLogoThumbPath);
                 else
-                    GUIUtils.ShowNotifyDialog(heading, string.Format(Localization.AllSubtitlesCanceledDownload, succesful), GUIUtils.NoSubtitlesLogoThumbPath);
+                    GUIUtils.ShowNotifyDialog(heading, string.Format(Localization.AllSubtitlesCanceledDownload, canceled), GUIUtils.NoSubtitlesLogoThumbPath);
             }
             else { // some are ok, some not
                 List<string> notifyList = new List<string>();
@@ -1373,7 +1373,7 @@ namespace SubCentral.GUI {
 
                 switch (controlId) {
                     case (int)GUIControls.MODIFYSEARCHIMDBIDBUTTON:
-                        if (!SubCentralUtils.isImdbIdCorrect(fillWith)) {
+                        if (fillWith != "tt" && !SubCentralUtils.isImdbIdCorrect(fillWith)) {
                             inputCorrect = false;
                             GUIUtils.ShowNotifyDialog(Localization.Error, Localization.WrongFormatIMDbID);
                         }
@@ -1407,7 +1407,7 @@ namespace SubCentral.GUI {
                         _modifySearchMediaDetail.ImdbID = fillWith;
                         break;
                     case (int)GUIControls.MODIFYSEARCHTITLEBUTTON:
-                        _modifySearchMediaDetail.Title = fillWith;
+                        _modifySearchMediaDetail.Title = fillWith.ToTitleCase();
                         break;
                     case (int)GUIControls.MODIFYSEARCHYEARBUTTON:
                         int year = 0;

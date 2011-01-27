@@ -252,7 +252,7 @@ namespace SubCentral.Localizations {
         public static string NoSubtitlesDelete = "No subtitle files found to delete.";
         public static string NoSubtitlesDownloaded = "No subtitles downloaded!";
         public static string NoSubtitlesDownloadedWithReason = "No subtitles downloaded: {0}";
-        public static string NoSubtitlesInChosen = "Couldn't find any subtitles in requested item. Server error?";
+        public static string NoSubtitlesInChosen = "Couldn't find any subtitles in requested subtitle item. Server error?";
 
         // O
         public static string OKSearch = "OK/Search";
@@ -315,6 +315,8 @@ namespace SubCentral.Localizations {
         public static string TVShows = "TV shows";
         public static string TVShow = "TV show";
         public static string TimedOutWhileRetrievingSubtitles = "Time out retrieving subtitles!";
+        public static string TooManySubtitles = "(Too) many subtitles";
+        public static string TooManySubtitlesQuestion = "Requested subtitle item has {0} subtitles.\nWould you like to download all of them?";
 
         // U
         public static string UnableToImportDataFrom = "Unable to import data\nfrom {0}.";
