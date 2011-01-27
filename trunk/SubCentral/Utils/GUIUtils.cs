@@ -80,7 +80,7 @@ namespace SubCentral.Utils {
             try {
                 dlgYesNo.Reset();
                 dlgYesNo.SetHeading(heading);
-                string[] linesArray = lines.Split(new string[] { "\\n" }, StringSplitOptions.None);
+                string[] linesArray = lines.Split(new string[] { "\\n", "\n" }, StringSplitOptions.None);
                 if (linesArray.Length > 0) dlgYesNo.SetLine(1, linesArray[0]);
                 if (linesArray.Length > 1) dlgYesNo.SetLine(2, linesArray[1]);
                 if (linesArray.Length > 2) dlgYesNo.SetLine(3, linesArray[2]);
@@ -132,7 +132,7 @@ namespace SubCentral.Utils {
             dlgOK.SetHeading(heading);
 
             int lineid = 1;
-            foreach (string line in lines.Split(new string[] { "\\n" }, StringSplitOptions.None)) {
+            foreach (string line in lines.Split(new string[] { "\\n", "\n" }, StringSplitOptions.None)) {
                 dlgOK.SetLine(lineid, line);
                 lineid++;
             }

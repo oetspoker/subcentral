@@ -1524,11 +1524,11 @@ namespace SubCentral.GUI {
             return result;
         }
 
-        private void AskAndFalseHasSubtitles(PluginHandler properHandler, string baseText) {
+        private void AskAndFalseHasSubtitles(PluginHandler properHandler, string baseText, bool defaultYes) {
             string question = baseText;
             if (!_mediaAvailable && properHandler.GetEmbeddedSubtitles() < 0)
                 question += "\n" + Localization.MediaMaybeInternalSubtitles;
-            if (GUIUtils.ShowYesNoDialog(Localization.Warning, string.Format(question, properHandler == null ? Localization.ExternalPlugin : properHandler.PluginName))) {
+            if (GUIUtils.ShowYesNoDialog(Localization.Warning, string.Format(question, properHandler == null ? Localization.ExternalPlugin : properHandler.PluginName), defaultYes)) {
                 foreach (FileInfo fi in properHandler.MediaDetail.Files) {
                     properHandler.SetHasSubtitles(fi.FullName, false);
                 }
@@ -1536,9 +1536,9 @@ namespace SubCentral.GUI {
             _subtitlesExistForCurrentMedia = false;
         }
 
-        private void AskAndTrueHasSubtitles(PluginHandler properHandler, string baseText) {
+        private void AskAndTrueHasSubtitles(PluginHandler properHandler, string baseText, bool defaultYes) {
             string question = baseText;
-            if (GUIUtils.ShowYesNoDialog(Localization.Warning, string.Format(question, properHandler == null ? Localization.ExternalPlugin : properHandler.PluginName))) {
+            if (GUIUtils.ShowYesNoDialog(Localization.Warning, string.Format(question, properHandler == null ? Localization.ExternalPlugin : properHandler.PluginName), defaultYes)) {
                 foreach (FileInfo fi in properHandler.MediaDetail.Files) {
                     properHandler.SetHasSubtitles(fi.FullName, true);
                 }
@@ -1562,14 +1562,14 @@ namespace SubCentral.GUI {
             }
 
             if (_subtitlesExistForCurrentMedia && !properHandler.GetHasSubtitles(false) && properHandler.Type == PluginHandlerType.BASIC) {
-                AskAndTrueHasSubtitles(properHandler, Localization.MediaWrongMarkNoSubtitles);
+                AskAndTrueHasSubtitles(properHandler, Localization.MediaWrongMarkNoSubtitles, false);
             }
             else if (!questionsOnly && _subtitlesExistForCurrentMedia) {
                 //GUIUtils.ShowNotifyDialog(Localization.Warning, string.Format(Localization.MediaHasSubtitles, CurrentHandler == null ? Localization.ExternalPlugin : CurrentHandler.PluginName));
                 GUIUtils.ShowNotifyDialog(Localization.Warning, Localization.MediaHasSubtitles);
             }
             else if (!_subtitlesExistForCurrentMedia && properHandler.GetHasSubtitles(false)) {
-                AskAndFalseHasSubtitles(properHandler, Localization.MediaWrongMarkHasSubtitles);
+                AskAndFalseHasSubtitles(properHandler, Localization.MediaWrongMarkHasSubtitles, false);
                 resultContinue = false;
             }
             
@@ -1654,7 +1654,7 @@ namespace SubCentral.GUI {
                         }
 
                         if (_subtitleFilesForCurrentMedia.Count < 1 && properHandler.GetHasSubtitles(false)) {
-                            AskAndFalseHasSubtitles(properHandler, Localization.MediaNoMoreSubtitles);
+                            AskAndFalseHasSubtitles(properHandler, Localization.MediaNoMoreSubtitles, true);
                             subtitleToDeleteIndex = -1;
                         }
                     }

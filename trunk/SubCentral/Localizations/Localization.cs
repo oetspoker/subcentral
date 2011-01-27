@@ -80,8 +80,7 @@ namespace SubCentral.Localizations {
                 if (e.GetType() == typeof(FileNotFoundException))
                     logger.Warn("Cannot find translation file {0}. Failing back to English (US)", langPath);
                 else {
-                    logger.Error("Error in translation xml file: {0}. Failing back to English (US)", Lang);
-                    logger.Error(e);
+                    logger.ErrorException(string.Format("Error in translation xml file: {0}. Failing back to English (US)\n", Lang), e);
                 }
 
                 Lang = "en-US";
@@ -93,8 +92,7 @@ namespace SubCentral.Localizations {
                         TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
                     }
                     catch (Exception e) {
-                        logger.Error("Error in Translation Engine:");
-                        logger.Error(e);
+                        logger.ErrorException("Error in Translation Engine:\n", e);
                     }
             }
 
