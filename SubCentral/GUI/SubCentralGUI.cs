@@ -129,7 +129,10 @@ namespace SubCentral.GUI {
                         _modifySearchMediaDetail = CopyMediaDetail(CurrentHandler.MediaDetail);
                         modifySearchClearFilesButton.Visible = _modifySearchMediaDetail.Files != null && _modifySearchMediaDetail.Files.Count > 0;
                         modifySearchAbsoluteNumberingButton.Selected = _modifySearchMediaDetail.AbsoluteNumbering;
-                        modifySearchSeasonButton.IsEnabled = !_modifySearchMediaDetail.AbsoluteNumbering;
+                        if (!_modifySearchMediaDetail.AbsoluteNumbering)
+                          GUIControl.EnableControl(GetID, modifySearchSeasonButton.GetID);
+                        else
+                          GUIControl.DisableControl(GetID, modifySearchSeasonButton.GetID);
                         _clearedMedia = false;
                         //modifySearchSelectFolderButton.Visible = CurrentHandler.MediaDetail.Files == null || _modifySearchMediaDetail.Files.Count == 0;
                         PublishSearchProperties(true);
@@ -272,7 +275,7 @@ namespace SubCentral.GUI {
             base.OnPageLoad();
             _GUIInitialized = true;
 
-            deleteButton.IsEnabled = false;
+            GUIControl.DisableControl(GetID, deleteButton.GetID);
 
             if (sortButton != null)
                 sortButton.SortChanged += new SortEventHandler(OnSortChanged);
@@ -320,7 +323,7 @@ namespace SubCentral.GUI {
                         EnableDisableProviderGroupsAndProviders(true);
 
                         _shouldDeleteButtonVisible = true;
-                        deleteButton.IsEnabled = true;
+                        GUIControl.EnableControl(GetID, deleteButton.GetID);
 
                         if (Settings.SettingsManager.Properties.GUISettings.CheckMediaForSubtitlesOnOpen) {
                             CheckMediaForSubtitlesOnOpen(CurrentHandler);
@@ -1243,7 +1246,10 @@ namespace SubCentral.GUI {
         private void ModifyAbsoluteNumbering() {
             _modifySearchMediaDetail.AbsoluteNumbering = !_modifySearchMediaDetail.AbsoluteNumbering;
 
-            modifySearchSeasonButton.IsEnabled = !_modifySearchMediaDetail.AbsoluteNumbering;
+            if (!_modifySearchMediaDetail.AbsoluteNumbering)  
+                GUIControl.EnableControl(GetID, modifySearchSeasonButton.GetID);
+            else
+                GUIControl.DisableControl(GetID, modifySearchSeasonButton.GetID);
 
             PublishSearchProperties(true);
         }
@@ -1270,7 +1276,7 @@ namespace SubCentral.GUI {
             GUIUtils.SetProperty("#SubCentral.Search.Media.FanArt", string.Empty);
             GUIUtils.SetProperty("#SubCentral.Search.Media.Thumb", string.Empty);
 
-            deleteButton.IsEnabled = false;
+            GUIControl.DisableControl(GetID, deleteButton.GetID);
 
             modifySearchClearFilesButton.Visible = false;
             //modifySearchSelectFolderButton.Visible = true;
@@ -1307,8 +1313,12 @@ namespace SubCentral.GUI {
 
         private void CancelModifySearch() {
             if (CurrentHandler.Modified) {
-                if (_clearedMedia)
-                    deleteButton.IsEnabled = _shouldDeleteButtonVisible;
+                if (_clearedMedia) {
+                    if (_shouldDeleteButtonVisible)
+                        GUIControl.EnableControl(GetID, deleteButton.GetID);
+                    else
+                        GUIControl.DisableControl(GetID, deleteButton.GetID);
+                }
                 ModifySearchSearchType = _oldModifySearchSearchType;
                 View = ViewMode.SEARCH;
             }
@@ -1323,7 +1333,10 @@ namespace SubCentral.GUI {
             _oldModifySearchSearchType = SubtitlesSearchType.NONE;
             CurrentHandler = _backupHandler;
             _lastSelectedGroupsAndProvidersItemIndex = 0;
-            deleteButton.IsEnabled = _shouldDeleteButtonVisible;
+            if (_shouldDeleteButtonVisible)
+                GUIControl.EnableControl(GetID, deleteButton.GetID);
+            else
+                GUIControl.DisableControl(GetID, deleteButton.GetID);
 
             if (CurrentHandler == null) {
                 View = ViewMode.MAIN;
