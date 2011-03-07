@@ -1547,7 +1547,7 @@ namespace SubCentral.GUI {
         }
 
         private bool CheckMediaForSubtitlesOnOpen(PluginHandler properHandler) {
-            return CheckMediaForSubtitlesOnOpen(properHandler);
+            return CheckMediaForSubtitlesOnOpen(properHandler, false);
         }
 
         private bool CheckMediaForSubtitlesOnOpen(PluginHandler properHandler, bool questionsOnly) {
