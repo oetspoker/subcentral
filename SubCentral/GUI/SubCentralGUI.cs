@@ -745,6 +745,7 @@ namespace SubCentral.GUI {
 
             if (statusList == null || statusList.Count < 1) {
                 GUIUtils.ShowNotifyDialog(heading, string.Format(Localization.NoSubtitlesDownloaded, Localization.NoSubtitlesInChosen), GUIUtils.NoSubtitlesLogoThumbPath);
+                return;
             }
 
             int mediaCount = statusList.Count;
