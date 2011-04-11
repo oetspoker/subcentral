@@ -483,9 +483,9 @@ namespace SubCentral.GUI {
                 if (OnSubtitleDownloadedToTempEvent != null)
                     OnSubtitleDownloadedToTempEvent(mediaDetail, subtitleFiles);
 
-                if (subtitleFiles != null && subtitleFiles.Count > 0) {
-                    logger.Info("{0} subtitle(s) downloaded to temporary folder.", subtitleFiles.Count);
+                logger.Info("{0} subtitle(s) downloaded to temporary folder.", subtitleFiles != null ? subtitleFiles.Count : 0);
 
+                if (subtitleFiles != null && subtitleFiles.Count > 0) {
                     List<SubtitleMediaMapping> mapping = new List<SubtitleMediaMapping>();
 
                     if (mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
