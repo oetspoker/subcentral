@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -26,10 +26,10 @@ namespace SubCentral.Utils {
         private const string regexpTagsLowGroup = @"(?:(?:[\(\{\[]|\b)(?:dir(?:ector[']?s[\W])?cut|(?:avc)?hd|wmv|ntsc|pal|mpeg[4]?|dts|ac3|stv|hd[-]?dvd|xvid|divx|x264|dxva|remux|(?-i)FEST[Ii]VAL|L[iI]M[iI]TED|RETA[Ii]L|EXTENDED|REMASTERED|CHRONO|THEATR[Ii]CAL|DC|SE|UNCUT|[DS]UBBED|DOCU(?:MENTARY)?|(?:RE)?[MF][Ii]XED|VERS[Ii]ON|ED[Ii]TION|L[Ii]NE|OAR|AVC|P[Rr][Ee]A[Ii][Rr])(?:[\]\)\}]|\b)(?<group>-[^\s]+$)?)";
 
         //current in mp-tvseries
-        //@"^.*?\\?(?<series>[^\\$]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:[ _.+-]+(?:[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ _.+-]*[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<title>(?![^\\]*?(?<!the)[ .(-]sample[ .)-]).*?)\.(?<ext>[^.]*)$"
+        //@"^(?:.*\\)?(?<series>[^\\]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:[ _.+-]+(?:[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ _.+-]*[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<title>(?![^\\].*?(?<!the)[ .(-]sample[ .)-]).*?)\.(?<ext>[^.]*)$";
 
         //subcentral version (last part changed)
-        private const string regexpSeries = @"^.*?\\?(?<series>[^\\$]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:[ _.+-]+(?:[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ _.+-]*[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<other>[^$]*?)$";
+        private const string regexpSeries = @"^(?:.*\\)?(?<series>[^\\]+?)[ _.\-\[]+(?:[s]?(?<season>\d+)[ _.\-\[\]]*[ex](?<episode>\d+)|(?:\#|\-\s)(?<season>\d+)\.(?<episode>\d+))(?:[ _.+-]+(?:[s]?\k<season>[ _.\-\[\]]*[ex](?<episode2>\d+)|(?:\#|\-\s)\k<season>\.(?<episode2>\d+))|(?:[ _.+-]*[ex+-]+(?<episode2>\d+)))*[ _.\-\[\]]*(?<other>[^$]*?)$";
 
         private BasicMediaDetail mediaDetail;
         private List<FileInfo> mediaFiles = new List<FileInfo>();

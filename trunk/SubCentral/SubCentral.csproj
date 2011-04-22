@@ -33,35 +33,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Common.Utils, Version=1.1.6.27666, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Common.Utils">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MediaPortal v1.2 SVN\Common.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="Core, Version=1.1.6.27666, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Core">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MediaPortal v1.2 SVN\Core.dll</HintPath>
     </Reference>
-    <Reference Include="Cornerstone, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Cornerstone">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\Moving Pictures v1.0.6\Cornerstone.dll</HintPath>
     </Reference>
-    <Reference Include="Dialogs, Version=1.1.6.27666, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Dialogs">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MediaPortal v1.2 SVN\Dialogs.dll</HintPath>
     </Reference>
-    <Reference Include="MovingPictures, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MovingPictures">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\Moving Pictures v1.0.6\MovingPictures.dll</HintPath>
     </Reference>
-    <Reference Include="MP-TVSeries, Version=2.6.0.1157, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="MP-TVSeries">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MP-TVSeries v2.6.0\MP-TVSeries.dll</HintPath>
     </Reference>
-    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+    <Reference Include="NLog">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\NLog.dll</HintPath>
     </Reference>
-    <Reference Include="SubtitleDownloader, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SubtitleDownloader">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\SubtitleDownloader.dll</HintPath>
     </Reference>
@@ -81,7 +81,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Utils, Version=1.1.6.27666, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Utils">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MediaPortal v1.2 SVN\Utils.dll</HintPath>
     </Reference>
