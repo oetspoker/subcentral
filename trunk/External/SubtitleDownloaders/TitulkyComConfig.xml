@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <!-- 
+  Site http://www.titulky.com requires free registration if you want to download subtitles newer than 14 days.
+  To allow this plugin downloading new subtitles, register on http://www.titulky.com and enter your username and password here.
+  Plugin then logs in using these credentials and downloads subtitles.
+  
+  If you leave username and password empty, you won't be able to get subtitles newer than 14 days using this plugin.
+  
+  Example of correct definition:
+  <username>JohnSmith</username>
+  <password>MyPassword1</password>
+  -->
+  <username></username>
+  <password></password>
+</config>
