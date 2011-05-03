@@ -205,6 +205,7 @@ namespace SubCentral.Localizations {
         public static string ErrorWhileDownloadingSubtitles = "Error(s) downloading subtitles!";
         public static string ErrorWhileDownloadingSubtitlesWithReason = "Error downloading subtitles: {0}";
         public static string ErrorWhileRetrievingSubtitles = "Error retrieving subtitles!";
+        public static string ErrorWhileRetrievingSubtitlesWithReason = "Error retrieving subtitles: {0}";
         public static string ErrorWhileCreatingDirectory = "Error creating directory!";
 
         // F
