@@ -67,7 +67,8 @@
 ItalianSubs: samo_yea
 SeriesSub: samo_yea
 Subsfactory: samo_yea
-Titlovi.com: SilentException</Description>
+Titlovi.com: SilentException
+Titulky.com: katulus</Description>
         <Files>
           <Items>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
@@ -105,6 +106,20 @@ Titlovi.com: SilentException</Description>
               <ZipFileName>Installer{CopyFile}\{a2fed73e-15fe-4541-a52b-f4675c6a0f06}-Titlovi.com.dll</ZipFileName>
               <DestinationFilename>%Base%\SubtitleDownloaders\Titlovi.com.dll</DestinationFilename>
             </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\TitulkyCom.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{680a3f25-e98d-4efc-a753-bc4df3397fc7}-TitulkyCom.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\TitulkyCom.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>NeverOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\TitulkyComConfig.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{df83f67b-c529-4cbd-8ef2-50c74a511b72}-TitulkyComConfig.xml</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\TitulkyComConfig.xml</DestinationFilename>
+            </FileItem>
           </Items>
         </Files>
       </GroupItem>
@@ -135,6 +150,27 @@ Titlovi.com: SilentException</Description>
               <LocalFileName>..\SubCentral\Localizations\Languages\en-US.xml</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
               <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\fr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{dd780cbd-5fcf-48b4-8eaf-2350e8092279}-fr.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\fr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\gr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{810ad207-316a-4dbb-aea6-28249ad5c72e}-gr.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\gr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\nl.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cd0230f7-640f-43b6-a568-aeb54686a3f6}-nl.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\nl.xml</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -688,6 +724,20 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\TitulkyCom.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{680a3f25-e98d-4efc-a753-bc4df3397fc7}-TitulkyCom.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\TitulkyCom.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>NeverOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\TitulkyComConfig.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{df83f67b-c529-4cbd-8ef2-50c74a511b72}-TitulkyComConfig.xml</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\TitulkyComConfig.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\Localizations\Languages\da.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{b7882ef9-2601-4142-b56d-3ab18fed53e9}-da.xml</ZipFileName>
         <DestinationFilename>%Language%\SubCentral\da.xml</DestinationFilename>
@@ -705,6 +755,27 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <LocalFileName>..\SubCentral\Localizations\Languages\en-US.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
         <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\fr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{dd780cbd-5fcf-48b4-8eaf-2350e8092279}-fr.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\fr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\gr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{810ad207-316a-4dbb-aea6-28249ad5c72e}-gr.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\gr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\nl.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{cd0230f7-640f-43b6-a568-aeb54686a3f6}-nl.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\nl.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -927,7 +998,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{4020ed03-5cb5-4297-9ee5-45013cdc07c4}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{6c12566e-6286-4a2f-ad4a-a1e1a019e832}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
