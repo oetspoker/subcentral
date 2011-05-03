@@ -53,6 +53,7 @@ For more information, visit us on our Google Code SubCentral project page!
 	<string Field="ErrorWhileDownloadingSubtitles">Error(s) downloading subtitles!</string>
 	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Error downloading subtitles: {0}</string>
 	<string Field="ErrorWhileRetrievingSubtitles">Error retrieving subtitles!</string>
+	<string Field="ErrorWhileRetrievingSubtitlesWithReason">Error retrieving subtitles: {0}</string>
 	<string Field="ErrorWhileCreatingDirectory">Error creating directory!</string>
 
 	<!-- F -->
