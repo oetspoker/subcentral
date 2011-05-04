@@ -158,6 +158,13 @@ namespace SubCentral.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap PayPalDonate {
+            get {
+                object obj = ResourceManager.GetObject("PayPalDonate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Settings {
             get {
                 object obj = ResourceManager.GetObject("Settings", resourceCulture);
