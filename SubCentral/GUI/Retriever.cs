@@ -61,12 +61,14 @@ namespace SubCentral.GUI {
         public delegate void OnSubtitleSearchCompletedDelegate(List<SubtitleItem> subtitleItems, bool canceled);
         public delegate void OnSubtitleDownloadedToTempDelegate(BasicMediaDetail mediaDetail, List<FileInfo> subtitleFiles);
         public delegate void OnSubtitleDownloadedDelegate(BasicMediaDetail mediaDetail, List<SubtitleDownloadStatus> statusList);
+        public delegate void OnSubtitlesDownloadErrorDelegate(Exception e);
 
         public event OnProviderSearchErrorDelegate OnProviderSearchErrorEvent;
         public event OnSubtitlesSearchErrorDelegate OnSubtitlesSearchErrorEvent;
         public event OnSubtitleSearchCompletedDelegate OnSubtitleSearchCompletedEvent;
         public event OnSubtitleDownloadedToTempDelegate OnSubtitleDownloadedToTempEvent;
         public event OnSubtitleDownloadedDelegate OnSubtitleDownloadedEvent;
+        public event OnSubtitlesDownloadErrorDelegate OnSubtitlesDownloadErrorEvent;
         #endregion
 
         #region Public Constants
@@ -94,7 +96,7 @@ namespace SubCentral.GUI {
             _isCanceled = false;
             _status = ThreadStatus.StatusEnded;
 
-            _subtitlesDownloaderThread = new Thread(SearchSubtitlesAsynch);
+            _subtitlesDownloaderThread = new Thread(SearchSubtitlesAsync);
             _subtitlesDownloaderThread.IsBackground = true;
             _subtitlesDownloaderThread.Name = "Subtitles Downloader Thread";
             _subtitlesDownloaderThread.Start(mediaDetail);
@@ -164,9 +166,9 @@ namespace SubCentral.GUI {
             }
         }
 
-        private void SearchSubtitlesAsynch(object mediaDetailObj) {
+        private void SearchSubtitlesAsync(object mediaDetailObj) {
             if (!(mediaDetailObj is BasicMediaDetail))
-                throw new ArgumentException("Parameter must be type of List<BasicMediaDetail>!");
+                throw new ArgumentException("Parameter must be type of BasicMediaDetail!", "mediaDetailObj");
 
             List<SubtitleItem> allResults = new List<SubtitleItem>();
 
@@ -212,7 +214,8 @@ namespace SubCentral.GUI {
                 }
             }
             _status = ThreadStatus.StatusEnded;
-            _subtitlesDownloaderStatusThread.Abort();
+            if (_subtitlesDownloaderStatusThread != null && _subtitlesDownloaderStatusThread.IsAlive)
+                _subtitlesDownloaderStatusThread.Abort();
         }
 
         private bool OnQueryStarting() {
@@ -454,6 +457,39 @@ namespace SubCentral.GUI {
 
         #region Download
         public void DownloadSubtitle(SubtitleItem subtitleItem, BasicMediaDetail mediaDetail, FolderSelectionItem folderSelectionItem, SubtitlesSearchType searchType, bool skipDefaults) {
+            if (IsCanceled())
+                Kill();
+            if (_subtitlesDownloaderThread != null && _subtitlesDownloaderThread.IsAlive)
+                return;
+
+            _isCanceled = false;
+            _status = ThreadStatus.StatusEnded;
+
+            DownloadData downloadData = new DownloadData {
+                SubtitleItem = subtitleItem,
+                MediaDetail = mediaDetail,
+                FolderSelectionItem = folderSelectionItem,
+                SearchType = searchType,
+                SkipDefaults = skipDefaults
+            };
+
+            _subtitlesDownloaderThread = new Thread(DownloadSubtitleAsync);
+            _subtitlesDownloaderThread.IsBackground = true;
+            _subtitlesDownloaderThread.Name = "Subtitles Downloader Thread";
+            _subtitlesDownloaderThread.Start(downloadData);
+        }
+
+        public void DownloadSubtitleAsync(object downloadDataObj) {
+            DownloadData downloadData = downloadDataObj as DownloadData;
+            if (downloadData == null)
+                throw new ArgumentException("Parameter must be type of DownloadData!", "downloadDataObj");
+
+            SubtitleItem subtitleItem = downloadData.SubtitleItem;
+            BasicMediaDetail mediaDetail = downloadData.MediaDetail;
+            FolderSelectionItem folderSelectionItem = downloadData.FolderSelectionItem;
+            SubtitlesSearchType searchType = downloadData.SearchType;
+            bool skipDefaults = downloadData.SkipDefaults;
+
             logger.Info("Downloading subtitles...");
 
             _status = ThreadStatus.StatusStartedWithWaitCursor;
@@ -463,25 +499,28 @@ namespace SubCentral.GUI {
             _subtitlesDownloaderStatusThread.Name = "Subtitles Downloader Status Thread";
             _subtitlesDownloaderStatusThread.Start(null);
 
-            GUIWindowManager.Process();
+            //GUIWindowManager.Process();
+            List<FileInfo> subtitleFiles = null;
+            List<SubtitleDownloadStatus> statusList = new List<SubtitleDownloadStatus>();
 
             try {
-                SubtitleDownloader.Core.ISubtitleDownloader subDownloader = subtitleItem.Downloader; ;
+                SubtitleDownloader.Core.ISubtitleDownloader subDownloader = subtitleItem.Downloader;
                 SubtitleDownloader.Core.Subtitle subtitle = subtitleItem.Subtitle;
 
-                List<SubtitleDownloadStatus> statusList = new List<SubtitleDownloadStatus>();
-
-                List<FileInfo> subtitleFiles = null;
                 try {
                     subtitleFiles = subDownloader.SaveSubtitle(subtitle);
                 }
+                catch (ThreadAbortException e) {
+                  subtitleFiles = null;
+                  throw e;
+                }
                 catch (Exception e) {
-                    logger.ErrorException("Error on downloading to temporary folder\n", e);
                     subtitleFiles = null;
+                    OnSubtitlesDownloadError(e);
+                    return;
                 }
 
-                if (OnSubtitleDownloadedToTempEvent != null)
-                    OnSubtitleDownloadedToTempEvent(mediaDetail, subtitleFiles);
+                OnSubtitlesDownloadedToTemp(mediaDetail, subtitleFiles);
 
                 logger.Info("{0} subtitle(s) downloaded to temporary folder.", subtitleFiles != null ? subtitleFiles.Count : 0);
 
@@ -582,7 +621,8 @@ namespace SubCentral.GUI {
 
                         SubtitleDownloadStatus newSubtitleDownloadStatus = new SubtitleDownloadStatus() {
                             Index = mediaNr,
-                            Error = string.Empty
+                            Error = string.Empty,
+                            Status = SubtitleDownloadStatusStatus.Canceled
                         };
 
                         try {
@@ -663,6 +703,9 @@ namespace SubCentral.GUI {
                                         File.Move(subtitleFile.FullName, targetSubtitleFile);
                                         newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Succesful;
                                     }
+                                    catch (ThreadAbortException e) {
+                                        throw e;
+                                    }
                                     catch (Exception e) {
                                         logger.ErrorException("Error while downloading subtitles\n", e);
                                         newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
@@ -678,6 +721,9 @@ namespace SubCentral.GUI {
                                     File.Move(subtitleFile.FullName, targetSubtitleFile);
                                     newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Succesful;
                                 }
+                                catch (ThreadAbortException e) {
+                                    throw e;
+                                }
                                 catch (Exception e) {
                                     logger.ErrorException("Error while downloading subtitles\n", e);
                                     newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
@@ -691,12 +737,73 @@ namespace SubCentral.GUI {
                     }
                 }
 
-                if (OnSubtitleDownloadedEvent != null)
-                    OnSubtitleDownloadedEvent(mediaDetail, statusList);
+                OnSubtitlesDownloaded(mediaDetail, statusList);
+            }
+            catch (ThreadAbortException) {
+                _isCanceled = true;
+                if ((subtitleFiles == null || subtitleFiles.Count < 1) && (mediaDetail.Files == null || mediaDetail.Files.Count < 1)) {
+                    logger.Debug("Download thread was aborted");
+                    OnSubtitlesDownloaded(mediaDetail, null);
+                    // nothing for now, we have nothing
+                }
+                else {
+                    logger.Debug("Download thread was aborted, counting 'cancelled' downloads");
+                    int counter = -1;
+                    if (statusList != null && mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
+                        counter = mediaDetail.Files.Count;
+                    }
+                    else if (statusList != null && subtitleFiles != null && subtitleFiles.Count > 0) {
+                        counter = subtitleFiles.Count;
+                    }
+                    for (int i = statusList.Count; i < counter; i++)
+                        statusList.Add( new SubtitleDownloadStatus() { Index = -1, Error = string.Empty, Status = SubtitleDownloadStatusStatus.Canceled });
+                    OnSubtitlesDownloaded(mediaDetail, statusList);
+                }
             }
             finally {
                 _status = ThreadStatus.StatusEnded;
-                _subtitlesDownloaderStatusThread.Abort();
+                if (_subtitlesDownloaderStatusThread != null && _subtitlesDownloaderStatusThread.IsAlive)
+                    _subtitlesDownloaderStatusThread.Abort();
+            }
+        }
+
+        private void OnSubtitlesDownloadError(Exception e) {
+            _status = ThreadStatus.StatusStartedWithoutWaitCursor;
+
+            if (OnSubtitlesDownloadErrorEvent != null) {
+                if (GUIGraphicsContext.form.InvokeRequired) {
+                    OnSubtitlesDownloadErrorDelegate d = OnSubtitlesDownloadErrorEvent;
+                    GUIGraphicsContext.form.Invoke(d, e);
+                }
+                else {
+                    OnSubtitlesDownloadErrorEvent(e);
+                }
+            }
+        }
+
+        private void OnSubtitlesDownloadedToTemp(BasicMediaDetail mediaDetail, List<FileInfo> subtitleFiles) {
+            if (OnSubtitleDownloadedToTempEvent != null) {
+                if (GUIGraphicsContext.form.InvokeRequired) {
+                    OnSubtitleDownloadedToTempDelegate d = OnSubtitleDownloadedToTempEvent;
+                    GUIGraphicsContext.form.Invoke(d, mediaDetail, subtitleFiles);
+                }
+                else {
+                    OnSubtitleDownloadedToTempEvent(mediaDetail, subtitleFiles);
+                }
+            }
+        }
+
+        private void OnSubtitlesDownloaded(BasicMediaDetail mediaDetail, List<SubtitleDownloadStatus> statusList) {
+            _status = ThreadStatus.StatusStartedWithoutWaitCursor;
+
+            if (OnSubtitleDownloadedEvent != null) {
+                if (GUIGraphicsContext.form.InvokeRequired) {
+                    OnSubtitleDownloadedDelegate d = OnSubtitleDownloadedEvent;
+                    GUIGraphicsContext.form.Invoke(d, mediaDetail, statusList);
+                }
+                else {
+                    OnSubtitleDownloadedEvent(mediaDetail, statusList);
+                }
             }
         }
         #endregion
@@ -709,6 +816,14 @@ namespace SubCentral.GUI {
         private class SubtitleMediaMapping {
             public int SubtitleIndex { get; set; }
             public int MediaIndex { get; set; }
+        }
+
+        private class DownloadData {
+            public SubtitleItem SubtitleItem { get; set; }
+            public BasicMediaDetail MediaDetail { get; set; }
+            public FolderSelectionItem FolderSelectionItem { get; set; }
+            public SubtitlesSearchType SearchType { get; set; }
+            public bool SkipDefaults { get; set; }
         }
     }
 }
