@@ -221,6 +221,7 @@ namespace SubCentral.GUI {
             retriever.OnSubtitlesSearchErrorEvent += new Retriever.OnSubtitlesSearchErrorDelegate(retriever_OnSubtitlesSearchErrorEvent);
             retriever.OnSubtitleDownloadedToTempEvent += new Retriever.OnSubtitleDownloadedToTempDelegate(retriever_OnSubtitleDownloadedToTempEvent);
             retriever.OnSubtitleDownloadedEvent += new Retriever.OnSubtitleDownloadedDelegate(retriever_OnSubtitleDownloadedEvent);
+            retriever.OnSubtitlesDownloadErrorEvent += new Retriever.OnSubtitlesDownloadErrorDelegate(retriever_OnSubtitlesDownloadErrorEvent);
 
             GUIUtils.SetProperty("#SubCentral.About", Localization.AboutText);
 
@@ -573,6 +574,7 @@ namespace SubCentral.GUI {
                         GUIUtils.ShowNotifyDialog(Localization.Error, Localization.SiteDoesNotSupportTVShowSearch, GUIUtils.NoSubtitlesLogoThumbPath);
                         break;
                     default:
+                        //GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath);
                         GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
                         break;
                 }
@@ -581,6 +583,7 @@ namespace SubCentral.GUI {
                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.TimedOutWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             }
             else {
+                //GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath);
                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             }
             _notificationDone = true;
@@ -590,7 +593,16 @@ namespace SubCentral.GUI {
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
             //HideWaitCursor();
             logger.ErrorException("Error while retrieving subtitles\n", e);
+            //GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath);
             GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
+            _notificationDone = false;
+        }
+
+        void retriever_OnSubtitlesDownloadErrorEvent(Exception e) {
+            //HideWaitCursor();
+            logger.ErrorException("Error while downloading subtitles\n", e);
+            //GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileDownloadingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath);
+            GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileDownloadingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             _notificationDone = false;
         }
 
@@ -718,7 +730,13 @@ namespace SubCentral.GUI {
             }
 
             if (selectedFolderIndex >= 0) {
-                retriever.DownloadSubtitle(subtitleItem, CurrentHandler.MediaDetail, items[selectedFolderIndex], searchType, skipDefaults);
+              retriever.FillData(false,
+                                 null,
+                                 null,
+                                 SubtitlesSearchType.NONE
+                                 );
+
+              retriever.DownloadSubtitle(subtitleItem, CurrentHandler.MediaDetail, items[selectedFolderIndex], searchType, skipDefaults);
             }
         }
 

@@ -16,6 +16,7 @@ namespace SubCentral.Utils {
         private delegate void ShowNotifyDialogDelegate(string heading, string text, string image, string buttonText);
         private delegate int ShowMenuDialogDelegate(string heading, List<GUIListItem> items);
         private delegate void ShowTextDialogDelegate(string heading, string text);
+        private delegate bool GetStringFromKeyboardDelegate(ref string strLine);
 
         public static readonly string SubtitlesLogoThumbPath = GUIGraphicsContext.Skin + "\\Media\\Logos\\subtitles.png";
         public static readonly string NoSubtitlesLogoThumbPath = GUIGraphicsContext.Skin + "\\Media\\Logos\\nosubtitles.png";
@@ -275,6 +276,14 @@ namespace SubCentral.Utils {
         /// Gets the input from the virtual keyboard window.
         /// </summary>
         public static bool GetStringFromKeyboard(ref string strLine) {
+            if (GUIGraphicsContext.form.InvokeRequired) {
+                GetStringFromKeyboardDelegate d = GetStringFromKeyboard;
+                object[] args = { strLine };
+                bool result = (bool)GUIGraphicsContext.form.Invoke(d, args);
+                strLine = (string)args[0];
+                return result;
+            }
+
             VirtualKeyboard keyboard = (VirtualKeyboard)GUIWindowManager.GetWindow((int)MediaPortal.GUI.Library.GUIWindow.Window.WINDOW_VIRTUAL_KEYBOARD);
             if (keyboard == null) return false;
 
