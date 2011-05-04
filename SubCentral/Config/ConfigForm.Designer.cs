@@ -84,6 +84,8 @@
           this.pgAbout = new System.Windows.Forms.TabPage();
           this.pictureBox1 = new System.Windows.Forms.PictureBox();
           this.groupBox1 = new System.Windows.Forms.GroupBox();
+          this.label13 = new System.Windows.Forms.Label();
+          this.label12 = new System.Windows.Forms.Label();
           this.label8 = new System.Windows.Forms.Label();
           this.label9 = new System.Windows.Forms.Label();
           this.label10 = new System.Windows.Forms.Label();
@@ -121,7 +123,7 @@
           this.btnAdvancedConfig = new System.Windows.Forms.Button();
           this.btnSave = new System.Windows.Forms.Button();
           this.btnCancel = new System.Windows.Forms.Button();
-          this.label12 = new System.Windows.Forms.Label();
+          this.pictureBox2 = new System.Windows.Forms.PictureBox();
           this.tabControl.SuspendLayout();
           this.pgGeneral.SuspendLayout();
           this.gbFeedConf.SuspendLayout();
@@ -139,6 +141,7 @@
           ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
           this.groupBox1.SuspendLayout();
           this.panelButtons.SuspendLayout();
+          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
           this.SuspendLayout();
           // 
           // tabControl
@@ -769,6 +772,8 @@
           // 
           // groupBox1
           // 
+          this.groupBox1.Controls.Add(this.pictureBox2);
+          this.groupBox1.Controls.Add(this.label13);
           this.groupBox1.Controls.Add(this.label12);
           this.groupBox1.Controls.Add(this.label8);
           this.groupBox1.Controls.Add(this.label9);
@@ -808,6 +813,26 @@
           this.groupBox1.TabIndex = 1;
           this.groupBox1.TabStop = false;
           this.groupBox1.Text = "About  ";
+          // 
+          // label13
+          // 
+          this.label13.AutoSize = true;
+          this.label13.Location = new System.Drawing.Point(279, 364);
+          this.label13.Name = "label13";
+          this.label13.Size = new System.Drawing.Size(296, 13);
+          this.label13.TabIndex = 37;
+          this.label13.Text = "Like the plugin? Support development by donating:";
+          // 
+          // label12
+          // 
+          this.label12.AutoSize = true;
+          this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+          this.label12.Location = new System.Drawing.Point(289, 186);
+          this.label12.Name = "label12";
+          this.label12.Size = new System.Drawing.Size(101, 13);
+          this.label12.TabIndex = 36;
+          this.label12.Text = "Titulky.com: katulus";
+          this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
           // 
           // label8
           // 
@@ -883,7 +908,7 @@
           // 
           this.labelIssues.AutoSize = true;
           this.labelIssues.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.labelIssues.Location = new System.Drawing.Point(12, 436);
+          this.labelIssues.Location = new System.Drawing.Point(19, 436);
           this.labelIssues.Name = "labelIssues";
           this.labelIssues.Size = new System.Drawing.Size(122, 13);
           this.labelIssues.TabIndex = 28;
@@ -991,7 +1016,7 @@
           // 
           this.labelForum.AutoSize = true;
           this.labelForum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.labelForum.Location = new System.Drawing.Point(12, 400);
+          this.labelForum.Location = new System.Drawing.Point(19, 400);
           this.labelForum.Name = "labelForum";
           this.labelForum.Size = new System.Drawing.Size(167, 13);
           this.labelForum.TabIndex = 18;
@@ -1003,7 +1028,7 @@
           // 
           this.labelManual.AutoSize = true;
           this.labelManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.labelManual.Location = new System.Drawing.Point(12, 418);
+          this.labelManual.Location = new System.Drawing.Point(19, 418);
           this.labelManual.Name = "labelManual";
           this.labelManual.Size = new System.Drawing.Size(96, 13);
           this.labelManual.TabIndex = 17;
@@ -1015,7 +1040,7 @@
           // 
           this.labelGoogleCode.AutoSize = true;
           this.labelGoogleCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.labelGoogleCode.Location = new System.Drawing.Point(12, 382);
+          this.labelGoogleCode.Location = new System.Drawing.Point(19, 382);
           this.labelGoogleCode.Name = "labelGoogleCode";
           this.labelGoogleCode.Size = new System.Drawing.Size(143, 13);
           this.labelGoogleCode.TabIndex = 16;
@@ -1026,7 +1051,7 @@
           // label36
           // 
           this.label36.AutoSize = true;
-          this.label36.Location = new System.Drawing.Point(12, 364);
+          this.label36.Location = new System.Drawing.Point(9, 364);
           this.label36.Name = "label36";
           this.label36.Size = new System.Drawing.Size(96, 13);
           this.label36.TabIndex = 15;
@@ -1034,9 +1059,9 @@
           // 
           // groupBox3
           // 
-          this.groupBox3.Location = new System.Drawing.Point(12, 358);
+          this.groupBox3.Location = new System.Drawing.Point(9, 358);
           this.groupBox3.Name = "groupBox3";
-          this.groupBox3.Size = new System.Drawing.Size(580, 3);
+          this.groupBox3.Size = new System.Drawing.Size(583, 3);
           this.groupBox3.TabIndex = 14;
           this.groupBox3.TabStop = false;
           // 
@@ -1203,16 +1228,16 @@
           this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
           this.btnCancel.UseVisualStyleBackColor = true;
           // 
-          // label12
+          // pictureBox2
           // 
-          this.label12.AutoSize = true;
-          this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.label12.Location = new System.Drawing.Point(289, 186);
-          this.label12.Name = "label12";
-          this.label12.Size = new System.Drawing.Size(101, 13);
-          this.label12.TabIndex = 36;
-          this.label12.Text = "Titulky.com: katulus";
-          this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+          this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+          this.pictureBox2.Image = global::SubCentral.Properties.Resources.PayPalDonate;
+          this.pictureBox2.Location = new System.Drawing.Point(282, 382);
+          this.pictureBox2.Name = "pictureBox2";
+          this.pictureBox2.Size = new System.Drawing.Size(76, 22);
+          this.pictureBox2.TabIndex = 38;
+          this.pictureBox2.TabStop = false;
+          this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
           // 
           // ConfigForm
           // 
@@ -1255,6 +1280,7 @@
           this.groupBox1.ResumeLayout(false);
           this.groupBox1.PerformLayout();
           this.panelButtons.ResumeLayout(false);
+          ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
           this.ResumeLayout(false);
 
         }
@@ -1344,6 +1370,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

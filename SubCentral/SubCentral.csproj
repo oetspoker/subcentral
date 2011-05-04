@@ -25,7 +25,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -35,11 +35,11 @@
   <ItemGroup>
     <Reference Include="Common.Utils">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 SVN\Common.Utils.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 Beta\Common.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 SVN\Core.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 Beta\Core.dll</HintPath>
     </Reference>
     <Reference Include="Cornerstone">
       <SpecificVersion>False</SpecificVersion>
@@ -47,7 +47,7 @@
     </Reference>
     <Reference Include="Dialogs">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 SVN\Dialogs.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 Beta\Dialogs.dll</HintPath>
     </Reference>
     <Reference Include="MovingPictures">
       <SpecificVersion>False</SpecificVersion>
@@ -83,7 +83,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Utils">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 SVN\Utils.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 Beta\Utils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +235,7 @@
     <Content Include="Localizations\Languages\en-US.xml" />
     <Content Include="Localizations\Languages\gr.xml" />
     <Content Include="Localizations\Languages\nl.xml" />
+    <Content Include="Resources\PayPalDonate.gif" />
     <None Include="Resources\SubCentralGUIIcon.png" />
     <None Include="Resources\SubCentralGUIIconBig.png" />
     <None Include="Resources\FolderPageWhite.png" />
