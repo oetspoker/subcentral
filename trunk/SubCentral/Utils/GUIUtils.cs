@@ -147,7 +147,7 @@ namespace SubCentral.Utils {
         /// Displays a notification dialog.
         /// </summary>
         public static void ShowNotifyDialog(string heading, string text) {
-            ShowNotifyDialog(heading, text, Config.GetFolder(Config.Dir.Thumbs) + @"\SubCentral\SubCentralGUIIconBig.png", Localization.OK);
+            ShowNotifyDialog(heading, text, Config.GetFolder(Config.Dir.Thumbs) + @"\SubCentral\SubCentralGUIIconBig.png");
         }
 
         /// <summary>
@@ -160,7 +160,21 @@ namespace SubCentral.Utils {
         /// <summary>
         /// Displays a notification dialog.
         /// </summary>
+        public static void ShowNotifyDialog(string heading, string text, string image, int timeout) {
+            ShowNotifyDialog(heading, text, image, Localization.OK, timeout);
+        }
+
+        /// <summary>
+        /// Displays a notification dialog.
+        /// </summary>
         public static void ShowNotifyDialog(string heading, string text, string image, string buttonText) {
+            ShowNotifyDialog(heading, text, image, buttonText, -1);
+        }
+
+        /// <summary>
+        /// Displays a notification dialog.
+        /// </summary>
+        public static void ShowNotifyDialog(string heading, string text, string image, string buttonText, int timeout) {
             if (GUIGraphicsContext.form.InvokeRequired) {
                 ShowNotifyDialogDelegate d = ShowNotifyDialog;
                 GUIGraphicsContext.form.Invoke(d, heading, text, image, buttonText);
@@ -178,6 +192,9 @@ namespace SubCentral.Utils {
                 pDlgNotify.SetImage(image);
 
                 pDlgNotify.SetText(text);
+
+                if (timeout >= 0)
+                  pDlgNotify.TimeOut = timeout;
 
                 foreach (GUIControl item in pDlgNotify.GetControlList()) {
                     if (item is GUIButtonControl) {
