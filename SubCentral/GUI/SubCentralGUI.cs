@@ -574,8 +574,8 @@ namespace SubCentral.GUI {
                         GUIUtils.ShowNotifyDialog(Localization.Error, Localization.SiteDoesNotSupportTVShowSearch, GUIUtils.NoSubtitlesLogoThumbPath);
                         break;
                     default:
-                        //GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath);
-                        GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
+                        GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath, 10);
+                        //GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
                         break;
                 }
             }
@@ -583,8 +583,8 @@ namespace SubCentral.GUI {
                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.TimedOutWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             }
             else {
-                //GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath);
-                GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
+                GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath, 10);
+                //GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             }
             _notificationDone = true;
         }
@@ -593,16 +593,16 @@ namespace SubCentral.GUI {
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
             //HideWaitCursor();
             logger.ErrorException("Error while retrieving subtitles\n", e);
-            //GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath);
-            GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
+            GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath, 10);
+            //GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             _notificationDone = false;
         }
 
         void retriever_OnSubtitlesDownloadErrorEvent(Exception e) {
             //HideWaitCursor();
             logger.ErrorException("Error while downloading subtitles\n", e);
-            //GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileDownloadingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath);
-            GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileDownloadingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
+            GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileDownloadingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath, 10);
+            //GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileDownloadingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             _notificationDone = false;
         }
 
