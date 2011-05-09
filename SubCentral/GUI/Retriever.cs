@@ -537,10 +537,6 @@ namespace SubCentral.GUI {
                             logger.Warn("Video and subtitle file count mismatch! {0} video files, {1} subtitle files", mediaDetail.Files.Count, subtitleFiles.Count);
                         }
 
-                        //if (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count > 1) {
-                        //    GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileDownloadingSubtitlesWithReason, Localization.MediaFilesDifferFromSubtitleFiles), GUIUtils.NoSubtitlesLogoThumbPath);
-                        //    return;
-                        //}
                         if (mediaDetail.Files.Count > subtitleFiles.Count && subtitleFiles.Count == 1) {
                             List<GUIListItem> dlgMenuItems = new List<GUIListItem>();
                             foreach (FileInfo fileInfo in mediaDetail.Files) {
