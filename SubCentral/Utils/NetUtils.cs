@@ -32,7 +32,12 @@ namespace SubCentral.Utils {
                 //System.Net.IPHostEntry host = System.Net.Dns.GetHostByName(hostName);
                 //System.Net.IPHostEntry host = null;
 
-                //return true; 
+                if (host.AddressList != null) {
+                  foreach (System.Net.IPAddress addr in host.AddressList) {
+                    logger.Debug("IsMachineReachable: hostname {0} resolved to {1}", hostName, addr);
+                    logger.Debug("IsMachineReachable: using first resolved address");
+                  }
+                }
 
                 string wqlTemplate = "SELECT StatusCode FROM Win32_PingStatus WHERE Address = '{0}'";
 
@@ -50,7 +55,7 @@ namespace SubCentral.Utils {
                 }
             }
             catch (Exception e) {
-                logger.ErrorException(string.Format("Error in isMachineReachable({0})\n", hostName), e);
+                logger.ErrorException(string.Format("Error in IsMachineReachable({0})\n", hostName), e);
             }
 
             return false;

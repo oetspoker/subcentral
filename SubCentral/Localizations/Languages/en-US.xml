@@ -42,7 +42,8 @@ If you find the plugin useful, you can support the development by donating via P
 	<string Field="DownloadFoderDoesNotExistCreate">Download folder does not exist.\nCreate it?</string>
 	<string Field="Download">Download</string>
 	<string Field="DownloadTo">Download to...</string>
-	<string Field="DefaultFolderNotWritable">Default folder {0} is not writable! Please select another one.</string>
+	<string Field="DefaultFolderInaccessible">Default download folder ({0}) is inaccessible! Please select another one.</string>
+	<string Field="DefaultFolderNotWritable">Default download folder ({0}) is not writable! Please select another one.</string>
 	<string Field="DefaultDownloadFoderDoesNotExistCreate">Default download folder:\n{0}\ndoes not exist.\nCreate it?</string>
 	<string Field="Default">Default</string>
 	<string Field="DeleteSubtitles">Delete subtitles</string>

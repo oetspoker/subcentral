@@ -576,7 +576,8 @@ namespace SubCentral.Utils {
                         newFolderSelectionItem.FolderErrorInfo = getFolderErrorInfo(folder);
 
                     if (!includeReadOnly) {
-                        if (newFolderSelectionItem.FolderErrorInfo == FolderErrorInfo.ReadOnly)
+                        if (newFolderSelectionItem.FolderErrorInfo == FolderErrorInfo.ReadOnly || 
+                            newFolderSelectionItem.FolderErrorInfo == FolderErrorInfo.Inaccessible)
                             continue;
                     }
 
@@ -606,9 +607,8 @@ namespace SubCentral.Utils {
 
             int iUncPathDepth = FileUtils.uncPathDepth(path);
             if (result == FolderErrorInfo.NonExistant &&
-                (FileUtils.pathDriveIsDVD(path) || !pathDriveReady /*!pathDriveIsReady(path)*/|| !hostAlive
-                /*!uncHostIsAlive(path)*/|| (iUncPathDepth > 0 && iUncPathDepth < 3)))
-                result = FolderErrorInfo.ReadOnly;
+                (FileUtils.pathDriveIsDVD(path) || !pathDriveReady || !hostAlive || (iUncPathDepth > 0 && iUncPathDepth < 3)))
+                result = FolderErrorInfo.Inaccessible;
 
             return result;
         }
@@ -865,6 +865,7 @@ namespace SubCentral.Utils {
                         listItem.IsDownloading = true;
                         break;
                     case FolderErrorInfo.ReadOnly:
+                    case FolderErrorInfo.Inaccessible:
                         listItem.IsRemote = true;
                         break;
                     case FolderErrorInfo.OK:

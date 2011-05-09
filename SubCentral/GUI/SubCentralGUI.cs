@@ -699,6 +699,13 @@ namespace SubCentral.GUI {
                             GUIUtils.ShowNotifyDialog(Localization.Warning, string.Format(Localization.DefaultFolderNotWritable, folderName));
                         }
                     }
+                    else if (items[selectedFolderIndex].FolderErrorInfo == FolderErrorInfo.Inaccessible) {
+                        readOnly = true;
+                        if (selectedFromDefault) {
+                            logger.Info("Default folder {0} for media type {1} is inaccessible, manually input folder for download", folderName, searchType.ToString());
+                            GUIUtils.ShowNotifyDialog(Localization.Warning, string.Format(Localization.DefaultFolderInaccessible, folderName));
+                        }
+                    }
                     else if (items[selectedFolderIndex].FolderErrorInfo == FolderErrorInfo.NonExistant) {
                         bool dlgResult = false;
                         if (selectedFromDefault) {
