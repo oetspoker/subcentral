@@ -13,7 +13,7 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\bin\Release\SubCentral.dll</LocalFileName>
+              <LocalFileName>..\SubCentral\bin\Release\MP11-SubCentral.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{b3b3fa19-a53a-4997-8b8a-1fd4438d9ac7}-SubCentral.dll</ZipFileName>
               <DestinationFilename>%Plugins%\Windows\SubCentral.dll</DestinationFilename>
             </FileItem>
@@ -130,6 +130,13 @@ Titulky.com: katulus</Description>
         <Description>Languages</Description>
         <Files>
           <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\cs.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b91dc6c4-9bd0-4da0-900f-6f4305992d00}-cs.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\cs.xml</DestinationFilename>
+            </FileItem>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
@@ -352,7 +359,7 @@ Titulky.com: katulus</Description>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\Blue3\Media\hover_subcentral.png</LocalFileName>
+              <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\Media\hover_subcentral.png</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{50dae385-9277-4889-a951-fb51a7e77b7f}-hover_subcentral.png</ZipFileName>
               <DestinationFilename>%Skin%\Blue3wide\Media\hover_subcentral.png</DestinationFilename>
             </FileItem>
@@ -586,13 +593,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>0</Revision>
         </MinVersion>
         <MaxVersion>
-          <Major>999999</Major>
-          <Minor>999999</Minor>
-          <Build>999999</Build>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
           <Revision>999999</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
-        <Message>SubCentral needs MediaPortal version 1.1.0.0 or higher!</Message>
+        <Message>This version of SubCentral requires MediaPortal 1.1 or 1.2 Alpha!</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
@@ -616,7 +623,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
     <ReleaseDate>2010-11-03T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
-    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v0.9.1.mpe1</Location>
+    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.0.0.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -654,7 +661,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\bin\Release\SubCentral.dll</LocalFileName>
+        <LocalFileName>..\SubCentral\bin\Release\MP11-SubCentral.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{b3b3fa19-a53a-4997-8b8a-1fd4438d9ac7}-SubCentral.dll</ZipFileName>
         <DestinationFilename>%Plugins%\Windows\SubCentral.dll</DestinationFilename>
       </FileItem>
@@ -734,6 +741,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <LocalFileName>..\External\SubtitleDownloaders\TitulkyComConfig.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{df83f67b-c529-4cbd-8ef2-50c74a511b72}-TitulkyComConfig.xml</ZipFileName>
         <DestinationFilename>%Base%\SubtitleDownloaders\TitulkyComConfig.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\cs.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b91dc6c4-9bd0-4da0-900f-6f4305992d00}-cs.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\cs.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -927,6 +941,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Blue3Wide\Media\hover_subcentral.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{50dae385-9277-4889-a951-fb51a7e77b7f}-hover_subcentral.png</ZipFileName>
+        <DestinationFilename>%Skin%\Blue3wide\Media\hover_subcentral.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\GUI\Skins\Blue3wide\Media\SubCentral_Background.png</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{0c730ade-6bb7-4d42-adf3-38a8f736ea00}-SubCentral_Background.png</ZipFileName>
         <DestinationFilename>%Skin%\Blue3wide\Media\SubCentral_Background.png</DestinationFilename>
@@ -998,14 +1019,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{6c12566e-6286-4a2f-ad4a-a1e1a019e832}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{4bd7a042-23df-4efd-b46e-29e59ec8b4f1}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
   </UniqueFileList>
   <ProjectSettings>
     <FolderGroups />
-    <ProjectFilename>D:\developing\#maintained\SubCentral\Release\SubCentral_v0.9.1.xmp2</ProjectFilename>
+    <ProjectFilename>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.0.0.xmp2</ProjectFilename>
     <UpdatePath1>D:\developing\#maintained\SubCentral\Release\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />

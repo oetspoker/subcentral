@@ -277,6 +277,8 @@ REM copy "$(ProjectDir)..\External\merge.bat" "$(TargetDir)" /Y
 REM copy "$(ProjectDir)..\External\ilmerge.exe" "$(TargetDir)" /Y
 REM call merge.bat
 
+copy "$(TargetDir)"SubCentral.dll "$(TargetDir)"MP12-SubCentral.dll /Y
+
 REM copy "$(TargetDir)"SubCentral.dll "c:\Program Files\Team MediaPortal\MediaPortal\plugins\Windows\"
 REM copy "$(TargetDir)"SubCentral.pdb "c:\Program Files\Team MediaPortal\MediaPortal\plugins\Windows\"</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
