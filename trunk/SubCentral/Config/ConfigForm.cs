@@ -976,6 +976,7 @@ namespace SubCentral.ConfigForm {
                                 item.ForeColor = Color.Gray;
                                 break;
                             case FolderErrorInfo.ReadOnly:
+                            case FolderErrorInfo.Inaccessible:
                                 item.Font = new Font(Font, FontStyle.Italic);
                                 item.ForeColor = Color.DarkRed;
                                 break;

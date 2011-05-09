@@ -194,7 +194,8 @@ namespace SubCentral.Localizations {
         public static string DownloadFoderDoesNotExistCreate = "Download folder does not exist.\nCreate it?";
         public static string Download = "Download";
         public static string DownloadTo = "Download to...";
-        public static string DefaultFolderNotWritable = "Default folder {0} is not writable! Please select another one.";
+        public static string DefaultFolderInaccessible = "Default download folder ({0}) is inaccessible! Please select another one.";
+        public static string DefaultFolderNotWritable = "Default download folder ({0}) is not writable! Please select another one.";
         public static string DefaultDownloadFoderDoesNotExistCreate = "Default download folder:\n{0}\ndoes not exist.\nCreate it?";
         public static string Default = "Default";
         public static string DeleteSubtitles = "Delete subtitles";
