@@ -88,6 +88,7 @@ namespace SubCentral.Utils {
                 if (linesArray.Length > 3) dlgYesNo.SetLine(4, linesArray[3]);
                 dlgYesNo.SetDefaultToYes(defaultYes);
 
+                #if MP11
                 foreach (GUIControl item in dlgYesNo.GetControlList()) {
                     if (item is GUIButtonControl) {
                         GUIButtonControl btn = (GUIButtonControl)item;
@@ -97,14 +98,23 @@ namespace SubCentral.Utils {
                             btn.Label = noLabel;
                     }
                 }
+                #else
+                if (!string.IsNullOrEmpty(yesLabel))  
+                    dlgYesNo.SetYesLabel(yesLabel);
+                if (!string.IsNullOrEmpty(noLabel))  
+                    dlgYesNo.SetNoLabel(noLabel);
+                #endif
+
                 dlgYesNo.DoModal(GUIWindowManager.ActiveWindow);
                 return dlgYesNo.IsConfirmed;
             }
             finally {
+                #if MP11
                 // set the standard yes/no dialog back to it's original state (yes/no buttons)
                 if (dlgYesNo != null) {
                     dlgYesNo.ClearAll();
                 }
+                #endif
             }
         }
 

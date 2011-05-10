@@ -106,6 +106,8 @@ namespace SubCentral.Utils {
             };
             result.Add(newSettingsGroup);
 
+            updateProvidersForSettingGroups();
+
             result.AddRange(Settings.SettingsManager.Properties.GeneralSettings.Groups);
 
             if (!groupsHaveDefaultForMovies(result)) {
@@ -133,6 +135,36 @@ namespace SubCentral.Utils {
             }
 
             return result;
+        }
+
+        public static void updateProvidersForSettingGroups() {
+            foreach (SettingsGroup settingsGroup in Settings.SettingsManager.Properties.GeneralSettings.Groups) {
+                List<SettingsProvider> toRemove = new List<SettingsProvider>();
+
+                foreach (SettingsProvider settingsProvider in settingsGroup.Providers) {
+                    if (!SubsDownloaderNames.Contains(settingsProvider.ID))
+                        toRemove.Add(settingsProvider);
+                }
+                foreach (SettingsProvider settingsProvider in toRemove) {
+                    settingsGroup.Providers.Remove(settingsProvider);
+                }
+
+                foreach (string provider in SubsDownloaderNames) {
+                    bool found = false;
+                    foreach (SettingsProvider settingsProvider in settingsGroup.Providers) {
+                        if (settingsProvider.ID == provider)
+                            found = true;
+                    }
+                    if (!found) {
+                        SettingsProvider newSettingsProvider = new SettingsProvider() {
+                            ID = provider,
+                            Title = provider,
+                            Enabled = false // disabled by default
+                        };
+                        settingsGroup.Providers.Add(newSettingsProvider);
+                    }
+                }
+            }
         }
 
         public static List<SettingsProvider> getEnabledProvidersFromGroup(SettingsGroup settingsGroup) {
@@ -218,7 +250,6 @@ namespace SubCentral.Utils {
                 if (!SubsDownloaderNames.Contains(settingsProvider.ID))
                     toRemove.Add(settingsProvider);
             }
-
             foreach (SettingsProvider settingsProvider in toRemove) {
                 result.Remove(settingsProvider);
             }
@@ -235,7 +266,6 @@ namespace SubCentral.Utils {
                         Title = provider,
                         Enabled = true // enabled by default
                     };
-
                     result.Add(newSettingsProvider);
                 }
             }

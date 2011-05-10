@@ -161,6 +161,13 @@ Titulky.com: katulus</Description>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\fi.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{968c8847-dfe2-4ac2-a45c-ae3f1dd3f196}-fi.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\fi.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\Localizations\Languages\fr.xml</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{dd780cbd-5fcf-48b4-8eaf-2350e8092279}-fr.xml</ZipFileName>
               <DestinationFilename>%Language%\SubCentral\fr.xml</DestinationFilename>
@@ -773,6 +780,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\fi.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{968c8847-dfe2-4ac2-a45c-ae3f1dd3f196}-fi.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\fi.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
         <LocalFileName>..\SubCentral\Localizations\Languages\fr.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{dd780cbd-5fcf-48b4-8eaf-2350e8092279}-fr.xml</ZipFileName>
         <DestinationFilename>%Language%\SubCentral\fr.xml</DestinationFilename>
@@ -1019,7 +1033,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{4bd7a042-23df-4efd-b46e-29e59ec8b4f1}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{26b3a0dc-29a6-4b0c-8c33-1263710951ac}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>

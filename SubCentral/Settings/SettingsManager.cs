@@ -69,6 +69,12 @@ namespace SubCentral.Settings {
 
         public static bool Save(string path) {
             try {
+                if (System.IO.File.Exists(path)) {
+                    string backupPath = path + ".bak";
+                    if (System.IO.File.Exists(backupPath))
+                        System.IO.File.Delete(backupPath);
+                    System.IO.File.Move(path, backupPath);
+                }
                 using (FileStream fs = new FileStream(path, FileMode.Create)) {
                     XmlSerializer xmlSerializer = new XmlSerializer(typeof(SettingsManager));
                     xmlSerializer.Serialize(fs, Properties);
