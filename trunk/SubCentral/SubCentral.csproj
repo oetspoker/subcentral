@@ -230,9 +230,12 @@
     <Content Include="GUI\Skins\Default\SubCentral.ModifySearch.xml" />
     <Content Include="GUI\Skins\Default\SubCentral.Search.xml" />
     <Content Include="GUI\Skins\Default\SubCentral.xml" />
+    <Content Include="Localizations\Languages\cs.xml" />
     <Content Include="Localizations\Languages\da.xml" />
     <Content Include="Localizations\Languages\de.xml" />
     <Content Include="Localizations\Languages\en-US.xml" />
+    <Content Include="Localizations\Languages\fi.xml" />
+    <Content Include="Localizations\Languages\fr.xml" />
     <Content Include="Localizations\Languages\gr.xml" />
     <Content Include="Localizations\Languages\nl.xml" />
     <Content Include="Resources\PayPalDonate.gif" />
