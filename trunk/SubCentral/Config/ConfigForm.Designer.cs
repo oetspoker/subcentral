@@ -1084,7 +1084,7 @@
           this.label35.Name = "label35";
           this.label35.Size = new System.Drawing.Size(102, 13);
           this.label35.TabIndex = 13;
-          this.label35.Text = "Finnish: Mikko Autio";
+          this.label35.Text = "Finnish: Mikko Autio / seco";
           this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
           // 
           // label34
