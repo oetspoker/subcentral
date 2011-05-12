@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- SubCentral translation file -->
 <!-- Finnish -->
-<!-- Last Updated 10th May 2011 -->
+<!-- Last Updated 12th May 2011 -->
 <strings>
 	<!-- # -->
 
@@ -13,8 +13,8 @@
 	<string Field="AllSubtitlesCanceledDownload">Kaikkien ({0}) tekstitykset lataus peruutettu!</string>
 	<string Field="All">Kaikki</string>
 	<string Field="AllSubtitlesDeleted">Kaikki ({0}) tekstitykset poistettu!</string>
-	<string Field="AboutText">SubCentral on erillinen tekstityslisäosa MediaPortal HTPC-sovellukselle. Lisäosan mahdollistaa tekstitysten etsimisen ja lataamisen elokuviin ja TV-ohjelmiin käyttäen suosittuja Moving Pictures- ja MP-TVSeries-lisäosia. Lisäosassa on myös liitännät, jotka mahdollistavat lisäosan helpon integroimisen myös mihin tahansa muuhun lisäosaan.
-Paras tapa käyttää lisäosaa on avata Moving Pictures- tai MP-TVSeries-lisäosa, selata elokuva/TV-ohjelma ja valita 'Hae tekstityksiä' kohde. Moving Pictures-lisäosassa (tuettu versio on 1.0.3 tai suurempi), kohde sijaitsee yleensä valikossa tai erillisessä painikkeessa yksityiskohdat-ikkunassa (riippuen käytettävästä ulkoasusta). TVSeries-lisäosassa (tuettu versio on 2.6.0 tai suurempi), sinun tulee avata jakson ponnahdusvalikko ja valita 'Lataa...' ja sen jälkeen 'Hae tekstitys'. SubCentralin ulkoasulta saamia tekstitysten hakutietoja voi muokata paremman hakutuloksen saavuttamiseksi.
+	<string Field="AboutText">SubCentral on erillinen tekstityslisäosa MediaPortal HTPC-sovellukselle. Lisäosa mahdollistaa tekstitysten etsimisen ja lataamisen elokuviin ja TV-ohjelmiin käyttäen suosittuja Moving Pictures- ja MP-TVSeries-lisäosia. Lisäosassa on myös liitännät, jotka mahdollistavat lisäosan helpon integroimisen myös mihin tahansa muuhun lisäosaan.
+Paras tapa käyttää lisäosaa on avata Moving Pictures- tai MP-TVSeries-lisäosa, selata elokuva/TV-ohjelma ja valita 'Hae tekstityksiä'. Moving Pictures-lisäosassa (tuettu versio on 1.0.3 tai suurempi), kohde sijaitsee yleensä valikossa tai erillisessä painikkeessa yksityiskohdat-ikkunassa (riippuen käytettävästä ulkoasusta). TVSeries-lisäosassa (tuettu versio on 2.6.0 tai suurempi), avaa jakson ponnahdusvalikko ja valita 'Lataa...' ja sen jälkeen 'Hae tekstitys'. SubCentralin tekstitysten hakuehtoja voi muokata paremman hakutuloksen saavuttamiseksi.
 Jos lisäosa avataan päävalikosta (kuten nyt), manuaalinen haku on mahdollinen ja voit luoda omia hakulauseita elokuville tai TV-ohjelmille.
 Käytä valikkoa valitaksesi tekstitysten kielen. Käytä MediaPortalin asetusohjelmaa määrittääksesi yksityiskohtaisempia asetuksia (ryhmien/sivustojen valitsemiseen, järjestämiseen ja nimeämiseen sekä kieliasetusten ja latauskansioiden valintaan).
 Haun valmistuttua voit järjestää tuloksia valikosta ja ladata tekstityksiä.
@@ -83,9 +83,9 @@ Jos pidät lisäosasta, voit tukea sen kehitystyötä lahjoittamalla rahaa PayPa
 	<string Field="MovieIMDb">Elokuva (IMDb)</string>
 	<string Field="Movie">Elokuva</string>
 	<string Field="MediaNoSubtitles">Medialle ei löytynyt yhtään tekstitystä!</string>
-	<string Field="MediaOnlyInternalSubtitles">Medialle löydettiin vain sulautetut (sisäiset) tekstitykset!</string>
+	<string Field="MediaOnlyInternalSubtitles">Medialle löydettiin vain sisäiset tekstitykset!</string>
 	<string Field="MediaWrongMarkHasSubtitles">Medialla {0} on merkintä siitä, että tekstitykset ovat saatavilla,\nmutta yhtään tekstitystä ei löytynyt. Haluatko merkitä\n ettei tekstityksiä ole saatavilla?</string>
-	<string Field="MediaMaybeInternalSubtitles">(sulautetut tekstitykset (sisäiset) voivat silti olla saatavilla)</string>
+	<string Field="MediaMaybeInternalSubtitles">(sisäiset tekstitykset voivat silti olla saatavilla)</string>
 	<string Field="MediaHasSubtitles">Medialla on jo tekstitykset. Jos haluat poistaa ne, käytä valikon toimintoa.</string>
 	<string Field="MediaNoMoreSubtitles">Ei löytynyt lisää tektityksiä.\nHaluatko merkitä ettei tekstityksiä ole saatavilla\nsivustolla ({0})?</string>
 	<string Field="MediaWrongMarkNoSubtitles">Medialla {0} on merkintä\nettei tekstityksiä ole saatavilla, mutta ne kuitenkin löydettiin.\nHaluatko korjata merkinnän ja\nasettaa merkinnän tekstitykset saatavilla?</string>
@@ -94,7 +94,7 @@ Jos pidät lisäosasta, voit tukea sen kehitystyötä lahjoittamalla rahaa PayPa
 	<string Field="NewGroup">Uusi ryhmä</string>
 	<string Field="NoResultsFound">Hakutuloksia ei löytynyt</string>
 	<string Field="NoSubtitlesFound">Tekstityksiä ei löytynyt</string>
-	<string Field="NoDownloadFolders">Tälle medialle ei löytynyt latauskansiota.</string>
+	<string Field="NoDownloadFolders">Tälle medialle ei löytynyt latauskansiota</string>
 	<string Field="NotEnoughDataForSearch">Ei tarpeeksi tietoja tekstitysten hakuun</string>
 	<string Field="Name">Nimi</string>
 	<string Field="NoSorting">Ei lajittelua</string>
@@ -133,7 +133,7 @@ Jos pidät lisäosasta, voit tukea sen kehitystyötä lahjoittamalla rahaa PayPa
 	<string Field="SubtitlesDownloadCanceledCount">{0} tekstityksen lataus peruutettu</string>
 	<string Field="SelectFileForSubtitle">Valitse mediatiedosto kohteelle '{0}'</string>
 	<string Field="SearchType">Hakutapa: {0}</string>
-	<string Field="SiteDoesNotSupportIMDbIDSearch">Sivusto ei tue IMDb ID-hakua!</string>
+	<string Field="SiteDoesNotSupportIMDbIDSearch">Sivusto ei tue IMDb ID -hakua!</string>
 	<string Field="SiteDoesNotSupportMovieSearch">Sivusto ei tue elokuvahakua!</string>
 	<string Field="SiteDoesNotSupportTVShowSearch">Sivusto ei tue TV-ohjelma -hakua!</string>
 	<string Field="Sorting">Lajitellaan</string>
@@ -142,7 +142,7 @@ Jos pidät lisäosasta, voit tukea sen kehitystyötä lahjoittamalla rahaa PayPa
 	<string Field="SortByLanguage">Lajittele tekstityksen kielen mukaan</string>
 	<string Field="SortByName">Lajittele tekstityksen nimen mukaan</string>
 	<string Field="SubtitleFilesToDelete">Poistettavat tekstitystiedostot</string>
-	<string Field="SortByMediaTags">Lajittele media-tagien mukaan (jos mahdollista)</string>
+	<string Field="SortByMediaTags">Lajittele mediatagien mukaan (jos mahdollista)</string>
 	<string Field="SelectSubtitleForFile">Valitse tekstitys kohteelle '{0}'</string>
 
 	<string Field="SkinTranslationFrom">Kohteesta</string>
