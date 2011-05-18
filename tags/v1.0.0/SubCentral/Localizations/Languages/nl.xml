@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SubCentral translation file -->
+<!-- Dutch -->
+<!-- Note: English is the fallback for any strings not found in other languages -->
+<!-- Updated 7. october 2010 -->
+<strings>
+	<!-- # -->
+
+	<!-- A -->
+	<string Field="AllProviders">Alle providers</string>
+	<string Field="AllEnabledProviders">Alle gekozen providers</string>
+	<string Field="About">Over</string>
+	<string Field="AllSubtitlesDownloaded">Alle ({0}) ondertitelingen gedownloaded.</string>
+	<string Field="AllSubtitlesCanceledDownload">Alle ({0}) ondertiteldownloads geannuleerd.</string>
+	<string Field="All">Alle</string>
+	<string Field="AllSubtitlesDeleted">Alle ({0}) ondertitelingen verwijderd.</string>
+	<string Field="AboutText">SubCentral is een standalone ondertitelplug-in voor de HTPC-applicatie MediaPortal. Het doel van de plug-in is om de gebruiker de mogelijkheid te geven om ondertitelingen te zoeken en te downloaden voor films en TV-series welke worden beheerd middels de MovingPictures en MP-TVSeries plug-ins. Het biedt ook een eenvoudige interface die het mogelijk maakt op in andere toepassingen en plug-ins te worden gebruikt.
+De beste manier om deze plugin te gebruiken is door naar de MovingPictures of MPTVSeries plugin te navigeren en daar te kiezen voor 'Download ondertitelingen'. Bij MovingPictures (vereist is versie 1.0.3 of nieuwer), zal deze optie, afhankelijk van de gebruikte skin, zijn terug te vinden in het scherm of een menu. Bij MP-TVSeries (vereiste is versie 2.6.0 of nieuwer) is in het contextmenu de optie 'Download...' te vinden en vervolgens 'Ophalen ondertitel'. Indien gewenst kunnen de zoekopdrachten van deze plugin worden aangepast om zo eigen zoekopdrachten en websites te ondersteunen.
+Wanneer de plugin wordt gestart vanuit het Home Screen (zoals momenteel het geval is), is het mogelijk een handmatige zoekactie uit te voeren. Daarmee kan de gebruiker zijn eigen aangepaste zoekopdrachten uitvoeren voor de films of TV-series.
+Om de taal in te stellen waarin de ondertitelingen moeten worden gezocht moet het menu gebruikt worden. Gebruik de MediaPortal Configuratie om geavanceerde instellingen te wijzigen (selecteren, sorteren en hernoemen van groepen/provider, selecteren en sorteren van talen en het kiezen van de downloadlocatie).
+Wanneer de zoekopdracht is uitgevoerd kunnen de resultaten via het menu worden gesorteerd en uiteraard worden gedownload.
+Bezoek onze Google Code SubCentral projectpagina voor meer informatie!
+</string>
+
+	<!-- B -->
+	<string Field="Back">Terug</string>
+
+	<!-- C -->
+	<string Field="CannotLoadSkin">Het laden van het skinbestand \nvoor SubCentral is niet gelukt.</string>
+	<string Field="Cancel">Annuleren</string>
+	<string Field="Confirm">Bevestigen</string>
+	<string Field="ClearFiles">Leeg bestanden</string>
+	<string Field="ClearMedia">Leeg media</string>
+	<string Field="CanceledDownload">Download geannuleerd.</string>
+	<string Field="ContextMenu">Contextmenu</string>
+	<string Field="CannotUseManualSearch">Handmatig zoeken niet mogelijk omdat er \ngeen downloadmappen zijn ingesteld.\nGebruik de configuratie om deze in te stellen.</string>
+	<string Field="CannotClearMedia">Mediabestanden legen niet mogelijk omdat er \ngeen downloadmappen zijn ingesteld.\nGebruik de configuratie om deze in te stellen.</string>
+	<string Field="Completed">Voltooid</string>
+
+	<!-- D -->
+	<string Field="DefaultFor">Standaard voor: {0}</string>
+	<string Field="DownloadFoderDoesNotExistCreate">Downloadmap bestaat niet.\nAanmaken?</string>
+	<string Field="Download">Download</string>
+	<string Field="DownloadTo">Download naar...</string>
+	<string Field="DefaultmapNotWritable">Standaardmap {0} is niet beschrijfbaar! Maak een andere aan.</string>
+	<string Field="DefaultDownloadFoderDoesNotExistCreate">Standaard downloadmap:\n{0}\nbestaat niet.\nAanmaken?</string>
+	<string Field="Default">Standaard</string>
+	<string Field="DeleteSubtitles">Verwijder ondertitelingen</string>
+
+	<!-- E -->
+	<string Field="Error">Fout</string>
+	<string Field="ExternalPlugin">Externe plugin</string>
+	<string Field="ErrorWhileDownloadingSubtitles">Fout(en) bij het downloading van ondertitelingen!</string>
+	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Fout bij het downloading van ondertitelingen: {0}</string>
+	<string Field="ErrorWhileRetrievingSubtitles">Fout(en) bij het ophalen van ondertitelingen!</string>
+	<string Field="ErrorWhileCreatingDirectory">Fout(en) bij het aanmaken van een map.</string>
+
+	<!-- F -->
+	<string Field="FoundSubtitles">Ondertitelingen gevonden</string>
+	<string Field="From">Van: {0}</string>
+
+	<!-- G -->
+	<string Field="GroupS">Groep(en)</string>
+	<string Field="GroupProviderDefault">Standaard Groep/Provider</string>
+
+	<!-- H -->
+
+	<!-- I -->
+	<string Field="Initializing">Initialiseren</string>
+	<string Field="IMDbID">IMDb ID: {0}</string>
+
+	<!-- L -->
+	<string Field="Languages">Talen</string>
+	<string Field="Language">Taal</string>
+	<string Field="Local">Lokaal (in mediamappen)</string>
+
+	<!-- M -->
+	<string Field="Movies">Films</string>
+	<string Field="ManualSearch">Handmatig zoeken</string>
+	<string Field="ModifySearch">Wijzig zoekopdracht</string>
+	<string Field="MediaFilesDifferFromSubtitleFiles">Het mediabestand verschilt van de ondertiteling. Verkeerde ondertiteling?</string>
+	<string Field="MovieIMDb">Films (IMDb)</string>
+	<string Field="Movie">Film</string>
+	<string Field="MediaNoSubtitles">Geen ondertiteling gevonden voor dit mediabestand.</string>
+	<string Field="MediaOnlyInternalSubtitles">Slechts interne ondertitelingen gevonden voor dit media.</string>
+	<string Field="MediaWrongMarkHasSubtitles">Voor bestand {0} zouden ondertitelingen \nbeschikbaar zijn.\nEr zijn echter geen ondertitelingen gevonden.\nWil je markeren dat voor dit bestand\ntoch geen ondertitelingen beschikbaar zijn?</string>
+	<string Field="MediaMaybeInternalSubtitles">(Mogelijk bevat het bestand interne ondertiteling.)</string>
+	<string Field="MediaHasSubtitles">Mediabestand heeft al ondertiteling. Verwijderd desgewenst de ondertiteling.</string>
+	<string Field="MediaNoMoreSubtitles">Geen ondertiteling meer gevonden voor dit mediabestand.\nWil je instellen dat de ondertiteling niet beschikbaar\nis bij provider ({0})?</string>
+	<string Field="MediaWrongMarkNoSubtitles">Voor bestand {0} zou geen \nondertitelingen beschikbaar zijn.\nEr zijn echter wel ondertitelingen gevonden.\nWil je markeren dat voor dit bestand\ntoch wel ondertitelingen beschikbaar zijn?</string>
+
+	<!-- N -->
+	<string Field="NewGroup">Nieuwe groep</string>
+	<string Field="NoResultsFound">Geen resultaten</string>
+	<string Field="NoSubtitlesnFound">Geen ondertitelingen gevonden</string>
+	<string Field="NoDownloadmappen">Geen geldige downloadmappen voor deze media gevonden.</string>
+	<string Field="NotEnoughDataForSearch">Niet genoeg informatie om ondertitelingen te zoeken.</string>
+	<string Field="Name">Naam</string>
+	<string Field="NoSorting">Geen sortering</string>
+	<string Field="NoSubtitlesDelete">Geen ondertiteling gevonden om te verwijderen.</string>
+
+	<!-- O -->
+	<string Field="OKSearch">OK/Zoeken</string>
+	<string Field="OK">OK</string>
+
+	<!-- P -->
+	<string Field="ProviderS">Provider(s)</string>
+
+	<!-- Q -->
+	<string Field="QueryingProviders">Raadplegen providers</string>
+
+	<!-- R -->
+	<string Field="Revert">Terugdraaien</string>
+
+	<!-- S -->
+	<string Field="Search">Zoeken</string>
+	<string Field="SubtitlelDownloaderUnavailable">Is SubtitleDownloader.dll beschikbaar?</string>
+	<string Field="Subtitlesearch">Ondertitelingen zoeken</string>
+	<string Field="SearchingSubtitles">Zoeken naar ondertitelingen...</string>
+	<string Field="SelectTaals">Kies een taal</string>
+	<string Field="SubtitlesExist">Ondertitelingsbestand bestaat reeds.\nBestaand bestand overschrijven?</string>
+	<string Field="SubtitlesDownloaded">Ondertitelingen gedownloaded!</string>
+	<string Field="SelectDownloadmap">Kies downloadmap</string>
+	<string Field="Subtitles">Ondertitel(s)</string>
+	<string Field="Subtitle">Ondertitel</string>
+	<string Field="Subtitles">ondertitelingen</string>
+	<string Field="SubtitlesDownloadedCount">{0} ondertitelingen gedownload</string>
+	<string Field="SubtitlesDownloadErrorCount">{0} ondertiteldownloads mislukt.</string>
+	<string Field="SubtitlesDownloadCanceledCount">{0} ondertiteldownloads geannuleerd.</string>
+	<string Field="SelectFileForSubtitle">Kies mediabestand voor '{0}'</string>
+	<string Field="SearchType">Zoekmethode: {0}</string>
+	<string Field="SiteDoesNotSupportIMDbIDSearch">Site ondersteunt IMDb ID niet!</string>
+	<string Field="SiteDoesNotSupportMovieSearch">Site ondersteunt Filmtitels niet!</string>
+	<string Field="SiteDoesNotSupportTVShowSearch">Site ondersteunt TV-serienamen niet!</string>
+	<string Field="Sorting">Sorteren</string>
+	<string Field="Sort">Sorteer</string>
+	<string Field="SortBy">Sorteer op: {0}</string>
+	<string Field="SortByTaal">Sorteer op taal</string>
+	<string Field="SortByName">Sorteer op naam</string>
+	<string Field="SubtitleFilesToDelete">Ondertiteingsbestanden om te verwijderen</string>
+	<string Field="SortByMediaTags">Sorteer op mediatags (indien mogelijk)</string>
+
+	<string Field="SkinTranslationFrom">Van</string>
+	<string Field="SkinTranslationSearchType">Zoekmethode</string>
+	<string Field="SkinTranslationMediaFiles">Mediabestanden</string>
+	<string Field="SkinTranslationDownloadmap">Downloadmap</string>
+	<string Field="SkinTranslationSearchData">Zoekgegevens</string>
+	<string Field="SkinTranslationIMDbID">IMDb ID</string>
+	<string Field="SkinTranslationTitle">Titel</string>
+	<string Field="SkinTranslationYear">Jaar</string>
+	<string Field="SkinTranslationSeason">Seizoen</string>
+	<string Field="SkinTranslationEpisode">Aflevering</string>
+	<string Field="SkinTranslationMovie">Film</string>
+	<string Field="SkinTranslationTVShow">TV-serie</string>
+	<string Field="SkinTranslationMediaTags">Mediatags</string>
+
+	<!-- T -->
+	<string Field="TVShows">TV-series</string>
+	<string Field="TVShow">TV-serie</string>
+
+	<!-- U -->
+	<string Field="UnableToImportDataFrom">Data importeren van \n{0} niet mogelijk.</string>
+	<string Field="UnableToLoadSubtitleDownloader">Laden van de SubtitleDownloader bibliotheek is niet mogelijk.</string>
+	<string Field="UnableToDeleteSubtitleFile">Verwijderen van de ondertiteling niet mogelijk.</string>
+	<string Field="UnableToDeleteSubtitlesFiles">Verwijderen van deze ondertitelingen niet mogelijk:</string>
+
+	<!-- V -->
+
+	<!-- W -->
+	<string Field="Warning">Waarschuwing</string>
+	<string Field="WrongFormatIMDbID">Verkeerd format voor IMDb ID (ttNNNNNNN).</string>
+	<string Field="WrongFormatYear">Verkeerd formaat voor het jaartal (1900 - {0}).</string>
+	<string Field="WrongFormatSeasonEpisode">{0} moet een numeriek invoer zijn en groter dan 0.</string>
+
+	<!-- Y -->
+	<string Field="PleaseSelectLanguanges">Selecteer tenminste\n een taal.</string>
+
+</strings>

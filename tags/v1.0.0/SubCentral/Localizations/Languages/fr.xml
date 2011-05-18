@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- SubCentral translation file -->
+<!-- English (US) r165 vs francais 01052011-->
+<!-- Last Updated: 05 octobre 2010 -->
+<!-- Note: English is the fallback for any strings not found in other languages  -->
+<strings>
+        <!-- # -->
+
+        <!-- A -->
+        <string Field="AllProviders">Tous les sites</string>
+        <string Field="AllEnabledProviders">Tous des sites autorisés</string>
+        <string Field="About">A propos</string>
+        <string Field="AllSubtitlesDownloaded">Tous ({0}) les sous-titres sont téléchargés!</string>
+        <string Field="AllSubtitlesCanceledDownload">Abandon du téléchargement de(s) ({0}) sous-titre(s)!</string>
+        <string Field="All">Tout</string>
+        <string Field="AllSubtitlesDeleted">Tous ({0}) les sous-titres sont effacés!</string>
+        <string Field="AboutText">SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.
+Best way to use the plug-in is by opening Moving Pictures or MP-TVSeries plug-in, browsing to movie/TV show and selecting 'Get subtitles' item. For Moving Pictures (supported version is 1.0.3 or higher), that item is usually in the menu or it's a separate button on details screen (depending on the skin). For TVSeries (supported version is 2.6.0 or higher), you should open context menu for the episode, select 'Download...' and then 'Retrieve subtitle'. If you wish, there is a possibility to modify search data SubCentral grabs from the plug-ins for more customized search.
+If plug-in is opened from home screen (like currently), manual search is possible, where you can create your own search queries (for movies or TV shows).
+To choose languages for subtitle search, use the menu item. Please use the MediaPortal configuration to setup the plug-in more thoroughly (selecting, reordering and renaming groups/providers, selecting and ordering languages and managing of the download folders).
+After the search is done, you can sort the results using the menu item and of course, download the subtitles.
+For more information, visit us on our Google Code SubCentral project page!
+</string>
+
+        <!-- B -->
+        <string Field="Back">Retour</string>
+
+        <!-- C -->
+        <string Field="CannotLoadSkin">Impossible de charger le skin\nfichier pour SubCentral!</string>
+        <string Field="Cancel">Abandonner</string>
+        <string Field="Confirm">Confirmer</string>
+        <string Field="ClearFiles">Effacer les fichiers</string>
+        <string Field="ClearMedia">Effacer les médias</string>
+        <string Field="CanceledDownload">Téléchargement annulé!</string>
+        <string Field="ContextMenu">Menu contextuel</string>
+        <string Field="CannotUseManualSearch">Impossible de démarrer la recherche manuelle car  no\nle dossier de téléchargement n'existe pas.\nSVP, utiliser le menu configuration pour ajouter un dossier..</string>
+        <string Field="CannotClearMedia">Impossible d'effacer les fichiers  Médias, car no\nle dossier de téléchargement n'existe pas.\nSVP, utiliser le menu configuration pour ajouter un dossier.</string>
+        <string Field="Completed">Terminé</string>
+
+        <!-- D -->
+        <string Field="DefaultFor">Défaut pour: {0}</string>
+        <string Field="DownloadFoderDoesNotExistCreate">le dossier de téléchargement n'existe pas.\nLe créér ?</string>
+        <string Field="Download">Télécharger</string>
+        <string Field="DownloadTo">Télécharger de...</string>
+        <string Field="DefaultFolderNotWritable">Le dossier par défaut {0} n'est pas accessible en écriture! SVP, sélectionner un dossier.</string>
+        <string Field="DefaultDownloadFoderDoesNotExistCreate">Le dossier de téléchargement par défaut:\n{0}\nn'existe pas.\nLe créer?</string>
+        <string Field="Default">Par défaut</string>
+        <string Field="DeleteSubtitles">Effacer le(s) sous-titre(s)</string>
+
+        <!-- E -->
+        <string Field="Error">Erreur</string>
+        <string Field="ExternalPlugin">Plugin externe</string>
+        <string Field="ErrorWhileDownloadingSubtitles">Erreur(s) lors du chargement des sous-titres!</string>
+        <string Field="ErrorWhileDownloadingSubtitlesWithReason">Erreur lors du chargement des sous-titres: {0}</string>
+        <string Field="ErrorWhileRetrievingSubtitles">Erreur lors de la récupération des sous-titres!</string>
+        <string Field="ErrorWhileCreatingDirectory">Erreur lors de la création d'un répertoire!</string>
+
+        <!-- F -->
+        <string Field="FoundSubtitles">Sous-titres trouvés</string>
+        <string Field="From">De : {0}</string>
+
+        <!-- G -->
+        <string Field="GroupS">Groupe(s)</string>
+        <string Field="GroupProviderDefault">Groupe(s)/Site(s) par défaut</string>
+
+        <!-- H -->
+
+        <!-- I -->
+        <string Field="Initializing">Initialisation</string>
+        <string Field="IMDbID">ID de IMDb: {0}</string>
+
+        <!-- L -->
+        <string Field="Languages">Langues</string>
+        <string Field="Language">Langue</string>
+        <string Field="Local">Local (dans les dossiers des médias)</string>
+
+        <!-- M -->
+        <string Field="Movies">Films</string>
+        <string Field="ManualSearch">Recherche manuelle</string>
+        <string Field="ModifySearch">Modifier la recherche</string>
+        <string Field="MediaFilesDifferFromSubtitleFiles">Le nombre de fichiers média diffère du nombre de sous-titres. Erreur dans les sous-titres?</string>
+        <string Field="MovieIMDb">Film (IMDb)</string>
+        <string Field="Movie">Film</string>
+        <string Field="MediaNoSubtitles">Impossible de trouver un sous-titre pour les médias!</string>
+        <string Field="MediaOnlyInternalSubtitles">Un sous-titre integré dans le média existe!</string>
+        <string Field="MediaWrongMarkHasSubtitles">Le média {0} a noté le sous-titres comme disponible\nmais il n'existe pas. Souhaitez-vous corriger\nen le notant comme indisponible?</string>
+        <string Field="MediaMaybeInternalSubtitles">(un sous-titre intégré pourrait être présent)</string>
+        <string Field="MediaHasSubtitles">Le média a déjà un sous-titre. Si vous souhaitez le supprimer, utiliser le menu contextuel.</string>
+        <string Field="MediaNoMoreSubtitles">">Impossible de trouver un sous-titre pour le média.\nSouhaitez-vous rechercher des sous-titres disponibles sur le(s) site(s)  ({0})?</string>
+        <string Field="MediaWrongMarkNoSubtitles">Le média {0} a noté le\nsous-titre comme indisponible mais il existe. Souhaitez-vous corriger cette situation et\nle noter comme disponible?</string>
+
+        <!-- N -->
+        <string Field="NewGroup">New group</string>
+        <string Field="NoResultsFound">Aucun résultat trouvé</string>
+        <string Field="NoSubtitlesFound">Aucun sous-titre trouvé</string>
+        <string Field="NoDownloadFolders">Il n'existe aucun dossier de téléchargement pour ce média.</string>
+        <string Field="NotEnoughDataForSearch">Données insuffisantes pour une recherche de sous-titres</string>
+        <string Field="Name">Nom</string>
+        <string Field="NoSorting">Pas de tri</string>
+        <string Field="NoSubtitlesDelete">Aucun sous-titre trouvé à supprimer.</string>
+        <string Field="NoSubtitlesDownloaded">Aucun sous-titre téléchargé!</string>
+        <string Field="NoSubtitlesDownloadedWithReason">Aucun sous-titre téléchargé: {0}</string>
+        <string Field="NoSubtitlesInChosen">La recherche est infructueuse. Problème de Serveur?</string>
+
+        <!-- O -->
+        <string Field="OKSearch">OK/Recherche</string>
+        <string Field="OK">OK</string>
+
+        <!-- P -->
+        <string Field="ProviderS">Site(s)</string>
+
+        <!-- Q -->
+        <string Field="QueryingProviders">Requête vers les sites</string>
+
+        <!-- R -->
+        <string Field="Revert">Revenir</string>
+
+        <!-- S -->
+        <string Field="Search">Recherche</string>
+        <string Field="SubtitleDownloaderUnavailable"> SubtitleDownloader.dll présente?</string>
+        <string Field="SubtitleSearch">Recherche de sous-titres</string>
+        <string Field="SearchingSubtitles">Recherche de sous-titres...</string>
+        <string Field="SelectLanguages">Sélectionnez les langues</string>
+        <string Field="SubtitlesExist">Un sous-titre est présent.\nEcraser le sous-titre existant?</string>
+        <string Field="SubtitlesDownloaded">Sous-titre(s) téléchargé(s)!</string>
+        <string Field="SelectDownloadFolder">Sélectionner le dossier de téléchargement</string>
+        <string Field="SubtitleS">Sous-titres(s)</string>
+        <string Field="Subtitle">Sous-titre</string>
+        <string Field="Subtitles">Sous-titres</string>
+        <string Field="SubtitlesDownloadedCount">{0} sous-titre(s) téléchargé(s)</string>
+        <string Field="SubtitlesDownloadErrorCount">{0} sous-titre(s) non téléchargé(s)</string>
+        <string Field="SubtitlesDownloadCanceledCount">{0} sous-titre(s)  annulé(s)</string>
+        <string Field="SelectFileForSubtitle">Sélectionnez le fichier média pour '{0}'</string>
+        <string Field="SearchType">Type de recherche: {0}</string>
+        <string Field="SiteDoesNotSupportIMDbIDSearch">Le site n'accepte pas l'ID IMDb recherche!</string>
+        <string Field="SiteDoesNotSupportMovieSearch">Le site n'accepte pas la recherche de film!</string>
+        <string Field="SiteDoesNotSupportTVShowSearch">Le site n'accepte pas la recherche de show TV!</string>
+        <string Field="Sorting">Tri</string>
+        <string Field="Sort">Tri</string>
+        <string Field="SortBy">Tri par : {0}</string>
+        <string Field="SortByLanguage">Tri en fonction de la langue du sous-titre</string>
+        <string Field="SortByName">Tri en fonction de l'intitulé du sous-titre</string>
+        <string Field="SubtitleFilesToDelete">Sous-titre à supprimer</string>
+        <string Field="SortByMediaTags">Tri en fonction des tags média (si possible)</string>
+        <string Field="SelectSubtitleForFile">Sélectionnez le sous-titre pour '{0}'</string>
+
+        <string Field="SkinTranslationFrom">De</string>
+        <string Field="SkinTranslationSearchType">Type de recherche</string>
+        <string Field="SkinTranslationMediaFiles">Les fichiers multimédias</string>
+        <string Field="SkinTranslationDownloadFolder">Dossier de téléchargement</string>
+        <string Field="SkinTranslationSearchData">Recherche des données</string>
+        <string Field="SkinTranslationIMDbID">ID IMDb</string>
+        <string Field="SkinTranslationTitle">Titre</string>
+        <string Field="SkinTranslationYear">Année</string>
+        <string Field="SkinTranslationSeason">Saison</string>
+        <string Field="SkinTranslationEpisode">Episode</string>
+        <string Field="SkinTranslationMovie">Film</string>
+        <string Field="SkinTranslationTVShow">Série</string>
+        <string Field="SkinTranslationMediaTags">Tags Media</string>
+        <string Field="SkinTranslationAbsoluteNumbering">Numérotation absolue</string>
+
+        <!-- T -->
+        <string Field="TVShows">Séries</string>
+        <string Field="TVShow">Série</string>
+        <string Field="TimedOutWhileRetrievingSubtitles">délai dépassé pour la récupération des sous-titres!</string>
+        <string Field="TooManySubtitles"> Trop de sous-titres</string>
+        <string Field="TooManySubtitlesQuestion">La requête renvoit {0} sous-titre(s).\nSouhaitez-vous le(s) télécharger?</string>
+
+        <!-- U -->
+        <string Field="UnableToImportDataFrom">Impossible d'importer des données\nde {0}.</string>
+        <string Field="UnableToLoadSubtitleDownloader">Impossible de charger la dll SubtitleDownloader!</string>
+        <string Field="UnableToDeleteSubtitleFile">Impossible de supprimer le sous-titre!</string>
+        <string Field="UnableToDeleteSubtitleFiles">Impossible de supprimer les sous-titres:</string>
+
+        <!-- V -->
+
+        <!-- W -->
+        <string Field="Warning">Attention</string>
+        <string Field="WrongFormatIMDbID">Erreur dans le format pour l'ID de IMDb (ttNNNNNNN)!</string>
+        <string Field="WrongFormatYear">Erreur dans le format pour l'année (1900 - {0})!</string>
+        <string Field="WrongFormatSeasonEpisode">{0} doit être numérique et supérieur à 0!</string>
+
+        <!-- Y -->
+        <string Field="PleaseSelectLanguages">Vous devez sélectionner au moins une\nlangue!</string>
+
+</strings>

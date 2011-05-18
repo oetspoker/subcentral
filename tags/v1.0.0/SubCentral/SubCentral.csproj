@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7532711D-827C-4CFE-A499-EE68DBB31F41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SubCentral</RootNamespace>
+    <AssemblyName>SubCentral</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Utils">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.2 Beta\Common.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.2 Beta\Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cornerstone">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\Moving Pictures v1.0.6\Cornerstone.dll</HintPath>
+    </Reference>
+    <Reference Include="Dialogs">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.2 Beta\Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="MovingPictures">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\Moving Pictures v1.0.6\MovingPictures.dll</HintPath>
+    </Reference>
+    <Reference Include="MP-TVSeries">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MP-TVSeries v2.6.0\MP-TVSeries.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SubtitleDownloader">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\SubtitleDownloader.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utils">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.2 Beta\Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\AdvancedConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\AdvancedConfigForm.designer.cs">
+      <DependentUpon>AdvancedConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Extensions\MPGUIExtensions.cs" />
+    <Compile Include="GUI\SubtitleDeleteStatusStatus.cs" />
+    <Compile Include="GUI\SubtitleDeleteStatus.cs" />
+    <Compile Include="GUI\FolderErrorInfo.cs" />
+    <Compile Include="Config\ListViewItemType.cs" />
+    <Compile Include="GUI\SubtitleDownloadStatusStatus.cs" />
+    <Compile Include="PluginHandlers\TVSeriesHandler.cs" />
+    <Compile Include="Properties\VersionInfo.cs" />
+    <Compile Include="Settings\Data\OnAfterDownload.cs" />
+    <Compile Include="Settings\Data\OnDownload.cs" />
+    <Compile Include="Settings\Data\OnDownloadFileName.cs" />
+    <Compile Include="PluginHandlers\PluginHandlerType.cs" />
+    <Compile Include="GUI\SubtitlesSearchType.cs" />
+    <Compile Include="GUI\TemporaryCustomHandlerUpdater.cs" />
+    <Compile Include="GUI\SubtitlesSortDetails.cs" />
+    <Compile Include="Settings\Data\SubtitlesSortMethod.cs" />
+    <Compile Include="GUI\GUIListItemSubtitleComparer.cs" />
+    <Compile Include="PluginHandlers\ManualSearchHandler.cs" />
+    <Compile Include="PluginHandlers\TemporaryCustomPluginHandler.cs" />
+    <Compile Include="PluginHandlers\BasicMediaDetail.cs" />
+    <Compile Include="Config\ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUIControls.cs" />
+    <Compile Include="Config\MoveItem.cs" />
+    <Compile Include="Utils\Extensions.cs" />
+    <Compile Include="Utils\MediaTags.cs" />
+    <Compile Include="Utils\StringEnum.cs" />
+    <Compile Include="Settings\Data\OnPluginLoadWithSearchData.cs" />
+    <Compile Include="GUI\GUIDialogMultiSelect.cs" />
+    <Compile Include="GUI\Retriever.cs" />
+    <Compile Include="Localizations\Localization.cs" />
+    <Compile Include="PluginHandlers\PluginHandler.cs" />
+    <Compile Include="PluginHandlers\MovingPicturesHandler.cs" />
+    <Compile Include="PluginHandlers\PluginHandlerManager.cs" />
+    <Compile Include="GUI\SubCentralGUI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Config\ConfigForm.resx">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Settings\Data\SubCentralSettings.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="GUI\Items\FolderSelectionItem.cs" />
+    <Compile Include="GUI\Items\MultiSelectionitem.cs" />
+    <Compile Include="GUI\SubtitleDownloadStatus.cs" />
+    <Compile Include="GUI\Items\SubtitleItem.cs" />
+    <Compile Include="SubCentralCore.cs" />
+    <Compile Include="Utils\FileUtils.cs" />
+    <Compile Include="Utils\GUIUtils.cs" />
+    <Compile Include="Utils\MediaInfoWrapper.cs" />
+    <Compile Include="Utils\NetUtils.cs" />
+    <Compile Include="Utils\SubCentralUtils.cs" />
+    <Compile Include="Utils\TagRank.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\AdvancedConfigForm.resx">
+      <DependentUpon>AdvancedConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Images\SubCentral_Icon_Disabled.png" />
+    <EmbeddedResource Include="Config\Images\SubCentral_Icon_Enabled.png" />
+    <Content Include="GUI\Skins\Blue3wide\DialogMultiSelect.xml" />
+    <Content Include="GUI\Skins\Blue3wide\Media\defaultSubtitles.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\defaultSubtitlesFolder.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\defaultSubtitlesFolderBack.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\hover_subcentral.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\Logos\nosubtitles.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Background.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Long_Focused.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Bg.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Focused.png" />
+    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png" />
+    <Content Include="GUI\Skins\Blue3wide\SubCentral.ModifySearch.xml" />
+    <Content Include="GUI\Skins\Blue3wide\SubCentral.Search.xml" />
+    <Content Include="GUI\Skins\Blue3wide\SubCentral.xml" />
+    <Content Include="GUI\Skins\Blue3wide\SubCentral.Main.xml" />
+    <Content Include="GUI\Skins\Blue3\DialogMultiSelect.xml" />
+    <Content Include="GUI\Skins\Blue3\Media\defaultSubtitles.png" />
+    <Content Include="GUI\Skins\Blue3\Media\defaultSubtitlesFolder.png" />
+    <Content Include="GUI\Skins\Blue3\Media\defaultSubtitlesFolderBack.png" />
+    <Content Include="GUI\Skins\Blue3\Media\hover_subcentral.png" />
+    <Content Include="GUI\Skins\Blue3\Media\Logos\nosubtitles.png" />
+    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Background.png" />
+    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Button_Long_Focused.png" />
+    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Button_Short_Bg.png" />
+    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Button_Short_Focused.png" />
+    <Content Include="GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png" />
+    <Content Include="GUI\Skins\Blue3\SubCentral.Main.xml" />
+    <Content Include="GUI\Skins\Blue3\SubCentral.ModifySearch.xml" />
+    <Content Include="GUI\Skins\Blue3\SubCentral.Search.xml" />
+    <Content Include="GUI\Skins\Blue3\SubCentral.xml" />
+    <Content Include="GUI\Skins\DefaultWide\DialogMultiSelect.xml" />
+    <Content Include="GUI\Skins\DefaultWide\Media\defaultSubtitles.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\defaultSubtitlesFolder.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\defaultSubtitlesFolderBack.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\hover_subcentral.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\Logos\nosubtitles.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\SubCentral_Background.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\SubCentral_Button_Long_Bg.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\SubCentral_Button_Long_Focused.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\SubCentral_Button_Short_Bg.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\SubCentral_Button_Short_Focused.png" />
+    <Content Include="GUI\Skins\DefaultWide\Media\SubCentral_MainOverlay.png" />
+    <Content Include="GUI\Skins\DefaultWide\SubCentral.Main.xml" />
+    <Content Include="GUI\Skins\DefaultWide\SubCentral.ModifySearch.xml" />
+    <Content Include="GUI\Skins\DefaultWide\SubCentral.Search.xml" />
+    <Content Include="GUI\Skins\DefaultWide\SubCentral.xml" />
+    <Content Include="GUI\Skins\Default\DialogMultiSelect.xml" />
+    <Content Include="GUI\Skins\Default\Media\defaultSubtitles.png" />
+    <Content Include="GUI\Skins\Default\Media\defaultSubtitlesFolder.png" />
+    <Content Include="GUI\Skins\Default\Media\defaultSubtitlesFolderBack.png" />
+    <Content Include="GUI\Skins\Default\Media\hover_subcentral.png" />
+    <Content Include="GUI\Skins\Default\Media\Logos\nosubtitles.png" />
+    <Content Include="GUI\Skins\Default\Media\SubCentral_Background.png" />
+    <Content Include="GUI\Skins\Default\Media\SubCentral_Button_Long_Bg.png" />
+    <Content Include="GUI\Skins\Default\Media\SubCentral_Button_Long_Focused.png" />
+    <Content Include="GUI\Skins\Default\Media\SubCentral_Button_Short_Bg.png" />
+    <Content Include="GUI\Skins\Default\Media\SubCentral_Button_Short_Focused.png" />
+    <Content Include="GUI\Skins\Default\Media\SubCentral_MainOverlay.png" />
+    <Content Include="GUI\Skins\Default\SubCentral.Main.xml" />
+    <Content Include="GUI\Skins\Default\SubCentral.ModifySearch.xml" />
+    <Content Include="GUI\Skins\Default\SubCentral.Search.xml" />
+    <Content Include="GUI\Skins\Default\SubCentral.xml" />
+    <Content Include="Localizations\Languages\cs.xml" />
+    <Content Include="Localizations\Languages\da.xml" />
+    <Content Include="Localizations\Languages\de.xml" />
+    <Content Include="Localizations\Languages\en-US.xml" />
+    <Content Include="Localizations\Languages\fi.xml" />
+    <Content Include="Localizations\Languages\fr.xml" />
+    <Content Include="Localizations\Languages\gr.xml" />
+    <Content Include="Localizations\Languages\nl.xml" />
+    <Content Include="Resources\PayPalDonate.gif" />
+    <None Include="Resources\SubCentralGUIIcon.png" />
+    <None Include="Resources\SubCentralGUIIconBig.png" />
+    <None Include="Resources\FolderPageWhite.png" />
+    <None Include="Resources\PageWhiteText.png" />
+    <None Include="Properties\VersionInfo.cs.tmpl" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\SubCentralIconOld.ico" />
+    <None Include="Resources\SubCentralIcon.ico" />
+    <None Include="Resources\SubCentralLogo.jpg" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\OK.png" />
+    <None Include="Resources\Languages.png" />
+    <None Include="Resources\Information.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\Folders.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\CogAdd.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\ArrowUp.png" />
+    <None Include="Resources\ArrowDown.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\SubCentralImg.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>cd $(TargetDir)
+copy "$(ProjectDir)..\External\7z.dll" "$(TargetDir)" /Y
+copy "$(ProjectDir)..\External\ICSharpCode.SharpZipLib.dll" "$(TargetDir)" /Y
+copy "$(ProjectDir)..\External\MediaInfo.dll" "$(TargetDir)" /Y
+
+REM copy "$(ProjectDir)..\External\merge.bat" "$(TargetDir)" /Y
+REM copy "$(ProjectDir)..\External\ilmerge.exe" "$(TargetDir)" /Y
+REM call merge.bat
+
+copy "$(TargetDir)"SubCentral.dll "$(TargetDir)"MP12-SubCentral.dll /Y
+
+REM copy "$(TargetDir)"SubCentral.dll "c:\Program Files\Team MediaPortal\MediaPortal\plugins\Windows\"
+REM copy "$(TargetDir)"SubCentral.pdb "c:\Program Files\Team MediaPortal\MediaPortal\plugins\Windows\"</PostBuildEvent>
+    <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
+  </PropertyGroup>
+</Project>
