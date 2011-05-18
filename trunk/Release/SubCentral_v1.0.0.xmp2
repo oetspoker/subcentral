@@ -602,8 +602,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <MaxVersion>
           <Major>1</Major>
           <Minor>1</Minor>
-          <Build>6</Build>
-          <Revision>999999</Revision>
+          <Build>0</Build>
+          <Revision>6</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
         <Message>This version of SubCentral requires MediaPortal 1.1 or 1.2 Alpha!</Message>

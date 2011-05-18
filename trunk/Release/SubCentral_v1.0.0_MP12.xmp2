@@ -610,8 +610,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <MinVersion>
           <Major>1</Major>
           <Minor>1</Minor>
-          <Build>7</Build>
-          <Revision>0</Revision>
+          <Build>0</Build>
+          <Revision>7</Revision>
         </MinVersion>
         <MaxVersion>
           <Major>999999</Major>
