@@ -630,7 +630,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Id>f8f30e5e-cc8a-44a0-91a9-1175fe55732f</Id>
     <Author>SilentException, seco</Author>
     <HomePage>http://code.google.com/p/subcentral/</HomePage>
-    <ForumPage>http://forum.team-mediaportal.com/mediaportal-plugins-47/subcentral-85545/</ForumPage>
+    <ForumPage>http://forum.team-mediaportal.com/subcentral-544/subcentral-v0-9-1-download-manage-subtitles-moving-pictures-mediaportal-tvseries-others-85545/</ForumPage>
     <UpdateUrl>http://subcentral.googlecode.com/svn/trunk/Release/update.xml</UpdateUrl>
     <Version>
       <Major>1</Major>
@@ -639,10 +639,10 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
-    <VersionDescription>Stable release</VersionDescription>
+    <VersionDescription>Stable release for MediaPortal 1.2 Beta or newer</VersionDescription>
     <DevelopmentStatus>Beta</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2010-11-03T00:00:00</ReleaseDate>
+    <ReleaseDate>2011-05-18T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
     <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.0.0_MP12.mpe1</Location>
     <Params>
@@ -1061,7 +1061,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{861ef4cf-3ef5-4d38-92cd-f44bf7ce8d04}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{eca74f18-70cf-4018-829a-f85cee241318}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
