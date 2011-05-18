@@ -611,7 +611,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Major>1</Major>
           <Minor>1</Minor>
           <Build>0</Build>
-          <Revision>7</Revision>
+          <Revision>6</Revision>
         </MinVersion>
         <MaxVersion>
           <Major>999999</Major>

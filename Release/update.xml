@@ -212,7 +212,7 @@
               <Major>1</Major>
               <Minor>1</Minor>
               <Build>0</Build>
-              <Revision>6</Revision>
+              <Revision>5</Revision>
             </MaxVersion>
             <WarnOnly>false</WarnOnly>
             <Message>This version of SubCentral requires MediaPortal 1.1 or 1.2 Alpha!</Message>
