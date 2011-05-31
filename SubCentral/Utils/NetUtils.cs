@@ -9,20 +9,28 @@ namespace SubCentral.Utils {
         public static bool uncHostIsAlive(string path) {
             if (string.IsNullOrEmpty(path)) return true;
 
-            if (!new Uri(path).IsUnc) {
-                DriveInfo di = FileUtils.GetDriveInfoFromPath(path);
-                if (di != null && di.DriveType == DriveType.Network) {
-                    path = MPR.GetUniversalName(path);
+            try
+            {
+                if (!new Uri(path).IsUnc) {
+                    DriveInfo di = FileUtils.GetDriveInfoFromPath(path);
+                    if (di != null && di.DriveType == DriveType.Network) {
+                        path = MPR.GetUniversalName(path);
+                    }
+                    else
+                        return true;
                 }
-                else
-                    return true;
+
+                Uri uri = new Uri(path);
+                string hostName = uri.Host;
+
+                bool alive = isMachineReachable(hostName);
+                return alive;
             }
-
-            Uri uri = new Uri(path);
-            string hostName = uri.Host;
-            bool alive = isMachineReachable(hostName);
-
-            return alive;
+            catch (Exception e)
+            {
+                logger.ErrorException(string.Format("Error in uncHostIsAlive({0})\n", path), e);
+            }
+            return true;
         }
 
         public static bool isMachineReachable(string hostName) {
