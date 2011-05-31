@@ -470,7 +470,8 @@ namespace SubCentral.GUI {
                 MediaDetail = mediaDetail,
                 FolderSelectionItem = folderSelectionItem,
                 SearchType = searchType,
-                SkipDefaults = skipDefaults
+                SkipDefaults = skipDefaults,
+                StatusList = new List<SubtitleDownloadStatus>()
             };
 
             _subtitlesDownloaderThread = new Thread(DownloadSubtitleAsync);
@@ -489,6 +490,7 @@ namespace SubCentral.GUI {
             FolderSelectionItem folderSelectionItem = downloadData.FolderSelectionItem;
             SubtitlesSearchType searchType = downloadData.SearchType;
             bool skipDefaults = downloadData.SkipDefaults;
+            List<SubtitleDownloadStatus> statusList = downloadData.StatusList;
 
             logger.Info("Downloading subtitles...");
 
@@ -499,9 +501,7 @@ namespace SubCentral.GUI {
             _subtitlesDownloaderStatusThread.Name = "Subtitles Downloader Status Thread";
             _subtitlesDownloaderStatusThread.Start(null);
 
-            //GUIWindowManager.Process();
             List<FileInfo> subtitleFiles = null;
-            List<SubtitleDownloadStatus> statusList = new List<SubtitleDownloadStatus>();
 
             try {
                 SubtitleDownloader.Core.ISubtitleDownloader subDownloader = subtitleItem.Downloader;
@@ -732,14 +732,12 @@ namespace SubCentral.GUI {
                         }
                     }
                 }
-
-                OnSubtitlesDownloaded(mediaDetail, statusList);
             }
             catch (ThreadAbortException) {
                 _isCanceled = true;
                 if ((subtitleFiles == null || subtitleFiles.Count < 1) && (mediaDetail.Files == null || mediaDetail.Files.Count < 1)) {
                     logger.Debug("Download thread was aborted");
-                    OnSubtitlesDownloaded(mediaDetail, null);
+                    statusList = null;
                     // nothing for now, we have nothing
                 }
                 else {
@@ -752,8 +750,7 @@ namespace SubCentral.GUI {
                         counter = subtitleFiles.Count;
                     }
                     for (int i = statusList.Count; i < counter; i++)
-                        statusList.Add( new SubtitleDownloadStatus() { Index = -1, Error = string.Empty, Status = SubtitleDownloadStatusStatus.Canceled });
-                    OnSubtitlesDownloaded(mediaDetail, statusList);
+                        statusList.Add(new SubtitleDownloadStatus() { Index = -1, Error = string.Empty, Status = SubtitleDownloadStatusStatus.Canceled });
                 }
             }
             finally {
@@ -761,6 +758,7 @@ namespace SubCentral.GUI {
                 if (_subtitlesDownloaderStatusThread != null && _subtitlesDownloaderStatusThread.IsAlive)
                     _subtitlesDownloaderStatusThread.Abort();
             }
+            OnSubtitlesDownloaded(mediaDetail, statusList);
         }
 
         private void OnSubtitlesDownloadError(Exception e) {
@@ -820,6 +818,7 @@ namespace SubCentral.GUI {
             public FolderSelectionItem FolderSelectionItem { get; set; }
             public SubtitlesSearchType SearchType { get; set; }
             public bool SkipDefaults { get; set; }
+            public List<SubtitleDownloadStatus> StatusList { get; set; }
         }
     }
 }
