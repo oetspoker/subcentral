@@ -24,19 +24,19 @@
         /// </summary>
         private void InitializeComponent() {
           this.components = new System.ComponentModel.Container();
-          System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Groups", System.Windows.Forms.HorizontalAlignment.Left);
-          System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Providers", System.Windows.Forms.HorizontalAlignment.Left);
-          System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+          System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Groups", System.Windows.Forms.HorizontalAlignment.Left);
+          System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Providers", System.Windows.Forms.HorizontalAlignment.Left);
+          System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "Provider 1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-          System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+          System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "Provider 2"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-          System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+          System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "Provider 3"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-          System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+          System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "Language 1"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-          System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+          System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "Language 2"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
-          System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+          System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
             "Language 3"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))));
           System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigForm));
           this.tabControl = new System.Windows.Forms.TabControl();
@@ -124,6 +124,8 @@
           this.btnAdvancedConfig = new System.Windows.Forms.Button();
           this.btnSave = new System.Windows.Forms.Button();
           this.btnCancel = new System.Windows.Forms.Button();
+          this.label14 = new System.Windows.Forms.Label();
+          this.label15 = new System.Windows.Forms.Label();
           this.tabControl.SuspendLayout();
           this.pgGeneral.SuspendLayout();
           this.gbFeedConf.SuspendLayout();
@@ -270,13 +272,13 @@
             this.columnHeaderGroupsAndProvidersDetails});
           this.listViewGroupsAndProviders.FullRowSelect = true;
           this.listViewGroupsAndProviders.GridLines = true;
-          listViewGroup1.Header = "Groups";
-          listViewGroup1.Name = "listViewGroupGroups";
-          listViewGroup2.Header = "Providers";
-          listViewGroup2.Name = "listViewGroupProviders";
+          listViewGroup5.Header = "Groups";
+          listViewGroup5.Name = "listViewGroupGroups";
+          listViewGroup6.Header = "Providers";
+          listViewGroup6.Name = "listViewGroupProviders";
           this.listViewGroupsAndProviders.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
+            listViewGroup5,
+            listViewGroup6});
           this.listViewGroupsAndProviders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
           this.listViewGroupsAndProviders.HideSelection = false;
           this.listViewGroupsAndProviders.LabelEdit = true;
@@ -381,13 +383,13 @@
                       | System.Windows.Forms.AnchorStyles.Right)));
           this.listViewEditGroup.CheckBoxes = true;
           this.listViewEditGroup.HideSelection = false;
-          listViewItem1.StateImageIndex = 0;
-          listViewItem2.StateImageIndex = 0;
-          listViewItem3.StateImageIndex = 0;
+          listViewItem13.StateImageIndex = 0;
+          listViewItem14.StateImageIndex = 0;
+          listViewItem15.StateImageIndex = 0;
           this.listViewEditGroup.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
           this.listViewEditGroup.LabelEdit = true;
           this.listViewEditGroup.Location = new System.Drawing.Point(6, 19);
           this.listViewEditGroup.MultiSelect = false;
@@ -568,13 +570,13 @@
                       | System.Windows.Forms.AnchorStyles.Right)));
           this.listViewLanguages.CheckBoxes = true;
           this.listViewLanguages.HideSelection = false;
-          listViewItem4.StateImageIndex = 0;
-          listViewItem5.StateImageIndex = 0;
-          listViewItem6.StateImageIndex = 0;
+          listViewItem16.StateImageIndex = 0;
+          listViewItem17.StateImageIndex = 0;
+          listViewItem18.StateImageIndex = 0;
           this.listViewLanguages.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
+            listViewItem16,
+            listViewItem17,
+            listViewItem18});
           this.listViewLanguages.Location = new System.Drawing.Point(6, 19);
           this.listViewLanguages.MultiSelect = false;
           this.listViewLanguages.Name = "listViewLanguages";
@@ -772,6 +774,8 @@
           // 
           // groupBox1
           // 
+          this.groupBox1.Controls.Add(this.label15);
+          this.groupBox1.Controls.Add(this.label14);
           this.groupBox1.Controls.Add(this.pictureBox2);
           this.groupBox1.Controls.Add(this.label13);
           this.groupBox1.Controls.Add(this.label12);
@@ -838,7 +842,7 @@
           // 
           this.label12.AutoSize = true;
           this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.label12.Location = new System.Drawing.Point(289, 186);
+          this.label12.Location = new System.Drawing.Point(289, 218);
           this.label12.Name = "label12";
           this.label12.Size = new System.Drawing.Size(101, 13);
           this.label12.TabIndex = 36;
@@ -849,7 +853,7 @@
           // 
           this.label8.AutoSize = true;
           this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.label8.Location = new System.Drawing.Point(289, 154);
+          this.label8.Location = new System.Drawing.Point(289, 186);
           this.label8.Name = "label8";
           this.label8.Size = new System.Drawing.Size(117, 13);
           this.label8.TabIndex = 35;
@@ -860,7 +864,7 @@
           // 
           this.label9.AutoSize = true;
           this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.label9.Location = new System.Drawing.Point(289, 170);
+          this.label9.Location = new System.Drawing.Point(289, 202);
           this.label9.Name = "label9";
           this.label9.Size = new System.Drawing.Size(137, 13);
           this.label9.TabIndex = 34;
@@ -1082,7 +1086,7 @@
           this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
           this.label35.Location = new System.Drawing.Point(19, 320);
           this.label35.Name = "label35";
-          this.label35.Size = new System.Drawing.Size(102, 13);
+          this.label35.Size = new System.Drawing.Size(136, 13);
           this.label35.TabIndex = 13;
           this.label35.Text = "Finnish: Mikko Autio / seco";
           this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1238,6 +1242,28 @@
           this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
           this.btnCancel.UseVisualStyleBackColor = true;
           // 
+          // label14
+          // 
+          this.label14.AutoSize = true;
+          this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+          this.label14.Location = new System.Drawing.Point(289, 154);
+          this.label14.Name = "label14";
+          this.label14.Size = new System.Drawing.Size(102, 13);
+          this.label14.TabIndex = 39;
+          this.label14.Text = "Sous-titres.eu: MrJul";
+          this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+          // 
+          // label15
+          // 
+          this.label15.AutoSize = true;
+          this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+          this.label15.Location = new System.Drawing.Point(289, 170);
+          this.label15.Name = "label15";
+          this.label15.Size = new System.Drawing.Size(123, 13);
+          this.label15.TabIndex = 40;
+          this.label15.Text = "SubsCenter.org: yoavain";
+          this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+          // 
           // ConfigForm
           // 
           this.AcceptButton = this.btnSave;
@@ -1371,6 +1397,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }
 
