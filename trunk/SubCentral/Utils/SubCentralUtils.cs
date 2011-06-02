@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using MediaPortal.Configuration;
-using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using NLog;
 using SubCentral.GUI;
@@ -16,7 +16,6 @@ using SubCentral.Localizations;
 using SubCentral.PluginHandlers;
 using SubCentral.Settings;
 using SubCentral.Settings.Data;
-using System.Linq;
 
 namespace SubCentral.Utils {
     public static class SubCentralUtils {

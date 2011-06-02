@@ -1692,7 +1692,7 @@ namespace SubCentral.GUI {
                             }
                         }
 
-                        if (_subtitleFilesForCurrentMedia.Count < 1 && properHandler.GetHasSubtitles(false)) {
+                        if (_subtitleFilesForCurrentMedia.Count < 1 && properHandler.GetHasSubtitles(false) && properHandler.Type == PluginHandlerType.BASIC) {
                             AskAndFalseHasSubtitles(properHandler, Localization.MediaNoMoreSubtitles, true);
                             subtitleToDeleteIndex = -1;
                         }

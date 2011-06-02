@@ -20,7 +20,6 @@ namespace SubCentral.PluginHandlers {
             set { }
         }
 
-        // The video file details we want to grab subtitles for.
         public override BasicMediaDetail MediaDetail {
             get { return _mediaDetail; }
             set { }
@@ -32,7 +31,6 @@ namespace SubCentral.PluginHandlers {
             set { }
         }
 
-        // retrieves info from Moving Pictures
         protected override bool GrabFileDetails() {
             try {
                 episode = WindowPlugins.GUITVSeries.TVSeriesPlugin.m_SelectedEpisode;
@@ -87,7 +85,6 @@ namespace SubCentral.PluginHandlers {
                 logger.ErrorException("Unexpected error when pulling data from TVSeries\n", e);
                 return false;
             }
-
         }
 
         public override int GetEmbeddedSubtitles() {
