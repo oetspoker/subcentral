@@ -45,6 +45,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\Moving Pictures v1.0.6\Cornerstone.dll</HintPath>
     </Reference>
+    <Reference Include="Databases">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.2 Beta\Databases.dll</HintPath>
+    </Reference>
     <Reference Include="Dialogs">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MediaPortal v1.2 Beta\Dialogs.dll</HintPath>
@@ -56,6 +60,10 @@
     <Reference Include="MP-TVSeries">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MP-TVSeries v2.6.0\MP-TVSeries.dll</HintPath>
+    </Reference>
+    <Reference Include="MyFilms">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MyFilms v5.0.1\MyFilms.dll</HintPath>
     </Reference>
     <Reference Include="NLog">
       <SpecificVersion>False</SpecificVersion>
@@ -85,6 +93,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MediaPortal v1.2 Beta\Utils.dll</HintPath>
     </Reference>
+    <Reference Include="WindowPlugins">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.2 Beta\WindowPlugins.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\AdvancedConfigForm.cs">
@@ -99,6 +111,8 @@
     <Compile Include="GUI\FolderErrorInfo.cs" />
     <Compile Include="Config\ListViewItemType.cs" />
     <Compile Include="GUI\SubtitleDownloadStatusStatus.cs" />
+    <Compile Include="PluginHandlers\MyFilmsHandler.cs" />
+    <Compile Include="PluginHandlers\MyVideosHandler.cs" />
     <Compile Include="PluginHandlers\TVSeriesHandler.cs" />
     <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="Settings\Data\OnAfterDownload.cs" />
