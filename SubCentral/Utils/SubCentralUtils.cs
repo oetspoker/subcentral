@@ -782,11 +782,19 @@ namespace SubCentral.Utils {
             return true;
         }
 
-        public static bool IsAssemblyAvailable(string name, Version ver) {
-            return IsAssemblyAvailable(name, ver, false);
+        public static bool IsAssemblyAvailable(string name, Version minVer) {
+            return IsAssemblyAvailable(name, minVer, null); 
         }
 
-        public static bool IsAssemblyAvailable(string name, Version ver, bool reflectionOnly) {
+        public static bool IsAssemblyAvailable(string name, Version minVer, Version maxVer) {
+            return IsAssemblyAvailable(name, minVer, maxVer, false);
+        }
+
+        public static bool IsAssemblyAvailable(string name, Version minVer, bool reflectionOnly) {
+            return IsAssemblyAvailable(name, minVer, null, reflectionOnly);
+        }
+
+        public static bool IsAssemblyAvailable(string name, Version minVer, Version maxVer, bool reflectionOnly) {
             Assembly[] assemblies = null;
 
             if (!reflectionOnly) 
@@ -797,7 +805,7 @@ namespace SubCentral.Utils {
             if (assemblies != null) {
                 foreach (Assembly a in assemblies) {
                     try {
-                        if (a.GetName().Name == name && a.GetName().Version >= ver)
+                        if (a.GetName().Name == name && a.GetName().Version >= minVer && ((maxVer == null) || (maxVer != null && a.GetName().Version < maxVer)))
                             return true;
                     }
                     catch (Exception e) {

@@ -210,7 +210,7 @@ namespace SubCentral.Utils {
                     if (item is GUIButtonControl) {
                         GUIButtonControl btn = (GUIButtonControl)item;
                         if (btn.GetID == 4 && !string.IsNullOrEmpty(buttonText) && !string.IsNullOrEmpty(btn.Label)) 
-                            // Only if ID is 4 and we have our custom text and if button already has label (in case the skin "hides" the button by emtying the label)
+                            // Only if ID is 4 and we have our custom text and if button already has label (in case the skin "hides" the button by emptying the label)
                             btn.Label = buttonText;
                     }
                 }
