@@ -35,19 +35,14 @@ namespace SubCentral.PluginHandlers {
 
         protected override bool GrabFileDetails() {
             try {
-                //GUIVideoTitle videoTitleWindow = GUIWindowManager.GetWindow(ID) as GUIVideoTitle;
-                GUIVideoTitle videoTitleWindow = MPGUIExtensions.GetWindowEx(ID, false) as GUIVideoTitle;  
+                GUIVideoTitle videoTitleWindow = GUIWindowManager.GetWindow(ID) as GUIVideoTitle;
 
-                GUIFacadeControl videoTitleFacade = null;
                 GUIListItem videoTitleSelectedItem = null;
                 IMDBMovie videoTitleMovie = null;
                 string videoTitleMovieThumb = string.Empty;
 
                 if (videoTitleWindow != null) {
-                    videoTitleFacade = videoTitleWindow.FacadeControl();
-                }
-                if (videoTitleFacade != null) {
-                    videoTitleSelectedItem = videoTitleFacade.SelectedListItem;
+                    videoTitleSelectedItem = videoTitleWindow.GetSelectedItem();
                 }
                 if (videoTitleSelectedItem != null && !videoTitleSelectedItem.IsFolder) {
                     videoTitleMovie = videoTitleSelectedItem.AlbumInfoTag as IMDBMovie;

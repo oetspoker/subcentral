@@ -64,10 +64,12 @@ namespace SubCentral.PluginHandlers {
             try {
                 bool result = GrabFileDetails();
                 tagRanking = new TagRank(MediaDetail);
+                if (!result)
+                    logger.Error("Failed updating {0} [{1}]", PluginName, ID);
                 return result;
             }
             catch (Exception e) {
-                logger.ErrorException("Failed updating\n", e);
+                logger.ErrorException(string.Format("Failed updating {0} [{1}]:\n", PluginName, ID), e);
             }
             return false;
         }
