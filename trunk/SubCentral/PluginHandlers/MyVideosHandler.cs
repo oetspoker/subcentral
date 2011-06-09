@@ -80,7 +80,7 @@ namespace SubCentral.PluginHandlers {
                 return false;
             }
             catch (Exception e) {
-                logger.ErrorException("Unexpected error when pulling data from MyVideos\n", e);
+                logger.ErrorException(string.Format("Unexpected error when pulling data from MyVideos{0}", Environment.NewLine), e);
                 return false;
             }
         }

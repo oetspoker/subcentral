@@ -28,7 +28,7 @@ namespace SubCentral.Utils {
             }
             catch (Exception e)
             {
-                logger.ErrorException(string.Format("Error in uncHostIsAlive({0})\n", path), e);
+                logger.ErrorException(string.Format("Error in uncHostIsAlive({0}){1}", path, Environment.NewLine), e);
             }
             return true;
         }
@@ -63,7 +63,7 @@ namespace SubCentral.Utils {
                 }
             }
             catch (Exception e) {
-                logger.ErrorException(string.Format("Error in IsMachineReachable({0})\n", hostName), e);
+                logger.ErrorException(string.Format("Error in IsMachineReachable({0}){1}", hostName, Environment.NewLine), e);
             }
 
             return false;

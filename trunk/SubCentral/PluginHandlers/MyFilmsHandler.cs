@@ -56,7 +56,7 @@ namespace SubCentral.PluginHandlers {
                 return true;
             }
             catch (Exception e) {
-                logger.ErrorException("Unexpected error when pulling data from MyFilms\n", e);
+                logger.ErrorException(string.Format("Unexpected error when pulling data from MyFilms{0}", Environment.NewLine), e);
                 return false;
             }
         }

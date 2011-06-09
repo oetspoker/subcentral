@@ -69,7 +69,7 @@ namespace SubCentral.PluginHandlers {
                 return result;
             }
             catch (Exception e) {
-                logger.ErrorException(string.Format("Failed updating {0} [{1}]:\n", PluginName, ID), e);
+                logger.ErrorException(string.Format("Failed updating {0} [{1}]{2}", PluginName, ID, Environment.NewLine), e);
             }
             return false;
         }
