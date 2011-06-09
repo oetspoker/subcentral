@@ -809,7 +809,7 @@ namespace SubCentral.Utils {
                             return true;
                     }
                     catch (Exception e) {
-                        logger.ErrorException(string.Format("Assembly.GetName() call failed for '{0}'!\n", a.Location), e);
+                        logger.ErrorException(string.Format("Assembly.GetName() call failed for '{0}'!{1}", a.Location, Environment.NewLine), e);
                     }
                 }
             }

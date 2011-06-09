@@ -298,6 +298,7 @@ namespace SubCentral.GUI {
 
                 SubtitleDownloader.Core.ISubtitleDownloader subsDownloader = kvp.Value.downloader;
                 string providerName = kvp.Value.downloaderTitle;
+                subtitlesSearchType = _searchType; //reset search type
 
                 //testing SearchTimeout
                 subsDownloader.SearchTimeout = SettingsManager.Properties.GeneralSettings.SearchTimeout;
@@ -320,7 +321,7 @@ namespace SubCentral.GUI {
                                     List<SubtitleDownloader.Core.Subtitle> resultsFromDownloaderForMovieQuery = subsDownloader.SearchSubtitles(movieQuery);
                                     if (resultsFromDownloaderForMovieQuery.Count > 0) {
                                         // means that the site does not support imdb queries, should throw later
-                                        logger.Debug("Site {0} does not support IMDb ID search, got the results using regular movie search", providerName);
+                                        logger.Error("Site {0} does not support IMDb ID search, got the results using regular movie search", providerName);
                                         resultsFromDownloader.AddRange(resultsFromDownloaderForMovieQuery);
                                         shouldThrowNotSupportedException = true;
                                     }
@@ -329,7 +330,7 @@ namespace SubCentral.GUI {
                             catch (Exception e) {
                                 if (e is NotImplementedException || e is NotSupportedException) {
                                     if (movieQuery != null) {
-                                        logger.Debug("Site {0} does not support IMDb ID search, will try regular movie search", providerName);
+                                        logger.Error("Site {0} does not support IMDb ID search, will try regular movie search", providerName);
                                         try {
                                             resultsFromDownloader = subsDownloader.SearchSubtitles(movieQuery);
                                         }
@@ -363,10 +364,30 @@ namespace SubCentral.GUI {
                             }
                             break;
                         case SubtitlesSearchType.TVSHOW:
-                            resultsFromDownloader = subsDownloader.SearchSubtitles(episodeQuery);
+                            try {
+                                resultsFromDownloader = subsDownloader.SearchSubtitles(episodeQuery);
+                            }
+                            catch (Exception e) {
+                                if (e is NotImplementedException || e is NotSupportedException) {
+                                    throw new NotSupportedException(string.Format("Site {0} does not support TV Show search!", providerName));
+                                }
+                                else {
+                                    throw e;
+                                }
+                            }
                             break;
                         case SubtitlesSearchType.MOVIE:
-                            resultsFromDownloader = subsDownloader.SearchSubtitles(movieQuery);
+                            try {
+                                resultsFromDownloader = subsDownloader.SearchSubtitles(movieQuery);
+                            }
+                            catch (Exception e) {
+                                if (e is NotImplementedException || e is NotSupportedException) {
+                                    throw new NotSupportedException(string.Format("Site {0} does not support movie search!", providerName));
+                                }
+                                else {
+                                    throw e;
+                                }
+                            }
                             break;
                     }
                 }
@@ -374,7 +395,15 @@ namespace SubCentral.GUI {
                     throw e;
                 }
                 catch (Exception e) {
-                    logger.ErrorException(string.Format("Error while querying site {0}\n", providerName), e);
+                    if (e.InnerException != null && e.InnerException is ThreadAbortException) {
+                        throw e.InnerException;
+                    }
+                    if (e is NotSupportedException) {
+                        logger.Error(e.Message);
+                    }
+                    else {
+                        logger.ErrorException(string.Format("Error while querying site {0}{1}", providerName, Environment.NewLine), e);
+                    }
                     if (OnProviderSearchErrorEvent != null) {
                         if (GUIGraphicsContext.form.InvokeRequired) {
                             OnProviderSearchErrorDelegate d = OnProviderSearchErrorEvent;
@@ -587,7 +616,7 @@ namespace SubCentral.GUI {
                                     }
                                 }
                                 subtitleNr = -1;
-                                if (dlgMenuItems.Count > 0) { // if we "used" all the subtitles, mark other media files as cancelled. not really common
+                                if (dlgMenuItems.Count > 0) { // if we "used" all the subtitles, mark other media files as canceled. not really common
                                     subtitleNr = GUIUtils.ShowMenuDialog(string.Format(Localization.SelectSubtitleForFile, mediaFileInfo.Name), dlgMenuItems);
                                 }
                                 if (subtitleNr < 0)
@@ -703,7 +732,7 @@ namespace SubCentral.GUI {
                                         throw e;
                                     }
                                     catch (Exception e) {
-                                        logger.ErrorException("Error while downloading subtitles\n", e);
+                                        logger.ErrorException(string.Format("Error while downloading subtitles{0}", Environment.NewLine), e);
                                         newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
                                         newSubtitleDownloadStatus.Error = e.Message;
                                     }
@@ -721,7 +750,7 @@ namespace SubCentral.GUI {
                                     throw e;
                                 }
                                 catch (Exception e) {
-                                    logger.ErrorException("Error while downloading subtitles\n", e);
+                                    logger.ErrorException(string.Format("Error while downloading subtitles{0}", Environment.NewLine), e);
                                     newSubtitleDownloadStatus.Status = SubtitleDownloadStatusStatus.Error;
                                     newSubtitleDownloadStatus.Error = e.Message;
                                 }
@@ -741,7 +770,7 @@ namespace SubCentral.GUI {
                     // nothing for now, we have nothing
                 }
                 else {
-                    logger.Debug("Download thread was aborted, counting 'cancelled' downloads");
+                    logger.Debug("Download thread was aborted, counting 'canceled' downloads");
                     int counter = -1;
                     if (statusList != null && mediaDetail.Files != null && mediaDetail.Files.Count > 0) {
                         counter = mediaDetail.Files.Count;

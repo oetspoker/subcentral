@@ -554,7 +554,7 @@ namespace SubCentral.GUI {
             }
             catch (Exception e) {
                 //HideWaitCursor();
-                logger.ErrorException("Error while retrieving subtitles\n", e);
+                logger.ErrorException(string.Format("Error while retrieving subtitles{0}", Environment.NewLine), e);
                 GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             }
         }
@@ -592,7 +592,7 @@ namespace SubCentral.GUI {
         void retriever_OnSubtitlesSearchErrorEvent(Exception e) {
             retriever.OnProviderSearchErrorEvent -= retriever_OnProviderSearchErrorEvent;
             //HideWaitCursor();
-            logger.ErrorException("Error while retrieving subtitles\n", e);
+            logger.ErrorException(string.Format("Error while retrieving subtitles{0}", Environment.NewLine), e);
             GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileRetrievingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath, 10);
             //GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileRetrievingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             _notificationDone = false;
@@ -600,7 +600,7 @@ namespace SubCentral.GUI {
 
         void retriever_OnSubtitlesDownloadErrorEvent(Exception e) {
             //HideWaitCursor();
-            logger.ErrorException("Error while downloading subtitles\n", e);
+            logger.ErrorException(string.Format("Error while downloading subtitles{0}", Environment.NewLine), e);
             GUIUtils.ShowNotifyDialog(Localization.Error, string.Format(Localization.ErrorWhileDownloadingSubtitlesWithReason, e.Message), GUIUtils.NoSubtitlesLogoThumbPath, 10);
             //GUIUtils.ShowNotifyDialog(Localization.Error, Localization.ErrorWhileDownloadingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
             _notificationDone = false;
@@ -721,7 +721,7 @@ namespace SubCentral.GUI {
                                 Directory.CreateDirectory(folderName);
                             }
                             catch (Exception e) {
-                                logger.ErrorException(string.Format("Error creating directory {0}\n", folderName), e);
+                                logger.ErrorException(string.Format("Error creating directory {0}{1}", folderName, Environment.NewLine), e);
                                 create = false;
                                 GUIUtils.ShowOKDialog(Localization.Error, Localization.ErrorWhileCreatingDirectory);
                             }
@@ -769,7 +769,9 @@ namespace SubCentral.GUI {
             }
 
             if (statusList == null || statusList.Count < 1) {
-                GUIUtils.ShowNotifyDialog(heading, string.Format(Localization.NoSubtitlesDownloaded, Localization.NoSubtitlesInChosen), GUIUtils.NoSubtitlesLogoThumbPath);
+                if (statusList != null) {
+                    GUIUtils.ShowNotifyDialog(heading, string.Format(Localization.NoSubtitlesDownloaded, Localization.NoSubtitlesInChosen), GUIUtils.NoSubtitlesLogoThumbPath);
+                }
                 return;
             }
 
@@ -785,12 +787,16 @@ namespace SubCentral.GUI {
             }
             else if (errors == mediaCount) { // all errors
                 GUIUtils.ShowNotifyDialog(heading, Localization.ErrorWhileDownloadingSubtitles, GUIUtils.NoSubtitlesLogoThumbPath);
+                return;
             }
             else if (canceled == mediaCount) { // all canceled
+                /*
                 if (canceled == 1)
                     GUIUtils.ShowNotifyDialog(heading, Localization.CanceledDownload, GUIUtils.NoSubtitlesLogoThumbPath);
                 else
                     GUIUtils.ShowNotifyDialog(heading, string.Format(Localization.AllSubtitlesCanceledDownload, canceled), GUIUtils.NoSubtitlesLogoThumbPath);
+                */
+                return;
             }
             else { // some are ok, some not
                 List<string> notifyList = new List<string>();

@@ -197,7 +197,7 @@ namespace SubCentral.Utils {
                         driveInfoPool.Add(drive, new DriveInfo(drive));
                     }
                     catch (Exception e) {
-                        logger.ErrorException(string.Format("Error retrieving DriveInfo object for '{0}'\n", drive), e);
+                        logger.ErrorException(string.Format("Error retrieving DriveInfo object for '{0}'{1}", drive, Environment.NewLine), e);
                         return null;
                     }
                 }

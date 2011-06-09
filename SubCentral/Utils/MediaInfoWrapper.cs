@@ -54,7 +54,7 @@ namespace SubCentral.Utils {
                     int.TryParse(_mI.Get(StreamKind.General, 0, "TextCount"), out _numSubtitles);
                 }
                 catch (Exception e) {
-                    logger.ErrorException("MediaInfoWrapper: MediaInfo processing failed ('MediaInfo.dll' may be missing)\n", e);
+                    logger.ErrorException(string.Format("MediaInfoWrapper: MediaInfo processing failed ('MediaInfo.dll' may be missing){0}", Environment.NewLine), e);
                 }
                 finally {
                     if (_mI != null) {
@@ -124,12 +124,12 @@ namespace SubCentral.Utils {
                         // - Fills up log file quickly
                         // - Makes log file hard to read
                         // - Does not provide any useful information
-                        //logger.WarnException(string.Format("Error checking external subtitles for folder {0}\n", folder), e);
+                        //logger.WarnException(string.Format("Error checking external subtitles for folder {0}{1}", folder, Environment.NewLine), e);
                     }
                 }
             }
             catch (Exception e) {
-                logger.WarnException(string.Format("Error checking external subtitles for file {0}\n", strFile), e);
+                logger.WarnException(string.Format("Error checking external subtitles for file {0}{1}", strFile, Environment.NewLine), e);
             }
 
             return result;

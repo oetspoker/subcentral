@@ -168,7 +168,7 @@ namespace SubCentral.ConfigForm {
             }
             catch (Exception e) {
                 Cursor.Current = Cursors.Default;
-                logger.ErrorException(string.Format("Configuration failed to save settings to {0}\n", SubCentralUtils.SettingsFileName), e);
+                logger.ErrorException(string.Format("Configuration failed to save settings to {0}{1}", SubCentralUtils.SettingsFileName, Environment.NewLine), e);
                 MessageBox.Show("There was an error when saving the settings file to " +
                     Config.GetFile(Config.Dir.Config, SubCentralUtils.SettingsFileName) + ".\n\n" + e.Message,
                     "Error saving settings", MessageBoxButtons.OK, MessageBoxIcon.Error);
