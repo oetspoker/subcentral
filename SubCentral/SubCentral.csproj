@@ -105,6 +105,7 @@
     <Compile Include="Config\AdvancedConfigForm.designer.cs">
       <DependentUpon>AdvancedConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Extensions\GeneralExtensions.cs" />
     <Compile Include="GUI\Extensions\MPGUIExtensions.cs" />
     <Compile Include="GUI\SubtitleDeleteStatusStatus.cs" />
     <Compile Include="GUI\SubtitleDeleteStatus.cs" />
