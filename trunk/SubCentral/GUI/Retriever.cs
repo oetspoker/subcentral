@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
+using SubCentral.GUI.Extensions;
 using SubCentral.GUI.Items;
 using SubCentral.Localizations;
 using SubCentral.PluginHandlers;
@@ -417,14 +418,16 @@ namespace SubCentral.GUI {
 
                 if (resultsFromDownloader != null && resultsFromDownloader.Count > 0) {
                     foreach (SubtitleDownloader.Core.Subtitle subtitle in resultsFromDownloader) {
-                        SubtitleItem subItem = new SubtitleItem();
-                        subItem.Downloader = subsDownloader;
-                        subItem.Subtitle = subtitle;
-                        subItem.ProviderTitle = kvp.Key;
-                        subItem.LanguageName = subtitle.LanguageCode;
-                        if (!string.IsNullOrEmpty(SubCentralUtils.SubsLanguages[subtitle.LanguageCode]))
-                            subItem.LanguageName = SubCentralUtils.SubsLanguages[subtitle.LanguageCode];
-                        allResults.Add(subItem);
+                        if (!subtitle.FileName.IsNullOrWhiteSpace() && !string.IsNullOrEmpty(subtitle.LanguageCode)) {
+                          SubtitleItem subItem = new SubtitleItem();
+                          subItem.Downloader = subsDownloader;
+                          subItem.Subtitle = subtitle;
+                          subItem.ProviderTitle = kvp.Key;
+                          subItem.LanguageName = subtitle.LanguageCode;
+                          if (!string.IsNullOrEmpty(SubCentralUtils.SubsLanguages[subtitle.LanguageCode]))
+                              subItem.LanguageName = SubCentralUtils.SubsLanguages[subtitle.LanguageCode];
+                          allResults.Add(subItem);
+                        }
                     }
                 }
                 providerCount++;
