@@ -199,6 +199,7 @@ namespace SubCentral.Localizations {
         public static string DefaultDownloadFoderDoesNotExistCreate = "Default download folder:\n{0}\ndoes not exist.\nCreate it?";
         public static string Default = "Default";
         public static string DeleteSubtitles = "Delete subtitles";
+        public static string Done = "Done";
 
         // E
         public static string Error = "Error";
@@ -212,6 +213,7 @@ namespace SubCentral.Localizations {
         // F
         public static string FoundSubtitles = "Found subtitles";
         public static string From = "From: {0}";
+        public static string Finishing = "Finishing...";
 
         // G
         public static string GroupS = "Group(s)";

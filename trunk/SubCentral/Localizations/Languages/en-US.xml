@@ -47,6 +47,7 @@ If you find the plugin useful, you can support the development by donating via P
 	<string Field="DefaultDownloadFoderDoesNotExistCreate">Default download folder:\n{0}\ndoes not exist.\nCreate it?</string>
 	<string Field="Default">Default</string>
 	<string Field="DeleteSubtitles">Delete subtitles</string>
+	<string Field="Done">Done</string>
 
 	<!-- E -->
 	<string Field="Error">Error</string>
@@ -60,6 +61,7 @@ If you find the plugin useful, you can support the development by donating via P
 	<!-- F -->
 	<string Field="FoundSubtitles">Found subtitles</string>
 	<string Field="From">From: {0}</string>
+	<string Field="Finishing">Finishing...</string>
 
 	<!-- G -->
 	<string Field="GroupS">Group(s)</string>
