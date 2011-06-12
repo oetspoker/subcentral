@@ -236,6 +236,7 @@ namespace SubCentral.GUI {
             pDlgProgress.SetHeading(Localization.SearchingSubtitles);
             pDlgProgress.SetLine(1, Localization.Initializing);
             pDlgProgress.SetLine(2, string.Empty);
+            pDlgProgress.SetLine(3, string.Empty);
 
             pDlgProgress.SetPercentage(0);
 
@@ -307,6 +308,8 @@ namespace SubCentral.GUI {
                 List<SubtitleDownloader.Core.Subtitle> resultsFromDownloader = null;
                 int percent = (100 / downloaders.Count) * providerCount;
 
+                logger.Debug("Searching site {0}...", providerName);
+
                 OnProgress(Localization.QueryingProviders + " (" + Convert.ToString(providerCount) + "/" + Convert.ToString(downloaders.Count) + "):",
                            providerName,
                            Localization.FoundSubtitles + ": " + Convert.ToString(allResults.Count),
@@ -350,7 +353,7 @@ namespace SubCentral.GUI {
                                         }
                                     }
                                     else {
-                                        //logger.Debug("Site {0} does not support IMDb ID search", providerName);
+                                        //logger.Error("Site {0} does not support IMDb ID search", providerName);
                                         throw new NotSupportedException(string.Format("Site {0} does not support IMDb ID search!", providerName));
                                     }
                                 }
@@ -459,6 +462,8 @@ namespace SubCentral.GUI {
 
         private void OnBeforeCompleted(List<SubtitleItem> allResults) {
             _status = ThreadStatus.StatusStartedWithoutWaitCursor;
+
+            OnProgress(Localization.Done, Localization.Finishing, string.Empty, 100);
 
             if (OnSubtitleSearchCompletedEvent != null) {
                 if (GUIGraphicsContext.form.InvokeRequired) {
