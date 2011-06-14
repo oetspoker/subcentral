@@ -480,7 +480,7 @@ namespace SubCentral.Utils {
                 result = 300.0;
 
             #if DEBUG
-            logger.Debug(string.Format("Calculating media tag rank for subtitle file {0} ...", subtitleFile));
+            logger.Debug(string.Format("Calculating media tag rank for subtitle file '{0}'...", subtitleFile));
             #endif
 
             SubCentralUtils.EnsureProperSubtitleFile(ref subtitleFile); // default extension to maintain compatibility with MediaTags class
@@ -498,13 +498,13 @@ namespace SubCentral.Utils {
                 else
                     tags += tag;
             }
-            logger.Debug(string.Format("... has tags: '{0}' ", tags));
+            logger.Debug(string.Format("...has tags: '{0}' ", tags));
             #endif
 
             result += GetRank(mediaTagsFile, mediaTagsSubtitleFile);
 
             #if DEBUG
-            logger.Debug(string.Format("... has media tag rank of {0}", result));
+            logger.Debug(string.Format("...has media tag rank of {0}", result));
             #endif
 
 

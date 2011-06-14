@@ -266,23 +266,29 @@ namespace SubCentral.GUI {
             SubtitleDownloader.Core.SearchQuery movieQuery = null;
             SubtitleDownloader.Core.ImdbSearchQuery queryIMDB = null;
 
+            logger.Info("Searching for subtitles...");
+
             SubtitlesSearchType subtitlesSearchType = _searchType; //SubCentralUtils.getSubtitlesSearchTypeFromMediaDetail(mediaDetail);
 
             switch (subtitlesSearchType) {
                 case SubtitlesSearchType.IMDb:
+                    logger.Debug("...using IMDb query: '{0}'", mediaDetail.ImdbID);
                     queryIMDB = new SubtitleDownloader.Core.ImdbSearchQuery(mediaDetail.ImdbID);
                     queryIMDB.LanguageCodes = _languageCodes.ToArray();
                     if (SubCentralUtils.canSearchMediaDetailWithType(mediaDetail, SubtitlesSearchType.MOVIE)) {
+                        logger.Debug(" ...additional movie query: '{0} ({1})'", mediaDetail.Title, mediaDetail.Year);
                         movieQuery = new SubtitleDownloader.Core.SearchQuery(mediaDetail.Title);
                         movieQuery.Year = mediaDetail.Year;
                         movieQuery.LanguageCodes = _languageCodes.ToArray();
                     }
                     break;
                 case SubtitlesSearchType.TVSHOW:
+                    logger.Debug("...using TV show query: '{0} {1}x{2:00}'", mediaDetail.Title, mediaDetail.SeasonProper, mediaDetail.EpisodeProper);
                     episodeQuery = new SubtitleDownloader.Core.EpisodeSearchQuery(mediaDetail.Title, mediaDetail.SeasonProper, mediaDetail.EpisodeProper);
                     episodeQuery.LanguageCodes = _languageCodes.ToArray();
                     break;
                 case SubtitlesSearchType.MOVIE:
+                    logger.Debug("...using movie query: '{0} ({1})'", mediaDetail.Title, mediaDetail.Year);
                     movieQuery = new SubtitleDownloader.Core.SearchQuery(mediaDetail.Title);
                     movieQuery.Year = mediaDetail.Year;
                     movieQuery.LanguageCodes = _languageCodes.ToArray();
@@ -530,6 +536,7 @@ namespace SubCentral.GUI {
             List<SubtitleDownloadStatus> statusList = downloadData.StatusList;
 
             logger.Info("Downloading subtitles...");
+            logger.Debug("...from provider {0}, subtitle name is '{1}'", subtitleItem.ProviderTitle, subtitleItem.Subtitle.FileName);
 
             _status = ThreadStatus.StatusStartedWithWaitCursor;
 
