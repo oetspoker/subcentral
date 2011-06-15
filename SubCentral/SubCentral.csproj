@@ -288,7 +288,7 @@
   <PropertyGroup>
     <PostBuildEvent>cd $(TargetDir)
 copy "$(ProjectDir)..\External\7z.dll" "$(TargetDir)" /Y
-copy "$(ProjectDir)..\External\ICSharpCode.SharpZipLib.dll" "$(TargetDir)" /Y
+REM copy "$(ProjectDir)..\External\ICSharpCode.SharpZipLib.dll" "$(TargetDir)" /Y
 copy "$(ProjectDir)..\External\MediaInfo.dll" "$(TargetDir)" /Y
 
 REM copy "$(ProjectDir)..\External\merge.bat" "$(TargetDir)" /Y
