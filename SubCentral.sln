@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubCentral", "SubCentral\SubCentral.csproj", "{7532711D-827C-4CFE-A499-EE68DBB31F41}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubCentralConfigTester", "SubCentralConfigTester\SubCentralConfigTester.csproj", "{7A590A66-ACB8-4D0B-8155-908E09B40ACF}"
