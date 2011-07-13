@@ -179,7 +179,7 @@ namespace SubCentral.ConfigForm {
         #region ISetupForm Members
         // Returns the name of the plugin which is shown in the plugin menu 
         public string PluginName() {
-            return SubCentralUtils.PluginName();
+            return "SubCentral";
         }
 
         // Returns the description of the plugin is shown in the plugin menu     
