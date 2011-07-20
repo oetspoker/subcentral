@@ -320,11 +320,14 @@ namespace SubCentral.GUI {
                     SubtitlesSearchType searchType = SubCentralUtils.getSubtitlesSearchTypeFromMediaDetail(CurrentHandler.MediaDetail);
                     View = ViewMode.SEARCH;
 
-                    if (searchType != SubtitlesSearchType.NONE) {
-                        EnableDisableProviderGroupsAndProviders(true);
+                    //if (searchType != SubtitlesSearchType.NONE)
+                    {
+                        EnableDisableProviderGroupsAndProviders(searchType != SubtitlesSearchType.NONE);
 
-                        _shouldDeleteButtonVisible = true;
-                        GUIControl.EnableControl(GetID, deleteButton.GetID);
+                        if (CurrentHandler.MediaDetail.Files != null && CurrentHandler.MediaDetail.Files.Count > 0) {
+                          _shouldDeleteButtonVisible = true;
+                          GUIControl.EnableControl(GetID, deleteButton.GetID);
+                        }
 
                         if (Settings.SettingsManager.Properties.GUISettings.CheckMediaForSubtitlesOnOpen) {
                             CheckMediaForSubtitlesOnOpen(CurrentHandler);
@@ -931,7 +934,9 @@ namespace SubCentral.GUI {
         }
 
         public static void ShowWaitCursor() {
-            waitCursor = new WaitCursor();
+            if (waitCursor == null) {
+                waitCursor = new WaitCursor();
+            }
         }
 
         public static void HideWaitCursor() {

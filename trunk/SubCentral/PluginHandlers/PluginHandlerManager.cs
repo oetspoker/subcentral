@@ -56,7 +56,8 @@ namespace SubCentral.PluginHandlers {
 
             // load all supported plugin handlers into our dictionary
             foreach (Type t in this.GetType().Assembly.GetTypes())
-                if (t.BaseType == typeof(PluginHandler)) {
+                //if (t.BaseType == typeof(PluginHandler)) {
+                if (t.IsSubclassOf(typeof(PluginHandler))) {
                     PluginHandler newHandler = (PluginHandler)t.GetConstructor(new Type[] { }).Invoke(null);
                     if (newHandler.Available) {
                         AddToActiveHandlers(newHandler);
