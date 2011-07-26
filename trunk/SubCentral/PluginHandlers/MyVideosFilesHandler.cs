@@ -24,7 +24,7 @@ namespace SubCentral.PluginHandlers {
 
         protected override bool GrabFileDetails() {
             try {
-                //bool result = base.GrabFileDetails(); // TODO
+                bool result = base.GrabFileDetails(); // TODO
                 if (!result) {
                     GUIVideoFiles videoFilesWindow = GUIWindowManager.GetWindow(ID) as GUIVideoFiles;
 
