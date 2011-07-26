@@ -9,7 +9,7 @@ using NLog;
 using SubCentral.GUI.Extensions;
 
 namespace SubCentral.PluginHandlers {
-    internal class MyVideosHandler : PluginHandler {
+    internal class MyVideosTitleHandler : PluginHandler {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public override int ID {
@@ -18,7 +18,7 @@ namespace SubCentral.PluginHandlers {
         }
 
         public override string PluginName {
-            get { return "My Videos"; }
+            get { return "My Videos (Title)"; }
             set { }
         }
 
@@ -26,7 +26,7 @@ namespace SubCentral.PluginHandlers {
             get { return _mediaDetail; }
             set { }
         }
-        private BasicMediaDetail _mediaDetail;
+        protected BasicMediaDetail _mediaDetail;
 
         public override bool Modified {
             get { return false; }
@@ -80,7 +80,7 @@ namespace SubCentral.PluginHandlers {
                 return false;
             }
             catch (Exception e) {
-                logger.ErrorException(string.Format("Unexpected error when pulling data from MyVideos{0}", Environment.NewLine), e);
+                logger.ErrorException(string.Format("Unexpected error when pulling data from My Videos (Title){0}", Environment.NewLine), e);
                 return false;
             }
         }
