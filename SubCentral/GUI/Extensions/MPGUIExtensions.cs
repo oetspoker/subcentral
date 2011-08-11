@@ -45,6 +45,7 @@ namespace SubCentral.GUI.Extensions {
             }
 
             if (handler != null && currentSelectedItem != null && currentSelectedItem >= 0 && currentSortMethod != null && currentSortAsc != null) {
+                MethodInfo method;
                 ArrayList itemList = new ArrayList();
                 List<GUIListItem> GUIItemList = new List<GUIListItem>();
                 ArrayList movies = ((VideoViewHandler)handler).Execute();
@@ -57,13 +58,11 @@ namespace SubCentral.GUI.Extensions {
                 foreach (IMDBMovie movie in movies) {
                     GUIListItem item = new GUIListItem();
                     item.Label = movie.Title;
-                    if (handler.CurrentLevel + 1 < handler.MaxLevels)
-                    {
-                      item.IsFolder = true;
+                    if (handler.CurrentLevel + 1 < handler.MaxLevels) {
+                        item.IsFolder = true;
                     }
-                    else
-                    {
-                      item.IsFolder = false;
+                    else {
+                        item.IsFolder = false;
                     }
                     item.Path = movie.File;
                     item.Duration = movie.RunTime * 60;
@@ -72,9 +71,18 @@ namespace SubCentral.GUI.Extensions {
                     item.DVDLabel = movie.DVDLabel;
                     item.Rating = movie.Rating;
                     item.IsPlayed = movie.Watched > 0 ? true : false;
-                    itemList.Add(item);
+
+                    method = GetMethodInfo<GUIVideoTitle>("CheckItem", null, BindingFlags.NonPublic | BindingFlags.Instance);
+                    bool accept = true;
+                    if (method != null && !string.IsNullOrEmpty(item.Path)) {
+                        accept = (bool)method.Invoke(self, new object[] { item });
+                    }
+
+                    if (accept) {
+                        itemList.Add(item);
+                    }
                 }
-                MethodInfo method = GetMethodInfo<GUIVideoTitle>("SetIMDBThumbs", null, BindingFlags.NonPublic | BindingFlags.Instance);
+                method = GetMethodInfo<GUIVideoTitle>("SetIMDBThumbs", null, BindingFlags.NonPublic | BindingFlags.Instance);
                 if (method != null) {
                     method.Invoke(self, new object[] { itemList });
                 }
