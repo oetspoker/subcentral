@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>2.0</Version>
+  <Groups>
+    <Items>
+      <GroupItem Name="Plugin">
+        <ParentGroup />
+        <DisplayName>Plugin</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Plugin files</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\bin\Release\MP12-SubCentral.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b3b3fa19-a53a-4997-8b8a-1fd4438d9ac7}-SubCentral.dll</ZipFileName>
+              <DestinationFilename>%Plugins%\Windows\SubCentral.dll</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="Utilities">
+        <ParentGroup />
+        <DisplayName>Utilities</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Utilities</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\External\7z.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{89cf0d9a-326f-4c47-bcdf-c97d57892ed1}-7z.dll</ZipFileName>
+              <DestinationFilename>%Base%\7z.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\External\NLog.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c0c1a13f-2a46-47fa-bdd0-af68d3be0b38}-NLog.dll</ZipFileName>
+              <DestinationFilename>%Base%\NLog.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>OverwriteIfOlder</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloader.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{08803f83-a5c7-4d25-bb0f-af84d8d01f3a}-SubtitleDownloader.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloader.dll</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="Additional subtitle providers">
+        <ParentGroup />
+        <DisplayName>Additional subtitle providers</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>User created additional "unofficial" subtitle providers:
+
+ItalianSubs.net: samo_yea
+SeriesSub.com: samo_yea
+Sous-titres.eu: MrJul
+SubsCenter.org: yoavain
+Subsfactory.it: samo_yea
+Titlovi.com: SilentException
+Titulky.com: katulus</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\ItalianSubs.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b0ff588c-dec2-43eb-b056-bc4ac162ef19}-ItalianSubs.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\ItalianSubs.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>NeverOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\ItalianSubs.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{53c3885f-030e-4c7f-bed3-a94f375da66b}-ItalianSubs.xml</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\ItalianSubs.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\SeriesSub.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{45847527-9376-43b0-b0df-cd1a4eb2cf74}-SeriesSub.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\SeriesSub.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\SousTitresEu.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{20701a10-72a2-4249-903a-2183a2193de0}-SousTitresEu.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\SousTitresEu.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\SubsCenterOrg.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6b76e9e1-cdc6-4db6-8a76-7c73b3f63319}-SubsCenterOrg.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\SubsCenterOrg.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\SubsCenterOrg.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{64d91bfb-6d48-4aaf-8fc8-6b9db8257e3c}-SubsCenterOrg.xml</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\SubsCenterOrg.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\Subsfactory.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{f8725616-45a8-45ba-9904-2d2cee601d95}-Subsfactory.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\Subsfactory.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\Titlovi.com.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a2fed73e-15fe-4541-a52b-f4675c6a0f06}-Titlovi.com.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\Titlovi.com.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\TitulkyCom.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{680a3f25-e98d-4efc-a753-bc4df3397fc7}-TitulkyCom.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\TitulkyCom.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>NeverOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\TitulkyComConfig.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{df83f67b-c529-4cbd-8ef2-50c74a511b72}-TitulkyComConfig.xml</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\TitulkyComConfig.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="Languages">
+        <ParentGroup />
+        <DisplayName>Languages</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Languages</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\cs.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b91dc6c4-9bd0-4da0-900f-6f4305992d00}-cs.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\cs.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\da.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b7882ef9-2601-4142-b56d-3ab18fed53e9}-da.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\da.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\de.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e11754cb-57db-4dd9-833b-9ef933a3305c}-de.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\de.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\en-US.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\fi.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{968c8847-dfe2-4ac2-a45c-ae3f1dd3f196}-fi.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\fi.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\fr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{dd780cbd-5fcf-48b4-8eaf-2350e8092279}-fr.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\fr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\gr.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{810ad207-316a-4dbb-aea6-28249ad5c72e}-gr.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\gr.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\nl.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cd0230f7-640f-43b6-a568-aeb54686a3f6}-nl.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\nl.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="Thumbs">
+        <ParentGroup />
+        <DisplayName>Thumbs</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Plugin Icons</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Resources\SubCentralGUIIcon.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d2272e22-90fc-495a-b895-f77d44dc909f}-SubCentralGUIIcon.png</ZipFileName>
+              <DestinationFilename>%Thumbs%\SubCentral\SubCentralGUIIcon.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Resources\SubCentralGUIIconBig.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{329beed6-4ae9-431e-a663-ba4fae0751ee}-SubCentralGUIIconBig.png</ZipFileName>
+              <DestinationFilename>%Thumbs%\SubCentral\SubCentralGUIIconBig.png</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="Default skin files">
+        <ParentGroup />
+        <DisplayName>Default skin files</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>Default skin files</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\Logos\nosubtitles.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{41cdbef5-e3a5-4d04-a639-b3392d4d632b}-nosubtitles.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\Logos\nosubtitles.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\defaultSubtitles.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cfe712bf-5de7-4c3b-a6cc-d86f14af5796}-defaultSubtitles.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\defaultSubtitles.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\defaultSubtitlesFolder.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{cf3af5c9-0eee-4da1-974b-ff4c0bf66d1e}-defaultSubtitlesFolder.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\defaultSubtitlesFolder.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\defaultSubtitlesFolderBack.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0eacc060-ae83-42d3-b291-65affe0f1227}-defaultSubtitlesFolderBack.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\defaultSubtitlesFolderBack.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\hover_subcentral.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{2059de99-34a5-4ebf-9c89-d874f6919a71}-hover_subcentral.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\hover_subcentral.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Background.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0bb9f4ca-d009-4ca5-97d9-2bbe830c75d3}-SubCentral_Background.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\SubCentral_Background.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Button_Long_Bg.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{be0a8d16-0539-436b-93a7-781373917918}-SubCentral_Button_Long_Bg.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\SubCentral_Button_Long_Bg.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Button_Long_Focused.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{efdce712-3f7b-458d-b5d8-e9c176e6f75e}-SubCentral_Button_Long_Focused.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\SubCentral_Button_Long_Focused.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Button_Short_Bg.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{fbc0fc83-4cca-4152-befc-c10228f2f9e1}-SubCentral_Button_Short_Bg.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\SubCentral_Button_Short_Bg.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Button_Short_Focused.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{084fcf91-4919-4224-ad18-19116d244b74}-SubCentral_Button_Short_Focused.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\SubCentral_Button_Short_Focused.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_MainOverlay.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
+              <DestinationFilename>%Skin%\Default\Media\SubCentral_MainOverlay.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\DialogMultiSelect.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a47e33fc-f402-42ae-9302-568e3d52bda6}-DialogMultiSelect.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Default\DialogMultiSelect.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\SubCentral.Main.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6be096ca-a01a-4a79-9d37-d5285d368d33}-SubCentral.Main.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Default\SubCentral.Main.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\SubCentral.ModifySearch.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e59792f2-e3a4-4e32-befe-e9d0460fffeb}-SubCentral.ModifySearch.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Default\SubCentral.ModifySearch.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\SubCentral.Search.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{17494041-26c3-40ac-8878-dd4969600ff4}-SubCentral.Search.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Default\SubCentral.Search.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\Default\SubCentral.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4dc47b90-94ef-4ffe-b12c-8edd65e1155a}-SubCentral.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Default\SubCentral.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="DefaultWide skin files">
+        <ParentGroup />
+        <DisplayName>DefaultWide skin files</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>DefaultWide skin files</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\Logos\nosubtitles.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{56f503d7-ca93-4d58-b509-91c90e8b1a09}-nosubtitles.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\Logos\nosubtitles.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\defaultSubtitles.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{59b99f1f-8246-419b-b2ad-06949e86619c}-defaultSubtitles.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\defaultSubtitles.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\defaultSubtitlesFolder.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{88436202-d29a-46a3-80f8-e94ff021f790}-defaultSubtitlesFolder.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\defaultSubtitlesFolder.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\defaultSubtitlesFolderBack.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{d8cad511-f129-452c-a96d-630e28af944e}-defaultSubtitlesFolderBack.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\defaultSubtitlesFolderBack.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\hover_subcentral.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{50dae385-9277-4889-a951-fb51a7e77b7f}-hover_subcentral.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\hover_subcentral.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Background.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0c730ade-6bb7-4d42-adf3-38a8f736ea00}-SubCentral_Background.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Background.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Button_Long_Bg.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c210cd33-56a6-4804-a363-bd5ec4db794c}-SubCentral_Button_Long_Bg.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Button_Long_Bg.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Button_Long_Focused.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{0b325aaa-62e5-4862-b04f-a0664840361b}-SubCentral_Button_Long_Focused.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Button_Long_Focused.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Button_Short_Bg.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a843f611-6614-4db2-85cb-f6bd83df5802}-SubCentral_Button_Short_Bg.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Button_Short_Bg.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Button_Short_Focused.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{73b49b25-cff8-4d99-8523-5eae03740854}-SubCentral_Button_Short_Focused.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Button_Short_Focused.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_MainOverlay.png</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{4ea40440-397b-49fc-85e7-183719cc8973}-SubCentral_MainOverlay.png</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_MainOverlay.png</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\DialogMultiSelect.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{955ecf81-489f-463e-868a-e54598f20fd8}-DialogMultiSelect.xml</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\DialogMultiSelect.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\SubCentral.Main.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{6f86fe12-eca0-479d-ae54-a0c28e343cbb}-SubCentral.Main.xml</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\SubCentral.Main.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\SubCentral.ModifySearch.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{e8b1779a-2182-4d80-bbe0-0cccd6fe241c}-SubCentral.ModifySearch.xml</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\SubCentral.ModifySearch.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\SubCentral.Search.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c947882e-883d-4c03-9833-1118bf3e4bb6}-SubCentral.Search.xml</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\SubCentral.Search.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\SubCentral.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{b7ed1ed1-5bf7-4b2c-b12a-dc3360113e0c}-SubCentral.xml</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\SubCentral.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="Default skin mods">
+        <ParentGroup />
+        <DisplayName>Default skin mods</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>MyVideos mod with subtitles button</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\_Mods_\Default\MyVideos\myvideoTitle.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{c2e4b8f2-1dc8-4e01-8e88-1cb967f8af9d}-myvideoTitle.xml</ZipFileName>
+              <DestinationFilename>%Skin%\Default\myvideoTitle.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+      <GroupItem Name="DefaultWide skin mods">
+        <ParentGroup />
+        <DisplayName>DefaultWide skin mods</DisplayName>
+        <DefaulChecked>true</DefaulChecked>
+        <Description>MyVideos mod with subtitles button</Description>
+        <Files>
+          <Items>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\GUI\Skins\_Mods_\DefaultWide\MyVideos\myvideoTitle.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{53899a44-2e1a-4c2c-a2f9-6e0a86bc4a3c}-myvideoTitle.xml</ZipFileName>
+              <DestinationFilename>%Skin%\DefaultWide\myvideoTitle.xml</DestinationFilename>
+            </FileItem>
+          </Items>
+        </Files>
+      </GroupItem>
+    </Items>
+  </Groups>
+  <Sections>
+    <Items>
+      <SectionItem Guid="28fa1cf4-ef54-43d0-8dcb-fd36d4da0efb" Name="Welcome Screen" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>Welcome to the Extension Installer for [Name]</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Description">
+              <Value>This will install [Name] version [Version] on your computer.
+
+It is recommended that you close all other applications before continuing.
+
+Click Next to continue or Cancel to exit Setup.</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Welcome Screen</PanelName>
+        <WizardButtonsEnum>NextCancel</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="7953e20b-8bff-4fe1-bbd7-de7dc2437290" Name="Tree View Selector" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header Title">
+              <Value>Choose the components to install.</Value>
+              <ValueType>String</ValueType>
+              <Description>Header title</Description>
+            </SectionParam>
+            <SectionParam Name="Header description">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Description of section, shown in under section title</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+            <SectionParam Name="Description ">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Description of this operation</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups>
+          <string>Additional subtitle providers</string>
+          <string>Languages</string>
+          <string>Default skin files</string>
+          <string>DefaultWide skin files</string>
+          <string>Default skin mods</string>
+          <string>DefaultWide skin mods</string>
+        </IncludedGroups>
+        <PanelName>Tree View Selector</PanelName>
+        <WizardButtonsEnum>BackNextCancel</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="988ce398-eb44-4010-9998-bbe304411013" Name="Install Section" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header Title">
+              <Value>Please wait while installing SubCentral...</Value>
+              <ValueType>String</ValueType>
+              <Description>Header title</Description>
+            </SectionParam>
+            <SectionParam Name="Header description">
+              <Value />
+              <ValueType>String</ValueType>
+              <Description>Description of section, shown in under section title</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items>
+            <ActionItem Name="InstallFiles" ActionType="InstallFiles" ConditionGroup="">
+              <Params>
+                <Items />
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
+          </Items>
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Install Section</PanelName>
+        <WizardButtonsEnum>Next</WizardButtonsEnum>
+      </SectionItem>
+      <SectionItem Guid="65010c94-6954-47b4-b3a0-4779b3ad0760" Name="Setup Complete" ConditionGroup="">
+        <Params>
+          <Items>
+            <SectionParam Name="Header text">
+              <Value>The Extension Installer Wizard has successfully installed [Name].</Value>
+              <ValueType>String</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Left part image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description />
+            </SectionParam>
+            <SectionParam Name="Show radio buttons">
+              <Value>NO</Value>
+              <ValueType>Bool</ValueType>
+              <Description>Use radiobutton in place of combobox</Description>
+            </SectionParam>
+            <SectionParam Name="Header image">
+              <Value />
+              <ValueType>File</ValueType>
+              <Description>Image in upper right part</Description>
+            </SectionParam>
+          </Items>
+        </Params>
+        <Actions>
+          <Items />
+        </Actions>
+        <IncludedGroups />
+        <PanelName>Setup Complete</PanelName>
+        <WizardButtonsEnum>Finish</WizardButtonsEnum>
+      </SectionItem>
+    </Items>
+  </Sections>
+  <Dependencies>
+    <Items>
+      <DependencyItem>
+        <Type>MediaPortal</Type>
+        <Id />
+        <MinVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MinVersion>
+        <MaxVersion>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
+        </MaxVersion>
+        <WarnOnly>false</WarnOnly>
+        <Message>This version of SubCentral requires MediaPortal 1.2 Beta or newer!</Message>
+        <Name>MediaPortal</Name>
+      </DependencyItem>
+    </Items>
+  </Dependencies>
+  <PluginDependencies>
+    <Items>
+      <PluginDependencyItem AssemblyName="MP12-SubCentral.dll">
+        <CompatibleVersion>
+          <Items>
+            <CompatibleVersionItem>
+              <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
+              <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+            </CompatibleVersionItem>
+          </Items>
+        </CompatibleVersion>
+        <SubSystemsUsed>
+          <Items>
+            <SubSystemItem Name="MP.Config" />
+            <SubSystemItem Name="MP.SkinEngine" />
+            <SubSystemItem Name="MP.Externals.MediaInfo" />
+          </Items>
+        </SubSystemsUsed>
+      </PluginDependencyItem>
+    </Items>
+  </PluginDependencies>
+  <GeneralInfo>
+    <Name>SubCentral</Name>
+    <Id>f8f30e5e-cc8a-44a0-91a9-1175fe55732f</Id>
+    <Author>SilentException, seco</Author>
+    <HomePage>http://code.google.com/p/subcentral/</HomePage>
+    <ForumPage>http://forum.team-mediaportal.com/subcentral-544/subcentral-v0-9-1-download-manage-subtitles-moving-pictures-mediaportal-tvseries-others-85545/</ForumPage>
+    <UpdateUrl>http://subcentral.googlecode.com/svn/trunk/Release/update.xml</UpdateUrl>
+    <Version>
+      <Major>1</Major>
+      <Minor>1</Minor>
+      <Build>1</Build>
+      <Revision>0</Revision>
+    </Version>
+    <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
+    <VersionDescription>Stable release for MediaPortal 1.2 Beta or newer
+
+* Allow incomplete search data from plugin handlers
+* Fixed wait cursor problem in MediaPortal 1.2 RC
+* Fixed plugin name bug when custom name is set in configuration
+* Updated My Videos (Title) plugin handler for MediaPortal 1.2 RC
+* SubtitleDownloader updated to v3.0.1 (seco)
+* Updated Titulky.com provider (katulus)
+* Updated project to Visual Studio 2010
+</VersionDescription>
+    <DevelopmentStatus>Stable</DevelopmentStatus>
+    <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
+    <ReleaseDate>2011-09-05T00:00:00</ReleaseDate>
+    <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
+    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.1.1_MP12.mpe1</Location>
+    <Params>
+      <Items>
+        <SectionParam Name="Icon">
+          <Value>Icon.png</Value>
+          <ValueType>File</ValueType>
+          <Description>The icon file of the package (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Online Icon">
+          <Value>http://subcentral.googlecode.com/svn/trunk/Release/Icon.png</Value>
+          <ValueType>String</ValueType>
+          <Description>The icon file of the package stored online (jpg,png,bmp)</Description>
+        </SectionParam>
+        <SectionParam Name="Configuration file">
+          <Value />
+          <ValueType>Template</ValueType>
+          <Description>The file used to configure the extension.
+ If have .exe extension the will be executed
+ If have .dll extension used like MP plugin configuration</Description>
+        </SectionParam>
+        <SectionParam Name="Online Screenshots">
+          <Value>http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/About%20(1).jpg;http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/Manual%20search%20-%20Movie%20(1).jpg;http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/Moving%20Pictures%20(2).jpg;http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/Moving%20Pictures%20(3).jpg;http://subcentral.googlecode.com/svn/trunk/Screenshots/Thumbs/Moving%20Pictures%20(7).jpg</Value>
+          <ValueType>String</ValueType>
+          <Description>Online stored screenshot urls separated by ; </Description>
+        </SectionParam>
+        <SectionParam Name="Force to uninstall on update">
+          <Value>YES</Value>
+          <ValueType>Bool</ValueType>
+          <Description>Show dialog and force to uninstall previous version when updating an extension. Should only be disabled if you are using an NSIS/MSI installer.</Description>
+        </SectionParam>
+      </Items>
+    </Params>
+  </GeneralInfo>
+  <UniqueFileList>
+    <Items>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\bin\Release\MP12-SubCentral.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b3b3fa19-a53a-4997-8b8a-1fd4438d9ac7}-SubCentral.dll</ZipFileName>
+        <DestinationFilename>%Plugins%\Windows\SubCentral.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\External\7z.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{89cf0d9a-326f-4c47-bcdf-c97d57892ed1}-7z.dll</ZipFileName>
+        <DestinationFilename>%Base%\7z.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\External\NLog.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c0c1a13f-2a46-47fa-bdd0-af68d3be0b38}-NLog.dll</ZipFileName>
+        <DestinationFilename>%Base%\NLog.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloader.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{08803f83-a5c7-4d25-bb0f-af84d8d01f3a}-SubtitleDownloader.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloader.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\ItalianSubs.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b0ff588c-dec2-43eb-b056-bc4ac162ef19}-ItalianSubs.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\ItalianSubs.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>NeverOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\ItalianSubs.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{53c3885f-030e-4c7f-bed3-a94f375da66b}-ItalianSubs.xml</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\ItalianSubs.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\SeriesSub.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{45847527-9376-43b0-b0df-cd1a4eb2cf74}-SeriesSub.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\SeriesSub.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\SousTitresEu.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{20701a10-72a2-4249-903a-2183a2193de0}-SousTitresEu.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\SousTitresEu.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\SubsCenterOrg.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{6b76e9e1-cdc6-4db6-8a76-7c73b3f63319}-SubsCenterOrg.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\SubsCenterOrg.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\SubsCenterOrg.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{64d91bfb-6d48-4aaf-8fc8-6b9db8257e3c}-SubsCenterOrg.xml</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\SubsCenterOrg.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\Subsfactory.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{f8725616-45a8-45ba-9904-2d2cee601d95}-Subsfactory.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\Subsfactory.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\Titlovi.com.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a2fed73e-15fe-4541-a52b-f4675c6a0f06}-Titlovi.com.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\Titlovi.com.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\TitulkyCom.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{680a3f25-e98d-4efc-a753-bc4df3397fc7}-TitulkyCom.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\TitulkyCom.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>NeverOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\TitulkyComConfig.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{df83f67b-c529-4cbd-8ef2-50c74a511b72}-TitulkyComConfig.xml</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\TitulkyComConfig.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\cs.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b91dc6c4-9bd0-4da0-900f-6f4305992d00}-cs.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\cs.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\da.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b7882ef9-2601-4142-b56d-3ab18fed53e9}-da.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\da.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\de.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e11754cb-57db-4dd9-833b-9ef933a3305c}-de.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\de.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\en-US.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e05b122d-fbf2-4c93-890b-9ae91d5c72e1}-en-US.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\en-US.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\fi.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{968c8847-dfe2-4ac2-a45c-ae3f1dd3f196}-fi.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\fi.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\fr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{dd780cbd-5fcf-48b4-8eaf-2350e8092279}-fr.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\fr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\gr.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{810ad207-316a-4dbb-aea6-28249ad5c72e}-gr.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\gr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\nl.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{cd0230f7-640f-43b6-a568-aeb54686a3f6}-nl.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\nl.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Resources\SubCentralGUIIcon.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d2272e22-90fc-495a-b895-f77d44dc909f}-SubCentralGUIIcon.png</ZipFileName>
+        <DestinationFilename>%Thumbs%\SubCentral\SubCentralGUIIcon.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Resources\SubCentralGUIIconBig.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{329beed6-4ae9-431e-a663-ba4fae0751ee}-SubCentralGUIIconBig.png</ZipFileName>
+        <DestinationFilename>%Thumbs%\SubCentral\SubCentralGUIIconBig.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\Logos\nosubtitles.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{41cdbef5-e3a5-4d04-a639-b3392d4d632b}-nosubtitles.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\Logos\nosubtitles.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\defaultSubtitles.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{cfe712bf-5de7-4c3b-a6cc-d86f14af5796}-defaultSubtitles.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\defaultSubtitles.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\defaultSubtitlesFolder.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{cf3af5c9-0eee-4da1-974b-ff4c0bf66d1e}-defaultSubtitlesFolder.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\defaultSubtitlesFolder.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\defaultSubtitlesFolderBack.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0eacc060-ae83-42d3-b291-65affe0f1227}-defaultSubtitlesFolderBack.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\defaultSubtitlesFolderBack.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\hover_subcentral.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{2059de99-34a5-4ebf-9c89-d874f6919a71}-hover_subcentral.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\hover_subcentral.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Background.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0bb9f4ca-d009-4ca5-97d9-2bbe830c75d3}-SubCentral_Background.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\SubCentral_Background.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Button_Long_Bg.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{be0a8d16-0539-436b-93a7-781373917918}-SubCentral_Button_Long_Bg.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\SubCentral_Button_Long_Bg.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Button_Long_Focused.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{efdce712-3f7b-458d-b5d8-e9c176e6f75e}-SubCentral_Button_Long_Focused.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\SubCentral_Button_Long_Focused.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Button_Short_Bg.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{fbc0fc83-4cca-4152-befc-c10228f2f9e1}-SubCentral_Button_Short_Bg.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\SubCentral_Button_Short_Bg.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_Button_Short_Focused.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{084fcf91-4919-4224-ad18-19116d244b74}-SubCentral_Button_Short_Focused.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\SubCentral_Button_Short_Focused.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\Media\SubCentral_MainOverlay.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c30597f7-91b7-4923-9705-6f6802ac5181}-SubCentral_MainOverlay.png</ZipFileName>
+        <DestinationFilename>%Skin%\Default\Media\SubCentral_MainOverlay.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\DialogMultiSelect.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a47e33fc-f402-42ae-9302-568e3d52bda6}-DialogMultiSelect.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Default\DialogMultiSelect.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\SubCentral.Main.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{6be096ca-a01a-4a79-9d37-d5285d368d33}-SubCentral.Main.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Default\SubCentral.Main.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\SubCentral.ModifySearch.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e59792f2-e3a4-4e32-befe-e9d0460fffeb}-SubCentral.ModifySearch.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Default\SubCentral.ModifySearch.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\SubCentral.Search.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{17494041-26c3-40ac-8878-dd4969600ff4}-SubCentral.Search.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Default\SubCentral.Search.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\Default\SubCentral.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{4dc47b90-94ef-4ffe-b12c-8edd65e1155a}-SubCentral.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Default\SubCentral.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\Logos\nosubtitles.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{56f503d7-ca93-4d58-b509-91c90e8b1a09}-nosubtitles.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\Logos\nosubtitles.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\defaultSubtitles.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{59b99f1f-8246-419b-b2ad-06949e86619c}-defaultSubtitles.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\defaultSubtitles.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\defaultSubtitlesFolder.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{88436202-d29a-46a3-80f8-e94ff021f790}-defaultSubtitlesFolder.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\defaultSubtitlesFolder.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\defaultSubtitlesFolderBack.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{d8cad511-f129-452c-a96d-630e28af944e}-defaultSubtitlesFolderBack.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\defaultSubtitlesFolderBack.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\hover_subcentral.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{50dae385-9277-4889-a951-fb51a7e77b7f}-hover_subcentral.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\hover_subcentral.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Background.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0c730ade-6bb7-4d42-adf3-38a8f736ea00}-SubCentral_Background.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Background.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Button_Long_Bg.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c210cd33-56a6-4804-a363-bd5ec4db794c}-SubCentral_Button_Long_Bg.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Button_Long_Bg.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Button_Long_Focused.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{0b325aaa-62e5-4862-b04f-a0664840361b}-SubCentral_Button_Long_Focused.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Button_Long_Focused.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Button_Short_Bg.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a843f611-6614-4db2-85cb-f6bd83df5802}-SubCentral_Button_Short_Bg.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Button_Short_Bg.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_Button_Short_Focused.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{73b49b25-cff8-4d99-8523-5eae03740854}-SubCentral_Button_Short_Focused.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_Button_Short_Focused.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\Media\SubCentral_MainOverlay.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{4ea40440-397b-49fc-85e7-183719cc8973}-SubCentral_MainOverlay.png</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\Media\SubCentral_MainOverlay.png</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\DialogMultiSelect.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{955ecf81-489f-463e-868a-e54598f20fd8}-DialogMultiSelect.xml</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\DialogMultiSelect.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\SubCentral.Main.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{6f86fe12-eca0-479d-ae54-a0c28e343cbb}-SubCentral.Main.xml</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\SubCentral.Main.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\SubCentral.ModifySearch.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{e8b1779a-2182-4d80-bbe0-0cccd6fe241c}-SubCentral.ModifySearch.xml</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\SubCentral.ModifySearch.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\SubCentral.Search.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c947882e-883d-4c03-9833-1118bf3e4bb6}-SubCentral.Search.xml</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\SubCentral.Search.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\SubCentral.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{b7ed1ed1-5bf7-4b2c-b12a-dc3360113e0c}-SubCentral.xml</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\SubCentral.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\_Mods_\Default\MyVideos\myvideoTitle.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{c2e4b8f2-1dc8-4e01-8e88-1cb967f8af9d}-myvideoTitle.xml</ZipFileName>
+        <DestinationFilename>%Skin%\Default\myvideoTitle.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\GUI\Skins\_Mods_\DefaultWide\MyVideos\myvideoTitle.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{53899a44-2e1a-4c2c-a2f9-6e0a86bc4a3c}-myvideoTitle.xml</ZipFileName>
+        <DestinationFilename>%Skin%\DefaultWide\myvideoTitle.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>Icon.png</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{f4955e60-266e-4e08-a8bb-0be34d663557}-Icon.png</ZipFileName>
+        <DestinationFilename />
+      </FileItem>
+    </Items>
+  </UniqueFileList>
+  <ProjectSettings>
+    <FolderGroups />
+    <ProjectFilename>SubCentral_v1.1.1_MP12.xmp2</ProjectFilename>
+    <UpdatePath1>D:\developing\#maintained\SubCentral\Release\update.xml</UpdatePath1>
+    <UpdatePath2 />
+    <UpdatePath3 />
+  </ProjectSettings>
+  <IsSkin>false</IsSkin>
+</PackageClass>

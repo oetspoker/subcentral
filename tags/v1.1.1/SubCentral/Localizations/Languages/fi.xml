@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SubCentral translation file -->
+<!-- Finnish -->
+<!-- Last Updated 12th May 2011 -->
+<strings>
+	<!-- # -->
+
+	<!-- A -->
+	<string Field="AllProviders">Kaikki sivustot</string>
+	<string Field="AllEnabledProviders">Kaikki käytössä olevat sivustot</string>
+	<string Field="About">Tietoja</string>
+	<string Field="AllSubtitlesDownloaded">Kaikki ({0}) tekstitykset ladattu!</string>
+	<string Field="AllSubtitlesCanceledDownload">Kaikkien ({0}) tekstitykset lataus peruutettu!</string>
+	<string Field="All">Kaikki</string>
+	<string Field="AllSubtitlesDeleted">Kaikki ({0}) tekstitykset poistettu!</string>
+	<string Field="AboutText">SubCentral on erillinen tekstityslisäosa MediaPortal HTPC-sovellukselle. Lisäosa mahdollistaa tekstitysten etsimisen ja lataamisen elokuviin ja TV-ohjelmiin käyttäen suosittuja Moving Pictures- ja MP-TVSeries-lisäosia. Lisäosassa on myös liitännät, jotka mahdollistavat lisäosan helpon integroimisen myös mihin tahansa muuhun lisäosaan.
+Paras tapa käyttää lisäosaa on avata Moving Pictures- tai MP-TVSeries-lisäosa, selata elokuva/TV-ohjelma ja valita 'Hae tekstityksiä'. Moving Pictures-lisäosassa (tuettu versio on 1.0.3 tai suurempi), kohde sijaitsee yleensä valikossa tai erillisessä painikkeessa yksityiskohdat-ikkunassa (riippuen käytettävästä ulkoasusta). TVSeries-lisäosassa (tuettu versio on 2.6.0 tai suurempi), avaa jakson ponnahdusvalikko ja valita 'Lataa...' ja sen jälkeen 'Hae tekstitys'. SubCentralin tekstitysten hakuehtoja voi muokata paremman hakutuloksen saavuttamiseksi.
+Jos lisäosa avataan päävalikosta (kuten nyt), manuaalinen haku on mahdollinen ja voit luoda omia hakulauseita elokuville tai TV-ohjelmille.
+Käytä valikkoa valitaksesi tekstitysten kielen. Käytä MediaPortalin asetusohjelmaa määrittääksesi yksityiskohtaisempia asetuksia (ryhmien/sivustojen valitsemiseen, järjestämiseen ja nimeämiseen sekä kieliasetusten ja latauskansioiden valintaan).
+Haun valmistuttua voit järjestää tuloksia valikosta ja ladata tekstityksiä.
+Jos pidät lisäosasta, voit tukea sen kehitystyötä lahjoittamalla rahaa PayPal:in kautta. Lisätietoja projektista löytyy MediaPortalin foorumeilta tai meidän Google Code-sivulta!
+</string>
+
+	<!-- B -->
+	<string Field="Back">Takaisin</string>
+
+	<!-- C -->
+	<string Field="CannotLoadSkin">Ei voitu ladata SubCentralin\nulkoasutiedostoa!</string>
+	<string Field="Cancel">Peruuta</string>
+	<string Field="Confirm">Vahvista</string>
+	<string Field="ClearFiles">Tyhjennä tiedostot</string>
+	<string Field="ClearMedia">Tyhjennä tallennusmedia</string>
+	<string Field="CanceledDownload">Lataus peruutettu!</string>
+	<string Field="ContextMenu">Ponnahdusvalikko</string>
+	<string Field="CannotUseManualSearch">Manuaalista hakua ei voitu aloittaa, koska\nabsoluuttisia latauskansioita ei ole määritelty.\n.Käytä asetusohjelmaa lisätäksesi niitä.</string>
+	<string Field="CannotClearMedia">Tiedostoja ei voitu tyhjentää, koska\nabsoluuttisia latauskansiota ei ole määritelty.\nKäytä asetusohjelmaa lisätäksesi niitä.</string>
+	<string Field="Completed">Valmistunut</string>
+
+	<!-- D -->
+	<string Field="DefaultFor">Oletus kohteelle: {0}</string>
+	<string Field="DownloadFoderDoesNotExistCreate">Latauskansiota ei ole olemassa.\nLuodaanko se?</string>
+	<string Field="Download">Lataa</string>
+	<string Field="DownloadTo">Lataa kohteeseen...</string>
+	<string Field="DefaultFolderInaccessible">Oletuslatatuskansio ({0}) ei ole saatavilla! Valitse joku toinen kansio.</string>
+	<string Field="DefaultFolderNotWritable">Oletuslatauskansioon ({0}) ei voi kirjoittaa! Valitse joku toinen kansio.</string>
+	<string Field="DefaultDownloadFoderDoesNotExistCreate">Oletuslatauskansiota:\n{0}\nei ole olemassa.\nLuodaanko se?</string>
+	<string Field="Default">Oletus</string>
+	<string Field="DeleteSubtitles">Poista tekstityksiä</string>
+
+	<!-- E -->
+	<string Field="Error">Virhe</string>
+	<string Field="ExternalPlugin">ulkoinen lisäosa</string>
+	<string Field="ErrorWhileDownloadingSubtitles">Virhe tekstitysten lataamisessa!</string>
+	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Virhe tekstitysten lataamisessa: {0}</string>
+	<string Field="ErrorWhileRetrievingSubtitles">Virhe tekstitysten hakemisessa!</string>
+	<string Field="ErrorWhileRetrievingSubtitlesWithReason">Virhe tekstitysten hakemisessa: {0}</string>
+	<string Field="ErrorWhileCreatingDirectory">Virhe kansion luomisessa!</string>
+
+	<!-- F -->
+	<string Field="FoundSubtitles">Löytyneet tekstitykset</string>
+	<string Field="From">Sivustolta: {0}</string>
+
+	<!-- G -->
+	<string Field="GroupS">Ryhmä(t)</string>
+	<string Field="GroupProviderDefault">Ryhmän/sivuston oletus</string>
+
+	<!-- H -->
+
+	<!-- I -->
+	<string Field="Initializing">Käynnistetään</string>
+	<string Field="IMDbID">IMDb ID: {0}</string>
+
+	<!-- L -->
+	<string Field="Languages">Kielet</string>
+	<string Field="Language">Kieli</string>
+	<string Field="Local">Paikallinen (media kansioissa)</string>
+
+	<!-- M -->
+	<string Field="Movies">Elokuvat</string>
+	<string Field="ManualSearch">Manuaalinen haku</string>
+	<string Field="ModifySearch">Muokkaa hakua</string>
+	<string Field="MediaFilesDifferFromSubtitleFiles">Mediatiedostojen lukumäärä eroaa tekstitystiedostojen lukumäärästä. Väärät tekstitykset?</string>
+	<string Field="MovieIMDb">Elokuva (IMDb)</string>
+	<string Field="Movie">Elokuva</string>
+	<string Field="MediaNoSubtitles">Medialle ei löytynyt yhtään tekstitystä!</string>
+	<string Field="MediaOnlyInternalSubtitles">Medialle löydettiin vain sisäiset tekstitykset!</string>
+	<string Field="MediaWrongMarkHasSubtitles">Medialla {0} on merkintä siitä, että tekstitykset ovat saatavilla,\nmutta yhtään tekstitystä ei löytynyt. Haluatko merkitä\n ettei tekstityksiä ole saatavilla?</string>
+	<string Field="MediaMaybeInternalSubtitles">(sisäiset tekstitykset voivat silti olla saatavilla)</string>
+	<string Field="MediaHasSubtitles">Medialla on jo tekstitykset. Jos haluat poistaa ne, käytä valikon toimintoa.</string>
+	<string Field="MediaNoMoreSubtitles">Ei löytynyt lisää tektityksiä.\nHaluatko merkitä ettei tekstityksiä ole saatavilla\nsivustolla ({0})?</string>
+	<string Field="MediaWrongMarkNoSubtitles">Medialla {0} on merkintä\nettei tekstityksiä ole saatavilla, mutta ne kuitenkin löydettiin.\nHaluatko korjata merkinnän ja\nasettaa merkinnän tekstitykset saatavilla?</string>
+
+	<!-- N -->
+	<string Field="NewGroup">Uusi ryhmä</string>
+	<string Field="NoResultsFound">Hakutuloksia ei löytynyt</string>
+	<string Field="NoSubtitlesFound">Tekstityksiä ei löytynyt</string>
+	<string Field="NoDownloadFolders">Tälle medialle ei löytynyt latauskansiota</string>
+	<string Field="NotEnoughDataForSearch">Ei tarpeeksi tietoja tekstitysten hakuun</string>
+	<string Field="Name">Nimi</string>
+	<string Field="NoSorting">Ei lajittelua</string>
+	<string Field="NoSubtitlesDelete">Poistettavia tekstitystiedostoja ei löytynyt.</string>
+	<string Field="NoSubtitlesDownloaded">Tekstityksiä ei löytynyt!</string>
+	<string Field="NoSubtitlesDownloadedWithReason">Tekstityksiä ei ladattu: {0}</string>
+	<string Field="NoSubtitlesInChosen">Kohteesta ei löytynyt yhtään tekstitystä. Palvelimen virhe?</string>
+
+	<!-- O -->
+	<string Field="OKSearch">OK/Hae</string>
+	<string Field="OK">OK</string>
+
+	<!-- P -->
+	<string Field="ProviderS">Sivusto(t)</string>
+
+	<!-- Q -->
+	<string Field="QueryingProviders">Haetaan sivustoilta</string>
+
+	<!-- R -->
+	<string Field="Revert">Palauta</string>
+
+	<!-- S -->
+	<string Field="Search">Haku</string>
+	<string Field="SubtitleDownloaderUnavailable">Onko SubtitleDownloader.dll saatavilla?</string>
+	<string Field="SubtitleSearch">Tekstityshaku</string>
+	<string Field="SearchingSubtitles">Haetaan tekstityksiä...</string>
+	<string Field="SelectLanguages">Valitse kielet</string>
+	<string Field="SubtitlesExist">Tekstitystiedosto on jo olemassa.\nKorvataanko olemassa oleva tekstitys?</string>
+	<string Field="SubtitlesDownloaded">Tekstitykset ladattu!</string>
+	<string Field="SelectDownloadFolder">Valitse latauskansio</string>
+	<string Field="SubtitleS">Tekstitys(tä)</string>
+	<string Field="Subtitle">Tekstitys</string>
+	<string Field="Subtitles">Tekstitykset</string>
+	<string Field="SubtitlesDownloadedCount">{0} tekstitystä ladattu</string>
+	<string Field="SubtitlesDownloadErrorCount">{0} tekstityksen lataus epäonnistui</string>
+	<string Field="SubtitlesDownloadCanceledCount">{0} tekstityksen lataus peruutettu</string>
+	<string Field="SelectFileForSubtitle">Valitse mediatiedosto kohteelle '{0}'</string>
+	<string Field="SearchType">Hakutapa: {0}</string>
+	<string Field="SiteDoesNotSupportIMDbIDSearch">Sivusto ei tue IMDb ID -hakua!</string>
+	<string Field="SiteDoesNotSupportMovieSearch">Sivusto ei tue elokuvahakua!</string>
+	<string Field="SiteDoesNotSupportTVShowSearch">Sivusto ei tue TV-ohjelma -hakua!</string>
+	<string Field="Sorting">Lajitellaan</string>
+	<string Field="Sort">Lajittele</string>
+	<string Field="SortBy">Lajittele: {0}</string>
+	<string Field="SortByLanguage">Lajittele tekstityksen kielen mukaan</string>
+	<string Field="SortByName">Lajittele tekstityksen nimen mukaan</string>
+	<string Field="SubtitleFilesToDelete">Poistettavat tekstitystiedostot</string>
+	<string Field="SortByMediaTags">Lajittele mediatagien mukaan (jos mahdollista)</string>
+	<string Field="SelectSubtitleForFile">Valitse tekstitys kohteelle '{0}'</string>
+
+	<string Field="SkinTranslationFrom">Kohteesta</string>
+	<string Field="SkinTranslationSearchType">Hakutapa</string>
+	<string Field="SkinTranslationMediaFiles">Mediatiedostot</string>
+	<string Field="SkinTranslationDownloadFolder">Latauskansio</string>
+	<string Field="SkinTranslationSearchData">Hakutiedot</string>
+	<string Field="SkinTranslationIMDbID">IMDb ID</string>
+	<string Field="SkinTranslationTitle">Nimi</string>
+	<string Field="SkinTranslationYear">Vuosi</string>
+	<string Field="SkinTranslationSeason">Tuotantokausi</string>
+	<string Field="SkinTranslationEpisode">Jakso</string>
+	<string Field="SkinTranslationMovie">Elokuva</string>
+	<string Field="SkinTranslationTVShow">TV-ohjelma</string>
+	<string Field="SkinTranslationMediaTags">Mediatagit</string>
+	<string Field="SkinTranslationAbsoluteNumbering">Absoluuttinen numerointi</string>
+
+	<!-- T -->
+	<string Field="TVShows">TV-ohjelmat</string>
+	<string Field="TVShow">TV-ohjelma</string>
+	<string Field="TimedOutWhileRetrievingSubtitles">Aikakatkaisu tekstitystä noudettaessa!</string>
+	<string Field="TooManySubtitles">Liian monta tekstitystä</string>
+	<string Field="TooManySubtitlesQuestion">Pyydetyssä kohteessa on {0} tekstitystä.\nHaluatko ladata ne kaikki?</string>
+
+	<!-- U -->
+	<string Field="UnableToImportDataFrom">Ei voitu tuoda tietoja\nkohteesta {0}.</string>
+	<string Field="UnableToLoadSubtitleDownloader">Ei voitu ladata SubtitleDownloader -kirjastoa!</string>
+	<string Field="UnableToDeleteSubtitleFile">Tekstitystiedostoa ei voitu poistaa!</string>
+	<string Field="UnableToDeleteSubtitleFiles">Tekstitystiedostoja ei voitu poistaa:</string>
+
+	<!-- V -->
+
+	<!-- W -->
+	<string Field="Warning">Varoitus</string>
+	<string Field="WrongFormatIMDbID">Väärä muoto IMDb ID:ssä (ttNNNNNNN)!</string>
+	<string Field="WrongFormatYear">Väärä muoto vuosiluvussa (1900 - {0})!</string>
+	<string Field="WrongFormatSeasonEpisode">{0} täytyy olla luku ja suurempi kuin 0!</string>
+
+	<!-- Y -->
+	<string Field="PleaseSelectLanguages">Sinun täytyy valita vähintään yksi\nkieli!</string>
+
+</strings>
