@@ -87,9 +87,16 @@
           <Revision>0</Revision>
         </Version>
         <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
-        <VersionDescription>Initial release</VersionDescription>
+        <VersionDescription>Initial release
+
+* First public release
+* Moving Pictures & MP-TVSeries supported
+* Ability to define and search subtitles from different providers and provider groups
+* Unique tag rank sorting
+* Many more…
+</VersionDescription>
         <DevelopmentStatus>Stable</DevelopmentStatus>
-        <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=41</OnlineLocation>
+        <OnlineLocation>http://subcentral.googlecode.com/svn/trunk/Release/Releases/SubCentral_v0.9.1.mpe1</OnlineLocation>
         <ReleaseDate>2010-10-06T00:00:00</ReleaseDate>
         <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
         <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v0.9.1.mpe1</Location>
@@ -234,9 +241,30 @@
           <Revision>0</Revision>
         </Version>
         <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
-        <VersionDescription>Stable release for MediaPortal 1.1 or 1.2 Alpha</VersionDescription>
+        <VersionDescription>Stable release for MediaPortal 1.1 or 1.2 Alpha
+
+* Add return to originating plugin option (after downloading subtitles)
+* Canceling progress dialog now shows found results so far – configurable
+* Absolute numbering of TV shows is now supported
+* Better mapping between subtitle and media files when downloading
+* Release compatible with both MediaPortal 1.1 and 1.2 (Alpha, Beta, future releases)
+* Added provider search timeout (advanced configuration)
+* SubtitleDownloader updated to v2.8 (seco)
+* Added additional, user created (ItalianSubs.net, SeriesSub.com, Subsfactory.it by samo_yea, Titlovi.com by SilentException, Titulky.com by katulus) subtitle providers (SubtitleDownloaders)
+* Updated regular expressions for tag ranking (filtering)
+* Download of subtitles is now asynchronous too (patch from katulus)
+* (Default) skin improvements and fixes
+* Various other bug fixes and improvements
+* Added Dutch translation (Henkie Flits)
+* Added Greek translation (ScRePt)
+* Added French translation (ubela64)
+* Added Czech translation (katulus)
+* Added Finnish translation (Mikko Autio / seco)
+* Updated German translation (Michael Schuler / catavolt)
+* Updated Danish translation (1stdead)
+</VersionDescription>
         <DevelopmentStatus>Stable</DevelopmentStatus>
-        <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
+        <OnlineLocation>http://subcentral.googlecode.com/svn/trunk/Release/Releases/SubCentral_v1.0.0.mpe1</OnlineLocation>
         <ReleaseDate>2011-05-18T00:00:00</ReleaseDate>
         <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
         <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.0.0.mpe1</Location>
@@ -397,9 +425,23 @@
           <Revision>0</Revision>
         </Version>
         <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
-        <VersionDescription>Stable release for MediaPortal 1.1 or 1.2 Alpha</VersionDescription>
+        <VersionDescription>Stable release for MediaPortal 1.1 or 1.2 Alpha
+
+* Added MyFilms plugin handler – support for MyFilms (Guzzi)
+* Added MyVideos plugin handler – support for MyVideos
+* Added modified skin files for MyVideos (subtitles button in DB views)
+* Fixed bug in return to originating plugin option
+* Fixed handling of bad subtitles returned by provider
+* Fixed possible bug in method for checking paths on remote machines
+* Few more bug fixes and improvements
+* SubtitleDownloader updated to v3.0 (seco)
+* Added additional, user created (SubsCenter.org by yoavain, Sous-titres.eu by MrJul) subtitle providers (SubtitleDownloaders)
+* Updated Subsfactory.it provider (samo_yea)
+* Updated Titulky.com provider (katulus)
+* Updated SubsCenter.org (yoavain)
+</VersionDescription>
         <DevelopmentStatus>Stable</DevelopmentStatus>
-        <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
+        <OnlineLocation>http://subcentral.googlecode.com/svn/trunk/Release/Releases/SubCentral_v1.1.0.mpe1</OnlineLocation>
         <ReleaseDate>2011-06-15T00:00:00</ReleaseDate>
         <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
         <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.1.0.mpe1</Location>
