@@ -73,6 +73,9 @@
           </DependencyItem>
         </Items>
       </Dependencies>
+      <PluginDependencies>
+        <Items />
+      </PluginDependencies>
       <GeneralInfo>
         <Name>SubCentral</Name>
         <Id>f8f30e5e-cc8a-44a0-91a9-1175fe55732f</Id>
@@ -90,10 +93,10 @@
         <VersionDescription>Initial release
 
 * First public release
-* Moving Pictures & MP-TVSeries supported
+* Moving Pictures &amp; MP-TVSeries supported
 * Ability to define and search subtitles from different providers and provider groups
 * Unique tag rank sorting
-* Many more…
+* Many more...
 </VersionDescription>
         <DevelopmentStatus>Stable</DevelopmentStatus>
         <OnlineLocation>http://subcentral.googlecode.com/svn/trunk/Release/Releases/SubCentral_v0.9.1.mpe1</OnlineLocation>
@@ -138,6 +141,7 @@
       <ProjectSettings>
         <FolderGroups />
       </ProjectSettings>
+      <IsSkin>false</IsSkin>
     </PackageClass>
     <PackageClass>
       <Version>2.0</Version>
@@ -227,6 +231,9 @@
           </DependencyItem>
         </Items>
       </Dependencies>
+      <PluginDependencies>
+        <Items />
+      </PluginDependencies>
       <GeneralInfo>
         <Name>SubCentral</Name>
         <Id>f8f30e5e-cc8a-44a0-91a9-1175fe55732f</Id>
@@ -244,7 +251,7 @@
         <VersionDescription>Stable release for MediaPortal 1.1 or 1.2 Alpha
 
 * Add return to originating plugin option (after downloading subtitles)
-* Canceling progress dialog now shows found results so far – configurable
+* Canceling progress dialog now shows found results so far - configurable
 * Absolute numbering of TV shows is now supported
 * Better mapping between subtitle and media files when downloading
 * Release compatible with both MediaPortal 1.1 and 1.2 (Alpha, Beta, future releases)
@@ -306,6 +313,7 @@
       <ProjectSettings>
         <FolderGroups />
       </ProjectSettings>
+      <IsSkin>false</IsSkin>
     </PackageClass>
     <PackageClass>
       <Version>2.0</Version>
@@ -411,6 +419,9 @@
           </DependencyItem>
         </Items>
       </Dependencies>
+      <PluginDependencies>
+        <Items />
+      </PluginDependencies>
       <GeneralInfo>
         <Name>SubCentral</Name>
         <Id>f8f30e5e-cc8a-44a0-91a9-1175fe55732f</Id>
@@ -427,8 +438,8 @@
         <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
         <VersionDescription>Stable release for MediaPortal 1.1 or 1.2 Alpha
 
-* Added MyFilms plugin handler – support for MyFilms (Guzzi)
-* Added MyVideos plugin handler – support for MyVideos
+* Added MyFilms plugin handler - support for MyFilms (Guzzi)
+* Added MyVideos plugin handler - support for MyVideos
 * Added modified skin files for MyVideos (subtitles button in DB views)
 * Fixed bug in return to originating plugin option
 * Fixed handling of bad subtitles returned by provider
@@ -483,6 +494,7 @@
       <ProjectSettings>
         <FolderGroups />
       </ProjectSettings>
+      <IsSkin>false</IsSkin>
     </PackageClass>
     <PackageClass>
       <Version>2.0</Version>
