@@ -54,7 +54,7 @@
   <ItemGroup>
     <Reference Include="Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 Beta\Core.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 RC\Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -73,7 +73,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Utils">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 Beta\Utils.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 RC\Utils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
