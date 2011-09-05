@@ -56,11 +56,11 @@
   <ItemGroup>
     <Reference Include="Common.Utils">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 Beta\Common.Utils.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 RC\Common.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Core">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 Beta\Core.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 RC\Core.dll</HintPath>
     </Reference>
     <Reference Include="Cornerstone">
       <SpecificVersion>False</SpecificVersion>
@@ -68,11 +68,11 @@
     </Reference>
     <Reference Include="Databases">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 Beta\Databases.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 RC\Databases.dll</HintPath>
     </Reference>
     <Reference Include="Dialogs">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 Beta\Dialogs.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 RC\Dialogs.dll</HintPath>
     </Reference>
     <Reference Include="MovingPictures">
       <SpecificVersion>False</SpecificVersion>
@@ -112,11 +112,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="Utils">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 Beta\Utils.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 RC\Utils.dll</HintPath>
     </Reference>
     <Reference Include="WindowPlugins">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.2 Beta\WindowPlugins.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.2 RC\WindowPlugins.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
