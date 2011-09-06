@@ -685,7 +685,7 @@ namespace SubCentral.GUI {
                                     continue;
                                 }
                                 videoFileName = Path.GetFileName(mediaDetail.Files[mediaNr].FullName);
-                                videoFileName = Path.Combine(folderSelectionItem.FolderName, videoFileName);
+                                videoFileName = Path.Combine(folderSelectionItem.FolderNames[mediaNr], videoFileName);
                                 targetSubtitleFile = SubtitleDownloader.Util.FileUtils.GetFileNameForSubtitle(subtitleFile.Name,
                                                                                                               subtitle.LanguageCode,
                                                                                                               videoFileName);

@@ -11,6 +11,7 @@ using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using NLog;
 using SubCentral.GUI;
+using SubCentral.GUI.Extensions;
 using SubCentral.GUI.Items;
 using SubCentral.Localizations;
 using SubCentral.PluginHandlers;
@@ -563,11 +564,11 @@ namespace SubCentral.Utils {
             return result;
         }
 
-        public static List<FolderSelectionItem> getEnabledAndValidFoldersForMedia(FileInfo fileInfo, bool includeReadOnly) {
-            return getEnabledAndValidFoldersForMedia(fileInfo, includeReadOnly, false);
+        public static List<FolderSelectionItem> getEnabledAndValidFoldersForMedia(List<FileInfo> fileInfos, bool includeReadOnly) {
+            return getEnabledAndValidFoldersForMedia(fileInfos, includeReadOnly, false);
         }
 
-        public static List<FolderSelectionItem> getEnabledAndValidFoldersForMedia(FileInfo fileInfo, bool includeReadOnly, bool skipErrorInfo) {
+        public static List<FolderSelectionItem> getEnabledAndValidFoldersForMedia(List<FileInfo> fileInfos, bool includeReadOnly, bool skipErrorInfo) {
             List<FolderSelectionItem> result = new List<FolderSelectionItem>();
             List<SettingsFolder> allFolders = AllFolders;
             List<SettingsFolder> toRemove = new List<SettingsFolder>();
@@ -578,7 +579,7 @@ namespace SubCentral.Utils {
                     toRemove.Add(settingsFolder);
                 }
                 else {
-                    if (fileInfo == null && !Path.IsPathRooted(settingsFolder.Folder)) {
+                    if ((fileInfos == null || fileInfos.Count < 1) && !Path.IsPathRooted(settingsFolder.Folder)) {
                         toRemove.Add(settingsFolder);
                     }
                 }
@@ -587,9 +588,17 @@ namespace SubCentral.Utils {
             foreach (SettingsFolder settingsFolder in allFolders) {
                 if (toRemove.Contains(settingsFolder)) continue;
                 string folder = settingsFolder.Folder;
-                if (fileInfo != null && !Path.IsPathRooted(settingsFolder.Folder)) {
-                    folder = FileUtils.ResolveRelativePath(settingsFolder.Folder, Path.GetDirectoryName(fileInfo.FullName));
+
+                List<string> folders = new List<string> { settingsFolder.Folder };
+                folders.RemoveAll(x => x.IsNullOrWhiteSpace());
+
+                if (fileInfos != null && fileInfos.Count > 0 && !Path.IsPathRooted(settingsFolder.Folder)) {
+                    folders = new List<string>();
+                    foreach (FileInfo fi in fileInfos) {
+                        folder = FileUtils.ResolveRelativePath(settingsFolder.Folder, Path.GetDirectoryName(fi.FullName));
+                    }
                 }
+
                 if (folder != null) {
                     FolderSelectionItem newFolderSelectionItem = new FolderSelectionItem() {
                         FolderName = folder,
@@ -618,7 +627,7 @@ namespace SubCentral.Utils {
         }
 
         public static List<string> getEnabledAndValidFolderNamesForMedia(FileInfo fileInfo, bool includeReadOnly, bool skipErrorInfo) {
-            List<FolderSelectionItem> result = getEnabledAndValidFoldersForMedia(fileInfo, includeReadOnly, skipErrorInfo);
+            List<FolderSelectionItem> result = getEnabledAndValidFoldersForMedia(new List<FileInfo>() { fileInfo }, includeReadOnly, skipErrorInfo);
 
             return result.Select(r => r.FolderName).ToList();
         }
