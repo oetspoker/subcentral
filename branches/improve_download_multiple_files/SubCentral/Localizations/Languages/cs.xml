@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SubCentral translation file -->
+<!-- Czech (CS) / Čeština -->
+<!-- Updated 8. May 2011 / 8. května 2011 -->
+<strings>
+	<!-- # -->
+
+	<!-- A -->
+	<string Field="AllProviders">Všichni poskytovatelé</string>
+	<string Field="AllEnabledProviders">Všichni aktivní poskytovatelé</string>
+	<string Field="About">O programu</string>
+	<string Field="AllSubtitlesDownloaded">Všechny ({0}) titulky byly staženy!</string>
+	<string Field="AllSubtitlesCanceledDownload">Stahování všech ({0}) titulků bylo zrušeno!</string>
+	<string Field="All">Vše</string>
+	<string Field="AllSubtitlesDeleted">Všechny ({0}) titulky smazány!</string>
+	<string Field="AboutText">
+SubCentral samostatný plugin pro titulky pro aplikaci MediaPortal. Účelem pluginu je umožnit uživateli vyhledávat a stahovat titulky k filmům a seriálům spravovaným populárními pluginy Moving Pictures a MP-TVSeries. 
+Obsahuje také rozhraní pro snadnou implementaci a integraci s ostatními pluginy.
+Nejjednodušší způsob použití pluginu je přímo v Moving Pictures nebo MP-TVSeries pluginech. Vyberte požadovaný film/seriál a zvolte položku "Získat titulky". V pluginu Moving Pictures (verze 1.0.3 nebo vyšší) se tato 
+položka nachází buď v menu, nebo jako samostatné tlačítko na stránce s detailem filmu (záleží na skinu). V pluginu MP-TVSeries (verze 2.6.0 nebo vyšší) najdete tuto položku v kontextovém menu pro danou epizdu 
+v sekci "Stáhnout..." -> "Získat titulky". Je zde také možnost upravit data která získává SubCentral z pluginů pro vlastní nastavení vyhledávání.
+Pokud je plugin otevřen z domovské stránky, je možno hledat titulky ručně se zadáváním vlastních dotazů na filmy nebo seriály.
+Pro výběr jazyků pro vyhledávání použijte položku v menu. Pro podrobné nastavení tohoto pluginu (výběr a řazení poskytovatelů vyhledávání, výběr a řazení jazyků a správu složek) použijte MediaPortal konfigurátor.
+Vyhledané titulky můžete řadit pomocí položek v menu a můžete je také stáhnout.
+Pokud se vám zdá plugin užitečný, můžete podpořit vývoj příspěvkem přes PayPal. Pro více informací o projektu nás navštivte na fóru MediaPortal nebo na naší stránce GoogleCode (http://subcentral.googlecode.com)
+    </string>
+
+	<!-- B -->
+	<string Field="Back">Zpět</string>
+
+	<!-- C -->
+	<string Field="CannotLoadSkin">Nelze načíst soubor skinu\npro SubCentral!</string>
+	<string Field="Cancel">Storno</string>
+	<string Field="Confirm">Potvrzení</string>
+	<string Field="ClearFiles">Vyčistit soubory</string>
+	<string Field="ClearMedia">Vyčistit média</string>
+	<string Field="CanceledDownload">Stahování zrušeno!</string>
+	<string Field="ContextMenu">Místní nabídka</string>
+	<string Field="CannotUseManualSearch">Nelze spustit ruční vyhledávání\nprotože nejsou definovány\nsložky. Použijte konfigurační\nnástroj pro přidání složek.</string>
+	<string Field="CannotClearMedia">Nelze vyčistit soubory médií protože\n nejsou definovány složky. Použijte\nkonfigurační nástroj pro přidání složek.</string>
+	<string Field="Completed">Dokončeno</string>
+
+	<!-- D -->
+	<string Field="DefaultFor">Výchozí pro: {0}</string>
+	<string Field="DownloadFoderDoesNotExistCreate">Cílová složka neexistuje.\nChcete ji vytvořit?</string>
+	<string Field="Download">Stáhnout</string>
+	<string Field="DownloadTo">Stáhnout do...</string>
+	<string Field="DefaultFolderNotWritable">Nelze zpasat do výchozí složky {0}! Prosím zvolte jinou.</string>
+	<string Field="DefaultDownloadFoderDoesNotExistCreate">Výchozí složka:\n{0}\nneexistuje.\nChcete ji vytvořit?</string>
+	<string Field="Default">Výchozí</string>
+	<string Field="DeleteSubtitles">Smazat titulky</string>
+
+	<!-- E -->
+	<string Field="Error">Chyba</string>
+	<string Field="ExternalPlugin">externí plugin</string>
+	<string Field="ErrorWhileDownloadingSubtitles">Chyba při stahování titulků!</string>
+	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Chyba při stahování titulků: {0}</string>
+	<string Field="ErrorWhileRetrievingSubtitles">Chyba při vyhledávání titulků!</string>
+	<string Field="ErrorWhileRetrievingSubtitlesWithReason">Chyba při vyhledávání titulků: {0}</string>
+	<string Field="ErrorWhileCreatingDirectory">Chyba při vytváření adresáře!</string>
+
+	<!-- F -->
+	<string Field="FoundSubtitles">Nalezené titulky</string>
+	<string Field="From">Z: {0}</string>
+
+	<!-- G -->
+	<string Field="GroupS">Skupina(y)</string>
+	<string Field="GroupProviderDefault">Výchozí skupina/poskytovatel</string>
+
+	<!-- H -->
+
+	<!-- I -->
+	<string Field="Initializing">Inicializace</string>
+	<string Field="IMDbID">IMDb ID: {0}</string>
+
+	<!-- L -->
+	<string Field="Languages">Jazyky</string>
+	<string Field="Language">Jazyk</string>
+	<string Field="Local">Místní (ve složce médií)</string>
+
+	<!-- M -->
+	<string Field="Movies">Filmy</string>
+	<string Field="ManualSearch">Ruční vyhledávání</string>
+	<string Field="ModifySearch">Upravit vyhledávání</string>
+	<string Field="MediaFilesDifferFromSubtitleFiles">Počet souborů se liší od počtu titulků. Nesprávné titulky?</string>
+	<string Field="MovieIMDb">Film (IMDb)</string>
+	<string Field="Movie">Film</string>
+	<string Field="MediaNoSubtitles">Nepodařilo se nalézt žádné titulky!</string>
+	<string Field="MediaOnlyInternalSubtitles">Byly nalezeny pouze vložené titulky!</string>
+	<string Field="MediaWrongMarkHasSubtitles">Pro soubor {0} údajně existují titulky\nale žádné se nepodařilo nalézt. Chcete opravit\npříznak a nastavit jej bez titulků?</string>
+	<string Field="MediaMaybeInternalSubtitles">(může stále obsahovat vložené titulky)</string>
+	<string Field="MediaHasSubtitles">Pro soubor již existují titulky. Pokud je chcete smazat, použijte položku v menu.</string>
+	<string Field="MediaNoMoreSubtitles">Nepodařilo se nalézt žádné další titulky.\nCchete nastavit titulky jako nedostupné pro\ntohoto poskytovatele ({0})?</string>
+	<string Field="MediaWrongMarkNoSubtitles">Pro soubor {0} údajně neexistují titulky\nale přesto se je podařilo nalézt. Chcete opravit\npříznak a nastavit je s titulky?</string>
+
+	<!-- N -->
+	<string Field="NewGroup">Nová skupina</string>
+	<string Field="NoResultsFound">Nebyly nalezeny žádné výsledky</string>
+	<string Field="NoSubtitlesFound">Nebyly nalezeny žádné titulky</string>
+	<string Field="NoDownloadFolders">Nebyly nalezeny žádné složky pro stahování pro tento soubor.</string>
+	<string Field="NotEnoughDataForSearch">Pro vyhledávání není dostatek dat</string>
+	<string Field="Name">Název</string>
+	<string Field="NoSorting">Bez řazení</string>
+	<string Field="NoSubtitlesDelete">Nebyly nalezeny titulky ke smazání.</string>
+	<string Field="NoSubtitlesDownloaded">Nebyly staženy žádné titulky!</string>
+	<string Field="NoSubtitlesDownloadedWithReason">Nebyly staženy žádné titulky: {0}</string>
+	<string Field="NoSubtitlesInChosen">Nepodařilo se nalézt žádné titulky. Chyba serveru?</string>
+
+	<!-- O -->
+	<string Field="OKSearch">OK/Vyhledat</string>
+	<string Field="OK">OK</string>
+
+	<!-- P -->
+	<string Field="ProviderS">Poskytovatel(é)</string>
+
+	<!-- Q -->
+	<string Field="QueryingProviders">Dotazování poskytovatelů</string>
+
+	<!-- R -->
+	<string Field="Revert">Vrátit zpět</string>
+
+	<!-- S -->
+	<string Field="Search">Vyhledat</string>
+	<string Field="SubtitleDownloaderUnavailable">Je SubtitleDownloader.dll k dispozici?</string>
+	<string Field="SubtitleSearch">Vyhledání titulků</string>
+	<string Field="SearchingSubtitles">Vyhledávání titulků...</string>
+	<string Field="SelectLanguages">Výběr jazyků</string>
+	<string Field="SubtitlesExist">Soubor titulků již existuje.\nPřepsat existující titulky?</string>
+	<string Field="SubtitlesDownloaded">Titulky byly staženy!</string>
+	<string Field="SelectDownloadFolder">Zvolte složku pro stažení</string>
+	<string Field="SubtitleS">Titulky</string>
+	<string Field="Subtitle">Titulky</string>
+	<string Field="Subtitles">Titulky</string>
+	<string Field="SubtitlesDownloadedCount">{0} titulky staženy</string>
+	<string Field="SubtitlesDownloadErrorCount">{0} titulky se nepodařilo stáhnout</string>
+	<string Field="SubtitlesDownloadCanceledCount">Stahování {0} titulků bylo zrušeno</string>
+	<string Field="SelectFileForSubtitle">Vyberte soubor pro '{0}'</string>
+	<string Field="SearchType">Typ vyhledávání: {0}</string>
+	<string Field="SiteDoesNotSupportIMDbIDSearch">Poskytovatel nepodporuje vyhledávání pomocí IMDb ID!</string>
+	<string Field="SiteDoesNotSupportMovieSearch">Poskytovatel nepodporuje vyhledávání filmů!</string>
+	<string Field="SiteDoesNotSupportTVShowSearch">Poskytovatel nepodporuje vyhledávání seriálů!</string>
+	<string Field="Sorting">Řazení</string>
+	<string Field="Sort">Seřadit</string>
+	<string Field="SortBy">Řadit podle: {0}</string>
+	<string Field="SortByLanguage">Řadit podle jazyka titulků</string>
+	<string Field="SortByName">Řadit podle názvu titulků</string>
+	<string Field="SubtitleFilesToDelete">Soubory titulků ke smazání</string>
+	<string Field="SortByMediaTags">Řadit podle tagů (je-li k dispozici)</string>
+	<string Field="SelectSubtitleForFile">Vyberte titulky pro '{0}'</string>
+
+	<string Field="SkinTranslationFrom">Z</string>
+	<string Field="SkinTranslationSearchType">Typ vyhledávání</string>
+	<string Field="SkinTranslationMediaFiles">Soubory</string>
+	<string Field="SkinTranslationDownloadFolder">Složka pro stahování</string>
+	<string Field="SkinTranslationSearchData">Data pro vyhledávání</string>
+	<string Field="SkinTranslationIMDbID">IMDb ID</string>
+	<string Field="SkinTranslationTitle">Název</string>
+	<string Field="SkinTranslationYear">Rok</string>
+	<string Field="SkinTranslationSeason">Sezóna</string>
+	<string Field="SkinTranslationEpisode">Epizoda</string>
+	<string Field="SkinTranslationMovie">Film</string>
+	<string Field="SkinTranslationTVShow">Seriál</string>
+	<string Field="SkinTranslationMediaTags">Tagy</string>
+	<string Field="SkinTranslationAbsoluteNumbering">Absolutní číslování</string>
+
+	<!-- T -->
+	<string Field="TVShows">Seriály</string>
+	<string Field="TVShow">Seriál</string>
+	<string Field="TimedOutWhileRetrievingSubtitles">Vypršel čas pro vyhledání titulků!</string>
+	<string Field="TooManySubtitles">Příliš mnoho titulků</string>
+	<string Field="TooManySubtitlesQuestion">Vyhledávaná položka obsahuje {0} titulků.\nChcete stáhnout všechny?</string>
+
+	<!-- U -->
+	<string Field="UnableToImportDataFrom">Nelze importovat data\nz {0}.</string>
+	<string Field="UnableToLoadSubtitleDownloader">Nelze načíst knihovnu SubtitleDownloader!</string>
+	<string Field="UnableToDeleteSubtitleFile">Nelze smazat soubor titulků!</string>
+	<string Field="UnableToDeleteSubtitleFiles">Nelze smazat soubory titulků:</string>
+
+	<!-- V -->
+
+	<!-- W -->
+	<string Field="Warning">Varování</string>
+	<string Field="WrongFormatIMDbID">Nesprávný formát IMDb ID (ttNNNNNNN)!</string>
+	<string Field="WrongFormatYear">Nesprávný formát roku (1900 - {0})!</string>
+	<string Field="WrongFormatSeasonEpisode">{0} musí být číslo větší než 0!</string>
+
+	<!-- Y -->
+	<string Field="PleaseSelectLanguages">Musíte zvolit alespoň jeden\njazyk!</string>
+
+</strings>
