@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using MediaPortal.GUI.Library;
 using MediaPortal.Dialogs;
+using SubCentral.Localizations;
 
 namespace SubCentral.GUI {
     public enum ModalResult {
@@ -36,6 +37,11 @@ namespace SubCentral.GUI {
             get {
                 return 2100;
             }
+        }
+
+        public override string GetModuleName()
+        {
+            return Localization.MultiSelectDialog;
         }
 
         protected override void OnClicked(int controlId, GUIControl control, MediaPortal.GUI.Library.Action.ActionType actionType) {

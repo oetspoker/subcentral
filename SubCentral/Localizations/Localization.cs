@@ -244,6 +244,7 @@ namespace SubCentral.Localizations {
         public static string MediaHasSubtitles = "Media already has subtitles. If you'd like to delete them use the menu button.";
         public static string MediaNoMoreSubtitles = "Unable to find any more subtitles for media.\nWould you like to set subtitles unavailable\nin the provider ({0})?";
         public static string MediaWrongMarkNoSubtitles = "Media from {0} is marked with subtitles unavailable\nbut I was able to find them. Would you like to\ncorrect that and set subtitles available?";
+        public static string MultiSelectDialog = "Multi-Select Dialog";
 
         // N
         public static string NewGroup = "New group";
