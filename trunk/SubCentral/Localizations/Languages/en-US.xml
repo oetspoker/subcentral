@@ -92,6 +92,7 @@ If you find the plugin useful, you can support the development by donating via P
 	<string Field="MediaHasSubtitles">Media already has subtitles. If you'd like to delete them use the menu button.</string>
 	<string Field="MediaNoMoreSubtitles">Unable to find any more subtitles for media.\nWould you like to set subtitles unavailable\nin the provider ({0})?</string>
 	<string Field="MediaWrongMarkNoSubtitles">Media from {0} is marked with\nsubtitles unavailable but I was able to\nfind them. Would you like to correct that and\nset subtitles available?</string>
+	<string Field="MultiSelectDialog">Multi-Select Dialog</string>
 
 	<!-- N -->
 	<string Field="NewGroup">New group</string>
