@@ -715,7 +715,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <VersionDescription>Stable release for MediaPortal 1.2 Beta or newer
 
 * Updated skin mods to match files from MediaPortal v1.2.1 Default/DefaultWide skins
-* Few improvements to multi-select dialog (Default/DefaultWide skins and code – new translation)
+* Few improvements to multi-select dialog (Default/DefaultWide skins and code - new translation)
 * SubtitleDownloader updated to v3.0.2 (seco)
 * Updated SubsCenter.org (yoavain)
 * Updated Sous-titres.eu provider (MrJul)
