@@ -274,6 +274,7 @@
     <Content Include="Localizations\Languages\fi.xml" />
     <Content Include="Localizations\Languages\fr.xml" />
     <Content Include="Localizations\Languages\gr.xml" />
+    <Content Include="Localizations\Languages\is.xml" />
     <Content Include="Localizations\Languages\nl.xml" />
     <Content Include="Resources\PayPalDonate.gif" />
     <None Include="Resources\SubCentralGUIIcon.png" />

@@ -198,6 +198,13 @@ Titulky.com: katulus</Description>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\SubCentral\Localizations\Languages\is.xml</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a22a3ecb-ce5f-455a-8d85-8ea287a39339}-is.xml</ZipFileName>
+              <DestinationFilename>%Language%\SubCentral\is.xml</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\SubCentral\Localizations\Languages\nl.xml</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{cd0230f7-640f-43b6-a568-aeb54686a3f6}-nl.xml</ZipFileName>
               <DestinationFilename>%Language%\SubCentral\nl.xml</DestinationFilename>
@@ -905,6 +912,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <LocalFileName>..\SubCentral\Localizations\Languages\gr.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{810ad207-316a-4dbb-aea6-28249ad5c72e}-gr.xml</ZipFileName>
         <DestinationFilename>%Language%\SubCentral\gr.xml</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\SubCentral\Localizations\Languages\is.xml</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a22a3ecb-ce5f-455a-8d85-8ea287a39339}-is.xml</ZipFileName>
+        <DestinationFilename>%Language%\SubCentral\is.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
