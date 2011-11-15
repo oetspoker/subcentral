@@ -97,6 +97,13 @@ Titulky.com: katulus</Description>
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
+              <LocalFileName>..\External\SubtitleDownloaders\Sratim.dll</LocalFileName>
+              <ZipFileName>Installer{CopyFile}\{a85964d1-7184-462f-8bee-7bc4caef5d7f}-Sratim.dll</ZipFileName>
+              <DestinationFilename>%Base%\SubtitleDownloaders\Sratim.dll</DestinationFilename>
+            </FileItem>
+            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+              <Param1 />
+              <UpdateOption>AlwaysOverwrite</UpdateOption>
               <LocalFileName>..\External\SubtitleDownloaders\SubsCenterOrg.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{6b76e9e1-cdc6-4db6-8a76-7c73b3f63319}-SubsCenterOrg.dll</ZipFileName>
               <DestinationFilename>%Base%\SubtitleDownloaders\SubsCenterOrg.dll</DestinationFilename>
@@ -698,8 +705,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <SubSystemsUsed>
           <Items>
             <SubSystemItem Name="MP.Config" />
-            <SubSystemItem Name="MP.SkinEngine" />
             <SubSystemItem Name="MP.Externals.MediaInfo" />
+            <SubSystemItem Name="MP.SkinEngine" />
           </Items>
         </SubSystemsUsed>
       </PluginDependencyItem>
@@ -715,23 +722,21 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Version>
       <Major>1</Major>
       <Minor>1</Minor>
-      <Build>2</Build>
+      <Build>3</Build>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
     <VersionDescription>Stable release for MediaPortal 1.2 Beta or newer
 
-* Updated skin mods to match files from MediaPortal v1.2.1 Default/DefaultWide skins
-* Few improvements to multi-select dialog (Default/DefaultWide skins and code - new translation)
-* SubtitleDownloader updated to v3.0.2 (seco)
 * Updated SubsCenter.org (yoavain)
-* Updated Sous-titres.eu provider (MrJul)
+* Added Sratim.co.il subtitle provider (SubtitleDownloader) (yoavain)
+* Added Icelandic translation (kjarrig)
 </VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
     <ReleaseDate>2011-10-26T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
-    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.1.2_MP12.mpe1</Location>
+    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.1.3_MP12.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -821,6 +826,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <LocalFileName>..\External\SubtitleDownloaders\SousTitresEu.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{20701a10-72a2-4249-903a-2183a2193de0}-SousTitresEu.dll</ZipFileName>
         <DestinationFilename>%Base%\SubtitleDownloaders\SousTitresEu.dll</DestinationFilename>
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
+        <Param1 />
+        <UpdateOption>AlwaysOverwrite</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloaders\Sratim.dll</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{a85964d1-7184-462f-8bee-7bc4caef5d7f}-Sratim.dll</ZipFileName>
+        <DestinationFilename>%Base%\SubtitleDownloaders\Sratim.dll</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -1190,7 +1202,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
   </UniqueFileList>
   <ProjectSettings>
     <FolderGroups />
-    <ProjectFilename>SubCentral_v1.1.2_MP12.xmp2</ProjectFilename>
+    <ProjectFilename>SubCentral_v1.1.3_MP12.xmp2</ProjectFilename>
     <UpdatePath1>D:\developing\#maintained\SubCentral\Release\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
