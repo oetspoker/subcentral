@@ -13,7 +13,7 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\bin\Release\MP12-SubCentral.dll</LocalFileName>
+              <LocalFileName>..\SubCentral\bin\Release\SubCentral.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{b3b3fa19-a53a-4997-8b8a-1fd4438d9ac7}-SubCentral.dll</ZipFileName>
               <DestinationFilename>%Plugins%\Windows\SubCentral.dll</DestinationFilename>
             </FileItem>
@@ -680,33 +680,33 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>27644</Revision>
         </MinVersion>
         <MaxVersion>
-          <Major>1</Major>
-          <Minor>1</Minor>
-          <Build>6</Build>
-          <Revision>27644</Revision>
+          <Major>*</Major>
+          <Minor>*</Minor>
+          <Build>*</Build>
+          <Revision>*</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
-        <Message>This version of SubCentral requires MediaPortal 1.2 Beta or newer!</Message>
+        <Message>This version of SubCentral requires MediaPortal 1.3 Alpha or newer!</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
   </Dependencies>
   <PluginDependencies>
     <Items>
-      <PluginDependencyItem AssemblyName="MP12-SubCentral.dll">
+      <PluginDependencyItem AssemblyName="SubCentral.dll">
         <CompatibleVersion>
           <Items>
             <CompatibleVersionItem>
-              <MinRequiredVersion>1.1.6.27644</MinRequiredVersion>
-              <DesignedForVersion>1.1.6.27644</DesignedForVersion>
+              <MinRequiredVersion>1.2.100.0</MinRequiredVersion>
+              <DesignedForVersion>1.2.100.0</DesignedForVersion>
             </CompatibleVersionItem>
           </Items>
         </CompatibleVersion>
         <SubSystemsUsed>
           <Items>
-            <SubSystemItem Name="MP.Config" />
-            <SubSystemItem Name="MP.Externals.MediaInfo" />
             <SubSystemItem Name="MP.SkinEngine" />
+            <SubSystemItem Name="MP.Externals.MediaInfo" />
+            <SubSystemItem Name="MP.Config" />
           </Items>
         </SubSystemsUsed>
       </PluginDependencyItem>
@@ -721,22 +721,22 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <UpdateUrl>http://subcentral.googlecode.com/svn/trunk/Release/update.xml</UpdateUrl>
     <Version>
       <Major>1</Major>
-      <Minor>1</Minor>
-      <Build>3</Build>
+      <Minor>2</Minor>
+      <Build>0</Build>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
-    <VersionDescription>Stable release for MediaPortal 1.2 Beta or newer
+    <VersionDescription>Stable release for MediaPortal 1.3 Alpha or newer
 
-* Updated SubsCenter.org (yoavain)
-* Added Sratim.co.il subtitle provider (SubtitleDownloader) (yoavain)
-* Added Icelandic translation (kjarrig)
+* New: Support for MediaPortal 1.3 Alpha
+* New: SubtitleDownloader installed as MP Extension for easy online updates
+
 </VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2011-10-26T00:00:00</ReleaseDate>
+    <ReleaseDate>2012-07-13T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
-    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.1.3_MP12.mpe1</Location>
+    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.2.0.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -774,7 +774,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\bin\Release\MP12-SubCentral.dll</LocalFileName>
+        <LocalFileName>..\SubCentral\bin\Release\SubCentral.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{b3b3fa19-a53a-4997-8b8a-1fd4438d9ac7}-SubCentral.dll</ZipFileName>
         <DestinationFilename>%Plugins%\Windows\SubCentral.dll</DestinationFilename>
       </FileItem>
@@ -1195,14 +1195,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f4955e60-266e-4e08-a8bb-0be34d663557}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{e1c9e085-7e4a-4d03-aa81-f891a4752657}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
   </UniqueFileList>
   <ProjectSettings>
     <FolderGroups />
-    <ProjectFilename>SubCentral_v1.1.3_MP12.xmp2</ProjectFilename>
+    <ProjectFilename>SubCentral_v1.2.0.xmp2</ProjectFilename>
     <UpdatePath1>D:\developing\#maintained\SubCentral\Release\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
