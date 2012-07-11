@@ -92,7 +92,6 @@
       <HintPath>..\External\NLog.dll</HintPath>
     </Reference>
     <Reference Include="SubtitleDownloader">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\SubtitleDownloader.dll</HintPath>
     </Reference>
     <Reference Include="System" />
