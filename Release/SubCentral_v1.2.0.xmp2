@@ -30,23 +30,9 @@
             <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
               <Param1 />
               <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>..\External\7z.dll</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{89cf0d9a-326f-4c47-bcdf-c97d57892ed1}-7z.dll</ZipFileName>
-              <DestinationFilename>%Base%\7z.dll</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
               <LocalFileName>..\External\NLog.dll</LocalFileName>
               <ZipFileName>Installer{CopyFile}\{c0c1a13f-2a46-47fa-bdd0-af68d3be0b38}-NLog.dll</ZipFileName>
               <DestinationFilename>%Base%\NLog.dll</DestinationFilename>
-            </FileItem>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>OverwriteIfOlder</UpdateOption>
-              <LocalFileName>..\External\SubtitleDownloader.dll</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{08803f83-a5c7-4d25-bb0f-af84d8d01f3a}-SubtitleDownloader.dll</ZipFileName>
-              <DestinationFilename>%Base%\SubtitleDownloader.dll</DestinationFilename>
             </FileItem>
           </Items>
         </Files>
@@ -628,6 +614,23 @@ Click Next to continue or Cancel to exit Setup.</Value>
               </Params>
               <ExecuteLocation>AfterPanelShow</ExecuteLocation>
             </ActionItem>
+            <ActionItem Name="Extension Installer" ActionType="Extension Installer" ConditionGroup="">
+              <Params>
+                <Items>
+                  <SectionParam Name="Extension package">
+                    <Value>..\External\SubtitleDownloader-3.0.3.0.mpe1</Value>
+                    <ValueType>File</ValueType>
+                    <Description>Location of the extension package</Description>
+                  </SectionParam>
+                  <SectionParam Name="Silent Install">
+                    <Value>YES</Value>
+                    <ValueType>Bool</ValueType>
+                    <Description>Silent install, No wizard screen will be displayed </Description>
+                  </SectionParam>
+                </Items>
+              </Params>
+              <ExecuteLocation>AfterPanelShow</ExecuteLocation>
+            </ActionItem>
           </Items>
         </Actions>
         <IncludedGroups />
@@ -781,23 +784,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\7z.dll</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{89cf0d9a-326f-4c47-bcdf-c97d57892ed1}-7z.dll</ZipFileName>
-        <DestinationFilename>%Base%\7z.dll</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\External\NLog.dll</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{c0c1a13f-2a46-47fa-bdd0-af68d3be0b38}-NLog.dll</ZipFileName>
         <DestinationFilename>%Base%\NLog.dll</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\SubtitleDownloader.dll</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{08803f83-a5c7-4d25-bb0f-af84d8d01f3a}-SubtitleDownloader.dll</ZipFileName>
-        <DestinationFilename>%Base%\SubtitleDownloader.dll</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
         <Param1 />
@@ -1194,8 +1183,15 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
+        <LocalFileName>..\External\SubtitleDownloader-3.0.3.0.mpe1</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{03b6b51b-d184-43ae-8657-1c92d9af5380}-SubtitleDownloader-3.0.3.0.mpe1</ZipFileName>
+        <DestinationFilename />
+      </FileItem>
+      <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
+        <Param1 />
+        <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{e1c9e085-7e4a-4d03-aa81-f891a4752657}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{cdfdd2ba-a5ae-4f51-a4ae-a5e7e3dedcca}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
