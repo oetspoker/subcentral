@@ -56,16 +56,12 @@ namespace SubCentral.PluginHandlers {
                     _mediaDetail.ImdbID = videoTitleMovie.IMDBNumber;
 
                     _mediaDetail.Thumb = videoTitleMovieThumb;
-                    #if MP11
-                    _mediaDetail.FanArt = string.Empty;
-                    #else
                     string fanart = string.Empty;
                     MediaPortal.Util.FanArt.GetFanArtfilename(videoTitleMovie.Title, 0, out fanart);
                     _mediaDetail.FanArt = fanart;
-                    #endif
 
                     ArrayList files = new ArrayList();
-                    VideoDatabase.GetFiles(videoTitleMovie.ID, ref files);
+                    VideoDatabase.GetFilesForMovie(videoTitleMovie.ID, ref files);
 
                     _mediaDetail.Files = new List<FileInfo>();
                     foreach (string file in files) {
