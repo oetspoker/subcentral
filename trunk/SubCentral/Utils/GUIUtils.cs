@@ -76,46 +76,23 @@ namespace SubCentral.Utils {
             }
 
             GUIDialogYesNo dlgYesNo = (GUIDialogYesNo)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_YES_NO);
-            //if (dlgYesNo == null) return;
+   
+            dlgYesNo.Reset();
+            dlgYesNo.SetHeading(heading);
+            string[] linesArray = lines.Split(new string[] { "\\n", "\n" }, StringSplitOptions.None);
+            if (linesArray.Length > 0) dlgYesNo.SetLine(1, linesArray[0]);
+            if (linesArray.Length > 1) dlgYesNo.SetLine(2, linesArray[1]);
+            if (linesArray.Length > 2) dlgYesNo.SetLine(3, linesArray[2]);
+            if (linesArray.Length > 3) dlgYesNo.SetLine(4, linesArray[3]);
+            dlgYesNo.SetDefaultToYes(defaultYes);
 
-            try {
-                dlgYesNo.Reset();
-                dlgYesNo.SetHeading(heading);
-                string[] linesArray = lines.Split(new string[] { "\\n", "\n" }, StringSplitOptions.None);
-                if (linesArray.Length > 0) dlgYesNo.SetLine(1, linesArray[0]);
-                if (linesArray.Length > 1) dlgYesNo.SetLine(2, linesArray[1]);
-                if (linesArray.Length > 2) dlgYesNo.SetLine(3, linesArray[2]);
-                if (linesArray.Length > 3) dlgYesNo.SetLine(4, linesArray[3]);
-                dlgYesNo.SetDefaultToYes(defaultYes);
+            if (!string.IsNullOrEmpty(yesLabel))  
+                dlgYesNo.SetYesLabel(yesLabel);
+            if (!string.IsNullOrEmpty(noLabel))  
+                dlgYesNo.SetNoLabel(noLabel);
 
-                #if MP11
-                foreach (GUIControl item in dlgYesNo.GetControlList()) {
-                    if (item is GUIButtonControl) {
-                        GUIButtonControl btn = (GUIButtonControl)item;
-                        if (btn.GetID == 11 && !string.IsNullOrEmpty(yesLabel)) // Yes button
-                            btn.Label = yesLabel;
-                        else if (btn.GetID == 10 && !string.IsNullOrEmpty(noLabel)) // No button
-                            btn.Label = noLabel;
-                    }
-                }
-                #else
-                if (!string.IsNullOrEmpty(yesLabel))  
-                    dlgYesNo.SetYesLabel(yesLabel);
-                if (!string.IsNullOrEmpty(noLabel))  
-                    dlgYesNo.SetNoLabel(noLabel);
-                #endif
-
-                dlgYesNo.DoModal(GUIWindowManager.ActiveWindow);
-                return dlgYesNo.IsConfirmed;
-            }
-            finally {
-                #if MP11
-                // set the standard yes/no dialog back to it's original state (yes/no buttons)
-                if (dlgYesNo != null) {
-                    dlgYesNo.ClearAll();
-                }
-                #endif
-            }
+            dlgYesNo.DoModal(GUIWindowManager.ActiveWindow);
+            return dlgYesNo.IsConfirmed;
         }
 
         /// <summary>

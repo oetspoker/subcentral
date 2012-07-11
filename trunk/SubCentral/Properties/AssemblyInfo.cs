@@ -1,9 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-#if MP11
-#else
 using MediaPortal.Common.Utils;
-#endif
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -40,11 +37,8 @@ using MediaPortal.Common.Utils;
 //[assembly: AssemblyVersion("0.9.1.0")]
 //[assembly: AssemblyFileVersion("0.9.1.0")]
 
-#if MP11
-#else
 // MediaPortal plugin version compatibility
-[assembly: CompatibleVersion("1.1.6.27644")]
+[assembly: CompatibleVersion("1.2.100.0")]
 [assembly: UsesSubsystem("MP.SkinEngine")]
 [assembly: UsesSubsystem("MP.Externals.MediaInfo")]
 [assembly: UsesSubsystem("MP.Config")]
-#endif
