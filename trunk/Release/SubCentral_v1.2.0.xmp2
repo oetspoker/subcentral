@@ -618,7 +618,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
               <Params>
                 <Items>
                   <SectionParam Name="Extension package">
-                    <Value>..\External\SubtitleDownloader-3.0.3.0.mpe1</Value>
+                    <Value>..\External\SubtitleDownloader-3.0.4.0.mpe1</Value>
                     <ValueType>File</ValueType>
                     <Description>Location of the extension package</Description>
                   </SectionParam>
@@ -1183,15 +1183,15 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\SubtitleDownloader-3.0.3.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{03b6b51b-d184-43ae-8657-1c92d9af5380}-SubtitleDownloader-3.0.3.0.mpe1</ZipFileName>
+        <LocalFileName>..\External\SubtitleDownloader-3.0.4.0.mpe1</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{2c96fee5-8d7f-4b96-8526-246cac6dd2ec}-SubtitleDownloader-3.0.4.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{cdfdd2ba-a5ae-4f51-a4ae-a5e7e3dedcca}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{cfc5437f-01b3-4585-a46c-e32b9365c55f}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
