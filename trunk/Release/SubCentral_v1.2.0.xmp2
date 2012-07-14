@@ -473,40 +473,6 @@ Titulky.com: katulus</Description>
           </Items>
         </Files>
       </GroupItem>
-      <GroupItem Name="Default skin mods">
-        <ParentGroup />
-        <DisplayName>Default skin mods</DisplayName>
-        <DefaulChecked>true</DefaulChecked>
-        <Description>MyVideos mod with subtitles button</Description>
-        <Files>
-          <Items>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\_Mods_\Default\MyVideos\myvideoTitle.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{c2e4b8f2-1dc8-4e01-8e88-1cb967f8af9d}-myvideoTitle.xml</ZipFileName>
-              <DestinationFilename>%Skin%\Default\myvideoTitle.xml</DestinationFilename>
-            </FileItem>
-          </Items>
-        </Files>
-      </GroupItem>
-      <GroupItem Name="DefaultWide skin mods">
-        <ParentGroup />
-        <DisplayName>DefaultWide skin mods</DisplayName>
-        <DefaulChecked>true</DefaulChecked>
-        <Description>MyVideos mod with subtitles button</Description>
-        <Files>
-          <Items>
-            <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-              <Param1 />
-              <UpdateOption>AlwaysOverwrite</UpdateOption>
-              <LocalFileName>..\SubCentral\GUI\Skins\_Mods_\DefaultWide\MyVideos\myvideoTitle.xml</LocalFileName>
-              <ZipFileName>Installer{CopyFile}\{53899a44-2e1a-4c2c-a2f9-6e0a86bc4a3c}-myvideoTitle.xml</ZipFileName>
-              <DestinationFilename>%Skin%\DefaultWide\myvideoTitle.xml</DestinationFilename>
-            </FileItem>
-          </Items>
-        </Files>
-      </GroupItem>
     </Items>
   </Groups>
   <Sections>
@@ -580,8 +546,6 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <string>Languages</string>
           <string>Default skin files</string>
           <string>DefaultWide skin files</string>
-          <string>Default skin mods</string>
-          <string>DefaultWide skin mods</string>
         </IncludedGroups>
         <PanelName>Tree View Selector</PanelName>
         <WizardButtonsEnum>BackNextCancel</WizardButtonsEnum>
@@ -1165,20 +1129,6 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <LocalFileName>..\SubCentral\GUI\Skins\DefaultWide\SubCentral.xml</LocalFileName>
         <ZipFileName>Installer{CopyFile}\{b7ed1ed1-5bf7-4b2c-b12a-dc3360113e0c}-SubCentral.xml</ZipFileName>
         <DestinationFilename>%Skin%\DefaultWide\SubCentral.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\_Mods_\Default\MyVideos\myvideoTitle.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{c2e4b8f2-1dc8-4e01-8e88-1cb967f8af9d}-myvideoTitle.xml</ZipFileName>
-        <DestinationFilename>%Skin%\Default\myvideoTitle.xml</DestinationFilename>
-      </FileItem>
-      <FileItem InstallType="CopyFile" SystemFile="false" Modified="true">
-        <Param1 />
-        <UpdateOption>AlwaysOverwrite</UpdateOption>
-        <LocalFileName>..\SubCentral\GUI\Skins\_Mods_\DefaultWide\MyVideos\myvideoTitle.xml</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{53899a44-2e1a-4c2c-a2f9-6e0a86bc4a3c}-myvideoTitle.xml</ZipFileName>
-        <DestinationFilename>%Skin%\DefaultWide\myvideoTitle.xml</DestinationFilename>
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
