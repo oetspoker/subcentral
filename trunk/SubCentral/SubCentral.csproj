@@ -134,7 +134,6 @@
     <Compile Include="Config\ListViewItemType.cs" />
     <Compile Include="GUI\SubtitleDownloadStatusStatus.cs" />
     <Compile Include="PluginHandlers\MyFilmsHandler.cs" />
-    <Compile Include="PluginHandlers\MyVideosFilesHandler.cs" />
     <Compile Include="PluginHandlers\MyVideosTitleHandler.cs" />
     <Compile Include="PluginHandlers\TVSeriesHandler.cs" />
     <Compile Include="Properties\VersionInfo.cs" />

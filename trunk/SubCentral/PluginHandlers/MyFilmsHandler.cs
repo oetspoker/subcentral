@@ -61,14 +61,6 @@ namespace SubCentral.PluginHandlers {
             }
         }
 
-        public override bool GetHasSubtitles(bool all) {
-            return base.GetHasSubtitles(all);
-        }
-
-        public override void SetHasSubtitles(string fileName, bool value) {
-            base.SetHasSubtitles(fileName, value);
-        }
-
         protected override PluginHandlerType GetPluginHandlerType() {
             return PluginHandlerType.BASICWITHOUTDB;
         }

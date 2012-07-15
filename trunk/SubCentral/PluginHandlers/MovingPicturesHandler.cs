@@ -49,9 +49,6 @@ namespace SubCentral.PluginHandlers {
 
                 _mediaDetail.Thumb = selectedMovie.CoverThumbFullPath;
                 _mediaDetail.FanArt = selectedMovie.BackdropFullPath;
-
-                //selectedMovie.LocalMedia[0].HasSubtitles
-
                 _mediaDetail.Files = new List<FileInfo>();
                 foreach (DBLocalMedia localMediaItem in localMedia) {
                     _mediaDetail.Files.Add(new FileInfo(localMediaItem.FullPath));
