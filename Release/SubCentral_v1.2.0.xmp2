@@ -582,7 +582,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
               <Params>
                 <Items>
                   <SectionParam Name="Extension package">
-                    <Value>..\External\SubtitleDownloader-3.0.4.0.mpe1</Value>
+                    <Value>..\External\SubtitleDownloader-3.0.5.0.mpe1</Value>
                     <ValueType>File</ValueType>
                     <Description>Location of the extension package</Description>
                   </SectionParam>
@@ -659,25 +659,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
     </Items>
   </Dependencies>
   <PluginDependencies>
-    <Items>
-      <PluginDependencyItem AssemblyName="SubCentral.dll">
-        <CompatibleVersion>
-          <Items>
-            <CompatibleVersionItem>
-              <MinRequiredVersion>1.2.100.0</MinRequiredVersion>
-              <DesignedForVersion>1.2.100.0</DesignedForVersion>
-            </CompatibleVersionItem>
-          </Items>
-        </CompatibleVersion>
-        <SubSystemsUsed>
-          <Items>
-            <SubSystemItem Name="MP.SkinEngine" />
-            <SubSystemItem Name="MP.Externals.MediaInfo" />
-            <SubSystemItem Name="MP.Config" />
-          </Items>
-        </SubSystemsUsed>
-      </PluginDependencyItem>
-    </Items>
+    <Items />
   </PluginDependencies>
   <GeneralInfo>
     <Name>SubCentral</Name>
@@ -1133,8 +1115,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\SubtitleDownloader-3.0.4.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{2c96fee5-8d7f-4b96-8526-246cac6dd2ec}-SubtitleDownloader-3.0.4.0.mpe1</ZipFileName>
+        <LocalFileName>..\External\SubtitleDownloader-3.0.5.0.mpe1</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{93371a10-b361-4a35-8384-84f800fa43f4}-SubtitleDownloader-3.0.5.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
