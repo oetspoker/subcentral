@@ -16,7 +16,7 @@ using SubCentral.Utils;
 namespace SubCentral {
     public class SubCentralCore {
 
-        public static readonly Version SubtitleDownloaderVersion = new Version(2, 9);
+        public static readonly Version SubtitleDownloaderVersion = new Version(3, 0, 5, 0);
 
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
@@ -169,26 +169,6 @@ namespace SubCentral {
                 SubtitleDownloaderInitialized = false;
             }
             return;
-
-            // old code - not needed 
-            /*
-            if (!SubCentralUtils.IsAssemblyAvailable("SubtitleDownloader", SubtitleDownloaderVersion)) {
-                logger.Debug("SubtitleDownloader: assembly not loaded (not available?), trying to load it manually");
-                try {
-                    //AppDomain.CurrentDomain.Load(new AssemblyName("SubtitleDownloader"));
-                    Assembly.ReflectionOnlyLoad("SubtitleDownloader");
-                    logger.Debug("SubtitleDownloader: loaded successfully");
-                    SubtitleDownloaderInitialized = true;
-                    return;
-                }
-                catch (Exception e) {
-                    logger.ErrorException(string.Format("SubtitleDownloader: error loading{0}", Environment.NewLine), e);
-                }
-                SubtitleDownloaderInitialized = false;
-                return;
-            }
-            SubtitleDownloaderInitialized = true;
-            */
         }
 
         private void LoadSubtitleDownloaderData() {
