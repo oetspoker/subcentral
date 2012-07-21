@@ -675,15 +675,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
-    <VersionDescription>Stable release for MediaPortal 1.3 Alpha or newer
-
-* New: Support for MediaPortal 1.3 Alpha
+    <VersionDescription>* New: Support for MediaPortal 1.3 Alpha
 * New: SubtitleDownloader installed as MP Extension for easy online updates
+* New: Removed support for Blue3 skin
 
 </VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2012-07-13T00:00:00</ReleaseDate>
+    <ReleaseDate>2012-07-21T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
     <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.2.0.mpe1</Location>
     <Params>
@@ -1116,14 +1115,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\External\SubtitleDownloader-3.0.5.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{93371a10-b361-4a35-8384-84f800fa43f4}-SubtitleDownloader-3.0.5.0.mpe1</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{634cdc16-931c-42a5-b1a8-c4c850f449c0}-SubtitleDownloader-3.0.5.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{cfc5437f-01b3-4585-a46c-e32b9365c55f}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{68a0b65c-5fb3-4b57-87f0-04347bea6c81}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
