@@ -63,9 +63,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MediaPortal v1.3 Alpha\Core.dll</HintPath>
     </Reference>
-    <Reference Include="Cornerstone">
+    <Reference Include="Cornerstone, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\Moving Pictures v1.0.6\Cornerstone.dll</HintPath>
+      <HintPath>..\External\Moving Pictures v1.3.1\Cornerstone.dll</HintPath>
     </Reference>
     <Reference Include="Databases, Version=1.1.8.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -75,13 +75,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MediaPortal v1.3 Alpha\Dialogs.dll</HintPath>
     </Reference>
-    <Reference Include="MovingPictures">
+    <Reference Include="MovingPictures, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\Moving Pictures v1.0.6\MovingPictures.dll</HintPath>
+      <HintPath>..\External\Moving Pictures v1.3.1\MovingPictures.dll</HintPath>
     </Reference>
     <Reference Include="MP-TVSeries">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MP-TVSeries v2.6.0\MP-TVSeries.dll</HintPath>
+      <HintPath>..\External\MP-TVSeries v3.3.1\MP-TVSeries.dll</HintPath>
     </Reference>
     <Reference Include="MyFilms">
       <SpecificVersion>False</SpecificVersion>
@@ -326,18 +325,11 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>cd $(TargetDir)
-copy "$(ProjectDir)..\External\7z.dll" "$(TargetDir)" /Y
-REM copy "$(ProjectDir)..\External\ICSharpCode.SharpZipLib.dll" "$(TargetDir)" /Y
-copy "$(ProjectDir)..\External\MediaInfo.dll" "$(TargetDir)" /Y
-
-REM copy "$(ProjectDir)..\External\merge.bat" "$(TargetDir)" /Y
-REM copy "$(ProjectDir)..\External\ilmerge.exe" "$(TargetDir)" /Y
-REM call merge.bat
-
-REM copy "$(TargetDir)"SubCentral.dll "$(TargetDir)"MP12-SubCentral.dll /Y
-
-REM copy "$(TargetDir)"SubCentral.dll "c:\Program Files\Team MediaPortal\MediaPortal\plugins\Windows\"
-REM copy "$(TargetDir)"SubCentral.pdb "c:\Program Files\Team MediaPortal\MediaPortal\plugins\Windows\"</PostBuildEvent>
+if exist SubCentral_UNMERGED.dll del SubCentral_UNMERGED.dll
+ren SubCentral.dll SubCentral_UNMERGED.dll
+echo Merging...
+call "$(ProjectDir)..\External\ilmerge.exe" /out:SubCentral.dll SubCentral_UNMERGED.dll NLog.dll
+echo Merge done.</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
