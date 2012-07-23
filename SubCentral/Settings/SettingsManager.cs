@@ -36,30 +36,19 @@ namespace SubCentral.Settings {
         private static object _lock = new object();
 
         public static bool Load(string path) {
-            try {
-                if (!System.IO.File.Exists(path)) {
-                    //Properties.GeneralSettings.AllProvidersEnabled = true;
-                    //Properties.GeneralSettings.AllProvidersForMovies = true;
-                    //Properties.GeneralSettings.AllProvidersForTVShows = true;
-                    //Properties.GeneralSettings.EnabledProvidersEnabled = true;
-                    //Properties.FolderSettings.OnDownloadFileName = OnDownloadFileName.AskIfManual;
-                    //Properties.GUISettings.SortMethod = SubtitlesSortMethod.SubtitleLanguage;
-                    //Properties.GUISettings.SortAscending = true;
-                    logger.Info("SubCentral is used the first time. Default settings will be used");
-                    Save(path);
-                }
-                using (FileStream fs = new FileStream(path, FileMode.Open)) {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(SettingsManager));
 
-                    _Settings = (SettingsManager)xmlSerializer.Deserialize(fs);
-
-                    SettingsLoaded = true;
-
-                    return true;
-                }
+            if (!File.Exists(path)) {
+                logger.Info("SubCentral is used the first time. Default settings will be used");
+                Save(path);
             }
-            catch (System.Exception) {
-                throw;
+            using (FileStream fs = new FileStream(path, FileMode.Open)) {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(SettingsManager));
+
+                _Settings = (SettingsManager)xmlSerializer.Deserialize(fs);
+
+                SettingsLoaded = true;
+
+                return true;
             }
         }
 
@@ -68,22 +57,18 @@ namespace SubCentral.Settings {
         }
 
         public static bool Save(string path) {
-            try {
-                if (System.IO.File.Exists(path)) {
-                    string backupPath = path + ".bak";
-                    if (System.IO.File.Exists(backupPath))
-                        System.IO.File.Delete(backupPath);
-                    System.IO.File.Move(path, backupPath);
-                }
-                using (FileStream fs = new FileStream(path, FileMode.Create)) {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(SettingsManager));
-                    xmlSerializer.Serialize(fs, Properties);
-                    fs.Close();
-                    return true;
-                }
+ 
+            if (File.Exists(path)) {
+                string backupPath = path + ".bak";
+                if (File.Exists(backupPath))
+                    File.Delete(backupPath);
+                File.Move(path, backupPath);
             }
-            catch {
-                throw;
+            using (FileStream fs = new FileStream(path, FileMode.Create)) {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(SettingsManager));
+                xmlSerializer.Serialize(fs, Properties);
+                fs.Close();
+                return true;
             }
         }
 
