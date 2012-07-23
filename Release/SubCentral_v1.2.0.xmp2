@@ -659,7 +659,25 @@ Click Next to continue or Cancel to exit Setup.</Value>
     </Items>
   </Dependencies>
   <PluginDependencies>
-    <Items />
+    <Items>
+      <PluginDependencyItem AssemblyName="SubCentral.dll">
+        <CompatibleVersion>
+          <Items>
+            <CompatibleVersionItem>
+              <MinRequiredVersion>1.2.100.0</MinRequiredVersion>
+              <DesignedForVersion>1.2.100.0</DesignedForVersion>
+            </CompatibleVersionItem>
+          </Items>
+        </CompatibleVersion>
+        <SubSystemsUsed>
+          <Items>
+            <SubSystemItem Name="MP.SkinEngine" />
+            <SubSystemItem Name="MP.Externals.MediaInfo" />
+            <SubSystemItem Name="MP.Config" />
+          </Items>
+        </SubSystemsUsed>
+      </PluginDependencyItem>
+    </Items>
   </PluginDependencies>
   <GeneralInfo>
     <Name>SubCentral</Name>
@@ -676,8 +694,9 @@ Click Next to continue or Cancel to exit Setup.</Value>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
     <VersionDescription>* New: Support for MediaPortal 1.3 Alpha
+* New: Includes SubtitleDownloader 3.0.5
 * New: SubtitleDownloader installed as MP Extension for easy online updates
-* New: Removed support for Blue3 skin
+* New: Removed support for Blue3 skins
 
 </VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
@@ -1115,14 +1134,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\External\SubtitleDownloader-3.0.5.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{634cdc16-931c-42a5-b1a8-c4c850f449c0}-SubtitleDownloader-3.0.5.0.mpe1</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{6140fdaf-62c9-4fda-ad1a-d7e512e2ec94}-SubtitleDownloader-3.0.5.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{68a0b65c-5fb3-4b57-87f0-04347bea6c81}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{674980fa-1f23-41cb-8d62-c62dd8aaf86f}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
