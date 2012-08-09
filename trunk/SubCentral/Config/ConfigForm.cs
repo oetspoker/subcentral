@@ -1117,7 +1117,7 @@ namespace SubCentral.ConfigForm {
         }
 
         private void pictureBox2_Click(object sender, EventArgs e) {
-            Process.Start(@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=UQYEBUG9G46CW&lc=SI&item_name=SubCentral&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted");
+            Process.Start(@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=3TXC5D2X4ZPM6&lc=FI&item_name=SubCentral&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted");
         }
 
     }

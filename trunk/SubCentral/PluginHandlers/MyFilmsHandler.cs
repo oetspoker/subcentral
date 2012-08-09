@@ -66,7 +66,7 @@ namespace SubCentral.PluginHandlers {
         }
 
         protected override bool IsAvailable() {
-          if (!IsAssemblyAvailable("MyFilms", new Version(5, 0, 1)))
+          if (!IsAssemblyAvailable("MyFilms", new Version(6, 0, 0)))
               return false;
 
           return true;
