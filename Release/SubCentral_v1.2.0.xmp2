@@ -701,7 +701,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
 </VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2012-07-21T00:00:00</ReleaseDate>
+    <ReleaseDate>2012-08-09T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
     <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.2.0.mpe1</Location>
     <Params>
@@ -1134,14 +1134,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\External\SubtitleDownloader-3.0.5.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{6140fdaf-62c9-4fda-ad1a-d7e512e2ec94}-SubtitleDownloader-3.0.5.0.mpe1</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{466a1a7c-8189-40e7-8723-0d9b2c63f313}-SubtitleDownloader-3.0.5.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{674980fa-1f23-41cb-8d62-c62dd8aaf86f}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{35ccaaf6-b982-403b-a1c4-298398dfcfe6}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
@@ -1149,7 +1149,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
   <ProjectSettings>
     <FolderGroups />
     <ProjectFilename>SubCentral_v1.2.0.xmp2</ProjectFilename>
-    <UpdatePath1>D:\developing\#maintained\SubCentral\Release\update.xml</UpdatePath1>
+    <UpdatePath1>D:\dev\subcentral\Release\update.xml</UpdatePath1>
     <UpdatePath2 />
     <UpdatePath3 />
   </ProjectSettings>
