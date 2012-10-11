@@ -131,7 +131,7 @@
   <string Field="SubtitlesExist">Ondertitelingsbestand bestaat reeds.\nBestaand bestand overschrijven?</string>
   <string Field="SubtitlesDownloaded">Ondertitelingen gedownloaded!</string>
   <string Field="SelectDownloadmap">Kies downloadmap</string>
-  <string Field="Subtitles">Ondertitel(s)</string>
+  <string Field="SubtitleS">Ondertitel(s)</string>
   <string Field="Subtitle">Ondertitel</string>
   <string Field="Subtitles">ondertitelingen</string>
   <string Field="SubtitlesDownloadedCount">{0} ondertitelingen gedownload</string>
