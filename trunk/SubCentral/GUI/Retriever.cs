@@ -283,8 +283,8 @@ namespace SubCentral.GUI {
                     }
                     break;
                 case SubtitlesSearchType.TVSHOW:
-                    logger.Debug("...using TV show query: '{0} {1}x{2:00}'", mediaDetail.Title, mediaDetail.SeasonProper, mediaDetail.EpisodeProper);
-                    episodeQuery = new SubtitleDownloader.Core.EpisodeSearchQuery(mediaDetail.Title, mediaDetail.SeasonProper, mediaDetail.EpisodeProper);
+                    logger.Debug("...using TV show query: '{0} {1}x{2:00} TvdbId: {3}", mediaDetail.Title, mediaDetail.SeasonProper, mediaDetail.EpisodeProper, mediaDetail.TvdbId);
+                    episodeQuery = new SubtitleDownloader.Core.EpisodeSearchQuery(mediaDetail.Title, mediaDetail.SeasonProper, mediaDetail.EpisodeProper, mediaDetail.TvdbId);
                     episodeQuery.LanguageCodes = _languageCodes.ToArray();
                     break;
                 case SubtitlesSearchType.MOVIE:

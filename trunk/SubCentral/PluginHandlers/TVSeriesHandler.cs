@@ -79,6 +79,8 @@ namespace SubCentral.PluginHandlers {
                 if (!string.IsNullOrEmpty(episodeFileName))
                     _mediaDetail.Files.Add(new FileInfo(episodeFileName));
 
+                _mediaDetail.TvdbId = series[DBSeries.cID];
+
                 return true;
             }
             catch (Exception e) {
