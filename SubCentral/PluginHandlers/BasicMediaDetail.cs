@@ -87,5 +87,7 @@ namespace SubCentral.PluginHandlers {
         public string FanArt { get; set; }
 
         public List<FileInfo> Files { get; set; }
+
+        public int? TvdbId { get; set; }
     }
 }
