@@ -582,7 +582,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
               <Params>
                 <Items>
                   <SectionParam Name="Extension package">
-                    <Value>..\External\SubtitleDownloader-3.0.7.0.mpe1</Value>
+                    <Value>..\External\SubtitleDownloader-3.0.8.0.mpe1</Value>
                     <ValueType>File</ValueType>
                     <Description>Location of the extension package</Description>
                   </SectionParam>
@@ -590,6 +590,16 @@ Click Next to continue or Cancel to exit Setup.</Value>
                     <Value>YES</Value>
                     <ValueType>Bool</ValueType>
                     <Description>Silent install, No wizard screen will be displayed </Description>
+                  </SectionParam>
+                  <SectionParam Name="Extension Id">
+                    <Value />
+                    <ValueType>String</ValueType>
+                    <Description>Global Id of the extension package - it will be downloaded when no file is set.</Description>
+                  </SectionParam>
+                  <SectionParam Name="Extension Version">
+                    <Value />
+                    <ValueType>String</ValueType>
+                    <Description>Minimum Version of the extension package - older versions will be updated (only used when downloading via Id).</Description>
                   </SectionParam>
                 </Items>
               </Params>
@@ -672,8 +682,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <SubSystemsUsed>
           <Items>
             <SubSystemItem Name="MP.Config" />
-            <SubSystemItem Name="MP.SkinEngine" />
             <SubSystemItem Name="MP.Externals.MediaInfo" />
+            <SubSystemItem Name="MP.SkinEngine" />
           </Items>
         </SubSystemsUsed>
       </PluginDependencyItem>
@@ -693,7 +703,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
-    <VersionDescription>* New: Includes SubtitleDownloader 3.0.7
+    <VersionDescription>* New: Includes SubtitleDownloader 3.0.8
 * New: Support SubtitleDownloader Tvdb ID search
 
 
@@ -1132,8 +1142,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\SubtitleDownloader-3.0.7.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{84385376-dcae-414f-b9cb-50dba429c7cf}-SubtitleDownloader-3.0.7.0.mpe1</ZipFileName>
+        <LocalFileName>..\External\SubtitleDownloader-3.0.8.0.mpe1</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{f2d11082-0af7-445d-915e-28b9a2339d47}-SubtitleDownloader-3.0.8.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
