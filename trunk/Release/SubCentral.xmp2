@@ -589,7 +589,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
               <Params>
                 <Items>
                   <SectionParam Name="Extension package">
-                    <Value>..\External\SubtitleDownloader-3.0.8.0.mpe1</Value>
+                    <Value>..\External\SubtitleDownloader-3.0.9.0.mpe1</Value>
                     <ValueType>File</ValueType>
                     <Description>Location of the extension package</Description>
                   </SectionParam>
@@ -670,7 +670,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>*</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
-        <Message>This version of SubCentral requires MediaPortal 1.3 Alpha or newer!</Message>
+        <Message>This version of SubCentral requires MediaPortal 1.3 Final or newer!</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
@@ -710,14 +710,15 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
-    <VersionDescription>* New: Includes SubtitleDownloader 3.0.8
-* New: Support SubtitleDownloader Tvdb ID search
+    <VersionDescription>* New: Official support for MP 1.2.0 Final
+* New: Includes SubtitleDownloader 3.0.9
+* New: Updated Sratim &amp; SubsCenterOrg
 
 
 </VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2012-10-20T00:00:00</ReleaseDate>
+    <ReleaseDate>2013-03-25T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
     <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.2.1.mpe1</Location>
     <Params>
@@ -1156,15 +1157,15 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\SubtitleDownloader-3.0.8.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f2d11082-0af7-445d-915e-28b9a2339d47}-SubtitleDownloader-3.0.8.0.mpe1</ZipFileName>
+        <LocalFileName>..\External\SubtitleDownloader-3.0.9.0.mpe1</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{da10cf0a-a15f-4112-a9ce-43c2c3f855cd}-SubtitleDownloader-3.0.9.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{f3ca53be-2602-4a03-a08c-94f59761f122}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{b4210b22-83a4-463e-961a-b557cedad531}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
