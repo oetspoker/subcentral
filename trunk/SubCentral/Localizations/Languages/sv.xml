@@ -1,192 +1,192 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+ï»¿<?xml version="1.0" encoding="UTF-8"?>
 <!-- SubCentral translation file -->
 <!-- Swedish -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
 <!-- Updated 8. December 2012 -->
-<strings>
+<resources>
 	<!-- # -->
 
 	<!-- A -->
-	<string Field="AllProviders">Alla sidor</string>
-	<string Field="AllEnabledProviders">Endast valda sidor</string>
-	<string Field="About">Om</string>
-	<string Field="AllSubtitlesDownloaded">Alla ({0}) undertexter har hämtats!</string>
-	<string Field="AllSubtitlesCanceledDownload">Alla ({0}) hämtningar av undertexter har avbrutits!</string>
-	<string Field="All">Alla</string>
-	<string Field="AllSubtitlesDeleted">Alla ({0}) undertexter har raderats!</string>
-	<string Field="AboutText">SubCentral är ett fristående insticksprogram för MediaPortal. Syftet är att med detta program låta användaren söka efter och hämta undertexter till filmer och tv-serier som visas i MediaPortal med de populära insticksprogrammen Moving Pictures och MP TV-Series. Det är gjort för att kunna implementeras i andra insticksprogram också.
+	<string name="AllProviders">Alla sidor</string>
+	<string name="AllEnabledProviders">Endast valda sidor</string>
+	<string name="About">Om</string>
+	<string name="AllSubtitlesDownloaded">Alla ({0}) undertexter har hÃ¤mtats!</string>
+	<string name="AllSubtitlesCanceledDownload">Alla ({0}) hÃ¤mtningar av undertexter har avbrutits!</string>
+	<string name="All">Alla</string>
+	<string name="AllSubtitlesDeleted">Alla ({0}) undertexter har raderats!</string>
+	<string name="AboutText">SubCentral Ã¤r ett fristÃ¥ende insticksprogram fÃ¶r MediaPortal. Syftet Ã¤r att med detta program lÃ¥ta anvÃ¤ndaren sÃ¶ka efter och hÃ¤mta undertexter till filmer och tv-serier som visas i MediaPortal med de populÃ¤ra insticksprogrammen Moving Pictures och MP TV-Series. Det Ã¤r gjort fÃ¶r att kunna implementeras i andra insticksprogram ocksÃ¥.
 
-Det bästa sättet att använda detta insticksprogram är att Öppna Moving Pictures eller MP TV-Series, välja en film eller ett TV-Serieavnitt och välja "Undertexter". I Moving Pictures (stöds från version 1.0.3 eller senare), hittar du detta vanligtvis i menyn eller via en egen knapp på detalj-vyn för varje film (beroende på vilket Skin som används). I MP TV-Series (stöds från version 2.6.0 eller senare), öppnar man undermenyn för valt avsnitt och bläddrar till "Undertexter". Om man vill finns även möjlighet att välja precis vilka sök-kriterier som detta insticksprogram skall använda för en mer precis sökning.
+Det bÃ¤sta sÃ¤ttet att anvÃ¤nda detta insticksprogram Ã¤r att Ã–ppna Moving Pictures eller MP TV-Series, vÃ¤lja en film eller ett TV-Serieavnitt och vÃ¤lja "Undertexter". I Moving Pictures (stÃ¶ds frÃ¥n version 1.0.3 eller senare), hittar du detta vanligtvis i menyn eller via en egen knapp pÃ¥ detalj-vyn fÃ¶r varje film (beroende pÃ¥ vilket Skin som anvÃ¤nds). I MP TV-Series (stÃ¶ds frÃ¥n version 2.6.0 eller senare), Ã¶ppnar man undermenyn fÃ¶r valt avsnitt och blÃ¤ddrar till "Undertexter". Om man vill finns Ã¤ven mÃ¶jlighet att vÃ¤lja precis vilka sÃ¶k-kriterier som detta insticksprogram skall anvÃ¤nda fÃ¶r en mer precis sÃ¶kning.
 
-Om detta insticksprogram öppnats från hemskärmen (som just nu) går det ändå att söka manuellt genom att sätta egna kriterier (för film eller TV-serier). För att välja språk för undertextsökningen, använd menyvalet för just språk. För ett fler inställningsmöjligheter, öppna insticksprogrammets konfiguration i MediaPortals Configuration-applikation (där man kan göra urval, sortera och byta namn på de grupper och sidor som undertexterna hämtas ifrån samt välja språk och vart undertexterna skall sparas).
+Om detta insticksprogram Ã¶ppnats frÃ¥n hemskÃ¤rmen (som just nu) gÃ¥r det Ã¤ndÃ¥ att sÃ¶ka manuellt genom att sÃ¤tta egna kriterier (fÃ¶r film eller TV-serier). FÃ¶r att vÃ¤lja sprÃ¥k fÃ¶r undertextsÃ¶kningen, anvÃ¤nd menyvalet fÃ¶r just sprÃ¥k. FÃ¶r ett fler instÃ¤llningsmÃ¶jligheter, Ã¶ppna insticksprogrammets konfiguration i MediaPortals Configuration-applikation (dÃ¤r man kan gÃ¶ra urval, sortera och byta namn pÃ¥ de grupper och sidor som undertexterna hÃ¤mtas ifrÃ¥n samt vÃ¤lja sprÃ¥k och vart undertexterna skall sparas).
 
-När sökningen är klar så går det att sortera hur resultaten skall listas via menyn och här man kan såklart också ladda ner sina undertexter.
-Om du får glädje av detta insticksprogram får du gärna skänka en gåva till utvecklingen genom att donera via PayPal. För mer information om detta arbete, besök oss på MediaPortals forum eller på vår Google Code-sida!</string>
+NÃ¤r sÃ¶kningen Ã¤r klar sÃ¥ gÃ¥r det att sortera hur resultaten skall listas via menyn och hÃ¤r man kan sÃ¥klart ocksÃ¥ ladda ner sina undertexter.
+Om du fÃ¥r glÃ¤dje av detta insticksprogram fÃ¥r du gÃ¤rna skÃ¤nka en gÃ¥va till utvecklingen genom att donera via PayPal. FÃ¶r mer information om detta arbete, besÃ¶k oss pÃ¥ MediaPortals forum eller pÃ¥ vÃ¥r Google Code-sida!</string>
 
 	<!-- B -->
-	<string Field="Back">Tillbaka</string>
+	<string name="Back">Tillbaka</string>
 
 	<!-- C -->
-	<string Field="CannotLoadSkin">Kunde inte ladda skin-filen\nför SubCentral!</string>
-	<string Field="Cancel">Avbryt</string>
-	<string Field="Confirm">Bekräfta</string>
-	<string Field="ClearFiles">Rensa filer</string>
-	<string Field="ClearMedia">Rensa media</string>
-	<string Field="CanceledDownload">Avbruten nerladdning!</string>
-	<string Field="ContextMenu">Undermeny</string>
-	<string Field="CannotUseManualSearch">Manual sökning är inte möjlig, då \ningen nerladdningsmapp är vald.\nStäll in en nerladdningskatalog i insticksprogrammets konfiguration.</string>
-	<string Field="CannotClearMedia">Det går inte att rensa mediafilerna då\ningen nerladdningsmapp  är vald.\nStäll in en nerladdningskatalog i insticksprogrammets konfiguration.</string>
-	<string Field="Completed">Färdiga</string>
+	<string name="CannotLoadSkin">Kunde inte ladda skin-filen\nfÃ¶r SubCentral!</string>
+	<string name="Cancel">Avbryt</string>
+	<string name="Confirm">BekrÃ¤fta</string>
+	<string name="ClearFiles">Rensa filer</string>
+	<string name="ClearMedia">Rensa media</string>
+	<string name="CanceledDownload">Avbruten nerladdning!</string>
+	<string name="ContextMenu">Undermeny</string>
+	<string name="CannotUseManualSearch">Manual sÃ¶kning Ã¤r inte mÃ¶jlig, dÃ¥ \ningen nerladdningsmapp Ã¤r vald.\nStÃ¤ll in en nerladdningskatalog i insticksprogrammets konfiguration.</string>
+	<string name="CannotClearMedia">Det gÃ¥r inte att rensa mediafilerna dÃ¥\ningen nerladdningsmapp  Ã¤r vald.\nStÃ¤ll in en nerladdningskatalog i insticksprogrammets konfiguration.</string>
+	<string name="Completed">FÃ¤rdiga</string>
 
 	<!-- D -->
-	<string Field="DefaultFor">Förinställt för: {0}</string>
-	<string Field="DownloadFoderDoesNotExistCreate">Nerladdningsmappen existerar inte.\nVill du skapa den?</string>
-	<string Field="Download">Nerladdning</string>
-	<string Field="DownloadTo">Ladda ner till...</string>
-	<string Field="DefaultFolderInaccessible">Den förvalda nerladdningsmappen ({0}) är inte tillgänglig! Välj en annan plats.</string>
-	<string Field="DefaultFolderNotWritable">Det går inte att skriva till den förvalda nerladdningsmappen ({0})! Välj en annan plats.</string>
-	<string Field="DefaultDownloadFoderDoesNotExistCreate">Den förvalda nerladdningsmappen:\n{0}\nexisterar inte.\nVill du skapa den?</string>
-	<string Field="Default">Förvalt</string>
-	<string Field="DeleteSubtitles">Radera undertexter</string>
-	<string Field="Done">Färdig</string>
+	<string name="DefaultFor">FÃ¶rinstÃ¤llt fÃ¶r: {0}</string>
+	<string name="DownloadFoderDoesNotExistCreate">Nerladdningsmappen existerar inte.\nVill du skapa den?</string>
+	<string name="Download">Nerladdning</string>
+	<string name="DownloadTo">Ladda ner till...</string>
+	<string name="DefaultFolderInaccessible">Den fÃ¶rvalda nerladdningsmappen ({0}) Ã¤r inte tillgÃ¤nglig! VÃ¤lj en annan plats.</string>
+	<string name="DefaultFolderNotWritable">Det gÃ¥r inte att skriva till den fÃ¶rvalda nerladdningsmappen ({0})! VÃ¤lj en annan plats.</string>
+	<string name="DefaultDownloadFoderDoesNotExistCreate">Den fÃ¶rvalda nerladdningsmappen:\n{0}\nexisterar inte.\nVill du skapa den?</string>
+	<string name="Default">FÃ¶rvalt</string>
+	<string name="DeleteSubtitles">Radera undertexter</string>
+	<string name="Done">FÃ¤rdig</string>
 
 	<!-- E -->
-	<string Field="Error">Fel</string>
-	<string Field="ExternalPlugin">externt insticksprogram</string>
-	<string Field="ErrorWhileDownloadingSubtitles">Fel vid hämtning av undertexter!</string>
-	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Fel vid hämtning av undertext: {0}</string>
-	<string Field="ErrorWhileRetrievingSubtitles">Fel vid hämtning av undertext!</string>
-	<string Field="ErrorWhileRetrievingSubtitlesWithReason">Fel vid hämtning av undertext: {0}</string>
-	<string Field="ErrorWhileCreatingDirectory">Fel vid skapande av katalog!</string>
+	<string name="Error">Fel</string>
+	<string name="ExternalPlugin">externt insticksprogram</string>
+	<string name="ErrorWhileDownloadingSubtitles">Fel vid hÃ¤mtning av undertexter!</string>
+	<string name="ErrorWhileDownloadingSubtitlesWithReason">Fel vid hÃ¤mtning av undertext: {0}</string>
+	<string name="ErrorWhileRetrievingSubtitles">Fel vid hÃ¤mtning av undertext!</string>
+	<string name="ErrorWhileRetrievingSubtitlesWithReason">Fel vid hÃ¤mtning av undertext: {0}</string>
+	<string name="ErrorWhileCreatingDirectory">Fel vid skapande av katalog!</string>
 
 	<!-- F -->
-	<string Field="FoundSubtitles">Undertext hittad</string>
-	<string Field="From">Från: {0}</string>
-	<string Field="Finishing">Avslutar...</string>
+	<string name="FoundSubtitles">Undertext hittad</string>
+	<string name="From">FrÃ¥n: {0}</string>
+	<string name="Finishing">Avslutar...</string>
 
 	<!-- G -->
-	<string Field="GroupS">Grupp(er)</string>
-	<string Field="GroupProviderDefault">Förinställd Grupp/Sida</string>
+	<string name="GroupS">Grupp(er)</string>
+	<string name="GroupProviderDefault">FÃ¶rinstÃ¤lld Grupp/Sida</string>
 
 	<!-- H -->
 
 	<!-- I -->
-	<string Field="Initializing">Påbörjar</string>
-	<string Field="IMDbID">IMDb ID: {0}</string>
+	<string name="Initializing">PÃ¥bÃ¶rjar</string>
+	<string name="IMDbID">IMDb ID: {0}</string>
 
 	<!-- L -->
-	<string Field="Languages">Språk</string>
-	<string Field="Language">Språk</string>
-	<string Field="Local">Lokalt (i media-mappar)</string>
+	<string name="Languages">SprÃ¥k</string>
+	<string name="Language">SprÃ¥k</string>
+	<string name="Local">Lokalt (i media-mappar)</string>
 
 	<!-- M -->
-	<string Field="Movies">Filmer</string>
-	<string Field="ManualSearch">Manuell sökning</string>
-	<string Field="ModifySearch">Ändra sökning</string>
-	<string Field="MediaFilesDifferFromSubtitleFiles">Antalet media-filer matchar inte antalet undertexter. Fel undertext vald?</string>
-	<string Field="MovieIMDb">Film (IMDb)</string>
-	<string Field="Movie">Film</string>
-	<string Field="MediaNoSubtitles">Kunde inte hitta undertext som passar detta media!</string>
-	<string Field="MediaOnlyInternalSubtitles">Endast inbäddade undertexter funna för detta media!</string>
-	<string Field="MediaWrongMarkHasSubtitles">Media från {0} är flaggad som "har undertexter"\nmen insticksprogrammet kan inte hitta någon undertextfil.Vill du rätta till detta och \nflagga filen som "saknar undertexter"?</string>
-	<string Field="MediaMaybeInternalSubtitles">(kan möjligtvis ha inbäddad undertext)</string>
-	<string Field="MediaHasSubtitles">Detta media har redan undertexter. Om du vill radera dessa, använd knappen i menyn.</string>
-	<string Field="MediaNoMoreSubtitles">Det går inte att hitta fler undertexter för denna mediafil.\nVill du flagga den som "undertext finns inte" hos \n{0}?</string>
-	<string Field="MediaWrongMarkNoSubtitles">Media från {0} är flaggad som "saknar undertexter"\nmen insticksprogrammet hittade\nundertexter. Vill du rätta till detta och \nflagga filen som "har undertexter"?</string>
-	<string Field="MultiSelectDialog">Flervals-dialog</string>
+	<string name="Movies">Filmer</string>
+	<string name="ManualSearch">Manuell sÃ¶kning</string>
+	<string name="ModifySearch">Ã„ndra sÃ¶kning</string>
+	<string name="MediaFilesDifferFromSubtitleFiles">Antalet media-filer matchar inte antalet undertexter. Fel undertext vald?</string>
+	<string name="MovieIMDb">Film (IMDb)</string>
+	<string name="Movie">Film</string>
+	<string name="MediaNoSubtitles">Kunde inte hitta undertext som passar detta media!</string>
+	<string name="MediaOnlyInternalSubtitles">Endast inbÃ¤ddade undertexter funna fÃ¶r detta media!</string>
+	<string name="MediaWrongMarkHasSubtitles">Media frÃ¥n {0} Ã¤r flaggad som "har undertexter"\nmen insticksprogrammet kan inte hitta nÃ¥gon undertextfil.Vill du rÃ¤tta till detta och \nflagga filen som "saknar undertexter"?</string>
+	<string name="MediaMaybeInternalSubtitles">(kan mÃ¶jligtvis ha inbÃ¤ddad undertext)</string>
+	<string name="MediaHasSubtitles">Detta media har redan undertexter. Om du vill radera dessa, anvÃ¤nd knappen i menyn.</string>
+	<string name="MediaNoMoreSubtitles">Det gÃ¥r inte att hitta fler undertexter fÃ¶r denna mediafil.\nVill du flagga den som "undertext finns inte" hos \n{0}?</string>
+	<string name="MediaWrongMarkNoSubtitles">Media frÃ¥n {0} Ã¤r flaggad som "saknar undertexter"\nmen insticksprogrammet hittade\nundertexter. Vill du rÃ¤tta till detta och \nflagga filen som "har undertexter"?</string>
+	<string name="MultiSelectDialog">Flervals-dialog</string>
 
 	<!-- N -->
-	<string Field="NewGroup">Ny grupp</string>
-	<string Field="NoResultsFound">Inga träffar</string>
-	<string Field="NoSubtitlesFound">Inga undertexter funna</string>
-	<string Field="NoDownloadFolders">Ingen giltig nerladdningsmapp för denna media kunde hittas.</string>
-	<string Field="NotEnoughDataForSearch">Sökningen har inte tillräckligt med data för hitta undertext</string>
-	<string Field="Name">Namn</string>
-	<string Field="NoSorting">Sortera inte</string>
-	<string Field="NoSubtitlesDelete">Det finns ingen undertext att radera.</string>
-	<string Field="NoSubtitlesDownloaded">Ingen undertext hämtades!</string>
-	<string Field="NoSubtitlesDownloadedWithReason">Ingen undertext hämtades: {0}</string>
-	<string Field="NoSubtitlesInChosen">Det gick inte att hitta undertext i hämtat paket. Serverfel?</string>
+	<string name="NewGroup">Ny grupp</string>
+	<string name="NoResultsFound">Inga trÃ¤ffar</string>
+	<string name="NoSubtitlesFound">Inga undertexter funna</string>
+	<string name="NoDownloadFolders">Ingen giltig nerladdningsmapp fÃ¶r denna media kunde hittas.</string>
+	<string name="NotEnoughDataForSearch">SÃ¶kningen har inte tillrÃ¤ckligt med data fÃ¶r hitta undertext</string>
+	<string name="Name">Namn</string>
+	<string name="NoSorting">Sortera inte</string>
+	<string name="NoSubtitlesDelete">Det finns ingen undertext att radera.</string>
+	<string name="NoSubtitlesDownloaded">Ingen undertext hÃ¤mtades!</string>
+	<string name="NoSubtitlesDownloadedWithReason">Ingen undertext hÃ¤mtades: {0}</string>
+	<string name="NoSubtitlesInChosen">Det gick inte att hitta undertext i hÃ¤mtat paket. Serverfel?</string>
 
 	<!-- O -->
-	<string Field="OKSearch">OK/Sök</string>
-	<string Field="OK">OK</string>
+	<string name="OKSearch">OK/SÃ¶k</string>
+	<string name="OK">OK</string>
 
 	<!-- P -->
-	<string Field="ProviderS">Sökmotor(er)</string>
+	<string name="ProviderS">SÃ¶kmotor(er)</string>
 
 	<!-- Q -->
-	<string Field="QueryingProviders">Kör sökmotorer</string>
+	<string name="QueryingProviders">KÃ¶r sÃ¶kmotorer</string>
 
 	<!-- R -->
-	<string Field="Revert">Återgå</string>
+	<string name="Revert">Ã…tergÃ¥</string>
 
 	<!-- S -->
-	<string Field="Search">Sök</string>
-	<string Field="SubtitleDownloaderUnavailable">Kontrollera att SubtitleDownloader.dll är tillgänglig.</string>
-	<string Field="SubtitleSearch">Undertextsökning</string>
-	<string Field="SearchingSubtitles">Söker efter undertext...</string>
-	<string Field="SelectLanguages">Välj språk</string>
-	<string Field="SubtitlesExist">Undertextfil finns redan.\nSkriv över existerande undertext?</string>
-	<string Field="SubtitlesDownloaded">Undertext har hämtats!</string>
-	<string Field="SelectDownloadFolder">Välj mapp för nerladdning</string>
-	<string Field="SubtitleS">Undertext(er)</string>
-	<string Field="Subtitle">Undertext</string>
-	<string Field="Subtitles">Undertexter</string>
-	<string Field="SubtitlesDownloadedCount">{0} undertext(er) har hämtats</string>
-	<string Field="SubtitlesDownloadErrorCount">{0} undertext(er) kunde inte hämtas</string>
-	<string Field="SubtitlesDownloadCanceledCount">nerladdning av {0} undertext(er) har avbrutits</string>
-	<string Field="SelectFileForSubtitle">Välj mediafil för  '{0}'</string>
-	<string Field="SearchType">Söktyp: {0}</string>
-	<string Field="SiteDoesNotSupportIMDbIDSearch">Sidan stöder inte sökning med IMDb ID!</string>
-	<string Field="SiteDoesNotSupportMovieSearch">Sidan stöder inte filmsökning!</string>
-	<string Field="SiteDoesNotSupportTVShowSearch">Sidan stöder inte TV-seriesökning!</string>
-	<string Field="Sorting">Sortering</string>
-	<string Field="Sort">Sortera</string>
-	<string Field="SortBy">Sortera efter: {0}</string>
-	<string Field="SortByLanguage">Sortera efter undertextspråk</string>
-	<string Field="SortByName">Sortera efter undertext-namn</string>
-	<string Field="SubtitleFilesToDelete">Undertextfiler att radera</string>
-	<string Field="SortByMediaTags">Sortera efter media-taggar (om möjligt)</string>
-	<string Field="SelectSubtitleForFile">Välj undertext till '{0}'</string>
+	<string name="Search">SÃ¶k</string>
+	<string name="SubtitleDownloaderUnavailable">Kontrollera att SubtitleDownloader.dll Ã¤r tillgÃ¤nglig.</string>
+	<string name="SubtitleSearch">UndertextsÃ¶kning</string>
+	<string name="SearchingSubtitles">SÃ¶ker efter undertext...</string>
+	<string name="SelectLanguages">VÃ¤lj sprÃ¥k</string>
+	<string name="SubtitlesExist">Undertextfil finns redan.\nSkriv Ã¶ver existerande undertext?</string>
+	<string name="SubtitlesDownloaded">Undertext har hÃ¤mtats!</string>
+	<string name="SelectDownloadFolder">VÃ¤lj mapp fÃ¶r nerladdning</string>
+	<string name="SubtitleS">Undertext(er)</string>
+	<string name="Subtitle">Undertext</string>
+	<string name="Subtitles">Undertexter</string>
+	<string name="SubtitlesDownloadedCount">{0} undertext(er) har hÃ¤mtats</string>
+	<string name="SubtitlesDownloadErrorCount">{0} undertext(er) kunde inte hÃ¤mtas</string>
+	<string name="SubtitlesDownloadCanceledCount">nerladdning av {0} undertext(er) har avbrutits</string>
+	<string name="SelectFileForSubtitle">VÃ¤lj mediafil fÃ¶r  '{0}'</string>
+	<string name="SearchType">SÃ¶ktyp: {0}</string>
+	<string name="SiteDoesNotSupportIMDbIDSearch">Sidan stÃ¶der inte sÃ¶kning med IMDb ID!</string>
+	<string name="SiteDoesNotSupportMovieSearch">Sidan stÃ¶der inte filmsÃ¶kning!</string>
+	<string name="SiteDoesNotSupportTVShowSearch">Sidan stÃ¶der inte TV-seriesÃ¶kning!</string>
+	<string name="Sorting">Sortering</string>
+	<string name="Sort">Sortera</string>
+	<string name="SortBy">Sortera efter: {0}</string>
+	<string name="SortByLanguage">Sortera efter undertextsprÃ¥k</string>
+	<string name="SortByName">Sortera efter undertext-namn</string>
+	<string name="SubtitleFilesToDelete">Undertextfiler att radera</string>
+	<string name="SortByMediaTags">Sortera efter media-taggar (om mÃ¶jligt)</string>
+	<string name="SelectSubtitleForFile">VÃ¤lj undertext till '{0}'</string>
 
-	<string Field="SkinTranslationFrom">Från</string>
-	<string Field="SkinTranslationSearchType">Sökningstyp</string>
-	<string Field="SkinTranslationMediaFiles">Mediafiler</string>
-	<string Field="SkinTranslationDownloadFolder">Nerladdningsmapp</string>
-	<string Field="SkinTranslationSearchData">Sökningsdata</string>
-	<string Field="SkinTranslationIMDbID">IMDb-ID</string>
-	<string Field="SkinTranslationTitle">Titel</string>
-	<string Field="SkinTranslationYear">År</string>
-	<string Field="SkinTranslationSeason">Säsong</string>
-	<string Field="SkinTranslationEpisode">Avsnitt</string>
-	<string Field="SkinTranslationMovie">Film</string>
-	<string Field="SkinTranslationTVShow">TV-serie</string>
-	<string Field="SkinTranslationMediaTags">Media-taggar</string>
-	<string Field="SkinTranslationAbsoluteNumbering">Absolut numrering</string>
+	<string name="SkinTranslationFrom">FrÃ¥n</string>
+	<string name="SkinTranslationSearchType">SÃ¶kningstyp</string>
+	<string name="SkinTranslationMediaFiles">Mediafiler</string>
+	<string name="SkinTranslationDownloadFolder">Nerladdningsmapp</string>
+	<string name="SkinTranslationSearchData">SÃ¶kningsdata</string>
+	<string name="SkinTranslationIMDbID">IMDb-ID</string>
+	<string name="SkinTranslationTitle">Titel</string>
+	<string name="SkinTranslationYear">Ã…r</string>
+	<string name="SkinTranslationSeason">SÃ¤song</string>
+	<string name="SkinTranslationEpisode">Avsnitt</string>
+	<string name="SkinTranslationMovie">Film</string>
+	<string name="SkinTranslationTVShow">TV-serie</string>
+	<string name="SkinTranslationMediaTags">Media-taggar</string>
+	<string name="SkinTranslationAbsoluteNumbering">Absolut numrering</string>
 
 	<!-- T -->
-	<string Field="TVShows">TV-serier</string>
-	<string Field="TVShow">TV-serie</string>
-	<string Field="TimedOutWhileRetrievingSubtitles">Hämtningen av undertext tog för lång tid!</string>
-	<string Field="TooManySubtitles">(För) många undertexter</string>
-	<string Field="TooManySubtitlesQuestion">Vald undertext har {0} undertextfiler.\nVill du hämta samtliga filer?</string>
+	<string name="TVShows">TV-serier</string>
+	<string name="TVShow">TV-serie</string>
+	<string name="TimedOutWhileRetrievingSubtitles">HÃ¤mtningen av undertext tog fÃ¶r lÃ¥ng tid!</string>
+	<string name="TooManySubtitles">(FÃ¶r) mÃ¥nga undertexter</string>
+	<string name="TooManySubtitlesQuestion">Vald undertext har {0} undertextfiler.\nVill du hÃ¤mta samtliga filer?</string>
 
 	<!-- U -->
-	<string Field="UnableToImportDataFrom">Kunde inte samla data från\n{0}.</string>
-	<string Field="UnableToLoadSubtitleDownloader">Kunde inte hitta SubtitleDownloader-biblioteket!</string>
-	<string Field="UnableToDeleteSubtitleFile">Lyckades inte radera undertext-filen!</string>
-	<string Field="UnableToDeleteSubtitleFiles">Lyckades inte radera undertextfiler::</string>
+	<string name="UnableToImportDataFrom">Kunde inte samla data frÃ¥n\n{0}.</string>
+	<string name="UnableToLoadSubtitleDownloader">Kunde inte hitta SubtitleDownloader-biblioteket!</string>
+	<string name="UnableToDeleteSubtitleFile">Lyckades inte radera undertext-filen!</string>
+	<string name="UnableToDeleteSubtitleFiles">Lyckades inte radera undertextfiler::</string>
 
 	<!-- V -->
 
 	<!-- W -->
-	<string Field="Warning">Varning</string>
-	<string Field="WrongFormatIMDbID">Fel format för IMDb-ID (ttNNNNNNN)!</string>
-	<string Field="WrongFormatYear">Fel format för årtal (1900 - {0})!</string>
-	<string Field="WrongFormatSeasonEpisode">{0} måste vara ett nummer och större än 0!</string>
+	<string name="Warning">Varning</string>
+	<string name="WrongFormatIMDbID">Fel format fÃ¶r IMDb-ID (ttNNNNNNN)!</string>
+	<string name="WrongFormatYear">Fel format fÃ¶r Ã¥rtal (1900 - {0})!</string>
+	<string name="WrongFormatSeasonEpisode">{0} mÃ¥ste vara ett nummer och stÃ¶rre Ã¤n 0!</string>
 
 	<!-- Y -->
-	<string Field="PleaseSelectLanguages">Du måste välja i alla fall ett\nspråk!</string>
+	<string name="PleaseSelectLanguages">Du mÃ¥ste vÃ¤lja i alla fall ett\nsprÃ¥k!</string>
 
-</strings>
+</resources>
