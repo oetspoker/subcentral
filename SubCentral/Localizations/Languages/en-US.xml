@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- SubCentral translation file -->
 <!-- English (US) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
 <!-- Updated 6. october 2010 -->
-<strings>
+<resources>
 	<!-- # -->
 
 	<!-- A -->
-	<string Field="AllProviders">All providers</string>
-	<string Field="AllEnabledProviders">All enabled providers</string>
-	<string Field="About">About</string>
-	<string Field="AllSubtitlesDownloaded">All ({0}) subtitles downloaded!</string>
-	<string Field="AllSubtitlesCanceledDownload">All ({0}) subtitles canceled download!</string>
-	<string Field="All">All</string>
-	<string Field="AllSubtitlesDeleted">All ({0}) subtitles deleted!</string>
-	<string Field="AboutText">SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.
+	<string name="AllProviders">All providers</string>
+	<string name="AllEnabledProviders">All enabled providers</string>
+	<string name="About">About</string>
+	<string name="AllSubtitlesDownloaded">All ({0}) subtitles downloaded!</string>
+	<string name="AllSubtitlesCanceledDownload">All ({0}) subtitles canceled download!</string>
+	<string name="All">All</string>
+	<string name="AllSubtitlesDeleted">All ({0}) subtitles deleted!</string>
+	<string name="AboutText">SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.
 Best way to use the plug-in is by opening Moving Pictures or MP-TVSeries plug-in, browsing to movie/TV show and selecting 'Get subtitles' item. For Moving Pictures (supported version is 1.0.3 or higher), that item is usually in the menu or it's a separate button on details screen (depending on the skin). For TVSeries (supported version is 2.6.0 or higher), you should open context menu for the episode, select 'Download...' and then 'Retrieve subtitle'. If you wish, there is a possibility to modify search data SubCentral grabs from the plug-ins for more customized search.
 If plug-in is opened from home screen (like currently), manual search is possible, where you can create your own search queries (for movies or TV shows).
 To choose languages for subtitle search, use the menu item. Please use the MediaPortal configuration to setup the plug-in more thoroughly (selecting, reordering and renaming groups/providers, selecting and ordering languages and managing of the download folders).
@@ -23,169 +23,169 @@ If you find the plugin useful, you can support the development by donating via P
 </string>
 
 	<!-- B -->
-	<string Field="Back">Back</string>
+	<string name="Back">Back</string>
 
 	<!-- C -->
-	<string Field="CannotLoadSkin">Could not load the skin\nfile for SubCentral!</string>
-	<string Field="Cancel">Cancel</string>
-	<string Field="Confirm">Confirm</string>
-	<string Field="ClearFiles">Clear files</string>
-	<string Field="ClearMedia">Clear media</string>
-	<string Field="CanceledDownload">Canceled download!</string>
-	<string Field="ContextMenu">Context menu</string>
-	<string Field="CannotUseManualSearch">Cannot start manual search because no\nabsolute download folders are defined.\nPlease use configuration to add some.</string>
-	<string Field="CannotClearMedia">Cannot clear media files because no\nabsolute download folders are defined.\nPlease use configuration to add some.</string>
-	<string Field="Completed">Completed</string>
+	<string name="CannotLoadSkin">Could not load the skin\nfile for SubCentral!</string>
+	<string name="Cancel">Cancel</string>
+	<string name="Confirm">Confirm</string>
+	<string name="ClearFiles">Clear files</string>
+	<string name="ClearMedia">Clear media</string>
+	<string name="CanceledDownload">Canceled download!</string>
+	<string name="ContextMenu">Context menu</string>
+	<string name="CannotUseManualSearch">Cannot start manual search because no\nabsolute download folders are defined.\nPlease use configuration to add some.</string>
+	<string name="CannotClearMedia">Cannot clear media files because no\nabsolute download folders are defined.\nPlease use configuration to add some.</string>
+	<string name="Completed">Completed</string>
 
 	<!-- D -->
-	<string Field="DefaultFor">Default for: {0}</string>
-	<string Field="DownloadFoderDoesNotExistCreate">Download folder does not exist.\nCreate it?</string>
-	<string Field="Download">Download</string>
-	<string Field="DownloadTo">Download to...</string>
-	<string Field="DefaultFolderInaccessible">Default download folder ({0}) is inaccessible! Please select another one.</string>
-	<string Field="DefaultFolderNotWritable">Default download folder ({0}) is not writable! Please select another one.</string>
-	<string Field="DefaultDownloadFoderDoesNotExistCreate">Default download folder:\n{0}\ndoes not exist.\nCreate it?</string>
-	<string Field="Default">Default</string>
-	<string Field="DeleteSubtitles">Delete subtitles</string>
-	<string Field="Done">Done</string>
+	<string name="DefaultFor">Default for: {0}</string>
+	<string name="DownloadFoderDoesNotExistCreate">Download folder does not exist.\nCreate it?</string>
+	<string name="Download">Download</string>
+	<string name="DownloadTo">Download to...</string>
+	<string name="DefaultFolderInaccessible">Default download folder ({0}) is inaccessible! Please select another one.</string>
+	<string name="DefaultFolderNotWritable">Default download folder ({0}) is not writable! Please select another one.</string>
+	<string name="DefaultDownloadFoderDoesNotExistCreate">Default download folder:\n{0}\ndoes not exist.\nCreate it?</string>
+	<string name="Default">Default</string>
+	<string name="DeleteSubtitles">Delete subtitles</string>
+	<string name="Done">Done</string>
 
 	<!-- E -->
-	<string Field="Error">Error</string>
-	<string Field="ExternalPlugin">external plugin</string>
-	<string Field="ErrorWhileDownloadingSubtitles">Error(s) downloading subtitles!</string>
-	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Error downloading subtitles: {0}</string>
-	<string Field="ErrorWhileRetrievingSubtitles">Error retrieving subtitles!</string>
-	<string Field="ErrorWhileRetrievingSubtitlesWithReason">Error retrieving subtitles: {0}</string>
-	<string Field="ErrorWhileCreatingDirectory">Error creating directory!</string>
+	<string name="Error">Error</string>
+	<string name="ExternalPlugin">external plugin</string>
+	<string name="ErrorWhileDownloadingSubtitles">Error(s) downloading subtitles!</string>
+	<string name="ErrorWhileDownloadingSubtitlesWithReason">Error downloading subtitles: {0}</string>
+	<string name="ErrorWhileRetrievingSubtitles">Error retrieving subtitles!</string>
+	<string name="ErrorWhileRetrievingSubtitlesWithReason">Error retrieving subtitles: {0}</string>
+	<string name="ErrorWhileCreatingDirectory">Error creating directory!</string>
 
 	<!-- F -->
-	<string Field="FoundSubtitles">Found subtitles</string>
-	<string Field="From">From: {0}</string>
-	<string Field="Finishing">Finishing...</string>
+	<string name="FoundSubtitles">Found subtitles</string>
+	<string name="From">From: {0}</string>
+	<string name="Finishing">Finishing...</string>
 
 	<!-- G -->
-	<string Field="GroupS">Group(s)</string>
-	<string Field="GroupProviderDefault">Group/Provider default</string>
+	<string name="GroupS">Group(s)</string>
+	<string name="GroupProviderDefault">Group/Provider default</string>
 
 	<!-- H -->
 
 	<!-- I -->
-	<string Field="Initializing">Initializing</string>
-	<string Field="IMDbID">IMDb ID: {0}</string>
+	<string name="Initializing">Initializing</string>
+	<string name="IMDbID">IMDb ID: {0}</string>
 
 	<!-- L -->
-	<string Field="Languages">Languages</string>
-	<string Field="Language">Language</string>
-	<string Field="Local">Local (in media folders)</string>
+	<string name="Languages">Languages</string>
+	<string name="Language">Language</string>
+	<string name="Local">Local (in media folders)</string>
 
 	<!-- M -->
-	<string Field="Movies">Movies</string>
-	<string Field="ManualSearch">Manual search</string>
-	<string Field="ModifySearch">Modify search</string>
-	<string Field="MediaFilesDifferFromSubtitleFiles">Media files count differs from subtitle files count. Wrong subtitles?</string>
-	<string Field="MovieIMDb">Movie (IMDb)</string>
-	<string Field="Movie">Movie</string>
-	<string Field="MediaNoSubtitles">Unable to find any subtitles for media!</string>
-	<string Field="MediaOnlyInternalSubtitles">Only embedded (internal) subtitles found for media!</string>
-	<string Field="MediaWrongMarkHasSubtitles">Media from {0} is marked with subtitles available\nbut I was unable to find any. Would you like to\ncorrect that and set subtitles unavailable?</string>
-	<string Field="MediaMaybeInternalSubtitles">(could still have embedded (internal) subtitles)</string>
-	<string Field="MediaHasSubtitles">Media already has subtitles. If you'd like to delete them use the menu button.</string>
-	<string Field="MediaNoMoreSubtitles">Unable to find any more subtitles for media.\nWould you like to set subtitles unavailable\nin the provider ({0})?</string>
-	<string Field="MediaWrongMarkNoSubtitles">Media from {0} is marked with\nsubtitles unavailable but I was able to\nfind them. Would you like to correct that and\nset subtitles available?</string>
-	<string Field="MultiSelectDialog">Multi-Select Dialog</string>
+	<string name="Movies">Movies</string>
+	<string name="ManualSearch">Manual search</string>
+	<string name="ModifySearch">Modify search</string>
+	<string name="MediaFilesDifferFromSubtitleFiles">Media files count differs from subtitle files count. Wrong subtitles?</string>
+	<string name="MovieIMDb">Movie (IMDb)</string>
+	<string name="Movie">Movie</string>
+	<string name="MediaNoSubtitles">Unable to find any subtitles for media!</string>
+	<string name="MediaOnlyInternalSubtitles">Only embedded (internal) subtitles found for media!</string>
+	<string name="MediaWrongMarkHasSubtitles">Media from {0} is marked with subtitles available\nbut I was unable to find any. Would you like to\ncorrect that and set subtitles unavailable?</string>
+	<string name="MediaMaybeInternalSubtitles">(could still have embedded (internal) subtitles)</string>
+	<string name="MediaHasSubtitles">Media already has subtitles. If you'd like to delete them use the menu button.</string>
+	<string name="MediaNoMoreSubtitles">Unable to find any more subtitles for media.\nWould you like to set subtitles unavailable\nin the provider ({0})?</string>
+	<string name="MediaWrongMarkNoSubtitles">Media from {0} is marked with\nsubtitles unavailable but I was able to\nfind them. Would you like to correct that and\nset subtitles available?</string>
+	<string name="MultiSelectDialog">Multi-Select Dialog</string>
 
 	<!-- N -->
-	<string Field="NewGroup">New group</string>
-	<string Field="NoResultsFound">No results found</string>
-	<string Field="NoSubtitlesFound">No subtitles found</string>
-	<string Field="NoDownloadFolders">No valid download folders for this media were found.</string>
-	<string Field="NotEnoughDataForSearch">Not enough data for subtitle search</string>
-	<string Field="Name">Name</string>
-	<string Field="NoSorting">No sorting</string>
-	<string Field="NoSubtitlesDelete">No subtitle files found to delete.</string>
-	<string Field="NoSubtitlesDownloaded">No subtitles downloaded!</string>
-	<string Field="NoSubtitlesDownloadedWithReason">No subtitles downloaded: {0}</string>
-	<string Field="NoSubtitlesInChosen">Couldn't find any subtitles in requested subtitle item. Server error?</string>
+	<string name="NewGroup">New group</string>
+	<string name="NoResultsFound">No results found</string>
+	<string name="NoSubtitlesFound">No subtitles found</string>
+	<string name="NoDownloadFolders">No valid download folders for this media were found.</string>
+	<string name="NotEnoughDataForSearch">Not enough data for subtitle search</string>
+	<string name="Name">Name</string>
+	<string name="NoSorting">No sorting</string>
+	<string name="NoSubtitlesDelete">No subtitle files found to delete.</string>
+	<string name="NoSubtitlesDownloaded">No subtitles downloaded!</string>
+	<string name="NoSubtitlesDownloadedWithReason">No subtitles downloaded: {0}</string>
+	<string name="NoSubtitlesInChosen">Couldn't find any subtitles in requested subtitle item. Server error?</string>
 
 	<!-- O -->
-	<string Field="OKSearch">OK/Search</string>
-	<string Field="OK">OK</string>
+	<string name="OKSearch">OK/Search</string>
+	<string name="OK">OK</string>
 
 	<!-- P -->
-	<string Field="ProviderS">Provider(s)</string>
+	<string name="ProviderS">Provider(s)</string>
 
 	<!-- Q -->
-	<string Field="QueryingProviders">Querying providers</string>
+	<string name="QueryingProviders">Querying providers</string>
 
 	<!-- R -->
-	<string Field="Revert">Revert</string>
+	<string name="Revert">Revert</string>
 
 	<!-- S -->
-	<string Field="Search">Search</string>
-	<string Field="SubtitleDownloaderUnavailable">Is SubtitleDownloader.dll available?</string>
-	<string Field="SubtitleSearch">Subtitle search</string>
-	<string Field="SearchingSubtitles">Searching subtitles...</string>
-	<string Field="SelectLanguages">Select languages</string>
-	<string Field="SubtitlesExist">Subtitle file already exists.\nOverwrite existing subtitle?</string>
-	<string Field="SubtitlesDownloaded">Subtitles downloaded!</string>
-	<string Field="SelectDownloadFolder">Select download folder</string>
-	<string Field="SubtitleS">Subtitle(s)</string>
-	<string Field="Subtitle">Subtitle</string>
-	<string Field="Subtitles">Subtitles</string>
-	<string Field="SubtitlesDownloadedCount">{0} subtitles downloaded</string>
-	<string Field="SubtitlesDownloadErrorCount">{0} subtitles failed to download</string>
-	<string Field="SubtitlesDownloadCanceledCount">{0} subtitles canceled download</string>
-	<string Field="SelectFileForSubtitle">Select media file for '{0}'</string>
-	<string Field="SearchType">Search type: {0}</string>
-	<string Field="SiteDoesNotSupportIMDbIDSearch">Site does not support IMDb ID search!</string>
-	<string Field="SiteDoesNotSupportMovieSearch">Site does not support movie search!</string>
-	<string Field="SiteDoesNotSupportTVShowSearch">Site does not support TV show search!</string>
-	<string Field="Sorting">Sorting</string>
-	<string Field="Sort">Sort</string>
-	<string Field="SortBy">Sort by: {0}</string>
-	<string Field="SortByLanguage">Sort by subtitle language</string>
-	<string Field="SortByName">Sort by subtitle name</string>
-	<string Field="SubtitleFilesToDelete">Subtitle files to delete</string>
-	<string Field="SortByMediaTags">Sort by media tags (if possible)</string>
-	<string Field="SelectSubtitleForFile">Select subtitle for '{0}'</string>
+	<string name="Search">Search</string>
+	<string name="SubtitleDownloaderUnavailable">Is SubtitleDownloader.dll available?</string>
+	<string name="SubtitleSearch">Subtitle search</string>
+	<string name="SearchingSubtitles">Searching subtitles...</string>
+	<string name="SelectLanguages">Select languages</string>
+	<string name="SubtitlesExist">Subtitle file already exists.\nOverwrite existing subtitle?</string>
+	<string name="SubtitlesDownloaded">Subtitles downloaded!</string>
+	<string name="SelectDownloadFolder">Select download folder</string>
+	<string name="SubtitleS">Subtitle(s)</string>
+	<string name="Subtitle">Subtitle</string>
+	<string name="Subtitles">Subtitles</string>
+	<string name="SubtitlesDownloadedCount">{0} subtitles downloaded</string>
+	<string name="SubtitlesDownloadErrorCount">{0} subtitles failed to download</string>
+	<string name="SubtitlesDownloadCanceledCount">{0} subtitles canceled download</string>
+	<string name="SelectFileForSubtitle">Select media file for '{0}'</string>
+	<string name="SearchType">Search type: {0}</string>
+	<string name="SiteDoesNotSupportIMDbIDSearch">Site does not support IMDb ID search!</string>
+	<string name="SiteDoesNotSupportMovieSearch">Site does not support movie search!</string>
+	<string name="SiteDoesNotSupportTVShowSearch">Site does not support TV show search!</string>
+	<string name="Sorting">Sorting</string>
+	<string name="Sort">Sort</string>
+	<string name="SortBy">Sort by: {0}</string>
+	<string name="SortByLanguage">Sort by subtitle language</string>
+	<string name="SortByName">Sort by subtitle name</string>
+	<string name="SubtitleFilesToDelete">Subtitle files to delete</string>
+	<string name="SortByMediaTags">Sort by media tags (if possible)</string>
+	<string name="SelectSubtitleForFile">Select subtitle for '{0}'</string>
 
-	<string Field="SkinTranslationFrom">From</string>
-	<string Field="SkinTranslationSearchType">Search type</string>
-	<string Field="SkinTranslationMediaFiles">Media files</string>
-	<string Field="SkinTranslationDownloadFolder">Download folder</string>
-	<string Field="SkinTranslationSearchData">Search data</string>
-	<string Field="SkinTranslationIMDbID">IMDb ID</string>
-	<string Field="SkinTranslationTitle">Title</string>
-	<string Field="SkinTranslationYear">Year</string>
-	<string Field="SkinTranslationSeason">Season</string>
-	<string Field="SkinTranslationEpisode">Episode</string>
-	<string Field="SkinTranslationMovie">Movie</string>
-	<string Field="SkinTranslationTVShow">TV show</string>
-	<string Field="SkinTranslationMediaTags">Media tags</string>
-	<string Field="SkinTranslationAbsoluteNumbering">Absolute numbering</string>
+	<string name="SkinTranslationFrom">From</string>
+	<string name="SkinTranslationSearchType">Search type</string>
+	<string name="SkinTranslationMediaFiles">Media files</string>
+	<string name="SkinTranslationDownloadFolder">Download folder</string>
+	<string name="SkinTranslationSearchData">Search data</string>
+	<string name="SkinTranslationIMDbID">IMDb ID</string>
+	<string name="SkinTranslationTitle">Title</string>
+	<string name="SkinTranslationYear">Year</string>
+	<string name="SkinTranslationSeason">Season</string>
+	<string name="SkinTranslationEpisode">Episode</string>
+	<string name="SkinTranslationMovie">Movie</string>
+	<string name="SkinTranslationTVShow">TV show</string>
+	<string name="SkinTranslationMediaTags">Media tags</string>
+	<string name="SkinTranslationAbsoluteNumbering">Absolute numbering</string>
 
 	<!-- T -->
-	<string Field="TVShows">TV shows</string>
-	<string Field="TVShow">TV show</string>
-	<string Field="TimedOutWhileRetrievingSubtitles">Time out retrieving subtitles!</string>
-	<string Field="TooManySubtitles">(Too) many subtitles</string>
-	<string Field="TooManySubtitlesQuestion">Requested subtitle item has {0} subtitles.\nWould you like to download all of them?</string>
+	<string name="TVShows">TV shows</string>
+	<string name="TVShow">TV show</string>
+	<string name="TimedOutWhileRetrievingSubtitles">Time out retrieving subtitles!</string>
+	<string name="TooManySubtitles">(Too) many subtitles</string>
+	<string name="TooManySubtitlesQuestion">Requested subtitle item has {0} subtitles.\nWould you like to download all of them?</string>
 
 	<!-- U -->
-	<string Field="UnableToImportDataFrom">Unable to import data\nfrom {0}.</string>
-	<string Field="UnableToLoadSubtitleDownloader">Unable to load SubtitleDownloader library!</string>
-	<string Field="UnableToDeleteSubtitleFile">Unable to delete subtitle file!</string>
-	<string Field="UnableToDeleteSubtitleFiles">Unable to delete subtitle files:</string>
+	<string name="UnableToImportDataFrom">Unable to import data\nfrom {0}.</string>
+	<string name="UnableToLoadSubtitleDownloader">Unable to load SubtitleDownloader library!</string>
+	<string name="UnableToDeleteSubtitleFile">Unable to delete subtitle file!</string>
+	<string name="UnableToDeleteSubtitleFiles">Unable to delete subtitle files:</string>
 
 	<!-- V -->
 
 	<!-- W -->
-	<string Field="Warning">Warning</string>
-	<string Field="WrongFormatIMDbID">Wrong format for IMDb ID (ttNNNNNNN)!</string>
-	<string Field="WrongFormatYear">Wrong format for year (1900 - {0})!</string>
-	<string Field="WrongFormatSeasonEpisode">{0} must be numeric and greater than 0!</string>
+	<string name="Warning">Warning</string>
+	<string name="WrongFormatIMDbID">Wrong format for IMDb ID (ttNNNNNNN)!</string>
+	<string name="WrongFormatYear">Wrong format for year (1900 - {0})!</string>
+	<string name="WrongFormatSeasonEpisode">{0} must be numeric and greater than 0!</string>
 
 	<!-- Y -->
-	<string Field="PleaseSelectLanguages">You have to select at least one\nlanguage!</string>
+	<string name="PleaseSelectLanguages">You have to select at least one\nlanguage!</string>
 
-</strings>
+</resources>

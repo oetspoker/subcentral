@@ -1,0 +1,8 @@
+[main]
+host=https://www.transifex.com
+[MP1_CommunityPlugins.subcentral]
+file_filter=SubCentral\Localizations\Languages\<lang>.xml
+source_file=SubCentral\Localizations\Languages\en-US.xml
+source_lang=en
+lang_map = en: en-US
+type=ANDROID

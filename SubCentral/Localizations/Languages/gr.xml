@@ -3,18 +3,18 @@
 <!-- Greek (gr) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
 <!-- Updated 7. october 2010 by ScRePt -->
-<strings>
+<resources>
 	<!-- # -->
 
 	<!-- A -->
-	<string Field="AllProviders">Όλοι οι πάροχοι</string>
-	<string Field="AllEnabledProviders">Όλοι οι ενεργοποιημένοι πάροχοι</string>
-	<string Field="About">Σχετικά με</string>
-	<string Field="AllSubtitlesDownloaded">Και οι ({0}) υπότιτλοι κατέβηκαν!</string>
-	<string Field="AllSubtitlesCanceledDownload">Και οι ({0}) υπότιτλοι ακυρώθηκαν και δεν κατέβηκαν!</string>
-	<string Field="All">Όλοι</string>
-	<string Field="AllSubtitlesDeleted">Και οι ({0}) υπότιτλοι διαγράφηκαν!</string>
-	<string Field="AboutText">Το SubCentral είναι ένα αυτόνομο πρόσθετο υποτίτλων για την εφαρμογή MediaPortal. Ο σκοπός του προσθέτου είναι να επιτρέψει στον χρήστη να αναζητήσει και να κατεβάσει υπότιτλους για ταινίες ή τηλεοπτικές εκπομπές που διαχειρίζονται από τα δημοφιλή πρόσθετα Moving Pictures και MP-TVSeries. Έχει επίσης τις διεπαφές για να επιτραπεί η εύκολη υλοποίηση και ενσωμάτωση σε οποιοδήποτε άλλο πρόσθετο.
+	<string name="AllProviders">Όλοι οι πάροχοι</string>
+	<string name="AllEnabledProviders">Όλοι οι ενεργοποιημένοι πάροχοι</string>
+	<string name="About">Σχετικά με</string>
+	<string name="AllSubtitlesDownloaded">Και οι ({0}) υπότιτλοι κατέβηκαν!</string>
+	<string name="AllSubtitlesCanceledDownload">Και οι ({0}) υπότιτλοι ακυρώθηκαν και δεν κατέβηκαν!</string>
+	<string name="All">Όλοι</string>
+	<string name="AllSubtitlesDeleted">Και οι ({0}) υπότιτλοι διαγράφηκαν!</string>
+	<string name="AboutText">Το SubCentral είναι ένα αυτόνομο πρόσθετο υποτίτλων για την εφαρμογή MediaPortal. Ο σκοπός του προσθέτου είναι να επιτρέψει στον χρήστη να αναζητήσει και να κατεβάσει υπότιτλους για ταινίες ή τηλεοπτικές εκπομπές που διαχειρίζονται από τα δημοφιλή πρόσθετα Moving Pictures και MP-TVSeries. Έχει επίσης τις διεπαφές για να επιτραπεί η εύκολη υλοποίηση και ενσωμάτωση σε οποιοδήποτε άλλο πρόσθετο.
 Ο καλύτερος τρόπος να χρησιμοποιηθεί το πρόσθετο είναι ανοίγοντας το πρόσθετο Moving Pictures ή MP-TVSeries, αναζητώντας την ταινία/σειρά και επιλέγοντας το 'Λήψη υποτίτλων'. Για το Moving Pictures (η υποστηριζόμενη έκδοση είναι 1.0.3 ή μεγαλύτερο), το 'Λήψη υποτίτλων' είναι συνήθως στο μενού ή σε ξεχωριστό κουμπί στην οθόνη λεπτομερειών (αναλόγως του θέματος). Για το TVSeries (η υποστηριζόμενη έκδοση είναι 2.6.0 ή μεγαλύτερο), πρέπει να ανοίξετε το context menu του επισοδίου, επιλέξτε 'Κατέβασμα...' και μετά 'Ανάκτηση υποτίτλου'. Αν το επιθυμείτε, υπάρχει και η δυνατότητα να τροποποιήσετε τα δεδομένα αναζήτησης που χρησιμοποιεί το SubCentral από το πρόσθετο για πιο προσαρμοσμένη αναζήτηση.
 Αν το πρόσθετο ανοίξει από την αρχική οθόνη (όπως τώρα), είναι δυνατή η χειροκίνητη αναζήτηση, όπου μπορείτε να δημιουργήσετε τα δικά σας ερωτήματα αναζήτησης(για ταινίες ή σειρές).
 Για να επιλέξετε γλώσσες για την αναζήτηση υποτίτλων, χρησιμοποιήστε το μενού. Παρακαλείσθε να χρησιμοποιήσετε το MediaPortal configuration για να ρυθμίσετε το πρόσθετο πιο αναλυτικά (επιλέγοντας, ανακατατάσσοντας και μετονομάζοντας ομάδες/παρόχους, επιλέγοντας και ταξινομώντας τις γλώσσες και διαχειρίζοντας τους φακέλους λήψης).
@@ -23,156 +23,156 @@
 </string>
 
 	<!-- B -->
-	<string Field="Back">Πίσω</string>
+	<string name="Back">Πίσω</string>
 
 	<!-- C -->
-	<string Field="CannotLoadSkin">Δεν ήταν δυνατή η φόρτωση του αρχείου\nθέματος για το SubCentral!</string>
-	<string Field="Cancel">Άκυρο</string>
-	<string Field="Confirm">Επιβεβαίωση</string>
-	<string Field="ClearFiles">Καθαρισμός αρχείων</string>
-	<string Field="ClearMedia">Καθαρισμός πολυμέσων</string>
-	<string Field="CanceledDownload">Το κατέβασμα ακυρώθηκε!</string>
-	<string Field="ContextMenu">Context menu</string>
-	<string Field="CannotUseManualSearch">Δεν είναι δυνατή η εκκίνηση χειροκίνητης αναζήτησης\nδιότι δεν έχουν καθοριστεί απόλυτοι φάκελοι κατεβάσματος.\nΠαρακαλώ δηλώστε τους στην παραμετροποίηση.</string>
-	<string Field="CannotClearMedia">Δεν είναι δυνατός ο καθαρισμός αρχείων πολυμέσων διότι δεν\nέχουν καθοριστεί απόλυτοι φάκελοι κατεβάσματος.\nΠαρακαλώ δηλώστε τους στην παραμετροποίηση.</string>
-	<string Field="Completed">Ολοκληρώθηκε</string>
+	<string name="CannotLoadSkin">Δεν ήταν δυνατή η φόρτωση του αρχείου\nθέματος για το SubCentral!</string>
+	<string name="Cancel">Άκυρο</string>
+	<string name="Confirm">Επιβεβαίωση</string>
+	<string name="ClearFiles">Καθαρισμός αρχείων</string>
+	<string name="ClearMedia">Καθαρισμός πολυμέσων</string>
+	<string name="CanceledDownload">Το κατέβασμα ακυρώθηκε!</string>
+	<string name="ContextMenu">Context menu</string>
+	<string name="CannotUseManualSearch">Δεν είναι δυνατή η εκκίνηση χειροκίνητης αναζήτησης\nδιότι δεν έχουν καθοριστεί απόλυτοι φάκελοι κατεβάσματος.\nΠαρακαλώ δηλώστε τους στην παραμετροποίηση.</string>
+	<string name="CannotClearMedia">Δεν είναι δυνατός ο καθαρισμός αρχείων πολυμέσων διότι δεν\nέχουν καθοριστεί απόλυτοι φάκελοι κατεβάσματος.\nΠαρακαλώ δηλώστε τους στην παραμετροποίηση.</string>
+	<string name="Completed">Ολοκληρώθηκε</string>
 
 	<!-- D -->
-	<string Field="DefaultFor">Προκαθορισμένο για: {0}</string>
-	<string Field="DownloadFoderDoesNotExistCreate">Δεν υπάρχει ο φάκελος κατεβάσματος.\nΝα δημιουργηθεί?</string>
-	<string Field="Download">Κατέβασμα</string>
-	<string Field="DownloadTo">Κατέβασμα σε...</string>
-	<string Field="DefaultFolderNotWritable">Ο προκαθορισμένος φάκελος κατεβάσματος {0} δεν είναι εγγράψιμος! Παρακαλώ επιλέξτε κάποιον άλλο.</string>
-	<string Field="DefaultDownloadFoderDoesNotExistCreate">Ο προκαθορισμένος φάκελος κατεβάσματος:\n{0}\nδεν υπάρχει.\nΝα δημιουργηθεί?</string>
-	<string Field="Default">Προκαθορισμένο</string>
-	<string Field="DeleteSubtitles">Διαγραφή υποτίτλων</string>
+	<string name="DefaultFor">Προκαθορισμένο για: {0}</string>
+	<string name="DownloadFoderDoesNotExistCreate">Δεν υπάρχει ο φάκελος κατεβάσματος.\nΝα δημιουργηθεί?</string>
+	<string name="Download">Κατέβασμα</string>
+	<string name="DownloadTo">Κατέβασμα σε...</string>
+	<string name="DefaultFolderNotWritable">Ο προκαθορισμένος φάκελος κατεβάσματος {0} δεν είναι εγγράψιμος! Παρακαλώ επιλέξτε κάποιον άλλο.</string>
+	<string name="DefaultDownloadFoderDoesNotExistCreate">Ο προκαθορισμένος φάκελος κατεβάσματος:\n{0}\nδεν υπάρχει.\nΝα δημιουργηθεί?</string>
+	<string name="Default">Προκαθορισμένο</string>
+	<string name="DeleteSubtitles">Διαγραφή υποτίτλων</string>
 
 	<!-- E -->
-	<string Field="Error">Σφάλμα</string>
-	<string Field="ExternalPlugin">εξωτερικό πρόσθετο</string>
-	<string Field="ErrorWhileDownloadingSubtitles">Σφάλμα(τα) κατά το κατέβασμα των αρχείων!</string>
-	<string Field="ErrorWhileDownloadingSubtitlesWithReason">Σφάλμα κατά το κατέβασμα των αρχείων: {0}</string>
-	<string Field="ErrorWhileRetrievingSubtitles">Σφάλμα κατά την λήψη των υποτίτλων!</string>
-	<string Field="ErrorWhileCreatingDirectory">Σφάλμα δημιουργίας φακέλου!</string>
+	<string name="Error">Σφάλμα</string>
+	<string name="ExternalPlugin">εξωτερικό πρόσθετο</string>
+	<string name="ErrorWhileDownloadingSubtitles">Σφάλμα(τα) κατά το κατέβασμα των αρχείων!</string>
+	<string name="ErrorWhileDownloadingSubtitlesWithReason">Σφάλμα κατά το κατέβασμα των αρχείων: {0}</string>
+	<string name="ErrorWhileRetrievingSubtitles">Σφάλμα κατά την λήψη των υποτίτλων!</string>
+	<string name="ErrorWhileCreatingDirectory">Σφάλμα δημιουργίας φακέλου!</string>
 
 	<!-- F -->
-	<string Field="FoundSubtitles">Βρέθηκαν υπότιτλοι</string>
-	<string Field="From">Από: {0}</string>
+	<string name="FoundSubtitles">Βρέθηκαν υπότιτλοι</string>
+	<string name="From">Από: {0}</string>
 
 	<!-- G -->
-	<string Field="GroupS">Ομάδα(ες)</string>
-	<string Field="GroupProviderDefault">Προκαθορισμένη Ομάδα/Παροχέας</string>
+	<string name="GroupS">Ομάδα(ες)</string>
+	<string name="GroupProviderDefault">Προκαθορισμένη Ομάδα/Παροχέας</string>
 
 	<!-- H -->
 
 	<!-- I -->
-	<string Field="Initializing">Αρχικοποίηση</string>
-	<string Field="IMDbID">IMDb ID: {0}</string>
+	<string name="Initializing">Αρχικοποίηση</string>
+	<string name="IMDbID">IMDb ID: {0}</string>
 
 	<!-- L -->
-	<string Field="Languages">Γλώσσες</string>
-	<string Field="Language">Γλώσσα</string>
-	<string Field="Local">Τοπικό (στους φακέλους πολυμέσων)</string>
+	<string name="Languages">Γλώσσες</string>
+	<string name="Language">Γλώσσα</string>
+	<string name="Local">Τοπικό (στους φακέλους πολυμέσων)</string>
 
 	<!-- M -->
-	<string Field="Movies">Ταινίες</string>
-	<string Field="ManualSearch">Χειροκίνητη αναζήτηση</string>
-	<string Field="ModifySearch">Τροποποίηση αναζήτησης</string>
-	<string Field="MediaFilesDifferFromSubtitleFiles">Το πλήθος των αρχείων πολυμέσων διαφέρει από το πλήθος των υποτίτλων. Λάθος υπότιτλοι?</string>
-	<string Field="MovieIMDb">Ταινία (IMDb)</string>
-	<string Field="Movie">Ταινία</string>
-	<string Field="MediaNoSubtitles">Δεν είναι δυνατή η εύρεση υποτίτλων για το πολυμέσο!</string>
-	<string Field="MediaOnlyInternalSubtitles">Μόνο ενσωματωμένοι υπότιτλοι βρέθηκαν για το πολυμέσο!</string>
-	<string Field="MediaWrongMarkHasSubtitles">Το πολυμέσο από {0} είναι μαρκαρισμένο με υπότιτλους διαθέσιμους\nαλλά δεν βρέθηκαν. Να διορθωθεί αυτό\nκαι να μαρκαριστεί χωρίς διαθέσιμους υπότιτλους;</string>
-	<string Field="MediaMaybeInternalSubtitles">(μπορεί να υπάρχουν ενσωματωμένοι υπότιτλοι)</string>
-	<string Field="MediaHasSubtitles">Το πολυμέσο έχει υπότιτλους. Αν θέλετε να διαγραφούν χρησιμοποιήστε το μενού.</string>
-	<string Field="MediaNoMoreSubtitles">Δεν βρέθηκαν άλλοι υπότιτλοι για το πολυμέσο.\nΝα οριστεί ότι ο παροχέας δεν \nέχει τους υπότιτλους ({0});</string>
-	<string Field="MediaWrongMarkNoSubtitles">Το πολυμέσο από το {0} είναι μαρκαρισμένο\nχωρίς υπότιτλους αλλά οι υπότιτλοι βρέθηκαν\nΝα μαρκαριστεί με διαθέσιμους υπότιτλους;</string>
+	<string name="Movies">Ταινίες</string>
+	<string name="ManualSearch">Χειροκίνητη αναζήτηση</string>
+	<string name="ModifySearch">Τροποποίηση αναζήτησης</string>
+	<string name="MediaFilesDifferFromSubtitleFiles">Το πλήθος των αρχείων πολυμέσων διαφέρει από το πλήθος των υποτίτλων. Λάθος υπότιτλοι?</string>
+	<string name="MovieIMDb">Ταινία (IMDb)</string>
+	<string name="Movie">Ταινία</string>
+	<string name="MediaNoSubtitles">Δεν είναι δυνατή η εύρεση υποτίτλων για το πολυμέσο!</string>
+	<string name="MediaOnlyInternalSubtitles">Μόνο ενσωματωμένοι υπότιτλοι βρέθηκαν για το πολυμέσο!</string>
+	<string name="MediaWrongMarkHasSubtitles">Το πολυμέσο από {0} είναι μαρκαρισμένο με υπότιτλους διαθέσιμους\nαλλά δεν βρέθηκαν. Να διορθωθεί αυτό\nκαι να μαρκαριστεί χωρίς διαθέσιμους υπότιτλους;</string>
+	<string name="MediaMaybeInternalSubtitles">(μπορεί να υπάρχουν ενσωματωμένοι υπότιτλοι)</string>
+	<string name="MediaHasSubtitles">Το πολυμέσο έχει υπότιτλους. Αν θέλετε να διαγραφούν χρησιμοποιήστε το μενού.</string>
+	<string name="MediaNoMoreSubtitles">Δεν βρέθηκαν άλλοι υπότιτλοι για το πολυμέσο.\nΝα οριστεί ότι ο παροχέας δεν \nέχει τους υπότιτλους ({0});</string>
+	<string name="MediaWrongMarkNoSubtitles">Το πολυμέσο από το {0} είναι μαρκαρισμένο\nχωρίς υπότιτλους αλλά οι υπότιτλοι βρέθηκαν\nΝα μαρκαριστεί με διαθέσιμους υπότιτλους;</string>
 
 	<!-- N -->
-	<string Field="NewGroup">Νέα ομάδα</string>
-	<string Field="NoResultsFound">Δεν βρέθηκαν αποτελέσματα</string>
-	<string Field="NoSubtitlesFound">Δεν βρέθηκαν υπότιτλοι</string>
-	<string Field="NoDownloadFolders">Δεν βρέθηκαν σωστοί φάκελοι κατεβάσματος για αυτό το πολυμέσο.</string>
-	<string Field="NotEnoughDataForSearch">Τα δεδομένα αναζήτησης δεν είναι αρκετά</string>
-	<string Field="Name">Όνομα</string>
-	<string Field="NoSorting">Χωρίς ταξινόμηση</string>
-	<string Field="NoSubtitlesDelete">Δεν βρέθηκαν αρχεία υποτίτλων για διαγραφή.</string>
+	<string name="NewGroup">Νέα ομάδα</string>
+	<string name="NoResultsFound">Δεν βρέθηκαν αποτελέσματα</string>
+	<string name="NoSubtitlesFound">Δεν βρέθηκαν υπότιτλοι</string>
+	<string name="NoDownloadFolders">Δεν βρέθηκαν σωστοί φάκελοι κατεβάσματος για αυτό το πολυμέσο.</string>
+	<string name="NotEnoughDataForSearch">Τα δεδομένα αναζήτησης δεν είναι αρκετά</string>
+	<string name="Name">Όνομα</string>
+	<string name="NoSorting">Χωρίς ταξινόμηση</string>
+	<string name="NoSubtitlesDelete">Δεν βρέθηκαν αρχεία υποτίτλων για διαγραφή.</string>
 
 	<!-- O -->
-	<string Field="OKSearch">Εντάξει/Αναζήτηση</string>
-	<string Field="OK">Εντάξει</string>
+	<string name="OKSearch">Εντάξει/Αναζήτηση</string>
+	<string name="OK">Εντάξει</string>
 
 	<!-- P -->
-	<string Field="ProviderS">Παροχέας(είς)</string>
+	<string name="ProviderS">Παροχέας(είς)</string>
 
 	<!-- Q -->
-	<string Field="QueryingProviders">Παροχείς ερωτημάτων</string>
+	<string name="QueryingProviders">Παροχείς ερωτημάτων</string>
 
 	<!-- R -->
-	<string Field="Revert">Επαναφορά</string>
+	<string name="Revert">Επαναφορά</string>
 
 	<!-- S -->
-	<string Field="Search">Αναζήτηση</string>
-	<string Field="SubtitleDownloaderUnavailable">Είναι διαθέσιμο το SubtitleDownloader.dll;</string>
-	<string Field="SubtitleSearch">Αναζήτηση υποτίτλων</string>
-	<string Field="SearchingSubtitles">Αναζήτηση υποτίτλων...</string>
-	<string Field="SelectLanguages">Επιλογή γλωσσών</string>
-	<string Field="SubtitlesExist">Το αρχείο υποτίτλου υπάρχει ήδη\nΝα γίνει αντικατάσταση του υπάρχοντος;</string>
-	<string Field="SubtitlesDownloaded">Οι υπότιτλοι κατέβηκαν!</string>
-	<string Field="SelectDownloadFolder">Επιλογή φακέλου κατεβάσματος</string>
-	<string Field="SubtitleS">Υπότιτλος(οι)</string>
-	<string Field="Subtitle">Υπότιτλος</string>
-	<string Field="Subtitles">Υπότιτλοι</string>
-	<string Field="SubtitlesDownloadedCount">{0} υπότιτλοι κατέβηκαν</string>
-	<string Field="SubtitlesDownloadErrorCount">{0} υπότιτλοι δεν κατέβηκαν</string>
-	<string Field="SubtitlesDownloadCanceledCount">{0} υπότιτλοι ακυρώθηκαν</string>
-	<string Field="SelectFileForSubtitle">Επιλέξτε αρχείο πολυμέσων για το '{0}'</string>
-	<string Field="SearchType">Επιλογή τύπου: {0}</string>
-	<string Field="SiteDoesNotSupportIMDbIDSearch">Η τοποθεσία δεν υποστηρίζει αναζήτηση μέσω IMDb ID!</string>
-	<string Field="SiteDoesNotSupportMovieSearch">Η τοποθεσία δεν υποστηρίζει αναζήτηση ταινιών!</string>
-	<string Field="SiteDoesNotSupportTVShowSearch">Η τοποθεσία δεν υποστηρίζει αναζήτηση σειρών!</string>
-	<string Field="Sorting">Γίνεται ταξινόμηση</string>
-	<string Field="Sort">Ταξινόμηση</string>
-	<string Field="SortBy">Ταξινόμηση κατά: {0}</string>
-	<string Field="SortByLanguage">Ταξινόμηση κατά γλώσσα υποτίτλου</string>
-	<string Field="SortByName">Ταξινόμιση κατά όνομα υποτίτλου</string>
-	<string Field="SubtitleFilesToDelete">Αρχεία υποτίτλων για διαγραφή</string>
-	<string Field="SortByMediaTags">Ταξινόμηση κατά ετικέτα πολυμέσων (αν είναι δυνατό)</string>
+	<string name="Search">Αναζήτηση</string>
+	<string name="SubtitleDownloaderUnavailable">Είναι διαθέσιμο το SubtitleDownloader.dll;</string>
+	<string name="SubtitleSearch">Αναζήτηση υποτίτλων</string>
+	<string name="SearchingSubtitles">Αναζήτηση υποτίτλων...</string>
+	<string name="SelectLanguages">Επιλογή γλωσσών</string>
+	<string name="SubtitlesExist">Το αρχείο υποτίτλου υπάρχει ήδη\nΝα γίνει αντικατάσταση του υπάρχοντος;</string>
+	<string name="SubtitlesDownloaded">Οι υπότιτλοι κατέβηκαν!</string>
+	<string name="SelectDownloadFolder">Επιλογή φακέλου κατεβάσματος</string>
+	<string name="SubtitleS">Υπότιτλος(οι)</string>
+	<string name="Subtitle">Υπότιτλος</string>
+	<string name="Subtitles">Υπότιτλοι</string>
+	<string name="SubtitlesDownloadedCount">{0} υπότιτλοι κατέβηκαν</string>
+	<string name="SubtitlesDownloadErrorCount">{0} υπότιτλοι δεν κατέβηκαν</string>
+	<string name="SubtitlesDownloadCanceledCount">{0} υπότιτλοι ακυρώθηκαν</string>
+	<string name="SelectFileForSubtitle">Επιλέξτε αρχείο πολυμέσων για το '{0}'</string>
+	<string name="SearchType">Επιλογή τύπου: {0}</string>
+	<string name="SiteDoesNotSupportIMDbIDSearch">Η τοποθεσία δεν υποστηρίζει αναζήτηση μέσω IMDb ID!</string>
+	<string name="SiteDoesNotSupportMovieSearch">Η τοποθεσία δεν υποστηρίζει αναζήτηση ταινιών!</string>
+	<string name="SiteDoesNotSupportTVShowSearch">Η τοποθεσία δεν υποστηρίζει αναζήτηση σειρών!</string>
+	<string name="Sorting">Γίνεται ταξινόμηση</string>
+	<string name="Sort">Ταξινόμηση</string>
+	<string name="SortBy">Ταξινόμηση κατά: {0}</string>
+	<string name="SortByLanguage">Ταξινόμηση κατά γλώσσα υποτίτλου</string>
+	<string name="SortByName">Ταξινόμιση κατά όνομα υποτίτλου</string>
+	<string name="SubtitleFilesToDelete">Αρχεία υποτίτλων για διαγραφή</string>
+	<string name="SortByMediaTags">Ταξινόμηση κατά ετικέτα πολυμέσων (αν είναι δυνατό)</string>
 
-	<string Field="SkinTranslationFrom">Από</string>
-	<string Field="SkinTranslationSearchType">Τύπος αναζήτησης</string>
-	<string Field="SkinTranslationMediaFiles">Αρχεία πολυμέσων</string>
-	<string Field="SkinTranslationDownloadFolder">Φάκελος κατεβάσματος</string>
-	<string Field="SkinTranslationSearchData">Δεδομένα αναζήτησης</string>
-	<string Field="SkinTranslationIMDbID">IMDb ID</string>
-	<string Field="SkinTranslationTitle">Τίτλος</string>
-	<string Field="SkinTranslationYear">Έτος</string>
-	<string Field="SkinTranslationSeason">Σαιζόν</string>
-	<string Field="SkinTranslationEpisode">Επεισόδιο</string>
-	<string Field="SkinTranslationMovie">Ταινία</string>
-	<string Field="SkinTranslationTVShow">Σειρά</string>
-	<string Field="SkinTranslationMediaTags">Ετικέτες πολυμέσων</string>
+	<string name="SkinTranslationFrom">Από</string>
+	<string name="SkinTranslationSearchType">Τύπος αναζήτησης</string>
+	<string name="SkinTranslationMediaFiles">Αρχεία πολυμέσων</string>
+	<string name="SkinTranslationDownloadFolder">Φάκελος κατεβάσματος</string>
+	<string name="SkinTranslationSearchData">Δεδομένα αναζήτησης</string>
+	<string name="SkinTranslationIMDbID">IMDb ID</string>
+	<string name="SkinTranslationTitle">Τίτλος</string>
+	<string name="SkinTranslationYear">Έτος</string>
+	<string name="SkinTranslationSeason">Σαιζόν</string>
+	<string name="SkinTranslationEpisode">Επεισόδιο</string>
+	<string name="SkinTranslationMovie">Ταινία</string>
+	<string name="SkinTranslationTVShow">Σειρά</string>
+	<string name="SkinTranslationMediaTags">Ετικέτες πολυμέσων</string>
 
 	<!-- T -->
-	<string Field="TVShows">Σειρές</string>
-	<string Field="TVShow">Σειρά</string>
+	<string name="TVShows">Σειρές</string>
+	<string name="TVShow">Σειρά</string>
 
 	<!-- U -->
-	<string Field="UnableToImportDataFrom">Δεν είναι δυνατή η εισαγωγή\nαπό {0}.</string>
-	<string Field="UnableToLoadSubtitleDownloader">Δεν είναι δυνατή η φόρτωση της βιβλιοθήκης SubtitleDownloader!</string>
-	<string Field="UnableToDeleteSubtitleFile">Δεν είναι δυνατή η διαγραφή του αρχείου υποτίτλου!</string>
-	<string Field="UnableToDeleteSubtitleFiles">Δεν είναι δυνατή η διαγραφή των αρχείων υποτίτλων:</string>
+	<string name="UnableToImportDataFrom">Δεν είναι δυνατή η εισαγωγή\nαπό {0}.</string>
+	<string name="UnableToLoadSubtitleDownloader">Δεν είναι δυνατή η φόρτωση της βιβλιοθήκης SubtitleDownloader!</string>
+	<string name="UnableToDeleteSubtitleFile">Δεν είναι δυνατή η διαγραφή του αρχείου υποτίτλου!</string>
+	<string name="UnableToDeleteSubtitleFiles">Δεν είναι δυνατή η διαγραφή των αρχείων υποτίτλων:</string>
 
 	<!-- V -->
 
 	<!-- W -->
-	<string Field="Warning">Προειδοποίηση</string>
-	<string Field="WrongFormatIMDbID">Λάθος μορφή του IMDb ID (ttNNNNNNN)!</string>
-	<string Field="WrongFormatYear">Λάθος μορφή του έτους (1900 - {0})!</string>
-	<string Field="WrongFormatSeasonEpisode">{0} πρέπει να είναι αριθμητικό και μεγαλύτερο του 0!</string>
+	<string name="Warning">Προειδοποίηση</string>
+	<string name="WrongFormatIMDbID">Λάθος μορφή του IMDb ID (ttNNNNNNN)!</string>
+	<string name="WrongFormatYear">Λάθος μορφή του έτους (1900 - {0})!</string>
+	<string name="WrongFormatSeasonEpisode">{0} πρέπει να είναι αριθμητικό και μεγαλύτερο του 0!</string>
 
 	<!-- Y -->
-	<string Field="PleaseSelectLanguages">Πρέπει να επιλεγεί τουλάχιστον μία\nγλώσσα!</string>
+	<string name="PleaseSelectLanguages">Πρέπει να επιλεγεί τουλάχιστον μία\nγλώσσα!</string>
 
-</strings>
+</resources>

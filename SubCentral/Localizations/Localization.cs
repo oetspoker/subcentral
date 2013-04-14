@@ -89,7 +89,7 @@ namespace SubCentral.Localizations {
             foreach (XmlNode stringEntry in doc.DocumentElement.ChildNodes) {
                 if (stringEntry.NodeType == XmlNodeType.Element)
                     try {
-                        TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
+                        TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("name").Value, stringEntry.InnerText);
                     }
                     catch (Exception e) {
                         logger.ErrorException(string.Format("Error in Translation Engine{0}", Environment.NewLine), e);

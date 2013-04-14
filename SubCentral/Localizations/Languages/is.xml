@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- SubCentral translation file -->
 <!-- Icelandic (IS) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
 <!-- Updated 2. november 2010 -->
-<strings>
+<resources>
   <!-- # -->
 
   <!-- A -->
-  <string Field="AllProviders">Allir þjónustuaðilar</string>
-  <string Field="AllEnabledProviders">Allir valdir þjónustuaðilar</string>
-  <string Field="About">Um</string>
-  <string Field="AllSubtitlesDownloaded">Allir ({0}) textar sóttir!</string>
-  <string Field="AllSubtitlesCanceledDownload">Hætt við að hlaða niður texta fyrir ({0}) !</string>
-  <string Field="All">Allir</string>
-  <string Field="AllSubtitlesDeleted">Öllum ({0}) textum eytt!</string>
-  <string Field="AboutText">
+  <string name="AllProviders">Allir þjónustuaðilar</string>
+  <string name="AllEnabledProviders">Allir valdir þjónustuaðilar</string>
+  <string name="About">Um</string>
+  <string name="AllSubtitlesDownloaded">Allir ({0}) textar sóttir!</string>
+  <string name="AllSubtitlesCanceledDownload">Hætt við að hlaða niður texta fyrir ({0}) !</string>
+  <string name="All">Allir</string>
+  <string name="AllSubtitlesDeleted">Öllum ({0}) textum eytt!</string>
+  <string name="AboutText">
     Subcentral er sjálfstætt forrit fyrir MediaPortal margmiðlunarstöð.  Hugmyndin á bakvið þetta forrit er að gefa notendum séns á að
     leita að og sækja texta fyrir kvikmyndir eða sjónvarpsþætti frá hinum vinsælum forritum MovingPictures eða MP-TVSeries.  Subcentral getur einnig
     tengst öðrum forritum á einfaldan máta.  Hagkvæmast er að nota forritið beint úr MovingPictures eða MP-TVSeries, finna viðkomandi kvikmynd eða
@@ -29,168 +29,168 @@
   </string>
 
   <!-- B -->
-  <string Field="Back">Til baka</string>
+  <string name="Back">Til baka</string>
 
   <!-- C -->
-  <string Field="CannotLoadSkin">Get ekki hlaðið útlit\nfyrir SubCentral!</string>
-  <string Field="Cancel">Hætta við</string>
-  <string Field="Confirm">Staðfesta</string>
-  <string Field="ClearFiles">Hreinsa skrár</string>
-  <string Field="ClearMedia">Hreinsa margmiðlunarsnið</string>
-  <string Field="CanceledDownload">Hætt við niðurhal!</string>
-  <string Field="ContextMenu">Valmynd</string>
-  <string Field="CannotUseManualSearch">Get ekki hafði handvirka leit vegna þess að engin\nmappa fyrir niðurhal er skilgreind.\nVinsamlegast farið í uppsetningu til að bæta úr því.</string>
-  <string Field="CannotClearMedia">Get ekki eytt margmiðlunarskrám vegna þess að engin\nmappa fyrir niðurhal er skilgreind.\nVinsamlegast farið í uppsetningu til að bæta úr því.</string>
-  <string Field="Completed">Búið</string>
+  <string name="CannotLoadSkin">Get ekki hlaðið útlit\nfyrir SubCentral!</string>
+  <string name="Cancel">Hætta við</string>
+  <string name="Confirm">Staðfesta</string>
+  <string name="ClearFiles">Hreinsa skrár</string>
+  <string name="ClearMedia">Hreinsa margmiðlunarsnið</string>
+  <string name="CanceledDownload">Hætt við niðurhal!</string>
+  <string name="ContextMenu">Valmynd</string>
+  <string name="CannotUseManualSearch">Get ekki hafði handvirka leit vegna þess að engin\nmappa fyrir niðurhal er skilgreind.\nVinsamlegast farið í uppsetningu til að bæta úr því.</string>
+  <string name="CannotClearMedia">Get ekki eytt margmiðlunarskrám vegna þess að engin\nmappa fyrir niðurhal er skilgreind.\nVinsamlegast farið í uppsetningu til að bæta úr því.</string>
+  <string name="Completed">Búið</string>
 
   <!-- D -->
-  <string Field="DefaultFor">Sjálfgildi fyrir: {0}</string>
-  <string Field="DownloadFoderDoesNotExistCreate">Textamappa er ekki til.\nBúa hana til?</string>
-  <string Field="Download">Sækja</string>
-  <string Field="DownloadTo">Niðurhal í...</string>
-  <string Field="DefaultFolderInaccessible">Sjálfgefin mappa ({0}) er óaðgengileg! Vinsamlegast veljið aðra.</string>
-  <string Field="DefaultFolderNotWritable">Sjálfgefin mappa {0} er ekki skrifanleg! Vinsamlegast veljið aðra.</string>
-  <string Field="DefaultDownloadFoderDoesNotExistCreate">Sjálfgefin niðurhalsmappa:\n{0}\ner ekki til.\nBúa hana til?</string>
-  <string Field="Default">Sjálfgefið</string>
-  <string Field="DeleteSubtitles">Eyða textum</string>
-  <string Field="Done">Lokið</string>
+  <string name="DefaultFor">Sjálfgildi fyrir: {0}</string>
+  <string name="DownloadFoderDoesNotExistCreate">Textamappa er ekki til.\nBúa hana til?</string>
+  <string name="Download">Sækja</string>
+  <string name="DownloadTo">Niðurhal í...</string>
+  <string name="DefaultFolderInaccessible">Sjálfgefin mappa ({0}) er óaðgengileg! Vinsamlegast veljið aðra.</string>
+  <string name="DefaultFolderNotWritable">Sjálfgefin mappa {0} er ekki skrifanleg! Vinsamlegast veljið aðra.</string>
+  <string name="DefaultDownloadFoderDoesNotExistCreate">Sjálfgefin niðurhalsmappa:\n{0}\ner ekki til.\nBúa hana til?</string>
+  <string name="Default">Sjálfgefið</string>
+  <string name="DeleteSubtitles">Eyða textum</string>
+  <string name="Done">Lokið</string>
 
   <!-- E -->
-  <string Field="Error">Villa</string>
-  <string Field="ExternalPlugin">Ytri íbætur</string>
-  <string Field="ErrorWhileDownloadingSubtitles">Villa við niðurhalningu texta!</string>
-  <string Field="ErrorWhileDownloadingSubtitlesWithReason">Villa við niðurhalningu texta: {0}</string>
-  <string Field="ErrorWhileRetrievingSubtitles">Villa við að sækja texta!</string>
-  <string Field="ErrorWhileRetrievingSubtitlesWithReason">Villa við að sækja texta: {0}</string>
-  <string Field="ErrorWhileCreatingDirectory">Villa við að búa til möppu!</string>
+  <string name="Error">Villa</string>
+  <string name="ExternalPlugin">Ytri íbætur</string>
+  <string name="ErrorWhileDownloadingSubtitles">Villa við niðurhalningu texta!</string>
+  <string name="ErrorWhileDownloadingSubtitlesWithReason">Villa við niðurhalningu texta: {0}</string>
+  <string name="ErrorWhileRetrievingSubtitles">Villa við að sækja texta!</string>
+  <string name="ErrorWhileRetrievingSubtitlesWithReason">Villa við að sækja texta: {0}</string>
+  <string name="ErrorWhileCreatingDirectory">Villa við að búa til möppu!</string>
 
   <!-- F -->
-  <string Field="FoundSubtitles">Fann texta</string>
-  <string Field="From">Frá: {0}</string>
-  <string Field="Finishing">Er að ljúka...</string>
+  <string name="FoundSubtitles">Fann texta</string>
+  <string name="From">Frá: {0}</string>
+  <string name="Finishing">Er að ljúka...</string>
 
   <!-- G -->
-  <string Field="GroupS">Hópur(ar)</string>
-  <string Field="GroupProviderDefault">Hópur/Þjónustuaðili sjálfgildi</string>
+  <string name="GroupS">Hópur(ar)</string>
+  <string name="GroupProviderDefault">Hópur/Þjónustuaðili sjálfgildi</string>
 
   <!-- H -->
 
   <!-- I -->
-  <string Field="Initializing">Frumstilla</string>
-  <string Field="IMDbID">IMDb ID: {0}</string>
+  <string name="Initializing">Frumstilla</string>
+  <string name="IMDbID">IMDb ID: {0}</string>
 
   <!-- L -->
-  <string Field="Languages">Tungumál</string>
-  <string Field="Language">Tungumál</string>
-  <string Field="Local">Staðbundin (í margmiðlunarmöppum)</string>
+  <string name="Languages">Tungumál</string>
+  <string name="Language">Tungumál</string>
+  <string name="Local">Staðbundin (í margmiðlunarmöppum)</string>
 
   <!-- M -->
-  <string Field="Movies">Kvikmyndir</string>
-  <string Field="ManualSearch">Handvirk leit</string>
-  <string Field="ModifySearch">Breyta leit</string>
-  <string Field="MediaFilesDifferFromSubtitleFiles">Teljari margmiðlunarskráa er annar en teljari texta. Rangur texti?</string>
-  <string Field="MovieIMDb">Kvikmynd (IMDb)</string>
-  <string Field="Movie">Kvikmynd</string>
-  <string Field="MediaNoSubtitles">Finn engan texta!</string>
-  <string Field="MediaOnlyInternalSubtitles">Aðeins inngreyptir textar fundust fyrir margmiðlunarskránna!</string>
-  <string Field="MediaWrongMarkHasSubtitles">Skráin {0} er merkt með texta\nen ég fann ekki textann. Viltu laga það\nog setja að texti sé ekki til?</string>
-  <string Field="MediaMaybeInternalSubtitles">(gætir enn haft inngreypta texta)</string>
-  <string Field="MediaHasSubtitles">Myndin á texta. Ef þú vilt eyða þeim, notaðu valmyndsmöguleikana.</string>
-  <string Field="MediaNoMoreSubtitles">Finn ekki fleiri texta fyrir myndina.\nViltu setja textann sem ófáanlegan\nhjá þjónustuaðilanum ({0})?</string>
-  <string Field="MediaWrongMarkNoSubtitles">Margmiðlunarskrá á {0} er merkt sem\nán texta en það fannst texti.\nViltu laga það og merkja skránna að\ntexti sé til?</string>
+  <string name="Movies">Kvikmyndir</string>
+  <string name="ManualSearch">Handvirk leit</string>
+  <string name="ModifySearch">Breyta leit</string>
+  <string name="MediaFilesDifferFromSubtitleFiles">Teljari margmiðlunarskráa er annar en teljari texta. Rangur texti?</string>
+  <string name="MovieIMDb">Kvikmynd (IMDb)</string>
+  <string name="Movie">Kvikmynd</string>
+  <string name="MediaNoSubtitles">Finn engan texta!</string>
+  <string name="MediaOnlyInternalSubtitles">Aðeins inngreyptir textar fundust fyrir margmiðlunarskránna!</string>
+  <string name="MediaWrongMarkHasSubtitles">Skráin {0} er merkt með texta\nen ég fann ekki textann. Viltu laga það\nog setja að texti sé ekki til?</string>
+  <string name="MediaMaybeInternalSubtitles">(gætir enn haft inngreypta texta)</string>
+  <string name="MediaHasSubtitles">Myndin á texta. Ef þú vilt eyða þeim, notaðu valmyndsmöguleikana.</string>
+  <string name="MediaNoMoreSubtitles">Finn ekki fleiri texta fyrir myndina.\nViltu setja textann sem ófáanlegan\nhjá þjónustuaðilanum ({0})?</string>
+  <string name="MediaWrongMarkNoSubtitles">Margmiðlunarskrá á {0} er merkt sem\nán texta en það fannst texti.\nViltu laga það og merkja skránna að\ntexti sé til?</string>
 
   <!-- N -->
-  <string Field="NewGroup">Nýr hópur</string>
-  <string Field="NoResultsFound">Ekkert fannst</string>
-  <string Field="NoSubtitlesFound">Enginn texti fannst</string>
-  <string Field="NoDownloadFolders">Engin gild niðurhalsmappa fyrir þessa margmiðlunarskrá fannst.</string>
-  <string Field="NotEnoughDataForSearch">Vantar fleiri gögn til þess að leita að texta</string>
-  <string Field="Name">Nafn</string>
-  <string Field="NoSorting">Engin röðun</string>
-  <string Field="NoSubtitlesDelete">Engir textar fundust til að eyða.</string>
-  <string Field="NoSubtitlesDownloaded">Engir textar til að sækja!</string>
-  <string Field="NoSubtitlesDownloadedWithReason">Engir textar sóttir: {0}</string>
-  <string Field="NoSubtitlesInChosen">Gat ekki fundið neina texta sem beðið var um. Villa hjá þjónustuaðila?</string>
+  <string name="NewGroup">Nýr hópur</string>
+  <string name="NoResultsFound">Ekkert fannst</string>
+  <string name="NoSubtitlesFound">Enginn texti fannst</string>
+  <string name="NoDownloadFolders">Engin gild niðurhalsmappa fyrir þessa margmiðlunarskrá fannst.</string>
+  <string name="NotEnoughDataForSearch">Vantar fleiri gögn til þess að leita að texta</string>
+  <string name="Name">Nafn</string>
+  <string name="NoSorting">Engin röðun</string>
+  <string name="NoSubtitlesDelete">Engir textar fundust til að eyða.</string>
+  <string name="NoSubtitlesDownloaded">Engir textar til að sækja!</string>
+  <string name="NoSubtitlesDownloadedWithReason">Engir textar sóttir: {0}</string>
+  <string name="NoSubtitlesInChosen">Gat ekki fundið neina texta sem beðið var um. Villa hjá þjónustuaðila?</string>
 
   <!-- O -->
-  <string Field="OKSearch">Í lagi/Leita</string>
-  <string Field="OK">Í lagi</string>
+  <string name="OKSearch">Í lagi/Leita</string>
+  <string name="OK">Í lagi</string>
 
   <!-- P -->
-  <string Field="ProviderS">Þjónustuaðili(ar)</string>
+  <string name="ProviderS">Þjónustuaðili(ar)</string>
 
   <!-- Q -->
-  <string Field="QueryingProviders">Leita hjá þjónustuaðila</string>
+  <string name="QueryingProviders">Leita hjá þjónustuaðila</string>
 
   <!-- R -->
-  <string Field="Revert">Snúa</string>
+  <string name="Revert">Snúa</string>
 
   <!-- S -->
-  <string Field="Search">Leita</string>
-  <string Field="SubtitleDownloaderUnavailable">Er SubtitleDownloader.dll virkur?</string>
-  <string Field="SubtitleSearch">Textaleit</string>
-  <string Field="SearchingSubtitles">Leita að textum...</string>
-  <string Field="SelectLanguages">Veljið tungumál</string>
-  <string Field="SubtitlesExist">Textinn er til.\nYfirskrifa hann?</string>
-  <string Field="SubtitlesDownloaded">Texti sóttur!</string>
-  <string Field="SelectDownloadFolder">Veldu niðurhalsmöppu</string>
-  <string Field="SubtitleS">Textar</string>
-  <string Field="Subtitle">Texti</string>
-  <string Field="Subtitles">Textar</string>
-  <string Field="SubtitlesDownloadedCount">{0} textar sóttir</string>
-  <string Field="SubtitlesDownloadErrorCount">{0} niðurhal texta mistókst</string>
-  <string Field="SubtitlesDownloadCanceledCount">{0} hætt við niðurhal texta</string>
-  <string Field="SelectFileForSubtitle">Veldu margmiðlunarskrá fyrir '{0}'</string>
-  <string Field="SearchType">Leita eftir: {0}</string>
-  <string Field="SiteDoesNotSupportIMDbIDSearch">Þetta vefsvæði styður ekki IMDb ID leit!</string>
-  <string Field="SiteDoesNotSupportMovieSearch">Þetta vefsvæði styður ekki kvikmyndaleit!</string>
-  <string Field="SiteDoesNotSupportTVShowSearch">Þetta vefsvæði styður ekki leit að sjónvarpsþáttum!</string>
-  <string Field="Sorting">Röðun</string>
-  <string Field="Sort">Röð</string>
-  <string Field="SortBy">Röðun eftir: {0}</string>
-  <string Field="SortByLanguage">Röðun eftir tungumáli</string>
-  <string Field="SortByName">Röðun eftir textaheiti</string>
-  <string Field="SubtitleFilesToDelete">Textaskrár til að eyða</string>
-  <string Field="SortByMediaTags">Röðun skv. margmiðlunartögum (ef mögulegt)</string>
-  <string Field="SelectSubtitleForFile">Velja texta fyrir '{0}'</string>
+  <string name="Search">Leita</string>
+  <string name="SubtitleDownloaderUnavailable">Er SubtitleDownloader.dll virkur?</string>
+  <string name="SubtitleSearch">Textaleit</string>
+  <string name="SearchingSubtitles">Leita að textum...</string>
+  <string name="SelectLanguages">Veljið tungumál</string>
+  <string name="SubtitlesExist">Textinn er til.\nYfirskrifa hann?</string>
+  <string name="SubtitlesDownloaded">Texti sóttur!</string>
+  <string name="SelectDownloadFolder">Veldu niðurhalsmöppu</string>
+  <string name="SubtitleS">Textar</string>
+  <string name="Subtitle">Texti</string>
+  <string name="Subtitles">Textar</string>
+  <string name="SubtitlesDownloadedCount">{0} textar sóttir</string>
+  <string name="SubtitlesDownloadErrorCount">{0} niðurhal texta mistókst</string>
+  <string name="SubtitlesDownloadCanceledCount">{0} hætt við niðurhal texta</string>
+  <string name="SelectFileForSubtitle">Veldu margmiðlunarskrá fyrir '{0}'</string>
+  <string name="SearchType">Leita eftir: {0}</string>
+  <string name="SiteDoesNotSupportIMDbIDSearch">Þetta vefsvæði styður ekki IMDb ID leit!</string>
+  <string name="SiteDoesNotSupportMovieSearch">Þetta vefsvæði styður ekki kvikmyndaleit!</string>
+  <string name="SiteDoesNotSupportTVShowSearch">Þetta vefsvæði styður ekki leit að sjónvarpsþáttum!</string>
+  <string name="Sorting">Röðun</string>
+  <string name="Sort">Röð</string>
+  <string name="SortBy">Röðun eftir: {0}</string>
+  <string name="SortByLanguage">Röðun eftir tungumáli</string>
+  <string name="SortByName">Röðun eftir textaheiti</string>
+  <string name="SubtitleFilesToDelete">Textaskrár til að eyða</string>
+  <string name="SortByMediaTags">Röðun skv. margmiðlunartögum (ef mögulegt)</string>
+  <string name="SelectSubtitleForFile">Velja texta fyrir '{0}'</string>
 
-  <string Field="SkinTranslationFrom">Frá</string>
-  <string Field="SkinTranslationSearchType">Leita eftir</string>
-  <string Field="SkinTranslationMediaFiles">Margmiðlunarskrá</string>
-  <string Field="SkinTranslationDownloadFolder">Niðurhalsmappa</string>
-  <string Field="SkinTranslationSearchData">Gagnaleit</string>
-  <string Field="SkinTranslationIMDbID">IMDb ID</string>
-  <string Field="SkinTranslationTitle">Titill</string>
-  <string Field="SkinTranslationYear">Ár</string>
-  <string Field="SkinTranslationSeason">Þáttaröð</string>
-  <string Field="SkinTranslationEpisode">Þáttanúmer</string>
-  <string Field="SkinTranslationMovie">Kvikmynd</string>
-  <string Field="SkinTranslationTVShow">Sjónvarpsþáttur</string>
-  <string Field="SkinTranslationMediaTags">Margmiðlunartög</string>
-  <string Field="SkinTranslationAbsoluteNumbering">Númerað</string>
+  <string name="SkinTranslationFrom">Frá</string>
+  <string name="SkinTranslationSearchType">Leita eftir</string>
+  <string name="SkinTranslationMediaFiles">Margmiðlunarskrá</string>
+  <string name="SkinTranslationDownloadFolder">Niðurhalsmappa</string>
+  <string name="SkinTranslationSearchData">Gagnaleit</string>
+  <string name="SkinTranslationIMDbID">IMDb ID</string>
+  <string name="SkinTranslationTitle">Titill</string>
+  <string name="SkinTranslationYear">Ár</string>
+  <string name="SkinTranslationSeason">Þáttaröð</string>
+  <string name="SkinTranslationEpisode">Þáttanúmer</string>
+  <string name="SkinTranslationMovie">Kvikmynd</string>
+  <string name="SkinTranslationTVShow">Sjónvarpsþáttur</string>
+  <string name="SkinTranslationMediaTags">Margmiðlunartög</string>
+  <string name="SkinTranslationAbsoluteNumbering">Númerað</string>
 
   <!-- T -->
-  <string Field="TVShows">Sjónvarpsþættir</string>
-  <string Field="TVShow">Sjónvarpsþáttur</string>
-  <string Field="TimedOutWhileRetrievingSubtitles">Of lengi að sækja texta!</string>
-  <string Field="TooManySubtitles">(Of) margir textar</string>
-  <string Field="TooManySubtitlesQuestion">Umbeðin textaleit hefur {0} T.\nViltu sækja alla textana?</string>
+  <string name="TVShows">Sjónvarpsþættir</string>
+  <string name="TVShow">Sjónvarpsþáttur</string>
+  <string name="TimedOutWhileRetrievingSubtitles">Of lengi að sækja texta!</string>
+  <string name="TooManySubtitles">(Of) margir textar</string>
+  <string name="TooManySubtitlesQuestion">Umbeðin textaleit hefur {0} T.\nViltu sækja alla textana?</string>
 
   <!-- U -->
-  <string Field="UnableToImportDataFrom">Ekki mögulegt að flytja gögn inn\nfrá {0}.</string>
-  <string Field="UnableToLoadSubtitleDownloader">Ekki mögulegt að sækja SubtitleDownloader safnið!</string>
-  <string Field="UnableToDeleteSubtitleFile">Get ekki eytt textaskrá!</string>
-  <string Field="UnableToDeleteSubtitleFiles">Get ekki eytt textaskrám:</string>
+  <string name="UnableToImportDataFrom">Ekki mögulegt að flytja gögn inn\nfrá {0}.</string>
+  <string name="UnableToLoadSubtitleDownloader">Ekki mögulegt að sækja SubtitleDownloader safnið!</string>
+  <string name="UnableToDeleteSubtitleFile">Get ekki eytt textaskrá!</string>
+  <string name="UnableToDeleteSubtitleFiles">Get ekki eytt textaskrám:</string>
 
   <!-- V -->
 
   <!-- W -->
-  <string Field="Warning">Aðvörun</string>
-  <string Field="WrongFormatIMDbID">Rangt snið fyrir IMDb ID (ttNNNNNNN)!</string>
-  <string Field="WrongFormatYear">Rangt snið fyrir árið (1900 - {0})!</string>
-  <string Field="WrongFormatSeasonEpisode">{0} verður að vera númerískt og stærra en 0!</string>
+  <string name="Warning">Aðvörun</string>
+  <string name="WrongFormatIMDbID">Rangt snið fyrir IMDb ID (ttNNNNNNN)!</string>
+  <string name="WrongFormatYear">Rangt snið fyrir árið (1900 - {0})!</string>
+  <string name="WrongFormatSeasonEpisode">{0} verður að vera númerískt og stærra en 0!</string>
 
   <!-- Y -->
-  <string Field="PleaseSelectLanguages">Verður að velja að minnsta kosti eitt\ntungumál!</string>
+  <string name="PleaseSelectLanguages">Verður að velja að minnsta kosti eitt\ntungumál!</string>
 
-</strings>
+</resources>
