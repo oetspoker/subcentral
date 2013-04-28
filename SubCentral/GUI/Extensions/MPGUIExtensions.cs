@@ -12,7 +12,7 @@ namespace SubCentral.GUI.Extensions {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public static IEnumerable GetControlList(this GUIWindow self) {
-            PropertyInfo property = GetPropertyInfo<GUIWindow>("Children", null, BindingFlags.Instance | BindingFlags.Public);
+            PropertyInfo property = GetPropertyInfo<GUIWindow>("Children", BindingFlags.Instance | BindingFlags.Public);
             if (property != null) {
                 return property.GetValue(self, null) as IEnumerable;
             }
@@ -22,12 +22,12 @@ namespace SubCentral.GUI.Extensions {
 
         public static GUIListItem GetSelectedItem(this GUIVideoTitle self) {
             FieldInfo field;
-            field = GetFieldInfo<GUIVideoTitle>("currentSelectedItem", null, BindingFlags.Instance | BindingFlags.NonPublic);
+            field = GetFieldInfo<GUIVideoTitle>("currentSelectedItem", BindingFlags.Instance | BindingFlags.NonPublic);
             int? currentSelectedItem = null;
             if (field != null) {
                 currentSelectedItem = field.GetValue(self) as int?;
             }
-            field = GetFieldInfo<GUIVideoBaseWindow>("handler", null, BindingFlags.Instance | BindingFlags.NonPublic);
+            field = GetFieldInfo<GUIVideoBaseWindow>("handler", BindingFlags.Instance | BindingFlags.NonPublic);
             VideoViewHandler handler = null;
             if (field != null) {
                 handler = field.GetValue(self) as VideoViewHandler;
@@ -35,11 +35,11 @@ namespace SubCentral.GUI.Extensions {
             PropertyInfo property;
             VideoSort.SortMethod? currentSortMethod = null;
             bool? currentSortAsc = null;
-            property = GetPropertyInfo<GUIVideoTitle>("CurrentSortMethod", null, BindingFlags.NonPublic | BindingFlags.Instance);
+            property = GetPropertyInfo<GUIVideoTitle>("CurrentSortMethod", BindingFlags.NonPublic | BindingFlags.Instance);
             if (property != null) {
                 currentSortMethod = property.GetValue(self, null) as VideoSort.SortMethod?;
             }
-            property = GetPropertyInfo<GUIVideoTitle>("CurrentSortAsc", null, BindingFlags.NonPublic | BindingFlags.Instance);
+            property = GetPropertyInfo<GUIVideoTitle>("CurrentSortAsc", BindingFlags.NonPublic | BindingFlags.Instance);
             if (property != null) {
                 currentSortAsc = property.GetValue(self, null) as bool?;
             }
@@ -72,7 +72,7 @@ namespace SubCentral.GUI.Extensions {
                     item.Rating = movie.Rating;
                     item.IsPlayed = movie.Watched > 0 ? true : false;
 
-                    method = GetMethodInfo<GUIVideoTitle>("CheckItem", null, BindingFlags.NonPublic | BindingFlags.Instance);
+                    method = GetMethodInfo<GUIVideoTitle>("CheckItem", BindingFlags.NonPublic | BindingFlags.Instance);
                     bool accept = true;
                     if (method != null && !string.IsNullOrEmpty(item.Path)) {
                         accept = (bool)method.Invoke(self, new object[] { item });
@@ -82,7 +82,7 @@ namespace SubCentral.GUI.Extensions {
                         itemList.Add(item);
                     }
                 }
-                method = GetMethodInfo<GUIVideoTitle>("SetIMDBThumbs", null, BindingFlags.NonPublic | BindingFlags.Instance);
+                method = GetMethodInfo<GUIVideoTitle>("SetIMDBThumbs", BindingFlags.NonPublic | BindingFlags.Instance);
                 if (method != null) {
                     method.Invoke(self, new object[] { itemList });
                 }
@@ -103,25 +103,13 @@ namespace SubCentral.GUI.Extensions {
 
         private static Dictionary<string, PropertyInfo> propertyCache = new Dictionary<string, PropertyInfo>();
 
-        /// <summary>
-        /// Gets the property info object for a property using reflection.
-        /// The property info object will be cached in memory for later requests.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="newName">The name of the property in 1.2</param>
-        /// <param name="oldName">The name of the property in 1.1</param>
-        /// <returns>instance PropertyInfo or null if not found</returns>
-        public static PropertyInfo GetPropertyInfo<T>(string newName, string oldName, BindingFlags bindingAttr) {
+        public static PropertyInfo GetPropertyInfo<T>(string newName, BindingFlags bindingAttr) {
             PropertyInfo property = null;
             Type type = typeof(T);
             string key = type.FullName + "|" + newName + "|" + bindingAttr;
 
             if (!propertyCache.TryGetValue(key, out property)) {
                 property = type.GetProperty(newName, bindingAttr);
-                if (property == null) {
-                    property = type.GetProperty(oldName, bindingAttr);
-                }
-
                 propertyCache[key] = property;
             }
 
@@ -130,17 +118,16 @@ namespace SubCentral.GUI.Extensions {
 
         private static Dictionary<string, MethodInfo> methodCache = new Dictionary<string, MethodInfo>();
 
-        public static MethodInfo GetMethodInfo<T>(string newName, string oldName, BindingFlags bindingAttr) {
+        public static MethodInfo GetMethodInfo<T>(string name, BindingFlags bindingAttr) {
+            
             MethodInfo method = null;
+            
             Type type = typeof(T);
-            string key = type.FullName + "|" + newName + "|" + bindingAttr;
+
+            string key = type.FullName + "|" + name + "|" + bindingAttr;
 
             if (!methodCache.TryGetValue(key, out method)) {
-                method = type.GetMethod(newName, bindingAttr);
-                if (method == null) {
-                    method = type.GetMethod(oldName, bindingAttr);
-                }
-
+                method = type.GetMethod(name, bindingAttr);
                 methodCache[key] = method;
             }
 
@@ -149,17 +136,13 @@ namespace SubCentral.GUI.Extensions {
 
         private static Dictionary<string, FieldInfo> fieldCache = new Dictionary<string, FieldInfo>();
 
-        public static FieldInfo GetFieldInfo<T>(string newName, string oldName, BindingFlags bindingAttr) {
+        public static FieldInfo GetFieldInfo<T>(string newName, BindingFlags bindingAttr) {
             FieldInfo field = null;
             Type type = typeof(T);
             string key = type.FullName + "|" + newName + "|" + bindingAttr;
 
             if (!fieldCache.TryGetValue(key, out field)) {
                 field = type.GetField(newName, bindingAttr);
-                if (field == null) {
-                    field = type.GetField(oldName, bindingAttr);
-                }
-
                 fieldCache[key] = field;
             }
 
