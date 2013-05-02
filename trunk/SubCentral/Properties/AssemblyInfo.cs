@@ -38,7 +38,7 @@ using MediaPortal.Common.Utils;
 //[assembly: AssemblyFileVersion("0.9.1.0")]
 
 // MediaPortal plugin version compatibility
-[assembly: CompatibleVersion("1.2.100.0")]
+[assembly: CompatibleVersion("1.3.100.0")]
 [assembly: UsesSubsystem("MP.SkinEngine")]
 [assembly: UsesSubsystem("MP.Externals.MediaInfo")]
 [assembly: UsesSubsystem("MP.Config")]
