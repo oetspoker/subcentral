@@ -664,13 +664,13 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>27644</Revision>
         </MinVersion>
         <MaxVersion>
-          <Major>*</Major>
-          <Minor>*</Minor>
-          <Build>*</Build>
-          <Revision>*</Revision>
+          <Major>1</Major>
+          <Minor>1</Minor>
+          <Build>6</Build>
+          <Revision>27644</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
-        <Message>This version of SubCentral requires MediaPortal 1.3 Final or newer!</Message>
+        <Message>This version of SubCentral requires MediaPortal 1.4.0 or newer!</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
@@ -681,8 +681,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <CompatibleVersion>
           <Items>
             <CompatibleVersionItem>
-              <MinRequiredVersion>1.2.100.0</MinRequiredVersion>
-              <DesignedForVersion>1.2.100.0</DesignedForVersion>
+              <MinRequiredVersion>1.3.100.0</MinRequiredVersion>
+              <DesignedForVersion>1.3.100.0</DesignedForVersion>
             </CompatibleVersionItem>
           </Items>
         </CompatibleVersion>
@@ -706,21 +706,19 @@ Click Next to continue or Cancel to exit Setup.</Value>
     <Version>
       <Major>1</Major>
       <Minor>2</Minor>
-      <Build>1</Build>
+      <Build>2</Build>
       <Revision>0</Revision>
     </Version>
     <ExtensionDescription>SubCentral is a standalone subtitles plug-in for the MediaPortal HTPC application. The purpose of the plug-in is to allow user to search and download subtitles for movies or TV shows managed by popular Moving Pictures and MP-TVSeries plug-ins. It also has the interfaces to allow easy implementation and integration in any other plug-in.</ExtensionDescription>
-    <VersionDescription>* New: Official support for MP 1.2.0 Final
-* New: Includes SubtitleDownloader 3.0.9
-* New: Updated Sratim &amp; SubsCenterOrg
-
+    <VersionDescription>* New: Support for MP 1.4.0
+* Fixed: My Videos error "Import failed"
 
 </VersionDescription>
     <DevelopmentStatus>Stable</DevelopmentStatus>
     <OnlineLocation>http://www.team-mediaportal.com/index.php?option=com_mtree&amp;task=att_download&amp;link_id=27&amp;cf_id=24</OnlineLocation>
-    <ReleaseDate>2013-03-25T00:00:00</ReleaseDate>
+    <ReleaseDate>2013-05-02T00:00:00</ReleaseDate>
     <Tags>subcentral,subtitles,movies,tv shows,series,moving pictures,mp-tvseries,tvseries</Tags>
-    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.2.1.mpe1</Location>
+    <Location>D:\developing\#maintained\SubCentral\Release\SubCentral_v1.2.2.mpe1</Location>
     <Params>
       <Items>
         <SectionParam Name="Icon">
@@ -1158,14 +1156,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\External\SubtitleDownloader-3.0.9.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{da10cf0a-a15f-4112-a9ce-43c2c3f855cd}-SubtitleDownloader-3.0.9.0.mpe1</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{389153c7-d3fd-4332-98bf-bfd80048314b}-SubtitleDownloader-3.0.9.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{b4210b22-83a4-463e-961a-b557cedad531}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{56855432-73ce-4e6b-bb48-8e39894af7c9}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
