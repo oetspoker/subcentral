@@ -642,30 +642,6 @@ namespace SubCentral.Utils {
             return result;
         }
 
-        private static bool foldersHaveDefaultForMovies(List<SettingsFolder> settingsFolders) {
-            if (settingsFolders == null || settingsFolders.Count == 0) return false;
-
-            foreach (SettingsFolder settingsFolder in settingsFolders) {
-                if (settingsFolder.DefaultForMovies) {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private static bool foldersHaveDefaultForTVShows(List<SettingsFolder> settingsFolders) {
-            if (settingsFolders == null || settingsFolders.Count == 0) return false;
-
-            foreach (SettingsFolder settingsFolder in settingsFolders) {
-                if (settingsFolder.DefaultForTVShows) {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         public static bool containsPath(List<SettingsFolder> settingsFolders, string path, out int index) {
             index = -1;
 
