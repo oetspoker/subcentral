@@ -639,6 +639,8 @@ namespace SubCentral.Utils {
                 (FileUtils.pathDriveIsDVD(path) || !pathDriveReady || !hostAlive || (iUncPathDepth > 0 && iUncPathDepth < 3)))
                 result = FolderErrorInfo.Inaccessible;
 
+            logger.Debug("FolderErrorInfo for path {0}: {1}", path, result);
+
             return result;
         }
 

@@ -66,6 +66,8 @@ namespace SubCentral.Utils {
                 logger.ErrorException(string.Format("Error in IsMachineReachable({0}){1}", hostName, Environment.NewLine), e);
             }
 
+            logger.Debug("Machine not reachable: hostname {0}", hostName);
+                    
             return false;
         }
     }
