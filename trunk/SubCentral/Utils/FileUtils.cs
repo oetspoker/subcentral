@@ -50,20 +50,16 @@ namespace SubCentral.Utils {
             return false;
         }
 
-        public static bool mediaIsAvailable(List<FileInfo> files) {
+        public static bool mediaIsAvailable(List<FileInfo> files)
+        {
             if (files == null || files.Count == 0) return false;
 
-            foreach (FileInfo fi in files) {
+            foreach (FileInfo fi in files)
+            {
                 if (fi.Exists) return true;
             }
 
             return false;
-        }
-
-        public static bool pathExists(string path) {
-            bool hostAlive;
-            bool pathDriveReady;
-            return pathExists(path, out hostAlive, out pathDriveReady);
         }
 
         public static bool pathExists(string path, out bool hostAlive, out bool pathDriveReady) {
@@ -75,6 +71,7 @@ namespace SubCentral.Utils {
             if (!Path.IsPathRooted(path)) return true;
 
             if (!NetUtils.uncHostIsAlive(path)) {
+                logger.Debug("UNC host not alive: path {0}", path);
                 hostAlive = false;
                 return false;
             }
