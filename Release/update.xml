@@ -78,13 +78,13 @@
               <Revision>27644</Revision>
             </MinVersion>
             <MaxVersion>
-              <Major>*</Major>
-              <Minor>*</Minor>
-              <Build>*</Build>
-              <Revision>*</Revision>
+              <Major>1</Major>
+              <Minor>1</Minor>
+              <Build>6</Build>
+              <Revision>27644</Revision>
             </MaxVersion>
             <WarnOnly>false</WarnOnly>
-            <Message>This version of SubCentral requires MediaPortal 1.3 Final or newer!</Message>
+            <Message>MP 1.3.0 Final or higher required</Message>
             <Name>MediaPortal</Name>
           </DependencyItem>
         </Items>
@@ -253,7 +253,7 @@
               <Revision>27644</Revision>
             </MaxVersion>
             <WarnOnly>false</WarnOnly>
-            <Message>This version of SubCentral requires MediaPortal 1.4.0 or newer!</Message>
+            <Message>MediaPortal 1.4.0 or higher required!</Message>
             <Name>MediaPortal</Name>
           </DependencyItem>
         </Items>

@@ -670,7 +670,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
           <Revision>27644</Revision>
         </MaxVersion>
         <WarnOnly>false</WarnOnly>
-        <Message>This version of SubCentral requires MediaPortal 1.4.0 or newer!</Message>
+        <Message>MediaPortal 1.4.0 or higher required!</Message>
         <Name>MediaPortal</Name>
       </DependencyItem>
     </Items>
@@ -1157,14 +1157,14 @@ Click Next to continue or Cancel to exit Setup.</Value>
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>..\External\SubtitleDownloader-3.0.9.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{532664f3-cc57-4ca3-be93-16197dd2f68b}-SubtitleDownloader-3.0.9.0.mpe1</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{528ccce3-1f45-4576-943d-12f45da0a523}-SubtitleDownloader-3.0.9.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
         <LocalFileName>Icon.png</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{324e4d8d-8f71-42f3-a448-fb25fa637dfe}-Icon.png</ZipFileName>
+        <ZipFileName>Installer{CopyFile}\{e485adda-5eb1-46bd-a208-d629db106842}-Icon.png</ZipFileName>
         <DestinationFilename />
       </FileItem>
     </Items>
