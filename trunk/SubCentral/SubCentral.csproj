@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SubCentral</RootNamespace>
     <AssemblyName>SubCentral</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>
     </StartupObject>
@@ -33,6 +33,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,27 +54,36 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Common.Utils, Version=1.1.8.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Common.GUIPlugins">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.3 Alpha\Common.Utils.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.9\Common.GUIPlugins.dll</HintPath>
     </Reference>
-    <Reference Include="Core, Version=1.1.8.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Common.Utils">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.3 Alpha\Core.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.9\Common.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.9\Core.dll</HintPath>
     </Reference>
     <Reference Include="Cornerstone, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\Moving Pictures v1.3.1\Cornerstone.dll</HintPath>
     </Reference>
-    <Reference Include="Databases, Version=1.1.8.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Databases">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.3 Alpha\Databases.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.9\Databases.dll</HintPath>
     </Reference>
-    <Reference Include="Dialogs, Version=1.1.8.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Dialogs">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.3 Alpha\Dialogs.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.9\Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="GUIVideos">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\MediaPortal v1.9\GUIVideos.dll</HintPath>
     </Reference>
     <Reference Include="MovingPictures, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -86,9 +96,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\External\MyFilms v5.0.1\MyFilms.dll</HintPath>
     </Reference>
-    <Reference Include="NLog">
+    <Reference Include="NLog, Version=3.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.3.1.0.0\lib\net40\NLog.dll</HintPath>
     </Reference>
     <Reference Include="SubtitleDownloader">
       <HintPath>..\External\SubtitleDownloader.dll</HintPath>
@@ -109,13 +119,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Utils, Version=1.1.8.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Utils">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.3 Alpha\Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowPlugins, Version=1.1.8.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\External\MediaPortal v1.3 Alpha\WindowPlugins.dll</HintPath>
+      <HintPath>..\External\MediaPortal v1.9\Utils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -203,36 +209,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Config\Images\SubCentral_Icon_Disabled.png" />
     <EmbeddedResource Include="Config\Images\SubCentral_Icon_Enabled.png" />
-    <Content Include="GUI\Skins\Blue3wide\DialogMultiSelect.xml" />
-    <Content Include="GUI\Skins\Blue3wide\Media\defaultSubtitles.png" />
-    <Content Include="GUI\Skins\Blue3wide\Media\defaultSubtitlesFolder.png" />
-    <Content Include="GUI\Skins\Blue3wide\Media\defaultSubtitlesFolderBack.png" />
-    <Content Include="GUI\Skins\Blue3wide\Media\hover_subcentral.png" />
-    <Content Include="GUI\Skins\Blue3wide\Media\Logos\nosubtitles.png" />
-    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Background.png" />
-    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Long_Focused.png" />
-    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Bg.png" />
-    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_Button_Short_Focused.png" />
-    <Content Include="GUI\Skins\Blue3wide\Media\SubCentral_MainOverlay.png" />
-    <Content Include="GUI\Skins\Blue3wide\SubCentral.ModifySearch.xml" />
-    <Content Include="GUI\Skins\Blue3wide\SubCentral.Search.xml" />
-    <Content Include="GUI\Skins\Blue3wide\SubCentral.xml" />
-    <Content Include="GUI\Skins\Blue3wide\SubCentral.Main.xml" />
-    <Content Include="GUI\Skins\Blue3\DialogMultiSelect.xml" />
-    <Content Include="GUI\Skins\Blue3\Media\defaultSubtitles.png" />
-    <Content Include="GUI\Skins\Blue3\Media\defaultSubtitlesFolder.png" />
-    <Content Include="GUI\Skins\Blue3\Media\defaultSubtitlesFolderBack.png" />
-    <Content Include="GUI\Skins\Blue3\Media\hover_subcentral.png" />
-    <Content Include="GUI\Skins\Blue3\Media\Logos\nosubtitles.png" />
-    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Background.png" />
-    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Button_Long_Focused.png" />
-    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Button_Short_Bg.png" />
-    <Content Include="GUI\Skins\Blue3\Media\SubCentral_Button_Short_Focused.png" />
-    <Content Include="GUI\Skins\Blue3\Media\SubCentral_MainOverlay.png" />
-    <Content Include="GUI\Skins\Blue3\SubCentral.Main.xml" />
-    <Content Include="GUI\Skins\Blue3\SubCentral.ModifySearch.xml" />
-    <Content Include="GUI\Skins\Blue3\SubCentral.Search.xml" />
-    <Content Include="GUI\Skins\Blue3\SubCentral.xml" />
     <Content Include="GUI\Skins\DefaultWide\DialogMultiSelect.xml" />
     <Content Include="GUI\Skins\DefaultWide\Media\defaultSubtitles.png" />
     <Content Include="GUI\Skins\DefaultWide\Media\defaultSubtitlesFolder.png" />
@@ -276,6 +252,7 @@
     <Content Include="Localizations\Languages\nl.xml" />
     <Content Include="Localizations\Languages\sv.xml" />
     <Content Include="Resources\PayPalDonate.gif" />
+    <None Include="packages.config" />
     <None Include="Resources\SubCentralGUIIcon.png" />
     <None Include="Resources\SubCentralGUIIconBig.png" />
     <None Include="Resources\FolderPageWhite.png" />
@@ -329,7 +306,7 @@
 if exist SubCentral_UNMERGED.dll del SubCentral_UNMERGED.dll
 ren SubCentral.dll SubCentral_UNMERGED.dll
 echo Merging...
-call "$(ProjectDir)..\External\ilmerge.exe" /out:SubCentral.dll SubCentral_UNMERGED.dll NLog.dll
+call "$(SolutionDir)packages\ilmerge.2.13.0307\ilmerge.exe" /out:SubCentral.dll SubCentral_UNMERGED.dll NLog.dll
 echo Merge done.</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>

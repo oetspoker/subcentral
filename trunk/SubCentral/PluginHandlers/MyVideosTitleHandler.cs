@@ -86,7 +86,7 @@ namespace SubCentral.PluginHandlers {
         }
 
         protected override bool IsAvailable() {
-            if (!IsAssemblyAvailable("WindowPlugins", new Version(1, 1, 0)))
+            if (!IsAssemblyAvailable("GUIVideos", new Version(1, 8, 0)))
                 return false;
 
             return true;
