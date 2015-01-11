@@ -589,7 +589,7 @@ Click Next to continue or Cancel to exit Setup.</Value>
               <Params>
                 <Items>
                   <SectionParam Name="Extension package">
-                    <Value>..\External\SubtitleDownloader-3.0.9.0.mpe1</Value>
+                    <Value>..\External\SubtitleDownloader-3.0.14.0.mpe1</Value>
                     <ValueType>File</ValueType>
                     <Description>Location of the extension package</Description>
                   </SectionParam>
@@ -1156,8 +1156,8 @@ Click Next to continue or Cancel to exit Setup.</Value>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
         <Param1 />
         <UpdateOption>OverwriteIfOlder</UpdateOption>
-        <LocalFileName>..\External\SubtitleDownloader-3.0.9.0.mpe1</LocalFileName>
-        <ZipFileName>Installer{CopyFile}\{7284d2b5-f3da-4b79-b958-c2a1105ee6c5}-SubtitleDownloader-3.0.9.0.mpe1</ZipFileName>
+        <LocalFileName>..\External\SubtitleDownloader-3.0.14.0.mpe1</LocalFileName>
+        <ZipFileName>Installer{CopyFile}\{79fea1c9-22c5-4bd0-bbb0-f58dc38d3a79}-SubtitleDownloader-3.0.14.0.mpe1</ZipFileName>
         <DestinationFilename />
       </FileItem>
       <FileItem InstallType="CopyFile" SystemFile="true" Modified="true">
